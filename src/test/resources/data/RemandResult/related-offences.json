@@ -1,0 +1,42 @@
+{
+  "chargeRemand": [
+    {
+      "from": "2020-01-05",
+      "to": "2020-01-19",
+      "charge": {
+        "chargeId": 1,
+        "offence": {
+          "code": "1",
+          "statute": "1",
+          "description": "An offence"
+        },
+        "offenceDate": "2000-01-01",
+        "bookingId": 1,
+        "offenceEndDate": "2000-01-01",
+        "sentenceSequence": 1,
+        "sentenceDate": "2020-01-20"
+      },
+      "days": 15
+    }
+  ],
+  "sentenceRemand": [
+    {
+      "from": "2020-01-05",
+      "to": "2020-01-19",
+      "charge": {
+        "chargeId": 1,
+        "offence": {
+          "code": "1",
+          "statute": "1",
+          "description": "An offence"
+        },
+        "offenceDate": "2000-01-01",
+        "bookingId": 1,
+        "offenceEndDate": "2000-01-01",
+        "sentenceSequence": 1,
+        "sentenceDate": "2020-01-20"
+      },
+      "days": 15
+    }
+  ]
+}

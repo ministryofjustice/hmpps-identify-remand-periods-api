@@ -1,0 +1,78 @@
+{
+  "chargeRemand": [
+    {
+      "from": "2020-01-01",
+      "to": "2021-12-31",
+      "charge": {
+        "chargeId": 1,
+        "offence": {
+          "code": "1",
+          "statute": "1",
+          "description": "An offence"
+        },
+        "offenceDate": "2000-01-01",
+        "bookingId": 1,
+        "offenceEndDate": "2000-01-01",
+        "sentenceSequence": 1,
+        "sentenceDate": "2022-01-01"
+      },
+      "days": 731
+    },
+    {
+      "from": "2021-01-01",
+      "to": "2021-01-31",
+      "charge": {
+        "chargeId": 2,
+        "offence": {
+          "code": "2",
+          "statute": "2",
+          "description": "An unrelated offence"
+        },
+        "offenceDate": "2001-01-01",
+        "bookingId": 1,
+        "offenceEndDate": "2001-01-01",
+        "sentenceSequence": 2,
+        "sentenceDate": "2021-02-01"
+      },
+      "days": 31
+    }
+  ],
+  "sentenceRemand": [
+    {
+      "from": "2021-01-01",
+      "to": "2021-01-31",
+      "charge": {
+        "chargeId": 2,
+        "offence": {
+          "code": "2",
+          "statute": "2",
+          "description": "An unrelated offence"
+        },
+        "offenceDate": "2001-01-01",
+        "bookingId": 1,
+        "offenceEndDate": "2001-01-01",
+        "sentenceSequence": 2,
+        "sentenceDate": "2021-02-01"
+      },
+      "days": 31
+    },
+    {
+      "from": "2020-01-01",
+      "to": "2020-12-31",
+      "charge": {
+        "chargeId": 1,
+        "offence": {
+          "code": "1",
+          "statute": "1",
+          "description": "An offence"
+        },
+        "offenceDate": "2000-01-01",
+        "bookingId": 1,
+        "offenceEndDate": "2000-01-01",
+        "sentenceSequence": 1,
+        "sentenceDate": "2022-01-01"
+      },
+      "days": 366
+    }
+  ]
+}

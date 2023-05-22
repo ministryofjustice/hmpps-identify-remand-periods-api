@@ -1,0 +1,51 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABCD123",
+    "charges": [
+      {
+        "charge": {
+          "chargeId": 1,
+          "offence": {
+            "code": "1",
+            "statute": "1",
+            "description": "An offence"
+          },
+          "offenceDate": "2000-01-01",
+          "bookingId": 1,
+          "offenceEndDate": "2000-01-01",
+          "sentenceSequence": 1,
+          "sentenceDate": "2020-01-20"
+        },
+        "dates": [
+          {
+            "date": "2020-01-05",
+            "type": "START",
+            "final": false
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 2,
+          "offence": {
+            "code": "1",
+            "statute": "1",
+            "description": "An offence"
+          },
+          "offenceDate": "2000-01-01",
+          "bookingId": 1,
+          "offenceEndDate": "2000-01-01",
+          "sentenceSequence": 1,
+          "sentenceDate": "2020-01-20"
+        },
+        "dates": [
+          {
+            "date": "2020-01-20",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      }
+    ]
+  }
+}

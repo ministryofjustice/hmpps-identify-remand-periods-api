@@ -1,0 +1,34 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABCD123",
+    "charges": [
+      {
+        "charge": {
+          "chargeId": 1,
+          "offence": {
+            "code": "1",
+            "statute": "1",
+            "description": "An offence"
+          },
+          "offenceDate": "2000-01-01",
+          "bookingId": 1,
+          "offenceEndDate": "2000-01-01",
+          "sentenceSequence": 1,
+          "sentenceDate": "2021-05-14"
+        },
+        "dates": [
+          {
+            "date": "2021-05-13",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2021-05-14",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      }
+    ]
+  }
+}

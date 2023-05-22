@@ -1,0 +1,90 @@
+{
+  "chargeRemand": [
+    {
+      "from": "2022-10-10",
+      "to": "2022-11-27",
+      "charge": {
+        "chargeId": 1,
+        "offence": {
+          "code": "CJ88159",
+          "statute": "CJ88",
+          "description": "Common assault of an emergency worker"
+        },
+        "offenceDate": "2022-07-20",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 1,
+        "sentenceDate": "2022-11-28",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 49
+    },
+    {
+      "from": "2022-10-20",
+      "to": "2023-01-03",
+      "charge": {
+        "chargeId": 2,
+        "offence": {
+          "code": "TH68036",
+          "statute": "TH68",
+          "description": "Burglary dwelling and theft  - no violence"
+        },
+        "offenceDate": "2021-11-13",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 3,
+        "sentenceDate": "2023-01-04",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 76
+    },
+    {
+      "from": "2022-10-20",
+      "to": "2023-01-03",
+      "charge": {
+        "chargeId": 3,
+        "offence": {
+          "code": "TH68036",
+          "statute": "TH68",
+          "description": "Burglary dwelling and theft  - no violence"
+        },
+        "offenceDate": "2022-08-31",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 4,
+        "sentenceDate": "2023-01-04",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 76
+    }
+  ],
+  "sentenceRemand": [
+    {
+      "from": "2022-10-10",
+      "to": "2022-11-27",
+      "charge": {
+        "chargeId": 1,
+        "offence": {
+          "code": "CJ88159",
+          "statute": "CJ88",
+          "description": "Common assault of an emergency worker"
+        },
+        "offenceDate": "2022-07-20",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 1,
+        "sentenceDate": "2022-11-28",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 49
+    }
+  ]
+}

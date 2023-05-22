@@ -1,0 +1,137 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "charges": [
+      {
+        "charge": {
+          "chargeId": 1,
+          "offence": {
+            "code": "CJ88159",
+            "statute": "CJ88",
+            "description": "Common assault of an emergency worker"
+          },
+          "offenceDate": "2022-07-20",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 1,
+          "sentenceDate": "2022-11-28"
+        },
+        "dates": [
+          {
+            "date": "2022-10-10",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-10-17",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-11-10",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-11-28",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 2,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2021-11-13",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 3,
+          "sentenceDate": "2023-01-04"
+        },
+        "dates": [
+          {
+            "date": "2022-10-20",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-12-15",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2023-01-04",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2022-08-31",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 4,
+          "sentenceDate": "2023-01-04"
+        },
+        "dates": [
+          {
+            "date": "2022-10-20",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-12-15",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2023-01-04",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2021-11-13",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 2,
+          "sentenceDate": "2022-11-28"
+        },
+        "dates": [
+          {
+            "date": "2022-11-28",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      }
+    ]
+  },
+  "releaseDates": [{
+    "bookingId": 1,
+    "sentenceSequence": 1,
+    "sentenceAt": "2022-11-28",
+    "release": "2022-11-28"
+  }]
+}
+

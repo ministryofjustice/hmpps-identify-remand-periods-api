@@ -1,0 +1,606 @@
+{
+  "remandCalculation": {
+    "prisonerId": "INTERSE",
+    "charges": [
+      {
+        "charge": {
+          "chargeId": 1,
+          "offence": {
+            "code": "CJ88144",
+            "statute": "CJ88",
+            "description": "Possess knife blade / sharp pointed article in a public place - Criminal Justice Act 1988"
+          },
+          "offenceDate": "2021-01-09",
+          "bookingId": 2,
+          "offenceEndDate": null,
+          "sentenceSequence": null,
+          "sentenceDate": null,
+          "courtCaseRef": "T20210028",
+          "courtLocation": "Wood Green Crown Court",
+          "resultDescription": "Suspended Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2021-01-11",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2021-02-11",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2021-02-16",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2021-03-22",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2021-07-16",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 2,
+          "offence": {
+            "code": "TH68037",
+            "statute": "TH68",
+            "description": "Burglary other than dwelling - theft"
+          },
+          "offenceDate": "2021-01-09",
+          "bookingId": 2,
+          "offenceEndDate": null,
+          "sentenceSequence": null,
+          "sentenceDate": null,
+          "courtCaseRef": "T20210028",
+          "courtLocation": "Wood Green Crown Court",
+          "resultDescription": "Suspended Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2021-01-11",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2021-02-11",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2021-02-16",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2021-03-22",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2021-07-16",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3,
+          "offence": {
+            "code": "TH68081",
+            "statute": "TH68",
+            "description": "Going equipped for burglary"
+          },
+          "offenceDate": "2021-01-09",
+          "bookingId": 2,
+          "offenceEndDate": null,
+          "sentenceSequence": null,
+          "sentenceDate": null,
+          "courtCaseRef": "T20210028",
+          "courtLocation": "Wood Green Crown Court",
+          "resultDescription": "Suspended Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2021-01-11",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2021-02-11",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2021-02-16",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2021-03-22",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2021-07-16",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4,
+          "offence": {
+            "code": "TH68020",
+            "statute": "TH68",
+            "description": "Theft - other - including theft by finding"
+          },
+          "offenceDate": "2019-12-07",
+          "bookingId": 2,
+          "offenceEndDate": null,
+          "sentenceSequence": 3,
+          "sentenceDate": "2021-04-22",
+          "courtCaseRef": "012002034682",
+          "courtLocation": "Highbury Corner Magistrates Court",
+          "resultDescription": "Suspended Sentence Implemented"
+        },
+        "dates": [
+          {
+            "date": "2021-04-22",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5,
+          "offence": {
+            "code": "TH68020",
+            "statute": "TH68",
+            "description": "Theft - other - including theft by finding"
+          },
+          "offenceDate": "2019-12-07",
+          "bookingId": 2,
+          "offenceEndDate": null,
+          "sentenceSequence": 3,
+          "sentenceDate": "2021-04-22",
+          "courtCaseRef": "012002034682",
+          "courtLocation": "Highbury Corner Magistrates Court",
+          "resultDescription": "Suspended Sentence Implemented"
+        },
+        "dates": [
+          {
+            "date": "2021-04-22",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6,
+          "offence": {
+            "code": "TH68020",
+            "statute": "TH68",
+            "description": "Theft - other - including theft by finding"
+          },
+          "offenceDate": "2019-12-07",
+          "bookingId": 2,
+          "offenceEndDate": null,
+          "sentenceSequence": 3,
+          "sentenceDate": "2021-04-22",
+          "courtCaseRef": "012002034682",
+          "courtLocation": "Highbury Corner Magistrates Court",
+          "resultDescription": "Suspended Sentence Implemented"
+        },
+        "dates": [
+          {
+            "date": "2021-04-22",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7,
+          "offence": {
+            "code": "TH68020",
+            "statute": "TH68",
+            "description": "Theft - other - including theft by finding"
+          },
+          "offenceDate": "2019-12-07",
+          "bookingId": 2,
+          "offenceEndDate": null,
+          "sentenceSequence": 3,
+          "sentenceDate": "2021-04-22",
+          "courtCaseRef": "012002034682",
+          "courtLocation": "Highbury Corner Magistrates Court",
+          "resultDescription": "Suspended Sentence Implemented"
+        },
+        "dates": [
+          {
+            "date": "2021-04-22",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 8,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2022-10-16",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 1,
+          "sentenceDate": "2022-11-15",
+          "courtCaseRef": "43SP0414422",
+          "courtLocation": "Oxford Crown Court",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2022-10-19",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-11-15",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 9,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2022-10-16",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 9,
+          "sentenceDate": "2022-11-15",
+          "courtCaseRef": "43SP0414422",
+          "courtLocation": "Oxford Crown Court",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2022-10-19",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-11-15",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 10,
+          "offence": {
+            "code": "TH68026A",
+            "statute": "TH68",
+            "description": "Attempt burglary dwelling with intent to    steal"
+          },
+          "offenceDate": "2022-10-17",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 9,
+          "sentenceDate": "2022-11-15",
+          "courtCaseRef": "43SP0414422",
+          "courtLocation": "Oxford Crown Court",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2022-10-19",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-11-15",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 11,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2022-10-16",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 9,
+          "sentenceDate": "2022-11-15",
+          "courtCaseRef": "43SP0414422",
+          "courtLocation": "Oxford Crown Court",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2022-10-19",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-11-15",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 12,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2022-10-16",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 9,
+          "sentenceDate": "2022-11-15",
+          "courtCaseRef": "43SP0414422",
+          "courtLocation": "Oxford Crown Court",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2022-10-19",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-11-15",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 13,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2022-10-15",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 9,
+          "sentenceDate": "2022-11-15",
+          "courtCaseRef": "43SP0414422",
+          "courtLocation": "Oxford Crown Court",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2022-10-19",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-11-15",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 14,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2022-10-15",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 9,
+          "sentenceDate": "2022-11-15",
+          "courtCaseRef": "43SP0414422",
+          "courtLocation": "Oxford Crown Court",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2022-10-19",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-11-15",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 15,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2022-10-15",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 9,
+          "sentenceDate": "2022-11-15",
+          "courtCaseRef": "43SP0414422",
+          "courtLocation": "Oxford Crown Court",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2022-10-19",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-11-15",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 16,
+          "offence": {
+            "code": "TH68081",
+            "statute": "TH68",
+            "description": "Going equipped for burglary"
+          },
+          "offenceDate": "2022-10-16",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 2,
+          "sentenceDate": "2022-11-15",
+          "courtCaseRef": "43SP0414422",
+          "courtLocation": "Oxford Crown Court",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2022-10-19",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-11-15",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 17,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2022-10-16",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 9,
+          "sentenceDate": "2022-11-15",
+          "courtCaseRef": "43SP0414422",
+          "courtLocation": "Oxford Crown Court",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2022-10-19",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-11-15",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 18,
+          "offence": {
+            "code": "TH68037",
+            "statute": "TH68",
+            "description": "Burglary other than dwelling - theft"
+          },
+          "offenceDate": "2021-01-09",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 16,
+          "sentenceDate": "2022-12-07",
+          "courtCaseRef": "S20220559",
+          "courtLocation": "Wood Green Crown Court",
+          "resultDescription": "Suspended Sentence Implemented"
+        },
+        "dates": [
+          {
+            "date": "2022-12-07",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 19,
+          "offence": {
+            "code": "CJ88144",
+            "statute": "CJ88",
+            "description": "Possess knife blade / sharp pointed article in a public place - Criminal Justice Act 1988"
+          },
+          "offenceDate": "2021-01-09",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 23,
+          "sentenceDate": "2022-12-07",
+          "courtCaseRef": "S20220559",
+          "courtLocation": "Wood Green Crown Court",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2022-12-07",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      }
+    ]
+  },
+  "releaseDates": [
+    {
+      "bookingId": 2,
+      "sentenceSequence": 3,
+      "sentenceAt": "2021-04-22",
+      "release": "2021-05-22"
+    },
+    {
+      "bookingId": 1,
+      "sentenceSequence": 1,
+      "sentenceAt": "2022-11-15",
+      "release": "2023-10-19"
+    }
+  ]
+}

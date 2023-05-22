@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.RestControllerAdvice
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException
 
 @RestControllerAdvice
 class HmppsIdentifyRemandPeriodsApiExceptionHandler {
@@ -34,6 +35,20 @@ class HmppsIdentifyRemandPeriodsApiExceptionHandler {
         ErrorResponse(
           status = INTERNAL_SERVER_ERROR,
           userMessage = "Unexpected error: ${e.message}",
+          developerMessage = e.message,
+        ),
+      )
+  }
+
+  @ExceptionHandler(UnsupportedCalculationException::class)
+  fun handleUnsupportedCalculationException(e: UnsupportedCalculationException): ResponseEntity<ErrorResponse> {
+    log.error("UnsupportedCalculationException ${e.message}", e)
+    return ResponseEntity
+      .status(HttpStatus.UNPROCESSABLE_ENTITY)
+      .body(
+        ErrorResponse(
+          status = HttpStatus.UNPROCESSABLE_ENTITY,
+          userMessage = e.message,
           developerMessage = e.message,
         ),
       )
