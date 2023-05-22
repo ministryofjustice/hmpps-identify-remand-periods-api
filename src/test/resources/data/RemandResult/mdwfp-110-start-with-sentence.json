@@ -1,0 +1,114 @@
+{
+  "chargeRemand": [
+    {
+      "from": "2022-11-04",
+      "to": "2023-01-09",
+      "charge": {
+        "chargeId": 4,
+        "offence": {
+          "code": "TH68023",
+          "statute": "TH68",
+          "description": "Robbery"
+        },
+        "offenceDate": "2022-11-01",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 3,
+        "sentenceDate": "2023-01-10"
+      },
+      "days": 67
+    },
+    {
+      "from": "2022-11-04",
+      "to": "2023-01-09",
+      "charge": {
+        "chargeId": 5,
+        "offence": {
+          "code": "TH68023",
+          "statute": "TH68",
+          "description": "Robbery"
+        },
+        "offenceDate": "2022-10-31",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 3,
+        "sentenceDate": "2023-01-10"
+      },
+      "days": 67
+    },
+    {
+      "from": "2022-11-04",
+      "to": "2023-01-09",
+      "charge": {
+        "chargeId": 6,
+        "offence": {
+          "code": "TH68023",
+          "statute": "TH68",
+          "description": "Robbery"
+        },
+        "offenceDate": "2022-10-30",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 3,
+        "sentenceDate": "2023-01-10"
+      },
+      "days": 67
+    },
+    {
+      "from": "2022-11-04",
+      "to": "2023-01-09",
+      "charge": {
+        "chargeId": 8,
+        "offence": {
+          "code": "TH68023",
+          "statute": "TH68",
+          "description": "Robbery"
+        },
+        "offenceDate": "2022-11-02",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 3,
+        "sentenceDate": "2023-01-10"
+      },
+      "days": 67
+    },
+    {
+      "from": "2022-11-04",
+      "to": "2023-01-09",
+      "charge": {
+        "chargeId": 9,
+        "offence": {
+          "code": "TH68010",
+          "statute": "TH68",
+          "description": "Theft from a shop"
+        },
+        "offenceDate": "2022-10-31",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": null,
+        "sentenceDate": null
+      },
+      "days": 67
+    }
+  ],
+  "sentenceRemand": [
+    {
+      "from": "2022-11-25",
+      "to": "2023-01-09",
+      "charge": {
+        "chargeId": 4,
+        "offence": {
+          "code": "TH68023",
+          "statute": "TH68",
+          "description": "Robbery"
+        },
+        "offenceDate": "2022-11-01",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 3,
+        "sentenceDate": "2023-01-10"
+      },
+      "days": 46
+    }
+  ]
+}

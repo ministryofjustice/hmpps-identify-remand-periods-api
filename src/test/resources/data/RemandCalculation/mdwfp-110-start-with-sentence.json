@@ -1,0 +1,295 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "charges": [
+      {
+        "charge": {
+          "chargeId": 1,
+          "offence": {
+            "code": "PC00010",
+            "statute": "PC00",
+            "description": "Breach of a supervision order"
+          },
+          "offenceDate": "2022-05-04",
+          "bookingId": 1,
+          "offenceEndDate": "2022-05-23",
+          "sentenceSequence": 1,
+          "sentenceDate": "2022-11-04"
+        },
+        "dates": [
+          {
+            "date": "2022-11-04",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 2,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "offenceDate": "2022-08-08",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 2,
+          "sentenceDate": "2022-11-04"
+        },
+        "dates": [
+          {
+            "date": "2022-11-04",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "offenceDate": "2022-07-13",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 2,
+          "sentenceDate": "2022-11-04"
+        },
+        "dates": [
+          {
+            "date": "2022-11-04",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4,
+          "offence": {
+            "code": "TH68023",
+            "statute": "TH68",
+            "description": "Robbery"
+          },
+          "offenceDate": "2022-11-01",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 3,
+          "sentenceDate": "2023-01-10"
+        },
+        "dates": [
+          {
+            "date": "2022-11-04",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-12-06",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2023-01-10",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5,
+          "offence": {
+            "code": "TH68023",
+            "statute": "TH68",
+            "description": "Robbery"
+          },
+          "offenceDate": "2022-10-31",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 3,
+          "sentenceDate": "2023-01-10"
+        },
+        "dates": [
+          {
+            "date": "2022-11-04",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-12-06",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2023-01-10",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6,
+          "offence": {
+            "code": "TH68023",
+            "statute": "TH68",
+            "description": "Robbery"
+          },
+          "offenceDate": "2022-10-30",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 3,
+          "sentenceDate": "2023-01-10"
+        },
+        "dates": [
+          {
+            "date": "2022-11-04",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-12-06",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2023-01-10",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7,
+          "offence": {
+            "code": "TH68023",
+            "statute": "TH68",
+            "description": "Robbery"
+          },
+          "offenceDate": "2022-11-01",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 3,
+          "sentenceDate": "2023-01-10"
+        },
+        "dates": [
+          {
+            "date": "2022-11-04",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-12-06",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2023-01-10",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 8,
+          "offence": {
+            "code": "TH68023",
+            "statute": "TH68",
+            "description": "Robbery"
+          },
+          "offenceDate": "2022-11-02",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 3,
+          "sentenceDate": "2023-01-10"
+        },
+        "dates": [
+          {
+            "date": "2022-11-04",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-12-06",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2023-01-10",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 9,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "offenceDate": "2022-10-31",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": null,
+          "sentenceDate": null
+        },
+        "dates": [
+          {
+            "date": "2022-11-04",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-12-06",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2023-01-10",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 10,
+          "offence": {
+            "code": "TH68023",
+            "statute": "TH68",
+            "description": "Robbery"
+          },
+          "offenceDate": "2022-10-31",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 3,
+          "sentenceDate": "2023-01-10"
+        },
+        "dates": [
+          {
+            "date": "2023-01-10",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      }
+    ]
+  },
+  "releaseDates": [
+    {
+      "bookingId": 1,
+      "sentenceSequence": 1,
+      "sentenceAt": "2022-11-04",
+      "release": "2022-11-24"
+    }
+  ]
+}

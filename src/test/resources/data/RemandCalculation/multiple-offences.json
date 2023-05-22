@@ -1,0 +1,81 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABCD123",
+    "charges": [
+      {
+        "charge": {
+          "chargeId": 1,
+          "offence": {
+            "code": "1",
+            "statute": "1",
+            "description": "An offence"
+          },
+          "offenceDate": "2000-01-01",
+          "bookingId": 1,
+          "offenceEndDate": "2000-01-01",
+          "sentenceSequence": 1,
+          "sentenceDate": "2021-06-15"
+        },
+        "dates": [
+          {
+            "date": "2019-07-06",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2020-09-24",
+            "type": "STOP",
+            "final": false
+          },
+          {
+            "date": "2021-06-14",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2021-06-15",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 2,
+          "offence": {
+            "code": "2",
+            "statute": "2",
+            "description": "An unrelated offence"
+          },
+          "offenceDate": "2001-01-01",
+          "bookingId": 1,
+          "offenceEndDate": "2001-01-01",
+          "sentenceSequence": 2,
+          "sentenceDate": "2021-06-15"
+        },
+        "dates": [
+          {
+            "date": "2019-07-06",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2020-09-24",
+            "type": "STOP",
+            "final": false
+          },
+          {
+            "date": "2021-06-14",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2021-06-15",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      }
+    ]
+  }
+}

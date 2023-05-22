@@ -1,0 +1,125 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABCD123",
+    "charges": [
+      {
+        "charge": {
+          "chargeId": 1,
+          "offence": {
+            "code": "1",
+            "statute": "1",
+            "description": "An offence"
+          },
+          "offenceDate": "2022-11-02",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": null,
+          "sentenceDate": null,
+          "courtCaseRef": "ABC"
+        },
+        "dates": [
+          {
+            "date": "2022-11-04",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-11-07",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-11-09",
+            "type": "STOP",
+            "final": false
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 2,
+          "offence": {
+            "code": "1",
+            "statute": "1",
+            "description": "An offence"
+          },
+          "offenceDate": "2022-11-09",
+          "bookingId": 2,
+          "sentenceSequence": 1,
+          "sentenceDate": "2023-01-04"
+        },
+        "dates": [
+          {
+            "date": "2022-11-11",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-11-18",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-12-16",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2023-01-04",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3,
+          "offence": {
+            "code": "1",
+            "statute": "1",
+            "description": "An offence"
+          },
+          "offenceDate": "2022-10-26",
+          "bookingId": 2,
+          "offenceEndDate": null,
+          "sentenceSequence": null,
+          "sentenceDate": null
+        },
+        "dates": [
+          {
+            "date": "2022-12-16",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2023-01-04",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4,
+          "offence": {
+            "code": "1",
+            "statute": "1",
+            "description": "An offence"
+          },
+          "offenceDate": "2022-11-02",
+          "bookingId": 2,
+          "offenceEndDate": null,
+          "sentenceSequence": 2,
+          "sentenceDate": "2023-01-04"
+        },
+        "dates": [
+          {
+            "date": "2023-01-04",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "chargeRemand": [
+    {
+      "from": "2021-01-11",
+      "to": "2021-07-15",
+      "charge": {
+        "chargeId": 19,
+        "offence": {
+          "code": "CJ88144",
+          "statute": "CJ88",
+          "description": "Possess knife blade / sharp pointed article in a public place - Criminal Justice Act 1988"
+        },
+        "offenceDate": "2021-01-09",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 23,
+        "sentenceDate": "2022-12-07",
+        "courtCaseRef": "S20220559",
+        "courtLocation": "Wood Green Crown Court",
+        "resultDescription": "Imprisonment"
+      },
+      "days": 186
+    },
+    {
+      "from": "2021-01-11",
+      "to": "2021-07-15",
+      "charge": {
+        "chargeId": 18,
+        "offence": {
+          "code": "TH68037",
+          "statute": "TH68",
+          "description": "Burglary other than dwelling - theft"
+        },
+        "offenceDate": "2021-01-09",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 16,
+        "sentenceDate": "2022-12-07",
+        "courtCaseRef": "S20220559",
+        "courtLocation": "Wood Green Crown Court",
+        "resultDescription": "Suspended Sentence Implemented"
+      },
+      "days": 186
+    },
+    {
+      "from": "2021-01-11",
+      "to": "2021-07-15",
+      "charge": {
+        "chargeId": 3,
+        "offence": {
+          "code": "TH68081",
+          "statute": "TH68",
+          "description": "Going equipped for burglary"
+        },
+        "offenceDate": "2021-01-09",
+        "bookingId": 2,
+        "offenceEndDate": null,
+        "sentenceSequence": null,
+        "sentenceDate": null,
+        "courtCaseRef": "T20210028",
+        "courtLocation": "Wood Green Crown Court",
+        "resultDescription": "Suspended Imprisonment"
+      },
+      "days": 186
+    },
+    {
+      "from": "2022-10-19",
+      "to": "2022-11-14",
+      "charge": {
+        "chargeId": 8,
+        "offence": {
+          "code": "TH68036",
+          "statute": "TH68",
+          "description": "Burglary dwelling and theft  - no violence"
+        },
+        "offenceDate": "2022-10-16",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 1,
+        "sentenceDate": "2022-11-15",
+        "courtCaseRef": "43SP0414422",
+        "courtLocation": "Oxford Crown Court",
+        "resultDescription": "Imprisonment"
+      },
+      "days": 27
+    },
+    {
+      "from": "2022-10-19",
+      "to": "2022-11-14",
+      "charge": {
+        "chargeId": 10,
+        "offence": {
+          "code": "TH68026A",
+          "statute": "TH68",
+          "description": "Attempt burglary dwelling with intent to    steal"
+        },
+        "offenceDate": "2022-10-17",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 9,
+        "sentenceDate": "2022-11-15",
+        "courtCaseRef": "43SP0414422",
+        "courtLocation": "Oxford Crown Court",
+        "resultDescription": "Imprisonment"
+      },
+      "days": 27
+    },
+    {
+      "from": "2022-10-19",
+      "to": "2022-11-14",
+      "charge": {
+        "chargeId": 13,
+        "offence": {
+          "code": "TH68036",
+          "statute": "TH68",
+          "description": "Burglary dwelling and theft  - no violence"
+        },
+        "offenceDate": "2022-10-15",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 9,
+        "sentenceDate": "2022-11-15",
+        "courtCaseRef": "43SP0414422",
+        "courtLocation": "Oxford Crown Court",
+        "resultDescription": "Imprisonment"
+      },
+      "days": 27
+    },
+    {
+      "from": "2022-10-19",
+      "to": "2022-11-14",
+      "charge": {
+        "chargeId": 16,
+        "offence": {
+          "code": "TH68081",
+          "statute": "TH68",
+          "description": "Going equipped for burglary"
+        },
+        "offenceDate": "2022-10-16",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 2,
+        "sentenceDate": "2022-11-15",
+        "courtCaseRef": "43SP0414422",
+        "courtLocation": "Oxford Crown Court",
+        "resultDescription": "Imprisonment"
+      },
+      "days": 27
+    }
+  ],
+  "sentenceRemand": [
+    {
+      "from": "2022-10-19",
+      "to": "2022-11-14",
+      "charge": {
+        "chargeId": 8,
+        "offence": {
+          "code": "TH68036",
+          "statute": "TH68",
+          "description": "Burglary dwelling and theft  - no violence"
+        },
+        "offenceDate": "2022-10-16",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 1,
+        "sentenceDate": "2022-11-15",
+        "courtCaseRef": "43SP0414422",
+        "courtLocation": "Oxford Crown Court",
+        "resultDescription": "Imprisonment"
+      },
+      "days": 27
+    },
+    {
+      "from": "2021-01-11",
+      "to": "2021-04-21",
+      "charge": {
+        "chargeId": 19,
+        "offence": {
+          "code": "CJ88144",
+          "statute": "CJ88",
+          "description": "Possess knife blade / sharp pointed article in a public place - Criminal Justice Act 1988"
+        },
+        "offenceDate": "2021-01-09",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 23,
+        "sentenceDate": "2022-12-07",
+        "courtCaseRef": "S20220559",
+        "courtLocation": "Wood Green Crown Court",
+        "resultDescription": "Imprisonment"
+      },
+      "days": 101
+    },
+    {
+      "from": "2021-05-23",
+      "to": "2021-07-15",
+      "charge": {
+        "chargeId": 19,
+        "offence": {
+          "code": "CJ88144",
+          "statute": "CJ88",
+          "description": "Possess knife blade / sharp pointed article in a public place - Criminal Justice Act 1988"
+        },
+        "offenceDate": "2021-01-09",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 23,
+        "sentenceDate": "2022-12-07",
+        "courtCaseRef": "S20220559",
+        "courtLocation": "Wood Green Crown Court",
+        "resultDescription": "Imprisonment"
+      },
+      "days": 54
+    }
+  ]
+}
