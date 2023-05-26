@@ -75,7 +75,7 @@
       "days": 366
     }
   ],
-  "sentencePeriods": [
+  "intersectingSentences": [
     {
       "from": "2021-02-01",
       "to": "2022-05-02",

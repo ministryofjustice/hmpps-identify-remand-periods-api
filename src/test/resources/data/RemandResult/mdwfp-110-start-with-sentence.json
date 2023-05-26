@@ -111,7 +111,7 @@
       "days": 46
     }
   ],
-  "sentencePeriods": [
+  "intersectingSentences": [
     {
       "from": "2022-11-04",
       "to": "2022-11-24",
