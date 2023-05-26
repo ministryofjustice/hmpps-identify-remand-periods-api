@@ -110,5 +110,17 @@
       },
       "days": 46
     }
+  ],
+  "sentencePeriods": [
+    {
+      "from": "2022-11-04",
+      "to": "2022-11-24",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2022-11-04",
+        "bookingId": 1
+      },
+      "days": 21
+    }
   ]
 }

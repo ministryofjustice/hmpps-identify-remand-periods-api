@@ -30,8 +30,7 @@ class RemandCalculationService(
       .filter { it.charge.sentenceDate != null && it.charge.sentenceSequence != null }
       .map { Sentence(it.charge.sentenceSequence!!, it.charge.sentenceDate!!, it.charge.bookingId) }
       .distinctBy { it.sentenceDate }
-    val sentenceRemand = sentenceRemandService.extractSentenceRemand(remandCalculation.prisonerId, chargeRemand, sentenceDates)
-    return RemandResult(chargeRemand, sentenceRemand)
+    return sentenceRemandService.extractSentenceRemand(remandCalculation.prisonerId, chargeRemand, sentenceDates)
   }
 
   private fun remandClock(remandCalculation: RemandCalculation): List<Remand> {

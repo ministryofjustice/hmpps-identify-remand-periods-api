@@ -212,5 +212,27 @@
       },
       "days": 54
     }
+  ],
+  "sentencePeriods": [
+    {
+      "from": "2021-04-22",
+      "to": "2021-05-22",
+      "sentence": {
+        "sequence": 3,
+        "sentenceDate": "2021-04-22",
+        "bookingId": 2
+      },
+      "days": 31
+    },
+    {
+      "from": "2022-11-15",
+      "to": "2023-10-19",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2022-11-15",
+        "bookingId": 1
+      },
+      "days": 339
+    }
   ]
 }

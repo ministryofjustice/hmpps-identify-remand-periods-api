@@ -4,6 +4,7 @@ import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.service.CalculateReleaseDateService
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Remand
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandResult
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentencePeriod
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentenceRemandLoopTracker
@@ -13,7 +14,7 @@ class SentenceRemandService(
   private val calculateReleaseDateService: CalculateReleaseDateService,
 ) {
 
-  fun extractSentenceRemand(prisonerId: String, remandPeriods: List<Remand>, sentences: List<Sentence>): List<Remand> {
+  fun extractSentenceRemand(prisonerId: String, remandPeriods: List<Remand>, sentences: List<Sentence>): RemandResult {
     val loopTracker = SentenceRemandLoopTracker(remandPeriods, sentences)
     for (entry in loopTracker.sentenceDateToPeriodMap.entries.sortedBy { it.key }) {
       loopTracker.startNewSentenceDateLoop(entry)
@@ -22,7 +23,7 @@ class SentenceRemandService(
         if (loopTracker.shouldCalculateAReleaseDate(date)) {
           val sentence = sentences.find { it.sentenceDate == date }!!
           val sentenceReleaseDate = calculateReleaseDateService.calculateReleaseDate(prisonerId, loopTracker.final, sentence)
-          loopTracker.periodsServingSentence.add(SentencePeriod(date, sentenceReleaseDate))
+          loopTracker.periodsServingSentence.add(SentencePeriod(date, sentenceReleaseDate, sentence))
         }
         val next = loopTracker.findNextPeriod(date)
 
@@ -57,7 +58,11 @@ class SentenceRemandService(
         }
       }
     }
-    return loopTracker.final
+    return RemandResult(
+      remandPeriods,
+      loopTracker.final,
+      loopTracker.periodsServingSentence,
+    )
   }
 
   companion object {

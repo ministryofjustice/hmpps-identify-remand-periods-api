@@ -74,5 +74,17 @@
       },
       "days": 366
     }
+  ],
+  "sentencePeriods": [
+    {
+      "from": "2021-02-01",
+      "to": "2022-05-02",
+      "sentence": {
+        "sequence": 2,
+        "sentenceDate": "2021-02-01",
+        "bookingId": 1
+      },
+      "days": 456
+    }
   ]
 }
