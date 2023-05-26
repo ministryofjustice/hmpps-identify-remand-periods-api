@@ -110,5 +110,6 @@
       },
       "days": 1
     }
-  ]
+  ],
+  "intersectingSentences": []
 }

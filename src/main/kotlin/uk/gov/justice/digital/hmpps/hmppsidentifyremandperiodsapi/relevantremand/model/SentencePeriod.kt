@@ -5,4 +5,5 @@ import java.time.LocalDate
 data class SentencePeriod(
   override val from: LocalDate,
   override val to: LocalDate,
+  val sentence: Sentence,
 ) : Period

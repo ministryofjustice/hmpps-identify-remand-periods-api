@@ -86,5 +86,17 @@
       },
       "days": 49
     }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2022-11-28",
+      "to": "2022-11-28",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2022-11-28",
+        "bookingId": 1
+      },
+      "days": 1
+    }
   ]
 }

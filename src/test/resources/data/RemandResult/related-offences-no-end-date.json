@@ -38,5 +38,6 @@
       },
       "days": 15
     }
-  ]
+  ],
+  "intersectingSentences": []
 }
