@@ -54,7 +54,7 @@ class SentenceRemandService(
         if (current?.to == date) {
           // Period being closed by its end date.
           loopTracker.final.add(current)
-          current = loopTracker.open.firstOrNull()
+          current = loopTracker.open.firstOrNull()?.copy(from = date.plusDays(1))
         }
       }
     }

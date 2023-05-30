@@ -1,0 +1,133 @@
+{
+  "chargeRemand": [
+    {
+      "from": "2021-11-13",
+      "to": "2022-09-16",
+      "charge": {
+        "chargeId": 1,
+        "offence": {
+          "code": "SC15004",
+          "statute": "SC15",
+          "description": "Engage in controlling / coercive behaviour in an intimate / family relationship"
+        },
+        "offenceDate": "2021-05-01",
+        "bookingId": 1,
+        "offenceEndDate": "2021-11-12",
+        "sentenceSequence": 2,
+        "sentenceDate": "2023-02-01",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 308
+    },
+    {
+      "from": "2022-12-07",
+      "to": "2023-01-31",
+      "charge": {
+        "chargeId": 1,
+        "offence": {
+          "code": "SC15004",
+          "statute": "SC15",
+          "description": "Engage in controlling / coercive behaviour in an intimate / family relationship"
+        },
+        "offenceDate": "2021-05-01",
+        "bookingId": 1,
+        "offenceEndDate": "2021-11-12",
+        "sentenceSequence": 2,
+        "sentenceDate": "2023-02-01",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 56
+    },
+    {
+      "from": "2022-01-06",
+      "to": "2023-01-31",
+      "charge": {
+        "chargeId": 2,
+        "offence": {
+          "code": "OF61102",
+          "statute": "OF61",
+          "description": "Assault a person thereby occasioning them actual bodily harm"
+        },
+        "offenceDate": "2021-06-07",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 1,
+        "sentenceDate": "2023-02-01",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 391
+    }
+  ],
+  "sentenceRemand": [
+    {
+      "from": "2021-11-13",
+      "to": "2022-09-16",
+      "charge": {
+        "chargeId": 1,
+        "offence": {
+          "code": "SC15004",
+          "statute": "SC15",
+          "description": "Engage in controlling / coercive behaviour in an intimate / family relationship"
+        },
+        "offenceDate": "2021-05-01",
+        "bookingId": 1,
+        "offenceEndDate": "2021-11-12",
+        "sentenceSequence": 2,
+        "sentenceDate": "2023-02-01",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 308
+    },
+    {
+      "from": "2022-09-17",
+      "to": "2022-12-06",
+      "charge": {
+        "chargeId": 2,
+        "offence": {
+          "code": "OF61102",
+          "statute": "OF61",
+          "description": "Assault a person thereby occasioning them actual bodily harm"
+        },
+        "offenceDate": "2021-06-07",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 1,
+        "sentenceDate": "2023-02-01",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 81
+    },
+    {
+      "from": "2022-12-07",
+      "to": "2023-01-31",
+      "charge": {
+        "chargeId": 1,
+        "offence": {
+          "code": "SC15004",
+          "statute": "SC15",
+          "description": "Engage in controlling / coercive behaviour in an intimate / family relationship"
+        },
+        "offenceDate": "2021-05-01",
+        "bookingId": 1,
+        "offenceEndDate": "2021-11-12",
+        "sentenceSequence": 2,
+        "sentenceDate": "2023-02-01",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 56
+    }
+  ],
+  "intersectingSentences": []
+}
