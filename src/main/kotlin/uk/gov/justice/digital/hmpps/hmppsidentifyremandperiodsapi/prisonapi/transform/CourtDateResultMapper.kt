@@ -161,7 +161,7 @@ fun mapCourtDateResult(courtDateResult: PrisonApiCourtDateResult): CourtDateType
     "4553" -> START
     "4554" -> CONTINUE
     "4555" -> STOP
-    "4561" -> STOP
+    "4561" -> START
     "4562" -> STOP
     "4563" -> START
     "4564" -> START
