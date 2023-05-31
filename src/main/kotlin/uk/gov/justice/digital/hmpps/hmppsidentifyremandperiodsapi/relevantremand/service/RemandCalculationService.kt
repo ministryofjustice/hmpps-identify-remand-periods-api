@@ -19,7 +19,6 @@ import java.time.LocalDate
 class RemandCalculationService(
   private val sentenceRemandService: SentenceRemandService,
 ) {
-
   fun calculate(remandCalculation: RemandCalculation): RemandResult {
     if (remandCalculation.charges.isEmpty()) {
       throw UnsupportedCalculationException("There are no charges to calculate")
@@ -29,7 +28,6 @@ class RemandCalculationService(
     val sentenceDates = remandCalculation.charges
       .filter { it.charge.sentenceDate != null && it.charge.sentenceSequence != null }
       .map { Sentence(it.charge.sentenceSequence!!, it.charge.sentenceDate!!, it.charge.bookingId) }
-      .distinctBy { it.sentenceDate }
     return sentenceRemandService.extractSentenceRemand(remandCalculation.prisonerId, chargeRemand, sentenceDates)
   }
 

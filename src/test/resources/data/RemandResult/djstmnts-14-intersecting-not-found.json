@@ -1,0 +1,270 @@
+{
+  "chargeRemand": [
+    {
+      "from": "2019-01-12",
+      "to": "2019-04-15",
+      "charge": {
+        "chargeId": 1,
+        "offence": {
+          "code": "MD71234",
+          "statute": "MD71",
+          "description": "Possess with intent to supply a controlled drug of Class A - Crack Cocaine"
+        },
+        "offenceDate": "2019-01-10",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 1,
+        "sentenceDate": "2019-04-16",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 94
+    },
+    {
+      "from": "2019-01-12",
+      "to": "2019-04-15",
+      "charge": {
+        "chargeId": 2,
+        "offence": {
+          "code": "MD71231",
+          "statute": "MD71",
+          "description": "Possess with intent to supply a controlled drug of Class A - Heroin"
+        },
+        "offenceDate": "2019-01-10",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 1,
+        "sentenceDate": "2019-04-16",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 94
+    },
+    {
+      "from": "2019-01-12",
+      "to": "2019-04-15",
+      "charge": {
+        "chargeId": 3,
+        "offence": {
+          "code": "PC53001",
+          "statute": "PC53",
+          "description": "Possess an offensive weapon in a public place"
+        },
+        "offenceDate": "2019-01-10",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": null,
+        "sentenceDate": null,
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 94
+    },
+    {
+      "from": "2019-01-12",
+      "to": "2019-04-15",
+      "charge": {
+        "chargeId": 4,
+        "offence": {
+          "code": "MD71231",
+          "statute": "MD71",
+          "description": "Possess with intent to supply a controlled drug of Class A - Heroin"
+        },
+        "offenceDate": "2018-11-22",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 2,
+        "sentenceDate": "2019-04-16",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 94
+    },
+    {
+      "from": "2019-01-12",
+      "to": "2019-04-15",
+      "charge": {
+        "chargeId": 5,
+        "offence": {
+          "code": "MD71234",
+          "statute": "MD71",
+          "description": "Possess with intent to supply a controlled drug of Class A - Crack Cocaine"
+        },
+        "offenceDate": "2018-11-22",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 2,
+        "sentenceDate": "2019-04-16",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 94
+    },
+    {
+      "from": "2019-01-12",
+      "to": "2019-04-15",
+      "charge": {
+        "chargeId": 10,
+        "offence": {
+          "code": "PC53001",
+          "statute": "PC53",
+          "description": "Possess an offensive weapon in a public place"
+        },
+        "offenceDate": "2019-01-09",
+        "bookingId": 2,
+        "offenceEndDate": "2019-01-12",
+        "sentenceSequence": null,
+        "sentenceDate": null,
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 94
+    },
+    {
+      "from": "2022-01-17",
+      "to": "2023-01-29",
+      "charge": {
+        "chargeId": 11,
+        "offence": {
+          "code": "COML020",
+          "statute": "COML",
+          "description": "Kidnap - common law"
+        },
+        "offenceDate": "2022-01-15",
+        "bookingId": 2,
+        "offenceEndDate": null,
+        "sentenceSequence": null,
+        "sentenceDate": null,
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 378
+    },
+    {
+      "from": "2022-01-17",
+      "to": "2023-01-29",
+      "charge": {
+        "chargeId": 12,
+        "offence": {
+          "code": "RT88334",
+          "statute": "RT88",
+          "description": "Drive a motor vehicle otherwise than in accordance with a licence - endorsable offence"
+        },
+        "offenceDate": "2022-01-15",
+        "bookingId": 2,
+        "offenceEndDate": null,
+        "sentenceSequence": null,
+        "sentenceDate": null,
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 378
+    },
+    {
+      "from": "2022-01-17",
+      "to": "2023-01-29",
+      "charge": {
+        "chargeId": 13,
+        "offence": {
+          "code": "RT88191",
+          "statute": "RT88",
+          "description": "Use a motor vehicle on a road / public place without third party insurance"
+        },
+        "offenceDate": "2022-01-15",
+        "bookingId": 2,
+        "offenceEndDate": null,
+        "sentenceSequence": null,
+        "sentenceDate": null,
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 378
+    },
+    {
+      "from": "2022-01-17",
+      "to": "2023-01-29",
+      "charge": {
+        "chargeId": 14,
+        "offence": {
+          "code": "TH68023",
+          "statute": "TH68",
+          "description": "Robbery"
+        },
+        "offenceDate": "2022-01-15",
+        "bookingId": 2,
+        "offenceEndDate": null,
+        "sentenceSequence": 3,
+        "sentenceDate": "2023-01-30",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 378
+    }
+  ],
+  "sentenceRemand": [
+    {
+      "from": "2019-01-12",
+      "to": "2019-04-15",
+      "charge": {
+        "chargeId": 1,
+        "offence": {
+          "code": "MD71234",
+          "statute": "MD71",
+          "description": "Possess with intent to supply a controlled drug of Class A - Crack Cocaine"
+        },
+        "offenceDate": "2019-01-10",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 1,
+        "sentenceDate": "2019-04-16",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 94
+    },
+    {
+      "from": "2022-09-13",
+      "to": "2023-01-29",
+      "charge": {
+        "chargeId": 14,
+        "offence": {
+          "code": "TH68023",
+          "statute": "TH68",
+          "description": "Robbery"
+        },
+        "offenceDate": "2022-01-15",
+        "bookingId": 2,
+        "offenceEndDate": null,
+        "sentenceSequence": 3,
+        "sentenceDate": "2023-01-30",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 139
+    }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2019-04-16",
+      "to": "2022-09-12",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2019-04-16",
+        "bookingId": 2
+      },
+      "days": 1247
+    }
+  ]
+}
