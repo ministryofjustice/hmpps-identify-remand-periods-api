@@ -48,7 +48,7 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
 
   fun stubImprisonedCourtCaseResults() {
     stubFor(
-      get("/prison-api/api/digital-warrant/court-date-results/${PrisonApiExtension.IMPRISONED_PRISONER}")
+      get("/prison-api/api/court-date-results/${PrisonApiExtension.IMPRISONED_PRISONER}")
         .willReturn(
           aResponse()
             .withHeader("Content-Type", "application/json")
@@ -156,7 +156,7 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
   }
   fun stubBailPrisoner() {
     stubFor(
-      get("/prison-api/api/digital-warrant/court-date-results/${PrisonApiExtension.BAIL_PRISONER}")
+      get("/prison-api/api/court-date-results/${PrisonApiExtension.BAIL_PRISONER}")
         .willReturn(
           aResponse()
             .withHeader("Content-Type", "application/json")
@@ -246,7 +246,7 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
   }
   fun stubIntersectingSentence() {
     stubFor(
-      get("/prison-api/api/digital-warrant/court-date-results/${PrisonApiExtension.INTERSECTING_PRISONER}")
+      get("/prison-api/api/court-date-results/${PrisonApiExtension.INTERSECTING_PRISONER}")
         .willReturn(
           aResponse()
             .withHeader("Content-Type", "application/json")
@@ -367,7 +367,7 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
   }
   fun stubCrdValidation() {
     stubFor(
-      get("/prison-api/api/digital-warrant/court-date-results/${PrisonApiExtension.CRD_VALIDATION_PRISONER}")
+      get("/prison-api/api//court-date-results/${PrisonApiExtension.CRD_VALIDATION_PRISONER}")
         .willReturn(
           aResponse()
             .withHeader("Content-Type", "application/json")
@@ -488,7 +488,7 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
   }
   fun stubRelatedOffencesPrisoner() {
     stubFor(
-      get("/prison-api/api/digital-warrant/court-date-results/${PrisonApiExtension.RELATED_PRISONER}")
+      get("/prison-api/api/court-date-results/${PrisonApiExtension.RELATED_PRISONER}")
         .willReturn(
           aResponse()
             .withHeader("Content-Type", "application/json")
@@ -579,7 +579,7 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
 
   fun stubMultipleOffences() {
     stubFor(
-      get("/prison-api/api/digital-warrant/court-date-results/${PrisonApiExtension.MULTIPLE_OFFENCES_PRISONER}")
+      get("/prison-api/api/court-date-results/${PrisonApiExtension.MULTIPLE_OFFENCES_PRISONER}")
         .willReturn(
           aResponse()
             .withHeader("Content-Type", "application/json")

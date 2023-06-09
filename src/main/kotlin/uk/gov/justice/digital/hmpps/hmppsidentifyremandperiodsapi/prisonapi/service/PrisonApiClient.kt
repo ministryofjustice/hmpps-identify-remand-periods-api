@@ -16,7 +16,7 @@ class PrisonApiClient(@Qualifier("prisonApiWebClient") private val webClient: We
   fun getCourtDateResults(prisonerId: String): List<PrisonApiCourtDateResult> {
     log.info("Requesting court case results for prisoner $prisonerId")
     return webClient.get()
-      .uri("/api/digital-warrant/court-date-results/$prisonerId")
+      .uri("/api/court-date-results/$prisonerId")
       .retrieve()
       .bodyToMono(typeReference<List<PrisonApiCourtDateResult>>())
       .block()!!
