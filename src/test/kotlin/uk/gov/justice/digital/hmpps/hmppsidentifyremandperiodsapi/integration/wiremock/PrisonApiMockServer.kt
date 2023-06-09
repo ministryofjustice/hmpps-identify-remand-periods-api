@@ -367,7 +367,7 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
   }
   fun stubCrdValidation() {
     stubFor(
-      get("/prison-api/api//court-date-results/${PrisonApiExtension.CRD_VALIDATION_PRISONER}")
+      get("/prison-api/api/court-date-results/${PrisonApiExtension.CRD_VALIDATION_PRISONER}")
         .willReturn(
           aResponse()
             .withHeader("Content-Type", "application/json")
