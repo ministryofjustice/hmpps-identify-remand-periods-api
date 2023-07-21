@@ -146,4 +146,19 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
 
     assertThat(result.userMessage).contains("Unsupported sentence type 2020 Uknown")
   }
+
+  @Test
+  fun `Run calculation for a prisoner that has no offences dates`() {
+    val result = webTestClient.post()
+      .uri("/relevant-remand/${PrisonApiExtension.NO_OFFENCE_DATES}")
+      .accept(MediaType.APPLICATION_JSON)
+      .headers(setAuthorisation(roles = listOf("ROLE_MANAGE_DIGITAL_WARRANT")))
+      .exchange()
+      .expectStatus().isEqualTo(HttpStatus.UNPROCESSABLE_ENTITY)
+      .expectHeader().contentType(MediaType.APPLICATION_JSON)
+      .expectBody(ErrorResponse::class.java)
+      .returnResult().responseBody!!
+
+    assertThat(result.userMessage).contains("There are no offences with offence dates on the active booking.")
+  }
 }

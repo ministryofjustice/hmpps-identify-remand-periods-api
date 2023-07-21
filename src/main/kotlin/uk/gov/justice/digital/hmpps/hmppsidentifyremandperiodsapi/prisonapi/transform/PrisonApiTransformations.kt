@@ -47,6 +47,9 @@ private fun findEarliestActiveOffenceDate(results: List<PrisonApiCourtDateResult
   return results
     .filter { it.bookingId == prisonerDetails.bookingId }
     .mapNotNull { it.charge.offenceDate }
+    .ifEmpty {
+      throw UnsupportedCalculationException("There are no offences with offence dates on the active booking.")
+    }
     .min()
 }
 
