@@ -21,6 +21,7 @@ class PrisonApiExtension : BeforeAllCallback, AfterAllCallback, BeforeEachCallba
     const val CRD_VALIDATION_PRISONER = "CRDVAL"
     const val RELATED_PRISONER = "RELATED"
     const val MULTIPLE_OFFENCES_PRISONER = "MULTI"
+    const val NO_OFFENCE_DATES = "OFF_DATE"
   }
   override fun beforeAll(context: ExtensionContext) {
     prisonApi.start()
@@ -30,6 +31,7 @@ class PrisonApiExtension : BeforeAllCallback, AfterAllCallback, BeforeEachCallba
     prisonApi.stubMultipleOffences()
     prisonApi.stubIntersectingSentence()
     prisonApi.stubCrdValidation()
+    prisonApi.stubActiveBookingHasNoOffenceDates()
   }
 
   override fun beforeEach(context: ExtensionContext) {
@@ -1159,6 +1161,58 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                 {
                   "bookingId": 2,
                   "offenderNo": "${PrisonApiExtension.MULTIPLE_OFFENCES_PRISONER}"
+                }
+              """.trimIndent(),
+            )
+            .withStatus(200),
+        ),
+    )
+  }
+
+  fun stubActiveBookingHasNoOffenceDates() {
+    stubFor(
+      get("/prison-api/api/court-date-results/${PrisonApiExtension.NO_OFFENCE_DATES}")
+        .willReturn(
+          aResponse()
+            .withHeader("Content-Type", "application/json")
+            .withBody(
+              """
+              [
+                 {
+                    "id":1,
+                    "date":"2022-10-13",
+                    "resultCode":"4531",
+                    "resultDescription":"Remand in Custody (Bail Refused)",
+                    "resultDispositionCode": "I",
+                    "charge":{
+                       "chargeId":1,
+                       "offenceCode":"SX03163A",
+                       "offenceStatue":"SX03",
+                       "offenceDate": null,
+                       "offenceDescription": "An offence",
+                       "guilty":false,
+                       "courtCaseId":1,
+                       "sentenceSequence":1,
+                       "sentenceDate": "2015-12-13"
+                    },
+                    "bookingId":1
+                 }
+              ]
+              """.trimIndent(),
+            )
+            .withStatus(200),
+        ),
+    )
+    stubFor(
+      get("/prison-api/api/offenders/${PrisonApiExtension.NO_OFFENCE_DATES}")
+        .willReturn(
+          aResponse()
+            .withHeader("Content-Type", "application/json")
+            .withBody(
+              """
+                {
+                  "bookingId": 1,
+                  "offenderNo": "${PrisonApiExtension.NO_OFFENCE_DATES}"
                 }
               """.trimIndent(),
             )
