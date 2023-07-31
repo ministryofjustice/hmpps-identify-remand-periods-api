@@ -33,7 +33,8 @@ class RemandCalculationServiceTest {
         calculateReleaseDateService.calculateReleaseDate(
           eq(example.remandCalculation.prisonerId),
           any(),
-          eq(Sentence(it.sentenceSequence, it.sentenceAt, it.bookingId)),
+          eq(Sentence(it.sentenceSequence, it.sentenceAt, it.recallDate, it.bookingId)),
+          eq(it.calculateAt)
         ),
       ).thenReturn(it.release)
     }

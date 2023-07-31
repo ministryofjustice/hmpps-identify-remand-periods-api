@@ -27,7 +27,7 @@ class RemandCalculationService(
     val chargeRemand = remandClock(charges)
     val sentenceDates = remandCalculation.charges
       .filter { it.charge.sentenceDate != null && it.charge.sentenceSequence != null }
-      .map { Sentence(it.charge.sentenceSequence!!, it.charge.sentenceDate!!, it.charge.bookingId) }
+      .map { Sentence(it.charge.sentenceSequence!!, it.charge.sentenceDate!!, it.dates.find { date -> date.isRecallEvent }?.date, it.charge.bookingId) }
     return sentenceRemandService.extractSentenceRemand(remandCalculation.prisonerId, chargeRemand, sentenceDates)
   }
 
