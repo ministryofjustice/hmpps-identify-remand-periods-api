@@ -70,6 +70,6 @@ class SentenceRemandLoopTracker(
 
   /* If we've reached a sentence period then calculate the release dates for it. */
   fun shouldCalculateAReleaseDate(date: LocalDate): Boolean {
-    return sentences.any { it.sentenceDate == date } && sentences.maxOf { it.sentenceDate } != date && periodsServingSentence.none { it.from == date }
+    return sentences.any { it.sentenceDate == date || it.recallDate == date } && sentences.maxOf { it.sentenceDate } != date && periodsServingSentence.none { it.from == date }
   }
 }

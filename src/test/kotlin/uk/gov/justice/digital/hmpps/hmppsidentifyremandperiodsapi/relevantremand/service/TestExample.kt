@@ -13,12 +13,11 @@ data class Sentences(
   val sentenceSequence: Int,
   val sentenceAt: LocalDate,
   val recallDate: LocalDate? = null,
-  val calculations: List<Calculations>
+  val calculations: List<Calculations>,
 )
-
 
 data class Calculations(
   val calculateAt: LocalDate,
   val release: LocalDate,
-  val postRecallReleaseDate: LocalDate? = null
+  val postRecallReleaseDate: LocalDate? = null,
 )

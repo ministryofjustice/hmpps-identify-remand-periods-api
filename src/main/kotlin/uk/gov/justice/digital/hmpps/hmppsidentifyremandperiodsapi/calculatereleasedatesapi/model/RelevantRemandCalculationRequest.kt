@@ -6,5 +6,5 @@ import java.time.LocalDate
 data class RelevantRemandCalculationRequest(
   val relevantRemands: List<RelevantRemand>,
   val sentence: Sentence,
-  val calculateAt: LocalDate
+  val calculateAt: LocalDate,
 )

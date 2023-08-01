@@ -8,7 +8,6 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentencePeriod
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentenceRemandLoopTracker
-import java.time.LocalDate
 
 @Service
 class SentenceRemandService(
@@ -22,8 +21,8 @@ class SentenceRemandService(
       var current: Remand? = null
       for (date in loopTracker.importantDates) {
         if (loopTracker.shouldCalculateAReleaseDate(date)) {
-          val sentencesToCalculate = sentences.filter { it.sentenceDate == date || it.recallDate == date}.distinctBy { "${date}${it.bookingId}" }
-          val sentenceReleaseDate = sentencesToCalculate.map { it to calculateReleaseDateService.calculateReleaseDate(prisonerId, loopTracker.final, it, date) }.maxBy {it.second}
+          val sentencesToCalculate = sentences.filter { it.sentenceDate == date || it.recallDate == date }.distinctBy { "${date}${it.bookingId}" }
+          val sentenceReleaseDate = sentencesToCalculate.map { it to calculateReleaseDateService.calculateReleaseDate(prisonerId, loopTracker.final, it, date) }.maxBy { it.second }
           loopTracker.periodsServingSentence.add(SentencePeriod(date, sentenceReleaseDate.second, sentenceReleaseDate.first))
         }
         val next = loopTracker.findNextPeriod(date)

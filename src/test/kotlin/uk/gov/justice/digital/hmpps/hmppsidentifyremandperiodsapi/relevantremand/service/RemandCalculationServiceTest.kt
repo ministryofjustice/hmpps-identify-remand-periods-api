@@ -27,16 +27,24 @@ class RemandCalculationServiceTest {
 
     val example = TestUtil.objectMapper().readValue(ClassPathResource("/data/RemandCalculation/$exampleName.json").file, TestExample::class.java)
 
-    example.releaseDates.forEach {
-      log.info("Stubbing release dates for $exampleName: $it")
-      whenever(
-        calculateReleaseDateService.calculateReleaseDate(
-          eq(example.remandCalculation.prisonerId),
-          any(),
-          eq(Sentence(it.sentenceSequence, it.sentenceAt, it.recallDate, it.bookingId)),
-          eq(it.calculateAt)
-        ),
-      ).thenReturn(it.release)
+    example.sentences.forEach { sentence ->
+      sentence.calculations.forEach { calculation ->
+        log.info("Stubbing release dates for $exampleName: $sentence $calculation")
+        whenever(
+          calculateReleaseDateService.calculateReleaseDate(
+            eq(example.remandCalculation.prisonerId),
+            any(),
+            eq(Sentence(sentence.sentenceSequence, sentence.sentenceAt, sentence.recallDate, sentence.bookingId)),
+            eq(calculation.calculateAt),
+          ),
+        ).thenAnswer {
+          if (calculation.calculateAt == sentence.sentenceAt) {
+            calculation.release
+          } else {
+            calculation.postRecallReleaseDate
+          }
+        }
+      }
     }
 
     val remandResult: RemandResult

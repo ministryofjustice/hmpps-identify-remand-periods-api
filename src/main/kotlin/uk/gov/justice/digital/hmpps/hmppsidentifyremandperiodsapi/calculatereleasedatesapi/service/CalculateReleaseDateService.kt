@@ -19,7 +19,7 @@ class CalculateReleaseDateService(
     val request = RelevantRemandCalculationRequest(
       remand.map { RelevantRemand(it.from, it.to, it.days.toInt(), it.charge.sentenceSequence!!) },
       sentence,
-      calculateAt
+      calculateAt,
     )
     val result: RelevantRemandCalculationResult
     try {
