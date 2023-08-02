@@ -7,6 +7,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.START
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.STOP
 
+const val RECALL_COURT_EVENT = "1501"
 fun mapCourtDateResult(courtDateResult: PrisonApiCourtDateResult): CourtDateType {
   return when (courtDateResult.resultCode) {
     "4531" -> START
@@ -20,7 +21,7 @@ fun mapCourtDateResult(courtDateResult: PrisonApiCourtDateResult): CourtDateType
     "4534" -> START
     "4537" -> START
     "2053" -> STOP
-    "1501" -> STOP
+    RECALL_COURT_EVENT -> STOP
     "1115" -> STOP
     "1116" -> STOP
     "4530" -> STOP

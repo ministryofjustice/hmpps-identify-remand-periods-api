@@ -1,0 +1,114 @@
+{
+  "chargeRemand": [
+    {
+      "from": "2022-07-04",
+      "to": "2022-08-16",
+      "charge": {
+        "chargeId": 1,
+        "offence": {
+          "code": "TH68036",
+          "statute": "TH68",
+          "description": "Burglary dwelling and theft - no violence"
+        },
+        "offenceDate": "2022-06-18",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 1,
+        "sentenceDate": "2022-08-17",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 44
+    },
+    {
+      "from": "2023-05-16",
+      "to": "2023-06-29",
+      "charge": {
+        "chargeId": 9,
+        "offence": {
+          "code": "TH68036",
+          "statute": "TH68",
+          "description": "Burglary dwelling and theft - no violence"
+        },
+        "offenceDate": "2023-05-09",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 12,
+        "sentenceDate": "2023-06-30",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 45
+    }
+  ],
+  "sentenceRemand": [
+    {
+      "from": "2022-07-04",
+      "to": "2022-08-16",
+      "charge": {
+        "chargeId": 1,
+        "offence": {
+          "code": "TH68036",
+          "statute": "TH68",
+          "description": "Burglary dwelling and theft - no violence"
+        },
+        "offenceDate": "2022-06-18",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 1,
+        "sentenceDate": "2022-08-17",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 44
+    },
+    {
+      "from": "2023-05-16",
+      "to": "2023-05-17",
+      "charge": {
+        "chargeId": 9,
+        "offence": {
+          "code": "TH68036",
+          "statute": "TH68",
+          "description": "Burglary dwelling and theft - no violence"
+        },
+        "offenceDate": "2023-05-09",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 12,
+        "sentenceDate": "2023-06-30",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 2
+    }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2022-08-17",
+      "to": "2022-10-03",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2022-08-17",
+        "recallDate": null,
+        "bookingId": 1
+      },
+      "days": 48
+    },
+    {
+      "from": "2023-05-18",
+      "to": "2023-08-21",
+      "sentence": {
+        "sequence": 11,
+        "sentenceDate": "2022-08-17",
+        "recallDate": "2023-05-18",
+        "bookingId": 1
+      },
+      "days": 96
+    }
+  ]
+}

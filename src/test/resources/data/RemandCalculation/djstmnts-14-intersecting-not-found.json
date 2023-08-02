@@ -512,15 +512,25 @@
       }
     ]
   },
-  "releaseDates": [{
+  "sentences": [{
     "bookingId": 1,
     "sentenceSequence": 1,
     "sentenceAt": "2019-04-16",
-    "release": "2020-11-11"
+    "calculations": [
+      {
+        "calculateAt": "2019-04-16",
+        "release": "2020-11-11"
+      }
+    ]
   },{
     "bookingId": 2,
     "sentenceSequence": 1,
     "sentenceAt": "2019-04-16",
-    "release": "2022-09-12"
+    "calculations": [
+      {
+        "calculateAt": "2019-04-16",
+        "release": "2022-09-12"
+      }
+    ]
   }]
 }

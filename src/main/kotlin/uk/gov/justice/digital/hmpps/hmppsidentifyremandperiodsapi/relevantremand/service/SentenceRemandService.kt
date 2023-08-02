@@ -21,8 +21,8 @@ class SentenceRemandService(
       var current: Remand? = null
       for (date in loopTracker.importantDates) {
         if (loopTracker.shouldCalculateAReleaseDate(date)) {
-          val sentencesToCalculate = sentences.filter { it.sentenceDate == date }.distinctBy { "${it.sentenceDate}${it.bookingId}" }
-          val sentenceReleaseDate = sentencesToCalculate.map { it to calculateReleaseDateService.calculateReleaseDate(prisonerId, loopTracker.final, it) }.maxBy { it.second }
+          val sentencesToCalculate = sentences.filter { it.sentenceDate == date || it.recallDate == date }.distinctBy { "${date}${it.bookingId}" }
+          val sentenceReleaseDate = sentencesToCalculate.map { it to calculateReleaseDateService.calculateReleaseDate(prisonerId, loopTracker.final, it, date) }.maxBy { it.second }
           loopTracker.periodsServingSentence.add(SentencePeriod(date, sentenceReleaseDate.second, sentenceReleaseDate.first))
         }
         val next = loopTracker.findNextPeriod(date)

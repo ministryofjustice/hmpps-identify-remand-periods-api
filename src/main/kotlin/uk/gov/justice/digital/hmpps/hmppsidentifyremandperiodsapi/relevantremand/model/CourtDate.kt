@@ -6,4 +6,5 @@ data class CourtDate(
   val date: LocalDate,
   val type: CourtDateType,
   val final: Boolean = false,
+  val isRecallEvent: Boolean = false,
 )

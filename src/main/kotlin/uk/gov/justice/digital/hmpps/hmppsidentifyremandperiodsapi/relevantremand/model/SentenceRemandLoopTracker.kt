@@ -46,7 +46,7 @@ class SentenceRemandLoopTracker(
     periods = entry.value
     open = mutableListOf()
     future = periods.toMutableList()
-    importantDates = ((periods + final).map { listOfNotNull(it.from, it.to, it.charge.sentenceDate) }.flatten() + listOfNotNull(entry.key) + periodsServingSentence.flatMap { listOf(it.from, it.to) }).distinct().sorted()
+    importantDates = ((periods + final).map { listOfNotNull(it.from, it.to, it.charge.sentenceDate) }.flatten() + listOfNotNull(entry.key) + periodsServingSentence.flatMap { listOf(it.from, it.to) } + sentences.mapNotNull { it.recallDate }).distinct().sorted()
   }
 
   /* Each date check if any periods are now closed or now open and pick which period is next. */
@@ -70,6 +70,6 @@ class SentenceRemandLoopTracker(
 
   /* If we've reached a sentence period then calculate the release dates for it. */
   fun shouldCalculateAReleaseDate(date: LocalDate): Boolean {
-    return sentences.any { it.sentenceDate == date } && sentences.maxOf { it.sentenceDate } != date && periodsServingSentence.none { it.from == date }
+    return sentences.any { it.sentenceDate == date || it.recallDate == date } && sentences.maxOf { it.sentenceDate } != date && periodsServingSentence.none { it.from == date }
   }
 }

@@ -15,10 +15,11 @@ class CalculateReleaseDateService(
   private val calculateReleaseDatesApiClient: CalculateReleaseDatesApiClient,
 ) {
 
-  fun calculateReleaseDate(prisonerId: String, remand: List<Remand>, sentence: Sentence): LocalDate {
+  fun calculateReleaseDate(prisonerId: String, remand: List<Remand>, sentence: Sentence, calculateAt: LocalDate): LocalDate {
     val request = RelevantRemandCalculationRequest(
       remand.map { RelevantRemand(it.from, it.to, it.days.toInt(), it.charge.sentenceSequence!!) },
       sentence,
+      calculateAt,
     )
     val result: RelevantRemandCalculationResult
     try {
@@ -35,7 +36,11 @@ class CalculateReleaseDateService(
         }",
       )
     }
-    return result.releaseDate!!
+    if (sentence.recallDate == calculateAt) {
+      return result.postRecallReleaseDate!!
+    } else {
+      return result.releaseDate!!
+    }
   }
 
   companion object {

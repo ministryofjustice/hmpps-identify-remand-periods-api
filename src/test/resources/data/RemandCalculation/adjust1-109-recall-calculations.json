@@ -1,0 +1,258 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "charges": [
+      {
+        "charge": {
+          "chargeId": 1,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft - no violence"
+          },
+          "offenceDate": "2022-06-18",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 1,
+          "sentenceDate": "2022-08-17"
+        },
+        "dates": [
+          {
+            "date": "2022-07-04",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-08-05",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2022-08-17",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft - no violence"
+          },
+          "offenceDate": "2021-06-18",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 11,
+          "sentenceDate": "2022-08-17"
+        },
+        "dates": [
+          {
+            "date": "2022-08-17",
+            "type": "STOP",
+            "final": true
+          },
+          {
+            "date": "2023-05-18",
+            "type": "STOP",
+            "final": true,
+            "isRecallEvent": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4,
+          "offence": {
+            "code": "COML016",
+            "statute": "COML",
+            "description": "Escape from lawful custody"
+          },
+          "offenceDate": "2021-06-18",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 11,
+          "sentenceDate": "2022-08-17"
+        },
+        "dates": [
+          {
+            "date": "2022-08-17",
+            "type": "STOP",
+            "final": true
+          },
+          {
+            "date": "2023-05-18",
+            "type": "STOP",
+            "final": true,
+            "isRecallEvent": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5,
+          "offence": {
+            "code": "COML016",
+            "statute": "COML",
+            "description": "Escape from lawful custody"
+          },
+          "offenceDate": "2021-06-23",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 3,
+          "sentenceDate": "2022-08-17"
+        },
+        "dates": [
+          {
+            "date": "2022-08-17",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft - no violence"
+          },
+          "offenceDate": "2021-01-29",
+          "bookingId": 1,
+          "offenceEndDate": "2021-01-31",
+          "sentenceSequence": 2,
+          "sentenceDate": "2022-08-17"
+        },
+        "dates": [
+          {
+            "date": "2022-08-17",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 9,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft - no violence"
+          },
+          "offenceDate": "2023-05-09",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 12,
+          "sentenceDate": "2023-06-30"
+        },
+        "dates": [
+          {
+            "date": "2023-05-16",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2023-06-14",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2023-06-30",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 10,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft - no violence"
+          },
+          "offenceDate": "2023-05-09",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 12,
+          "sentenceDate": "2023-06-30"
+        },
+        "dates": [
+          {
+            "date": "2023-05-16",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2023-06-14",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2023-06-30",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 11,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft - no violence"
+          },
+          "offenceDate": "2023-05-09",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 12,
+          "sentenceDate": "2023-06-30"
+        },
+        "dates": [
+          {
+            "date": "2023-05-16",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2023-06-14",
+            "type": "START",
+            "final": false
+          },
+          {
+            "date": "2023-06-30",
+            "type": "STOP",
+            "final": true
+          }
+        ]
+      }
+    ]
+  },
+  "sentences": [{
+    "bookingId": 1,
+    "sentenceSequence": 1,
+    "sentenceAt": "2022-08-17",
+    "calculations": [
+      {
+        "calculateAt": "2022-08-17",
+        "release": "2022-10-03"
+      }
+    ]
+  },{
+    "bookingId": 1,
+    "sentenceSequence": 11,
+    "sentenceAt": "2022-08-17",
+    "recallDate": "2023-05-18",
+    "calculations": [
+      {
+        "calculateAt": "2023-05-18",
+        "release": "2022-10-03",
+        "postRecallReleaseDate": "2023-08-21"
+      }
+    ]
+  }]
+}

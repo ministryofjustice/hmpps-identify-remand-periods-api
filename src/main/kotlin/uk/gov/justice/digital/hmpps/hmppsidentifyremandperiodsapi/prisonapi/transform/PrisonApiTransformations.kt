@@ -62,6 +62,7 @@ private fun transformToCourtDate(courtDateResult: PrisonApiCourtDateResult): Cou
     courtDateResult.date,
     transformToType(courtDateResult),
     courtDateResult.resultDispositionCode == "F",
+    courtDateResult.resultCode == RECALL_COURT_EVENT,
   )
 }
 
