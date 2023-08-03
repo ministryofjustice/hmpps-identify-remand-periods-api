@@ -11,24 +11,31 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Offence
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
 import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 fun transform(results: List<PrisonApiCourtDateResult>, prisonerDetails: PrisonerDetails): RemandCalculation {
   val earliestActiveOffenceDate: LocalDate = findEarliestActiveOffenceDate(results, prisonerDetails)
+  val issuesWithLegacyData = mutableListOf<String>()
   return RemandCalculation(
     prisonerDetails.offenderNo,
     results
       .filter { it.date.isAfter(earliestActiveOffenceDate) }
       .groupBy { it.charge.chargeId }
+      .filter {
+        if (it.value.first().charge.offenceDate == null) {
+          issuesWithLegacyData.add("Missing offence date for ${it.value.first().charge.offenceDescription}")
+          false
+        } else {
+          true
+        }
+      }
       .map {
         val charge = it.value.first().charge
-        if (charge.offenceDate == null) {
-          throw UnsupportedCalculationException("The charge ${charge.chargeId} has no offence date.")
-        }
         ChargeAndEvents(
           Charge(
             it.key,
             transform(charge),
-            charge.offenceDate,
+            charge.offenceDate!!,
             it.value.first().bookingId,
             charge.offenceEndDate,
             charge.sentenceSequence,
@@ -37,9 +44,10 @@ fun transform(results: List<PrisonApiCourtDateResult>, prisonerDetails: Prisoner
             charge.courtLocation,
             charge.resultDescription,
           ),
-          it.value.map { result -> transformToCourtDate(result) },
+          it.value.mapNotNull { result -> transformToCourtDate(result, issuesWithLegacyData) },
         )
       },
+    issuesWithLegacyData,
   )
 }
 
@@ -57,18 +65,23 @@ private fun transform(prisonApiCharge: PrisonApiCharge): Offence {
   return Offence(prisonApiCharge.offenceCode, prisonApiCharge.offenceStatue, prisonApiCharge.offenceDescription)
 }
 
-private fun transformToCourtDate(courtDateResult: PrisonApiCourtDateResult): CourtDate {
-  return CourtDate(
-    courtDateResult.date,
-    transformToType(courtDateResult),
-    courtDateResult.resultDispositionCode == "F",
-    courtDateResult.resultCode == RECALL_COURT_EVENT,
-  )
+private fun transformToCourtDate(courtDateResult: PrisonApiCourtDateResult, issuesWithLegacyData: MutableList<String>): CourtDate? {
+  val type = transformToType(courtDateResult, issuesWithLegacyData)
+  if (type != null) {
+    return CourtDate(
+      courtDateResult.date,
+      type,
+      courtDateResult.resultDispositionCode == "F",
+      courtDateResult.resultCode == RECALL_COURT_EVENT,
+    )
+  }
+  return null
 }
 
-private fun transformToType(courtDateResult: PrisonApiCourtDateResult): CourtDateType {
+private fun transformToType(courtDateResult: PrisonApiCourtDateResult, issuesWithLegacyData: MutableList<String>): CourtDateType? {
   if (courtDateResult.resultCode == null) {
-    throw UnsupportedCalculationException("The court event ${courtDateResult.id} has no outcome.")
+    issuesWithLegacyData.add("The court event on ${courtDateResult.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} for offence ${courtDateResult.charge.offenceDescription} committed at ${courtDateResult.charge.offenceDate!!.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} has a missing outcome")
+    return null
   }
-  return mapCourtDateResult(courtDateResult)
+  return mapCourtDateResult(courtDateResult, issuesWithLegacyData)
 }
