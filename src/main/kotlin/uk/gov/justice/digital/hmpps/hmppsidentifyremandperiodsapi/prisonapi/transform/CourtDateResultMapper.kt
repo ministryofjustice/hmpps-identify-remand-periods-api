@@ -1,14 +1,14 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.transform
 
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiCourtDateResult
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.CONTINUE
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.START
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.STOP
+import java.time.format.DateTimeFormatter
 
 const val RECALL_COURT_EVENT = "1501"
-fun mapCourtDateResult(courtDateResult: PrisonApiCourtDateResult): CourtDateType {
+fun mapCourtDateResult(courtDateResult: PrisonApiCourtDateResult, issuesWithLegacyData: MutableList<String>): CourtDateType? {
   return when (courtDateResult.resultCode) {
     "4531" -> START
     "4560" -> START
@@ -181,7 +181,8 @@ fun mapCourtDateResult(courtDateResult: PrisonApiCourtDateResult): CourtDateType
     "FPR" -> STOP
 
     else -> {
-      throw UnsupportedCalculationException("${courtDateResult.resultCode}: ${courtDateResult.resultDescription} is unsupported")
+      issuesWithLegacyData.add("The court event on ${courtDateResult.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} for offence ${courtDateResult.charge.offenceDescription} committed at ${courtDateResult.charge.offenceDate!!.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} has an unsupported outcome ${courtDateResult.resultCode}: ${courtDateResult.resultDescription}")
+      null
     }
   }
 }

@@ -14,7 +14,7 @@ class SentenceRemandService(
   private val calculateReleaseDateService: CalculateReleaseDateService,
 ) {
 
-  fun extractSentenceRemand(prisonerId: String, remandPeriods: List<Remand>, sentences: List<Sentence>): RemandResult {
+  fun extractSentenceRemand(prisonerId: String, remandPeriods: List<Remand>, sentences: List<Sentence>, issuesWithLegacyData: List<String>): RemandResult {
     val loopTracker = SentenceRemandLoopTracker(remandPeriods, sentences)
     for (entry in loopTracker.sentenceDateToPeriodMap.entries.sortedBy { it.key }) {
       loopTracker.startNewSentenceDateLoop(entry)
@@ -62,6 +62,7 @@ class SentenceRemandService(
       remandPeriods,
       loopTracker.final,
       loopTracker.periodsServingSentence,
+      issuesWithLegacyData,
     )
   }
 

@@ -132,6 +132,25 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "sentenceDate": "2015-12-13"
                     },
                     "bookingId":1
+                 },
+                 {
+                    "id":5,
+                    "date":"2022-12-13",
+                    "resultCode":null,
+                    "resultDescription":null,
+                    "resultDispositionCode": null,
+                    "charge":{
+                       "chargeId":1,
+                       "offenceCode":"SX03163A",
+                       "offenceStatue":"SX03",
+                       "offenceDate":"2021-05-05",
+                       "offenceDescription": "An offence",
+                       "guilty":false,
+                       "courtCaseId":1,
+                       "sentenceSequence":1,
+                       "sentenceDate": "2015-12-13"
+                    },
+                    "bookingId":1
                  }
               ]
               """.trimIndent(),
