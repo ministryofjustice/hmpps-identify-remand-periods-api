@@ -9,13 +9,13 @@ class AdjustmentsService(
   val adjustmentsApiClient: AdjustmentsApiClient,
 ) {
 
-  fun saveRemand(person: String, remand: List<AdjustmentDto>) {
+  fun saveRemand(person: String, identified: List<AdjustmentDto>) {
     val existingAdjustments = getAdjustments(person)
-    val create = remand.filter { new ->
+    val create = identified.filter { new ->
       existingAdjustments.none { existing -> remandSame(existing, new) }
     }
     val delete = existingAdjustments.filter { existing ->
-      remand.none { new -> remandSame(existing, new) }
+      identified.none { new -> remandSame(existing, new) }
     }
 
     delete.forEach {
