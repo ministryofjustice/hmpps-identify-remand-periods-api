@@ -1,16 +1,24 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.controller
 
+import com.github.tomakehurst.wiremock.client.WireMock
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.config.ErrorResponse
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.integration.IntegrationTestBase
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.integration.wiremock.AdjustmentsApiExtension
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.integration.wiremock.PrisonApiExtension
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.IdentifyRemandDecisionDto
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandResult
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.repository.IdentifyRemandDecisionRepository
 import java.time.LocalDate
 
 class RelevantRemandControllerIntTest : IntegrationTestBase() {
+
+  @Autowired
+  private lateinit var decisionRepository: IdentifyRemandDecisionRepository
 
   @Test
   fun `Run calculation for a imprisoned prisoner`() {
@@ -161,5 +169,55 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
       .returnResult().responseBody!!
 
     assertThat(result.userMessage).contains("There are no offences with offence dates on the active booking.")
+  }
+
+  @Test
+  fun `Save reject decision`() {
+    webTestClient.post()
+      .uri("/relevant-remand/${PrisonApiExtension.IMPRISONED_PRISONER}/decision")
+      .accept(MediaType.APPLICATION_JSON)
+      .contentType(MediaType.APPLICATION_JSON)
+      .bodyValue(
+        IdentifyRemandDecisionDto(
+          accepted = false,
+          rejectComment = "This is not correct",
+        ),
+      )
+      .headers(setAuthorisation(roles = listOf("ROLE_MANAGE_DIGITAL_WARRANT")))
+      .exchange()
+      .expectStatus().isCreated
+
+    val result = decisionRepository.findFirstByPersonOrderByDecisionAtDesc(PrisonApiExtension.IMPRISONED_PRISONER)
+
+    assertThat(result!!.decisionByUsername).isEqualTo("test-client")
+    assertThat(result.accepted).isFalse
+    assertThat(result.rejectComment).isEqualTo("This is not correct")
+    assertThat(result.days).isEqualTo(61)
+  }
+
+  @Test
+  fun `Save accept decision`() {
+    webTestClient.post()
+      .uri("/relevant-remand/${PrisonApiExtension.IMPRISONED_PRISONER}/decision")
+      .accept(MediaType.APPLICATION_JSON)
+      .contentType(MediaType.APPLICATION_JSON)
+      .bodyValue(
+        IdentifyRemandDecisionDto(
+          accepted = true,
+          rejectComment = null,
+        ),
+      )
+      .headers(setAuthorisation(roles = listOf("ROLE_MANAGE_DIGITAL_WARRANT")))
+      .exchange()
+      .expectStatus().isCreated
+
+    val result = decisionRepository.findFirstByPersonOrderByDecisionAtDesc(PrisonApiExtension.IMPRISONED_PRISONER)
+
+    assertThat(result!!.decisionByUsername).isEqualTo("test-client")
+    assertThat(result.rejectComment).isEqualTo(null)
+    assertThat(result.accepted).isTrue
+    assertThat(result.days).isEqualTo(61)
+
+    AdjustmentsApiExtension.adjustmentsApi.verify(WireMock.postRequestedFor(WireMock.urlEqualTo("/adjustments-api/adjustments")))
   }
 }

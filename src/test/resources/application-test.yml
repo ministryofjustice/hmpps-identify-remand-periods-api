@@ -1,3 +1,29 @@
+spring:
+
+  datasource:
+    url: 'jdbc:h2:mem:identify-remand-db;MODE=PostgreSQL;INIT=create domain if not exists jsonb as json'
+    username: identify_remand
+    password: dummy
+
+  flyway:
+    locations: classpath:/migration/h2,classpath:/migration/common
+    url: ${spring.datasource.url}
+    user: identify_remand
+    password: dummy
+
+  h2:
+    console:
+      enabled: true
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+
+  sql:
+    init:
+      continue-on-error: true
 server:
   shutdown: immediate
 
@@ -13,3 +39,7 @@ prison:
 calculate-release-dates:
   api:
     url: http://localhost:8333/calculate-release-dates-api
+
+adjustments:
+  api:
+    url: http://localhost:8334/adjustments-api

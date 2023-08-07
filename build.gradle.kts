@@ -1,8 +1,8 @@
 plugins {
-  id("uk.gov.justice.hmpps.gradle-spring-boot") version "5.1.4"
+  id("uk.gov.justice.hmpps.gradle-spring-boot") version "5.2.0"
   id("org.springdoc.openapi-gradle-plugin") version "1.6.0"
-  kotlin("plugin.spring") version "1.8.21"
-  id("jacoco")
+  kotlin("plugin.spring") version "1.8.22"
+  kotlin("plugin.jpa") version "1.8.22"
 }
 
 configurations {
@@ -18,7 +18,12 @@ dependencies {
   implementation("org.springframework.boot:spring-boot-starter-webflux")
   implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
   implementation("org.springframework.boot:spring-boot-starter-oauth2-resource-server")
+  implementation("org.springframework.boot:spring-boot-starter-data-jpa")
   implementation("org.springframework.boot:spring-boot-starter-actuator")
+
+  // Database dependencies
+  runtimeOnly("org.flywaydb:flyway-core")
+  runtimeOnly("org.postgresql:postgresql:42.6.0")
 
   compileOnly("javax.servlet:javax.servlet-api:4.0.1")
 
@@ -33,6 +38,7 @@ dependencies {
   // Test deps
   testImplementation("com.github.tomakehurst:wiremock-jre8-standalone:2.35.0")
   testImplementation("io.swagger.parser.v3:swagger-parser-v2-converter:2.1.13")
+  testImplementation("com.h2database:h2")
 }
 
 java {

@@ -13,12 +13,21 @@ import org.springframework.web.reactive.function.client.WebClient
 class WebClientConfiguration(
   @Value("\${prison.api.url}") private val prisonApiUri: String,
   @Value("\${calculate-release-dates.api.url}") private val calculateReleaseDatesApiUrl: String,
+  @Value("\${adjustments.api.url}") private val adjustmentsApiClient: String,
 ) {
 
   @Bean
   fun prisonApiWebClient(): WebClient {
     return WebClient.builder()
       .baseUrl(prisonApiUri)
+      .filter(addAuthHeaderFilterFunction())
+      .build()
+  }
+
+  @Bean
+  fun adjustmentsApiWebClient(): WebClient {
+    return WebClient.builder()
+      .baseUrl(adjustmentsApiClient)
       .filter(addAuthHeaderFilterFunction())
       .build()
   }
