@@ -1,14 +1,14 @@
 spring:
 
   datasource:
-    url: 'jdbc:h2:mem:release-dates-db;MODE=PostgreSQL;INIT=create domain if not exists jsonb as json'
-    username: create_vary
+    url: 'jdbc:h2:mem:identify-remand-db;MODE=PostgreSQL;INIT=create domain if not exists jsonb as json'
+    username: identify_remand
     password: dummy
 
   flyway:
     locations: classpath:/migration/h2,classpath:/migration/common
     url: ${spring.datasource.url}
-    user: create_vary
+    user: identify_remand
     password: dummy
 
   h2:
