@@ -15,10 +15,11 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.repository.IdentifyRemandDecisionRepository
 import java.time.LocalDate
 
-class RelevantRemandControllerIntTest: IntegrationTestBase() {
+class RelevantRemandControllerIntTest : IntegrationTestBase() {
 
   @Autowired
   private lateinit var decisionRepository: IdentifyRemandDecisionRepository
+
   @Test
   fun `Run calculation for a imprisoned prisoner`() {
     val result = webTestClient.post()
@@ -176,10 +177,12 @@ class RelevantRemandControllerIntTest: IntegrationTestBase() {
       .uri("/relevant-remand/${PrisonApiExtension.IMPRISONED_PRISONER}/decision")
       .accept(MediaType.APPLICATION_JSON)
       .contentType(MediaType.APPLICATION_JSON)
-      .bodyValue(IdentifyRemandDecisionDto(
-        accepted = false,
-        rejectComment = "This is not correct"
-      ))
+      .bodyValue(
+        IdentifyRemandDecisionDto(
+          accepted = false,
+          rejectComment = "This is not correct",
+        ),
+      )
       .headers(setAuthorisation(roles = listOf("ROLE_MANAGE_DIGITAL_WARRANT")))
       .exchange()
       .expectStatus().isCreated
@@ -198,10 +201,12 @@ class RelevantRemandControllerIntTest: IntegrationTestBase() {
       .uri("/relevant-remand/${PrisonApiExtension.IMPRISONED_PRISONER}/decision")
       .accept(MediaType.APPLICATION_JSON)
       .contentType(MediaType.APPLICATION_JSON)
-      .bodyValue(IdentifyRemandDecisionDto(
-        accepted = true,
-        rejectComment = null
-      ))
+      .bodyValue(
+        IdentifyRemandDecisionDto(
+          accepted = true,
+          rejectComment = null,
+        ),
+      )
       .headers(setAuthorisation(roles = listOf("ROLE_MANAGE_DIGITAL_WARRANT")))
       .exchange()
       .expectStatus().isCreated
@@ -212,7 +217,6 @@ class RelevantRemandControllerIntTest: IntegrationTestBase() {
     assertThat(result.rejectComment).isEqualTo(null)
     assertThat(result.accepted).isTrue
     assertThat(result.days).isEqualTo(61)
-
 
     AdjustmentsApiExtension.adjustmentsApi.verify(WireMock.postRequestedFor(WireMock.urlEqualTo("/adjustments-api/adjustments")))
   }

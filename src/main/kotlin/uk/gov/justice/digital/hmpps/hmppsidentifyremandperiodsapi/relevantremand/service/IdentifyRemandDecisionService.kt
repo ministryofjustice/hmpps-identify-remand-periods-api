@@ -16,20 +16,29 @@ class IdentifyRemandDecisionService(
   val prisonService: PrisonService,
   val remandCalculationService: RemandCalculationService,
   val identifyRemandDecisionRepository: IdentifyRemandDecisionRepository,
-  val adjustmentsService: AdjustmentsService
+  val adjustmentsService: AdjustmentsService,
 ) {
 
   fun saveDecision(person: String, decision: IdentifyRemandDecisionDto): IdentifyRemandDecisionDto {
     val courtDateResults = prisonService.getCourtDateResults(person)
     val prisonerDetails = prisonService.getOffenderDetail(person)
     val calculation = remandCalculationService.calculate(transform(courtDateResults, prisonerDetails))
-    val days = calculation.sentenceRemand.map {it.days}. reduceOrNull { acc, it -> acc + it } ?: 0
+    val days = calculation.sentenceRemand.map { it.days }.reduceOrNull { acc, it -> acc + it } ?: 0
 
     if (decision.accepted) {
-      adjustmentsService.saveRemand(person,
-        calculation.sentenceRemand.map { AdjustmentDto(id = null,
-          bookingId = it.charge.bookingId, sentenceSequence = it.charge.sentenceSequence, fromDate = it.from,
-          toDate = it.to, person = person) })
+      adjustmentsService.saveRemand(
+        person,
+        calculation.sentenceRemand.map {
+          AdjustmentDto(
+            id = null,
+            bookingId = it.charge.bookingId,
+            sentenceSequence = it.charge.sentenceSequence,
+            fromDate = it.from,
+            toDate = it.to,
+            person = person,
+          )
+        },
+      )
     }
 
     val result = identifyRemandDecisionRepository.save(
@@ -39,12 +48,12 @@ class IdentifyRemandDecisionService(
         person = person,
         days = days.toInt(),
         decisionByUsername = getCurrentAuthentication().principal,
-      )
+      ),
     )
     return mapToDto(result)
   }
 
-  fun getDecision(person:String): IdentifyRemandDecisionDto? {
+  fun getDecision(person: String): IdentifyRemandDecisionDto? {
     val decision = identifyRemandDecisionRepository.findFirstByPersonOrderByDecisionAtDesc(person)
     if (decision != null) {
       return mapToDto(decision)
@@ -52,13 +61,13 @@ class IdentifyRemandDecisionService(
     return null
   }
 
-  private fun mapToDto(decision: IdentifyRemandDecision):IdentifyRemandDecisionDto {
+  private fun mapToDto(decision: IdentifyRemandDecision): IdentifyRemandDecisionDto {
     return IdentifyRemandDecisionDto(
       accepted = decision.accepted,
       rejectComment = decision.rejectComment,
       days = decision.days,
       decisionOn = decision.decisionAt,
-      decisionBy = decision.decisionByUsername
+      decisionBy = decision.decisionByUsername,
     )
   }
 

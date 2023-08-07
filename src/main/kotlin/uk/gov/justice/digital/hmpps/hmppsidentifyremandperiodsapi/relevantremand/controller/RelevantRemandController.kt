@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.service.PrisonService
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.transform.transform
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.entity.IdentifyRemandDecision
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.IdentifyRemandDecisionDto
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandResult
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.service.IdentifyRemandDecisionService
@@ -32,7 +31,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 class RelevantRemandController(
   private val remandCalculationService: RemandCalculationService,
   private val prisonService: PrisonService,
-  private val remandDecisionService: IdentifyRemandDecisionService
+  private val remandDecisionService: IdentifyRemandDecisionService,
 ) {
   @PostMapping(value = ["/{prisonerId}"])
   @PreAuthorize("hasAnyRole('SYSTEM_USER', 'MANAGE_DIGITAL_WARRANT')")
@@ -59,6 +58,7 @@ class RelevantRemandController(
     val prisonerDetails = prisonService.getOffenderDetail(prisonerId)
     return remandCalculationService.calculate(transform(courtDateResults, prisonerDetails))
   }
+
   @PostMapping(value = ["/{prisonerId}/decision"])
   @PreAuthorize("hasAnyRole('SYSTEM_USER', 'MANAGE_DIGITAL_WARRANT')")
   @ResponseStatus(HttpStatus.CREATED)
@@ -77,7 +77,7 @@ class RelevantRemandController(
     @Parameter(required = true, example = "A1234AB", description = "The prisoners ID (aka nomsId)")
     @PathVariable("prisonerId")
     prisonerId: String,
-    @RequestBody remandDecision: IdentifyRemandDecisionDto
+    @RequestBody remandDecision: IdentifyRemandDecisionDto,
   ) {
     remandDecisionService.saveDecision(prisonerId, remandDecision)
   }
@@ -98,7 +98,7 @@ class RelevantRemandController(
   fun getDecision(
     @Parameter(required = true, example = "A1234AB", description = "The prisoners ID (aka nomsId)")
     @PathVariable("prisonerId")
-    prisonerId: String
+    prisonerId: String,
   ): IdentifyRemandDecisionDto? {
     return remandDecisionService.getDecision(prisonerId)
   }

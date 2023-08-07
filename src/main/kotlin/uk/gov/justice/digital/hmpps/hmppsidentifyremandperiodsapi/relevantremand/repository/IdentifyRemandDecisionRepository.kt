@@ -6,7 +6,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import java.util.UUID
 
 @Repository
-interface IdentifyRemandDecisionRepository: JpaRepository<IdentifyRemandDecision, UUID> {
+interface IdentifyRemandDecisionRepository : JpaRepository<IdentifyRemandDecision, UUID> {
 
   fun findFirstByPersonOrderByDecisionAtDesc(person: String): IdentifyRemandDecision?
 }

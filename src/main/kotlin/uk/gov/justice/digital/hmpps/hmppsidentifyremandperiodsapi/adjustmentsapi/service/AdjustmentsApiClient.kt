@@ -6,8 +6,6 @@ import org.springframework.core.ParameterizedTypeReference
 import org.springframework.stereotype.Service
 import org.springframework.web.reactive.function.client.WebClient
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentDto
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiCourtDateResult
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonerDetails
 import java.util.UUID
 
 @Service
@@ -24,7 +22,6 @@ class AdjustmentsApiClient(@Qualifier("adjustmentsApiWebClient") private val web
       .block()!!
   }
 
-
   fun createAdjustment(adjustment: AdjustmentDto) {
     log.info("Creating adjustment")
     webClient.post()
@@ -35,11 +32,10 @@ class AdjustmentsApiClient(@Qualifier("adjustmentsApiWebClient") private val web
       .block()
   }
 
-
   fun delete(id: UUID) {
     log.info("Deleting adjustment")
     webClient.delete()
-      .uri("/adjustments/${id.toString()}")
+      .uri("/adjustments/$id")
       .retrieve()
       .toBodilessEntity()
       .block()

@@ -4,8 +4,6 @@ import com.github.tomakehurst.wiremock.WireMockServer
 import com.github.tomakehurst.wiremock.client.WireMock.aResponse
 import com.github.tomakehurst.wiremock.client.WireMock.get
 import com.github.tomakehurst.wiremock.client.WireMock.post
-import com.github.tomakehurst.wiremock.client.WireMock.postRequestedFor
-import com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo
 import org.junit.jupiter.api.extension.AfterAllCallback
 import org.junit.jupiter.api.extension.BeforeAllCallback
 import org.junit.jupiter.api.extension.BeforeEachCallback
@@ -48,8 +46,9 @@ class AdjustmentsApiMockServer : WireMockServer(WIREMOCK_PORT) {
             .withBody(
               """
               []
-              """)
-        )
+              """,
+            ),
+        ),
     )
   }
 
@@ -63,7 +62,7 @@ class AdjustmentsApiMockServer : WireMockServer(WIREMOCK_PORT) {
               """{}""".trimIndent(),
             )
             .withStatus(200),
-        )
+        ),
     )
   }
 }

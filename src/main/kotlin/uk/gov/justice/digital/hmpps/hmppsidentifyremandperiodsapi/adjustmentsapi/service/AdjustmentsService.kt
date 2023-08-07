@@ -6,12 +6,12 @@ import java.util.UUID
 
 @Service
 class AdjustmentsService(
-  val adjustmentsApiClient: AdjustmentsApiClient
+  val adjustmentsApiClient: AdjustmentsApiClient,
 ) {
 
   fun saveRemand(person: String, remand: List<AdjustmentDto>) {
     val existingAdjustments = getAdjustments(person)
-    val create = remand.filter {new ->
+    val create = remand.filter { new ->
       existingAdjustments.none { existing -> remandSame(existing, new) }
     }
     val delete = existingAdjustments.filter { existing ->

@@ -6,9 +6,8 @@ data class IdentifyRemandDecisionDto(
   val accepted: Boolean,
   val rejectComment: String?,
 
-
-  //View fields
+  // View fields
   val days: Int? = null,
   val decisionOn: LocalDateTime? = null,
-  val decisionBy: String? = null
+  val decisionBy: String? = null,
 )

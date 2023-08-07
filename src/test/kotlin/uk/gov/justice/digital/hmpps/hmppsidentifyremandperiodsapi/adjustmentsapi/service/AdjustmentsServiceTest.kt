@@ -2,7 +2,6 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsap
 
 import org.junit.jupiter.api.Test
 import org.mockito.kotlin.mock
-import org.mockito.kotlin.only
 import org.mockito.kotlin.times
 import org.mockito.kotlin.verify
 import org.mockito.kotlin.whenever
@@ -24,7 +23,7 @@ class AdjustmentsServiceTest {
       toDate = LocalDate.now().minusDays(9),
       bookingId = 1,
       sentenceSequence = 1,
-      person = person
+      person = person,
     )
     val adjustmentExistingNotMatching = AdjustmentDto(
       id = UUID.randomUUID(),
@@ -32,7 +31,7 @@ class AdjustmentsServiceTest {
       toDate = LocalDate.now().minusDays(7),
       bookingId = 1,
       sentenceSequence = 1,
-      person = person
+      person = person,
     )
     val newAdjustment = AdjustmentDto(
       id = null,
@@ -40,7 +39,7 @@ class AdjustmentsServiceTest {
       toDate = LocalDate.now().minusDays(5),
       bookingId = 1,
       sentenceSequence = 1,
-      person = person
+      person = person,
     )
 
     whenever(apiClient.getAdjustments(person)).thenReturn(listOf(adjustmentExistingMatches, adjustmentExistingNotMatching, adjustmentExistingMatches.copy(adjustmentType = "NOT_REMAND")))
