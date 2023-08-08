@@ -78,8 +78,8 @@ class RelevantRemandController(
     @PathVariable("prisonerId")
     prisonerId: String,
     @RequestBody remandDecision: IdentifyRemandDecisionDto,
-  ) {
-    remandDecisionService.saveDecision(prisonerId, remandDecision)
+  ): IdentifyRemandDecisionDto {
+    return remandDecisionService.saveDecision(prisonerId, remandDecision)
   }
 
   @GetMapping(value = ["/{prisonerId}/decision"])
