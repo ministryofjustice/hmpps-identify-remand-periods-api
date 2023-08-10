@@ -73,6 +73,7 @@ private fun transformToCourtDate(courtDateResult: PrisonApiCourtDateResult, issu
       type,
       courtDateResult.resultDispositionCode == "F",
       courtDateResult.resultCode == RECALL_COURT_EVENT,
+      isEventCustodial(courtDateResult),
     )
   }
   return null
