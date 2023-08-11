@@ -186,3 +186,9 @@ fun mapCourtDateResult(courtDateResult: PrisonApiCourtDateResult, issuesWithLega
     }
   }
 }
+
+val CUSTODIAL_EVENTS = listOf("1002", "1501", "1510", "1024", "1007", "1081", "1509", "1022", "3058", "1110", "1003", "1111")
+
+fun isEventCustodial(courtDateResult: PrisonApiCourtDateResult): Boolean {
+  return CUSTODIAL_EVENTS.contains(courtDateResult.resultCode)
+}
