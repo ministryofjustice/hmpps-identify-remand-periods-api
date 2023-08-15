@@ -7,7 +7,7 @@ import java.time.LocalDate
 */
 class SentenceRemandLoopTracker(
   remandPeriods: List<Remand>,
-  private val sentences: List<Sentence>,
+  private val sentences: List<SentenceAndCharge>,
 ) {
   /* All periods that are linked to a sentence */
   private val allPeriods = remandPeriods.filter { it.charge.sentenceSequence != null && it.charge.sentenceDate != null }
@@ -17,8 +17,8 @@ class SentenceRemandLoopTracker(
 
   init {
     sentences.forEach {
-      if (!sentenceDateToPeriodMap.containsKey(it.sentenceDate)) {
-        sentenceDateToPeriodMap[it.sentenceDate] = emptyList()
+      if (!sentenceDateToPeriodMap.containsKey(it.sentence.sentenceDate)) {
+        sentenceDateToPeriodMap[it.sentence.sentenceDate] = emptyList()
       }
     }
   }
@@ -46,7 +46,7 @@ class SentenceRemandLoopTracker(
     periods = entry.value
     open = mutableListOf()
     future = periods.toMutableList()
-    importantDates = ((periods + final).map { listOfNotNull(it.from, it.to, it.charge.sentenceDate) }.flatten() + listOfNotNull(entry.key) + periodsServingSentence.flatMap { listOf(it.from, it.to) } + sentences.mapNotNull { it.recallDate }).distinct().sorted()
+    importantDates = ((periods + final).map { listOfNotNull(it.from, it.to, it.charge.sentenceDate) }.flatten() + listOfNotNull(entry.key) + periodsServingSentence.flatMap { listOf(it.from, it.to) } + sentences.mapNotNull { it.sentence.recallDate }).distinct().sorted()
   }
 
   /* Each date check if any periods are now closed or now open and pick which period is next. */
@@ -60,7 +60,7 @@ class SentenceRemandLoopTracker(
 
   /* Can we open a new period, does the period intersected a confirmed date. */
   fun doesDateIntersectWithEstablishedRemandOrSentence(date: LocalDate): Boolean {
-    return !(!sentences.any { it.sentenceDate == date } && (final + periodsServingSentence).none { it.overlapsStartInclusive(date.plusDays(1)) })
+    return !(!sentences.any { it.sentence.sentenceDate == date } && (final + periodsServingSentence).none { it.overlapsStartInclusive(date.plusDays(1)) })
   }
 
   /* Should the current period be closed? */
@@ -70,6 +70,6 @@ class SentenceRemandLoopTracker(
 
   /* If we've reached a sentence period then calculate the release dates for it. */
   fun shouldCalculateAReleaseDate(date: LocalDate): Boolean {
-    return sentences.any { it.sentenceDate == date || it.recallDate == date } && sentences.maxOf { it.sentenceDate } != date && periodsServingSentence.none { it.from == date }
+    return sentences.any { it.sentence.sentenceDate == date || it.sentence.recallDate == date } && sentences.maxOf { it.sentence.sentenceDate } != date && periodsServingSentence.none { it.from == date }
   }
 }

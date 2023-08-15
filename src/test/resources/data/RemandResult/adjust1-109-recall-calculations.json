@@ -97,6 +97,22 @@
         "recallDate": null,
         "bookingId": 1
       },
+      "charge": {
+        "chargeId": 1,
+        "offence": {
+          "code": "TH68036",
+          "statute": "TH68",
+          "description": "Burglary dwelling and theft - no violence"
+        },
+        "offenceDate": "2022-06-18",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 1,
+        "sentenceDate": "2022-08-17",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
       "days": 48
     },
     {
@@ -107,6 +123,22 @@
         "sentenceDate": "2022-08-17",
         "recallDate": "2023-05-18",
         "bookingId": 1
+      },
+      "charge": {
+        "chargeId": 3,
+        "offence": {
+          "code": "TH68036",
+          "statute": "TH68",
+          "description": "Burglary dwelling and theft - no violence"
+        },
+        "offenceDate": "2021-06-18",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 11,
+        "sentenceDate": "2022-08-17",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
       },
       "days": 96
     }

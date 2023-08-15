@@ -94,7 +94,24 @@
       "sentence": {
         "sequence": 1,
         "sentenceDate": "2022-11-28",
+        "recallDate": null,
         "bookingId": 1
+      },
+      "charge": {
+        "chargeId": 1,
+        "offence": {
+          "code": "CJ88159",
+          "statute": "CJ88",
+          "description": "Common assault of an emergency worker"
+        },
+        "offenceDate": "2022-07-20",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 1,
+        "sentenceDate": "2022-11-28",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
       },
       "days": 1
     }

@@ -64,7 +64,24 @@
       "sentence": {
         "sequence": 2,
         "sentenceDate": "2021-01-01",
+        "recallDate": null,
         "bookingId": 1
+      },
+      "charge": {
+        "chargeId": 2,
+        "offence": {
+          "code": "2",
+          "statute": "2",
+          "description": "An unrelated offence"
+        },
+        "offenceDate": "2001-01-01",
+        "bookingId": 1,
+        "offenceEndDate": "2001-01-01",
+        "sentenceSequence": 2,
+        "sentenceDate": "2021-01-01",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
       },
       "days": 487
     }
