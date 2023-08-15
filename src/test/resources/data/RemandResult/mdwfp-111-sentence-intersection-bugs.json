@@ -220,7 +220,24 @@
       "sentence": {
         "sequence": 3,
         "sentenceDate": "2021-04-22",
+        "recallDate": null,
         "bookingId": 2
+      },
+      "charge": {
+        "chargeId": 4,
+        "offence": {
+          "code": "TH68020",
+          "statute": "TH68",
+          "description": "Theft - other - including theft by finding"
+        },
+        "offenceDate": "2019-12-07",
+        "bookingId": 2,
+        "offenceEndDate": null,
+        "sentenceSequence": 3,
+        "sentenceDate": "2021-04-22",
+        "courtCaseRef": "012002034682",
+        "courtLocation": "Highbury Corner Magistrates Court",
+        "resultDescription": "Suspended Sentence Implemented"
       },
       "days": 31
     },
@@ -230,7 +247,24 @@
       "sentence": {
         "sequence": 1,
         "sentenceDate": "2022-11-15",
+        "recallDate": null,
         "bookingId": 1
+      },
+      "charge": {
+        "chargeId": 8,
+        "offence": {
+          "code": "TH68036",
+          "statute": "TH68",
+          "description": "Burglary dwelling and theft  - no violence"
+        },
+        "offenceDate": "2022-10-16",
+        "bookingId": 1,
+        "offenceEndDate": null,
+        "sentenceSequence": 1,
+        "sentenceDate": "2022-11-15",
+        "courtCaseRef": "43SP0414422",
+        "courtLocation": "Oxford Crown Court",
+        "resultDescription": "Imprisonment"
       },
       "days": 339
     }

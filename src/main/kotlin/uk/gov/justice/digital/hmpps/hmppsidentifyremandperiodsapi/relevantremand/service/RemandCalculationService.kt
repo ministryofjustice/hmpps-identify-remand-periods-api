@@ -13,6 +13,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandResult
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentenceAndCharge
 import java.time.LocalDate
 
 @Service
@@ -27,7 +28,7 @@ class RemandCalculationService(
     val chargeRemand = remandClock(charges)
     val sentenceDates = remandCalculation.charges
       .filter { it.charge.sentenceDate != null && it.charge.sentenceSequence != null }
-      .map { Sentence(it.charge.sentenceSequence!!, it.charge.sentenceDate!!, it.dates.find { date -> date.isRecallEvent }?.date, it.charge.bookingId) }
+      .map { SentenceAndCharge(Sentence(it.charge.sentenceSequence!!, it.charge.sentenceDate!!, it.dates.find { date -> date.isRecallEvent }?.date, it.charge.bookingId), it.charge) }
     return sentenceRemandService.extractSentenceRemand(remandCalculation.prisonerId, chargeRemand, sentenceDates, remandCalculation.issuesWithLegacyData)
   }
 

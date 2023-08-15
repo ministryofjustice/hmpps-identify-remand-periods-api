@@ -118,7 +118,24 @@
       "sentence": {
         "sequence": 1,
         "sentenceDate": "2022-11-04",
+        "recallDate": null,
         "bookingId": 1
+      },
+      "charge": {
+        "chargeId": 1,
+        "offence": {
+          "code": "PC00010",
+          "statute": "PC00",
+          "description": "Breach of a supervision order"
+        },
+        "offenceDate": "2022-05-04",
+        "bookingId": 1,
+        "offenceEndDate": "2022-05-23",
+        "sentenceSequence": 1,
+        "sentenceDate": "2022-11-04",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
       },
       "days": 21
     }

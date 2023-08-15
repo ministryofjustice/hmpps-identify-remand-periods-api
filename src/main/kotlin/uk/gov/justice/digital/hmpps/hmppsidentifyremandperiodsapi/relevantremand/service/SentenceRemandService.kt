@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.service.CalculateReleaseDateService
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Remand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandResult
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentenceAndCharge
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentencePeriod
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentenceRemandLoopTracker
 
@@ -14,16 +14,16 @@ class SentenceRemandService(
   private val calculateReleaseDateService: CalculateReleaseDateService,
 ) {
 
-  fun extractSentenceRemand(prisonerId: String, remandPeriods: List<Remand>, sentences: List<Sentence>, issuesWithLegacyData: List<String>): RemandResult {
+  fun extractSentenceRemand(prisonerId: String, remandPeriods: List<Remand>, sentences: List<SentenceAndCharge>, issuesWithLegacyData: List<String>): RemandResult {
     val loopTracker = SentenceRemandLoopTracker(remandPeriods, sentences)
     for (entry in loopTracker.sentenceDateToPeriodMap.entries.sortedBy { it.key }) {
       loopTracker.startNewSentenceDateLoop(entry)
       var current: Remand? = null
       for (date in loopTracker.importantDates) {
         if (loopTracker.shouldCalculateAReleaseDate(date)) {
-          val sentencesToCalculate = sentences.filter { it.sentenceDate == date || it.recallDate == date }.distinctBy { "${date}${it.bookingId}" }
-          val sentenceReleaseDate = sentencesToCalculate.map { it to calculateReleaseDateService.calculateReleaseDate(prisonerId, loopTracker.final, it, date) }.maxBy { it.second }
-          loopTracker.periodsServingSentence.add(SentencePeriod(date, sentenceReleaseDate.second, sentenceReleaseDate.first))
+          val sentencesToCalculate = sentences.filter { it.sentence.sentenceDate == date || it.sentence.recallDate == date }.distinctBy { "${date}${it.sentence.bookingId}" }
+          val sentenceReleaseDate = sentencesToCalculate.map { it to calculateReleaseDateService.calculateReleaseDate(prisonerId, loopTracker.final, it.sentence, date) }.maxBy { it.second }
+          loopTracker.periodsServingSentence.add(SentencePeriod(date, sentenceReleaseDate.second, sentenceReleaseDate.first.sentence, sentenceReleaseDate.first.charge))
         }
         val next = loopTracker.findNextPeriod(date)
 

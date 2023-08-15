@@ -262,9 +262,26 @@
       "sentence": {
         "sequence": 1,
         "sentenceDate": "2019-04-16",
+        "recallDate": null,
         "bookingId": 2
       },
-      "days": 1247
+      "charge": {
+        "chargeId": 6,
+        "offence": {
+          "code": "MD71231",
+          "statute": "MD71",
+          "description": "Possess with intent to supply a controlled drug of Class A - Heroin"
+        },
+        "offenceDate": "2019-01-10",
+        "bookingId": 2,
+        "offenceEndDate": null,
+        "sentenceSequence": 1,
+        "sentenceDate": "2019-04-16",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null
+      },
+      "days": 1246
     }
   ]
 }
