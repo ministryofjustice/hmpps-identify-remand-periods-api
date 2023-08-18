@@ -12,4 +12,5 @@ data class PrisonApiCourtDateResult(
   val resultDispositionCode: String?,
   val charge: PrisonApiCharge,
   val bookingId: Long,
+  val bookNumber: String,
 )
