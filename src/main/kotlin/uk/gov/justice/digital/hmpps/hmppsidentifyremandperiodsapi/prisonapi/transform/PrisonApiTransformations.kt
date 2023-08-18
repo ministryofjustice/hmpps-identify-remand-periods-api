@@ -23,7 +23,7 @@ fun transform(results: List<PrisonApiCourtDateResult>, prisonerDetails: Prisoner
       .groupBy { it.charge.chargeId }
       .filter {
         if (it.value.first().charge.offenceDate == null) {
-          issuesWithLegacyData.add("Missing offence date for ${it.value.first().charge.offenceDescription}")
+          issuesWithLegacyData.add("Missing offence date for ${it.value.first().charge.offenceDescription} within booking ${it.value.first().bookNumber}")
           false
         } else {
           true
@@ -37,6 +37,7 @@ fun transform(results: List<PrisonApiCourtDateResult>, prisonerDetails: Prisoner
             transform(charge),
             charge.offenceDate!!,
             it.value.first().bookingId,
+            it.value.first().bookNumber,
             charge.offenceEndDate,
             charge.sentenceSequence,
             charge.sentenceDate,
@@ -81,7 +82,7 @@ private fun transformToCourtDate(courtDateResult: PrisonApiCourtDateResult, issu
 
 private fun transformToType(courtDateResult: PrisonApiCourtDateResult, issuesWithLegacyData: MutableList<String>): CourtDateType? {
   if (courtDateResult.resultCode == null) {
-    issuesWithLegacyData.add("The court event on ${courtDateResult.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} for offence ${courtDateResult.charge.offenceDescription} committed at ${courtDateResult.charge.offenceDate!!.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} has a missing outcome")
+    issuesWithLegacyData.add("The court event on ${courtDateResult.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} for offence ${courtDateResult.charge.offenceDescription} committed at ${courtDateResult.charge.offenceDate!!.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} has a missing outcome within booking ${courtDateResult.bookNumber}")
     return null
   }
   return mapCourtDateResult(courtDateResult, issuesWithLegacyData)

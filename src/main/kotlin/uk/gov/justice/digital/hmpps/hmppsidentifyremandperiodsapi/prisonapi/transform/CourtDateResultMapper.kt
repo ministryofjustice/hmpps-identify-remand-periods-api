@@ -181,7 +181,7 @@ fun mapCourtDateResult(courtDateResult: PrisonApiCourtDateResult, issuesWithLega
     "FPR" -> STOP
 
     else -> {
-      issuesWithLegacyData.add("The court event on ${courtDateResult.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} for offence ${courtDateResult.charge.offenceDescription} committed at ${courtDateResult.charge.offenceDate!!.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} has an unsupported outcome ${courtDateResult.resultCode}: ${courtDateResult.resultDescription}")
+      issuesWithLegacyData.add("The court event on ${courtDateResult.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} for offence ${courtDateResult.charge.offenceDescription} committed at ${courtDateResult.charge.offenceDate!!.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} within booking ${courtDateResult.bookNumber} has an unsupported outcome ${courtDateResult.resultCode}: ${courtDateResult.resultDescription}")
       null
     }
   }

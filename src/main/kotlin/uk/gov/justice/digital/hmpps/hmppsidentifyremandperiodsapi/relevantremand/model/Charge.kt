@@ -7,6 +7,7 @@ data class Charge(
   val offence: Offence,
   val offenceDate: LocalDate,
   val bookingId: Long,
+  val bookNumber: String = "",
   val offenceEndDate: LocalDate? = null,
   val sentenceSequence: Int? = null,
   val sentenceDate: LocalDate? = null,
