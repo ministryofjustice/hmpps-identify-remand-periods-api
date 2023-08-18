@@ -74,7 +74,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "sentenceSequence":1,
                        "sentenceDate": "2015-12-13"
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":2,
@@ -93,7 +94,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "sentenceSequence":1,
                        "sentenceDate": "2015-12-13"
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":3,
@@ -112,7 +114,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "sentenceSequence":1,
                        "sentenceDate": "2015-12-13"
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":4,
@@ -131,7 +134,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "sentenceSequence":1,
                        "sentenceDate": "2015-12-13"
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":5,
@@ -150,7 +154,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "sentenceSequence":1,
                        "sentenceDate": "2015-12-13"
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  }
               ]
               """.trimIndent(),
@@ -201,7 +206,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "sentenceSequence":1,
                        "sentenceDate": "2015-09-18"
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":2,
@@ -220,7 +226,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "sentenceSequence":1,
                        "sentenceDate": "2015-09-18"
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":3,
@@ -239,7 +246,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "sentenceSequence":1,
                        "sentenceDate": "2015-09-18"
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  }
               ]
               """.trimIndent(),
@@ -294,7 +302,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                    "sentenceDate":"2022-01-01",
                    "resultDescription":"Imprisonment"
                 },
-                "bookingId":1
+                "bookingId":1,
+                "bookNumber":"ABC123"
              },
              {
                 "id":499876020,
@@ -316,7 +325,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                    "sentenceDate":"2021-02-01",
                    "resultDescription":"Imprisonment"
                 },
-                "bookingId":1
+                "bookingId":1,
+                "bookNumber":"ABC123"
              },
              {
                 "id":499876021,
@@ -338,7 +348,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                    "sentenceDate":"2021-02-01",
                    "resultDescription":"Imprisonment"
                 },
-                "bookingId":1
+                "bookingId":1,
+                "bookNumber":"ABC123"
              },
              {
                 "id":499876019,
@@ -360,7 +371,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                    "sentenceDate":"2022-01-01",
                    "resultDescription":"Imprisonment"
                 },
-                "bookingId":1
+                "bookingId":1,
+                "bookNumber":"ABC123"
              }
           ]
               """.trimIndent(),
@@ -415,7 +427,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                    "sentenceDate":"2022-01-01",
                    "resultDescription":"Imprisonment"
                 },
-                "bookingId":1
+                "bookingId":1,
+                "bookNumber":"ABC123"
              },
              {
                 "id":499876020,
@@ -437,7 +450,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                    "sentenceDate":"2021-02-01",
                    "resultDescription":"Imprisonment"
                 },
-                "bookingId":1
+                "bookingId":1,
+                "bookNumber":"ABC123"
              },
              {
                 "id":499876021,
@@ -459,7 +473,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                    "sentenceDate":"2021-02-01",
                    "resultDescription":"Imprisonment"
                 },
-                "bookingId":1
+                "bookingId":1,
+                "bookNumber":"ABC123"
              },
              {
                 "id":499876019,
@@ -481,7 +496,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                    "sentenceDate":"2022-01-01",
                    "resultDescription":"Imprisonment"
                 },
-                "bookingId":1
+                "bookingId":1,
+                "bookNumber":"ABC123"
              }
           ]
               """.trimIndent(),
@@ -533,7 +549,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "sentenceSequence":1,
                        "sentenceDate": "2015-09-25"
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":2,
@@ -552,7 +569,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "sentenceSequence":1,
                        "sentenceDate": "2015-09-25"
                     },
-                    "bookingId":2
+                    "bookingId":2,
+                    "bookNumber":"ABC321"
                  },
                  {
                     "id":3,
@@ -571,7 +589,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "sentenceSequence":1,
                        "sentenceDate": "2015-09-25"
                     },
-                    "bookingId":3
+                    "bookingId":3,
+                    "bookNumber":"ABC456"
                  }
               ]
               """.trimIndent(),
@@ -623,7 +642,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "guilty":false,
                        "courtCaseId":1
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":1,
@@ -641,7 +661,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "guilty":false,
                        "courtCaseId":1
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":2,
@@ -661,7 +682,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "sentenceSequence":1,
                        "sentenceDate": "2021-06-15"
                     },
-                    "bookingId":2
+                    "bookingId":2,
+                    "bookNumber":"ABC321"
                  },
                  {
                     "id":2,
@@ -681,7 +703,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "sentenceSequence":2,
                        "sentenceDate": "2021-06-15"
                     },
-                    "bookingId":2
+                    "bookingId":2,
+                    "bookNumber":"ABC321"
                  },
                  {
                     "id":3,
@@ -699,7 +722,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "guilty":false,
                        "courtCaseId":1
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":3,
@@ -717,7 +741,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "guilty":false,
                        "courtCaseId":1
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":4,
@@ -735,7 +760,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "guilty":false,
                        "courtCaseId":1
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":4,
@@ -753,7 +779,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "guilty":false,
                        "courtCaseId":1
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":5,
@@ -771,7 +798,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "guilty":false,
                        "courtCaseId":1
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":5,
@@ -789,7 +817,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "guilty":false,
                        "courtCaseId":1
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":6,
@@ -807,7 +836,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "guilty":false,
                        "courtCaseId":1
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":6,
@@ -825,7 +855,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "guilty":false,
                        "courtCaseId":1
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":7,
@@ -843,7 +874,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "guilty":false,
                        "courtCaseId":1
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":7,
@@ -861,7 +893,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "guilty":false,
                        "courtCaseId":1
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":8,
@@ -879,7 +912,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "guilty":false,
                        "courtCaseId":1
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":8,
@@ -897,7 +931,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "guilty":false,
                        "courtCaseId":1
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":9,
@@ -915,7 +950,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "guilty":false,
                        "courtCaseId":1
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":9,
@@ -933,7 +969,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "guilty":false,
                        "courtCaseId":1
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":10,
@@ -951,7 +988,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "guilty":false,
                        "courtCaseId":1
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":10,
@@ -969,7 +1007,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "guilty":false,
                        "courtCaseId":1
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":11,
@@ -987,7 +1026,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "guilty":false,
                        "courtCaseId":1
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":11,
@@ -1005,7 +1045,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "guilty":false,
                        "courtCaseId":1
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":12,
@@ -1023,7 +1064,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "guilty":false,
                        "courtCaseId":1
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":12,
@@ -1041,7 +1083,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "guilty":false,
                        "courtCaseId":1
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  },
                  {
                     "id":13,
@@ -1061,7 +1104,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "sentenceSequence":1,
                        "sentenceDate": "2021-06-15"
                     },
-                    "bookingId":2
+                    "bookingId":2,
+                    "bookNumber":"ABC321"
                  },
                  {
                     "id":13,
@@ -1081,7 +1125,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "sentenceSequence":2,
                        "sentenceDate": "2021-06-15"
                     },
-                    "bookingId":2
+                    "bookingId":2,
+                    "bookNumber":"ABC321"
                  },
                  {
                     "id":14,
@@ -1101,7 +1146,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "sentenceSequence":1,
                        "sentenceDate": "2021-06-15"
                     },
-                    "bookingId":2
+                    "bookingId":2,
+                    "bookNumber":"ABC321"
                  },
                  {
                     "id":14,
@@ -1121,7 +1167,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "sentenceSequence":2,
                        "sentenceDate": "2021-06-15"
                     },
-                    "bookingId":2
+                    "bookingId":2,
+                    "bookNumber":"ABC321"
                  },
                  {
                     "id":15,
@@ -1141,7 +1188,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "sentenceSequence":1,
                        "sentenceDate": "2021-06-15"
                     },
-                    "bookingId":2
+                    "bookingId":2,
+                    "bookNumber":"ABC321"
                  },
                  {
                     "id":15,
@@ -1161,7 +1209,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "sentenceSequence":2,
                        "sentenceDate": "2021-06-15"
                     },
-                    "bookingId":2
+                    "bookingId":2,
+                    "bookNumber":"ABC321"
                  }
               ]
               """.trimIndent(),
@@ -1214,7 +1263,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                        "sentenceSequence":1,
                        "sentenceDate": "2015-12-13"
                     },
-                    "bookingId":1
+                    "bookingId":1,
+                    "bookNumber":"ABC123"
                  }
               ]
               """.trimIndent(),
