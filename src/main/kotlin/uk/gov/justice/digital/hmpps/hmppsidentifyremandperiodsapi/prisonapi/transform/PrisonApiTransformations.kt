@@ -49,7 +49,7 @@ fun transform(results: List<PrisonApiCourtDateResult>, prisonerDetails: Prisoner
           it.value.mapNotNull { result -> transformToCourtDate(result, issuesWithLegacyData) },
         )
       },
-    issuesWithLegacyData
+    issuesWithLegacyData,
   )
 }
 
