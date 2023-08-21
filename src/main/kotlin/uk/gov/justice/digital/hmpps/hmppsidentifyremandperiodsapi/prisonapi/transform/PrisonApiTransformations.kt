@@ -8,6 +8,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeAndEvents
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDate
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblem
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Offence
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
 import java.time.LocalDate
@@ -15,7 +16,7 @@ import java.time.format.DateTimeFormatter
 
 fun transform(results: List<PrisonApiCourtDateResult>, prisonerDetails: PrisonerDetails): RemandCalculation {
   val earliestActiveOffenceDate: LocalDate = findEarliestActiveOffenceDate(results, prisonerDetails)
-  val issuesWithLegacyData = mutableListOf<String>()
+  val issuesWithLegacyData = mutableListOf<LegacyDataProblem>()
   return RemandCalculation(
     prisonerDetails.offenderNo,
     results
@@ -23,7 +24,7 @@ fun transform(results: List<PrisonApiCourtDateResult>, prisonerDetails: Prisoner
       .groupBy { it.charge.chargeId }
       .filter {
         if (it.value.first().charge.offenceDate == null) {
-          issuesWithLegacyData.add("Missing offence date for ${it.value.first().charge.offenceDescription} within booking ${it.value.first().bookNumber}")
+          issuesWithLegacyData.add(LegacyDataProblem("Missing offence date for ${it.value.first().charge.offenceDescription}", it.value.first()))
           false
         } else {
           true
@@ -62,11 +63,11 @@ private fun findEarliestActiveOffenceDate(results: List<PrisonApiCourtDateResult
     .min()
 }
 
-private fun transform(prisonApiCharge: PrisonApiCharge): Offence {
+public fun transform(prisonApiCharge: PrisonApiCharge): Offence {
   return Offence(prisonApiCharge.offenceCode, prisonApiCharge.offenceStatue, prisonApiCharge.offenceDescription)
 }
 
-private fun transformToCourtDate(courtDateResult: PrisonApiCourtDateResult, issuesWithLegacyData: MutableList<String>): CourtDate? {
+private fun transformToCourtDate(courtDateResult: PrisonApiCourtDateResult, issuesWithLegacyData: MutableList<LegacyDataProblem>): CourtDate? {
   val type = transformToType(courtDateResult, issuesWithLegacyData)
   if (type != null) {
     return CourtDate(
@@ -80,9 +81,9 @@ private fun transformToCourtDate(courtDateResult: PrisonApiCourtDateResult, issu
   return null
 }
 
-private fun transformToType(courtDateResult: PrisonApiCourtDateResult, issuesWithLegacyData: MutableList<String>): CourtDateType? {
+private fun transformToType(courtDateResult: PrisonApiCourtDateResult, issuesWithLegacyData: MutableList<LegacyDataProblem>): CourtDateType? {
   if (courtDateResult.resultCode == null) {
-    issuesWithLegacyData.add("The court event on ${courtDateResult.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} for offence ${courtDateResult.charge.offenceDescription} committed at ${courtDateResult.charge.offenceDate!!.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} has a missing outcome within booking ${courtDateResult.bookNumber}")
+    issuesWithLegacyData.add(LegacyDataProblem("The court event on ${courtDateResult.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} for offence ${courtDateResult.charge.offenceDescription} committed at ${courtDateResult.charge.offenceDate!!.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} has a missing outcome within booking ${courtDateResult.bookNumber}", courtDateResult))
     return null
   }
   return mapCourtDateResult(courtDateResult, issuesWithLegacyData)
