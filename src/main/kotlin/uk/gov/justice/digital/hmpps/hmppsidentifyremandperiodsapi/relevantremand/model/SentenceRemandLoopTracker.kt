@@ -6,7 +6,7 @@ import java.time.LocalDate
 *  This class keeps track of all the variables when looping through remand periods.
 */
 class SentenceRemandLoopTracker(
-  remandPeriods: List<Remand>,
+  remandPeriods: List<ChargeRemand>,
   private val sentences: List<SentenceAndCharge>,
 ) {
   /* All periods that are linked to a sentence */
@@ -42,8 +42,8 @@ class SentenceRemandLoopTracker(
   lateinit var importantDates: List<LocalDate>
 
   /* Starting a new loop of the periods with the same sentence date. */
-  fun startNewSentenceDateLoop(entry: Map.Entry<LocalDate?, List<Remand>>) {
-    periods = entry.value
+  fun startNewSentenceDateLoop(entry: Map.Entry<LocalDate?, List<ChargeRemand>>) {
+    periods = entry.value.map { Remand(it.from, it.to, it.charge) }
     open = mutableListOf()
     future = periods.toMutableList()
     importantDates = ((periods + final).map { listOfNotNull(it.from, it.to, it.charge.sentenceDate) }.flatten() + listOfNotNull(entry.key) + periodsServingSentence.flatMap { listOf(it.from, it.to) } + sentences.mapNotNull { it.sentence.recallDate }).distinct().sorted()

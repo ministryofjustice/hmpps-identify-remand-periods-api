@@ -3,6 +3,7 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantreman
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.service.CalculateReleaseDateService
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeRemand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblem
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Remand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandResult
@@ -15,7 +16,7 @@ class SentenceRemandService(
   private val calculateReleaseDateService: CalculateReleaseDateService,
 ) {
 
-  fun extractSentenceRemand(prisonerId: String, remandPeriods: List<Remand>, sentences: List<SentenceAndCharge>, issuesWithLegacyData: List<LegacyDataProblem>): RemandResult {
+  fun extractSentenceRemand(prisonerId: String, remandPeriods: List<ChargeRemand>, sentences: List<SentenceAndCharge>, issuesWithLegacyData: List<LegacyDataProblem>): RemandResult {
     val loopTracker = SentenceRemandLoopTracker(remandPeriods, sentences)
     for (entry in loopTracker.sentenceDateToPeriodMap.entries.sortedBy { it.key }) {
       loopTracker.startNewSentenceDateLoop(entry)
