@@ -4,12 +4,12 @@ import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Charge
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeAndEvents
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeRemand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDate
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.CONTINUE
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.START
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.STOP
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RelatedCharge
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Remand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandResult
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
@@ -32,18 +32,21 @@ class RemandCalculationService(
     return sentenceRemandService.extractSentenceRemand(remandCalculation.prisonerId, chargeRemand, sentenceDates, remandCalculation.issuesWithLegacyData)
   }
 
-  private fun remandClock(remandCalculation: RemandCalculation): List<Remand> {
-    val remand = mutableListOf<Remand>()
+  private fun remandClock(remandCalculation: RemandCalculation): List<ChargeRemand> {
+    val remand = mutableListOf<ChargeRemand>()
     remandCalculation.charges.forEach { chargeAndEvent ->
       if (hasAnyRemandEvent(chargeAndEvent.dates)) {
         var from: LocalDate? = null
+        var fromEvent = ""
         chargeAndEvent.dates.forEach {
           if (listOf(START, CONTINUE).contains(it.type) && from == null) {
             from = it.date
+            fromEvent = it.description
           }
           if (it.type == STOP && from != null) {
-            remand.add(Remand(from!!, getToDate(it), chargeAndEvent.charge))
+            remand.add(ChargeRemand(from!!, getToDate(it), fromEvent, it.description, chargeAndEvent.charge))
             from = null
+            fromEvent = ""
           }
         }
       }
