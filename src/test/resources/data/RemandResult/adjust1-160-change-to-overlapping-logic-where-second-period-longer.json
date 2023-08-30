@@ -1,0 +1,104 @@
+{
+  "chargeRemand":[
+    {
+      "from":"2018-02-24",
+      "to":"2018-04-04",
+      "fromEvent":"Remand in Custody (Bail Refused)",
+      "toEvent":"Bailed",
+      "charge":{
+        "chargeId":1,
+        "offence":{
+          "code":"FI68010",
+          "statute":"FI68",
+          "description":"Possess ammunition for a firearm without a certificate"
+        },
+        "offenceDate":"2018-02-22",
+        "bookingId":1,
+        "bookNumber":"46403A",
+        "offenceEndDate":null,
+        "sentenceSequence":3,
+        "sentenceDate":"2018-05-04",
+        "courtCaseRef":null,
+        "courtLocation":null,
+        "resultDescription":null
+      },
+      "days":40
+    },
+    {
+      "from":"2018-03-23",
+      "to":"2018-05-03",
+      "fromEvent":"Remand in Custody (Bail Refused)",
+      "toEvent":"Imprisonment",
+      "charge":{
+        "chargeId":2,
+        "offence":{
+          "code":"MD71230",
+          "statute":"MD71",
+          "description":"Possess with intent to supply a controlled drug of Class A - Cocaine"
+        },
+        "offenceDate":"2018-02-22",
+        "bookingId":1,
+        "bookNumber":"46403A",
+        "offenceEndDate":null,
+        "sentenceSequence":12,
+        "sentenceDate":"2018-05-04",
+        "courtCaseRef":null,
+        "courtLocation":null,
+        "resultDescription":null
+      },
+      "days":42
+    }
+  ],
+  "sentenceRemand":[
+    {
+      "from":"2018-02-24",
+      "to":"2018-04-04",
+      "charge":{
+        "chargeId":1,
+        "offence":{
+          "code":"FI68010",
+          "statute":"FI68",
+          "description":"Possess ammunition for a firearm without a certificate"
+        },
+        "offenceDate":"2018-02-22",
+        "bookingId":1,
+        "bookNumber":"46403A",
+        "offenceEndDate":null,
+        "sentenceSequence":3,
+        "sentenceDate":"2018-05-04",
+        "courtCaseRef":null,
+        "courtLocation":null,
+        "resultDescription":null
+      },
+      "days":40
+    },
+    {
+      "from":"2018-04-05",
+      "to":"2018-05-03",
+      "charge":{
+        "chargeId":2,
+        "offence":{
+          "code":"MD71230",
+          "statute":"MD71",
+          "description":"Possess with intent to supply a controlled drug of Class A - Cocaine"
+        },
+        "offenceDate":"2018-02-22",
+        "bookingId":1,
+        "bookNumber":"46403A",
+        "offenceEndDate":null,
+        "sentenceSequence":12,
+        "sentenceDate":"2018-05-04",
+        "courtCaseRef":null,
+        "courtLocation":null,
+        "resultDescription":null
+      },
+      "days":29
+    }
+  ],
+  "intersectingSentences":[
+
+  ],
+  "issuesWithLegacyData":[
+
+  ]
+}

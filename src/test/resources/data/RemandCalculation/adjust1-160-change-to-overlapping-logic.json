@@ -1,0 +1,83 @@
+{
+  "remandCalculation": {
+    "prisonerId": "IMP",
+    "charges": [
+      {
+        "charge": {
+          "chargeId": 1,
+          "offence": {
+            "code": "FI68010",
+            "statute": "FI68",
+            "description": "Possess ammunition for a firearm without a certificate"
+          },
+          "offenceDate": "2018-02-22",
+          "bookingId": 1,
+          "bookNumber": "46403A",
+          "offenceEndDate": null,
+          "sentenceSequence": 3,
+          "sentenceDate": "2018-05-04"
+        },
+        "dates": [
+          {
+            "date": "2018-02-24",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)",
+            "final": false,
+            "isRecallEvent": false,
+            "isCustodial": false
+          },
+          {
+            "date": "2018-03-23",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)",
+            "final": false,
+            "isRecallEvent": false,
+            "isCustodial": false
+          },
+          {
+            "date": "2018-05-04",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isRecallEvent": false,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 2,
+          "offence": {
+            "code": "MD71230",
+            "statute": "MD71",
+            "description": "Possess with intent to supply a controlled drug of Class A - Cocaine"
+          },
+          "offenceDate": "2018-02-22",
+          "bookingId": 1,
+          "bookNumber": "46403A",
+          "offenceEndDate": null,
+          "sentenceSequence": 12,
+          "sentenceDate": "2018-05-04"
+        },
+        "dates": [
+          {
+            "date": "2018-03-23",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)",
+            "final": false,
+            "isRecallEvent": false,
+            "isCustodial": false
+          },
+          {
+            "date": "2018-05-04",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isRecallEvent": false,
+            "isCustodial": true
+          }
+        ]
+      }
+    ]
+  }
+}

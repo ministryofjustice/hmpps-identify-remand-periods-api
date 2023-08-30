@@ -40,7 +40,7 @@
   "sentenceRemand": [
     {
       "from": "2020-01-01",
-      "to": "2020-01-31",
+      "to": "2020-02-29",
       "charge": {
         "chargeId": 1,
         "offence": {
@@ -54,10 +54,10 @@
         "sentenceSequence": 1,
         "sentenceDate": "2020-04-01"
       },
-      "days": 31
+      "days": 59
     },
     {
-      "from": "2020-02-01",
+      "from": "2020-03-01",
       "to": "2020-03-31",
       "charge": {
         "chargeId": 2,
@@ -72,7 +72,7 @@
         "sentenceSequence": 2,
         "sentenceDate": "2020-04-01"
       },
-      "days": 60
+      "days": 30
     }
   ],
   "intersectingSentences": []
