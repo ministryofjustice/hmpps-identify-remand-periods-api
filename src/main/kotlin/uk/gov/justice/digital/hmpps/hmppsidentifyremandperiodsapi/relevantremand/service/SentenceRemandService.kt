@@ -33,10 +33,9 @@ class SentenceRemandService(
         if (!loopTracker.doesDateIntersectWithEstablishedRemandOrSentence(date)) {
           if (next?.from == date) {
             // New period starting from its start date.
-            if (current != null) {
-              loopTracker.final.add(current.copy(to = date.minusDays(1)))
+            if (current == null) {
+              current = next
             }
-            current = next
           }
           if (current == null && loopTracker.open.isNotEmpty()) {
             // New period starting from the end of another period.
@@ -66,9 +65,5 @@ class SentenceRemandService(
       loopTracker.periodsServingSentence,
       issuesWithLegacyData,
     )
-  }
-
-  companion object {
-    private val log = LoggerFactory.getLogger(this::class.java)
   }
 }
