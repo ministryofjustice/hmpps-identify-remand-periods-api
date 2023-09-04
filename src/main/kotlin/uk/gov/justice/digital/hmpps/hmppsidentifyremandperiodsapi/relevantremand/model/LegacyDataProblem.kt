@@ -4,11 +4,12 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.mode
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.transform.transform
 
 data class LegacyDataProblem(
+  val type: LegacyDataProblemType,
   val message: String,
   val offence: Offence,
   val bookingId: Long,
   val bookNumber: String,
   val courtCaseRef: String?,
 ) {
-  constructor(message: String, result: PrisonApiCourtDateResult) : this(message, transform(result.charge), result.bookingId, result.bookNumber, result.charge.courtCaseRef)
+  constructor(type: LegacyDataProblemType, message: String, result: PrisonApiCourtDateResult) : this(type, message, transform(result.charge), result.bookingId, result.bookNumber, result.charge.courtCaseRef)
 }
