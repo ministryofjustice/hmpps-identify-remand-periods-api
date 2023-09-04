@@ -39,7 +39,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
     assertThat(result.sentenceRemand[0].from).isEqualTo(LocalDate.of(2022, 10, 13))
     assertThat(result.sentenceRemand[0].to).isEqualTo(LocalDate.of(2022, 12, 12))
     assertThat(result.sentenceRemand[0].days).isEqualTo(61)
-    assertThat(result.issuesWithLegacyData).isEqualTo(listOf(LegacyDataProblem(LegacyDataProblemType.MISSING_COURT_OUTCOME, message = "The court hearing on 13 Dec 2022 for 'An offence' has a missing outcome within booking ABC123.", offence = Offence(code = "SX03163A", statute = "SX03", description = "An offence"), bookingId = 1, bookNumber = "ABC123", courtCaseRef = null)))
+    assertThat(result.issuesWithLegacyData).isEqualTo(listOf(LegacyDataProblem(LegacyDataProblemType.MISSING_COURT_OUTCOME, message = "The court hearing on 13 Dec 2022 for 'An offence' has a missing hearing outcome within booking ABC123.", offence = Offence(code = "SX03163A", statute = "SX03", description = "An offence"), bookingId = 1, bookNumber = "ABC123", courtCaseRef = null)))
   }
 
   @Test
