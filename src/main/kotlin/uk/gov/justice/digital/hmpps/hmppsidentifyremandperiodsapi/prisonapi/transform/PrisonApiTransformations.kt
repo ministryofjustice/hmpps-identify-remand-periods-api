@@ -9,6 +9,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDate
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblem
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblemType
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Offence
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
 import java.time.LocalDate
@@ -24,7 +25,7 @@ fun transform(results: List<PrisonApiCourtDateResult>, prisonerDetails: Prisoner
       .groupBy { it.charge.chargeId }
       .filter {
         if (it.value.first().charge.offenceDate == null) {
-          issuesWithLegacyData.add(LegacyDataProblem("Missing offence date for ${it.value.first().charge.offenceDescription}", it.value.first()))
+          issuesWithLegacyData.add(LegacyDataProblem(LegacyDataProblemType.MISSING_OFFENCE_DATE, "There is another offence of '${it.value.first().charge.offenceDescription}' within booking ${it.value.first().bookNumber} that has a missing offence date.", it.value.first()))
           false
         } else {
           true
@@ -84,7 +85,7 @@ private fun transformToCourtDate(courtDateResult: PrisonApiCourtDateResult, issu
 
 private fun transformToType(courtDateResult: PrisonApiCourtDateResult, issuesWithLegacyData: MutableList<LegacyDataProblem>): CourtDateType? {
   if (courtDateResult.resultCode == null) {
-    issuesWithLegacyData.add(LegacyDataProblem("The court event on ${courtDateResult.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} for offence ${courtDateResult.charge.offenceDescription} committed at ${courtDateResult.charge.offenceDate!!.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} has a missing outcome", courtDateResult))
+    issuesWithLegacyData.add(LegacyDataProblem(LegacyDataProblemType.MISSING_COURT_OUTCOME, "The court hearing on ${courtDateResult.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} for '${courtDateResult.charge.offenceDescription}' has a missing outcome within booking ${courtDateResult.bookNumber}.", courtDateResult))
     return null
   }
   return mapCourtDateResult(courtDateResult, issuesWithLegacyData)

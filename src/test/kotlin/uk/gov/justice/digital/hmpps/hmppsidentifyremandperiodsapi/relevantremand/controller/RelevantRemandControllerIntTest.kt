@@ -12,6 +12,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.integration.wi
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.integration.wiremock.PrisonApiExtension
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.IdentifyRemandDecisionDto
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblem
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblemType
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Offence
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandResult
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.repository.IdentifyRemandDecisionRepository
@@ -38,7 +39,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
     assertThat(result.sentenceRemand[0].from).isEqualTo(LocalDate.of(2022, 10, 13))
     assertThat(result.sentenceRemand[0].to).isEqualTo(LocalDate.of(2022, 12, 12))
     assertThat(result.sentenceRemand[0].days).isEqualTo(61)
-    assertThat(result.issuesWithLegacyData).isEqualTo(listOf(LegacyDataProblem(message = "The court event on 13 Dec 2022 for offence An offence committed at 5 May 2021 has a missing outcome", offence = Offence(code = "SX03163A", statute = "SX03", description = "An offence"), bookingId = 1, bookNumber = "ABC123", courtCaseRef = null)))
+    assertThat(result.issuesWithLegacyData).isEqualTo(listOf(LegacyDataProblem(LegacyDataProblemType.MISSING_COURT_OUTCOME, message = "The court hearing on 13 Dec 2022 for 'An offence' has a missing outcome within booking ABC123.", offence = Offence(code = "SX03163A", statute = "SX03", description = "An offence"), bookingId = 1, bookNumber = "ABC123", courtCaseRef = null)))
   }
 
   @Test

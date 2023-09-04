@@ -27,7 +27,6 @@ class SentenceRemandService(
           loopTracker.periodsServingSentence.add(SentencePeriod(date, sentenceReleaseDate.second, sentenceReleaseDate.first.sentence, sentenceReleaseDate.first.charge))
         }
         val next = loopTracker.findNextPeriod(date)
-
         // Should we start a new period at this date?
         if (!loopTracker.doesDateIntersectWithEstablishedRemandOrSentence(date)) {
           if (next?.from == date) {
