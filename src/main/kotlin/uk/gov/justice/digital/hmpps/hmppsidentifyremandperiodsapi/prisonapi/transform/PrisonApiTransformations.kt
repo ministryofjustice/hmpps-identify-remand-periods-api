@@ -85,7 +85,7 @@ private fun transformToCourtDate(courtDateResult: PrisonApiCourtDateResult, issu
 
 private fun transformToType(courtDateResult: PrisonApiCourtDateResult, issuesWithLegacyData: MutableList<LegacyDataProblem>): CourtDateType? {
   if (courtDateResult.resultCode == null) {
-    issuesWithLegacyData.add(LegacyDataProblem(LegacyDataProblemType.MISSING_COURT_OUTCOME, "The court hearing on ${courtDateResult.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} for '${courtDateResult.charge.offenceDescription}' has a missing outcome within booking ${courtDateResult.bookNumber}.", courtDateResult))
+    issuesWithLegacyData.add(LegacyDataProblem(LegacyDataProblemType.MISSING_COURT_OUTCOME, "The court hearing on ${courtDateResult.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} for '${courtDateResult.charge.offenceDescription}' has a missing hearing outcome within booking ${courtDateResult.bookNumber}.", courtDateResult))
     return null
   }
   return mapCourtDateResult(courtDateResult, issuesWithLegacyData)
