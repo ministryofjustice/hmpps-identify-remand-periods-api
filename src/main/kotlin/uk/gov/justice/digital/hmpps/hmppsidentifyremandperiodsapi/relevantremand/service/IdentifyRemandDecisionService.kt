@@ -36,6 +36,7 @@ class IdentifyRemandDecisionService(
             fromDate = it.from,
             toDate = it.to,
             person = person,
+            prisonId = prisonerDetails.agencyId,
           )
         },
       )
@@ -48,6 +49,7 @@ class IdentifyRemandDecisionService(
         person = person,
         days = days.toInt(),
         decisionByUsername = getCurrentAuthentication().principal,
+        decisionByPrisonId = prisonerDetails.agencyId,
       ),
     )
     return mapToDto(result)
@@ -62,12 +64,15 @@ class IdentifyRemandDecisionService(
   }
 
   private fun mapToDto(decision: IdentifyRemandDecision): IdentifyRemandDecisionDto {
+    val prisonDescription = decision.decisionByPrisonId?.let { prisonService.getPrison(decision.decisionByPrisonId!!).description }
     return IdentifyRemandDecisionDto(
       accepted = decision.accepted,
       rejectComment = decision.rejectComment,
       days = decision.days,
       decisionOn = decision.decisionAt,
       decisionBy = decision.decisionByUsername,
+      decisionByPrisonId = decision.decisionByPrisonId,
+      decisionByPrisonDescription = prisonDescription,
     )
   }
 

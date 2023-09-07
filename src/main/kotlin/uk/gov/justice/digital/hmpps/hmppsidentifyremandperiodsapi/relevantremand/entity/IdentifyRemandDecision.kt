@@ -22,4 +22,6 @@ data class IdentifyRemandDecision(
   val decisionAt: LocalDateTime = LocalDateTime.now(),
 
   val decisionByUsername: String = "",
+
+  val decisionByPrisonId: String? = null,
 )
