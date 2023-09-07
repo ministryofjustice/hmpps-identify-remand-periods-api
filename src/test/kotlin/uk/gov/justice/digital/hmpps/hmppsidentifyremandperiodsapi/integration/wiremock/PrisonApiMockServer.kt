@@ -32,6 +32,7 @@ class PrisonApiExtension : BeforeAllCallback, AfterAllCallback, BeforeEachCallba
     prisonApi.stubIntersectingSentence()
     prisonApi.stubCrdValidation()
     prisonApi.stubActiveBookingHasNoOffenceDates()
+    prisonApi.stubGetPrison()
   }
 
   override fun beforeEach(context: ExtensionContext) {
@@ -172,7 +173,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
               """
                 {
                   "bookingId": 1,
-                  "offenderNo": "${PrisonApiExtension.IMPRISONED_PRISONER}"
+                  "offenderNo": "${PrisonApiExtension.IMPRISONED_PRISONER}",
+                  "agencyId": "BMI"
                 }
               """.trimIndent(),
             )
@@ -265,7 +267,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
               """
                 {
                   "bookingId": 1,
-                  "offenderNo": "${PrisonApiExtension.BAIL_PRISONER}"
+                  "offenderNo": "${PrisonApiExtension.BAIL_PRISONER}",
+                  "agencyId": "BMI"
                 }
               """.trimIndent(),
             )
@@ -390,7 +393,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
               """
                 {
                   "bookingId": 1,
-                  "offenderNo": "${PrisonApiExtension.INTERSECTING_PRISONER}"
+                  "offenderNo": "${PrisonApiExtension.INTERSECTING_PRISONER}",
+                  "agencyId": "BMI"
                 }
               """.trimIndent(),
             )
@@ -515,7 +519,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
               """
                 {
                   "bookingId": 1,
-                  "offenderNo": "${PrisonApiExtension.CRD_VALIDATION_PRISONER}"
+                  "offenderNo": "${PrisonApiExtension.CRD_VALIDATION_PRISONER}",
+                  "agencyId": "BMI"
                 }
               """.trimIndent(),
             )
@@ -608,7 +613,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
               """
                 {
                   "bookingId": 1,
-                  "offenderNo": "${PrisonApiExtension.BAIL_PRISONER}"
+                  "offenderNo": "${PrisonApiExtension.BAIL_PRISONER}",
+                  "agencyId": "BMI"
                 }
               """.trimIndent(),
             )
@@ -1228,7 +1234,8 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
               """
                 {
                   "bookingId": 2,
-                  "offenderNo": "${PrisonApiExtension.MULTIPLE_OFFENCES_PRISONER}"
+                  "offenderNo": "${PrisonApiExtension.MULTIPLE_OFFENCES_PRISONER}",
+                  "agencyId": "BMI"
                 }
               """.trimIndent(),
             )
@@ -1281,7 +1288,27 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
               """
                 {
                   "bookingId": 1,
-                  "offenderNo": "${PrisonApiExtension.NO_OFFENCE_DATES}"
+                  "offenderNo": "${PrisonApiExtension.NO_OFFENCE_DATES}",
+                  "agencyId": "BMI"
+                }
+              """.trimIndent(),
+            )
+            .withStatus(200),
+        ),
+    )
+  }
+
+  fun stubGetPrison() {
+    stubFor(
+      get("/prison-api/api/agencies/BMI?activeOnly=false")
+        .willReturn(
+          aResponse()
+            .withHeader("Content-Type", "application/json")
+            .withBody(
+              """
+                {
+                  "agencyId": "BMI",
+                  "description": "Birmingham Prison"
                 }
               """.trimIndent(),
             )

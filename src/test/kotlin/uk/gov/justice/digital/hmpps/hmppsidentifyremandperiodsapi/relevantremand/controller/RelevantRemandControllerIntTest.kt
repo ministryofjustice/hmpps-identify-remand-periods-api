@@ -206,6 +206,16 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
     assertThat(result.accepted).isFalse
     assertThat(result.rejectComment).isEqualTo("This is not correct")
     assertThat(result.days).isEqualTo(61)
+
+    val getResult = webTestClient.get()
+      .uri("/relevant-remand/${PrisonApiExtension.IMPRISONED_PRISONER}/decision")
+      .accept(MediaType.APPLICATION_JSON)
+      .headers(setAuthorisation(roles = listOf("ROLE_MANAGE_DIGITAL_WARRANT")))
+      .exchange()
+      .expectStatus().isOk
+      .returnResult(IdentifyRemandDecisionDto::class.java).responseBody.blockFirst()!!
+
+    assertThat(getResult.decisionByPrisonDescription).isEqualTo("Birmingham Prison")
   }
 
   @Test

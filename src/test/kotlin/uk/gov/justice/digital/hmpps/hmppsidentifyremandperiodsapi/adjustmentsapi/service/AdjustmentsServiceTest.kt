@@ -24,6 +24,7 @@ class AdjustmentsServiceTest {
       bookingId = 1,
       sentenceSequence = 1,
       person = person,
+      prisonId = "BMI",
     )
     val adjustmentExistingNotMatching = AdjustmentDto(
       id = UUID.randomUUID(),
@@ -32,6 +33,7 @@ class AdjustmentsServiceTest {
       bookingId = 1,
       sentenceSequence = 1,
       person = person,
+      prisonId = "BMI",
     )
     val newAdjustment = AdjustmentDto(
       id = null,
@@ -40,6 +42,7 @@ class AdjustmentsServiceTest {
       bookingId = 1,
       sentenceSequence = 1,
       person = person,
+      prisonId = "BMI",
     )
 
     whenever(apiClient.getAdjustments(person)).thenReturn(listOf(adjustmentExistingMatches, adjustmentExistingNotMatching, adjustmentExistingMatches.copy(adjustmentType = "NOT_REMAND")))

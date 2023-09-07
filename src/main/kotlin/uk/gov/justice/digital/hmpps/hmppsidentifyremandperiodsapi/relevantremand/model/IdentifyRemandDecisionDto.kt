@@ -10,4 +10,6 @@ data class IdentifyRemandDecisionDto(
   val days: Int? = null,
   val decisionOn: LocalDateTime? = null,
   val decisionBy: String? = null,
+  val decisionByPrisonId: String? = null,
+  val decisionByPrisonDescription: String? = null,
 )

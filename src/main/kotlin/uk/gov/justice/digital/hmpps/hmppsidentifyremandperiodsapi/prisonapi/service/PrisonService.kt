@@ -1,6 +1,7 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.service
 
 import org.springframework.stereotype.Service
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.Prison
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiCourtDateResult
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonerDetails
 
@@ -14,5 +15,9 @@ class PrisonService(
 
   fun getOffenderDetail(prisonerId: String): PrisonerDetails {
     return prisonApiClient.getOffenderDetail(prisonerId)
+  }
+
+  fun getPrison(agencyId: String): Prison {
+    return prisonApiClient.getPrison(agencyId)
   }
 }

@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.core.ParameterizedTypeReference
 import org.springframework.stereotype.Service
 import org.springframework.web.reactive.function.client.WebClient
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.Prison
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiCourtDateResult
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonerDetails
 
@@ -28,6 +29,15 @@ class PrisonApiClient(@Qualifier("prisonApiWebClient") private val webClient: We
       .uri("/api/offenders/$prisonerId")
       .retrieve()
       .bodyToMono(typeReference<PrisonerDetails>())
+      .block()!!
+  }
+
+  fun getPrison(prisonId: String): Prison {
+    log.info("Requesting details for prisonId $prisonId")
+    return webClient.get()
+      .uri("/api/agencies/$prisonId?activeOnly=false")
+      .retrieve()
+      .bodyToMono(typeReference<Prison>())
       .block()!!
   }
 }
