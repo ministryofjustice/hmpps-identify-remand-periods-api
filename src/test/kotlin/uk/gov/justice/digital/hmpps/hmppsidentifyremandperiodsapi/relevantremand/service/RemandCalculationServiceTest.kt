@@ -2,7 +2,6 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantreman
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Assertions
-import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvFileSource
 import org.mockito.kotlin.any
@@ -21,11 +20,6 @@ class RemandCalculationServiceTest {
   private val sentenceRemandService = SentenceRemandService(calculateReleaseDateService)
   private val remandCalculationService = RemandCalculationService(sentenceRemandService)
 
-  @Test
-  fun dosomething() {
-    `Test Examples`("adjust1-160-change-to-overlapping-logic", null)
-  }
-
   @ParameterizedTest
   @CsvFileSource(resources = ["/data/tests.csv"], numLinesToSkip = 1)
   fun `Test Examples`(exampleName: String, error: String?) {
@@ -33,25 +27,7 @@ class RemandCalculationServiceTest {
 
     val example = TestUtil.objectMapper().readValue(ClassPathResource("/data/RemandCalculation/$exampleName.json").file, TestExample::class.java)
 
-    example.sentences.forEach { sentence ->
-      sentence.calculations.forEach { calculation ->
-        log.info("Stubbing release dates for $exampleName: $sentence $calculation")
-        whenever(
-          calculateReleaseDateService.calculateReleaseDate(
-            eq(example.remandCalculation.prisonerId),
-            any(),
-            eq(Sentence(sentence.sentenceSequence, sentence.sentenceAt, sentence.recallDate, sentence.bookingId)),
-            eq(calculation.calculateAt),
-          ),
-        ).thenAnswer {
-          if (calculation.calculateAt == sentence.sentenceAt) {
-            calculation.release
-          } else {
-            calculation.postRecallReleaseDate
-          }
-        }
-      }
-    }
+    stubCalculations(exampleName, example)
 
     val remandResult: RemandResult
     try {
@@ -66,6 +42,43 @@ class RemandCalculationServiceTest {
     }
     val expected = TestUtil.objectMapper().readValue(ClassPathResource("/data/RemandResult/$exampleName.json").file, RemandResult::class.java)
     assertThat(remandResult).isEqualTo(expected)
+  }
+
+  private fun stubCalculations(exampleName: String, example: TestExample) {
+    example.sentences.forEach { sentence ->
+      sentence.calculations.forEach { calculation ->
+        log.info("Stubbing release dates for $exampleName: $sentence $calculation")
+        whenever(
+          calculateReleaseDateService.calculateReleaseDate(
+            eq(example.remandCalculation.prisonerId),
+            any(),
+            eq(Sentence(sentence.sentenceSequence, sentence.sentenceAt, sentence.recallDate, sentence.bookingId)),
+            eq(calculation.calculateAt),
+          ),
+        ).thenAnswer {
+          if (calculation.calculateAt == sentence.sentenceAt) {
+            calculation.release to calculation.unusedDeductions
+          } else {
+            calculation.postRecallReleaseDate to calculation.unusedDeductions
+          }
+        }
+      }
+    }
+
+    // If the example doesn't have the calculation for the final sentence, stub it here.
+    val lastSentence = example.remandCalculation.charges.filter { it.charge.sentenceSequence != null }.maxByOrNull { it.charge.sentenceDate!! }
+    if (lastSentence != null && example.sentences.none { it.sentenceSequence == lastSentence.charge.sentenceSequence }) {
+      whenever(
+        calculateReleaseDateService.calculateReleaseDate(
+          eq(example.remandCalculation.prisonerId),
+          any(),
+          eq(Sentence(lastSentence.charge.sentenceSequence!!, lastSentence.charge.sentenceDate!!, null, lastSentence.charge.bookingId)),
+          eq(lastSentence.charge.sentenceDate!!),
+        ),
+      ).thenAnswer {
+        lastSentence.charge.sentenceDate!!.plusYears(1) to 0
+      }
+    }
   }
 
   companion object {

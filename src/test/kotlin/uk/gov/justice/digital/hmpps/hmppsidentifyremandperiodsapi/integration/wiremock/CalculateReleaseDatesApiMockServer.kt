@@ -1,6 +1,7 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.integration.wiremock
 
 import com.github.tomakehurst.wiremock.WireMockServer
+import com.github.tomakehurst.wiremock.client.WireMock
 import com.github.tomakehurst.wiremock.client.WireMock.aResponse
 import com.github.tomakehurst.wiremock.client.WireMock.get
 import com.github.tomakehurst.wiremock.client.WireMock.post
@@ -39,7 +40,7 @@ class CalculateReleaseDatesApiMockServer : WireMockServer(WIREMOCK_PORT) {
 
   fun stubIntersectingSentence() {
     stubFor(
-      post("/calculate-release-dates-api/calculation/relevant-remand/${PrisonApiExtension.INTERSECTING_PRISONER}")
+      post(WireMock.urlPathMatching("/calculate-release-dates-api/calculation/relevant-remand/.*"))
         .willReturn(
           aResponse()
             .withHeader("Content-Type", "application/json")
