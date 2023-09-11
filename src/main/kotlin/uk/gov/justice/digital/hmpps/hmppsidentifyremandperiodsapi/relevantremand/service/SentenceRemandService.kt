@@ -9,7 +9,6 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentenceAndCharge
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentencePeriod
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentenceRemandLoopTracker
-import kotlin.math.max
 
 @Service
 class SentenceRemandService(
@@ -66,7 +65,7 @@ class SentenceRemandService(
       loopTracker.final,
       loopTracker.periodsServingSentence,
       issuesWithLegacyData,
-      sentenceReleaseDate.second
+      sentenceReleaseDate.second,
     )
   }
 }
