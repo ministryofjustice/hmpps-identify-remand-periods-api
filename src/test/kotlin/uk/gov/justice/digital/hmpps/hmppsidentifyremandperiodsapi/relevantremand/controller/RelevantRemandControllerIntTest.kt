@@ -28,7 +28,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
     val result = webTestClient.post()
       .uri("/relevant-remand/${PrisonApiExtension.IMPRISONED_PRISONER}")
       .accept(MediaType.APPLICATION_JSON)
-      .headers(setAuthorisation(roles = listOf("ROLE_MANAGE_DIGITAL_WARRANT")))
+      .headers(setAuthorisationRemandToolUser())
       .exchange()
       .expectStatus().isOk
       .expectHeader().contentType(MediaType.APPLICATION_JSON)
@@ -47,7 +47,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
     val result = webTestClient.post()
       .uri("/relevant-remand/${PrisonApiExtension.BAIL_PRISONER}")
       .accept(MediaType.APPLICATION_JSON)
-      .headers(setAuthorisation(roles = listOf("ROLE_MANAGE_DIGITAL_WARRANT")))
+      .headers(setAuthorisationRemandToolUser())
       .exchange()
       .expectStatus().isOk
       .expectHeader().contentType(MediaType.APPLICATION_JSON)
@@ -65,7 +65,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
     val result = webTestClient.post()
       .uri("/relevant-remand/${PrisonApiExtension.RELATED_PRISONER}")
       .accept(MediaType.APPLICATION_JSON)
-      .headers(setAuthorisation(roles = listOf("ROLE_MANAGE_DIGITAL_WARRANT")))
+      .headers(setAuthorisationRemandToolUser())
       .exchange()
       .expectStatus().isOk
       .expectHeader().contentType(MediaType.APPLICATION_JSON)
@@ -83,7 +83,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
     val result = webTestClient.post()
       .uri("/relevant-remand/${PrisonApiExtension.MULTIPLE_OFFENCES_PRISONER}")
       .accept(MediaType.APPLICATION_JSON)
-      .headers(setAuthorisation(roles = listOf("ROLE_MANAGE_DIGITAL_WARRANT")))
+      .headers(setAuthorisationRemandToolUser())
       .exchange()
       .expectStatus().isOk
       .expectHeader().contentType(MediaType.APPLICATION_JSON)
@@ -126,7 +126,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
     val result = webTestClient.post()
       .uri("/relevant-remand/${PrisonApiExtension.INTERSECTING_PRISONER}")
       .accept(MediaType.APPLICATION_JSON)
-      .headers(setAuthorisation(roles = listOf("ROLE_MANAGE_DIGITAL_WARRANT")))
+      .headers(setAuthorisationRemandToolUser())
       .exchange()
       .expectStatus().isOk
       .expectHeader().contentType(MediaType.APPLICATION_JSON)
@@ -159,7 +159,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
     val result = webTestClient.post()
       .uri("/relevant-remand/${PrisonApiExtension.CRD_VALIDATION_PRISONER}")
       .accept(MediaType.APPLICATION_JSON)
-      .headers(setAuthorisation(roles = listOf("ROLE_MANAGE_DIGITAL_WARRANT")))
+      .headers(setAuthorisationRemandToolUser())
       .exchange()
       .expectStatus().isEqualTo(HttpStatus.UNPROCESSABLE_ENTITY)
       .expectHeader().contentType(MediaType.APPLICATION_JSON)
@@ -174,7 +174,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
     val result = webTestClient.post()
       .uri("/relevant-remand/${PrisonApiExtension.NO_OFFENCE_DATES}")
       .accept(MediaType.APPLICATION_JSON)
-      .headers(setAuthorisation(roles = listOf("ROLE_MANAGE_DIGITAL_WARRANT")))
+      .headers(setAuthorisationRemandToolUser())
       .exchange()
       .expectStatus().isEqualTo(HttpStatus.UNPROCESSABLE_ENTITY)
       .expectHeader().contentType(MediaType.APPLICATION_JSON)
@@ -196,7 +196,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
           rejectComment = "This is not correct",
         ),
       )
-      .headers(setAuthorisation(roles = listOf("ROLE_MANAGE_DIGITAL_WARRANT")))
+      .headers(setAuthorisationRemandToolUser())
       .exchange()
       .expectStatus().isCreated
 
@@ -210,7 +210,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
     val getResult = webTestClient.get()
       .uri("/relevant-remand/${PrisonApiExtension.IMPRISONED_PRISONER}/decision")
       .accept(MediaType.APPLICATION_JSON)
-      .headers(setAuthorisation(roles = listOf("ROLE_MANAGE_DIGITAL_WARRANT")))
+      .headers(setAuthorisationRemandToolUser())
       .exchange()
       .expectStatus().isOk
       .returnResult(IdentifyRemandDecisionDto::class.java).responseBody.blockFirst()!!
@@ -230,7 +230,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
           rejectComment = null,
         ),
       )
-      .headers(setAuthorisation(roles = listOf("ROLE_MANAGE_DIGITAL_WARRANT")))
+      .headers(setAuthorisationRemandToolUser())
       .exchange()
       .expectStatus().isCreated
 

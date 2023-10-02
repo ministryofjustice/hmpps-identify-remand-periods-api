@@ -23,8 +23,8 @@ abstract class IntegrationTestBase {
   @Autowired
   lateinit var jwtAuthHelper: JwtAuthHelper
 
-  internal fun setAuthorisation(
+  internal fun setAuthorisationRemandToolUser(
     user: String = "test-client",
-    roles: List<String> = listOf(),
+    roles: List<String> = listOf("ROLE_ADJUSTMENTS_MAINTAINER", "ROLE_RELEASE_DATES_CALCULATOR", "ROLE_REMAND_IDENTIFIER"),
   ): (HttpHeaders) -> Unit = jwtAuthHelper.setAuthorisation(user, roles)
 }
