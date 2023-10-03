@@ -26,6 +26,7 @@ class HmppsIdentifyRemandPeriodsApiExceptionHandler {
         ),
       )
   }
+
   @ExceptionHandler(ValidationException::class)
   fun handleValidationException(e: Exception): ResponseEntity<ErrorResponse> {
     log.info("Validation exception: {}", e.message)
