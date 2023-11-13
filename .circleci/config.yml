@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  hmpps: ministryofjustice/hmpps@7.5.0
+  hmpps: ministryofjustice/hmpps@7
 
 parameters:
   alerts-slack-channel:
@@ -132,5 +132,3 @@ workflows:
           context:
             - veracode-credentials
             - hmpps-common-vars
-
-
