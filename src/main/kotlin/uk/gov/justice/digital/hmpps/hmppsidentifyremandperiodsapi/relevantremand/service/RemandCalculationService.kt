@@ -70,8 +70,15 @@ class RemandCalculationService(
   }
 
   private fun pickMostAppropriateCharge(relatedCharges: List<ChargeAndEvents>): Charge {
-    // Pick the charge with a sentence attached, otherwise just the first charge. This logic may change.
-    return relatedCharges.find { it.charge.sentenceSequence != null }?.charge ?: relatedCharges.first().charge
+    val chargesWithSentence = relatedCharges.filter { it.charge.sentenceSequence != null }
+    if (chargesWithSentence.isEmpty()) {
+      return relatedCharges.first().charge
+    }
+    val chargesWithSentenceAndActiveBooking = chargesWithSentence.filter { it.charge.isActiveBooking }
+    if (chargesWithSentenceAndActiveBooking.isEmpty()) {
+      return chargesWithSentence.first().charge
+    }
+    return chargesWithSentenceAndActiveBooking.first().charge
   }
 
   private fun flattenCourtDates(relatedCharges: List<ChargeAndEvents>) =
