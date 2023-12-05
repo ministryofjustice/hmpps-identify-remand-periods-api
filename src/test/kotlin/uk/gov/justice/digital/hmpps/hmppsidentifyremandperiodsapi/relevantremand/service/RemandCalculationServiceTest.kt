@@ -2,7 +2,6 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantreman
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Assertions
-import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvFileSource
 import org.mockito.kotlin.any
@@ -41,6 +40,7 @@ class RemandCalculationServiceTest {
         throw e
       }
     }
+    println(TestUtil.objectMapper().writeValueAsString(remandResult))
     val expected = TestUtil.objectMapper().readValue(ClassPathResource("/data/RemandResult/$exampleName.json").file, RemandResult::class.java)
     assertThat(remandResult).isEqualTo(expected)
   }
@@ -58,9 +58,9 @@ class RemandCalculationServiceTest {
           ),
         ).thenAnswer {
           if (calculation.calculateAt == sentence.sentenceAt) {
-            calculation.release to calculation.unusedDeductions
+            calculation.release
           } else {
-            calculation.postRecallReleaseDate to calculation.unusedDeductions
+            calculation.postRecallReleaseDate
           }
         }
       }

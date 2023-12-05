@@ -62,7 +62,7 @@ class SentenceRemandService(
       remandPeriods,
       loopTracker.final,
       loopTracker.periodsServingSentence,
-      issuesWithLegacyData
+      issuesWithLegacyData,
     )
   }
 }
