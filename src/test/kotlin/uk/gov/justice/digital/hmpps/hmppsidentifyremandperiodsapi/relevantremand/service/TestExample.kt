@@ -20,5 +20,4 @@ data class Calculations(
   val calculateAt: LocalDate,
   val release: LocalDate,
   val postRecallReleaseDate: LocalDate? = null,
-  val unusedDeductions: Int = 0,
 )

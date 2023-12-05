@@ -5,5 +5,4 @@ data class RemandResult(
   val sentenceRemand: List<Remand>,
   val intersectingSentences: List<SentencePeriod>,
   val issuesWithLegacyData: List<LegacyDataProblem> = emptyList(),
-  val unusedDeductions: Int = 0,
 )

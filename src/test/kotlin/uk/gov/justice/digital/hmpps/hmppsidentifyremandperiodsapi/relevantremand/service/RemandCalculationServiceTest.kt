@@ -40,6 +40,7 @@ class RemandCalculationServiceTest {
         throw e
       }
     }
+    println(TestUtil.objectMapper().writeValueAsString(remandResult))
     val expected = TestUtil.objectMapper().readValue(ClassPathResource("/data/RemandResult/$exampleName.json").file, RemandResult::class.java)
     assertThat(remandResult).isEqualTo(expected)
   }
@@ -57,26 +58,11 @@ class RemandCalculationServiceTest {
           ),
         ).thenAnswer {
           if (calculation.calculateAt == sentence.sentenceAt) {
-            calculation.release to calculation.unusedDeductions
+            calculation.release
           } else {
-            calculation.postRecallReleaseDate to calculation.unusedDeductions
+            calculation.postRecallReleaseDate
           }
         }
-      }
-    }
-
-    // If the example doesn't have the calculation for the final sentence, stub it here.
-    val lastSentence = example.remandCalculation.charges.filter { it.charge.sentenceSequence != null }.maxByOrNull { it.charge.sentenceDate!! }
-    if (lastSentence != null && example.sentences.none { it.sentenceSequence == lastSentence.charge.sentenceSequence }) {
-      whenever(
-        calculateReleaseDateService.calculateReleaseDate(
-          eq(example.remandCalculation.prisonerId),
-          any(),
-          eq(Sentence(lastSentence.charge.sentenceSequence!!, lastSentence.charge.sentenceDate!!, null, lastSentence.charge.bookingId)),
-          eq(lastSentence.charge.sentenceDate!!),
-        ),
-      ).thenAnswer {
-        lastSentence.charge.sentenceDate!!.plusYears(1) to 0
       }
     }
   }
