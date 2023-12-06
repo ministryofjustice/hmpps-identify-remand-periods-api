@@ -55,6 +55,14 @@ class SentenceRemandService(
           loopTracker.final.add(current)
           current = loopTracker.open.firstOrNull()?.copy(from = date.plusDays(1))
         }
+
+        // Check if we should be opening another period immediately after closing one. (Intersecting immediate release.)
+        if (!loopTracker.doesDateIntersectWithEstablishedRemandOrSentence(date)) {
+          if (current == null && loopTracker.open.isNotEmpty()) {
+            // New period starting from the end of another period.
+            current = loopTracker.open.first().copy(from = date.plusDays(1))
+          }
+        }
       }
     }
 

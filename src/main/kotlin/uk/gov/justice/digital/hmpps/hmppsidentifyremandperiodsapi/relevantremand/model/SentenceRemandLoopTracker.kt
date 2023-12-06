@@ -60,7 +60,7 @@ class SentenceRemandLoopTracker(
 
   /* Can we open a new period, does the period intersected a confirmed date. */
   fun doesDateIntersectWithEstablishedRemandOrSentence(date: LocalDate): Boolean {
-    return !(!sentences.any { it.sentence.sentenceDate == date } && (final + periodsServingSentence).none { it.overlapsStartInclusive(date.plusDays(1)) })
+    return !(final + periodsServingSentence).none { it.overlapsStartInclusive(date.plusDays(1)) }
   }
 
   /* Should the current period be closed? */
