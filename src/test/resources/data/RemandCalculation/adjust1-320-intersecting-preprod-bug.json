@@ -1,0 +1,556 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABCD123",
+    "charges": [
+      {
+        "charge": {
+          "chargeId": 1,
+          "offence": {
+            "code": "COML017",
+            "statute": "COML",
+            "description": "False imprisonment"
+          },
+          "offenceDate": "2017-09-17",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 2,
+          "sentenceDate": "2018-02-08",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-19",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)",
+            "final": false,
+            "isRecallEvent": false,
+            "isCustodial": false
+          },
+          {
+            "date": "2017-10-20",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)",
+            "final": false,
+            "isRecallEvent": false,
+            "isCustodial": false
+          },
+          {
+            "date": "2017-12-22",
+            "type": "START",
+            "description": "Committed to Crown Court for Sentence",
+            "final": false,
+            "isRecallEvent": false,
+            "isCustodial": false
+          },
+          {
+            "date": "2018-02-08",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isRecallEvent": false,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 2,
+          "offence": {
+            "code": "SX03002",
+            "statute": "SX03",
+            "description": "Rape a woman 16 years of age or over - SOA 2003"
+          },
+          "offenceDate": "2017-09-17",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 5,
+          "sentenceDate": "2018-02-08",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-19",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)",
+            "final": false,
+            "isRecallEvent": false,
+            "isCustodial": false
+          },
+          {
+            "date": "2017-10-20",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)",
+            "final": false,
+            "isRecallEvent": false,
+            "isCustodial": false
+          },
+          {
+            "date": "2017-12-22",
+            "type": "START",
+            "description": "Committed to Crown Court for Sentence",
+            "final": false,
+            "isRecallEvent": false,
+            "isCustodial": false
+          },
+          {
+            "date": "2018-02-08",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isRecallEvent": false,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3,
+          "offence": {
+            "code": "SX03002",
+            "statute": "SX03",
+            "description": "Rape a woman 16 years of age or over - SOA 2003"
+          },
+          "offenceDate": "2017-09-17",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 5,
+          "sentenceDate": "2018-02-08",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-19",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)",
+            "final": false,
+            "isRecallEvent": false,
+            "isCustodial": false
+          },
+          {
+            "date": "2017-10-20",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)",
+            "final": false,
+            "isRecallEvent": false,
+            "isCustodial": false
+          },
+          {
+            "date": "2017-12-22",
+            "type": "START",
+            "description": "Committed to Crown Court for Sentence",
+            "final": false,
+            "isRecallEvent": false,
+            "isCustodial": false
+          },
+          {
+            "date": "2018-02-08",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isRecallEvent": false,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4,
+          "offence": {
+            "code": "SX03002",
+            "statute": "SX03",
+            "description": "Rape a woman 16 years of age or over - SOA 2003"
+          },
+          "offenceDate": "2017-09-17",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": null,
+          "sentenceDate": null,
+          "resultDescription": "Replaced With Another Offence",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-19",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)",
+            "final": false,
+            "isRecallEvent": false,
+            "isCustodial": false
+          },
+          {
+            "date": "2017-10-20",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)",
+            "final": false,
+            "isRecallEvent": false,
+            "isCustodial": false
+          },
+          {
+            "date": "2017-12-22",
+            "type": "STOP",
+            "description": "Replaced With Another Offence",
+            "final": true,
+            "isRecallEvent": false,
+            "isCustodial": false
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5,
+          "offence": {
+            "code": "SX03011",
+            "statute": "SX03",
+            "description": "Cause a female 13 or over to engage in a penetrative sexual activity - SOA 2003"
+          },
+          "offenceDate": "2017-09-17",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": null,
+          "sentenceDate": null,
+          "resultDescription": "Replaced With Another Offence",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-19",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)",
+            "final": false,
+            "isRecallEvent": false,
+            "isCustodial": false
+          },
+          {
+            "date": "2017-10-20",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)",
+            "final": false,
+            "isRecallEvent": false,
+            "isCustodial": false
+          },
+          {
+            "date": "2017-12-22",
+            "type": "STOP",
+            "description": "Replaced With Another Offence",
+            "final": true,
+            "isRecallEvent": false,
+            "isCustodial": false
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6,
+          "offence": {
+            "code": "SX03007",
+            "statute": "SX03",
+            "description": "Sexual assault on a female"
+          },
+          "offenceDate": "2017-09-17",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": null,
+          "sentenceDate": null,
+          "resultDescription": "Replaced With Another Offence",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-19",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)",
+            "final": false,
+            "isRecallEvent": false,
+            "isCustodial": false
+          },
+          {
+            "date": "2017-10-20",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)",
+            "final": false,
+            "isRecallEvent": false,
+            "isCustodial": false
+          },
+          {
+            "date": "2017-12-22",
+            "type": "STOP",
+            "description": "Replaced With Another Offence",
+            "final": true,
+            "isRecallEvent": false,
+            "isCustodial": false
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7,
+          "offence": {
+            "code": "TH68047",
+            "statute": "TH68",
+            "description": "Aggravated burglary with intent - dwelling"
+          },
+          "offenceDate": "2017-09-17",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": null,
+          "sentenceDate": null,
+          "resultDescription": "Replaced With Another Offence",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-19",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)",
+            "final": false,
+            "isRecallEvent": false,
+            "isCustodial": false
+          },
+          {
+            "date": "2017-10-20",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)",
+            "final": false,
+            "isRecallEvent": false,
+            "isCustodial": false
+          },
+          {
+            "date": "2017-12-22",
+            "type": "STOP",
+            "description": "Replaced With Another Offence",
+            "final": true,
+            "isRecallEvent": false,
+            "isCustodial": false
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 8,
+          "offence": {
+            "code": "BA76001",
+            "statute": "BA76",
+            "description": "Fail to surrender to police / court bail at the appointed time"
+          },
+          "offenceDate": "2017-06-10",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 1,
+          "sentenceDate": "2017-11-06",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2017-10-03",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody",
+            "final": false,
+            "isRecallEvent": false,
+            "isCustodial": false
+          },
+          {
+            "date": "2017-11-06",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isRecallEvent": false,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 9,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "offenceDate": "2014-05-22",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": null,
+          "sentenceDate": null,
+          "resultDescription": "Discontinuance",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2017-10-03",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)",
+            "final": false,
+            "isRecallEvent": false,
+            "isCustodial": false
+          },
+          {
+            "date": "2017-10-10",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody",
+            "final": false,
+            "isRecallEvent": false,
+            "isCustodial": false
+          },
+          {
+            "date": "2017-11-07",
+            "type": "STOP",
+            "description": "Discontinuance",
+            "final": true,
+            "isRecallEvent": false,
+            "isCustodial": false
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 10,
+          "offence": {
+            "code": "TH68046",
+            "statute": "TH68",
+            "description": "Aggravated burglary - other than dwelling"
+          },
+          "offenceDate": "2017-09-17",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 2,
+          "sentenceDate": "2018-02-08",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-02-08",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isRecallEvent": false,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 11,
+          "offence": {
+            "code": "SX03009",
+            "statute": "SX03",
+            "description": "Cause a female 13 or over to engage in a non penetrative sexual activity - SOA 2003"
+          },
+          "offenceDate": "2017-09-17",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 4,
+          "sentenceDate": "2018-02-08",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-02-08",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isRecallEvent": false,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 12,
+          "offence": {
+            "code": "SX56071A",
+            "statute": "SX56",
+            "description": "Attempt rape of a female 16 years or over"
+          },
+          "offenceDate": "2017-09-17",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 3,
+          "sentenceDate": "2018-02-08",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-02-08",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isRecallEvent": false,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 13,
+          "offence": {
+            "code": "SX03007",
+            "statute": "SX03",
+            "description": "Sexual assault on a female"
+          },
+          "offenceDate": "2017-09-17",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 4,
+          "sentenceDate": "2018-02-08",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-02-08",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isRecallEvent": false,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 14,
+          "offence": {
+            "code": "COML017",
+            "statute": "COML",
+            "description": "False imprisonment"
+          },
+          "offenceDate": "2017-09-17",
+          "bookingId": 1,
+          "offenceEndDate": null,
+          "sentenceSequence": 2,
+          "sentenceDate": "2018-02-08",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-02-08",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isRecallEvent": false,
+            "isCustodial": true
+          }
+        ]
+      }
+    ]
+  },
+  "sentences": [{
+    "bookingId": 1,
+    "sentenceSequence": 1,
+    "sentenceAt": "2017-11-06",
+    "calculations": [
+      {
+        "calculateAt": "2017-11-06",
+        "release": "2017-11-06"
+      }
+    ]
+  }]
+}

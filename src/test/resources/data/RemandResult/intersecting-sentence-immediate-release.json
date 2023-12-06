@@ -85,6 +85,29 @@
         "resultDescription": null
       },
       "days": 49
+    },
+    {
+      "from":"2022-11-29",
+      "to":"2023-01-03",
+      "charge":{
+        "chargeId":2,
+        "offence":{
+          "code":"TH68036",
+          "statute":"TH68",
+          "description":"Burglary dwelling and theft  - no violence"
+        },
+        "offenceDate":"2021-11-13",
+        "bookingId":1,
+        "bookNumber":"",
+        "offenceEndDate":null,
+        "sentenceSequence":3,
+        "sentenceDate":"2023-01-04",
+        "courtCaseRef":null,
+        "courtLocation":null,
+        "resultDescription":null,
+        "isActiveBooking":false
+      },
+      "days":36
     }
   ],
   "intersectingSentences": [
