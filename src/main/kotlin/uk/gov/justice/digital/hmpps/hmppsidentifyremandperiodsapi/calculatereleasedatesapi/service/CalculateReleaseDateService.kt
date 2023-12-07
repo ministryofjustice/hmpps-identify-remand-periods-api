@@ -25,21 +25,27 @@ class CalculateReleaseDateService(
     try {
       result = calculateReleaseDatesApiClient.calculateReleaseDates(prisonerId, request)
     } catch (e: Exception) {
-      throw UnsupportedCalculationException("Error calling CRD service $request", e)
+      throw UnsupportedCalculationException("Error calling CRDS $request", e)
     }
     if (result.validationMessages.isNotEmpty()) {
       throw UnsupportedCalculationException(
-        "Validation error from calling CRD service $sentence, \n ${
+        "Validation error from calling CRDS $sentence, \n ${
         result.validationMessages.joinToString(
           separator = "\n",
         ) { it.message }
         }",
       )
     }
-    if (sentence.recallDate == calculateAt) {
-      return result.postRecallReleaseDate!!
+    return if (sentence.recallDate == calculateAt) {
+      if (result.postRecallReleaseDate == null) {
+        throw UnsupportedCalculationException("CRDS Calculation expected a recall release date, but was not found. $request")
+      }
+      result.postRecallReleaseDate
     } else {
-      return result.releaseDate!!
+      if (result.releaseDate == null) {
+        throw UnsupportedCalculationException("CRDS Calculation expected a release date, but was not found. $request")
+      }
+      result.releaseDate
     }
   }
 
