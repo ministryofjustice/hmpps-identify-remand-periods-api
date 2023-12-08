@@ -22,11 +22,11 @@ class AdjustmentsApiClient(@Qualifier("adjustmentsApiWebClient") private val web
       .block()!!
   }
 
-  fun createAdjustment(adjustment: AdjustmentDto) {
-    log.info("Creating adjustment")
+  fun createAdjustment(adjustments: List<AdjustmentDto>) {
+    log.info("Creating adjustments")
     webClient.post()
       .uri("/adjustments")
-      .bodyValue(adjustment)
+      .bodyValue(adjustments)
       .retrieve()
       .toBodilessEntity()
       .block()

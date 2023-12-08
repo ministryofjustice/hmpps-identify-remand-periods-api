@@ -22,13 +22,11 @@ class AdjustmentsService(
       deleteRemand(it.id!!)
     }
 
-    create.forEach {
-      saveRemand(it)
-    }
+    createRemand(create)
   }
 
-  private fun saveRemand(remand: AdjustmentDto) {
-    adjustmentsApiClient.createAdjustment(remand)
+  private fun createRemand(remands: List<AdjustmentDto>) {
+    adjustmentsApiClient.createAdjustment(remands)
   }
 
   private fun getAdjustments(person: String): List<AdjustmentDto> {
