@@ -50,6 +50,6 @@ class AdjustmentsServiceTest {
     adjustmentsService.saveRemand(person, listOf(adjustmentExistingMatches.copy(id = null), newAdjustment))
 
     verify(apiClient, times(1)).delete(adjustmentExistingNotMatching.id!!)
-    verify(apiClient, times(1)).createAdjustment(newAdjustment)
+    verify(apiClient, times(1)).createAdjustment(listOf(newAdjustment))
   }
 }
