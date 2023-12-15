@@ -3,6 +3,14 @@
     {
       "from": "2020-01-01",
       "to": "2021-12-31",
+      "fromEvent": {
+        "date": "2020-01-01",
+        "description": ""
+      },
+      "toEvent": {
+        "date": "2022-01-01",
+        "description": ""
+      },
       "charge": {
         "chargeId": 1,
         "offence": {
@@ -12,15 +20,28 @@
         },
         "offenceDate": "2000-01-01",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": "2000-01-01",
         "sentenceSequence": 1,
-        "sentenceDate": "2022-01-01"
+        "sentenceDate": "2022-01-01",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null,
+        "isActiveBooking": false
       },
       "days": 731
     },
     {
       "from": "2021-01-01",
       "to": "2021-01-31",
+      "fromEvent": {
+        "date": "2021-01-01",
+        "description": ""
+      },
+      "toEvent": {
+        "date": "2021-02-01",
+        "description": ""
+      },
       "charge": {
         "chargeId": 2,
         "offence": {
@@ -30,9 +51,14 @@
         },
         "offenceDate": "2001-01-01",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": "2001-01-01",
         "sentenceSequence": 2,
-        "sentenceDate": "2021-02-01"
+        "sentenceDate": "2021-02-01",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null,
+        "isActiveBooking": false
       },
       "days": 31
     }
@@ -50,9 +76,14 @@
         },
         "offenceDate": "2001-01-01",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": "2001-01-01",
         "sentenceSequence": 2,
-        "sentenceDate": "2021-02-01"
+        "sentenceDate": "2021-02-01",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null,
+        "isActiveBooking": false
       },
       "days": 31
     },
@@ -68,9 +99,14 @@
         },
         "offenceDate": "2000-01-01",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": "2000-01-01",
         "sentenceSequence": 1,
-        "sentenceDate": "2022-01-01"
+        "sentenceDate": "2022-01-01",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null,
+        "isActiveBooking": false
       },
       "days": 366
     },
@@ -86,9 +122,14 @@
         },
         "offenceDate": "2000-01-01",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": "2000-01-01",
         "sentenceSequence": 1,
-        "sentenceDate": "2022-01-01"
+        "sentenceDate": "2022-01-01",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null,
+        "isActiveBooking": false
       },
       "days": 243
     }
@@ -100,6 +141,7 @@
       "sentence": {
         "sequence": 2,
         "sentenceDate": "2021-02-01",
+        "recallDate": null,
         "bookingId": 1
       },
       "charge": {
@@ -111,14 +153,17 @@
         },
         "offenceDate": "2001-01-01",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": "2001-01-01",
         "sentenceSequence": 2,
         "sentenceDate": "2021-02-01",
         "courtCaseRef": null,
         "courtLocation": null,
-        "resultDescription": null
+        "resultDescription": null,
+        "isActiveBooking": false
       },
       "days": 91
     }
-  ]
+  ],
+  "issuesWithLegacyData": []
 }

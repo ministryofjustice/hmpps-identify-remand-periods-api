@@ -5,6 +5,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Charge
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeAndEvents
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeRemand
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtAppearance
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDate
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.CONTINUE
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.START
@@ -14,7 +15,6 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandResult
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentenceAndCharge
-import java.time.LocalDate
 
 @Service
 class RemandCalculationService(
@@ -36,17 +36,14 @@ class RemandCalculationService(
     val remand = mutableListOf<ChargeRemand>()
     remandCalculation.charges.forEach { chargeAndEvent ->
       if (hasAnyRemandEvent(chargeAndEvent.dates)) {
-        var from: LocalDate? = null
-        var fromEvent = ""
+        var from: CourtDate? = null
         chargeAndEvent.dates.forEach {
           if (listOf(START, CONTINUE).contains(it.type) && from == null) {
-            from = it.date
-            fromEvent = it.description
+            from = it
           }
           if (it.type == STOP && from != null) {
-            remand.add(ChargeRemand(from!!, getToDate(it), fromEvent, it.description, chargeAndEvent.charge))
+            remand.add(ChargeRemand(from!!.date, getToDate(it), CourtAppearance(from!!.date, from!!.description), CourtAppearance(it.date, it.description), chargeAndEvent.charge))
             from = null
-            fromEvent = ""
           }
         }
       }

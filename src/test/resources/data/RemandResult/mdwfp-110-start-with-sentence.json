@@ -3,6 +3,14 @@
     {
       "from": "2022-11-04",
       "to": "2023-01-09",
+      "fromEvent": {
+        "date": "2022-11-04",
+        "description": ""
+      },
+      "toEvent": {
+        "date": "2023-01-10",
+        "description": ""
+      },
       "charge": {
         "chargeId": 4,
         "offence": {
@@ -12,15 +20,28 @@
         },
         "offenceDate": "2022-11-01",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": null,
         "sentenceSequence": 3,
-        "sentenceDate": "2023-01-10"
+        "sentenceDate": "2023-01-10",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null,
+        "isActiveBooking": false
       },
       "days": 67
     },
     {
       "from": "2022-11-04",
       "to": "2023-01-09",
+      "fromEvent": {
+        "date": "2022-11-04",
+        "description": ""
+      },
+      "toEvent": {
+        "date": "2023-01-10",
+        "description": ""
+      },
       "charge": {
         "chargeId": 5,
         "offence": {
@@ -30,15 +51,28 @@
         },
         "offenceDate": "2022-10-31",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": null,
         "sentenceSequence": 3,
-        "sentenceDate": "2023-01-10"
+        "sentenceDate": "2023-01-10",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null,
+        "isActiveBooking": false
       },
       "days": 67
     },
     {
       "from": "2022-11-04",
       "to": "2023-01-09",
+      "fromEvent": {
+        "date": "2022-11-04",
+        "description": ""
+      },
+      "toEvent": {
+        "date": "2023-01-10",
+        "description": ""
+      },
       "charge": {
         "chargeId": 6,
         "offence": {
@@ -48,15 +82,28 @@
         },
         "offenceDate": "2022-10-30",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": null,
         "sentenceSequence": 3,
-        "sentenceDate": "2023-01-10"
+        "sentenceDate": "2023-01-10",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null,
+        "isActiveBooking": false
       },
       "days": 67
     },
     {
       "from": "2022-11-04",
       "to": "2023-01-09",
+      "fromEvent": {
+        "date": "2022-11-04",
+        "description": ""
+      },
+      "toEvent": {
+        "date": "2023-01-10",
+        "description": ""
+      },
       "charge": {
         "chargeId": 8,
         "offence": {
@@ -66,15 +113,28 @@
         },
         "offenceDate": "2022-11-02",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": null,
         "sentenceSequence": 3,
-        "sentenceDate": "2023-01-10"
+        "sentenceDate": "2023-01-10",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null,
+        "isActiveBooking": false
       },
       "days": 67
     },
     {
       "from": "2022-11-04",
       "to": "2023-01-09",
+      "fromEvent": {
+        "date": "2022-11-04",
+        "description": ""
+      },
+      "toEvent": {
+        "date": "2023-01-10",
+        "description": ""
+      },
       "charge": {
         "chargeId": 9,
         "offence": {
@@ -84,9 +144,14 @@
         },
         "offenceDate": "2022-10-31",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": null,
         "sentenceSequence": null,
-        "sentenceDate": null
+        "sentenceDate": null,
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null,
+        "isActiveBooking": false
       },
       "days": 67
     }
@@ -104,9 +169,14 @@
         },
         "offenceDate": "2022-11-01",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": null,
         "sentenceSequence": 3,
-        "sentenceDate": "2023-01-10"
+        "sentenceDate": "2023-01-10",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null,
+        "isActiveBooking": false
       },
       "days": 46
     }
@@ -130,14 +200,17 @@
         },
         "offenceDate": "2022-05-04",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": "2022-05-23",
         "sentenceSequence": 1,
         "sentenceDate": "2022-11-04",
         "courtCaseRef": null,
         "courtLocation": null,
-        "resultDescription": null
+        "resultDescription": null,
+        "isActiveBooking": false
       },
       "days": 21
     }
-  ]
+  ],
+  "issuesWithLegacyData": []
 }

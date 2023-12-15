@@ -1,60 +1,62 @@
 {
-  "chargeRemand":[
+  "chargeRemand": [
     {
-      "from":"2023-09-22",
-      "to":"2023-10-05",
-      "fromEvent":"",
-      "toEvent":"",
-      "charge":{
-        "chargeId":2,
-        "offence":{
-          "code":"1",
-          "statute":"1",
-          "description":"An offence"
-        },
-        "offenceDate":"2000-01-01",
-        "bookingId":2,
-        "bookNumber":"",
-        "offenceEndDate":null,
-        "sentenceSequence":2,
-        "sentenceDate":"2023-10-06",
-        "courtCaseRef":null,
-        "courtLocation":null,
-        "resultDescription":null,
-        "isActiveBooking":true
+      "from": "2023-09-22",
+      "to": "2023-10-05",
+      "fromEvent": {
+        "date": "2023-09-22",
+        "description": ""
       },
-      "days":14
+      "toEvent": {
+        "date": "2023-10-06",
+        "description": ""
+      },
+      "charge": {
+        "chargeId": 2,
+        "offence": {
+          "code": "1",
+          "statute": "1",
+          "description": "An offence"
+        },
+        "offenceDate": "2000-01-01",
+        "bookingId": 2,
+        "bookNumber": "",
+        "offenceEndDate": null,
+        "sentenceSequence": 2,
+        "sentenceDate": "2023-10-06",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null,
+        "isActiveBooking": true
+      },
+      "days": 14
     }
   ],
-  "sentenceRemand":[
+  "sentenceRemand": [
     {
-      "from":"2023-09-22",
-      "to":"2023-10-05",
-      "charge":{
-        "chargeId":2,
-        "offence":{
-          "code":"1",
-          "statute":"1",
-          "description":"An offence"
+      "from": "2023-09-22",
+      "to": "2023-10-05",
+      "charge": {
+        "chargeId": 2,
+        "offence": {
+          "code": "1",
+          "statute": "1",
+          "description": "An offence"
         },
-        "offenceDate":"2000-01-01",
-        "bookingId":2,
-        "bookNumber":"",
-        "offenceEndDate":null,
-        "sentenceSequence":2,
-        "sentenceDate":"2023-10-06",
-        "courtCaseRef":null,
-        "courtLocation":null,
-        "resultDescription":null,
-        "isActiveBooking":true
+        "offenceDate": "2000-01-01",
+        "bookingId": 2,
+        "bookNumber": "",
+        "offenceEndDate": null,
+        "sentenceSequence": 2,
+        "sentenceDate": "2023-10-06",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null,
+        "isActiveBooking": true
       },
-      "days":14
+      "days": 14
     }
   ],
-  "intersectingSentences":[
-
-  ],
-  "issuesWithLegacyData":[
-
-  ]
+  "intersectingSentences": [],
+  "issuesWithLegacyData": []
 }

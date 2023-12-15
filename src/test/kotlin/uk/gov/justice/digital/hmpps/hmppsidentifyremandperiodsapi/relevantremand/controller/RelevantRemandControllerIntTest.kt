@@ -10,6 +10,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.config.ErrorRe
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.integration.IntegrationTestBase
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.integration.wiremock.AdjustmentsApiExtension
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.integration.wiremock.PrisonApiExtension
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtAppearance
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.IdentifyRemandDecisionDto
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblem
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblemType
@@ -94,24 +95,24 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
     assertThat(result.chargeRemand.size).isEqualTo(5)
     assertThat(result.chargeRemand[0].from).isEqualTo(LocalDate.of(2019, 7, 6))
     assertThat(result.chargeRemand[0].to).isEqualTo(LocalDate.of(2020, 9, 24))
-    assertThat(result.chargeRemand[0].fromEvent).isEqualTo("Commit/Transfer/Send to Crown Court for Trial in Custody")
-    assertThat(result.chargeRemand[0].toEvent).isEqualTo("Commit to Crown Court for Sentence Conditional Bail")
+    assertThat(result.chargeRemand[0].fromEvent).isEqualTo(CourtAppearance(LocalDate.of(2019, 7, 6), "Commit/Transfer/Send to Crown Court for Trial in Custody"))
+    assertThat(result.chargeRemand[0].toEvent).isEqualTo(CourtAppearance(LocalDate.of(2020, 9, 24), "Commit to Crown Court for Sentence Conditional Bail"))
     assertThat(result.chargeRemand[1].from).isEqualTo(LocalDate.of(2021, 6, 14))
     assertThat(result.chargeRemand[1].to).isEqualTo(LocalDate.of(2021, 6, 14))
-    assertThat(result.chargeRemand[1].fromEvent).isEqualTo("Sentence Postponed")
-    assertThat(result.chargeRemand[1].toEvent).isEqualTo("Imprisonment")
+    assertThat(result.chargeRemand[1].fromEvent).isEqualTo(CourtAppearance(LocalDate.of(2021, 6, 14), "Sentence Postponed"))
+    assertThat(result.chargeRemand[1].toEvent).isEqualTo(CourtAppearance(LocalDate.of(2021, 6, 15), "Imprisonment"))
     assertThat(result.chargeRemand[2].from).isEqualTo(LocalDate.of(2019, 7, 6))
     assertThat(result.chargeRemand[2].to).isEqualTo(LocalDate.of(2020, 9, 24))
-    assertThat(result.chargeRemand[2].fromEvent).isEqualTo("Commit/Transfer/Send to Crown Court for Trial in Custody")
-    assertThat(result.chargeRemand[2].toEvent).isEqualTo("Commit to Crown Court for Sentence Conditional Bail")
+    assertThat(result.chargeRemand[2].fromEvent).isEqualTo(CourtAppearance(LocalDate.of(2019, 7, 6), "Commit/Transfer/Send to Crown Court for Trial in Custody"))
+    assertThat(result.chargeRemand[2].toEvent).isEqualTo(CourtAppearance(LocalDate.of(2020, 9, 24), "Commit to Crown Court for Sentence Conditional Bail"))
     assertThat(result.chargeRemand[3].from).isEqualTo(LocalDate.of(2019, 7, 6))
     assertThat(result.chargeRemand[3].to).isEqualTo(LocalDate.of(2020, 9, 24))
-    assertThat(result.chargeRemand[3].fromEvent).isEqualTo("Commit to Crown Court for Trial (Summary / Either Way Offences)")
-    assertThat(result.chargeRemand[3].toEvent).isEqualTo("Commit to Crown Court for Sentence Conditional Bail")
+    assertThat(result.chargeRemand[3].fromEvent).isEqualTo(CourtAppearance(LocalDate.of(2019, 7, 6), "Commit to Crown Court for Trial (Summary / Either Way Offences)"))
+    assertThat(result.chargeRemand[3].toEvent).isEqualTo(CourtAppearance(LocalDate.of(2020, 9, 24), "Commit to Crown Court for Sentence Conditional Bail"))
     assertThat(result.chargeRemand[4].from).isEqualTo(LocalDate.of(2021, 6, 14))
     assertThat(result.chargeRemand[4].to).isEqualTo(LocalDate.of(2021, 6, 14))
-    assertThat(result.chargeRemand[4].fromEvent).isEqualTo("Sentence Postponed")
-    assertThat(result.chargeRemand[4].toEvent).isEqualTo("Imprisonment")
+    assertThat(result.chargeRemand[4].fromEvent).isEqualTo(CourtAppearance(LocalDate.of(2021, 6, 14), "Sentence Postponed"))
+    assertThat(result.chargeRemand[4].toEvent).isEqualTo(CourtAppearance(LocalDate.of(2021, 6, 15), "Imprisonment"))
 
     assertThat(result.sentenceRemand).isNotEmpty
     assertThat(result.sentenceRemand.size).isEqualTo(2)

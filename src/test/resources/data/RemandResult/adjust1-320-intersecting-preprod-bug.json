@@ -1,284 +1,324 @@
 {
-  "chargeRemand":[
+  "chargeRemand": [
     {
-      "from":"2017-09-19",
-      "to":"2018-02-07",
-      "fromEvent":"Commit to Crown Court for Trial (Summary / Either Way Offences)",
-      "toEvent":"Imprisonment",
-      "charge":{
-        "chargeId":1,
-        "offence":{
-          "code":"COML017",
-          "statute":"COML",
-          "description":"False imprisonment"
-        },
-        "offenceDate":"2017-09-17",
-        "bookingId":1,
-        "bookNumber":"",
-        "offenceEndDate":null,
-        "sentenceSequence":2,
-        "sentenceDate":"2018-02-08",
-        "courtCaseRef":null,
-        "courtLocation":null,
-        "resultDescription":"Imprisonment",
-        "isActiveBooking":true
+      "from": "2017-09-19",
+      "to": "2018-02-07",
+      "fromEvent": {
+        "date": "2017-09-19",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
       },
-      "days":142
+      "toEvent": {
+        "date": "2018-02-08",
+        "description": "Imprisonment"
+      },
+      "charge": {
+        "chargeId": 1,
+        "offence": {
+          "code": "COML017",
+          "statute": "COML",
+          "description": "False imprisonment"
+        },
+        "offenceDate": "2017-09-17",
+        "bookingId": 1,
+        "bookNumber": "",
+        "offenceEndDate": null,
+        "sentenceSequence": 2,
+        "sentenceDate": "2018-02-08",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": "Imprisonment",
+        "isActiveBooking": true
+      },
+      "days": 142
     },
     {
-      "from":"2017-09-19",
-      "to":"2017-12-22",
-      "fromEvent":"Commit to Crown Court for Trial (Summary / Either Way Offences)",
-      "toEvent":"Replaced With Another Offence",
-      "charge":{
-        "chargeId":2,
-        "offence":{
-          "code":"SX03002",
-          "statute":"SX03",
-          "description":"Rape a woman 16 years of age or over - SOA 2003"
-        },
-        "offenceDate":"2017-09-17",
-        "bookingId":1,
-        "bookNumber":"",
-        "offenceEndDate":null,
-        "sentenceSequence":5,
-        "sentenceDate":"2018-02-08",
-        "courtCaseRef":null,
-        "courtLocation":null,
-        "resultDescription":"Imprisonment",
-        "isActiveBooking":true
+      "from": "2017-09-19",
+      "to": "2017-12-22",
+      "fromEvent": {
+        "date": "2017-09-19",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
       },
-      "days":95
+      "toEvent": {
+        "date": "2017-12-22",
+        "description": "Replaced With Another Offence"
+      },
+      "charge": {
+        "chargeId": 2,
+        "offence": {
+          "code": "SX03002",
+          "statute": "SX03",
+          "description": "Rape a woman 16 years of age or over - SOA 2003"
+        },
+        "offenceDate": "2017-09-17",
+        "bookingId": 1,
+        "bookNumber": "",
+        "offenceEndDate": null,
+        "sentenceSequence": 5,
+        "sentenceDate": "2018-02-08",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": "Imprisonment",
+        "isActiveBooking": true
+      },
+      "days": 95
     },
     {
-      "from":"2017-09-19",
-      "to":"2017-12-22",
-      "fromEvent":"Commit to Crown Court for Trial (Summary / Either Way Offences)",
-      "toEvent":"Replaced With Another Offence",
-      "charge":{
-        "chargeId":5,
-        "offence":{
-          "code":"SX03011",
-          "statute":"SX03",
-          "description":"Cause a female 13 or over to engage in a penetrative sexual activity - SOA 2003"
-        },
-        "offenceDate":"2017-09-17",
-        "bookingId":1,
-        "bookNumber":"",
-        "offenceEndDate":null,
-        "sentenceSequence":null,
-        "sentenceDate":null,
-        "courtCaseRef":null,
-        "courtLocation":null,
-        "resultDescription":"Replaced With Another Offence",
-        "isActiveBooking":true
+      "from": "2017-09-19",
+      "to": "2017-12-22",
+      "fromEvent": {
+        "date": "2017-09-19",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
       },
-      "days":95
+      "toEvent": {
+        "date": "2017-12-22",
+        "description": "Replaced With Another Offence"
+      },
+      "charge": {
+        "chargeId": 5,
+        "offence": {
+          "code": "SX03011",
+          "statute": "SX03",
+          "description": "Cause a female 13 or over to engage in a penetrative sexual activity - SOA 2003"
+        },
+        "offenceDate": "2017-09-17",
+        "bookingId": 1,
+        "bookNumber": "",
+        "offenceEndDate": null,
+        "sentenceSequence": null,
+        "sentenceDate": null,
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": "Replaced With Another Offence",
+        "isActiveBooking": true
+      },
+      "days": 95
     },
     {
-      "from":"2017-09-19",
-      "to":"2017-12-22",
-      "fromEvent":"Commit to Crown Court for Trial (Summary / Either Way Offences)",
-      "toEvent":"Replaced With Another Offence",
-      "charge":{
-        "chargeId":13,
-        "offence":{
-          "code":"SX03007",
-          "statute":"SX03",
-          "description":"Sexual assault on a female"
-        },
-        "offenceDate":"2017-09-17",
-        "bookingId":1,
-        "bookNumber":"",
-        "offenceEndDate":null,
-        "sentenceSequence":4,
-        "sentenceDate":"2018-02-08",
-        "courtCaseRef":null,
-        "courtLocation":null,
-        "resultDescription":"Imprisonment",
-        "isActiveBooking":true
+      "from": "2017-09-19",
+      "to": "2017-12-22",
+      "fromEvent": {
+        "date": "2017-09-19",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
       },
-      "days":95
+      "toEvent": {
+        "date": "2017-12-22",
+        "description": "Replaced With Another Offence"
+      },
+      "charge": {
+        "chargeId": 13,
+        "offence": {
+          "code": "SX03007",
+          "statute": "SX03",
+          "description": "Sexual assault on a female"
+        },
+        "offenceDate": "2017-09-17",
+        "bookingId": 1,
+        "bookNumber": "",
+        "offenceEndDate": null,
+        "sentenceSequence": 4,
+        "sentenceDate": "2018-02-08",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": "Imprisonment",
+        "isActiveBooking": true
+      },
+      "days": 95
     },
     {
-      "from":"2017-09-19",
-      "to":"2017-12-22",
-      "fromEvent":"Commit to Crown Court for Trial (Summary / Either Way Offences)",
-      "toEvent":"Replaced With Another Offence",
-      "charge":{
-        "chargeId":7,
-        "offence":{
-          "code":"TH68047",
-          "statute":"TH68",
-          "description":"Aggravated burglary with intent - dwelling"
-        },
-        "offenceDate":"2017-09-17",
-        "bookingId":1,
-        "bookNumber":"",
-        "offenceEndDate":null,
-        "sentenceSequence":null,
-        "sentenceDate":null,
-        "courtCaseRef":null,
-        "courtLocation":null,
-        "resultDescription":"Replaced With Another Offence",
-        "isActiveBooking":true
+      "from": "2017-09-19",
+      "to": "2017-12-22",
+      "fromEvent": {
+        "date": "2017-09-19",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
       },
-      "days":95
+      "toEvent": {
+        "date": "2017-12-22",
+        "description": "Replaced With Another Offence"
+      },
+      "charge": {
+        "chargeId": 7,
+        "offence": {
+          "code": "TH68047",
+          "statute": "TH68",
+          "description": "Aggravated burglary with intent - dwelling"
+        },
+        "offenceDate": "2017-09-17",
+        "bookingId": 1,
+        "bookNumber": "",
+        "offenceEndDate": null,
+        "sentenceSequence": null,
+        "sentenceDate": null,
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": "Replaced With Another Offence",
+        "isActiveBooking": true
+      },
+      "days": 95
     },
     {
-      "from":"2017-10-03",
-      "to":"2017-11-05",
-      "fromEvent":"Remittal for Sentence in Custody",
-      "toEvent":"Imprisonment",
-      "charge":{
-        "chargeId":8,
-        "offence":{
-          "code":"BA76001",
-          "statute":"BA76",
-          "description":"Fail to surrender to police / court bail at the appointed time"
-        },
-        "offenceDate":"2017-06-10",
-        "bookingId":1,
-        "bookNumber":"",
-        "offenceEndDate":null,
-        "sentenceSequence":1,
-        "sentenceDate":"2017-11-06",
-        "courtCaseRef":null,
-        "courtLocation":null,
-        "resultDescription":"Imprisonment",
-        "isActiveBooking":true
+      "from": "2017-10-03",
+      "to": "2017-11-05",
+      "fromEvent": {
+        "date": "2017-10-03",
+        "description": "Remittal for Sentence in Custody"
       },
-      "days":34
+      "toEvent": {
+        "date": "2017-11-06",
+        "description": "Imprisonment"
+      },
+      "charge": {
+        "chargeId": 8,
+        "offence": {
+          "code": "BA76001",
+          "statute": "BA76",
+          "description": "Fail to surrender to police / court bail at the appointed time"
+        },
+        "offenceDate": "2017-06-10",
+        "bookingId": 1,
+        "bookNumber": "",
+        "offenceEndDate": null,
+        "sentenceSequence": 1,
+        "sentenceDate": "2017-11-06",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": "Imprisonment",
+        "isActiveBooking": true
+      },
+      "days": 34
     },
     {
-      "from":"2017-10-03",
-      "to":"2017-11-07",
-      "fromEvent":"Remand in Custody (Bail Refused)",
-      "toEvent":"Discontinuance",
-      "charge":{
-        "chargeId":9,
-        "offence":{
-          "code":"CJ88116",
-          "statute":"CJ88",
-          "description":"Assault by beating"
-        },
-        "offenceDate":"2014-05-22",
-        "bookingId":1,
-        "bookNumber":"",
-        "offenceEndDate":null,
-        "sentenceSequence":null,
-        "sentenceDate":null,
-        "courtCaseRef":null,
-        "courtLocation":null,
-        "resultDescription":"Discontinuance",
-        "isActiveBooking":true
+      "from": "2017-10-03",
+      "to": "2017-11-07",
+      "fromEvent": {
+        "date": "2017-10-03",
+        "description": "Remand in Custody (Bail Refused)"
       },
-      "days":36
+      "toEvent": {
+        "date": "2017-11-07",
+        "description": "Discontinuance"
+      },
+      "charge": {
+        "chargeId": 9,
+        "offence": {
+          "code": "CJ88116",
+          "statute": "CJ88",
+          "description": "Assault by beating"
+        },
+        "offenceDate": "2014-05-22",
+        "bookingId": 1,
+        "bookNumber": "",
+        "offenceEndDate": null,
+        "sentenceSequence": null,
+        "sentenceDate": null,
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": "Discontinuance",
+        "isActiveBooking": true
+      },
+      "days": 36
     }
   ],
-  "sentenceRemand":[
+  "sentenceRemand": [
     {
-      "from":"2017-10-03",
-      "to":"2017-11-05",
-      "charge":{
-        "chargeId":8,
-        "offence":{
-          "code":"BA76001",
-          "statute":"BA76",
-          "description":"Fail to surrender to police / court bail at the appointed time"
+      "from": "2017-10-03",
+      "to": "2017-11-05",
+      "charge": {
+        "chargeId": 8,
+        "offence": {
+          "code": "BA76001",
+          "statute": "BA76",
+          "description": "Fail to surrender to police / court bail at the appointed time"
         },
-        "offenceDate":"2017-06-10",
-        "bookingId":1,
-        "bookNumber":"",
-        "offenceEndDate":null,
-        "sentenceSequence":1,
-        "sentenceDate":"2017-11-06",
-        "courtCaseRef":null,
-        "courtLocation":null,
-        "resultDescription":"Imprisonment",
-        "isActiveBooking":true
+        "offenceDate": "2017-06-10",
+        "bookingId": 1,
+        "bookNumber": "",
+        "offenceEndDate": null,
+        "sentenceSequence": 1,
+        "sentenceDate": "2017-11-06",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": "Imprisonment",
+        "isActiveBooking": true
       },
-      "days":34
+      "days": 34
     },
     {
-      "from":"2017-09-19",
-      "to":"2017-10-02",
-      "charge":{
-        "chargeId":1,
-        "offence":{
-          "code":"COML017",
-          "statute":"COML",
-          "description":"False imprisonment"
+      "from": "2017-09-19",
+      "to": "2017-10-02",
+      "charge": {
+        "chargeId": 1,
+        "offence": {
+          "code": "COML017",
+          "statute": "COML",
+          "description": "False imprisonment"
         },
-        "offenceDate":"2017-09-17",
-        "bookingId":1,
-        "bookNumber":"",
-        "offenceEndDate":null,
-        "sentenceSequence":2,
-        "sentenceDate":"2018-02-08",
-        "courtCaseRef":null,
-        "courtLocation":null,
-        "resultDescription":"Imprisonment",
-        "isActiveBooking":true
+        "offenceDate": "2017-09-17",
+        "bookingId": 1,
+        "bookNumber": "",
+        "offenceEndDate": null,
+        "sentenceSequence": 2,
+        "sentenceDate": "2018-02-08",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": "Imprisonment",
+        "isActiveBooking": true
       },
-      "days":14
+      "days": 14
     },
     {
-      "from":"2017-11-07",
-      "to":"2018-02-07",
-      "charge":{
-        "chargeId":1,
-        "offence":{
-          "code":"COML017",
-          "statute":"COML",
-          "description":"False imprisonment"
+      "from": "2017-11-07",
+      "to": "2018-02-07",
+      "charge": {
+        "chargeId": 1,
+        "offence": {
+          "code": "COML017",
+          "statute": "COML",
+          "description": "False imprisonment"
         },
-        "offenceDate":"2017-09-17",
-        "bookingId":1,
-        "bookNumber":"",
-        "offenceEndDate":null,
-        "sentenceSequence":2,
-        "sentenceDate":"2018-02-08",
-        "courtCaseRef":null,
-        "courtLocation":null,
-        "resultDescription":"Imprisonment",
-        "isActiveBooking":true
+        "offenceDate": "2017-09-17",
+        "bookingId": 1,
+        "bookNumber": "",
+        "offenceEndDate": null,
+        "sentenceSequence": 2,
+        "sentenceDate": "2018-02-08",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": "Imprisonment",
+        "isActiveBooking": true
       },
-      "days":93
+      "days": 93
     }
   ],
-  "intersectingSentences":[
+  "intersectingSentences": [
     {
-      "from":"2017-11-06",
-      "to":"2017-11-06",
-      "sentence":{
-        "sequence":1,
-        "sentenceDate":"2017-11-06",
-        "recallDate":null,
-        "bookingId":1
+      "from": "2017-11-06",
+      "to": "2017-11-06",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2017-11-06",
+        "recallDate": null,
+        "bookingId": 1
       },
-      "charge":{
-        "chargeId":8,
-        "offence":{
-          "code":"BA76001",
-          "statute":"BA76",
-          "description":"Fail to surrender to police / court bail at the appointed time"
+      "charge": {
+        "chargeId": 8,
+        "offence": {
+          "code": "BA76001",
+          "statute": "BA76",
+          "description": "Fail to surrender to police / court bail at the appointed time"
         },
-        "offenceDate":"2017-06-10",
-        "bookingId":1,
-        "bookNumber":"",
-        "offenceEndDate":null,
-        "sentenceSequence":1,
-        "sentenceDate":"2017-11-06",
-        "courtCaseRef":null,
-        "courtLocation":null,
-        "resultDescription":"Imprisonment",
-        "isActiveBooking":true
+        "offenceDate": "2017-06-10",
+        "bookingId": 1,
+        "bookNumber": "",
+        "offenceEndDate": null,
+        "sentenceSequence": 1,
+        "sentenceDate": "2017-11-06",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": "Imprisonment",
+        "isActiveBooking": true
       },
-      "days":1
+      "days": 1
     }
   ],
-  "issuesWithLegacyData":[
-
-  ]
+  "issuesWithLegacyData": []
 }

@@ -3,6 +3,14 @@
     {
       "from": "2022-01-01",
       "to": "2022-01-31",
+      "fromEvent": {
+        "date": "2022-01-01",
+        "description": ""
+      },
+      "toEvent": {
+        "date": "2022-02-01",
+        "description": ""
+      },
       "charge": {
         "chargeId": 1,
         "offence": {
@@ -12,9 +20,14 @@
         },
         "offenceDate": "2000-01-01",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": "2000-01-01",
         "sentenceSequence": 1,
-        "sentenceDate": "2022-02-01"
+        "sentenceDate": "2022-02-01",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null,
+        "isActiveBooking": false
       },
       "days": 31
     }
@@ -32,12 +45,18 @@
         },
         "offenceDate": "2000-01-01",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": "2000-01-01",
         "sentenceSequence": 1,
-        "sentenceDate": "2022-02-01"
+        "sentenceDate": "2022-02-01",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null,
+        "isActiveBooking": false
       },
       "days": 31
     }
   ],
-  "intersectingSentences": []
+  "intersectingSentences": [],
+  "issuesWithLegacyData": []
 }
