@@ -3,8 +3,14 @@
     {
       "from": "2021-11-13",
       "to": "2022-09-16",
-      "fromEvent": "",
-      "toEvent": "",
+      "fromEvent": {
+        "date": "2021-11-13",
+        "description": ""
+      },
+      "toEvent": {
+        "date": "2022-09-16",
+        "description": ""
+      },
       "charge": {
         "chargeId": 1,
         "offence": {
@@ -20,15 +26,22 @@
         "sentenceDate": "2023-02-01",
         "courtCaseRef": null,
         "courtLocation": null,
-        "resultDescription": null
+        "resultDescription": null,
+        "isActiveBooking": false
       },
       "days": 308
     },
     {
       "from": "2022-12-07",
       "to": "2023-01-31",
-      "fromEvent": "",
-      "toEvent": "",
+      "fromEvent": {
+        "date": "2022-12-07",
+        "description": ""
+      },
+      "toEvent": {
+        "date": "2023-02-01",
+        "description": ""
+      },
       "charge": {
         "chargeId": 1,
         "offence": {
@@ -44,15 +57,22 @@
         "sentenceDate": "2023-02-01",
         "courtCaseRef": null,
         "courtLocation": null,
-        "resultDescription": null
+        "resultDescription": null,
+        "isActiveBooking": false
       },
       "days": 56
     },
     {
       "from": "2022-01-06",
       "to": "2023-01-31",
-      "fromEvent": "",
-      "toEvent": "",
+      "fromEvent": {
+        "date": "2022-01-06",
+        "description": ""
+      },
+      "toEvent": {
+        "date": "2023-02-01",
+        "description": ""
+      },
       "charge": {
         "chargeId": 2,
         "offence": {
@@ -68,7 +88,8 @@
         "sentenceDate": "2023-02-01",
         "courtCaseRef": null,
         "courtLocation": null,
-        "resultDescription": null
+        "resultDescription": null,
+        "isActiveBooking": false
       },
       "days": 391
     }
@@ -92,7 +113,8 @@
         "sentenceDate": "2023-02-01",
         "courtCaseRef": null,
         "courtLocation": null,
-        "resultDescription": null
+        "resultDescription": null,
+        "isActiveBooking": false
       },
       "days": 308
     },
@@ -114,7 +136,8 @@
         "sentenceDate": "2023-02-01",
         "courtCaseRef": null,
         "courtLocation": null,
-        "resultDescription": null
+        "resultDescription": null,
+        "isActiveBooking": false
       },
       "days": 137
     }

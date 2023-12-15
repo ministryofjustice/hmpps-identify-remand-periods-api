@@ -3,6 +3,14 @@
     {
       "from": "2020-01-01",
       "to": "2020-02-29",
+      "fromEvent": {
+        "date": "2020-01-01",
+        "description": ""
+      },
+      "toEvent": {
+        "date": "2020-03-01",
+        "description": ""
+      },
       "charge": {
         "chargeId": 1,
         "offence": {
@@ -12,15 +20,28 @@
         },
         "offenceDate": "2000-01-01",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": "2000-01-01",
         "sentenceSequence": 1,
-        "sentenceDate": "2020-04-01"
+        "sentenceDate": "2020-04-01",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null,
+        "isActiveBooking": false
       },
       "days": 60
     },
     {
       "from": "2020-02-01",
       "to": "2020-03-31",
+      "fromEvent": {
+        "date": "2020-02-01",
+        "description": ""
+      },
+      "toEvent": {
+        "date": "2020-04-01",
+        "description": ""
+      },
       "charge": {
         "chargeId": 2,
         "offence": {
@@ -30,9 +51,14 @@
         },
         "offenceDate": "2001-01-01",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": "2001-01-01",
         "sentenceSequence": 2,
-        "sentenceDate": "2020-04-01"
+        "sentenceDate": "2020-04-01",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null,
+        "isActiveBooking": false
       },
       "days": 60
     }
@@ -50,11 +76,16 @@
         },
         "offenceDate": "2000-01-01",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": "2000-01-01",
         "sentenceSequence": 1,
-        "sentenceDate": "2020-04-01"
+        "sentenceDate": "2020-04-01",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null,
+        "isActiveBooking": false
       },
-      "days": 59
+      "days": 60
     },
     {
       "from": "2020-03-01",
@@ -68,12 +99,18 @@
         },
         "offenceDate": "2001-01-01",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": "2001-01-01",
         "sentenceSequence": 2,
-        "sentenceDate": "2020-04-01"
+        "sentenceDate": "2020-04-01",
+        "courtCaseRef": null,
+        "courtLocation": null,
+        "resultDescription": null,
+        "isActiveBooking": false
       },
-      "days": 30
+      "days": 31
     }
   ],
-  "intersectingSentences": []
+  "intersectingSentences": [],
+  "issuesWithLegacyData": []
 }

@@ -3,6 +3,14 @@
     {
       "from": "2021-01-11",
       "to": "2021-07-15",
+      "fromEvent": {
+        "date": "2021-01-11",
+        "description": ""
+      },
+      "toEvent": {
+        "date": "2021-07-16",
+        "description": ""
+      },
       "charge": {
         "chargeId": 19,
         "offence": {
@@ -12,18 +20,28 @@
         },
         "offenceDate": "2021-01-09",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": null,
         "sentenceSequence": 23,
         "sentenceDate": "2022-12-07",
         "courtCaseRef": "S20220559",
         "courtLocation": "Wood Green Crown Court",
-        "resultDescription": "Imprisonment"
+        "resultDescription": "Imprisonment",
+        "isActiveBooking": false
       },
       "days": 186
     },
     {
       "from": "2021-01-11",
       "to": "2021-07-15",
+      "fromEvent": {
+        "date": "2021-01-11",
+        "description": ""
+      },
+      "toEvent": {
+        "date": "2021-07-16",
+        "description": ""
+      },
       "charge": {
         "chargeId": 18,
         "offence": {
@@ -33,18 +51,28 @@
         },
         "offenceDate": "2021-01-09",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": null,
         "sentenceSequence": 16,
         "sentenceDate": "2022-12-07",
         "courtCaseRef": "S20220559",
         "courtLocation": "Wood Green Crown Court",
-        "resultDescription": "Suspended Sentence Implemented"
+        "resultDescription": "Suspended Sentence Implemented",
+        "isActiveBooking": false
       },
       "days": 186
     },
     {
       "from": "2021-01-11",
       "to": "2021-07-15",
+      "fromEvent": {
+        "date": "2021-01-11",
+        "description": ""
+      },
+      "toEvent": {
+        "date": "2021-07-16",
+        "description": ""
+      },
       "charge": {
         "chargeId": 3,
         "offence": {
@@ -54,18 +82,28 @@
         },
         "offenceDate": "2021-01-09",
         "bookingId": 2,
+        "bookNumber": "",
         "offenceEndDate": null,
         "sentenceSequence": null,
         "sentenceDate": null,
         "courtCaseRef": "T20210028",
         "courtLocation": "Wood Green Crown Court",
-        "resultDescription": "Suspended Imprisonment"
+        "resultDescription": "Suspended Imprisonment",
+        "isActiveBooking": false
       },
       "days": 186
     },
     {
       "from": "2022-10-19",
       "to": "2022-11-14",
+      "fromEvent": {
+        "date": "2022-10-19",
+        "description": ""
+      },
+      "toEvent": {
+        "date": "2022-11-15",
+        "description": ""
+      },
       "charge": {
         "chargeId": 8,
         "offence": {
@@ -75,18 +113,28 @@
         },
         "offenceDate": "2022-10-16",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": null,
         "sentenceSequence": 1,
         "sentenceDate": "2022-11-15",
         "courtCaseRef": "43SP0414422",
         "courtLocation": "Oxford Crown Court",
-        "resultDescription": "Imprisonment"
+        "resultDescription": "Imprisonment",
+        "isActiveBooking": false
       },
       "days": 27
     },
     {
       "from": "2022-10-19",
       "to": "2022-11-14",
+      "fromEvent": {
+        "date": "2022-10-19",
+        "description": ""
+      },
+      "toEvent": {
+        "date": "2022-11-15",
+        "description": ""
+      },
       "charge": {
         "chargeId": 10,
         "offence": {
@@ -96,18 +144,28 @@
         },
         "offenceDate": "2022-10-17",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": null,
         "sentenceSequence": 9,
         "sentenceDate": "2022-11-15",
         "courtCaseRef": "43SP0414422",
         "courtLocation": "Oxford Crown Court",
-        "resultDescription": "Imprisonment"
+        "resultDescription": "Imprisonment",
+        "isActiveBooking": false
       },
       "days": 27
     },
     {
       "from": "2022-10-19",
       "to": "2022-11-14",
+      "fromEvent": {
+        "date": "2022-10-19",
+        "description": ""
+      },
+      "toEvent": {
+        "date": "2022-11-15",
+        "description": ""
+      },
       "charge": {
         "chargeId": 13,
         "offence": {
@@ -117,18 +175,28 @@
         },
         "offenceDate": "2022-10-15",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": null,
         "sentenceSequence": 9,
         "sentenceDate": "2022-11-15",
         "courtCaseRef": "43SP0414422",
         "courtLocation": "Oxford Crown Court",
-        "resultDescription": "Imprisonment"
+        "resultDescription": "Imprisonment",
+        "isActiveBooking": false
       },
       "days": 27
     },
     {
       "from": "2022-10-19",
       "to": "2022-11-14",
+      "fromEvent": {
+        "date": "2022-10-19",
+        "description": ""
+      },
+      "toEvent": {
+        "date": "2022-11-15",
+        "description": ""
+      },
       "charge": {
         "chargeId": 16,
         "offence": {
@@ -138,12 +206,14 @@
         },
         "offenceDate": "2022-10-16",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": null,
         "sentenceSequence": 2,
         "sentenceDate": "2022-11-15",
         "courtCaseRef": "43SP0414422",
         "courtLocation": "Oxford Crown Court",
-        "resultDescription": "Imprisonment"
+        "resultDescription": "Imprisonment",
+        "isActiveBooking": false
       },
       "days": 27
     }
@@ -161,12 +231,14 @@
         },
         "offenceDate": "2022-10-16",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": null,
         "sentenceSequence": 1,
         "sentenceDate": "2022-11-15",
         "courtCaseRef": "43SP0414422",
         "courtLocation": "Oxford Crown Court",
-        "resultDescription": "Imprisonment"
+        "resultDescription": "Imprisonment",
+        "isActiveBooking": false
       },
       "days": 27
     },
@@ -182,12 +254,14 @@
         },
         "offenceDate": "2021-01-09",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": null,
         "sentenceSequence": 23,
         "sentenceDate": "2022-12-07",
         "courtCaseRef": "S20220559",
         "courtLocation": "Wood Green Crown Court",
-        "resultDescription": "Imprisonment"
+        "resultDescription": "Imprisonment",
+        "isActiveBooking": false
       },
       "days": 101
     },
@@ -203,12 +277,14 @@
         },
         "offenceDate": "2021-01-09",
         "bookingId": 1,
+        "bookNumber": "",
         "offenceEndDate": null,
         "sentenceSequence": 23,
         "sentenceDate": "2022-12-07",
         "courtCaseRef": "S20220559",
         "courtLocation": "Wood Green Crown Court",
-        "resultDescription": "Imprisonment"
+        "resultDescription": "Imprisonment",
+        "isActiveBooking": false
       },
       "days": 54
     }
@@ -232,14 +308,17 @@
         },
         "offenceDate": "2019-12-07",
         "bookingId": 2,
+        "bookNumber": "",
         "offenceEndDate": null,
         "sentenceSequence": 3,
         "sentenceDate": "2021-04-22",
         "courtCaseRef": "012002034682",
         "courtLocation": "Highbury Corner Magistrates Court",
-        "resultDescription": "Suspended Sentence Implemented"
+        "resultDescription": "Suspended Sentence Implemented",
+        "isActiveBooking": false
       },
       "days": 31
     }
-  ]
+  ],
+  "issuesWithLegacyData": []
 }

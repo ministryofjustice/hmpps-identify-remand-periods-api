@@ -15,7 +15,6 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandResult
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentenceAndCharge
-import java.time.LocalDate
 
 @Service
 class RemandCalculationService(
@@ -45,7 +44,7 @@ class RemandCalculationService(
           if (it.type == STOP && from != null) {
             remand.add(ChargeRemand(from!!.date, getToDate(it), CourtAppearance(from!!.date, from!!.description), CourtAppearance(it.date, it.description), chargeAndEvent.charge))
             from = null
-          } 
+          }
         }
       }
     }

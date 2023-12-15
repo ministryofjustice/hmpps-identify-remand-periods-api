@@ -1,5 +1,6 @@
 {
   "chargeRemand": [],
   "sentenceRemand": [],
-  "intersectingSentences": []
+  "intersectingSentences": [],
+  "issuesWithLegacyData": []
 }
