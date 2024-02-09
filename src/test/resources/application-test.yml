@@ -24,6 +24,7 @@ spring:
   sql:
     init:
       continue-on-error: true
+
 server:
   shutdown: immediate
 
