@@ -30,9 +30,9 @@ class CalculateReleaseDateService(
     if (result.validationMessages.isNotEmpty()) {
       throw UnsupportedCalculationException(
         "Validation error from calling CRDS $sentence, \n ${
-        result.validationMessages.joinToString(
-          separator = "\n",
-        ) { it.message }
+          result.validationMessages.joinToString(
+            separator = "\n",
+          ) { it.message }
         }",
       )
     }
