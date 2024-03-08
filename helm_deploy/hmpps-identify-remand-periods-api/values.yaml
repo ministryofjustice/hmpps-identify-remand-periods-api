@@ -1,7 +1,6 @@
 generic-service:
   nameOverride: hmpps-identify-remand-periods-api
-  productId: "UNASSIGNED" # productId for the product that this belongs too, i.e. DPS001, see README.md for details
-
+  productId: "DPS014"
   replicaCount: 4
 
   image:
