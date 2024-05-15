@@ -1,4 +1,53 @@
 {
+  "adjustments": [
+    {
+      "id": null,
+      "bookingId": 1,
+      "sentenceSequence": 1,
+      "person": "INTERSE",
+      "adjustmentType": "REMAND",
+      "toDate": "2022-11-14",
+      "fromDate": "2022-10-19",
+      "remand": {
+        "chargeId": [
+          8,
+          10,
+          13,
+          16
+        ]
+      }
+    },
+    {
+      "id": null,
+      "bookingId": 1,
+      "sentenceSequence": 23,
+      "person": "INTERSE",
+      "adjustmentType": "REMAND",
+      "toDate": "2021-04-21",
+      "fromDate": "2021-01-11",
+      "remand": {
+        "chargeId": [
+          19,
+          18
+        ]
+      }
+    },
+    {
+      "id": null,
+      "bookingId": 1,
+      "sentenceSequence": 23,
+      "person": "INTERSE",
+      "adjustmentType": "REMAND",
+      "toDate": "2021-07-15",
+      "fromDate": "2021-05-23",
+      "remand": {
+        "chargeId": [
+          19,
+          18
+        ]
+      }
+    }
+  ],
   "chargeRemand": [
     {
       "from": "2021-01-11",

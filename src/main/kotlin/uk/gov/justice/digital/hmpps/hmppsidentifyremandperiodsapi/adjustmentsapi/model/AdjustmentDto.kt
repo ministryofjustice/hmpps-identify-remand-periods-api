@@ -11,5 +11,5 @@ data class AdjustmentDto(
   val adjustmentType: String = "REMAND",
   val toDate: LocalDate?,
   val fromDate: LocalDate?,
-  val prisonId: String?,
+  val remand: RemandDto?,
 )

@@ -1,6 +1,8 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.service
 
 import org.springframework.stereotype.Service
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentDto
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.RemandDto
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.service.CalculateReleaseDateService
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeRemand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblem
@@ -67,10 +69,23 @@ class SentenceRemandService(
     }
 
     return RemandResult(
+      loopTracker.final.map { toAdjustmentDto(prisonerId, it, loopTracker.allPeriods) },
       remandPeriods,
       loopTracker.final,
       loopTracker.periodsServingSentence,
       issuesWithLegacyData,
+    )
+  }
+
+  private fun toAdjustmentDto(prisonerId: String, remand: Remand, allPeriods: List<ChargeRemand>): AdjustmentDto {
+    return AdjustmentDto(
+      id = null,
+      bookingId = remand.charge.bookingId,
+      sentenceSequence = remand.charge.sentenceSequence,
+      fromDate = remand.from,
+      toDate = remand.to,
+      person = prisonerId,
+      remand = RemandDto(allPeriods.filter { it.overlaps(remand) }.map { it.charge.chargeId }),
     )
   }
 }

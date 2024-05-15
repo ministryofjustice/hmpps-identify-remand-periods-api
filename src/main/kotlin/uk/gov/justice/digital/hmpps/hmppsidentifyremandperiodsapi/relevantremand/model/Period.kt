@@ -16,4 +16,8 @@ interface Period {
   fun overlapsStartInclusive(date: LocalDate): Boolean {
     return (date.isAfter(from) || date == from) && date.isBefore(to)
   }
+
+  fun overlaps(period: Period): Boolean {
+    return overlapsStartInclusive(period.from) || overlapsEndInclusive(period.to)
+  }
 }

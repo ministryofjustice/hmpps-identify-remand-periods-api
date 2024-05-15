@@ -1,4 +1,23 @@
 {
+  "adjustments": [
+    {
+      "id": null,
+      "bookingId": 1,
+      "sentenceSequence": 3,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2023-01-09",
+      "fromDate": "2022-11-25",
+      "remand": {
+        "chargeId": [
+          4,
+          5,
+          6,
+          8
+        ]
+      }
+    }
+  ],
   "chargeRemand": [
     {
       "from": "2022-11-04",
