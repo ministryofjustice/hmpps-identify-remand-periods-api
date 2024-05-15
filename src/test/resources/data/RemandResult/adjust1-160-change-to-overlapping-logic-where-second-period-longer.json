@@ -1,4 +1,35 @@
 {
+  "adjustments": [
+    {
+      "id": null,
+      "bookingId": 1,
+      "sentenceSequence": 3,
+      "person": "IMP",
+      "adjustmentType": "REMAND",
+      "toDate": "2018-04-04",
+      "fromDate": "2018-02-24",
+      "remand": {
+        "chargeId": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": null,
+      "bookingId": 1,
+      "sentenceSequence": 12,
+      "person": "IMP",
+      "adjustmentType": "REMAND",
+      "toDate": "2018-05-03",
+      "fromDate": "2018-04-05",
+      "remand": {
+        "chargeId": [
+          2
+        ]
+      }
+    }
+  ],
   "chargeRemand": [
     {
       "from": "2018-02-24",

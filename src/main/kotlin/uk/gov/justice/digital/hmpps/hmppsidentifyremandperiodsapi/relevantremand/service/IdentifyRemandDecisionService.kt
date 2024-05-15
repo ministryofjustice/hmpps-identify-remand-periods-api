@@ -2,7 +2,6 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantreman
 
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.stereotype.Service
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentDto
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.service.AdjustmentsService
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.config.AuthAwareAuthenticationToken
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.service.PrisonService
@@ -28,17 +27,7 @@ class IdentifyRemandDecisionService(
     if (decision.accepted) {
       adjustmentsService.saveRemand(
         person,
-        calculation.sentenceRemand.map {
-          AdjustmentDto(
-            id = null,
-            bookingId = it.charge.bookingId,
-            sentenceSequence = it.charge.sentenceSequence,
-            fromDate = it.from,
-            toDate = it.to,
-            person = person,
-            prisonId = prisonerDetails.agencyId,
-          )
-        },
+        calculation.adjustments,
       )
     }
 

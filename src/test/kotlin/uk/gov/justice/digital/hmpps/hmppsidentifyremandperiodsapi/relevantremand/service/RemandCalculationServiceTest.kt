@@ -40,6 +40,7 @@ class RemandCalculationServiceTest {
         throw e
       }
     }
+
     val expected = TestUtil.objectMapper().readValue(ClassPathResource("/data/RemandResult/$exampleName.json").file, RemandResult::class.java)
     assertThat(remandResult).isEqualTo(expected)
   }
