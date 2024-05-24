@@ -12,12 +12,15 @@ import org.slf4j.LoggerFactory
 import org.springframework.core.io.ClassPathResource
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.TestUtil
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.service.CalculateReleaseDateService
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.service.FindHistoricReleaseDateService
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandResult
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
+import java.time.LocalDate
 
 class RemandCalculationServiceTest {
   private val calculateReleaseDateService = mock<CalculateReleaseDateService>()
-  private val sentenceRemandService = SentenceRemandService(calculateReleaseDateService)
+  private val findHistoricReleaseDateService = mock<FindHistoricReleaseDateService>()
+  private val sentenceRemandService = SentenceRemandService(calculateReleaseDateService, findHistoricReleaseDateService)
   private val remandCalculationService = RemandCalculationService(sentenceRemandService)
 
   @ParameterizedTest
@@ -42,10 +45,14 @@ class RemandCalculationServiceTest {
     }
 
     val expected = TestUtil.objectMapper().readValue(ClassPathResource("/data/RemandResult/$exampleName.json").file, RemandResult::class.java)
-    assertThat(remandResult).isEqualTo(expected)
+    assertThat(remandResult)
+      .usingRecursiveComparison()
+      .ignoringFieldsMatchingRegexes("intersectingSentencesUsingHistoricCalculation")
+      .isEqualTo(expected)
   }
 
   private fun stubCalculations(exampleName: String, example: TestExample) {
+    whenever(findHistoricReleaseDateService.calculateReleaseDate(any(), any(), any(), any())).thenReturn(LocalDate.now())
     example.sentences.forEach { sentence ->
       sentence.calculations.forEach { calculation ->
         log.info("Stubbing release dates for $exampleName: $sentence $calculation")

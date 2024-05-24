@@ -33,6 +33,7 @@ class PrisonApiExtension : BeforeAllCallback, AfterAllCallback, BeforeEachCallba
     prisonApi.stubCrdValidation()
     prisonApi.stubActiveBookingHasNoOffenceDates()
     prisonApi.stubGetPrison()
+    prisonApi.stubHistoricCalculations()
   }
 
   override fun beforeEach(context: ExtensionContext) {
@@ -49,6 +50,21 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
     private const val WIREMOCK_PORT = 8332
   }
 
+  fun stubHistoricCalculations() {
+    stubFor(
+      get("/prison-api/api/offender-dates/calculations/${PrisonApiExtension.INTERSECTING_PRISONER}")
+        .willReturn(
+          aResponse()
+            .withHeader("Content-Type", "application/json")
+            .withBody(
+              """
+              []
+              """.trimIndent(),
+            )
+            .withStatus(200),
+        ),
+    )
+  }
   fun stubImprisonedCourtCaseResults() {
     stubFor(
       get("/prison-api/api/court-date-results/${PrisonApiExtension.IMPRISONED_PRISONER}")

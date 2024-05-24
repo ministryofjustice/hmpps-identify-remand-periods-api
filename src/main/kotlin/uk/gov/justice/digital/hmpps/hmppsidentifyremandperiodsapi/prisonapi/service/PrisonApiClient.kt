@@ -5,9 +5,11 @@ import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.core.ParameterizedTypeReference
 import org.springframework.stereotype.Service
 import org.springframework.web.reactive.function.client.WebClient
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.OffenderKeyDates
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.Prison
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiCourtDateResult
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonerDetails
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.SentenceCalculationSummary
 
 @Service
 class PrisonApiClient(@Qualifier("prisonApiWebClient") private val webClient: WebClient) {
@@ -38,6 +40,28 @@ class PrisonApiClient(@Qualifier("prisonApiWebClient") private val webClient: We
       .uri("/api/agencies/$prisonId?activeOnly=false")
       .retrieve()
       .bodyToMono(typeReference<Prison>())
+      .block()!!
+  }
+
+  fun getCalculationsForAPrisonerId(prisonerId: String): List<SentenceCalculationSummary> {
+    return webClient.get()
+      .uri { uriBuilder ->
+        uriBuilder.path("/api/offender-dates/calculations/$prisonerId")
+          .build()
+      }
+      .retrieve()
+      .bodyToMono(typeReference<List<SentenceCalculationSummary>>())
+      .block()!!
+  }
+
+  fun getNOMISOffenderKeyDates(offenderSentCalcId: Long): OffenderKeyDates {
+    return webClient.get()
+      .uri { uriBuilder ->
+        uriBuilder.path("/api/offender-dates/sentence-calculation/$offenderSentCalcId")
+          .build()
+      }
+      .retrieve()
+      .bodyToMono(typeReference<OffenderKeyDates>())
       .block()!!
   }
 }
