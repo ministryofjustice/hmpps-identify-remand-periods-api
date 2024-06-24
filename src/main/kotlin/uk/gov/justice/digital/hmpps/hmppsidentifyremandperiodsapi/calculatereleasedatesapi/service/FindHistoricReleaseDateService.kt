@@ -1,6 +1,7 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.service
 
 import org.springframework.stereotype.Service
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.SentenceCalculationSummary
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.service.PrisonApiClient
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Remand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
@@ -12,9 +13,9 @@ class FindHistoricReleaseDateService(
 ) {
 
   fun calculateReleaseDate(prisonerId: String, remand: List<Remand>, sentence: Sentence, calculateAt: LocalDate): LocalDate {
-    val historicReleaseDates = prisonApiClient.getCalculationsForAPrisonerId(prisonerId).sortedBy { it.calculationDate }
+    val historicReleaseDates = collapseByLastCalculationOfTheDay(prisonApiClient.getCalculationsForAPrisonerId(prisonerId).sortedBy { it.calculationDate })
     if (historicReleaseDates.isEmpty()) {
-      return LocalDate.now()
+      return calculateAt
     }
 
     var calculation = historicReleaseDates.first { it.calculationDate.isAfter(calculateAt.atStartOfDay()) }
@@ -26,6 +27,13 @@ class FindHistoricReleaseDateService(
       lastCalculationBeforeRelease = historicReleaseDates.last { it.calculationDate.isBefore(releaseDate.atStartOfDay()) }
     }
     return releaseDate
+  }
+
+  /*
+    Flatten the list of release dates to only take the final calculation of the day.
+   */
+  private fun collapseByLastCalculationOfTheDay(historicReleaseDates: List<SentenceCalculationSummary>): List<SentenceCalculationSummary> {
+    return historicReleaseDates.groupBy { it.calculationDate.toLocalDate() }.values.map { list -> list.maxBy { it.calculationDate } }
   }
 
   private fun getReleaseDateForCalcId(offenderSentCalcId: Long): LocalDate {
