@@ -34,7 +34,7 @@ class RelevantRemandController(
   private val remandDecisionService: IdentifyRemandDecisionService,
 ) {
   @PostMapping(value = ["/{prisonerId}"])
-  @PreAuthorize("hasRole('ADJUSTMENTS_MAINTAINER') and hasRole('RELEASE_DATES_CALCULATOR') and hasRole('REMAND_IDENTIFIER')")
+  @PreAuthorize("hasAnyRole('IDENTIFY_REMAND__IDENTIFY_RW', 'IDENTIFY_REMAND__IDENTIFY_RO')")
   @ResponseBody
   @Operation(
     summary = "Calculates relevant remand",
@@ -60,7 +60,7 @@ class RelevantRemandController(
   }
 
   @PostMapping(value = ["/{prisonerId}/decision"])
-  @PreAuthorize("hasRole('ADJUSTMENTS_MAINTAINER') and hasRole('RELEASE_DATES_CALCULATOR') and hasRole('REMAND_IDENTIFIER')")
+  @PreAuthorize("hasAnyRole('IDENTIFY_REMAND__IDENTIFY_RW')")
   @ResponseStatus(HttpStatus.CREATED)
   @Operation(
     summary = "Saves a decision to accept or reject relevant remand",
@@ -83,7 +83,7 @@ class RelevantRemandController(
   }
 
   @GetMapping(value = ["/{prisonerId}/decision"])
-  @PreAuthorize("hasRole('ADJUSTMENTS_MAINTAINER') and hasRole('RELEASE_DATES_CALCULATOR') and hasRole('REMAND_IDENTIFIER')")
+  @PreAuthorize("hasAnyRole('IDENTIFY_REMAND__IDENTIFY_RW', 'IDENTIFY_REMAND__IDENTIFY_RO')")
   @Operation(
     summary = "Get the latest decision for a given person",
     description = "This endpoint return the latest decision for a given person.",
