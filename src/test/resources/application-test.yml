@@ -1,5 +1,11 @@
 spring:
 
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          public-key-location: classpath:local-public-key.pub
+
   datasource:
     url: 'jdbc:h2:mem:identify-remand-db;MODE=PostgreSQL;INIT=create domain if not exists jsonb as json'
     username: identify_remand
@@ -31,6 +37,11 @@ server:
 management.endpoint:
   health.cache.time-to-live: 0
   info.cache.time-to-live: 0
+
+# Wiremock auth server
+hmpps:
+  auth:
+    url: http://localhost:8090/auth
 
 # Wiremock prison-api
 prison:
