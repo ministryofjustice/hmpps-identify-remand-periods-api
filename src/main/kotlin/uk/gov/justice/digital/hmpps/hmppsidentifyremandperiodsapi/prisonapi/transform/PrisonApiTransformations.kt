@@ -1,7 +1,7 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.transform
 
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiCharge
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiCourtDateResult
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiCourtDateOutcome
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonerDetails
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Charge
@@ -15,62 +15,62 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-fun transform(results: List<PrisonApiCourtDateResult>, prisonerDetails: PrisonerDetails): RemandCalculation {
+fun transform(results: List<PrisonApiCharge>, prisonerDetails: PrisonerDetails): RemandCalculation {
   val earliestActiveOffenceDate: LocalDate = findEarliestActiveOffenceDate(results, prisonerDetails)
   val issuesWithLegacyData = mutableListOf<LegacyDataProblem>()
   return RemandCalculation(
     prisonerDetails.offenderNo,
     results
-      .filter { it.date.isAfter(earliestActiveOffenceDate) }
-      .groupBy { it.charge.chargeId }
       .filter {
-        if (it.value.first().charge.offenceDate == null) {
-          issuesWithLegacyData.add(LegacyDataProblem(LegacyDataProblemType.MISSING_OFFENCE_DATE, "There is another offence of '${it.value.first().charge.offenceDescription}' within booking ${it.value.first().bookNumber} that has a missing offence date.", it.value.first()))
+        if (it.offenceDate == null) {
+          issuesWithLegacyData.add(LegacyDataProblem(LegacyDataProblemType.MISSING_OFFENCE_DATE, "There is another offence of '${it.offenceDescription}' within booking ${it.bookNumber} that has a missing offence date.", it))
           false
         } else {
           true
         }
       }
       .map {
-        val charge = it.value.first().charge
         ChargeAndEvents(
           Charge(
-            it.key,
-            transform(charge),
-            charge.offenceDate!!,
-            it.value.first().bookingId,
-            it.value.first().bookNumber,
-            charge.offenceEndDate,
-            charge.sentenceSequence,
-            charge.sentenceDate,
-            charge.courtCaseRef,
-            charge.courtLocation,
-            charge.resultDescription,
-            it.value.first().bookingId == prisonerDetails.bookingId,
+            it.chargeId,
+            transform(it),
+            it.offenceDate!!,
+            it.bookingId,
+            it.bookNumber,
+            it.offenceEndDate,
+            it.sentenceSequence,
+            it.sentenceDate,
+            it.courtCaseRef,
+            it.courtLocation,
+            it.resultDescription,
+            it.bookingId == prisonerDetails.bookingId,
           ),
-          it.value.mapNotNull { result -> transformToCourtDate(result, issuesWithLegacyData) },
+          it.outcomes
+            .filter { result -> result.date.isAfter(earliestActiveOffenceDate) }
+            .mapNotNull { result -> transformToCourtDate(result, it, issuesWithLegacyData) },
         )
-      },
+      }
+      .filter { it.dates.isNotEmpty() },
     issuesWithLegacyData,
   )
 }
 
-private fun findEarliestActiveOffenceDate(results: List<PrisonApiCourtDateResult>, prisonerDetails: PrisonerDetails): LocalDate {
+private fun findEarliestActiveOffenceDate(results: List<PrisonApiCharge>, prisonerDetails: PrisonerDetails): LocalDate {
   return results
     .filter { it.bookingId == prisonerDetails.bookingId }
-    .mapNotNull { it.charge.offenceDate }
+    .mapNotNull { it.offenceDate }
     .ifEmpty {
       throw UnsupportedCalculationException("There are no offences with offence dates on the active booking.")
     }
     .min()
 }
 
-public fun transform(prisonApiCharge: PrisonApiCharge): Offence {
+fun transform(prisonApiCharge: PrisonApiCharge): Offence {
   return Offence(prisonApiCharge.offenceCode, prisonApiCharge.offenceStatue, prisonApiCharge.offenceDescription)
 }
 
-private fun transformToCourtDate(courtDateResult: PrisonApiCourtDateResult, issuesWithLegacyData: MutableList<LegacyDataProblem>): CourtDate? {
-  val type = transformToType(courtDateResult, issuesWithLegacyData)
+private fun transformToCourtDate(courtDateResult: PrisonApiCourtDateOutcome, charge: PrisonApiCharge, issuesWithLegacyData: MutableList<LegacyDataProblem>): CourtDate? {
+  val type = transformToType(courtDateResult, charge, issuesWithLegacyData)
   if (type != null) {
     return CourtDate(
       courtDateResult.date,
@@ -84,10 +84,10 @@ private fun transformToCourtDate(courtDateResult: PrisonApiCourtDateResult, issu
   return null
 }
 
-private fun transformToType(courtDateResult: PrisonApiCourtDateResult, issuesWithLegacyData: MutableList<LegacyDataProblem>): CourtDateType? {
+private fun transformToType(courtDateResult: PrisonApiCourtDateOutcome, charge: PrisonApiCharge, issuesWithLegacyData: MutableList<LegacyDataProblem>): CourtDateType? {
   if (courtDateResult.resultCode == null) {
-    issuesWithLegacyData.add(LegacyDataProblem(LegacyDataProblemType.MISSING_COURT_OUTCOME, "The court hearing on ${courtDateResult.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} for '${courtDateResult.charge.offenceDescription}' has a missing hearing outcome within booking ${courtDateResult.bookNumber}.", courtDateResult))
+    issuesWithLegacyData.add(LegacyDataProblem(LegacyDataProblemType.MISSING_COURT_OUTCOME, "The court hearing on ${courtDateResult.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} for '${charge.offenceDescription}' has a missing hearing outcome within booking ${charge.bookNumber}.", charge))
     return null
   }
-  return mapCourtDateResult(courtDateResult, issuesWithLegacyData)
+  return mapCourtDateResult(courtDateResult, charge, issuesWithLegacyData)
 }

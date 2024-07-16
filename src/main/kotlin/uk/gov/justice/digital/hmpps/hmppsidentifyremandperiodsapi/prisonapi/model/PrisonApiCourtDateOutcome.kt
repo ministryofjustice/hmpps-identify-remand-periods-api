@@ -4,13 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude
 import java.time.LocalDate
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-data class PrisonApiCourtDateResult(
+data class PrisonApiCourtDateOutcome(
   val id: Long,
   val date: LocalDate,
   val resultCode: String?,
   val resultDescription: String?,
   val resultDispositionCode: String?,
-  val charge: PrisonApiCharge,
-  val bookingId: Long,
-  val bookNumber: String,
 )

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service
 import org.springframework.web.reactive.function.client.WebClient
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.OffenderKeyDates
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.Prison
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiCourtDateResult
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiCharge
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonerDetails
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.SentenceCalculationSummary
 
@@ -16,12 +16,12 @@ class PrisonApiClient(@Qualifier("prisonApiWebClient") private val webClient: We
   private inline fun <reified T> typeReference() = object : ParameterizedTypeReference<T>() {}
   private val log = LoggerFactory.getLogger(this::class.java)
 
-  fun getCourtDateResults(prisonerId: String): List<PrisonApiCourtDateResult> {
+  fun getCourtDateResults(prisonerId: String): List<PrisonApiCharge> {
     log.info("Requesting court case results for prisoner $prisonerId")
     return webClient.get()
-      .uri("/api/court-date-results/$prisonerId")
+      .uri("/api/court-date-results/by-charge/$prisonerId")
       .retrieve()
-      .bodyToMono(typeReference<List<PrisonApiCourtDateResult>>())
+      .bodyToMono(typeReference<List<PrisonApiCharge>>())
       .block()!!
   }
 

@@ -1,6 +1,7 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.transform
 
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiCourtDateResult
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiCharge
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiCourtDateOutcome
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.CONTINUE
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.START
@@ -10,7 +11,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import java.time.format.DateTimeFormatter
 
 const val RECALL_COURT_EVENT = "1501"
-fun mapCourtDateResult(courtDateResult: PrisonApiCourtDateResult, issuesWithLegacyData: MutableList<LegacyDataProblem>): CourtDateType? {
+fun mapCourtDateResult(courtDateResult: PrisonApiCourtDateOutcome, charge: PrisonApiCharge, issuesWithLegacyData: MutableList<LegacyDataProblem>): CourtDateType? {
   return when (courtDateResult.resultCode) {
     "4531" -> START
     "4560" -> START
@@ -183,7 +184,7 @@ fun mapCourtDateResult(courtDateResult: PrisonApiCourtDateResult, issuesWithLega
     "FPR" -> STOP
 
     else -> {
-      issuesWithLegacyData.add(LegacyDataProblem(LegacyDataProblemType.UNSUPPORTED_OUTCOME, "The court event on ${courtDateResult.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} for offence ${courtDateResult.charge.offenceDescription} committed at ${courtDateResult.charge.offenceDate!!.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} has an unsupported outcome ${courtDateResult.resultCode}: ${courtDateResult.resultDescription}", courtDateResult))
+      issuesWithLegacyData.add(LegacyDataProblem(LegacyDataProblemType.UNSUPPORTED_OUTCOME, "The court event on ${courtDateResult.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} for offence ${charge.offenceDescription} committed at ${charge.offenceDate!!.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} has an unsupported outcome ${courtDateResult.resultCode}: ${courtDateResult.resultDescription}", charge))
       null
     }
   }
@@ -191,6 +192,6 @@ fun mapCourtDateResult(courtDateResult: PrisonApiCourtDateResult, issuesWithLega
 
 val CUSTODIAL_EVENTS = listOf("1002", "1501", "1510", "1024", "1007", "1081", "1509", "1022", "3058", "1110", "1003", "1111")
 
-fun isEventCustodial(courtDateResult: PrisonApiCourtDateResult): Boolean {
+fun isEventCustodial(courtDateResult: PrisonApiCourtDateOutcome): Boolean {
   return CUSTODIAL_EVENTS.contains(courtDateResult.resultCode)
 }
