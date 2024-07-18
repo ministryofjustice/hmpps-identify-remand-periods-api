@@ -15,7 +15,8 @@
           6,
           8
         ]
-      }
+      },
+      "status": "INACTIVE"
     }
   ],
   "chargeRemand": [
@@ -30,24 +31,8 @@
         "date": "2023-01-10",
         "description": ""
       },
-      "charge": {
-        "chargeId": 4,
-        "offence": {
-          "code": "TH68023",
-          "statute": "TH68",
-          "description": "Robbery"
-        },
-        "offenceDate": "2022-11-01",
-        "bookingId": 1,
-        "bookNumber": "",
-        "offenceEndDate": null,
-        "sentenceSequence": 3,
-        "sentenceDate": "2023-01-10",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 4,
+      "status": "INACTIVE",
       "days": 67
     },
     {
@@ -61,24 +46,8 @@
         "date": "2023-01-10",
         "description": ""
       },
-      "charge": {
-        "chargeId": 5,
-        "offence": {
-          "code": "TH68023",
-          "statute": "TH68",
-          "description": "Robbery"
-        },
-        "offenceDate": "2022-10-31",
-        "bookingId": 1,
-        "bookNumber": "",
-        "offenceEndDate": null,
-        "sentenceSequence": 3,
-        "sentenceDate": "2023-01-10",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 5,
+      "status": "INACTIVE",
       "days": 67
     },
     {
@@ -92,24 +61,8 @@
         "date": "2023-01-10",
         "description": ""
       },
-      "charge": {
-        "chargeId": 6,
-        "offence": {
-          "code": "TH68023",
-          "statute": "TH68",
-          "description": "Robbery"
-        },
-        "offenceDate": "2022-10-30",
-        "bookingId": 1,
-        "bookNumber": "",
-        "offenceEndDate": null,
-        "sentenceSequence": 3,
-        "sentenceDate": "2023-01-10",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 6,
+      "status": "INACTIVE",
       "days": 67
     },
     {
@@ -123,24 +76,8 @@
         "date": "2023-01-10",
         "description": ""
       },
-      "charge": {
-        "chargeId": 8,
-        "offence": {
-          "code": "TH68023",
-          "statute": "TH68",
-          "description": "Robbery"
-        },
-        "offenceDate": "2022-11-02",
-        "bookingId": 1,
-        "bookNumber": "",
-        "offenceEndDate": null,
-        "sentenceSequence": 3,
-        "sentenceDate": "2023-01-10",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 8,
+      "status": "INACTIVE",
       "days": 67
     },
     {
@@ -154,24 +91,8 @@
         "date": "2023-01-10",
         "description": ""
       },
-      "charge": {
-        "chargeId": 9,
-        "offence": {
-          "code": "TH68010",
-          "statute": "TH68",
-          "description": "Theft from a shop"
-        },
-        "offenceDate": "2022-10-31",
-        "bookingId": 1,
-        "bookNumber": "",
-        "offenceEndDate": null,
-        "sentenceSequence": null,
-        "sentenceDate": null,
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 9,
+      "status": "NOT_YET_SENTENCED",
       "days": 67
     }
   ],
@@ -179,24 +100,7 @@
     {
       "from": "2022-11-25",
       "to": "2023-01-09",
-      "charge": {
-        "chargeId": 4,
-        "offence": {
-          "code": "TH68023",
-          "statute": "TH68",
-          "description": "Robbery"
-        },
-        "offenceDate": "2022-11-01",
-        "bookingId": 1,
-        "bookNumber": "",
-        "offenceEndDate": null,
-        "sentenceSequence": 3,
-        "sentenceDate": "2023-01-10",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 4,
       "days": 46
     }
   ],
@@ -210,24 +114,7 @@
         "recallDate": null,
         "bookingId": 1
       },
-      "charge": {
-        "chargeId": 1,
-        "offence": {
-          "code": "PC00010",
-          "statute": "PC00",
-          "description": "Breach of a supervision order"
-        },
-        "offenceDate": "2022-05-04",
-        "bookingId": 1,
-        "bookNumber": "",
-        "offenceEndDate": "2022-05-23",
-        "sentenceSequence": 1,
-        "sentenceDate": "2022-11-04",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 1,
       "days": 21
     }
   ],

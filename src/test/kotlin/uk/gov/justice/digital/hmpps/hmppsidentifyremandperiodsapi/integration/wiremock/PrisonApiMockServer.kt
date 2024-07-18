@@ -34,6 +34,7 @@ class PrisonApiExtension : BeforeAllCallback, AfterAllCallback, BeforeEachCallba
     prisonApi.stubActiveBookingHasNoOffenceDates()
     prisonApi.stubGetPrison()
     prisonApi.stubHistoricCalculations()
+    prisonApi.stubSentencesAndOffences()
   }
 
   override fun beforeEach(context: ExtensionContext) {
@@ -50,6 +51,84 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
     private const val WIREMOCK_PORT = 8332
   }
 
+  fun stubSentencesAndOffences() {
+    stubFor(
+      get("/prison-api/api/offender-sentences/booking/1/sentences-and-offences")
+        .willReturn(
+          aResponse()
+            .withHeader("Content-Type", "application/json")
+            .withBody(
+              """
+                [
+                  {
+                    "bookingId": 123,
+                    "sentenceSequence": 1,
+                    "caseSequence": 9191,
+                    "sentenceStatus": "A",
+                    "sentenceCategory": "2003",
+                    "sentenceCalculationType": "ADIMP_ORA",
+                    "sentenceTypeDescription": "Standard Determinate",
+                    "sentenceDate": "2024-01-01",
+                    "terms": [{
+                      "years": 0,
+                      "months": 20,
+                      "weeks": 0,
+                      "days": 0
+                    }],
+                    "offences": [
+                      {
+                        "offenderChargeId": 9991,
+                        "offenceStartDate": "2015-03-17",
+                        "offenceCode": "GBH",
+                        "offenceDescription": "Grievous bodily harm"
+                      }
+                    ]
+                  }
+                ]
+              """.trimIndent(),
+            )
+            .withStatus(200),
+        ),
+    )
+    stubFor(
+      get("/prison-api/api/offender-sentences/booking/2/sentences-and-offences")
+        .willReturn(
+          aResponse()
+            .withHeader("Content-Type", "application/json")
+            .withBody(
+              """
+                [
+                  {
+                    "bookingId": 123,
+                    "sentenceSequence": 1,
+                    "caseSequence": 9191,
+                    "sentenceStatus": "A",
+                    "sentenceCategory": "2003",
+                    "sentenceCalculationType": "ADIMP_ORA",
+                    "sentenceTypeDescription": "Standard Determinate",
+                    "sentenceDate": "2024-01-01",
+                    "terms": [{
+                      "years": 0,
+                      "months": 20,
+                      "weeks": 0,
+                      "days": 0
+                    }],
+                    "offences": [
+                      {
+                        "offenderChargeId": 9991,
+                        "offenceStartDate": "2015-03-17",
+                        "offenceCode": "GBH",
+                        "offenceDescription": "Grievous bodily harm"
+                      }
+                    ]
+                  }
+                ]
+              """.trimIndent(),
+            )
+            .withStatus(200),
+        ),
+    )
+  }
   fun stubHistoricCalculations() {
     stubFor(
       get("/prison-api/api/offender-dates/calculations/${PrisonApiExtension.INTERSECTING_PRISONER}")

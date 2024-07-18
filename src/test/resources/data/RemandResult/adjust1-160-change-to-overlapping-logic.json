@@ -13,7 +13,8 @@
           1,
           2
         ]
-      }
+      },
+      "status": "INACTIVE"
     }
   ],
   "chargeRemand": [
@@ -28,24 +29,8 @@
         "date": "2018-05-04",
         "description": "Imprisonment"
       },
-      "charge": {
-        "chargeId": 1,
-        "offence": {
-          "code": "FI68010",
-          "statute": "FI68",
-          "description": "Possess ammunition for a firearm without a certificate"
-        },
-        "offenceDate": "2018-02-22",
-        "bookingId": 1,
-        "bookNumber": "46403A",
-        "offenceEndDate": null,
-        "sentenceSequence": 3,
-        "sentenceDate": "2018-05-04",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 1,
+      "status": "INACTIVE",
       "days": 69
     },
     {
@@ -59,24 +44,8 @@
         "date": "2018-05-04",
         "description": "Imprisonment"
       },
-      "charge": {
-        "chargeId": 2,
-        "offence": {
-          "code": "MD71230",
-          "statute": "MD71",
-          "description": "Possess with intent to supply a controlled drug of Class A - Cocaine"
-        },
-        "offenceDate": "2018-02-22",
-        "bookingId": 1,
-        "bookNumber": "46403A",
-        "offenceEndDate": null,
-        "sentenceSequence": 12,
-        "sentenceDate": "2018-05-04",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 2,
+      "status": "INACTIVE",
       "days": 42
     }
   ],
@@ -84,24 +53,7 @@
     {
       "from": "2018-02-24",
       "to": "2018-05-03",
-      "charge": {
-        "chargeId": 1,
-        "offence": {
-          "code": "FI68010",
-          "statute": "FI68",
-          "description": "Possess ammunition for a firearm without a certificate"
-        },
-        "offenceDate": "2018-02-22",
-        "bookingId": 1,
-        "bookNumber": "46403A",
-        "offenceEndDate": null,
-        "sentenceSequence": 3,
-        "sentenceDate": "2018-05-04",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 1,
       "days": 69
     }
   ],

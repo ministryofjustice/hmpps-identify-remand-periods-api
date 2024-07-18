@@ -12,7 +12,8 @@
         "chargeId": [
           4
         ]
-      }
+      },
+      "status": "INACTIVE"
     },
     {
       "id": null,
@@ -26,7 +27,8 @@
         "chargeId": [
           2
         ]
-      }
+      },
+      "status": "INACTIVE"
     }
   ],
   "chargeRemand": [
@@ -41,24 +43,8 @@
         "date": "2022-11-09",
         "description": ""
       },
-      "charge": {
-        "chargeId": 4,
-        "offence": {
-          "code": "1",
-          "statute": "1",
-          "description": "An offence"
-        },
-        "offenceDate": "2022-11-02",
-        "bookingId": 2,
-        "bookNumber": "",
-        "offenceEndDate": null,
-        "sentenceSequence": 2,
-        "sentenceDate": "2023-01-04",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 4,
+      "status": "INACTIVE",
       "days": 6
     },
     {
@@ -72,24 +58,8 @@
         "date": "2023-01-04",
         "description": ""
       },
-      "charge": {
-        "chargeId": 2,
-        "offence": {
-          "code": "1",
-          "statute": "1",
-          "description": "An offence"
-        },
-        "offenceDate": "2022-11-09",
-        "bookingId": 2,
-        "bookNumber": "",
-        "offenceEndDate": null,
-        "sentenceSequence": 1,
-        "sentenceDate": "2023-01-04",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 2,
+      "status": "INACTIVE",
       "days": 54
     },
     {
@@ -103,24 +73,8 @@
         "date": "2023-01-04",
         "description": ""
       },
-      "charge": {
-        "chargeId": 3,
-        "offence": {
-          "code": "1",
-          "statute": "1",
-          "description": "An offence"
-        },
-        "offenceDate": "2022-10-26",
-        "bookingId": 2,
-        "bookNumber": "",
-        "offenceEndDate": null,
-        "sentenceSequence": null,
-        "sentenceDate": null,
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 3,
+      "status": "NOT_YET_SENTENCED",
       "days": 19
     }
   ],
@@ -128,47 +82,13 @@
     {
       "from": "2022-11-04",
       "to": "2022-11-09",
-      "charge": {
-        "chargeId": 4,
-        "offence": {
-          "code": "1",
-          "statute": "1",
-          "description": "An offence"
-        },
-        "offenceDate": "2022-11-02",
-        "bookingId": 2,
-        "bookNumber": "",
-        "offenceEndDate": null,
-        "sentenceSequence": 2,
-        "sentenceDate": "2023-01-04",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 4,
       "days": 6
     },
     {
       "from": "2022-11-11",
       "to": "2023-01-03",
-      "charge": {
-        "chargeId": 2,
-        "offence": {
-          "code": "1",
-          "statute": "1",
-          "description": "An offence"
-        },
-        "offenceDate": "2022-11-09",
-        "bookingId": 2,
-        "bookNumber": "",
-        "offenceEndDate": null,
-        "sentenceSequence": 1,
-        "sentenceDate": "2023-01-04",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 2,
       "days": 54
     }
   ],

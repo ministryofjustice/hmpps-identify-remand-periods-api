@@ -6,6 +6,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculaterelea
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.model.RelevantRemandCalculationRequest
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.model.RelevantRemandCalculationResult
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Charge
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Remand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
 import java.time.LocalDate
@@ -15,9 +16,9 @@ class CalculateReleaseDateService(
   private val calculateReleaseDatesApiClient: CalculateReleaseDatesApiClient,
 ) {
 
-  fun calculateReleaseDate(prisonerId: String, remand: List<Remand>, sentence: Sentence, calculateAt: LocalDate): LocalDate {
+  fun calculateReleaseDate(prisonerId: String, remand: List<Remand>, sentence: Sentence, calculateAt: LocalDate, charges: Map<Long, Charge>): LocalDate {
     val request = RelevantRemandCalculationRequest(
-      remand.filter { it.charge.bookingId == sentence.bookingId }.map { RelevantRemand(it.from, it.to, it.days.toInt(), it.charge.sentenceSequence!!) },
+      remand.filter { charges[it.chargeId]!!.bookingId == sentence.bookingId }.map { RelevantRemand(it.from, it.to, it.days.toInt(), charges[it.chargeId]!!.sentenceSequence!!) },
       sentence,
       calculateAt,
     )

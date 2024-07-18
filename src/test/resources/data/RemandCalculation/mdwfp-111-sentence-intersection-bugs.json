@@ -1,7 +1,7 @@
 {
   "remandCalculation": {
     "prisonerId": "INTERSE",
-    "charges": [
+    "chargesAndEvents": [
       {
         "charge": {
           "chargeId": 1,

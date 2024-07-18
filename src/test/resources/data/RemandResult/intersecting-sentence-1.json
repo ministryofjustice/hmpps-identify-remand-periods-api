@@ -13,7 +13,8 @@
           1,
           2
         ]
-      }
+      },
+      "status": "INACTIVE"
     },
     {
       "id": null,
@@ -27,7 +28,8 @@
         "chargeId": [
           1
         ]
-      }
+      },
+      "status": "INACTIVE"
     },
     {
       "id": null,
@@ -41,7 +43,8 @@
         "chargeId": [
           1
         ]
-      }
+      },
+      "status": "INACTIVE"
     }
   ],
   "chargeRemand": [
@@ -56,24 +59,8 @@
         "date": "2022-01-01",
         "description": ""
       },
-      "charge": {
-        "chargeId": 1,
-        "offence": {
-          "code": "1",
-          "statute": "1",
-          "description": "An offence"
-        },
-        "offenceDate": "2000-01-01",
-        "bookingId": 1,
-        "bookNumber": "",
-        "offenceEndDate": "2000-01-01",
-        "sentenceSequence": 1,
-        "sentenceDate": "2022-01-01",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 1,
+      "status": "INACTIVE",
       "days": 731
     },
     {
@@ -87,24 +74,8 @@
         "date": "2021-02-01",
         "description": ""
       },
-      "charge": {
-        "chargeId": 2,
-        "offence": {
-          "code": "2",
-          "statute": "2",
-          "description": "An unrelated offence"
-        },
-        "offenceDate": "2001-01-01",
-        "bookingId": 1,
-        "bookNumber": "",
-        "offenceEndDate": "2001-01-01",
-        "sentenceSequence": 2,
-        "sentenceDate": "2021-02-01",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 2,
+      "status": "INACTIVE",
       "days": 31
     }
   ],
@@ -112,70 +83,19 @@
     {
       "from": "2021-01-01",
       "to": "2021-01-31",
-      "charge": {
-        "chargeId": 2,
-        "offence": {
-          "code": "2",
-          "statute": "2",
-          "description": "An unrelated offence"
-        },
-        "offenceDate": "2001-01-01",
-        "bookingId": 1,
-        "bookNumber": "",
-        "offenceEndDate": "2001-01-01",
-        "sentenceSequence": 2,
-        "sentenceDate": "2021-02-01",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 2,
       "days": 31
     },
     {
       "from": "2020-01-01",
       "to": "2020-12-31",
-      "charge": {
-        "chargeId": 1,
-        "offence": {
-          "code": "1",
-          "statute": "1",
-          "description": "An offence"
-        },
-        "offenceDate": "2000-01-01",
-        "bookingId": 1,
-        "bookNumber": "",
-        "offenceEndDate": "2000-01-01",
-        "sentenceSequence": 1,
-        "sentenceDate": "2022-01-01",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 1,
       "days": 366
     },
     {
       "from": "2021-05-03",
       "to": "2021-12-31",
-      "charge": {
-        "chargeId": 1,
-        "offence": {
-          "code": "1",
-          "statute": "1",
-          "description": "An offence"
-        },
-        "offenceDate": "2000-01-01",
-        "bookingId": 1,
-        "bookNumber": "",
-        "offenceEndDate": "2000-01-01",
-        "sentenceSequence": 1,
-        "sentenceDate": "2022-01-01",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 1,
       "days": 243
     }
   ],
@@ -189,24 +109,7 @@
         "recallDate": null,
         "bookingId": 1
       },
-      "charge": {
-        "chargeId": 2,
-        "offence": {
-          "code": "2",
-          "statute": "2",
-          "description": "An unrelated offence"
-        },
-        "offenceDate": "2001-01-01",
-        "bookingId": 1,
-        "bookNumber": "",
-        "offenceEndDate": "2001-01-01",
-        "sentenceSequence": 2,
-        "sentenceDate": "2021-02-01",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 2,
       "days": 91
     }
   ],

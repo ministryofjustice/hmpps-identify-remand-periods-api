@@ -12,7 +12,8 @@
         "chargeId": [
           1
         ]
-      }
+      },
+      "status": "INACTIVE"
     }
   ],
   "chargeRemand": [
@@ -27,24 +28,8 @@
         "date": "2022-02-01",
         "description": ""
       },
-      "charge": {
-        "chargeId": 1,
-        "offence": {
-          "code": "1",
-          "statute": "1",
-          "description": "An offence"
-        },
-        "offenceDate": "2000-01-01",
-        "bookingId": 1,
-        "bookNumber": "",
-        "offenceEndDate": "2000-01-01",
-        "sentenceSequence": 1,
-        "sentenceDate": "2022-02-01",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 1,
+      "status": "INACTIVE",
       "days": 31
     }
   ],
@@ -52,24 +37,7 @@
     {
       "from": "2022-01-01",
       "to": "2022-01-31",
-      "charge": {
-        "chargeId": 1,
-        "offence": {
-          "code": "1",
-          "statute": "1",
-          "description": "An offence"
-        },
-        "offenceDate": "2000-01-01",
-        "bookingId": 1,
-        "bookNumber": "",
-        "offenceEndDate": "2000-01-01",
-        "sentenceSequence": 1,
-        "sentenceDate": "2022-02-01",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 1,
       "days": 31
     }
   ],

@@ -2,6 +2,7 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantreman
 
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.stereotype.Service
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentStatus
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.service.AdjustmentsService
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.config.AuthAwareAuthenticationToken
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.service.PrisonService
@@ -21,13 +22,14 @@ class IdentifyRemandDecisionService(
   fun saveDecision(person: String, decision: IdentifyRemandDecisionDto): IdentifyRemandDecisionDto {
     val courtDateResults = prisonService.getCourtDateResults(person)
     val prisonerDetails = prisonService.getOffenderDetail(person)
-    val calculation = remandCalculationService.calculate(transform(courtDateResults, prisonerDetails))
+    val sentencesAndOffences = prisonService.getSentencesAndOffences(prisonerDetails.bookingId, true)
+    val calculation = remandCalculationService.calculate(transform(courtDateResults, prisonerDetails, sentencesAndOffences))
     val days = calculation.sentenceRemand.map { it.days }.reduceOrNull { acc, it -> acc + it } ?: 0
 
     if (decision.accepted) {
       adjustmentsService.saveRemand(
         person,
-        calculation.adjustments,
+        calculation.adjustments.filter { it.status == AdjustmentStatus.ACTIVE },
       )
     }
 

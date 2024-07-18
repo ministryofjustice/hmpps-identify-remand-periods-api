@@ -7,5 +7,6 @@ data class ChargeRemand(
   override val to: LocalDate,
   val fromEvent: CourtAppearance,
   val toEvent: CourtAppearance,
-  val charge: Charge,
+  val chargeId: Long,
+  var status: ChargeRemandStatus?,
 ) : Period

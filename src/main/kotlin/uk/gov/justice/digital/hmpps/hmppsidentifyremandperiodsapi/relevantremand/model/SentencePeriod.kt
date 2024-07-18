@@ -6,5 +6,5 @@ data class SentencePeriod(
   override val from: LocalDate,
   override val to: LocalDate,
   val sentence: Sentence,
-  val charge: Charge,
+  val chargeId: Long,
 ) : Period

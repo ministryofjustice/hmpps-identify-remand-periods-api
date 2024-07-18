@@ -56,7 +56,8 @@ class RelevantRemandController(
     log.info("Request received to calculate relevant remand for $prisonerId")
     val courtDateResults = prisonService.getCourtDateResults(prisonerId)
     val prisonerDetails = prisonService.getOffenderDetail(prisonerId)
-    return remandCalculationService.calculate(transform(courtDateResults, prisonerDetails))
+    val sentencesAndOffences = prisonService.getSentencesAndOffences(prisonerDetails.bookingId, true)
+    return remandCalculationService.calculate(transform(courtDateResults, prisonerDetails, sentencesAndOffences))
   }
 
   @PostMapping(value = ["/{prisonerId}/decision"])

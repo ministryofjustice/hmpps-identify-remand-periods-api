@@ -138,21 +138,21 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
     assertThat(result.chargeRemand.size).isEqualTo(2)
     assertThat(result.chargeRemand[0].from).isEqualTo(LocalDate.of(2020, 1, 1))
     assertThat(result.chargeRemand[0].to).isEqualTo(LocalDate.of(2021, 12, 31))
-    assertThat(result.chargeRemand[0].charge.sentenceSequence).isEqualTo(3)
+    assertThat(result.chargeRemand[0].chargeId).isEqualTo(3933931)
     assertThat(result.chargeRemand[1].from).isEqualTo(LocalDate.of(2021, 1, 1))
     assertThat(result.chargeRemand[1].to).isEqualTo(LocalDate.of(2021, 1, 31))
-    assertThat(result.chargeRemand[1].charge.sentenceSequence).isEqualTo(4)
+    assertThat(result.chargeRemand[1].chargeId).isEqualTo(3933932)
     assertThat(result.sentenceRemand).isNotEmpty
     assertThat(result.sentenceRemand.size).isEqualTo(3)
     assertThat(result.sentenceRemand[0].from).isEqualTo(LocalDate.of(2021, 1, 1))
     assertThat(result.sentenceRemand[0].to).isEqualTo(LocalDate.of(2021, 1, 31))
-    assertThat(result.sentenceRemand[0].charge.sentenceSequence).isEqualTo(4)
+    assertThat(result.sentenceRemand[0].chargeId).isEqualTo(3933932)
     assertThat(result.sentenceRemand[1].from).isEqualTo(LocalDate.of(2020, 1, 1))
     assertThat(result.sentenceRemand[1].to).isEqualTo(LocalDate.of(2020, 12, 31))
-    assertThat(result.sentenceRemand[1].charge.sentenceSequence).isEqualTo(3)
+    assertThat(result.sentenceRemand[1].chargeId).isEqualTo(3933931)
     assertThat(result.sentenceRemand[2].from).isEqualTo(LocalDate.of(2021, 4, 2))
     assertThat(result.sentenceRemand[2].to).isEqualTo(LocalDate.of(2021, 12, 31))
-    assertThat(result.sentenceRemand[2].charge.sentenceSequence).isEqualTo(3)
+    assertThat(result.sentenceRemand[2].chargeId).isEqualTo(3933931)
   }
 
   @Test

@@ -6,6 +6,7 @@ import org.mockito.kotlin.times
 import org.mockito.kotlin.verify
 import org.mockito.kotlin.whenever
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentDto
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentStatus
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.RemandDto
 import java.time.LocalDate
 import java.util.UUID
@@ -26,6 +27,7 @@ class AdjustmentsServiceTest {
       sentenceSequence = 1,
       person = person,
       remand = RemandDto(listOf(1, 2, 3)),
+      status = AdjustmentStatus.ACTIVE,
     )
     val adjustmentExistingNotMatching = AdjustmentDto(
       id = UUID.randomUUID(),
@@ -35,6 +37,7 @@ class AdjustmentsServiceTest {
       sentenceSequence = 1,
       person = person,
       remand = RemandDto(listOf(1, 2, 3)),
+      status = AdjustmentStatus.ACTIVE,
     )
     val newAdjustment = AdjustmentDto(
       id = null,
@@ -44,6 +47,7 @@ class AdjustmentsServiceTest {
       sentenceSequence = 1,
       person = person,
       remand = RemandDto(listOf(1, 2, 3)),
+      status = AdjustmentStatus.ACTIVE,
     )
 
     whenever(apiClient.getAdjustments(person)).thenReturn(listOf(adjustmentExistingMatches, adjustmentExistingNotMatching, adjustmentExistingMatches.copy(adjustmentType = "NOT_REMAND")))
