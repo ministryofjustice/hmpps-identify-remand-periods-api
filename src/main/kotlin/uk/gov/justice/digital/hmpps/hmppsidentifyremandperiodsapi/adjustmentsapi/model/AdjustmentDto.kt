@@ -12,4 +12,5 @@ data class AdjustmentDto(
   val toDate: LocalDate?,
   val fromDate: LocalDate?,
   val remand: RemandDto?,
+  val status: AdjustmentStatus,
 )

@@ -1,17 +1,16 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.service
 
 import org.springframework.stereotype.Service
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentDto
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.RemandDto
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.service.CalculateReleaseDateService
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.service.FindHistoricReleaseDateService
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeRemand
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblem
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Remand
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandResult
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentenceAndCharge
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentencePeriod
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentenceRemandLoopTracker
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentenceRemandResult
 
 @Service
 class SentenceRemandService(
@@ -19,8 +18,11 @@ class SentenceRemandService(
   private val historicReleaseDateService: FindHistoricReleaseDateService,
 ) {
 
-  fun extractSentenceRemand(prisonerId: String, remandPeriods: List<ChargeRemand>, sentences: List<SentenceAndCharge>, issuesWithLegacyData: List<LegacyDataProblem>): RemandResult {
-    val loopTracker = SentenceRemandLoopTracker(remandPeriods, sentences)
+  fun extractSentenceRemand(remandCalculation: RemandCalculation, remandPeriods: List<ChargeRemand>): SentenceRemandResult {
+    val sentences = remandCalculation.chargesAndEvents
+      .filter { it.charge.sentenceDate != null && it.charge.sentenceSequence != null }
+      .map { SentenceAndCharge(Sentence(it.charge.sentenceSequence!!, it.charge.sentenceDate!!, it.dates.find { date -> date.isRecallEvent }?.date, it.charge.bookingId), it.charge) }
+    val loopTracker = SentenceRemandLoopTracker(remandCalculation.charges, remandPeriods, sentences)
     for (entry in loopTracker.sentenceDateToPeriodMap.entries.sortedBy { it.key }) {
       loopTracker.startNewSentenceDateLoop(entry)
       var current: Remand? = null
@@ -28,11 +30,11 @@ class SentenceRemandService(
         if (loopTracker.shouldCalculateAReleaseDate(date)) {
           val sentencesToCalculate = sentences.filter { it.sentence.sentenceDate == date || it.sentence.recallDate == date }.distinctBy { "${date}${it.sentence.bookingId}" }
 
-          val sentenceReleaseDate = sentencesToCalculate.map { it to calculateReleaseDateService.calculateReleaseDate(prisonerId, loopTracker.final, it.sentence, date) }.maxBy { it.second }
-          loopTracker.periodsServingSentence.add(SentencePeriod(date, sentenceReleaseDate.second, sentenceReleaseDate.first.sentence, sentenceReleaseDate.first.charge))
+          val sentenceReleaseDate = sentencesToCalculate.map { it to calculateReleaseDateService.calculateReleaseDate(remandCalculation.prisonerId, loopTracker.final, it.sentence, date, remandCalculation.charges) }.maxBy { it.second }
+          loopTracker.periodsServingSentence.add(SentencePeriod(date, sentenceReleaseDate.second, sentenceReleaseDate.first.sentence, sentenceReleaseDate.first.charge.chargeId))
 
-          val historicCalculationReleaseDate = sentencesToCalculate.map { it to historicReleaseDateService.calculateReleaseDate(prisonerId, loopTracker.final, it.sentence, date) }.maxBy { it.second }
-          loopTracker.periodsServingSentenceUsingHistoricCalculations.add(SentencePeriod(date, historicCalculationReleaseDate.second, historicCalculationReleaseDate.first.sentence, historicCalculationReleaseDate.first.charge))
+          val historicCalculationReleaseDate = sentencesToCalculate.map { it to historicReleaseDateService.calculateReleaseDate(remandCalculation.prisonerId, loopTracker.final, it.sentence, date) }.maxBy { it.second }
+          loopTracker.periodsServingSentenceUsingHistoricCalculations.add(SentencePeriod(date, historicCalculationReleaseDate.second, historicCalculationReleaseDate.first.sentence, historicCalculationReleaseDate.first.charge.chargeId))
         }
         val next = loopTracker.findNextPeriod(date)
         // Should we start a new period at this date?
@@ -74,25 +76,10 @@ class SentenceRemandService(
       }
     }
 
-    return RemandResult(
-      loopTracker.final.map { toAdjustmentDto(prisonerId, it, loopTracker.allPeriods) },
-      remandPeriods,
+    return SentenceRemandResult(
       loopTracker.final,
       loopTracker.periodsServingSentence,
       loopTracker.periodsServingSentenceUsingHistoricCalculations,
-      issuesWithLegacyData,
-    )
-  }
-
-  private fun toAdjustmentDto(prisonerId: String, remand: Remand, allPeriods: List<ChargeRemand>): AdjustmentDto {
-    return AdjustmentDto(
-      id = null,
-      bookingId = remand.charge.bookingId,
-      sentenceSequence = remand.charge.sentenceSequence,
-      fromDate = remand.from,
-      toDate = remand.to,
-      person = prisonerId,
-      remand = RemandDto(allPeriods.filter { it.overlaps(remand) }.map { it.charge.chargeId }),
     )
   }
 }

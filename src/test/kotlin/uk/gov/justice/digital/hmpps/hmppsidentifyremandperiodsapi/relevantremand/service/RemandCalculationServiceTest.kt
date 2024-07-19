@@ -20,8 +20,11 @@ import java.time.LocalDate
 class RemandCalculationServiceTest {
   private val calculateReleaseDateService = mock<CalculateReleaseDateService>()
   private val findHistoricReleaseDateService = mock<FindHistoricReleaseDateService>()
+  private val remandClockService: RemandClockService = RemandClockService()
   private val sentenceRemandService = SentenceRemandService(calculateReleaseDateService, findHistoricReleaseDateService)
-  private val remandCalculationService = RemandCalculationService(sentenceRemandService)
+  private val remandAdjustmentService: RemandAdjustmentService = RemandAdjustmentService()
+  private val chargeRemandStatusService: ChargeRemandStatusService = ChargeRemandStatusService()
+  private val remandCalculationService = RemandCalculationService(remandClockService, sentenceRemandService, remandAdjustmentService, chargeRemandStatusService)
 
   @ParameterizedTest
   @CsvFileSource(resources = ["/data/tests.csv"], numLinesToSkip = 1)
@@ -47,7 +50,7 @@ class RemandCalculationServiceTest {
     val expected = TestUtil.objectMapper().readValue(ClassPathResource("/data/RemandResult/$exampleName.json").file, RemandResult::class.java)
     assertThat(remandResult)
       .usingRecursiveComparison()
-      .ignoringFieldsMatchingRegexes("intersectingSentencesUsingHistoricCalculation")
+      .ignoringFieldsMatchingRegexes("intersectingSentencesUsingHistoricCalculation", "charges")
       .isEqualTo(expected)
   }
 
@@ -62,6 +65,7 @@ class RemandCalculationServiceTest {
             any(),
             eq(Sentence(sentence.sentenceSequence, sentence.sentenceAt, sentence.recallDate, sentence.bookingId)),
             eq(calculation.calculateAt),
+            any(),
           ),
         ).thenAnswer {
           if (calculation.calculateAt == sentence.sentenceAt) {

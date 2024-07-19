@@ -1,5 +1,6 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.transform
 
+import uk.gov.justice.digital.hmpps.adjustments.api.model.prisonapi.SentenceAndOffences
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiCharge
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiCourtDateOutcome
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonerDetails
@@ -15,7 +16,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-fun transform(results: List<PrisonApiCharge>, prisonerDetails: PrisonerDetails): RemandCalculation {
+fun transform(results: List<PrisonApiCharge>, prisonerDetails: PrisonerDetails, sentencesAndOffences: List<SentenceAndOffences>): RemandCalculation {
   val earliestActiveOffenceDate: LocalDate = findEarliestActiveOffenceDate(results, prisonerDetails)
   val issuesWithLegacyData = mutableListOf<LegacyDataProblem>()
   return RemandCalculation(
@@ -51,6 +52,7 @@ fun transform(results: List<PrisonApiCharge>, prisonerDetails: PrisonerDetails):
         )
       }
       .filter { it.dates.isNotEmpty() },
+    sentencesAndOffences.flatMap { it.offences.map { offence -> offence.offenderChargeId } },
     issuesWithLegacyData,
   )
 }
