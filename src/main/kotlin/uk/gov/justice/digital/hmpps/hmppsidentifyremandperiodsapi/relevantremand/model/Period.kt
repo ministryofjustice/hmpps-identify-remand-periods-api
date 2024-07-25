@@ -26,6 +26,6 @@ interface Period {
   }
 
   fun engulfs(period: Period): Boolean {
-    return (from.isBefore(period.from) || from == period.from) && (to.isBefore(period.to) || to == period.to)
+    return (from.isBefore(period.from) || from == period.from) && (to.isAfter(period.to) || to == period.to)
   }
 }
