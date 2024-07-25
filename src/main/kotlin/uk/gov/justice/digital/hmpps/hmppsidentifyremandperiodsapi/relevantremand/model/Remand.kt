@@ -5,5 +5,5 @@ import java.time.LocalDate
 data class Remand(
   override val from: LocalDate,
   override val to: LocalDate,
-  val charge: Charge,
+  val chargeId: Long,
 ) : Period

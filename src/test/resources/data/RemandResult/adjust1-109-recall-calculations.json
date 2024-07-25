@@ -12,7 +12,8 @@
         "chargeId": [
           1
         ]
-      }
+      },
+      "status": "INACTIVE"
     },
     {
       "id": null,
@@ -26,7 +27,8 @@
         "chargeId": [
           9
         ]
-      }
+      },
+      "status": "INACTIVE"
     }
   ],
   "chargeRemand": [
@@ -41,24 +43,8 @@
         "date": "2022-08-17",
         "description": ""
       },
-      "charge": {
-        "chargeId": 1,
-        "offence": {
-          "code": "TH68036",
-          "statute": "TH68",
-          "description": "Burglary dwelling and theft - no violence"
-        },
-        "offenceDate": "2022-06-18",
-        "bookingId": 1,
-        "bookNumber": "",
-        "offenceEndDate": null,
-        "sentenceSequence": 1,
-        "sentenceDate": "2022-08-17",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 1,
+      "status": "INACTIVE",
       "days": 44
     },
     {
@@ -72,24 +58,8 @@
         "date": "2023-06-30",
         "description": ""
       },
-      "charge": {
-        "chargeId": 9,
-        "offence": {
-          "code": "TH68036",
-          "statute": "TH68",
-          "description": "Burglary dwelling and theft - no violence"
-        },
-        "offenceDate": "2023-05-09",
-        "bookingId": 1,
-        "bookNumber": "",
-        "offenceEndDate": null,
-        "sentenceSequence": 12,
-        "sentenceDate": "2023-06-30",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 9,
+      "status": "INACTIVE",
       "days": 45
     }
   ],
@@ -97,47 +67,13 @@
     {
       "from": "2022-07-04",
       "to": "2022-08-16",
-      "charge": {
-        "chargeId": 1,
-        "offence": {
-          "code": "TH68036",
-          "statute": "TH68",
-          "description": "Burglary dwelling and theft - no violence"
-        },
-        "offenceDate": "2022-06-18",
-        "bookingId": 1,
-        "bookNumber": "",
-        "offenceEndDate": null,
-        "sentenceSequence": 1,
-        "sentenceDate": "2022-08-17",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 1,
       "days": 44
     },
     {
       "from": "2023-05-16",
       "to": "2023-05-17",
-      "charge": {
-        "chargeId": 9,
-        "offence": {
-          "code": "TH68036",
-          "statute": "TH68",
-          "description": "Burglary dwelling and theft - no violence"
-        },
-        "offenceDate": "2023-05-09",
-        "bookingId": 1,
-        "bookNumber": "",
-        "offenceEndDate": null,
-        "sentenceSequence": 12,
-        "sentenceDate": "2023-06-30",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 9,
       "days": 2
     }
   ],
@@ -151,24 +87,7 @@
         "recallDate": null,
         "bookingId": 1
       },
-      "charge": {
-        "chargeId": 1,
-        "offence": {
-          "code": "TH68036",
-          "statute": "TH68",
-          "description": "Burglary dwelling and theft - no violence"
-        },
-        "offenceDate": "2022-06-18",
-        "bookingId": 1,
-        "bookNumber": "",
-        "offenceEndDate": null,
-        "sentenceSequence": 1,
-        "sentenceDate": "2022-08-17",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 1,
       "days": 48
     },
     {
@@ -180,24 +99,7 @@
         "recallDate": "2023-05-18",
         "bookingId": 1
       },
-      "charge": {
-        "chargeId": 3,
-        "offence": {
-          "code": "TH68036",
-          "statute": "TH68",
-          "description": "Burglary dwelling and theft - no violence"
-        },
-        "offenceDate": "2021-06-18",
-        "bookingId": 1,
-        "bookNumber": "",
-        "offenceEndDate": null,
-        "sentenceSequence": 11,
-        "sentenceDate": "2022-08-17",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 3,
       "days": 96
     }
   ],

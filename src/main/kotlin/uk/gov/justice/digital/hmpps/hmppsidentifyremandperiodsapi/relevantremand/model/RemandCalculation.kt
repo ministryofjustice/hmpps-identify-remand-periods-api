@@ -2,6 +2,9 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantreman
 
 data class RemandCalculation(
   val prisonerId: String,
-  val charges: List<ChargeAndEvents>,
+  val chargesAndEvents: List<ChargeAndEvents>,
+  val chargeIdsWithActiveSentence: List<Long> = emptyList(),
   val issuesWithLegacyData: List<LegacyDataProblem> = emptyList(),
-)
+) {
+  val charges: Map<Long, Charge> = chargesAndEvents.map { it.charge }.associateBy { it.chargeId }
+}

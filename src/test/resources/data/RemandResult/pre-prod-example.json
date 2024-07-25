@@ -9,8 +9,11 @@
       "toDate": "2021-05-13",
       "fromDate": "2021-05-13",
       "remand": {
-        "chargeId": []
-      }
+        "chargeId": [
+          1
+        ]
+      },
+      "status": "INACTIVE"
     }
   ],
   "chargeRemand": [
@@ -25,24 +28,8 @@
         "date": "2021-05-14",
         "description": ""
       },
-      "charge": {
-        "chargeId": 1,
-        "offence": {
-          "code": "1",
-          "statute": "1",
-          "description": "An offence"
-        },
-        "offenceDate": "2000-01-01",
-        "bookingId": 1,
-        "bookNumber": "",
-        "offenceEndDate": "2000-01-01",
-        "sentenceSequence": 1,
-        "sentenceDate": "2021-05-14",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 1,
+      "status": "INACTIVE",
       "days": 1
     }
   ],
@@ -50,24 +37,7 @@
     {
       "from": "2021-05-13",
       "to": "2021-05-13",
-      "charge": {
-        "chargeId": 1,
-        "offence": {
-          "code": "1",
-          "statute": "1",
-          "description": "An offence"
-        },
-        "offenceDate": "2000-01-01",
-        "bookingId": 1,
-        "bookNumber": "",
-        "offenceEndDate": "2000-01-01",
-        "sentenceSequence": 1,
-        "sentenceDate": "2021-05-14",
-        "courtCaseRef": null,
-        "courtLocation": null,
-        "resultDescription": null,
-        "isActiveBooking": false
-      },
+      "chargeId": 1,
       "days": 1
     }
   ],

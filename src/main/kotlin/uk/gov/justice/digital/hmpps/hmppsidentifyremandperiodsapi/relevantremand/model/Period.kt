@@ -18,6 +18,14 @@ interface Period {
   }
 
   fun overlaps(period: Period): Boolean {
-    return overlapsStartInclusive(period.from) || overlapsEndInclusive(period.to)
+    return overlapsStartInclusive(period.from) || overlapsEndInclusive(period.to) || datesSame(period)
+  }
+
+  fun datesSame(period: Period): Boolean {
+    return from == period.from && to == period.to
+  }
+
+  fun engulfs(period: Period): Boolean {
+    return (from.isBefore(period.from) || from == period.from) && (to.isBefore(period.to) || to == period.to)
   }
 }
