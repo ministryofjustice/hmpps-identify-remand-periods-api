@@ -1,6 +1,7 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.integration.wiremock
 
 import com.github.tomakehurst.wiremock.WireMockServer
+import com.github.tomakehurst.wiremock.client.WireMock
 import com.github.tomakehurst.wiremock.client.WireMock.aResponse
 import com.github.tomakehurst.wiremock.client.WireMock.get
 import org.junit.jupiter.api.extension.AfterAllCallback
@@ -131,19 +132,40 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
   }
   fun stubHistoricCalculations() {
     stubFor(
-      get("/prison-api/api/offender-dates/calculations/${PrisonApiExtension.INTERSECTING_PRISONER}")
+      get(WireMock.urlPathMatching("/prison-api/api/offender-dates/calculations/.*"))
         .willReturn(
           aResponse()
             .withHeader("Content-Type", "application/json")
             .withBody(
               """
-              []
+              [{
+                "bookingId": 1,
+                "calculationDate": "2021-03-30T09:46:55Z",
+                "offenderSentCalculationId": 1
+              }]
+              """.trimIndent(),
+            )
+            .withStatus(200),
+        ),
+    )
+
+    stubFor(
+      get("/prison-api/api/offender-dates/sentence-calculation/1")
+        .willReturn(
+          aResponse()
+            .withHeader("Content-Type", "application/json")
+            .withBody(
+              """
+              {
+                "conditionalReleaseDate": "2021-04-01"
+              }
               """.trimIndent(),
             )
             .withStatus(200),
         ),
     )
   }
+
   fun stubImprisonedCourtCaseResults() {
     stubFor(
       get("/prison-api/api/court-date-results/by-charge/${PrisonApiExtension.IMPRISONED_PRISONER}")

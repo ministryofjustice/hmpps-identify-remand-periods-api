@@ -1,5 +1,6 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.service
 
+import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.service.CalculateReleaseDateService
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.service.FindHistoricReleaseDateService
@@ -11,6 +12,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentencePeriod
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentenceRemandLoopTracker
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentenceRemandResult
+import java.time.LocalDate
 
 @Service
 class SentenceRemandService(
@@ -28,13 +30,7 @@ class SentenceRemandService(
       var current: Remand? = null
       for (date in loopTracker.importantDates) {
         if (loopTracker.shouldCalculateAReleaseDate(date)) {
-          val sentencesToCalculate = sentences.filter { it.sentence.sentenceDate == date || it.sentence.recallDate == date }.distinctBy { "${date}${it.sentence.bookingId}" }
-
-          val sentenceReleaseDate = sentencesToCalculate.map { it to calculateReleaseDateService.calculateReleaseDate(remandCalculation.prisonerId, loopTracker.final, it.sentence, date, remandCalculation.charges) }.maxBy { it.second }
-          loopTracker.periodsServingSentence.add(SentencePeriod(date, sentenceReleaseDate.second, sentenceReleaseDate.first.sentence, sentenceReleaseDate.first.charge.chargeId))
-
-          val historicCalculationReleaseDate = sentencesToCalculate.map { it to historicReleaseDateService.calculateReleaseDate(remandCalculation.prisonerId, loopTracker.final, it.sentence, date) }.maxBy { it.second }
-          loopTracker.periodsServingSentenceUsingHistoricCalculations.add(SentencePeriod(date, historicCalculationReleaseDate.second, historicCalculationReleaseDate.first.sentence, historicCalculationReleaseDate.first.charge.chargeId))
+          findReleaseDates(date, sentences, loopTracker, remandCalculation)
         }
         val next = loopTracker.findNextPeriod(date)
         // Should we start a new period at this date?
@@ -79,7 +75,45 @@ class SentenceRemandService(
     return SentenceRemandResult(
       loopTracker.final,
       loopTracker.periodsServingSentence,
-      loopTracker.periodsServingSentenceUsingHistoricCalculations,
+      loopTracker.periodsServingSentenceUsingCRDS,
     )
+  }
+
+  private fun findReleaseDates(
+    date: LocalDate,
+    sentences: List<SentenceAndCharge>,
+    loopTracker: SentenceRemandLoopTracker,
+    remandCalculation: RemandCalculation,
+  ) {
+    val sentencesToCalculate = sentences.filter { it.sentence.sentenceDate == date || it.sentence.recallDate == date }.distinctBy { "${date}${it.sentence.bookingId}" }
+
+    try {
+      val sentenceReleaseDate = sentencesToCalculate.map {
+        it to calculateReleaseDateService.calculateReleaseDate(
+          remandCalculation.prisonerId,
+          loopTracker.final,
+          it.sentence,
+          date,
+          remandCalculation.charges,
+        )
+      }.maxBy { it.second }
+      loopTracker.periodsServingSentenceUsingCRDS.add(
+        SentencePeriod(
+          date,
+          sentenceReleaseDate.second,
+          sentenceReleaseDate.first.sentence,
+          sentenceReleaseDate.first.charge.chargeId,
+        ),
+      )
+    } catch (e: Exception) {
+      log.error("Unable to use CRDS for release date calc", e)
+    }
+
+    val historicCalculationReleaseDate = sentencesToCalculate.map { it to historicReleaseDateService.calculateReleaseDate(remandCalculation.prisonerId, loopTracker.final, it.sentence, date) }.maxBy { it.second }
+    loopTracker.periodsServingSentence.add(SentencePeriod(date, historicCalculationReleaseDate.second, historicCalculationReleaseDate.first.sentence, historicCalculationReleaseDate.first.charge.chargeId))
+  }
+
+  companion object {
+    private val log = LoggerFactory.getLogger(this::class.java)
   }
 }

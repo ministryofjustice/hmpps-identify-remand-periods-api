@@ -3,5 +3,5 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantreman
 data class SentenceRemandResult(
   val sentenceRemand: List<Remand>,
   val intersectingSentences: List<SentencePeriod>,
-  val intersectingSentencesUsingHistoricCalculation: List<SentencePeriod> = emptyList(),
+  val periodsServingSentenceUsingCRDS: List<SentencePeriod> = emptyList(),
 )
