@@ -13,7 +13,7 @@ class FindHistoricReleaseDateService(
 ) {
 
   fun calculateReleaseDate(prisonerId: String, remand: List<Remand>, sentence: Sentence, calculateAt: LocalDate): LocalDate {
-    val historicReleaseDates = collapseByLastCalculationOfTheDay(prisonApiClient.getCalculationsForAPrisonerId(prisonerId).sortedBy { it.calculationDate })
+    val historicReleaseDates = collapseByLastCalculationOfTheDay(prisonApiClient.getCalculationsForAPrisonerId(prisonerId).sortedBy { it.calculationDate }, sentence)
     if (historicReleaseDates.isEmpty()) {
       return calculateAt
     }
@@ -32,8 +32,13 @@ class FindHistoricReleaseDateService(
   /*
     Flatten the list of release dates to only take the final calculation of the day.
    */
-  private fun collapseByLastCalculationOfTheDay(historicReleaseDates: List<SentenceCalculationSummary>): List<SentenceCalculationSummary> {
-    return historicReleaseDates.groupBy { it.calculationDate.toLocalDate() }.values.map { list -> list.maxBy { it.calculationDate } }
+  private fun collapseByLastCalculationOfTheDay(
+    historicReleaseDates: List<SentenceCalculationSummary>,
+    sentence: Sentence,
+  ): List<SentenceCalculationSummary> {
+    return historicReleaseDates
+      .filter { it.bookingId == sentence.bookingId }
+      .groupBy { it.calculationDate.toLocalDate() }.values.map { list -> list.maxBy { it.calculationDate } }
   }
 
   private fun getReleaseDateForCalcId(offenderSentCalcId: Long): LocalDate {

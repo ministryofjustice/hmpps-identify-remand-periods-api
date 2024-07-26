@@ -29,7 +29,7 @@ class RemandCalculationService(
       chargeRemand = chargeRemand,
       sentenceRemand = sentenceRemandResult.sentenceRemand,
       intersectingSentences = sentenceRemandResult.intersectingSentences,
-      intersectingSentencesUsingHistoricCalculation = sentenceRemandResult.intersectingSentencesUsingHistoricCalculation,
+      periodsServingSentenceUsingCRDS = sentenceRemandResult.periodsServingSentenceUsingCRDS,
       issuesWithLegacyData = remandCalculation.issuesWithLegacyData,
     )
   }

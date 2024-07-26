@@ -8,6 +8,6 @@ data class RemandResult(
   val sentenceRemand: List<Remand>,
   val intersectingSentences: List<SentencePeriod>,
   val charges: Map<Long, Charge> = emptyMap(),
-  val intersectingSentencesUsingHistoricCalculation: List<SentencePeriod> = emptyList(),
+  val periodsServingSentenceUsingCRDS: List<SentencePeriod> = emptyList(),
   val issuesWithLegacyData: List<LegacyDataProblem> = emptyList(),
 )

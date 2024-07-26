@@ -50,22 +50,21 @@ class RemandCalculationServiceTest {
     val expected = TestUtil.objectMapper().readValue(ClassPathResource("/data/RemandResult/$exampleName.json").file, RemandResult::class.java)
     assertThat(remandResult)
       .usingRecursiveComparison()
-      .ignoringFieldsMatchingRegexes("intersectingSentencesUsingHistoricCalculation", "charges")
+      .ignoringFieldsMatchingRegexes("periodsServingSentenceUsingCRDS", "charges")
       .isEqualTo(expected)
   }
 
   private fun stubCalculations(exampleName: String, example: TestExample) {
-    whenever(findHistoricReleaseDateService.calculateReleaseDate(any(), any(), any(), any())).thenReturn(LocalDate.now())
+    whenever(calculateReleaseDateService.calculateReleaseDate(any(), any(), any(), any(), any())).thenReturn(LocalDate.now())
     example.sentences.forEach { sentence ->
       sentence.calculations.forEach { calculation ->
         log.info("Stubbing release dates for $exampleName: $sentence $calculation")
         whenever(
-          calculateReleaseDateService.calculateReleaseDate(
+          findHistoricReleaseDateService.calculateReleaseDate(
             eq(example.remandCalculation.prisonerId),
             any(),
             eq(Sentence(sentence.sentenceSequence, sentence.sentenceAt, sentence.recallDate, sentence.bookingId)),
             eq(calculation.calculateAt),
-            any(),
           ),
         ).thenAnswer {
           if (calculation.calculateAt == sentence.sentenceAt) {

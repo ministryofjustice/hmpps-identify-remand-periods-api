@@ -162,12 +162,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
       .accept(MediaType.APPLICATION_JSON)
       .headers(setAuthorisationRemandToolUser())
       .exchange()
-      .expectStatus().isEqualTo(HttpStatus.UNPROCESSABLE_ENTITY)
-      .expectHeader().contentType(MediaType.APPLICATION_JSON)
-      .expectBody(ErrorResponse::class.java)
-      .returnResult().responseBody!!
-
-    assertThat(result.userMessage).contains("Unsupported sentence type 2020 Uknown")
+      .expectStatus().isOk
   }
 
   @Test
