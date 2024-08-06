@@ -8,5 +8,5 @@ data class CourtDate(
   val description: String = "",
   val final: Boolean = false,
   val isRecallEvent: Boolean = false,
-  val isCustodial: Boolean = true,
+  val isCustodial: Boolean = false,
 )

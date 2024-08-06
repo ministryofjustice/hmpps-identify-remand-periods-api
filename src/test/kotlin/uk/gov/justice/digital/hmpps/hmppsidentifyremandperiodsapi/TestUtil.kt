@@ -1,5 +1,6 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi
 
+import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
@@ -9,11 +10,12 @@ import java.text.SimpleDateFormat
 class TestUtil private constructor() {
   companion object {
     fun objectMapper(): ObjectMapper {
-      val mapper = ObjectMapper()
-      mapper.registerModule(JavaTimeModule())
-      mapper.dateFormat = SimpleDateFormat("yyyy-MM-dd")
-      mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
-      return mapper.registerKotlinModule()
+      return ObjectMapper()
+        .registerModule(JavaTimeModule())
+        .setDateFormat(SimpleDateFormat("yyyy-MM-dd"))
+        .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+        .registerKotlinModule()
+        .setDefaultPropertyInclusion(JsonInclude.Include.NON_DEFAULT)
     }
   }
 }

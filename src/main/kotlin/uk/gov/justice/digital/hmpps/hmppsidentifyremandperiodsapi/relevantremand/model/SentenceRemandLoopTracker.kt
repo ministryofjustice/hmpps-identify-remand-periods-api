@@ -11,7 +11,7 @@ class SentenceRemandLoopTracker(
   private val sentences: List<SentenceAndCharge>,
 ) {
   /* All periods that are linked to a sentence */
-  val allPeriods = remandPeriods.filter { charges[it.chargeId]!!.sentenceSequence != null && charges[it.chargeId]!!.sentenceDate != null }
+  val allPeriods = remandPeriods.filter { charges[it.chargeId]!!.sentenceSequence != null && charges[it.chargeId]!!.sentenceDate != null }.sortedBy { it.from }
 
   /* A map of each sentence date to the periods who have a sentence with the given date */
   val sentenceDateToPeriodMap = allPeriods.groupBy { charges[it.chargeId]!!.sentenceDate }.toMutableMap()

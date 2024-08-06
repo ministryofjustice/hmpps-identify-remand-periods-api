@@ -1,0 +1,921 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "chargesAndEvents": [
+      {
+        "charge": {
+          "chargeId": 6382707,
+          "offence": {
+            "code": "PU86004",
+            "statute": "PU86",
+            "description": "Use threatening / abusive / insulting words / behaviour with intent to cause fear of / provoke unlawful violence"
+          },
+          "offenceDate": "2021-03-05",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Community Order"
+        },
+        "dates": [
+          {
+            "date": "2021-08-24",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          },
+          {
+            "date": "2021-09-07",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          },
+          {
+            "date": "2021-09-29",
+            "type": "STOP",
+            "description": "Community Order",
+            "final": true
+          },
+          {
+            "date": "2021-07-31",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6382708,
+          "offence": {
+            "code": "TH68006",
+            "statute": "TH68",
+            "description": "Theft of pedal cycle"
+          },
+          "offenceDate": "2021-04-20",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Community Order"
+        },
+        "dates": [
+          {
+            "date": "2021-08-24",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          },
+          {
+            "date": "2021-09-07",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          },
+          {
+            "date": "2021-09-29",
+            "type": "STOP",
+            "description": "Community Order",
+            "final": true
+          },
+          {
+            "date": "2021-08-03",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2021-07-31",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6382709,
+          "offence": {
+            "code": "CD71040",
+            "statute": "CD71",
+            "description": "Destroy / damage property of a value unknown"
+          },
+          "offenceDate": "2021-07-24",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Community Order"
+        },
+        "dates": [
+          {
+            "date": "2021-08-24",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          },
+          {
+            "date": "2021-09-07",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          },
+          {
+            "date": "2021-09-29",
+            "type": "STOP",
+            "description": "Community Order",
+            "final": true
+          },
+          {
+            "date": "2021-07-31",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6382710,
+          "offence": {
+            "code": "TH68006",
+            "statute": "TH68",
+            "description": "Theft of pedal cycle"
+          },
+          "offenceDate": "2021-05-28",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Community Order"
+        },
+        "dates": [
+          {
+            "date": "2021-08-24",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          },
+          {
+            "date": "2021-09-07",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          },
+          {
+            "date": "2021-09-29",
+            "type": "STOP",
+            "description": "Community Order",
+            "final": true
+          },
+          {
+            "date": "2021-07-31",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6384813,
+          "offence": {
+            "code": "PU86004",
+            "statute": "PU86",
+            "description": "Use threatening / abusive / insulting words / behaviour with intent to cause fear of / provoke unlawful violence"
+          },
+          "offenceDate": "2021-06-02",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Community Order"
+        },
+        "dates": [
+          {
+            "date": "2021-08-24",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          },
+          {
+            "date": "2021-09-07",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          },
+          {
+            "date": "2021-09-29",
+            "type": "STOP",
+            "description": "Community Order",
+            "final": true
+          },
+          {
+            "date": "2021-07-31",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          },
+          {
+            "date": "2021-08-03",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6384814,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "offenceDate": "2021-06-02",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Community Order"
+        },
+        "dates": [
+          {
+            "date": "2021-08-24",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          },
+          {
+            "date": "2021-09-07",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          },
+          {
+            "date": "2021-09-29",
+            "type": "STOP",
+            "description": "Community Order",
+            "final": true
+          },
+          {
+            "date": "2021-07-31",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          },
+          {
+            "date": "2021-08-03",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6403899,
+          "offence": {
+            "code": "PU86004",
+            "statute": "PU86",
+            "description": "Use threatening / abusive / insulting words / behaviour with intent to cause fear of / provoke unlawful violence"
+          },
+          "offenceDate": "2021-03-05",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Remand in Custody (Bail Refused)"
+        },
+        "dates": [
+          {
+            "date": "2021-08-24",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2021-08-25",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2021-09-02",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6403911,
+          "offence": {
+            "code": "CD71040",
+            "statute": "CD71",
+            "description": "Destroy / damage property of a value unknown"
+          },
+          "offenceDate": "2021-07-24",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Remittal for Sentence in Custody"
+        },
+        "dates": [
+          {
+            "date": "2021-08-24",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2021-09-06",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6403912,
+          "offence": {
+            "code": "TH68006",
+            "statute": "TH68",
+            "description": "Theft of pedal cycle"
+          },
+          "offenceDate": "2021-05-28",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Remittal for Sentence in Custody"
+        },
+        "dates": [
+          {
+            "date": "2021-08-24",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2021-09-06",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6403924,
+          "offence": {
+            "code": "CJ03003",
+            "statute": "CJ03",
+            "description": "Fail to comply with the requirements of a Community Order"
+          },
+          "offenceDate": "2021-07-29",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Community Order"
+        },
+        "dates": [
+          {
+            "date": "2021-09-07",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2021-09-29",
+            "type": "STOP",
+            "description": "Community Order",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6511956,
+          "offence": {
+            "code": "TH68006",
+            "statute": "TH68",
+            "description": "Theft of pedal cycle"
+          },
+          "offenceDate": "2021-03-27",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "No Separate Penalty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2021-12-15",
+            "type": "STOP",
+            "description": "No Separate Penalty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6511957,
+          "offence": {
+            "code": "TH68006",
+            "statute": "TH68",
+            "description": "Theft of pedal cycle"
+          },
+          "offenceDate": "2021-05-28",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "No Separate Penalty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2021-12-15",
+            "type": "STOP",
+            "description": "No Separate Penalty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6511958,
+          "offence": {
+            "code": "CJ88001",
+            "statute": "CJ88",
+            "description": "Common assault"
+          },
+          "offenceDate": "2021-06-02",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 39,
+          "sentenceDate": "2021-12-15",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2021-12-15",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2022-08-19",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6511959,
+          "offence": {
+            "code": "PU86004",
+            "statute": "PU86",
+            "description": "Use threatening / abusive / insulting words / behaviour with intent to cause fear of / provoke unlawful violence"
+          },
+          "offenceDate": "2021-06-02",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 46,
+          "sentenceDate": "2021-12-15",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2021-12-15",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2022-08-19",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6511961,
+          "offence": {
+            "code": "CD71040",
+            "statute": "CD71",
+            "description": "Destroy / damage property of a value unknown"
+          },
+          "offenceDate": "2021-07-24",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 32,
+          "sentenceDate": "2021-12-15",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2021-12-15",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2022-08-19",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6511963,
+          "offence": {
+            "code": "CD71040",
+            "statute": "CD71",
+            "description": "Destroy / damage property of a value unknown"
+          },
+          "offenceDate": "2020-08-26",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 46,
+          "sentenceDate": "2021-12-15",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2021-12-15",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2022-08-19",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6492240,
+          "offence": {
+            "code": "CD71043",
+            "statute": "CD71",
+            "description": "Threat to damage / destroy property"
+          },
+          "offenceDate": "2021-11-24",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 31,
+          "sentenceDate": "2021-12-15",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2021-11-25",
+            "type": "START",
+            "description": "Committed to Crown Court for Sentence"
+          },
+          {
+            "date": "2021-12-15",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2022-08-19",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6492241,
+          "offence": {
+            "code": "CD71040",
+            "statute": "CD71",
+            "description": "Destroy / damage property of a value unknown"
+          },
+          "offenceDate": "2021-11-24",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "No Separate Penalty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2021-11-25",
+            "type": "START",
+            "description": "Committed to Crown Court for Sentence"
+          },
+          {
+            "date": "2021-12-15",
+            "type": "STOP",
+            "description": "No Separate Penalty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6492242,
+          "offence": {
+            "code": "CD71040",
+            "statute": "CD71",
+            "description": "Destroy / damage property of a value unknown"
+          },
+          "offenceDate": "2021-11-24",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 46,
+          "sentenceDate": "2021-12-15",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2021-11-25",
+            "type": "START",
+            "description": "Committed to Crown Court for Sentence"
+          },
+          {
+            "date": "2021-12-15",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2022-08-19",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6606562,
+          "offence": {
+            "code": "CD71038",
+            "statute": "CD71",
+            "description": "Criminal damage to property - value over £5000"
+          },
+          "offenceDate": "2021-10-26",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 23,
+          "sentenceDate": "2022-03-24",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-03-24",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6856252,
+          "offence": {
+            "code": "MT88007",
+            "statute": "MT88",
+            "description": "Send letter / communication / article conveying a threatening message"
+          },
+          "offenceDate": "2021-05-01",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Not Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-12-08",
+            "type": "STOP",
+            "description": "Not Guilty",
+            "final": true
+          },
+          {
+            "date": "2022-11-28",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6856253,
+          "offence": {
+            "code": "SX03007",
+            "statute": "SX03",
+            "description": "Sexual assault on a female"
+          },
+          "offenceDate": "2021-05-01",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 53,
+          "sentenceDate": "2022-12-08",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-12-08",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2022-11-28",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6856254,
+          "offence": {
+            "code": "SX03131",
+            "statute": "SX03",
+            "description": "Voyeurism - recording a private act - SOA 2003"
+          },
+          "offenceDate": "2021-05-01",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 60,
+          "sentenceDate": "2022-12-08",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-12-08",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2022-11-28",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6856255,
+          "offence": {
+            "code": "SX03005",
+            "statute": "SX03",
+            "description": "Assault a female 13 and over by penetration with part of body / a thing - SOA 2003"
+          },
+          "offenceDate": "2021-05-01",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Not Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-12-08",
+            "type": "STOP",
+            "description": "Not Guilty",
+            "final": true
+          },
+          {
+            "date": "2022-11-28",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6328379,
+          "offence": {
+            "code": "PU86004",
+            "statute": "PU86",
+            "description": "Use threatening / abusive / insulting words / behaviour with intent to cause fear of / provoke unlawful violence"
+          },
+          "offenceDate": "2021-06-02",
+          "bookingId": 3,
+          "bookNumber": "3",
+          "resultDescription": "Community Order"
+        },
+        "dates": [
+          {
+            "date": "2021-09-29",
+            "type": "STOP",
+            "description": "Community Order",
+            "final": true
+          },
+          {
+            "date": "2021-06-04",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2021-06-11",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6328380,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "offenceDate": "2021-06-02",
+          "bookingId": 3,
+          "bookNumber": "3",
+          "resultDescription": "Community Order"
+        },
+        "dates": [
+          {
+            "date": "2021-09-29",
+            "type": "STOP",
+            "description": "Community Order",
+            "final": true
+          },
+          {
+            "date": "2021-06-04",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2021-06-11",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6328381,
+          "offence": {
+            "code": "TH68006",
+            "statute": "TH68",
+            "description": "Theft of pedal cycle"
+          },
+          "offenceDate": "2021-04-20",
+          "bookingId": 3,
+          "bookNumber": "3",
+          "resultDescription": "Community Order"
+        },
+        "dates": [
+          {
+            "date": "2021-09-29",
+            "type": "STOP",
+            "description": "Community Order",
+            "final": true
+          },
+          {
+            "date": "2021-06-04",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2021-06-11",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          }
+        ]
+      }
+    ],
+    "chargeIdsWithActiveSentence": [
+      6492240,
+      6511961,
+      6511958,
+      6492242,
+      6511959,
+      6511963,
+      6856253,
+      6856254
+    ]
+  },
+  "sentences": [
+    {
+      "bookingId": 2,
+      "sentenceSequence": 39,
+      "sentenceAt": "2021-12-15",
+      "recallDate": "2022-08-19",
+      "calculations": [
+        {
+          "calculateAt": "2021-12-15",
+          "release": "2022-06-17"
+        },
+        {
+          "calculateAt": "2022-08-19",
+          "release": "2025-03-08"
+        }
+      ]
+    },
+    {
+      "bookingId": 2,
+      "sentenceSequence": 23,
+      "sentenceAt": "2022-03-24",
+      "calculations": [
+        {
+          "calculateAt": "2022-03-24",
+          "release": "2022-06-17"
+        }
+      ]
+    }
+  ]
+}

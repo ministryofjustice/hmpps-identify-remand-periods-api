@@ -25,6 +25,7 @@
           {
             "date": "2022-01-01",
             "type": "STOP",
+            "isCustodial": true,
             "final": true
           }
         ]
@@ -52,6 +53,7 @@
           {
             "date": "2021-02-01",
             "type": "STOP",
+            "isCustodial": true,
             "final": true
           }
         ]
@@ -79,6 +81,7 @@
           {
             "date": "2021-02-10",
             "type": "STOP",
+            "isCustodial": true,
             "final": true
           }
         ]

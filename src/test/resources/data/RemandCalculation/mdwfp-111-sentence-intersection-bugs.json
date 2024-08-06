@@ -43,6 +43,7 @@
           {
             "date": "2021-07-16",
             "type": "STOP",
+            "isCustodial": true,
             "final": true
           }
         ]
@@ -88,6 +89,7 @@
           {
             "date": "2021-07-16",
             "type": "STOP",
+            "isCustodial": true,
             "final": true
           }
         ]
@@ -133,6 +135,7 @@
           {
             "date": "2021-07-16",
             "type": "STOP",
+            "isCustodial": true,
             "final": true
           }
         ]
@@ -158,6 +161,7 @@
           {
             "date": "2021-04-22",
             "type": "STOP",
+            "isCustodial": true,
             "final": true
           }
         ]
@@ -183,6 +187,7 @@
           {
             "date": "2021-04-22",
             "type": "STOP",
+            "isCustodial": true,
             "final": true
           }
         ]
@@ -208,6 +213,7 @@
           {
             "date": "2021-04-22",
             "type": "STOP",
+            "isCustodial": true,
             "final": true
           }
         ]
@@ -233,6 +239,7 @@
           {
             "date": "2021-04-22",
             "type": "STOP",
+            "isCustodial": true,
             "final": true
           }
         ]
@@ -263,6 +270,7 @@
           {
             "date": "2022-11-15",
             "type": "STOP",
+            "isCustodial": true,
             "final": true
           }
         ]
@@ -293,6 +301,7 @@
           {
             "date": "2022-11-15",
             "type": "STOP",
+            "isCustodial": true,
             "final": true
           }
         ]
@@ -323,6 +332,7 @@
           {
             "date": "2022-11-15",
             "type": "STOP",
+            "isCustodial": true,
             "final": true
           }
         ]
@@ -353,6 +363,7 @@
           {
             "date": "2022-11-15",
             "type": "STOP",
+            "isCustodial": true,
             "final": true
           }
         ]
@@ -383,6 +394,7 @@
           {
             "date": "2022-11-15",
             "type": "STOP",
+            "isCustodial": true,
             "final": true
           }
         ]
@@ -413,6 +425,7 @@
           {
             "date": "2022-11-15",
             "type": "STOP",
+            "isCustodial": true,
             "final": true
           }
         ]
@@ -443,6 +456,7 @@
           {
             "date": "2022-11-15",
             "type": "STOP",
+            "isCustodial": true,
             "final": true
           }
         ]
@@ -473,6 +487,7 @@
           {
             "date": "2022-11-15",
             "type": "STOP",
+            "isCustodial": true,
             "final": true
           }
         ]
@@ -503,6 +518,7 @@
           {
             "date": "2022-11-15",
             "type": "STOP",
+            "isCustodial": true,
             "final": true
           }
         ]
@@ -533,6 +549,7 @@
           {
             "date": "2022-11-15",
             "type": "STOP",
+            "isCustodial": true,
             "final": true
           }
         ]
@@ -558,6 +575,7 @@
           {
             "date": "2022-12-07",
             "type": "STOP",
+            "isCustodial": true,
             "final": true
           }
         ]
@@ -583,6 +601,7 @@
           {
             "date": "2022-12-07",
             "type": "STOP",
+            "isCustodial": true,
             "final": true
           }
         ]
