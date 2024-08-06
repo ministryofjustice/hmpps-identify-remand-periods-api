@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.service.PrisonService
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.transform.transform
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.IdentifyRemandDecisionDto
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculationRequestOptions
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandResult
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.service.IdentifyRemandDecisionService
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.service.RemandCalculationService
@@ -52,12 +53,14 @@ class RelevantRemandController(
     @Parameter(required = true, example = "A1234AB", description = "The prisoners ID (aka nomsId)")
     @PathVariable("prisonerId")
     prisonerId: String,
+    @RequestBody
+    remandCalculationRequestOptions: RemandCalculationRequestOptions = RemandCalculationRequestOptions(),
   ): RemandResult {
     log.info("Request received to calculate relevant remand for $prisonerId")
     val courtDateResults = prisonService.getCourtDateResults(prisonerId)
     val prisonerDetails = prisonService.getOffenderDetail(prisonerId)
     val sentencesAndOffences = prisonService.getSentencesAndOffences(prisonerDetails.bookingId, true)
-    return remandCalculationService.calculate(transform(courtDateResults, prisonerDetails, sentencesAndOffences))
+    return remandCalculationService.calculate(transform(courtDateResults, prisonerDetails, sentencesAndOffences), remandCalculationRequestOptions)
   }
 
   @PostMapping(value = ["/{prisonerId}/decision"])

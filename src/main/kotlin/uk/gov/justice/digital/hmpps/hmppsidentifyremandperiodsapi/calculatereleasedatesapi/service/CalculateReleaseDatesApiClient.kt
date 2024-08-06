@@ -5,14 +5,14 @@ import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.http.MediaType
 import org.springframework.stereotype.Service
 import org.springframework.web.reactive.function.client.WebClient
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.model.RelevantRemandCalculationRequest
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.model.RelevantRemandCalculationResult
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.model.RelevantRemandReleaseDateCalculationRequest
 
 @Service
 class CalculateReleaseDatesApiClient(@Qualifier("calculateReleaseDatesApiWebClient") private val webClient: WebClient) {
   private val log = LoggerFactory.getLogger(this::class.java)
 
-  fun calculateReleaseDates(prisonerId: String, request: RelevantRemandCalculationRequest): RelevantRemandCalculationResult {
+  fun calculateReleaseDates(prisonerId: String, request: RelevantRemandReleaseDateCalculationRequest): RelevantRemandCalculationResult {
     log.info("Requesting a release date calculation for $prisonerId")
     return webClient.post()
       .uri("/calculation/relevant-remand/$prisonerId")

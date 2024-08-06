@@ -13,6 +13,7 @@ import org.springframework.core.io.ClassPathResource
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.TestUtil
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.service.CalculateReleaseDateService
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.service.FindHistoricReleaseDateService
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculationRequestOptions
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandResult
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
 import java.time.LocalDate
@@ -37,7 +38,7 @@ class RemandCalculationServiceTest {
 
     val remandResult: RemandResult
     try {
-      remandResult = remandCalculationService.calculate(example.remandCalculation)
+      remandResult = remandCalculationService.calculate(example.remandCalculation, RemandCalculationRequestOptions())
     } catch (e: Exception) {
       if (!error.isNullOrEmpty()) {
         Assertions.assertEquals(error, e.javaClass.simpleName)
@@ -50,7 +51,7 @@ class RemandCalculationServiceTest {
     val expected = TestUtil.objectMapper().readValue(ClassPathResource("/data/RemandResult/$exampleName.json").file, RemandResult::class.java)
     assertThat(remandResult)
       .usingRecursiveComparison()
-      .ignoringFieldsMatchingRegexes("periodsServingSentenceUsingCRDS", "charges")
+      .ignoringFieldsMatchingRegexes("periodsServingSentenceUsingCRDS", "charges", "remandCalculation")
       .isEqualTo(expected)
   }
 

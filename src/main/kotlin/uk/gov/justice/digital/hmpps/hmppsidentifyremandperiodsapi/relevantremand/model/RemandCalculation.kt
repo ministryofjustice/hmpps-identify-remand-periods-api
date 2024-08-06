@@ -5,6 +5,7 @@ data class RemandCalculation(
   val chargesAndEvents: List<ChargeAndEvents>,
   val chargeIdsWithActiveSentence: List<Long> = emptyList(),
   val issuesWithLegacyData: List<LegacyDataProblem> = emptyList(),
+  val includeCalculationInResult: Boolean = false,
 ) {
   val charges: Map<Long, Charge> = chargesAndEvents.map { it.charge }.associateBy { it.chargeId }
 }

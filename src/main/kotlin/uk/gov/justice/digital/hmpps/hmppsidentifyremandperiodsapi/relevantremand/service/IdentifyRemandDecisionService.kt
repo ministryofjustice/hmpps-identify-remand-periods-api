@@ -9,6 +9,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.serv
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.transform.transform
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.entity.IdentifyRemandDecision
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.IdentifyRemandDecisionDto
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculationRequestOptions
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.repository.IdentifyRemandDecisionRepository
 
 @Service
@@ -23,7 +24,10 @@ class IdentifyRemandDecisionService(
     val courtDateResults = prisonService.getCourtDateResults(person)
     val prisonerDetails = prisonService.getOffenderDetail(person)
     val sentencesAndOffences = prisonService.getSentencesAndOffences(prisonerDetails.bookingId, true)
-    val calculation = remandCalculationService.calculate(transform(courtDateResults, prisonerDetails, sentencesAndOffences))
+    val calculation = remandCalculationService.calculate(
+      transform(courtDateResults, prisonerDetails, sentencesAndOffences),
+      RemandCalculationRequestOptions(),
+    )
     val days = calculation.sentenceRemand.map { it.days }.reduceOrNull { acc, it -> acc + it } ?: 0
 
     if (decision.accepted) {
