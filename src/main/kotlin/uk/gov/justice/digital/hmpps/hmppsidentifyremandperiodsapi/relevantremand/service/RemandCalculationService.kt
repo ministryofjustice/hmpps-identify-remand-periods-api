@@ -3,6 +3,7 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantreman
 import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculationRequestOptions
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandResult
 
 @Service
@@ -12,7 +13,7 @@ class RemandCalculationService(
   private val remandAdjustmentService: RemandAdjustmentService,
   private val chargeRemandStatusService: ChargeRemandStatusService,
 ) {
-  fun calculate(remandCalculation: RemandCalculation): RemandResult {
+  fun calculate(remandCalculation: RemandCalculation, remandCalculationRequestOptions: RemandCalculationRequestOptions): RemandResult {
     if (remandCalculation.chargesAndEvents.isEmpty()) {
       throw UnsupportedCalculationException("There are no charges to calculate")
     }
@@ -31,6 +32,7 @@ class RemandCalculationService(
       intersectingSentences = sentenceRemandResult.intersectingSentences,
       periodsServingSentenceUsingCRDS = sentenceRemandResult.periodsServingSentenceUsingCRDS,
       issuesWithLegacyData = remandCalculation.issuesWithLegacyData,
+      remandCalculation = if (remandCalculationRequestOptions.includeRemandCalculation) remandCalculation else null,
     )
   }
 }

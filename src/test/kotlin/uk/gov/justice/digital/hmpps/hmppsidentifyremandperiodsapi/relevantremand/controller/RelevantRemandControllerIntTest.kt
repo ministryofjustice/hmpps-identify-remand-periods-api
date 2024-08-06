@@ -15,6 +15,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblem
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblemType
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Offence
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculationRequestOptions
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandResult
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.repository.IdentifyRemandDecisionRepository
 import java.time.LocalDate
@@ -30,6 +31,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
       .uri("/relevant-remand/${PrisonApiExtension.IMPRISONED_PRISONER}")
       .accept(MediaType.APPLICATION_JSON)
       .headers(setAuthorisationRemandToolUser())
+      .bodyValue(RemandCalculationRequestOptions(true))
       .exchange()
       .expectStatus().isOk
       .expectHeader().contentType(MediaType.APPLICATION_JSON)
@@ -41,6 +43,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
     assertThat(result.sentenceRemand[0].to).isEqualTo(LocalDate.of(2022, 12, 12))
     assertThat(result.sentenceRemand[0].days).isEqualTo(61)
     assertThat(result.issuesWithLegacyData).isEqualTo(listOf(LegacyDataProblem(LegacyDataProblemType.MISSING_COURT_OUTCOME, message = "The court hearing on 13 Dec 2022 for 'An offence' has a missing hearing outcome within booking ABC123.", offence = Offence(code = "SX03163A", statute = "SX03", description = "An offence"), bookingId = 1, bookNumber = "ABC123", courtCaseRef = null)))
+    assertThat(result.remandCalculation).isNotNull
   }
 
   @Test

@@ -27,7 +27,7 @@ class SentenceRemandLoopTracker(
   /* A list of the periods where a sentence is being served */
   val periodsServingSentence = mutableListOf<SentencePeriod>()
 
-  /* A list of the periods where a sentence is being served using historic calculation data */
+  /* A list of the periods where a sentence is being served using CRDS. */
   val periodsServingSentenceUsingCRDS = mutableListOf<SentencePeriod>()
 
   /* A list of the currently established final periods of sentence remand */

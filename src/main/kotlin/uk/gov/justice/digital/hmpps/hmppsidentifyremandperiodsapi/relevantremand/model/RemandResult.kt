@@ -10,4 +10,6 @@ data class RemandResult(
   val charges: Map<Long, Charge> = emptyMap(),
   val periodsServingSentenceUsingCRDS: List<SentencePeriod> = emptyList(),
   val issuesWithLegacyData: List<LegacyDataProblem> = emptyList(),
+  // Source for calculation. Only included for testing
+  val remandCalculation: RemandCalculation? = null,
 )

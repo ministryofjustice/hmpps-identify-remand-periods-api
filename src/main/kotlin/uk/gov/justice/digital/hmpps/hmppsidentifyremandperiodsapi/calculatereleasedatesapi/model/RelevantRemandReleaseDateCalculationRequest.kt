@@ -3,7 +3,7 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculaterele
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
 import java.time.LocalDate
 
-data class RelevantRemandCalculationRequest(
+data class RelevantRemandReleaseDateCalculationRequest(
   val relevantRemands: List<RelevantRemand>,
   val sentence: Sentence,
   val calculateAt: LocalDate,
