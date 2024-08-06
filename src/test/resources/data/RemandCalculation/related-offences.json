@@ -42,6 +42,7 @@
           {
             "date": "2020-01-20",
             "type": "STOP",
+            "isCustodial": true,
             "final": true
           }
         ]

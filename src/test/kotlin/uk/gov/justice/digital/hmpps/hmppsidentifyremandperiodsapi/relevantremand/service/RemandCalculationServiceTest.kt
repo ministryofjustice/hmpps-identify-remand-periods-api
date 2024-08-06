@@ -68,11 +68,7 @@ class RemandCalculationServiceTest {
             eq(calculation.calculateAt),
           ),
         ).thenAnswer {
-          if (calculation.calculateAt == sentence.sentenceAt) {
-            calculation.release
-          } else {
-            calculation.postRecallReleaseDate
-          }
+          calculation.release
         }
       }
     }

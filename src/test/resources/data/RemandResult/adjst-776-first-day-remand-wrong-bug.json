@@ -1,0 +1,347 @@
+{
+  "adjustments": [
+    {
+      "bookingId": 2,
+      "sentenceSequence": 46,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2021-06-11",
+      "fromDate": "2021-06-04",
+      "remand": {
+        "chargeId": [
+          6511959
+        ]
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "bookingId": 2,
+      "sentenceSequence": 32,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2021-09-29",
+      "fromDate": "2021-07-31",
+      "remand": {
+        "chargeId": [
+          6511961,
+          6511959
+        ]
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "bookingId": 2,
+      "sentenceSequence": 31,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2021-12-14",
+      "fromDate": "2021-11-25",
+      "remand": {
+        "chargeId": [
+          6492240,
+          6492242
+        ]
+      },
+      "status": "ACTIVE"
+    }
+  ],
+  "chargeRemand": [
+    {
+      "from": "2021-07-31",
+      "to": "2021-09-29",
+      "fromEvent": {
+        "date": "2021-07-31",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2021-09-29",
+        "description": "Community Order"
+      },
+      "chargeId": 6382707,
+      "status": "NOT_YET_SENTENCED",
+      "days": 61
+    },
+    {
+      "from": "2021-06-04",
+      "to": "2021-06-11",
+      "fromEvent": {
+        "date": "2021-06-04",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2021-06-11",
+        "description": "Remand on Conditional Bail"
+      },
+      "chargeId": 6382708,
+      "status": "NOT_YET_SENTENCED",
+      "days": 8
+    },
+    {
+      "from": "2021-07-31",
+      "to": "2021-09-07",
+      "fromEvent": {
+        "date": "2021-07-31",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2021-09-07",
+        "description": "Remand on Conditional Bail"
+      },
+      "chargeId": 6382708,
+      "status": "NOT_YET_SENTENCED",
+      "days": 39
+    },
+    {
+      "from": "2021-07-31",
+      "to": "2021-09-29",
+      "fromEvent": {
+        "date": "2021-07-31",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2021-09-29",
+        "description": "Community Order"
+      },
+      "chargeId": 6511961,
+      "status": "APPLICABLE",
+      "days": 61
+    },
+    {
+      "from": "2021-07-31",
+      "to": "2021-09-29",
+      "fromEvent": {
+        "date": "2021-07-31",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2021-09-29",
+        "description": "Community Order"
+      },
+      "chargeId": 6382710,
+      "status": "NOT_YET_SENTENCED",
+      "days": 61
+    },
+    {
+      "from": "2021-06-04",
+      "to": "2021-06-11",
+      "fromEvent": {
+        "date": "2021-06-04",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2021-06-11",
+        "description": "Remand on Conditional Bail"
+      },
+      "chargeId": 6511959,
+      "status": "APPLICABLE",
+      "days": 8
+    },
+    {
+      "from": "2021-07-31",
+      "to": "2021-09-29",
+      "fromEvent": {
+        "date": "2021-07-31",
+        "description": "Remittal for Sentence in Custody"
+      },
+      "toEvent": {
+        "date": "2021-09-29",
+        "description": "Community Order"
+      },
+      "chargeId": 6511959,
+      "status": "APPLICABLE",
+      "days": 61
+    },
+    {
+      "from": "2021-06-04",
+      "to": "2021-06-11",
+      "fromEvent": {
+        "date": "2021-06-04",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2021-06-11",
+        "description": "Remand on Conditional Bail"
+      },
+      "chargeId": 6384814,
+      "status": "NOT_YET_SENTENCED",
+      "days": 8
+    },
+    {
+      "from": "2021-07-31",
+      "to": "2021-09-29",
+      "fromEvent": {
+        "date": "2021-07-31",
+        "description": "Remittal for Sentence in Custody"
+      },
+      "toEvent": {
+        "date": "2021-09-29",
+        "description": "Community Order"
+      },
+      "chargeId": 6384814,
+      "status": "NOT_YET_SENTENCED",
+      "days": 61
+    },
+    {
+      "from": "2021-09-07",
+      "to": "2021-09-29",
+      "fromEvent": {
+        "date": "2021-09-07",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2021-09-29",
+        "description": "Community Order"
+      },
+      "chargeId": 6403924,
+      "status": "NOT_YET_SENTENCED",
+      "days": 23
+    },
+    {
+      "from": "2021-11-25",
+      "to": "2021-12-14",
+      "fromEvent": {
+        "date": "2021-11-25",
+        "description": "Committed to Crown Court for Sentence"
+      },
+      "toEvent": {
+        "date": "2021-12-15",
+        "description": "Imprisonment"
+      },
+      "chargeId": 6492240,
+      "status": "APPLICABLE",
+      "days": 20
+    },
+    {
+      "from": "2021-11-25",
+      "to": "2021-12-15",
+      "fromEvent": {
+        "date": "2021-11-25",
+        "description": "Committed to Crown Court for Sentence"
+      },
+      "toEvent": {
+        "date": "2021-12-15",
+        "description": "No Separate Penalty"
+      },
+      "chargeId": 6492242,
+      "status": "SHARED",
+      "days": 21
+    },
+    {
+      "from": "2022-11-28",
+      "to": "2022-12-08",
+      "fromEvent": {
+        "date": "2022-11-28",
+        "description": "Commit to Crown Court for Sentence in Custody"
+      },
+      "toEvent": {
+        "date": "2022-12-08",
+        "description": "Not Guilty"
+      },
+      "chargeId": 6856252,
+      "status": "NOT_YET_SENTENCED",
+      "days": 11
+    },
+    {
+      "from": "2022-11-28",
+      "to": "2022-12-07",
+      "fromEvent": {
+        "date": "2022-11-28",
+        "description": "Commit to Crown Court for Sentence in Custody"
+      },
+      "toEvent": {
+        "date": "2022-12-08",
+        "description": "Imprisonment"
+      },
+      "chargeId": 6856253,
+      "status": "INTERSECTED",
+      "days": 10
+    },
+    {
+      "from": "2022-11-28",
+      "to": "2022-12-07",
+      "fromEvent": {
+        "date": "2022-11-28",
+        "description": "Commit to Crown Court for Sentence in Custody"
+      },
+      "toEvent": {
+        "date": "2022-12-08",
+        "description": "Imprisonment"
+      },
+      "chargeId": 6856254,
+      "status": "INTERSECTED",
+      "days": 10
+    },
+    {
+      "from": "2022-11-28",
+      "to": "2022-12-08",
+      "fromEvent": {
+        "date": "2022-11-28",
+        "description": "Commit to Crown Court for Sentence in Custody"
+      },
+      "toEvent": {
+        "date": "2022-12-08",
+        "description": "Not Guilty"
+      },
+      "chargeId": 6856255,
+      "status": "NOT_YET_SENTENCED",
+      "days": 11
+    }
+  ],
+  "sentenceRemand": [
+    {
+      "from": "2021-06-04",
+      "to": "2021-06-11",
+      "chargeId": 6511959,
+      "days": 8
+    },
+    {
+      "from": "2021-07-31",
+      "to": "2021-09-29",
+      "chargeId": 6511961,
+      "days": 61
+    },
+    {
+      "from": "2021-11-25",
+      "to": "2021-12-14",
+      "chargeId": 6492240,
+      "days": 20
+    }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2021-12-15",
+      "to": "2022-06-17",
+      "sentence": {
+        "sequence": 39,
+        "sentenceDate": "2021-12-15",
+        "recallDate": "2022-08-19",
+        "bookingId": 2
+      },
+      "chargeId": 6511958,
+      "days": 185
+    },
+    {
+      "from": "2022-08-19",
+      "to": "2025-03-08",
+      "sentence": {
+        "sequence": 39,
+        "sentenceDate": "2021-12-15",
+        "recallDate": "2022-08-19",
+        "bookingId": 2
+      },
+      "chargeId": 6511958,
+      "days": 933
+    },
+    {
+      "from": "2022-03-24",
+      "to": "2022-06-17",
+      "sentence": {
+        "sequence": 23,
+        "sentenceDate": "2022-03-24",
+        "bookingId": 2
+      },
+      "chargeId": 6606562,
+      "days": 86
+    }
+  ]
+}
