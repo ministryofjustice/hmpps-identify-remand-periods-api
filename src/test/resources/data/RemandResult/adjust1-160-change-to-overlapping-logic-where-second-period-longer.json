@@ -1,7 +1,6 @@
 {
   "adjustments": [
     {
-      "id": null,
       "bookingId": 1,
       "sentenceSequence": 3,
       "person": "IMP",
@@ -17,7 +16,6 @@
       "status": "INACTIVE"
     },
     {
-      "id": null,
       "bookingId": 1,
       "sentenceSequence": 12,
       "person": "IMP",
@@ -77,7 +75,5 @@
       "chargeId": 2,
       "days": 29
     }
-  ],
-  "intersectingSentences": [],
-  "issuesWithLegacyData": []
+  ]
 }

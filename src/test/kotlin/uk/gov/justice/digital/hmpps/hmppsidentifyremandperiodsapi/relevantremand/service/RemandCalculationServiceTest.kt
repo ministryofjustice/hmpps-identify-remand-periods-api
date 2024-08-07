@@ -21,11 +21,12 @@ import java.time.LocalDate
 class RemandCalculationServiceTest {
   private val calculateReleaseDateService = mock<CalculateReleaseDateService>()
   private val findHistoricReleaseDateService = mock<FindHistoricReleaseDateService>()
-  private val remandClockService: RemandClockService = RemandClockService()
+  private val remandClockService = RemandClockService()
   private val sentenceRemandService = SentenceRemandService(calculateReleaseDateService, findHistoricReleaseDateService)
-  private val remandAdjustmentService: RemandAdjustmentService = RemandAdjustmentService()
-  private val chargeRemandStatusService: ChargeRemandStatusService = ChargeRemandStatusService()
-  private val remandCalculationService = RemandCalculationService(remandClockService, sentenceRemandService, remandAdjustmentService, chargeRemandStatusService)
+  private val remandAdjustmentService = RemandAdjustmentService()
+  private val chargeRemandStatusService = ChargeRemandStatusService()
+  private val resultSortingService = ResultSortingService()
+  private val remandCalculationService = RemandCalculationService(remandClockService, sentenceRemandService, remandAdjustmentService, chargeRemandStatusService, resultSortingService)
 
   @ParameterizedTest
   @CsvFileSource(resources = ["/data/tests.csv"], numLinesToSkip = 1)

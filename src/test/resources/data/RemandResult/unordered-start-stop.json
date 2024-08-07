@@ -1,7 +1,6 @@
 {
   "adjustments": [
     {
-      "id": null,
       "bookingId": 1,
       "sentenceSequence": 1,
       "person": "ABCD123",
@@ -21,12 +20,10 @@
       "from": "2022-01-01",
       "to": "2022-01-31",
       "fromEvent": {
-        "date": "2022-01-01",
-        "description": ""
+        "date": "2022-01-01"
       },
       "toEvent": {
-        "date": "2022-02-01",
-        "description": ""
+        "date": "2022-02-01"
       },
       "chargeId": 1,
       "status": "INACTIVE",
@@ -40,7 +37,5 @@
       "chargeId": 1,
       "days": 31
     }
-  ],
-  "intersectingSentences": [],
-  "issuesWithLegacyData": []
+  ]
 }

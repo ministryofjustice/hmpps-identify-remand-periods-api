@@ -1,7 +1,6 @@
 {
   "adjustments": [
     {
-      "id": null,
       "bookingId": 1,
       "sentenceSequence": 2,
       "person": "ABC123",
@@ -17,7 +16,6 @@
       "status": "INACTIVE"
     },
     {
-      "id": null,
       "bookingId": 1,
       "sentenceSequence": 1,
       "person": "ABC123",
@@ -38,46 +36,40 @@
       "from": "2021-11-13",
       "to": "2022-09-16",
       "fromEvent": {
-        "date": "2021-11-13",
-        "description": ""
+        "date": "2021-11-13"
       },
       "toEvent": {
-        "date": "2022-09-16",
-        "description": ""
+        "date": "2022-09-16"
       },
       "chargeId": 1,
       "status": "INACTIVE",
       "days": 308
     },
     {
-      "from": "2022-12-07",
-      "to": "2023-01-31",
-      "fromEvent": {
-        "date": "2022-12-07",
-        "description": ""
-      },
-      "toEvent": {
-        "date": "2023-02-01",
-        "description": ""
-      },
-      "chargeId": 1,
-      "status": "INACTIVE",
-      "days": 56
-    },
-    {
       "from": "2022-01-06",
       "to": "2023-01-31",
       "fromEvent": {
-        "date": "2022-01-06",
-        "description": ""
+        "date": "2022-01-06"
       },
       "toEvent": {
-        "date": "2023-02-01",
-        "description": ""
+        "date": "2023-02-01"
       },
       "chargeId": 2,
       "status": "INACTIVE",
       "days": 391
+    },
+    {
+      "from": "2022-12-07",
+      "to": "2023-01-31",
+      "fromEvent": {
+        "date": "2022-12-07"
+      },
+      "toEvent": {
+        "date": "2023-02-01"
+      },
+      "chargeId": 1,
+      "status": "INACTIVE",
+      "days": 56
     }
   ],
   "sentenceRemand": [
@@ -93,7 +85,5 @@
       "chargeId": 2,
       "days": 137
     }
-  ],
-  "intersectingSentences": [],
-  "issuesWithLegacyData": []
+  ]
 }

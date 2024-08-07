@@ -1,7 +1,6 @@
 {
   "adjustments": [
     {
-      "id": null,
       "bookingId": 1,
       "sentenceSequence": 1,
       "person": "ABC123",
@@ -19,7 +18,6 @@
       "status": "INACTIVE"
     },
     {
-      "id": null,
       "bookingId": 2,
       "sentenceSequence": 3,
       "person": "ABC123",
@@ -39,12 +37,10 @@
       "from": "2019-01-12",
       "to": "2019-04-15",
       "fromEvent": {
-        "date": "2019-01-12",
-        "description": ""
+        "date": "2019-01-12"
       },
       "toEvent": {
-        "date": "2019-04-16",
-        "description": ""
+        "date": "2019-04-16"
       },
       "chargeId": 1,
       "status": "INACTIVE",
@@ -54,12 +50,10 @@
       "from": "2019-01-12",
       "to": "2019-04-15",
       "fromEvent": {
-        "date": "2019-01-12",
-        "description": ""
+        "date": "2019-01-12"
       },
       "toEvent": {
-        "date": "2019-04-16",
-        "description": ""
+        "date": "2019-04-16"
       },
       "chargeId": 2,
       "status": "INACTIVE",
@@ -69,27 +63,10 @@
       "from": "2019-01-12",
       "to": "2019-04-15",
       "fromEvent": {
-        "date": "2019-01-12",
-        "description": ""
+        "date": "2019-01-12"
       },
       "toEvent": {
-        "date": "2019-04-16",
-        "description": ""
-      },
-      "chargeId": 3,
-      "status": "NOT_YET_SENTENCED",
-      "days": 94
-    },
-    {
-      "from": "2019-01-12",
-      "to": "2019-04-15",
-      "fromEvent": {
-        "date": "2019-01-12",
-        "description": ""
-      },
-      "toEvent": {
-        "date": "2019-04-16",
-        "description": ""
+        "date": "2019-04-16"
       },
       "chargeId": 4,
       "status": "INACTIVE",
@@ -99,27 +76,49 @@
       "from": "2019-01-12",
       "to": "2019-04-15",
       "fromEvent": {
-        "date": "2019-01-12",
-        "description": ""
+        "date": "2019-01-12"
       },
       "toEvent": {
-        "date": "2019-04-16",
-        "description": ""
+        "date": "2019-04-16"
       },
       "chargeId": 5,
       "status": "INACTIVE",
       "days": 94
     },
     {
+      "from": "2022-01-17",
+      "to": "2023-01-29",
+      "fromEvent": {
+        "date": "2022-01-17"
+      },
+      "toEvent": {
+        "date": "2023-01-30"
+      },
+      "chargeId": 14,
+      "status": "INACTIVE",
+      "days": 378
+    },
+    {
       "from": "2019-01-12",
       "to": "2019-04-15",
       "fromEvent": {
-        "date": "2019-01-12",
-        "description": ""
+        "date": "2019-01-12"
       },
       "toEvent": {
-        "date": "2019-04-16",
-        "description": ""
+        "date": "2019-04-16"
+      },
+      "chargeId": 3,
+      "status": "NOT_YET_SENTENCED",
+      "days": 94
+    },
+    {
+      "from": "2019-01-12",
+      "to": "2019-04-15",
+      "fromEvent": {
+        "date": "2019-01-12"
+      },
+      "toEvent": {
+        "date": "2019-04-16"
       },
       "chargeId": 10,
       "status": "NOT_YET_SENTENCED",
@@ -129,12 +128,10 @@
       "from": "2022-01-17",
       "to": "2023-01-29",
       "fromEvent": {
-        "date": "2022-01-17",
-        "description": ""
+        "date": "2022-01-17"
       },
       "toEvent": {
-        "date": "2023-01-30",
-        "description": ""
+        "date": "2023-01-30"
       },
       "chargeId": 11,
       "status": "NOT_YET_SENTENCED",
@@ -144,12 +141,10 @@
       "from": "2022-01-17",
       "to": "2023-01-29",
       "fromEvent": {
-        "date": "2022-01-17",
-        "description": ""
+        "date": "2022-01-17"
       },
       "toEvent": {
-        "date": "2023-01-30",
-        "description": ""
+        "date": "2023-01-30"
       },
       "chargeId": 12,
       "status": "NOT_YET_SENTENCED",
@@ -159,30 +154,13 @@
       "from": "2022-01-17",
       "to": "2023-01-29",
       "fromEvent": {
-        "date": "2022-01-17",
-        "description": ""
+        "date": "2022-01-17"
       },
       "toEvent": {
-        "date": "2023-01-30",
-        "description": ""
+        "date": "2023-01-30"
       },
       "chargeId": 13,
       "status": "NOT_YET_SENTENCED",
-      "days": 378
-    },
-    {
-      "from": "2022-01-17",
-      "to": "2023-01-29",
-      "fromEvent": {
-        "date": "2022-01-17",
-        "description": ""
-      },
-      "toEvent": {
-        "date": "2023-01-30",
-        "description": ""
-      },
-      "chargeId": 14,
-      "status": "INACTIVE",
       "days": 378
     }
   ],
@@ -207,12 +185,10 @@
       "sentence": {
         "sequence": 1,
         "sentenceDate": "2019-04-16",
-        "recallDate": null,
         "bookingId": 2
       },
       "chargeId": 6,
       "days": 1246
     }
-  ],
-  "issuesWithLegacyData": []
+  ]
 }
