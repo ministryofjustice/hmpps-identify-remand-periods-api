@@ -12,6 +12,7 @@ class RemandCalculationService(
   private val sentenceRemandService: SentenceRemandService,
   private val remandAdjustmentService: RemandAdjustmentService,
   private val chargeRemandStatusService: ChargeRemandStatusService,
+  private val resultSortingService: ResultSortingService,
 ) {
   fun calculate(remandCalculation: RemandCalculation, remandCalculationRequestOptions: RemandCalculationRequestOptions): RemandResult {
     if (remandCalculation.chargesAndEvents.isEmpty()) {
@@ -24,7 +25,7 @@ class RemandCalculationService(
 
     chargeRemandStatusService.setChargeRemandStatuses(chargeRemand, adjustments, sentenceRemandResult, remandCalculation)
 
-    return RemandResult(
+    val unsortedResult = RemandResult(
       charges = remandCalculation.charges,
       adjustments = adjustments,
       chargeRemand = chargeRemand,
@@ -34,5 +35,7 @@ class RemandCalculationService(
       issuesWithLegacyData = remandCalculation.issuesWithLegacyData,
       remandCalculation = if (remandCalculationRequestOptions.includeRemandCalculation) remandCalculation else null,
     )
+
+    return resultSortingService.sort(unsortedResult)
   }
 }

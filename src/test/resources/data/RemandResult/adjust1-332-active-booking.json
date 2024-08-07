@@ -1,7 +1,6 @@
 {
   "adjustments": [
     {
-      "id": null,
       "bookingId": 2,
       "sentenceSequence": 2,
       "person": "ABCD123",
@@ -21,12 +20,10 @@
       "from": "2023-09-22",
       "to": "2023-10-05",
       "fromEvent": {
-        "date": "2023-09-22",
-        "description": ""
+        "date": "2023-09-22"
       },
       "toEvent": {
-        "date": "2023-10-06",
-        "description": ""
+        "date": "2023-10-06"
       },
       "chargeId": 2,
       "status": "INACTIVE",
@@ -40,7 +37,5 @@
       "chargeId": 2,
       "days": 14
     }
-  ],
-  "intersectingSentences": [],
-  "issuesWithLegacyData": []
+  ]
 }

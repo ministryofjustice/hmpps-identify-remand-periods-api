@@ -1,7 +1,20 @@
 {
   "adjustments": [
     {
-      "id": null,
+      "bookingId": 1,
+      "sentenceSequence": 1,
+      "person": "ABCD123",
+      "adjustmentType": "REMAND",
+      "toDate": "2020-12-31",
+      "fromDate": "2020-01-01",
+      "remand": {
+        "chargeId": [
+          1
+        ]
+      },
+      "status": "INACTIVE"
+    },
+    {
       "bookingId": 1,
       "sentenceSequence": 2,
       "person": "ABCD123",
@@ -15,21 +28,6 @@
         ]
       },
       "status": "INACTIVE"
-    },
-    {
-      "id": null,
-      "bookingId": 1,
-      "sentenceSequence": 1,
-      "person": "ABCD123",
-      "adjustmentType": "REMAND",
-      "toDate": "2020-12-31",
-      "fromDate": "2020-01-01",
-      "remand": {
-        "chargeId": [
-          1
-        ]
-      },
-      "status": "INACTIVE"
     }
   ],
   "chargeRemand": [
@@ -37,12 +35,10 @@
       "from": "2020-01-01",
       "to": "2021-12-31",
       "fromEvent": {
-        "date": "2020-01-01",
-        "description": ""
+        "date": "2020-01-01"
       },
       "toEvent": {
-        "date": "2022-01-01",
-        "description": ""
+        "date": "2022-01-01"
       },
       "chargeId": 1,
       "status": "INACTIVE",
@@ -52,12 +48,10 @@
       "from": "2021-01-01",
       "to": "2021-01-31",
       "fromEvent": {
-        "date": "2021-01-01",
-        "description": ""
+        "date": "2021-01-01"
       },
       "toEvent": {
-        "date": "2021-02-01",
-        "description": ""
+        "date": "2021-02-01"
       },
       "chargeId": 2,
       "status": "INACTIVE",
@@ -85,12 +79,10 @@
       "sentence": {
         "sequence": 2,
         "sentenceDate": "2021-02-01",
-        "recallDate": null,
         "bookingId": 1
       },
       "chargeId": 2,
       "days": 456
     }
-  ],
-  "issuesWithLegacyData": []
+  ]
 }
