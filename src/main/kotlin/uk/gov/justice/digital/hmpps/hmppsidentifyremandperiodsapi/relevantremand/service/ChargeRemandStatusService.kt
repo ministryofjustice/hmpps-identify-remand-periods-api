@@ -17,31 +17,34 @@ class ChargeRemandStatusService {
     adjustments: List<AdjustmentDto>,
     sentenceRemandResult: SentenceRemandResult,
     remandCalculation: RemandCalculation,
-  ) {
-    chargeRemand.forEach {
-      if (remandCalculation.charges[it.chargeId]!!.sentenceSequence != null) {
-        val matchingAdjustments = adjustments.filter { adjustment -> adjustment.remand!!.chargeId.contains(it.chargeId) }
+  ): List<ChargeRemand> {
+    return chargeRemand.map {
+      val status = if (remandCalculation.charges[it.onlyChargeId()]!!.sentenceSequence != null) {
+        val matchingAdjustments = adjustments.filter { adjustment -> adjustment.remand!!.chargeId.contains(it.onlyChargeId()) }
 
         if (matchingAdjustments.isNotEmpty()) {
           if (matchingAdjustments.any { adjustment -> adjustment.status == AdjustmentStatus.ACTIVE }) {
-            if (matchingAdjustments.minOf { adjustment -> adjustment.remand!!.chargeId.indexOf(it.chargeId) } == 0) {
-              it.status = ChargeRemandStatus.APPLICABLE
+            if (matchingAdjustments.minOf { adjustment -> adjustment.remand!!.chargeId.indexOf(it.onlyChargeId()) } == 0) {
+              ChargeRemandStatus.APPLICABLE
             } else {
-              it.status = ChargeRemandStatus.SHARED
+              ChargeRemandStatus.SHARED
             }
           } else {
-            it.status = ChargeRemandStatus.INACTIVE
+            ChargeRemandStatus.INACTIVE
           }
         } else {
           if (sentenceRemandResult.intersectingSentences.any { sentencePeriod -> sentencePeriod.engulfs(it) }) {
-            it.status = ChargeRemandStatus.INTERSECTED
+            ChargeRemandStatus.INTERSECTED
           } else {
             throw UnsupportedCalculationException("Could not determine the status of charge remand $it")
           }
         }
       } else {
-        it.status = ChargeRemandStatus.NOT_YET_SENTENCED
+        ChargeRemandStatus.NOT_YET_SENTENCED
       }
+      it.copy(
+        status = status,
+      )
     }
   }
 }

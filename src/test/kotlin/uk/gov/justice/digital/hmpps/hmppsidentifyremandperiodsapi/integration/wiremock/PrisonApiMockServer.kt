@@ -78,7 +78,7 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                     }],
                     "offences": [
                       {
-                        "offenderChargeId": 9991,
+                        "offenderChargeId": 1,
                         "offenceStartDate": "2015-03-17",
                         "offenceCode": "GBH",
                         "offenceDescription": "Grievous bodily harm"

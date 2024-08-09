@@ -28,12 +28,13 @@ class IdentifyRemandDecisionService(
       transform(courtDateResults, prisonerDetails, sentencesAndOffences),
       RemandCalculationRequestOptions(),
     )
-    val days = calculation.sentenceRemand.map { it.days }.reduceOrNull { acc, it -> acc + it } ?: 0
+    val activeAdjustments = calculation.adjustments.filter { it.status == AdjustmentStatus.ACTIVE }
+    val days = activeAdjustments.map { it.daysBetween() }.reduceOrNull { acc, it -> acc + it } ?: 0
 
     if (decision.accepted) {
       adjustmentsService.saveRemand(
         person,
-        calculation.adjustments.filter { it.status == AdjustmentStatus.ACTIVE },
+        activeAdjustments,
       )
     }
 
@@ -42,7 +43,7 @@ class IdentifyRemandDecisionService(
         accepted = decision.accepted,
         rejectComment = if (!decision.accepted) decision.rejectComment else null,
         person = person,
-        days = days.toInt(),
+        days = days,
         decisionByUsername = getCurrentAuthentication().principal,
         decisionByPrisonId = prisonerDetails.agencyId,
       ),

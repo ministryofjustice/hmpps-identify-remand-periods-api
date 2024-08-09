@@ -39,7 +39,9 @@
       "toEvent": {
         "date": "2022-08-17"
       },
-      "chargeId": 1,
+      "chargeIds": [
+        1
+      ],
       "status": "INACTIVE",
       "days": 44
     },
@@ -52,23 +54,11 @@
       "toEvent": {
         "date": "2023-06-30"
       },
-      "chargeId": 9,
+      "chargeIds": [
+        9
+      ],
       "status": "INACTIVE",
       "days": 45
-    }
-  ],
-  "sentenceRemand": [
-    {
-      "from": "2022-07-04",
-      "to": "2022-08-16",
-      "chargeId": 1,
-      "days": 44
-    },
-    {
-      "from": "2023-05-16",
-      "to": "2023-05-17",
-      "chargeId": 9,
-      "days": 2
     }
   ],
   "intersectingSentences": [
