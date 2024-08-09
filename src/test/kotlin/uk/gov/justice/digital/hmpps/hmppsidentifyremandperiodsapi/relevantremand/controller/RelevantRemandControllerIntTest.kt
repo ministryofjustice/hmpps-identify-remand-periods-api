@@ -38,10 +38,9 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
       .expectBody(RemandResult::class.java)
       .returnResult().responseBody!!
 
-    assertThat(result.sentenceRemand).isNotEmpty
-    assertThat(result.sentenceRemand[0].from).isEqualTo(LocalDate.of(2022, 10, 13))
-    assertThat(result.sentenceRemand[0].to).isEqualTo(LocalDate.of(2022, 12, 12))
-    assertThat(result.sentenceRemand[0].days).isEqualTo(61)
+    assertThat(result.adjustments).isNotEmpty
+    assertThat(result.adjustments[0].fromDate).isEqualTo(LocalDate.of(2022, 10, 13))
+    assertThat(result.adjustments[0].toDate).isEqualTo(LocalDate.of(2022, 12, 12))
     assertThat(result.issuesWithLegacyData).isEqualTo(listOf(LegacyDataProblem(LegacyDataProblemType.MISSING_COURT_OUTCOME, message = "The court hearing on 13 Dec 2022 for 'An offence' has a missing hearing outcome within booking ABC123.", offence = Offence(code = "SX03163A", statute = "SX03", description = "An offence"), bookingId = 1, bookNumber = "ABC123", courtCaseRef = null)))
     assertThat(result.remandCalculation).isNotNull
   }
@@ -58,10 +57,9 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
       .expectBody(RemandResult::class.java)
       .returnResult().responseBody!!
 
-    assertThat(result.sentenceRemand).isNotEmpty
-    assertThat(result.sentenceRemand[0].from).isEqualTo(LocalDate.of(2015, 3, 25))
-    assertThat(result.sentenceRemand[0].to).isEqualTo(LocalDate.of(2015, 4, 8))
-    assertThat(result.sentenceRemand[0].days).isEqualTo(15)
+    assertThat(result.adjustments).isNotEmpty
+    assertThat(result.adjustments[0].fromDate).isEqualTo(LocalDate.of(2015, 3, 25))
+    assertThat(result.adjustments[0].toDate).isEqualTo(LocalDate.of(2015, 4, 8))
   }
 
   @Test
@@ -76,10 +74,9 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
       .expectBody(RemandResult::class.java)
       .returnResult().responseBody!!
 
-    assertThat(result.sentenceRemand).isNotEmpty
-    assertThat(result.sentenceRemand[0].from).isEqualTo(LocalDate.of(2015, 3, 20))
-    assertThat(result.sentenceRemand[0].to).isEqualTo(LocalDate.of(2015, 4, 10))
-    assertThat(result.sentenceRemand[0].days).isEqualTo(22)
+    assertThat(result.adjustments).isNotEmpty
+    assertThat(result.adjustments[0].fromDate).isEqualTo(LocalDate.of(2015, 3, 20))
+    assertThat(result.adjustments[0].toDate).isEqualTo(LocalDate.of(2015, 4, 10))
   }
 
   @Test
@@ -95,39 +92,38 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
       .returnResult().responseBody!!
 
     assertThat(result.chargeRemand).isNotEmpty
-    assertThat(result.chargeRemand.size).isEqualTo(5)
+    assertThat(result.chargeRemand.size).isEqualTo(4)
 
     assertThat(result.chargeRemand[0].from).isEqualTo(LocalDate.of(2019, 7, 6))
     assertThat(result.chargeRemand[0].to).isEqualTo(LocalDate.of(2020, 9, 24))
     assertThat(result.chargeRemand[0].fromEvent).isEqualTo(CourtAppearance(LocalDate.of(2019, 7, 6), "Commit/Transfer/Send to Crown Court for Trial in Custody"))
     assertThat(result.chargeRemand[0].toEvent).isEqualTo(CourtAppearance(LocalDate.of(2020, 9, 24), "Commit to Crown Court for Sentence Conditional Bail"))
+    assertThat(result.chargeRemand[0].chargeIds).isEqualTo(listOf(3L))
 
     assertThat(result.chargeRemand[1].from).isEqualTo(LocalDate.of(2019, 7, 6))
     assertThat(result.chargeRemand[1].to).isEqualTo(LocalDate.of(2020, 9, 24))
     assertThat(result.chargeRemand[1].fromEvent).isEqualTo(CourtAppearance(LocalDate.of(2019, 7, 6), "Commit to Crown Court for Trial (Summary / Either Way Offences)"))
     assertThat(result.chargeRemand[1].toEvent).isEqualTo(CourtAppearance(LocalDate.of(2020, 9, 24), "Commit to Crown Court for Sentence Conditional Bail"))
+    assertThat(result.chargeRemand[1].chargeIds).isEqualTo(listOf(4L))
 
     assertThat(result.chargeRemand[2].from).isEqualTo(LocalDate.of(2021, 6, 14))
     assertThat(result.chargeRemand[2].to).isEqualTo(LocalDate.of(2021, 6, 14))
     assertThat(result.chargeRemand[2].fromEvent).isEqualTo(CourtAppearance(LocalDate.of(2021, 6, 14), "Sentence Postponed"))
     assertThat(result.chargeRemand[2].toEvent).isEqualTo(CourtAppearance(LocalDate.of(2021, 6, 15), "Imprisonment"))
+    assertThat(result.chargeRemand[2].chargeIds).isEqualTo(listOf(3L, 4L))
 
-    assertThat(result.chargeRemand[3].from).isEqualTo(LocalDate.of(2021, 6, 14))
-    assertThat(result.chargeRemand[3].to).isEqualTo(LocalDate.of(2021, 6, 14))
-    assertThat(result.chargeRemand[3].fromEvent).isEqualTo(CourtAppearance(LocalDate.of(2021, 6, 14), "Sentence Postponed"))
-    assertThat(result.chargeRemand[3].toEvent).isEqualTo(CourtAppearance(LocalDate.of(2021, 6, 15), "Imprisonment"))
+    assertThat(result.chargeRemand[3].from).isEqualTo(LocalDate.of(2019, 7, 6))
+    assertThat(result.chargeRemand[3].to).isEqualTo(LocalDate.of(2020, 9, 24))
+    assertThat(result.chargeRemand[3].fromEvent).isEqualTo(CourtAppearance(LocalDate.of(2019, 7, 6), "Commit/Transfer/Send to Crown Court for Trial in Custody"))
+    assertThat(result.chargeRemand[3].toEvent).isEqualTo(CourtAppearance(LocalDate.of(2020, 9, 24), "Commit to Crown Court for Sentence Conditional Bail"))
+    assertThat(result.chargeRemand[3].chargeIds).isEqualTo(listOf(2L))
 
-    assertThat(result.chargeRemand[4].from).isEqualTo(LocalDate.of(2019, 7, 6))
-    assertThat(result.chargeRemand[4].to).isEqualTo(LocalDate.of(2020, 9, 24))
-    assertThat(result.chargeRemand[4].fromEvent).isEqualTo(CourtAppearance(LocalDate.of(2019, 7, 6), "Commit/Transfer/Send to Crown Court for Trial in Custody"))
-    assertThat(result.chargeRemand[4].toEvent).isEqualTo(CourtAppearance(LocalDate.of(2020, 9, 24), "Commit to Crown Court for Sentence Conditional Bail"))
-
-    assertThat(result.sentenceRemand).isNotEmpty
-    assertThat(result.sentenceRemand.size).isEqualTo(2)
-    assertThat(result.sentenceRemand[0].from).isEqualTo(LocalDate.of(2019, 7, 6))
-    assertThat(result.sentenceRemand[0].to).isEqualTo(LocalDate.of(2020, 9, 24))
-    assertThat(result.sentenceRemand[1].from).isEqualTo(LocalDate.of(2021, 6, 14))
-    assertThat(result.sentenceRemand[1].to).isEqualTo(LocalDate.of(2021, 6, 14))
+    assertThat(result.adjustments).isNotEmpty
+    assertThat(result.adjustments.size).isEqualTo(2)
+    assertThat(result.adjustments[0].fromDate).isEqualTo(LocalDate.of(2019, 7, 6))
+    assertThat(result.adjustments[0].toDate).isEqualTo(LocalDate.of(2020, 9, 24))
+    assertThat(result.adjustments[1].fromDate).isEqualTo(LocalDate.of(2021, 6, 14))
+    assertThat(result.adjustments[1].toDate).isEqualTo(LocalDate.of(2021, 6, 14))
   }
 
   @Test
@@ -146,21 +142,21 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
     assertThat(result.chargeRemand.size).isEqualTo(2)
     assertThat(result.chargeRemand[0].from).isEqualTo(LocalDate.of(2020, 1, 1))
     assertThat(result.chargeRemand[0].to).isEqualTo(LocalDate.of(2021, 12, 31))
-    assertThat(result.chargeRemand[0].chargeId).isEqualTo(3933931)
+    assertThat(result.chargeRemand[0].chargeIds).isEqualTo(listOf(3933931L))
     assertThat(result.chargeRemand[1].from).isEqualTo(LocalDate.of(2021, 1, 1))
     assertThat(result.chargeRemand[1].to).isEqualTo(LocalDate.of(2021, 1, 31))
-    assertThat(result.chargeRemand[1].chargeId).isEqualTo(3933932)
-    assertThat(result.sentenceRemand).isNotEmpty
-    assertThat(result.sentenceRemand.size).isEqualTo(3)
-    assertThat(result.sentenceRemand[0].from).isEqualTo(LocalDate.of(2021, 1, 1))
-    assertThat(result.sentenceRemand[0].to).isEqualTo(LocalDate.of(2021, 1, 31))
-    assertThat(result.sentenceRemand[0].chargeId).isEqualTo(3933932)
-    assertThat(result.sentenceRemand[1].from).isEqualTo(LocalDate.of(2020, 1, 1))
-    assertThat(result.sentenceRemand[1].to).isEqualTo(LocalDate.of(2020, 12, 31))
-    assertThat(result.sentenceRemand[1].chargeId).isEqualTo(3933931)
-    assertThat(result.sentenceRemand[2].from).isEqualTo(LocalDate.of(2021, 4, 2))
-    assertThat(result.sentenceRemand[2].to).isEqualTo(LocalDate.of(2021, 12, 31))
-    assertThat(result.sentenceRemand[2].chargeId).isEqualTo(3933931)
+    assertThat(result.chargeRemand[1].chargeIds).isEqualTo(listOf(3933932L))
+    assertThat(result.adjustments).isNotEmpty
+    assertThat(result.adjustments.size).isEqualTo(3)
+    assertThat(result.adjustments[0].fromDate).isEqualTo(LocalDate.of(2020, 1, 1))
+    assertThat(result.adjustments[0].toDate).isEqualTo(LocalDate.of(2020, 12, 31))
+    assertThat(result.adjustments[0].remand!!.chargeId).isEqualTo(listOf(3933931L))
+    assertThat(result.adjustments[1].fromDate).isEqualTo(LocalDate.of(2021, 1, 1))
+    assertThat(result.adjustments[1].toDate).isEqualTo(LocalDate.of(2021, 1, 31))
+    assertThat(result.adjustments[1].remand!!.chargeId).isEqualTo(listOf(3933931L, 3933932L))
+    assertThat(result.adjustments[2].fromDate).isEqualTo(LocalDate.of(2021, 4, 2))
+    assertThat(result.adjustments[2].toDate).isEqualTo(LocalDate.of(2021, 12, 31))
+    assertThat(result.adjustments[2].remand!!.chargeId).isEqualTo(listOf(3933931L))
   }
 
   @Test

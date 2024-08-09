@@ -62,7 +62,9 @@
         "date": "2018-02-08",
         "description": "Imprisonment"
       },
-      "chargeId": 1,
+      "chargeIds": [
+        1
+      ],
       "status": "INACTIVE",
       "days": 142
     },
@@ -77,22 +79,10 @@
         "date": "2017-12-22",
         "description": "Replaced With Another Offence"
       },
-      "chargeId": 2,
-      "status": "INACTIVE",
-      "days": 95
-    },
-    {
-      "from": "2017-09-19",
-      "to": "2017-12-22",
-      "fromEvent": {
-        "date": "2017-09-19",
-        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
-      },
-      "toEvent": {
-        "date": "2017-12-22",
-        "description": "Replaced With Another Offence"
-      },
-      "chargeId": 13,
+      "chargeIds": [
+        2,
+        13
+      ],
       "status": "INACTIVE",
       "days": 95
     },
@@ -107,7 +97,9 @@
         "date": "2017-11-06",
         "description": "Imprisonment"
       },
-      "chargeId": 8,
+      "chargeIds": [
+        8
+      ],
       "status": "INACTIVE",
       "days": 34
     },
@@ -122,22 +114,10 @@
         "date": "2017-12-22",
         "description": "Replaced With Another Offence"
       },
-      "chargeId": 5,
-      "status": "NOT_YET_SENTENCED",
-      "days": 95
-    },
-    {
-      "from": "2017-09-19",
-      "to": "2017-12-22",
-      "fromEvent": {
-        "date": "2017-09-19",
-        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
-      },
-      "toEvent": {
-        "date": "2017-12-22",
-        "description": "Replaced With Another Offence"
-      },
-      "chargeId": 7,
+      "chargeIds": [
+        5,
+        7
+      ],
       "status": "NOT_YET_SENTENCED",
       "days": 95
     },
@@ -152,29 +132,11 @@
         "date": "2017-11-07",
         "description": "Discontinuance"
       },
-      "chargeId": 9,
+      "chargeIds": [
+        9
+      ],
       "status": "NOT_YET_SENTENCED",
       "days": 36
-    }
-  ],
-  "sentenceRemand": [
-    {
-      "from": "2017-10-03",
-      "to": "2017-11-05",
-      "chargeId": 8,
-      "days": 34
-    },
-    {
-      "from": "2017-09-19",
-      "to": "2017-10-02",
-      "chargeId": 1,
-      "days": 14
-    },
-    {
-      "from": "2017-11-07",
-      "to": "2018-02-07",
-      "chargeId": 1,
-      "days": 93
     }
   ],
   "intersectingSentences": [

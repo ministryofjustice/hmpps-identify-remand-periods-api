@@ -36,7 +36,7 @@ class RemandAdjustmentService {
       fromDate = remand.from,
       toDate = remand.to,
       person = prisonerId,
-      remand = RemandDto(chargeRemand.filter { remandCalculation.charges[it.chargeId]!!.sentenceSequence != null && it.overlaps(remand) }.map { it.chargeId }),
+      remand = RemandDto(chargeRemand.filter { remandCalculation.charges[it.chargeIds[0]]!!.sentenceSequence != null && it.overlaps(remand) }.flatMap { it.chargeIds }),
       status = if (remandCalculation.chargeIdsWithActiveSentence.contains(remand.chargeId)) AdjustmentStatus.ACTIVE else AdjustmentStatus.INACTIVE,
     )
   }

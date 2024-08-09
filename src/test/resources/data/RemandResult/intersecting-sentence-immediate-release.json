@@ -42,7 +42,9 @@
       "toEvent": {
         "date": "2022-11-28"
       },
-      "chargeId": 1,
+      "chargeIds": [
+        1
+      ],
       "status": "INACTIVE",
       "days": 49
     },
@@ -55,36 +57,12 @@
       "toEvent": {
         "date": "2023-01-04"
       },
-      "chargeId": 2,
+      "chargeIds": [
+        2,
+        3
+      ],
       "status": "INACTIVE",
       "days": 76
-    },
-    {
-      "from": "2022-10-20",
-      "to": "2023-01-03",
-      "fromEvent": {
-        "date": "2022-10-20"
-      },
-      "toEvent": {
-        "date": "2023-01-04"
-      },
-      "chargeId": 3,
-      "status": "INACTIVE",
-      "days": 76
-    }
-  ],
-  "sentenceRemand": [
-    {
-      "from": "2022-10-10",
-      "to": "2022-11-27",
-      "chargeId": 1,
-      "days": 49
-    },
-    {
-      "from": "2022-11-29",
-      "to": "2023-01-03",
-      "chargeId": 2,
-      "days": 36
     }
   ],
   "intersectingSentences": [

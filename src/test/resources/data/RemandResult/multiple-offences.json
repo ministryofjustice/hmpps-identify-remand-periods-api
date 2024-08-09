@@ -41,20 +41,10 @@
       "toEvent": {
         "date": "2020-09-24"
       },
-      "chargeId": 1,
-      "status": "INACTIVE",
-      "days": 447
-    },
-    {
-      "from": "2019-07-06",
-      "to": "2020-09-24",
-      "fromEvent": {
-        "date": "2019-07-06"
-      },
-      "toEvent": {
-        "date": "2020-09-24"
-      },
-      "chargeId": 2,
+      "chargeIds": [
+        1,
+        2
+      ],
       "status": "INACTIVE",
       "days": 447
     },
@@ -67,35 +57,11 @@
       "toEvent": {
         "date": "2021-06-15"
       },
-      "chargeId": 1,
+      "chargeIds": [
+        1,
+        2
+      ],
       "status": "INACTIVE",
-      "days": 1
-    },
-    {
-      "from": "2021-06-14",
-      "to": "2021-06-14",
-      "fromEvent": {
-        "date": "2021-06-14"
-      },
-      "toEvent": {
-        "date": "2021-06-15"
-      },
-      "chargeId": 2,
-      "status": "INACTIVE",
-      "days": 1
-    }
-  ],
-  "sentenceRemand": [
-    {
-      "from": "2019-07-06",
-      "to": "2020-09-24",
-      "chargeId": 1,
-      "days": 447
-    },
-    {
-      "from": "2021-06-14",
-      "to": "2021-06-14",
-      "chargeId": 1,
       "days": 1
     }
   ]

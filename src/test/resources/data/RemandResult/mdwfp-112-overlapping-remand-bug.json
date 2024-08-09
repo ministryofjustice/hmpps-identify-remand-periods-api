@@ -41,7 +41,9 @@
       "toEvent": {
         "date": "2022-09-16"
       },
-      "chargeId": 1,
+      "chargeIds": [
+        1
+      ],
       "status": "INACTIVE",
       "days": 308
     },
@@ -54,7 +56,9 @@
       "toEvent": {
         "date": "2023-02-01"
       },
-      "chargeId": 2,
+      "chargeIds": [
+        2
+      ],
       "status": "INACTIVE",
       "days": 391
     },
@@ -67,23 +71,11 @@
       "toEvent": {
         "date": "2023-02-01"
       },
-      "chargeId": 1,
+      "chargeIds": [
+        1
+      ],
       "status": "INACTIVE",
       "days": 56
-    }
-  ],
-  "sentenceRemand": [
-    {
-      "from": "2021-11-13",
-      "to": "2022-09-16",
-      "chargeId": 1,
-      "days": 308
-    },
-    {
-      "from": "2022-09-17",
-      "to": "2023-01-31",
-      "chargeId": 2,
-      "days": 137
     }
   ]
 }

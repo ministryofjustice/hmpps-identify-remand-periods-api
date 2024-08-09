@@ -42,7 +42,9 @@
         "date": "2018-04-04",
         "description": "Bailed"
       },
-      "chargeId": 1,
+      "chargeIds": [
+        1
+      ],
       "status": "INACTIVE",
       "days": 40
     },
@@ -57,23 +59,11 @@
         "date": "2018-05-04",
         "description": "Imprisonment"
       },
-      "chargeId": 2,
+      "chargeIds": [
+        2
+      ],
       "status": "INACTIVE",
       "days": 42
-    }
-  ],
-  "sentenceRemand": [
-    {
-      "from": "2018-02-24",
-      "to": "2018-04-04",
-      "chargeId": 1,
-      "days": 40
-    },
-    {
-      "from": "2018-04-05",
-      "to": "2018-05-03",
-      "chargeId": 2,
-      "days": 29
     }
   ]
 }

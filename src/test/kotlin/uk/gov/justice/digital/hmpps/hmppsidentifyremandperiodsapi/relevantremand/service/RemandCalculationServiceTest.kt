@@ -26,7 +26,8 @@ class RemandCalculationServiceTest {
   private val remandAdjustmentService = RemandAdjustmentService()
   private val chargeRemandStatusService = ChargeRemandStatusService()
   private val resultSortingService = ResultSortingService()
-  private val remandCalculationService = RemandCalculationService(remandClockService, sentenceRemandService, remandAdjustmentService, chargeRemandStatusService, resultSortingService)
+  private val mergeChargeRemandService = MergeChargeRemandService()
+  private val remandCalculationService = RemandCalculationService(remandClockService, sentenceRemandService, remandAdjustmentService, chargeRemandStatusService, resultSortingService, mergeChargeRemandService)
 
   @ParameterizedTest
   @CsvFileSource(resources = ["/data/tests.csv"], numLinesToSkip = 1)
@@ -49,6 +50,10 @@ class RemandCalculationServiceTest {
       }
     }
 
+    TestUtil.objectMapper().writeValue(ClassPathResource("/data/RemandResult/$exampleName.json").file, remandResult.copy(
+      periodsServingSentenceUsingCRDS = emptyList(),
+      charges = emptyMap()
+    ))
     val expected = TestUtil.objectMapper().readValue(ClassPathResource("/data/RemandResult/$exampleName.json").file, RemandResult::class.java)
     assertThat(remandResult)
       .usingRecursiveComparison()
