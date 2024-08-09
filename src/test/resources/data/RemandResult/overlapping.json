@@ -40,7 +40,9 @@
       "toEvent": {
         "date": "2020-03-01"
       },
-      "chargeId": 1,
+      "chargeIds": [
+        1
+      ],
       "status": "INACTIVE",
       "days": 60
     },
@@ -53,23 +55,11 @@
       "toEvent": {
         "date": "2020-04-01"
       },
-      "chargeId": 2,
+      "chargeIds": [
+        2
+      ],
       "status": "INACTIVE",
       "days": 60
-    }
-  ],
-  "sentenceRemand": [
-    {
-      "from": "2020-01-01",
-      "to": "2020-02-29",
-      "chargeId": 1,
-      "days": 60
-    },
-    {
-      "from": "2020-03-01",
-      "to": "2020-03-31",
-      "chargeId": 2,
-      "days": 31
     }
   ]
 }

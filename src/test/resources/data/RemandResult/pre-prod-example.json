@@ -25,16 +25,10 @@
       "toEvent": {
         "date": "2021-05-14"
       },
-      "chargeId": 1,
+      "chargeIds": [
+        1
+      ],
       "status": "INACTIVE",
-      "days": 1
-    }
-  ],
-  "sentenceRemand": [
-    {
-      "from": "2021-05-13",
-      "to": "2021-05-13",
-      "chargeId": 1,
       "days": 1
     }
   ]

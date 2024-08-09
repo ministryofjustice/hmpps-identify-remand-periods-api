@@ -54,7 +54,9 @@
       "toEvent": {
         "date": "2022-01-01"
       },
-      "chargeId": 1,
+      "chargeIds": [
+        1
+      ],
       "status": "INACTIVE",
       "days": 731
     },
@@ -67,7 +69,9 @@
       "toEvent": {
         "date": "2021-02-01"
       },
-      "chargeId": 2,
+      "chargeIds": [
+        2
+      ],
       "status": "INACTIVE",
       "days": 31
     },
@@ -80,29 +84,11 @@
       "toEvent": {
         "date": "2021-02-10"
       },
-      "chargeId": 3,
+      "chargeIds": [
+        3
+      ],
       "status": "INTERSECTED",
       "days": 5
-    }
-  ],
-  "sentenceRemand": [
-    {
-      "from": "2021-01-01",
-      "to": "2021-01-31",
-      "chargeId": 2,
-      "days": 31
-    },
-    {
-      "from": "2020-01-01",
-      "to": "2020-12-31",
-      "chargeId": 1,
-      "days": 366
-    },
-    {
-      "from": "2021-05-03",
-      "to": "2021-12-31",
-      "chargeId": 1,
-      "days": 243
     }
   ],
   "intersectingSentences": [

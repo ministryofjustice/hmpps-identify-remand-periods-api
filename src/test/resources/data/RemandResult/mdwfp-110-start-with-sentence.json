@@ -28,7 +28,12 @@
       "toEvent": {
         "date": "2023-01-10"
       },
-      "chargeId": 4,
+      "chargeIds": [
+        4,
+        5,
+        6,
+        8
+      ],
       "status": "INACTIVE",
       "days": 67
     },
@@ -41,56 +46,11 @@
       "toEvent": {
         "date": "2023-01-10"
       },
-      "chargeId": 5,
-      "status": "INACTIVE",
-      "days": 67
-    },
-    {
-      "from": "2022-11-04",
-      "to": "2023-01-09",
-      "fromEvent": {
-        "date": "2022-11-04"
-      },
-      "toEvent": {
-        "date": "2023-01-10"
-      },
-      "chargeId": 6,
-      "status": "INACTIVE",
-      "days": 67
-    },
-    {
-      "from": "2022-11-04",
-      "to": "2023-01-09",
-      "fromEvent": {
-        "date": "2022-11-04"
-      },
-      "toEvent": {
-        "date": "2023-01-10"
-      },
-      "chargeId": 8,
-      "status": "INACTIVE",
-      "days": 67
-    },
-    {
-      "from": "2022-11-04",
-      "to": "2023-01-09",
-      "fromEvent": {
-        "date": "2022-11-04"
-      },
-      "toEvent": {
-        "date": "2023-01-10"
-      },
-      "chargeId": 9,
+      "chargeIds": [
+        9
+      ],
       "status": "NOT_YET_SENTENCED",
       "days": 67
-    }
-  ],
-  "sentenceRemand": [
-    {
-      "from": "2022-11-25",
-      "to": "2023-01-09",
-      "chargeId": 4,
-      "days": 46
     }
   ],
   "intersectingSentences": [

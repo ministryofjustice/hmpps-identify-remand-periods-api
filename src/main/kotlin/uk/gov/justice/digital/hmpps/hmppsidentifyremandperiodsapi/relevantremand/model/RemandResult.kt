@@ -5,7 +5,6 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi
 data class RemandResult(
   val adjustments: List<AdjustmentDto> = emptyList(),
   val chargeRemand: List<ChargeRemand> = emptyList(),
-  val sentenceRemand: List<Remand> = emptyList(),
   val intersectingSentences: List<SentencePeriod> = emptyList(),
   val charges: Map<Long, Charge> = emptyMap(),
   val periodsServingSentenceUsingCRDS: List<SentencePeriod> = emptyList(),

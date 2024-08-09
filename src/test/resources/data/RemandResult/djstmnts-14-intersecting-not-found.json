@@ -42,46 +42,12 @@
       "toEvent": {
         "date": "2019-04-16"
       },
-      "chargeId": 1,
-      "status": "INACTIVE",
-      "days": 94
-    },
-    {
-      "from": "2019-01-12",
-      "to": "2019-04-15",
-      "fromEvent": {
-        "date": "2019-01-12"
-      },
-      "toEvent": {
-        "date": "2019-04-16"
-      },
-      "chargeId": 2,
-      "status": "INACTIVE",
-      "days": 94
-    },
-    {
-      "from": "2019-01-12",
-      "to": "2019-04-15",
-      "fromEvent": {
-        "date": "2019-01-12"
-      },
-      "toEvent": {
-        "date": "2019-04-16"
-      },
-      "chargeId": 4,
-      "status": "INACTIVE",
-      "days": 94
-    },
-    {
-      "from": "2019-01-12",
-      "to": "2019-04-15",
-      "fromEvent": {
-        "date": "2019-01-12"
-      },
-      "toEvent": {
-        "date": "2019-04-16"
-      },
-      "chargeId": 5,
+      "chargeIds": [
+        1,
+        2,
+        4,
+        5
+      ],
       "status": "INACTIVE",
       "days": 94
     },
@@ -94,7 +60,9 @@
       "toEvent": {
         "date": "2023-01-30"
       },
-      "chargeId": 14,
+      "chargeIds": [
+        14
+      ],
       "status": "INACTIVE",
       "days": 378
     },
@@ -107,7 +75,9 @@
       "toEvent": {
         "date": "2019-04-16"
       },
-      "chargeId": 3,
+      "chargeIds": [
+        3
+      ],
       "status": "NOT_YET_SENTENCED",
       "days": 94
     },
@@ -120,7 +90,9 @@
       "toEvent": {
         "date": "2019-04-16"
       },
-      "chargeId": 10,
+      "chargeIds": [
+        10
+      ],
       "status": "NOT_YET_SENTENCED",
       "days": 94
     },
@@ -133,49 +105,13 @@
       "toEvent": {
         "date": "2023-01-30"
       },
-      "chargeId": 11,
+      "chargeIds": [
+        11,
+        12,
+        13
+      ],
       "status": "NOT_YET_SENTENCED",
       "days": 378
-    },
-    {
-      "from": "2022-01-17",
-      "to": "2023-01-29",
-      "fromEvent": {
-        "date": "2022-01-17"
-      },
-      "toEvent": {
-        "date": "2023-01-30"
-      },
-      "chargeId": 12,
-      "status": "NOT_YET_SENTENCED",
-      "days": 378
-    },
-    {
-      "from": "2022-01-17",
-      "to": "2023-01-29",
-      "fromEvent": {
-        "date": "2022-01-17"
-      },
-      "toEvent": {
-        "date": "2023-01-30"
-      },
-      "chargeId": 13,
-      "status": "NOT_YET_SENTENCED",
-      "days": 378
-    }
-  ],
-  "sentenceRemand": [
-    {
-      "from": "2019-01-12",
-      "to": "2019-04-15",
-      "chargeId": 1,
-      "days": 94
-    },
-    {
-      "from": "2022-09-13",
-      "to": "2023-01-29",
-      "chargeId": 14,
-      "days": 139
     }
   ],
   "intersectingSentences": [

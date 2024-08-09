@@ -25,16 +25,10 @@
       "toEvent": {
         "date": "2023-10-06"
       },
-      "chargeId": 2,
+      "chargeIds": [
+        2
+      ],
       "status": "INACTIVE",
-      "days": 14
-    }
-  ],
-  "sentenceRemand": [
-    {
-      "from": "2023-09-22",
-      "to": "2023-10-05",
-      "chargeId": 2,
       "days": 14
     }
   ]
