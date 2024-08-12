@@ -16,7 +16,7 @@ class FindHistoricReleaseDateService(
   fun calculateReleaseDate(prisonerId: String, remand: List<Remand>, sentence: Sentence, calculateAt: LocalDate): LocalDate {
     val historicReleaseDates = collapseByLastCalculationOfTheDay(prisonApiClient.getCalculationsForAPrisonerId(prisonerId).sortedBy { it.calculationDate }, sentence)
     if (historicReleaseDates.isEmpty()) {
-      return calculateAt
+      throw UnsupportedCalculationException("No calculations found for $prisonerId in booking ${sentence.bookingId}")
     }
 
     var calculation = historicReleaseDates.first { it.calculationDate.isAfter(calculateAt.atStartOfDay()) }
