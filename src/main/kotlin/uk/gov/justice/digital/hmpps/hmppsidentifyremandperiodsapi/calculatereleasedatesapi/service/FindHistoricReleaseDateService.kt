@@ -3,6 +3,7 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculaterele
 import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.SentenceCalculationSummary
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.service.PrisonApiClient
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Remand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
 import java.time.LocalDate
@@ -45,6 +46,12 @@ class FindHistoricReleaseDateService(
     val calcDates = prisonApiClient.getNOMISOffenderKeyDates(offenderSentCalcId)
     val releaseDates = listOfNotNull(calcDates.conditionalReleaseDate, calcDates.automaticReleaseDate, calcDates.postRecallReleaseDate, calcDates.midTermDate)
 
-    return releaseDates.max()
+    val latestRelease = releaseDates.maxOrNull()
+
+    if (latestRelease == null) {
+      throw UnsupportedCalculationException("Unable to find release date from calculation $offenderSentCalcId")
+    } else {
+      return latestRelease
+    }
   }
 }
