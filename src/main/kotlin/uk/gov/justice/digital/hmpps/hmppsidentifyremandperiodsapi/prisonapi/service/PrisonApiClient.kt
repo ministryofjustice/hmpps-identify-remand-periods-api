@@ -47,7 +47,7 @@ class PrisonApiClient(@Qualifier("prisonApiWebClient") private val webClient: We
   fun getCalculationsForAPrisonerId(prisonerId: String): List<SentenceCalculationSummary> {
     return webClient.get()
       .uri { uriBuilder ->
-        uriBuilder.path("/api/offender-dates/calculations/$prisonerId")
+        uriBuilder.path("/api/offender-dates/calculations/$prisonerId?latestOnly=false")
           .build()
       }
       .retrieve()
