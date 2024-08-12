@@ -7,5 +7,5 @@ data class SentenceCalculationSummary(
   val offenderSentCalculationId: Long,
   val calculationDate: LocalDateTime,
   val commentText: String? = null,
-  val calculationReason: String?,
+  val calculationReason: String? = null,
 )
