@@ -55,4 +55,14 @@ class FindHistoricReleaseDateServiceTest {
 
     assertThat(exception.message).isEqualTo("Unable to find release date from calculation 1")
   }
+
+  @Test
+  fun `Error if no release dates returned`() {
+    val calculateAt = sentenceDate
+    whenever(apiClient.getCalculationsForAPrisonerId(prisonerId)).thenReturn(emptyList())
+
+    val exception = assertThrows<UnsupportedCalculationException> { service.calculateReleaseDate(prisonerId, emptyList(), sentence, calculateAt) }
+
+    assertThat(exception.message).isEqualTo("No calculations found for ABC123 in booking 1")
+  }
 }

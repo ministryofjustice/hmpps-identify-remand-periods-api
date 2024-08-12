@@ -85,7 +85,7 @@ class SentenceRemandService(
     loopTracker: SentenceRemandLoopTracker,
     remandCalculation: RemandCalculation,
   ) {
-    val sentencesToCalculate = sentences.filter { it.sentence.sentenceDate == date || it.sentence.recallDate == date }.distinctBy { "${date}${it.sentence.bookingId}" }
+    val sentencesToCalculate = sentences.filter { it.sentence.sentenceDate == date || it.sentence.recallDate == date }.distinctBy { it.sentence.bookingId }
 
     try {
       val sentenceReleaseDate = sentencesToCalculate.map {
