@@ -1,25 +1,6 @@
 {
   "adjustments": [
     {
-      "id": null,
-      "bookingId": 1,
-      "sentenceSequence": 1,
-      "person": "INTERSE",
-      "adjustmentType": "REMAND",
-      "toDate": "2022-11-14",
-      "fromDate": "2022-10-19",
-      "remand": {
-        "chargeId": [
-          8,
-          10,
-          13,
-          16
-        ]
-      },
-      "status": "INACTIVE"
-    },
-    {
-      "id": null,
       "bookingId": 1,
       "sentenceSequence": 23,
       "person": "INTERSE",
@@ -35,7 +16,6 @@
       "status": "INACTIVE"
     },
     {
-      "id": null,
       "bookingId": 1,
       "sentenceSequence": 23,
       "person": "INTERSE",
@@ -49,6 +29,23 @@
         ]
       },
       "status": "INACTIVE"
+    },
+    {
+      "bookingId": 1,
+      "sentenceSequence": 1,
+      "person": "INTERSE",
+      "adjustmentType": "REMAND",
+      "toDate": "2022-11-14",
+      "fromDate": "2022-10-19",
+      "remand": {
+        "chargeId": [
+          8,
+          10,
+          13,
+          16
+        ]
+      },
+      "status": "INACTIVE"
     }
   ],
   "chargeRemand": [
@@ -56,14 +53,14 @@
       "from": "2021-01-11",
       "to": "2021-07-15",
       "fromEvent": {
-        "date": "2021-01-11",
-        "description": ""
+        "date": "2021-01-11"
       },
       "toEvent": {
-        "date": "2021-07-16",
-        "description": ""
+        "date": "2021-07-16"
       },
-      "chargeId": 19,
+      "chargeIds": [
+        19
+      ],
       "status": "INACTIVE",
       "days": 186
     },
@@ -71,111 +68,49 @@
       "from": "2021-01-11",
       "to": "2021-07-15",
       "fromEvent": {
-        "date": "2021-01-11",
-        "description": ""
+        "date": "2021-01-11"
       },
       "toEvent": {
-        "date": "2021-07-16",
-        "description": ""
+        "date": "2021-07-16"
       },
-      "chargeId": 18,
+      "chargeIds": [
+        18
+      ],
       "status": "INACTIVE",
       "days": 186
+    },
+    {
+      "from": "2022-10-19",
+      "to": "2022-11-14",
+      "fromEvent": {
+        "date": "2022-10-19"
+      },
+      "toEvent": {
+        "date": "2022-11-15"
+      },
+      "chargeIds": [
+        8,
+        10,
+        13,
+        16
+      ],
+      "status": "INACTIVE",
+      "days": 27
     },
     {
       "from": "2021-01-11",
       "to": "2021-07-15",
       "fromEvent": {
-        "date": "2021-01-11",
-        "description": ""
+        "date": "2021-01-11"
       },
       "toEvent": {
-        "date": "2021-07-16",
-        "description": ""
+        "date": "2021-07-16"
       },
-      "chargeId": 3,
+      "chargeIds": [
+        3
+      ],
       "status": "NOT_YET_SENTENCED",
       "days": 186
-    },
-    {
-      "from": "2022-10-19",
-      "to": "2022-11-14",
-      "fromEvent": {
-        "date": "2022-10-19",
-        "description": ""
-      },
-      "toEvent": {
-        "date": "2022-11-15",
-        "description": ""
-      },
-      "chargeId": 8,
-      "status": "INACTIVE",
-      "days": 27
-    },
-    {
-      "from": "2022-10-19",
-      "to": "2022-11-14",
-      "fromEvent": {
-        "date": "2022-10-19",
-        "description": ""
-      },
-      "toEvent": {
-        "date": "2022-11-15",
-        "description": ""
-      },
-      "chargeId": 10,
-      "status": "INACTIVE",
-      "days": 27
-    },
-    {
-      "from": "2022-10-19",
-      "to": "2022-11-14",
-      "fromEvent": {
-        "date": "2022-10-19",
-        "description": ""
-      },
-      "toEvent": {
-        "date": "2022-11-15",
-        "description": ""
-      },
-      "chargeId": 13,
-      "status": "INACTIVE",
-      "days": 27
-    },
-    {
-      "from": "2022-10-19",
-      "to": "2022-11-14",
-      "fromEvent": {
-        "date": "2022-10-19",
-        "description": ""
-      },
-      "toEvent": {
-        "date": "2022-11-15",
-        "description": ""
-      },
-      "chargeId": 16,
-      "status": "INACTIVE",
-      "days": 27
-    }
-  ],
-  "sentenceRemand": [
-    {
-      "from": "2022-10-19",
-      "to": "2022-11-14",
-      "chargeId": 8,
-      "days": 27
-    },
-    {
-      "from": "2021-01-11",
-      "to": "2021-04-21",
-      "chargeId": 19,
-      "days": 101
-    },
-    {
-      "from": "2021-05-23",
-      "to": "2021-07-15",
-      "chargeId": 19,
-      "days": 54
     }
   ],
   "intersectingSentences": [
@@ -185,12 +120,10 @@
       "sentence": {
         "sequence": 3,
         "sentenceDate": "2021-04-22",
-        "recallDate": null,
         "bookingId": 2
       },
       "chargeId": 4,
       "days": 31
     }
-  ],
-  "issuesWithLegacyData": []
+  ]
 }

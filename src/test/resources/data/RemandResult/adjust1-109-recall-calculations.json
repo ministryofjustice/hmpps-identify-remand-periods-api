@@ -1,7 +1,6 @@
 {
   "adjustments": [
     {
-      "id": null,
       "bookingId": 1,
       "sentenceSequence": 1,
       "person": "ABC123",
@@ -16,7 +15,6 @@
       "status": "INACTIVE"
     },
     {
-      "id": null,
       "bookingId": 1,
       "sentenceSequence": 12,
       "person": "ABC123",
@@ -36,14 +34,14 @@
       "from": "2022-07-04",
       "to": "2022-08-16",
       "fromEvent": {
-        "date": "2022-07-04",
-        "description": ""
+        "date": "2022-07-04"
       },
       "toEvent": {
-        "date": "2022-08-17",
-        "description": ""
+        "date": "2022-08-17"
       },
-      "chargeId": 1,
+      "chargeIds": [
+        1
+      ],
       "status": "INACTIVE",
       "days": 44
     },
@@ -51,30 +49,16 @@
       "from": "2023-05-16",
       "to": "2023-06-29",
       "fromEvent": {
-        "date": "2023-05-16",
-        "description": ""
+        "date": "2023-05-16"
       },
       "toEvent": {
-        "date": "2023-06-30",
-        "description": ""
+        "date": "2023-06-30"
       },
-      "chargeId": 9,
+      "chargeIds": [
+        9
+      ],
       "status": "INACTIVE",
       "days": 45
-    }
-  ],
-  "sentenceRemand": [
-    {
-      "from": "2022-07-04",
-      "to": "2022-08-16",
-      "chargeId": 1,
-      "days": 44
-    },
-    {
-      "from": "2023-05-16",
-      "to": "2023-05-17",
-      "chargeId": 9,
-      "days": 2
     }
   ],
   "intersectingSentences": [
@@ -84,7 +68,6 @@
       "sentence": {
         "sequence": 1,
         "sentenceDate": "2022-08-17",
-        "recallDate": null,
         "bookingId": 1
       },
       "chargeId": 1,
@@ -102,6 +85,5 @@
       "chargeId": 3,
       "days": 96
     }
-  ],
-  "issuesWithLegacyData": []
+  ]
 }

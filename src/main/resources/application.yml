@@ -94,3 +94,5 @@ management:
     info:
       cache:
         time-to-live: 2000ms
+
+primary-release-date-provider: ${PRIMARY_RELEASE_DATE_PROVIDER}

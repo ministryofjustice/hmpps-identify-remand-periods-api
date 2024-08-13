@@ -11,10 +11,10 @@ class SentenceRemandLoopTracker(
   private val sentences: List<SentenceAndCharge>,
 ) {
   /* All periods that are linked to a sentence */
-  val allPeriods = remandPeriods.filter { charges[it.chargeId]!!.sentenceSequence != null && charges[it.chargeId]!!.sentenceDate != null }.sortedBy { it.from }
+  val allPeriods = remandPeriods.filter { charges[it.onlyChargeId()]!!.sentenceSequence != null && charges[it.onlyChargeId()]!!.sentenceDate != null }.sortedBy { it.from }
 
   /* A map of each sentence date to the periods who have a sentence with the given date */
-  val sentenceDateToPeriodMap = allPeriods.groupBy { charges[it.chargeId]!!.sentenceDate }.toMutableMap()
+  val sentenceDateToPeriodMap = allPeriods.groupBy { charges[it.onlyChargeId()]!!.sentenceDate }.toMutableMap()
 
   init {
     sentences.forEach {
@@ -26,9 +26,6 @@ class SentenceRemandLoopTracker(
 
   /* A list of the periods where a sentence is being served */
   val periodsServingSentence = mutableListOf<SentencePeriod>()
-
-  /* A list of the periods where a sentence is being served using CRDS. */
-  val periodsServingSentenceUsingCRDS = mutableListOf<SentencePeriod>()
 
   /* A list of the currently established final periods of sentence remand */
   val final = mutableListOf<Remand>()
@@ -47,7 +44,7 @@ class SentenceRemandLoopTracker(
 
   /* Starting a new loop of the periods with the same sentence date. */
   fun startNewSentenceDateLoop(entry: Map.Entry<LocalDate?, List<ChargeRemand>>) {
-    periods = entry.value.map { Remand(it.from, it.to, it.chargeId) }
+    periods = entry.value.map { Remand(it.from, it.to, it.onlyChargeId()) }
     open = mutableListOf()
     future = periods.toMutableList()
     importantDates = ((periods + final).map { listOfNotNull(it.from, it.to, this.charges[it.chargeId]!!.sentenceDate) }.flatten() + listOfNotNull(entry.key) + periodsServingSentence.flatMap { listOf(it.from, it.to) } + sentences.mapNotNull { it.sentence.recallDate }).distinct().sorted()

@@ -48,6 +48,7 @@ class PrisonApiClient(@Qualifier("prisonApiWebClient") private val webClient: We
     return webClient.get()
       .uri { uriBuilder ->
         uriBuilder.path("/api/offender-dates/calculations/$prisonerId")
+          .queryParam("latestOnly", "false")
           .build()
       }
       .retrieve()

@@ -1,7 +1,6 @@
 {
   "adjustments": [
     {
-      "id": null,
       "bookingId": 1,
       "sentenceSequence": 3,
       "person": "ABC123",
@@ -24,14 +23,17 @@
       "from": "2022-11-04",
       "to": "2023-01-09",
       "fromEvent": {
-        "date": "2022-11-04",
-        "description": ""
+        "date": "2022-11-04"
       },
       "toEvent": {
-        "date": "2023-01-10",
-        "description": ""
+        "date": "2023-01-10"
       },
-      "chargeId": 4,
+      "chargeIds": [
+        4,
+        5,
+        6,
+        8
+      ],
       "status": "INACTIVE",
       "days": 67
     },
@@ -39,69 +41,16 @@
       "from": "2022-11-04",
       "to": "2023-01-09",
       "fromEvent": {
-        "date": "2022-11-04",
-        "description": ""
+        "date": "2022-11-04"
       },
       "toEvent": {
-        "date": "2023-01-10",
-        "description": ""
+        "date": "2023-01-10"
       },
-      "chargeId": 5,
-      "status": "INACTIVE",
-      "days": 67
-    },
-    {
-      "from": "2022-11-04",
-      "to": "2023-01-09",
-      "fromEvent": {
-        "date": "2022-11-04",
-        "description": ""
-      },
-      "toEvent": {
-        "date": "2023-01-10",
-        "description": ""
-      },
-      "chargeId": 6,
-      "status": "INACTIVE",
-      "days": 67
-    },
-    {
-      "from": "2022-11-04",
-      "to": "2023-01-09",
-      "fromEvent": {
-        "date": "2022-11-04",
-        "description": ""
-      },
-      "toEvent": {
-        "date": "2023-01-10",
-        "description": ""
-      },
-      "chargeId": 8,
-      "status": "INACTIVE",
-      "days": 67
-    },
-    {
-      "from": "2022-11-04",
-      "to": "2023-01-09",
-      "fromEvent": {
-        "date": "2022-11-04",
-        "description": ""
-      },
-      "toEvent": {
-        "date": "2023-01-10",
-        "description": ""
-      },
-      "chargeId": 9,
+      "chargeIds": [
+        9
+      ],
       "status": "NOT_YET_SENTENCED",
       "days": 67
-    }
-  ],
-  "sentenceRemand": [
-    {
-      "from": "2022-11-25",
-      "to": "2023-01-09",
-      "chargeId": 4,
-      "days": 46
     }
   ],
   "intersectingSentences": [
@@ -111,12 +60,10 @@
       "sentence": {
         "sequence": 1,
         "sentenceDate": "2022-11-04",
-        "recallDate": null,
         "bookingId": 1
       },
       "chargeId": 1,
       "days": 21
     }
-  ],
-  "issuesWithLegacyData": []
+  ]
 }

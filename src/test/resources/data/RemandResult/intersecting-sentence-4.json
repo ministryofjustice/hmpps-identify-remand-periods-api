@@ -1,7 +1,6 @@
 {
   "adjustments": [
     {
-      "id": null,
       "bookingId": 1,
       "sentenceSequence": 2,
       "person": "ABCD123",
@@ -19,42 +18,34 @@
   ],
   "chargeRemand": [
     {
+      "from": "2020-01-01",
+      "to": "2020-12-31",
+      "fromEvent": {
+        "date": "2020-01-01"
+      },
+      "toEvent": {
+        "date": "2021-01-01"
+      },
+      "chargeIds": [
+        2
+      ],
+      "status": "INACTIVE",
+      "days": 366
+    },
+    {
       "from": "2020-04-01",
       "to": "2021-12-31",
       "fromEvent": {
-        "date": "2020-04-01",
-        "description": ""
+        "date": "2020-04-01"
       },
       "toEvent": {
-        "date": "2022-01-01",
-        "description": ""
+        "date": "2022-01-01"
       },
-      "chargeId": 1,
+      "chargeIds": [
+        1
+      ],
       "status": "INACTIVE",
       "days": 640
-    },
-    {
-      "from": "2020-01-01",
-      "to": "2020-12-31",
-      "fromEvent": {
-        "date": "2020-01-01",
-        "description": ""
-      },
-      "toEvent": {
-        "date": "2021-01-01",
-        "description": ""
-      },
-      "chargeId": 2,
-      "status": "INACTIVE",
-      "days": 366
-    }
-  ],
-  "sentenceRemand": [
-    {
-      "from": "2020-01-01",
-      "to": "2020-12-31",
-      "chargeId": 2,
-      "days": 366
     }
   ],
   "intersectingSentences": [
@@ -64,12 +55,10 @@
       "sentence": {
         "sequence": 2,
         "sentenceDate": "2021-01-01",
-        "recallDate": null,
         "bookingId": 1
       },
       "chargeId": 2,
       "days": 487
     }
-  ],
-  "issuesWithLegacyData": []
+  ]
 }

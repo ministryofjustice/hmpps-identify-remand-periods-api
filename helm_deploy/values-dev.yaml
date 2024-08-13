@@ -13,6 +13,7 @@ generic-service:
     ADJUSTMENTS_API_URL: https://adjustments-api-dev.hmpps.service.justice.gov.uk
     PRISON_API_URL: https://prison-api-dev.prison.service.justice.gov.uk
     CALCULATERELEASEDATES_API_URL: https://calculate-release-dates-api-dev.hmpps.service.justice.gov.uk
+    PRIMARY_RELEASE_DATE_PROVIDER: CRDS
 
   # Switches off the allow list in the DEV env only.
   allowlist: null

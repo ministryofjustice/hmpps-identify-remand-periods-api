@@ -1,7 +1,6 @@
 {
   "adjustments": [
     {
-      "id": null,
       "bookingId": 1,
       "sentenceSequence": 3,
       "person": "IMP",
@@ -29,7 +28,9 @@
         "date": "2018-05-04",
         "description": "Imprisonment"
       },
-      "chargeId": 1,
+      "chargeIds": [
+        1
+      ],
       "status": "INACTIVE",
       "days": 69
     },
@@ -44,19 +45,11 @@
         "date": "2018-05-04",
         "description": "Imprisonment"
       },
-      "chargeId": 2,
+      "chargeIds": [
+        2
+      ],
       "status": "INACTIVE",
       "days": 42
     }
-  ],
-  "sentenceRemand": [
-    {
-      "from": "2018-02-24",
-      "to": "2018-05-03",
-      "chargeId": 1,
-      "days": 69
-    }
-  ],
-  "intersectingSentences": [],
-  "issuesWithLegacyData": []
+  ]
 }

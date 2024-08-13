@@ -4,5 +4,5 @@ import java.time.LocalDate
 
 data class CourtAppearance(
   val date: LocalDate,
-  val description: String,
+  val description: String = "",
 )

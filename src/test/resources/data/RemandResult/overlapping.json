@@ -1,7 +1,6 @@
 {
   "adjustments": [
     {
-      "id": null,
       "bookingId": 1,
       "sentenceSequence": 1,
       "person": "ABCD123",
@@ -17,7 +16,6 @@
       "status": "INACTIVE"
     },
     {
-      "id": null,
       "bookingId": 1,
       "sentenceSequence": 2,
       "person": "ABCD123",
@@ -37,14 +35,14 @@
       "from": "2020-01-01",
       "to": "2020-02-29",
       "fromEvent": {
-        "date": "2020-01-01",
-        "description": ""
+        "date": "2020-01-01"
       },
       "toEvent": {
-        "date": "2020-03-01",
-        "description": ""
+        "date": "2020-03-01"
       },
-      "chargeId": 1,
+      "chargeIds": [
+        1
+      ],
       "status": "INACTIVE",
       "days": 60
     },
@@ -52,32 +50,16 @@
       "from": "2020-02-01",
       "to": "2020-03-31",
       "fromEvent": {
-        "date": "2020-02-01",
-        "description": ""
+        "date": "2020-02-01"
       },
       "toEvent": {
-        "date": "2020-04-01",
-        "description": ""
+        "date": "2020-04-01"
       },
-      "chargeId": 2,
+      "chargeIds": [
+        2
+      ],
       "status": "INACTIVE",
       "days": 60
     }
-  ],
-  "sentenceRemand": [
-    {
-      "from": "2020-01-01",
-      "to": "2020-02-29",
-      "chargeId": 1,
-      "days": 60
-    },
-    {
-      "from": "2020-03-01",
-      "to": "2020-03-31",
-      "chargeId": 2,
-      "days": 31
-    }
-  ],
-  "intersectingSentences": [],
-  "issuesWithLegacyData": []
+  ]
 }
