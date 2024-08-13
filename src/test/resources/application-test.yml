@@ -55,3 +55,5 @@ calculate-release-dates:
 adjustments:
   api:
     url: http://localhost:8334/adjustments-api
+
+primary-release-date-provider: HISTORIC

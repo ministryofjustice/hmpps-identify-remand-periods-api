@@ -12,7 +12,6 @@ import org.slf4j.LoggerFactory
 import org.springframework.core.io.ClassPathResource
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.TestUtil
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.service.CalculateReleaseDateService
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.service.FindHistoricReleaseDateService
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculationRequestOptions
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandResult
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
@@ -21,8 +20,9 @@ import java.time.LocalDate
 class RemandCalculationServiceTest {
   private val calculateReleaseDateService = mock<CalculateReleaseDateService>()
   private val findHistoricReleaseDateService = mock<FindHistoricReleaseDateService>()
+  private val findReleaseDateService = FindReleaseDateService(findHistoricReleaseDateService, calculateReleaseDateService)
   private val remandClockService = RemandClockService()
-  private val sentenceRemandService = SentenceRemandService(calculateReleaseDateService, findHistoricReleaseDateService)
+  private val sentenceRemandService = SentenceRemandService(findReleaseDateService)
   private val remandAdjustmentService = RemandAdjustmentService()
   private val chargeRemandStatusService = ChargeRemandStatusService()
   private val resultSortingService = ResultSortingService()
@@ -53,21 +53,22 @@ class RemandCalculationServiceTest {
     val expected = TestUtil.objectMapper().readValue(ClassPathResource("/data/RemandResult/$exampleName.json").file, RemandResult::class.java)
     assertThat(remandResult)
       .usingRecursiveComparison()
-      .ignoringFieldsMatchingRegexes("periodsServingSentenceUsingCRDS", "charges", "remandCalculation")
+      .ignoringFieldsMatchingRegexes("charges", "remandCalculation")
       .isEqualTo(expected)
   }
 
   private fun stubCalculations(exampleName: String, example: TestExample) {
-    whenever(calculateReleaseDateService.calculateReleaseDate(any(), any(), any(), any(), any())).thenReturn(LocalDate.now())
+    whenever(calculateReleaseDateService.findReleaseDate(any(), any(), any(), any(), any())).thenReturn(LocalDate.now())
     example.sentences.forEach { sentence ->
       sentence.calculations.forEach { calculation ->
         log.info("Stubbing release dates for $exampleName: $sentence $calculation")
         whenever(
-          findHistoricReleaseDateService.calculateReleaseDate(
+          findHistoricReleaseDateService.findReleaseDate(
             eq(example.remandCalculation.prisonerId),
             any(),
             eq(Sentence(sentence.sentenceSequence, sentence.sentenceAt, sentence.recallDate, sentence.bookingId)),
             eq(calculation.calculateAt),
+            any(),
           ),
         ).thenAnswer {
           calculation.release

@@ -13,6 +13,7 @@ generic-service:
     PRISON_API_URL: https://prison-api-preprod.prison.service.justice.gov.uk
     ADJUSTMENTS_API_URL: https://adjustments-api-preprod.hmpps.service.justice.gov.uk
     CALCULATERELEASEDATES_API_URL: https://calculate-release-dates-api-preprod.hmpps.service.justice.gov.uk
+    PRIMARY_RELEASE_DATE_PROVIDER: HISTORIC
 
 # CloudPlatform AlertManager receiver to route prometheus alerts to slack
 # See https://user-guide.cloud-platform.service.justice.gov.uk/documentation/monitoring-an-app/how-to-create-alarms.html#creating-your-own-custom-alerts

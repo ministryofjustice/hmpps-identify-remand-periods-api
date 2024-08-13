@@ -13,7 +13,6 @@ class ResultSortingService {
       adjustments = result.adjustments.sortedBy { it.fromDate },
       chargeRemand = result.chargeRemand.sortedWith(compareBy({ it.status }, { it.from })),
       intersectingSentences = result.intersectingSentences.sortedBy { it.from },
-      periodsServingSentenceUsingCRDS = result.periodsServingSentenceUsingCRDS.sortedBy { it.from },
     )
   }
 }
