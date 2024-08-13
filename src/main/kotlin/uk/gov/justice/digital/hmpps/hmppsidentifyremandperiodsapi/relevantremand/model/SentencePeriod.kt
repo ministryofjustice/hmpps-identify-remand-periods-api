@@ -7,4 +7,6 @@ data class SentencePeriod(
   override val to: LocalDate,
   val sentence: Sentence,
   val chargeId: Long,
+  val service: String = "HISTORIC",
+  val errors: List<String> = emptyList(),
 ) : Period

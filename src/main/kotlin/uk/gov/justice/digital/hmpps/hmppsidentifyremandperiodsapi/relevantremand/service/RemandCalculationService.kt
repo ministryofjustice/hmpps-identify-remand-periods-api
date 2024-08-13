@@ -32,7 +32,6 @@ class RemandCalculationService(
       adjustments = adjustments,
       chargeRemand = chargeRemand,
       intersectingSentences = sentenceRemandResult.intersectingSentences,
-      periodsServingSentenceUsingCRDS = sentenceRemandResult.periodsServingSentenceUsingCRDS,
       issuesWithLegacyData = remandCalculation.issuesWithLegacyData,
       remandCalculation = if (remandCalculationRequestOptions.includeRemandCalculation) remandCalculation else null,
     )

@@ -117,6 +117,17 @@
   "intersectingSentences": [
     {
       "from": "2019-04-16",
+      "to": "2020-11-11",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2019-04-16",
+        "bookingId": 1
+      },
+      "chargeId": 1,
+      "days": 133
+    },
+    {
+      "from": "2019-04-16",
       "to": "2022-09-12",
       "sentence": {
         "sequence": 1,
