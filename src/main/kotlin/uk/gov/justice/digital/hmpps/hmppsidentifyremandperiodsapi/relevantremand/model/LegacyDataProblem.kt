@@ -12,4 +12,5 @@ data class LegacyDataProblem(
   val courtCaseRef: String?,
 ) {
   constructor(type: LegacyDataProblemType, message: String, charge: PrisonApiCharge) : this(type, message, transform(charge), charge.bookingId, charge.bookNumber, charge.courtCaseRef)
+  constructor(type: LegacyDataProblemType, message: String, charge: Charge) : this(type, message, charge.offence, charge.bookingId, charge.bookNumber, charge.courtCaseRef)
 }
