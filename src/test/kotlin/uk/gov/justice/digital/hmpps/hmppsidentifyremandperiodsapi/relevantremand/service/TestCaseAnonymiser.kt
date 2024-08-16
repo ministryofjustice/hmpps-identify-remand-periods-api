@@ -8,8 +8,9 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 
 class TestCaseAnonymiser {
 
+//  @Test
   fun anonymise() {
-    val exampleName = "adjst-776-first-day-remand-wrong-bug"
+    val exampleName = "adjst-786-issue-with-calculations"
     log.info("Anonymising example $exampleName")
 
     val example = TestUtil.objectMapper()
@@ -59,6 +60,7 @@ class TestCaseAnonymiser {
       val calculation = Calculations(
         calculateAt = it.from,
         release = it.to,
+        service = it.service,
       )
 
       val existing =

@@ -9,6 +9,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentenceAndCharge
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentenceRemandLoopTracker
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentenceRemandResult
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.util.isAfterOrEqualTo
 
 @Service
 class SentenceRemandService(
@@ -46,7 +47,7 @@ class SentenceRemandService(
         if (loopTracker.shouldCloseCurrentPeriod(date, current)) {
           // Period being closed by another period
           val end = date.minusDays(1)
-          if (end.isAfter(current!!.from)) {
+          if (end.isAfterOrEqualTo(current!!.from)) {
             loopTracker.final.add(current.copy(to = end))
           }
           current = null

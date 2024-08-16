@@ -1,0 +1,405 @@
+{
+  "adjustments": [
+    {
+      "bookingId": 2,
+      "sentenceSequence": 1,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2016-12-05",
+      "fromDate": "2016-12-05",
+      "remand": {
+        "chargeId": [
+          5193181
+        ]
+      },
+      "status": "INACTIVE"
+    },
+    {
+      "bookingId": 2,
+      "sentenceSequence": 1,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2017-05-25",
+      "fromDate": "2017-01-03",
+      "remand": {
+        "chargeId": [
+          5193181,
+          3798843
+        ]
+      },
+      "status": "INACTIVE"
+    },
+    {
+      "bookingId": 2,
+      "sentenceSequence": 68,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2018-07-24",
+      "fromDate": "2018-07-24",
+      "remand": {
+        "chargeId": [
+          5190687,
+          5190688
+        ]
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "bookingId": 2,
+      "sentenceSequence": 68,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2018-12-18",
+      "fromDate": "2018-08-22",
+      "remand": {
+        "chargeId": [
+          5336287,
+          5190687,
+          5190688,
+          5406759
+        ]
+      },
+      "status": "ACTIVE"
+    }
+  ],
+  "chargeRemand": [
+    {
+      "from": "2018-07-24",
+      "to": "2018-12-18",
+      "fromEvent": {
+        "date": "2018-07-24",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2018-12-19",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        5190687
+      ],
+      "status": "APPLICABLE",
+      "days": 148
+    },
+    {
+      "from": "2018-11-13",
+      "to": "2018-12-18",
+      "fromEvent": {
+        "date": "2018-11-13",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2018-12-19",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        5336287
+      ],
+      "status": "APPLICABLE",
+      "days": 36
+    },
+    {
+      "from": "2018-07-24",
+      "to": "2018-12-18",
+      "fromEvent": {
+        "date": "2018-07-24",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2018-12-19",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        5190688
+      ],
+      "status": "SHARED",
+      "days": 148
+    },
+    {
+      "from": "2018-09-07",
+      "to": "2018-12-18",
+      "fromEvent": {
+        "date": "2018-09-07",
+        "description": "Commit to Crown Court for Sentence in Custody"
+      },
+      "toEvent": {
+        "date": "2018-12-19",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        5406759
+      ],
+      "status": "SHARED",
+      "days": 103
+    },
+    {
+      "from": "2016-12-05",
+      "to": "2017-05-25",
+      "fromEvent": {
+        "date": "2016-12-05",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2017-05-26",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        5193181
+      ],
+      "status": "INACTIVE",
+      "days": 172
+    },
+    {
+      "from": "2017-01-05",
+      "to": "2017-05-25",
+      "fromEvent": {
+        "date": "2017-01-05",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2017-05-26",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        3798843
+      ],
+      "status": "INACTIVE",
+      "days": 141
+    },
+    {
+      "from": "2021-02-24",
+      "to": "2021-03-23",
+      "fromEvent": {
+        "date": "2021-02-24",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2021-03-24",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        6236697
+      ],
+      "status": "INTERSECTED",
+      "days": 28
+    },
+    {
+      "from": "2023-04-18",
+      "to": "2023-10-12",
+      "fromEvent": {
+        "date": "2023-04-18",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2023-10-13",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7006243,
+        7006245,
+        7006259,
+        7006262,
+        7006263,
+        7006265,
+        7006266,
+        7006267,
+        7006268
+      ],
+      "status": "INTERSECTED",
+      "days": 178
+    },
+    {
+      "from": "2018-07-24",
+      "to": "2018-12-18",
+      "fromEvent": {
+        "date": "2018-07-24",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2018-12-19",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        5190689
+      ],
+      "status": "NOT_YET_SENTENCED",
+      "days": 148
+    },
+    {
+      "from": "2018-11-13",
+      "to": "2018-12-18",
+      "fromEvent": {
+        "date": "2018-11-13",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2018-12-19",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        5335597
+      ],
+      "status": "NOT_YET_SENTENCED",
+      "days": 36
+    },
+    {
+      "from": "2018-11-27",
+      "to": "2018-12-18",
+      "fromEvent": {
+        "date": "2018-11-27",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2018-12-19",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        5361241,
+        5361242,
+        5361243,
+        5361244,
+        5361245,
+        5361246
+      ],
+      "status": "NOT_YET_SENTENCED",
+      "days": 22
+    },
+    {
+      "from": "2023-04-18",
+      "to": "2023-10-12",
+      "fromEvent": {
+        "date": "2023-04-18",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2023-10-13",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7006244,
+        7006270,
+        7006271
+      ],
+      "status": "NOT_YET_SENTENCED",
+      "days": 178
+    },
+    {
+      "from": "2023-04-18",
+      "to": "2023-10-13",
+      "fromEvent": {
+        "date": "2023-04-18",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2023-10-13",
+        "description": "Lie on File"
+      },
+      "chargeIds": [
+        7006248
+      ],
+      "status": "NOT_YET_SENTENCED",
+      "days": 179
+    }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2016-12-06",
+      "to": "2017-01-02",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2014-08-04",
+        "recallDate": "2016-12-06",
+        "bookingId": 1
+      },
+      "chargeId": 3764759,
+      "service": "HISTORIC",
+      "days": 28
+    },
+    {
+      "from": "2017-05-26",
+      "to": "2018-05-04",
+      "sentence": {
+        "sequence": 4,
+        "sentenceDate": "2017-05-26",
+        "bookingId": 1
+      },
+      "chargeId": 3763311,
+      "service": "HISTORIC",
+      "days": 344
+    },
+    {
+      "from": "2018-07-25",
+      "to": "2018-08-21",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2017-05-26",
+        "recallDate": "2018-07-25",
+        "bookingId": 2
+      },
+      "chargeId": 5193181,
+      "service": "HISTORIC",
+      "days": 28
+    },
+    {
+      "from": "2018-12-19",
+      "to": "2022-06-26",
+      "sentence": {
+        "sequence": 67,
+        "sentenceDate": "2018-12-19",
+        "recallDate": "2023-03-10",
+        "bookingId": 2
+      },
+      "chargeId": 5336287,
+      "service": "HISTORIC",
+      "days": 1286
+    },
+    {
+      "from": "2021-03-24",
+      "to": "2022-06-26",
+      "sentence": {
+        "sequence": 89,
+        "sentenceDate": "2021-03-24",
+        "bookingId": 2
+      },
+      "chargeId": 6236697,
+      "service": "HISTORIC",
+      "days": 460
+    },
+    {
+      "from": "2023-03-10",
+      "to": "2027-04-13",
+      "sentence": {
+        "sequence": 67,
+        "sentenceDate": "2018-12-19",
+        "recallDate": "2023-03-10",
+        "bookingId": 2
+      },
+      "chargeId": 5336287,
+      "service": "HISTORIC",
+      "days": 1496
+    }
+  ],
+  "issuesWithLegacyData": [
+    {
+      "type": "RELEASE_DATE_CALCULATION",
+      "message": "Unable to calculate release date on 4 Aug 2014 within booking 1",
+      "offence": {
+        "code": "TH68036",
+        "statute": "TH68",
+        "description": "Burglary dwelling and theft  - no violence"
+      },
+      "bookingId": 1,
+      "bookNumber": "1"
+    },
+    {
+      "type": "RELEASE_DATE_CALCULATION",
+      "message": "Unable to calculate release date on 26 May 2017 within booking 2",
+      "offence": {
+        "code": "TH68036",
+        "statute": "TH68",
+        "description": "Burglary dwelling and theft  - no violence"
+      },
+      "bookingId": 2,
+      "bookNumber": "2"
+    }
+  ]
+}
