@@ -19,4 +19,5 @@ data class Sentences(
 data class Calculations(
   val calculateAt: LocalDate,
   val release: LocalDate,
+  val service: String = "HISTORIC",
 )

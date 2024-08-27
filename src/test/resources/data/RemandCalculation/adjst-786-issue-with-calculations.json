@@ -1,0 +1,2218 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "chargesAndEvents": [
+      {
+        "charge": {
+          "chargeId": 3763311,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2016-11-29",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 4,
+          "sentenceDate": "2017-05-26",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2016-12-05",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2017-03-23",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2017-01-03",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2017-03-01",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2017-05-08",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2017-05-26",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3764759,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2013-12-29",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 1,
+          "sentenceDate": "2014-08-04",
+          "resultDescription": "Recall to Prison"
+        },
+        "dates": [
+          {
+            "date": "2016-12-06",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3798843,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2016-11-30",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 5,
+          "sentenceDate": "2017-05-26",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2017-03-23",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2017-01-05",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2017-02-13",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2017-03-01",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2017-05-08",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2017-05-26",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5336287,
+          "offence": {
+            "code": "TH68023",
+            "statute": "TH68",
+            "description": "Robbery"
+          },
+          "offenceDate": "2018-07-14",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 67,
+          "sentenceDate": "2018-12-19",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-11-13",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-12-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2018-11-14",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2023-03-10",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5335597,
+          "offence": {
+            "code": "TH68026",
+            "statute": "TH68",
+            "description": "Burglary dwelling - with intent to steal"
+          },
+          "offenceDate": "2018-07-09",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-12-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2018-11-14",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-11-13",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5335598,
+          "offence": {
+            "code": "TH68026",
+            "statute": "TH68",
+            "description": "Burglary dwelling - with intent to steal"
+          },
+          "offenceDate": "2018-07-09",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-12-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2018-11-14",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-11-13",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5335599,
+          "offence": {
+            "code": "TH68026",
+            "statute": "TH68",
+            "description": "Burglary dwelling - with intent to steal"
+          },
+          "offenceDate": "2018-07-09",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-12-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2018-11-14",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-11-13",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5361241,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2018-07-07",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-11-27",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-12-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5361242,
+          "offence": {
+            "code": "TH68026",
+            "statute": "TH68",
+            "description": "Burglary dwelling - with intent to steal"
+          },
+          "offenceDate": "2018-07-10",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-11-27",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-12-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5361243,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2018-06-22",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-11-27",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-12-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5361244,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2018-07-13",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-11-27",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-12-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5361245,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2018-06-19",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-11-27",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-12-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5361246,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2018-07-20",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-11-27",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-12-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6236697,
+          "offence": {
+            "code": "COML016",
+            "statute": "COML",
+            "description": "Escape from lawful custody"
+          },
+          "offenceDate": "2021-02-18",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 89,
+          "sentenceDate": "2021-03-24",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2021-02-24",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-03-24",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5190687,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2018-06-25",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "offenceEndDate": "2018-06-27",
+          "sentenceSequence": 68,
+          "sentenceDate": "2018-12-19",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-07-24",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2018-08-20",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-12-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2018-09-07",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2018-10-16",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5190688,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2018-07-03",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "offenceEndDate": "2018-07-04",
+          "sentenceSequence": 75,
+          "sentenceDate": "2018-12-19",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-07-24",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2018-08-20",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-12-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2018-09-07",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2018-10-16",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5190689,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2018-07-21",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-07-24",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2018-08-20",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-12-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2018-09-07",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2018-10-16",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5193181,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2016-11-29",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 1,
+          "sentenceDate": "2017-05-26",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2017-05-26",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2018-07-25",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5406753,
+          "offence": {
+            "code": "FA06001B",
+            "statute": "FA06",
+            "description": "Aid / abet fraud by false representation"
+          },
+          "offenceDate": "2018-07-21",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Commit to Crown Court for Sentence in Custody",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-09-07",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5406754,
+          "offence": {
+            "code": "FA06001B",
+            "statute": "FA06",
+            "description": "Aid / abet fraud by false representation"
+          },
+          "offenceDate": "2018-07-21",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Commit to Crown Court for Sentence in Custody",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-09-07",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5406755,
+          "offence": {
+            "code": "FA06001B",
+            "statute": "FA06",
+            "description": "Aid / abet fraud by false representation"
+          },
+          "offenceDate": "2018-07-21",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Commit to Crown Court for Sentence in Custody",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-09-07",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5406758,
+          "offence": {
+            "code": "FA06001B",
+            "statute": "FA06",
+            "description": "Aid / abet fraud by false representation"
+          },
+          "offenceDate": "2017-07-21",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 82,
+          "sentenceDate": "2018-12-19",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-12-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5406759,
+          "offence": {
+            "code": "FA06001B",
+            "statute": "FA06",
+            "description": "Aid / abet fraud by false representation"
+          },
+          "offenceDate": "2018-07-21",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 82,
+          "sentenceDate": "2018-12-19",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-12-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5406760,
+          "offence": {
+            "code": "FA06001B",
+            "statute": "FA06",
+            "description": "Aid / abet fraud by false representation"
+          },
+          "offenceDate": "2018-07-21",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 82,
+          "sentenceDate": "2018-12-19",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-12-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5403487,
+          "offence": {
+            "code": "TH68001",
+            "statute": "TH68",
+            "description": "Theft from the person of another"
+          },
+          "offenceDate": "2018-07-07",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-12-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5403488,
+          "offence": {
+            "code": "TH68001",
+            "statute": "TH68",
+            "description": "Theft from the person of another"
+          },
+          "offenceDate": "2018-07-07",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-12-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5403489,
+          "offence": {
+            "code": "TH68001",
+            "statute": "TH68",
+            "description": "Theft from the person of another"
+          },
+          "offenceDate": "2018-06-19",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-12-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7006243,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2023-04-14",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 96,
+          "sentenceDate": "2023-10-13",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-09-18",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-10-13",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-08-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-18",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-05-16",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7006244,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2023-04-15",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-09-18",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-10-13",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-08-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-18",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-05-16",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7006245,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2023-04-15",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 96,
+          "sentenceDate": "2023-10-13",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-09-18",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-10-13",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-08-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-18",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-05-16",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7006248,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2023-04-14",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Lie on File",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-09-18",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-10-13",
+            "type": "STOP",
+            "description": "Lie on File"
+          },
+          {
+            "date": "2023-08-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-18",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-05-16",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7006249,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2023-04-14",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Lie on File",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-09-18",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-10-13",
+            "type": "STOP",
+            "description": "Lie on File"
+          },
+          {
+            "date": "2023-08-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-18",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-05-16",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7006257,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2023-04-14",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Lie on File",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-09-18",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-10-13",
+            "type": "STOP",
+            "description": "Lie on File"
+          },
+          {
+            "date": "2023-08-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-18",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-05-16",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7006258,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2023-04-15",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Lie on File",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-09-18",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-10-13",
+            "type": "STOP",
+            "description": "Lie on File"
+          },
+          {
+            "date": "2023-08-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-18",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-05-16",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7006259,
+          "offence": {
+            "code": "TH68013",
+            "statute": "TH68",
+            "description": "Theft of motor vehicle"
+          },
+          "offenceDate": "2023-04-15",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 110,
+          "sentenceDate": "2023-10-13",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-09-18",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-10-13",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-08-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-18",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-05-16",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7006260,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2023-04-15",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 96,
+          "sentenceDate": "2023-10-13",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-09-18",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-10-13",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-08-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-18",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-05-16",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7006261,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2023-04-15",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Lie on File",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-09-18",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-10-13",
+            "type": "STOP",
+            "description": "Lie on File"
+          },
+          {
+            "date": "2023-08-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-18",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-05-16",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7006262,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2023-04-12",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 96,
+          "sentenceDate": "2023-10-13",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-09-18",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-10-13",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-08-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-18",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-05-16",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7006263,
+          "offence": {
+            "code": "TH68013",
+            "statute": "TH68",
+            "description": "Theft of motor vehicle"
+          },
+          "offenceDate": "2023-04-12",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 110,
+          "sentenceDate": "2023-10-13",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-09-18",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-10-13",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-08-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-18",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-05-16",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7006264,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2023-04-15",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 96,
+          "sentenceDate": "2023-10-13",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-09-18",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-10-13",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-08-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-18",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-05-16",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7006265,
+          "offence": {
+            "code": "TH68026A",
+            "statute": "TH68",
+            "description": "Attempt burglary dwelling with intent to steal"
+          },
+          "offenceDate": "2023-04-14",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 103,
+          "sentenceDate": "2023-10-13",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-09-18",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-10-13",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-08-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-18",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-05-16",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7006266,
+          "offence": {
+            "code": "TH68026A",
+            "statute": "TH68",
+            "description": "Attempt burglary dwelling with intent to steal"
+          },
+          "offenceDate": "2023-04-15",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 103,
+          "sentenceDate": "2023-10-13",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-09-18",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-10-13",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-08-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-18",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-05-16",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7006267,
+          "offence": {
+            "code": "RT88333",
+            "statute": "RT88",
+            "description": "Drive whilst disqualified"
+          },
+          "offenceDate": "2023-04-12",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 117,
+          "sentenceDate": "2023-10-13",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-09-18",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-10-13",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-08-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-18",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-05-16",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7006268,
+          "offence": {
+            "code": "RT88333",
+            "statute": "RT88",
+            "description": "Drive whilst disqualified"
+          },
+          "offenceDate": "2023-04-15",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 117,
+          "sentenceDate": "2023-10-13",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-09-18",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-10-13",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-08-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-18",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-05-16",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7006269,
+          "offence": {
+            "code": "RT88333",
+            "statute": "RT88",
+            "description": "Drive whilst disqualified"
+          },
+          "offenceDate": "2023-04-15",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 117,
+          "sentenceDate": "2023-10-13",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-09-18",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-10-13",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-08-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-18",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-05-16",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7006270,
+          "offence": {
+            "code": "RA88001",
+            "statute": "RA88",
+            "description": "Use a motor vehicle on a road / public place without third party insurance"
+          },
+          "offenceDate": "2023-04-12",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-09-18",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-10-13",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-08-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-18",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-05-16",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7006271,
+          "offence": {
+            "code": "RA88001",
+            "statute": "RA88",
+            "description": "Use a motor vehicle on a road / public place without third party insurance"
+          },
+          "offenceDate": "2023-04-15",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-09-18",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-10-13",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-08-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-18",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-05-16",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7006272,
+          "offence": {
+            "code": "RA88001",
+            "statute": "RA88",
+            "description": "Use a motor vehicle on a road / public place without third party insurance"
+          },
+          "offenceDate": "2023-04-15",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-09-18",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-10-13",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-08-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-18",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-05-16",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7006273,
+          "offence": {
+            "code": "TH68026A",
+            "statute": "TH68",
+            "description": "Attempt burglary dwelling with intent to steal"
+          },
+          "offenceDate": "2023-04-15",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 103,
+          "sentenceDate": "2023-10-13",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-09-18",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-10-13",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-08-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-18",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-05-16",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7320136,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2023-02-14",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-01-08",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-02-05",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-03-21",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7320137,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2023-02-20",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-01-08",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-02-05",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-03-21",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7320138,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2023-03-02",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-01-08",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-02-05",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-03-21",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7320139,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2023-03-06",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-01-08",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-02-05",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-03-21",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7320140,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2023-03-07",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-01-08",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-02-05",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-03-21",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7320141,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2023-02-06",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-01-08",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-02-05",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-03-21",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      }
+    ],
+    "chargeIdsWithActiveSentence": [
+      5336287,
+      5190687,
+      5190688,
+      5406758,
+      5406759,
+      5406760,
+      6236697,
+      7006243,
+      7006245,
+      7006260,
+      7006262,
+      7006264,
+      7006265,
+      7006266,
+      7006273,
+      7006259,
+      7006263,
+      7006267,
+      7006268,
+      7006269
+    ]
+  },
+  "sentences": [
+    {
+      "bookingId": 1,
+      "sentenceSequence": 1,
+      "sentenceAt": "2014-08-04",
+      "recallDate": "2016-12-06",
+      "calculations": [
+        {
+          "calculateAt": "2016-12-06",
+          "release": "2017-01-02",
+          "service": "HISTORIC"
+        }
+      ]
+    },
+    {
+      "bookingId": 1,
+      "sentenceSequence": 4,
+      "sentenceAt": "2017-05-26",
+      "calculations": [
+        {
+          "calculateAt": "2017-05-26",
+          "release": "2018-05-04",
+          "service": "HISTORIC"
+        }
+      ]
+    },
+    {
+      "bookingId": 2,
+      "sentenceSequence": 1,
+      "sentenceAt": "2017-05-26",
+      "recallDate": "2018-07-25",
+      "calculations": [
+        {
+          "calculateAt": "2018-07-25",
+          "release": "2018-08-21",
+          "service": "HISTORIC"
+        }
+      ]
+    },
+    {
+      "bookingId": 2,
+      "sentenceSequence": 67,
+      "sentenceAt": "2018-12-19",
+      "recallDate": "2023-03-10",
+      "calculations": [
+        {
+          "calculateAt": "2018-12-19",
+          "release": "2022-06-26",
+          "service": "HISTORIC"
+        },
+        {
+          "calculateAt": "2023-03-10",
+          "release": "2027-04-13",
+          "service": "HISTORIC"
+        }
+      ]
+    },
+    {
+      "bookingId": 2,
+      "sentenceSequence": 89,
+      "sentenceAt": "2021-03-24",
+      "calculations": [
+        {
+          "calculateAt": "2021-03-24",
+          "release": "2022-06-26",
+          "service": "HISTORIC"
+        }
+      ]
+    }
+  ]
+}

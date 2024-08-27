@@ -1,5 +1,7 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model
 
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.util.isAfterOrEqualTo
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.util.isBeforeOrEqualTo
 import java.time.LocalDate
 import java.time.temporal.ChronoUnit
 
@@ -11,10 +13,10 @@ interface Period {
     return ChronoUnit.DAYS.between(from, to) + 1
   }
   fun overlapsEndInclusive(date: LocalDate): Boolean {
-    return date.isAfter(from) && (date.isBefore(to) || date == to)
+    return date.isAfter(from) && date.isBeforeOrEqualTo(to)
   }
   fun overlapsStartInclusive(date: LocalDate): Boolean {
-    return (date.isAfter(from) || date == from) && date.isBefore(to)
+    return date.isAfterOrEqualTo(from) && date.isBefore(to)
   }
 
   fun overlaps(period: Period): Boolean {
@@ -26,6 +28,6 @@ interface Period {
   }
 
   fun engulfs(period: Period): Boolean {
-    return (from.isBefore(period.from) || from == period.from) && (to.isAfter(period.to) || to == period.to)
+    return from.isBeforeOrEqualTo(period.from) && to.isAfterOrEqualTo(period.to)
   }
 }

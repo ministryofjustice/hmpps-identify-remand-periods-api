@@ -4,11 +4,14 @@ import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.service.CalculateReleaseDateService
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblem
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblemType
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentenceAndCharge
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentencePeriod
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentenceRemandLoopTracker
 import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 @Service
 class FindReleaseDateService(
@@ -26,7 +29,7 @@ class FindReleaseDateService(
   ) {
     val sentencesToCalculate = sentences.filter { it.sentence.sentenceDate == date || it.sentence.recallDate == date }.distinctBy { it.sentence.bookingId }
     loopTracker.periodsServingSentence.addAll(
-      sentencesToCalculate.map {
+      sentencesToCalculate.mapNotNull {
         this.findReleaseDate(date, it, loopTracker, remandCalculation)
       },
     )
@@ -37,26 +40,37 @@ class FindReleaseDateService(
     sentence: SentenceAndCharge,
     loopTracker: SentenceRemandLoopTracker,
     remandCalculation: RemandCalculation,
-  ): SentencePeriod {
+  ): SentencePeriod? {
     try {
       val release = getReleaseDateProvider(primaryReleaseDateService).findReleaseDate(remandCalculation.prisonerId, loopTracker.final, sentence.sentence, date, remandCalculation.charges)
       return SentencePeriod(date, release, sentence.sentence, sentence.charge.chargeId, primaryReleaseDateService, emptyList())
     } catch (e: UnsupportedCalculationException) {
-      val release = getReleaseDateProvider(secondaryReleaseDateService).findReleaseDate(
-        remandCalculation.prisonerId,
-        loopTracker.final,
-        sentence.sentence,
-        date,
-        remandCalculation.charges,
-      )
-      return SentencePeriod(
-        date,
-        release,
-        sentence.sentence,
-        sentence.charge.chargeId,
-        secondaryReleaseDateService,
-        listOf(e.message),
-      )
+      try {
+        val release = getReleaseDateProvider(secondaryReleaseDateService).findReleaseDate(
+          remandCalculation.prisonerId,
+          loopTracker.final,
+          sentence.sentence,
+          date,
+          remandCalculation.charges,
+        )
+        return SentencePeriod(
+          date,
+          release,
+          sentence.sentence,
+          sentence.charge.chargeId,
+          secondaryReleaseDateService,
+          listOf(e.message),
+        )
+      } catch (e: UnsupportedCalculationException) {
+        remandCalculation.issuesWithLegacyData.add(
+          LegacyDataProblem(
+            LegacyDataProblemType.RELEASE_DATE_CALCULATION,
+            "Unable to calculate release date on ${date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} within booking ${sentence.charge.bookNumber}",
+            sentence.charge,
+          ),
+        )
+        return null
+      }
     }
   }
 
