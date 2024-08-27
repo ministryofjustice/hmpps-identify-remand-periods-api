@@ -12,10 +12,10 @@ import org.slf4j.LoggerFactory
 import org.springframework.core.io.ClassPathResource
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.TestUtil
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.service.CalculateReleaseDateService
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculationRequestOptions
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandResult
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
-import java.time.LocalDate
 
 class RemandCalculationServiceTest {
   private val calculateReleaseDateService = mock<CalculateReleaseDateService>()
@@ -58,22 +58,61 @@ class RemandCalculationServiceTest {
   }
 
   private fun stubCalculations(exampleName: String, example: TestExample) {
-    whenever(calculateReleaseDateService.findReleaseDate(any(), any(), any(), any(), any())).thenReturn(LocalDate.now())
+    stubErrorCalculationsAsDefault()
     example.sentences.forEach { sentence ->
       sentence.calculations.forEach { calculation ->
         log.info("Stubbing release dates for $exampleName: $sentence $calculation")
-        whenever(
-          findHistoricReleaseDateService.findReleaseDate(
-            eq(example.remandCalculation.prisonerId),
-            any(),
-            eq(Sentence(sentence.sentenceSequence, sentence.sentenceAt, sentence.recallDate, sentence.bookingId)),
-            eq(calculation.calculateAt),
-            any(),
-          ),
-        ).thenAnswer {
-          calculation.release
+        if (calculation.service == "HISTORIC") {
+          whenever(
+            findHistoricReleaseDateService.findReleaseDate(
+              eq(example.remandCalculation.prisonerId),
+              any(),
+              eq(Sentence(sentence.sentenceSequence, sentence.sentenceAt, sentence.recallDate, sentence.bookingId)),
+              eq(calculation.calculateAt),
+              any(),
+            ),
+          ).thenAnswer {
+            calculation.release
+          }
+        } else {
+          whenever(
+            calculateReleaseDateService.findReleaseDate(
+              eq(example.remandCalculation.prisonerId),
+              any(),
+              eq(Sentence(sentence.sentenceSequence, sentence.sentenceAt, sentence.recallDate, sentence.bookingId)),
+              eq(calculation.calculateAt),
+              any(),
+            ),
+          ).thenAnswer {
+            calculation.release
+          }
         }
       }
+    }
+  }
+
+  private fun stubErrorCalculationsAsDefault() {
+    whenever(
+      findHistoricReleaseDateService.findReleaseDate(
+        any(),
+        any(),
+        any(),
+        any(),
+        any(),
+      ),
+    ).thenAnswer {
+      throw UnsupportedCalculationException("Historic calculation error!")
+    }
+    whenever(
+      calculateReleaseDateService.findReleaseDate(
+        any(),
+        any(),
+        any(),
+        any(),
+        any(),
+      ),
+    ).thenAnswer {
+      throw UnsupportedCalculationException("CRDS calculation error!")
     }
   }
 
