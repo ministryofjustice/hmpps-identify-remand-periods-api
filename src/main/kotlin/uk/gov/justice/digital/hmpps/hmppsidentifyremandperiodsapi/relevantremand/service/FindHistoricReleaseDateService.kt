@@ -20,10 +20,13 @@ class FindHistoricReleaseDateService(
       throw UnsupportedCalculationException("No calculations found for $prisonerId in booking ${sentence.bookingId}")
     }
 
-    var calculation = historicReleaseDates.first { it.calculationDate.isAfter(calculateAt.atStartOfDay()) }
+    var calculation = historicReleaseDates.firstOrNull { it.calculationDate.isAfter(calculateAt.atStartOfDay()) }
+    if (calculation == null) {
+      throw UnsupportedCalculationException("No calculations found for $prisonerId after sentence or recall date $calculateAt")
+    }
     var releaseDate = getReleaseDateForCalcId(calculation.offenderSentCalculationId)
     var lastCalculationBeforeRelease = historicReleaseDates.last { it.calculationDate.isBefore(releaseDate.atStartOfDay()) }
-    while (lastCalculationBeforeRelease.offenderSentCalculationId != calculation.offenderSentCalculationId) {
+    while (lastCalculationBeforeRelease.offenderSentCalculationId != calculation!!.offenderSentCalculationId) {
       calculation = lastCalculationBeforeRelease
       releaseDate = getReleaseDateForCalcId(calculation.offenderSentCalculationId)
       lastCalculationBeforeRelease = historicReleaseDates.last { it.calculationDate.isBefore(releaseDate.atStartOfDay()) }

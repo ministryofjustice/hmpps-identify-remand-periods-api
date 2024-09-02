@@ -1,0 +1,2444 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "chargesAndEvents": [
+      {
+        "charge": {
+          "chargeId": 3521248,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-03-17",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2016-03-31",
+          "sentenceSequence": 3,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2016-06-29",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2016-11-22",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2016-05-30",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2017-04-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3521249,
+          "offence": {
+            "code": "COML017",
+            "statute": "COML",
+            "description": "False imprisonment"
+          },
+          "offenceDate": "2016-03-17",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2016-05-24",
+          "sentenceSequence": 4,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2016-06-29",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2016-11-22",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2016-05-30",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2017-04-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3521255,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-04-01",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2016-05-24",
+          "sentenceSequence": 5,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2016-06-29",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2016-11-22",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2016-05-30",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2017-04-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3521256,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-05-24",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 6,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2016-06-29",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2016-11-22",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2016-05-30",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2017-04-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3521257,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "offenceDate": "2016-05-27",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 7,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2016-06-29",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2016-11-22",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2016-05-30",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2017-04-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3521274,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "offenceDate": "2016-05-27",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 8,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2016-06-29",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2016-11-22",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2016-05-30",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2017-04-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3521275,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-03-17",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2016-05-24",
+          "sentenceSequence": 9,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2016-06-29",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2016-11-22",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2016-05-30",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2017-04-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3521276,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-03-17",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2016-05-29",
+          "sentenceSequence": 10,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2016-06-29",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2016-11-22",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2016-05-30",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2017-04-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3521281,
+          "offence": {
+            "code": "CD71040",
+            "statute": "CD71",
+            "description": "Destroy / damage property of a value unknown"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 11,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2016-06-29",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2016-11-22",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2016-05-30",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2017-04-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3560779,
+          "offence": {
+            "code": "MD71530",
+            "statute": "MD71",
+            "description": "Possess a controlled drug of Class B - Cannabis / Cannabis Resin"
+          },
+          "offenceDate": "2016-03-16",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 2,
+          "sentenceDate": "2016-07-27",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2016-07-27",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-06-15",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2016-07-06",
+            "type": "START",
+            "description": "Committed to Crown Court for Sentence"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3560783,
+          "offence": {
+            "code": "MD71530",
+            "statute": "MD71",
+            "description": "Possess a controlled drug of Class B - Cannabis / Cannabis Resin"
+          },
+          "offenceDate": "2016-03-16",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Dismissed"
+        },
+        "dates": [
+          {
+            "date": "2016-07-27",
+            "type": "STOP",
+            "description": "Dismissed",
+            "final": true
+          },
+          {
+            "date": "2016-06-29",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3542301,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "offenceDate": "2016-03-16",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 1,
+          "sentenceDate": "2016-07-27",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2016-06-15",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2016-06-29",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2016-07-27",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-07-06",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3595759,
+          "offence": {
+            "code": "MD71530",
+            "statute": "MD71",
+            "description": "Possess a controlled drug of Class B - Cannabis / Cannabis Resin"
+          },
+          "offenceDate": "2015-09-05",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 2,
+          "sentenceDate": "2016-07-27",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2016-07-27",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3595760,
+          "offence": {
+            "code": "MD71574A",
+            "statute": "MD71",
+            "description": "Attempt to possess a controlled drug of Class B - Cathinone derivative"
+          },
+          "offenceDate": "2015-09-05",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 2,
+          "sentenceDate": "2016-07-27",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2016-07-27",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3941937,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 12,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3941938,
+          "offence": {
+            "code": "SX03007",
+            "statute": "SX03",
+            "description": "Sexual assault on a female"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 19,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3941939,
+          "offence": {
+            "code": "TH68001",
+            "statute": "TH68",
+            "description": "Theft from the person of another"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 26,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3941940,
+          "offence": {
+            "code": "PU86003",
+            "statute": "PU86",
+            "description": "Affray"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 33,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Imprisonment"
+        },
+        "dates": [
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7376530,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "offenceDate": "2024-02-15",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "No Evidence Offered - Dismissed",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-19",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-03-18",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-07-01",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-07-30",
+            "type": "STOP",
+            "description": "No Evidence Offered - Dismissed",
+            "final": true
+          },
+          {
+            "date": "2024-07-10",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-07-26",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-07-25",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7376531,
+          "offence": {
+            "code": "PH97006",
+            "statute": "PH97",
+            "description": "Stalking without fear / alarm / distress"
+          },
+          "offenceDate": "2024-02-15",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "offenceEndDate": "2024-02-18",
+          "resultDescription": "No Evidence Offered - Dismissed",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-19",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-03-18",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-07-01",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-07-30",
+            "type": "STOP",
+            "description": "No Evidence Offered - Dismissed",
+            "final": true
+          },
+          {
+            "date": "2024-07-10",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-07-26",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-07-25",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7376532,
+          "offence": {
+            "code": "SX03204",
+            "statute": "SX03",
+            "description": "Sex offenders register - fail comply with notification requirements - SOA 2003"
+          },
+          "offenceDate": "2023-11-13",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "offenceEndDate": "2024-02-16",
+          "sentenceSequence": 66,
+          "sentenceDate": "2024-07-30",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-19",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-03-18",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-07-01",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-07-30",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-07-10",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-07-26",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-07-25",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7591474,
+          "offence": {
+            "code": "SX03204",
+            "statute": "SX03",
+            "description": "Sex offenders register - fail comply with notification requirements - SOA 2003"
+          },
+          "offenceDate": "2024-02-13",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "offenceEndDate": "2024-02-16",
+          "resultDescription": "No Evidence Offered - Dismissed",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-07-30",
+            "type": "STOP",
+            "description": "No Evidence Offered - Dismissed",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378095,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-05-27",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-05-30",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378096,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-05-24",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-05-30",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378097,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-05-30",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378098,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-05-27",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-05-30",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378099,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-05-27",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-05-30",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378114,
+          "offence": {
+            "code": "COML017",
+            "statute": "COML",
+            "description": "False imprisonment"
+          },
+          "offenceDate": "2016-05-27",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-05-30",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378115,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-05-30",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378116,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-05-30",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378123,
+          "offence": {
+            "code": "CD71039",
+            "statute": "CD71",
+            "description": "Criminal damage to property valued under £5000"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-05-30",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378128,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-05-27",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-06-29",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378129,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-05-24",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-06-29",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378130,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-06-29",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378131,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-05-27",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-06-29",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378132,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-05-27",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-06-29",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378143,
+          "offence": {
+            "code": "COML017",
+            "statute": "COML",
+            "description": "False imprisonment"
+          },
+          "offenceDate": "2016-05-27",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-06-29",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378144,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-06-29",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378145,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-06-29",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378152,
+          "offence": {
+            "code": "CD71039",
+            "statute": "CD71",
+            "description": "Criminal damage to property valued under £5000"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-06-29",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378153,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-05-27",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-11-22",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378154,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-05-24",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-11-22",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378155,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-11-22",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378156,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-05-27",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-11-22",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378157,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-05-27",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-11-22",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378166,
+          "offence": {
+            "code": "COML017",
+            "statute": "COML",
+            "description": "False imprisonment"
+          },
+          "offenceDate": "2016-05-27",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-11-22",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378167,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-11-22",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378168,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-11-22",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378170,
+          "offence": {
+            "code": "CD71039",
+            "statute": "CD71",
+            "description": "Criminal damage to property valued under £5000"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2016-11-22",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378173,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-05-27",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2017-04-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378174,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-05-24",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2017-04-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378175,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2017-04-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378176,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-05-27",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2017-04-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378177,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-05-27",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2017-04-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378183,
+          "offence": {
+            "code": "COML017",
+            "statute": "COML",
+            "description": "False imprisonment"
+          },
+          "offenceDate": "2016-05-27",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2017-04-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378184,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2017-04-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378185,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2017-04-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378187,
+          "offence": {
+            "code": "CD71039",
+            "statute": "CD71",
+            "description": "Criminal damage to property valued under £5000"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2017-04-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378195,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-03-17",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "offenceEndDate": "2016-03-31",
+          "sentenceSequence": 1,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378196,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-04-01",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "offenceEndDate": "2016-05-24",
+          "sentenceSequence": 9,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378197,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-05-24",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 9,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378198,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-03-17",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "offenceEndDate": "2016-05-24",
+          "sentenceSequence": 16,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378199,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-03-17",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "offenceEndDate": "2016-05-29",
+          "sentenceSequence": 30,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378200,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 51,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378224,
+          "offence": {
+            "code": "COML017",
+            "statute": "COML",
+            "description": "False imprisonment"
+          },
+          "offenceDate": "2016-03-17",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "offenceEndDate": "2016-05-24",
+          "sentenceSequence": 2,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378225,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "offenceDate": "2016-05-27",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 23,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378226,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "offenceDate": "2016-05-27",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 23,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378227,
+          "offence": {
+            "code": "CD71039",
+            "statute": "CD71",
+            "description": "Criminal damage to property valued under £5000"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 37,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378231,
+          "offence": {
+            "code": "SX03007",
+            "statute": "SX03",
+            "description": "Sexual assault on a female"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 44,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378239,
+          "offence": {
+            "code": "TH68001",
+            "statute": "TH68",
+            "description": "Theft from the person of another"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 37,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378240,
+          "offence": {
+            "code": "PU86003",
+            "statute": "PU86",
+            "description": "Affray"
+          },
+          "offenceDate": "2016-05-28",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 58,
+          "sentenceDate": "2017-04-20",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2017-04-20",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      }
+    ],
+    "chargeIdsWithActiveSentence": [
+      7378195,
+      7378224,
+      7378196,
+      7378197,
+      7378198,
+      7378225,
+      7378226,
+      7378199,
+      7378227,
+      7378239,
+      7378231,
+      7378200,
+      7378240,
+      7376532
+    ]
+  },
+  "sentences": [
+    {
+      "bookingId": 1,
+      "sentenceSequence": 2,
+      "sentenceAt": "2016-07-27",
+      "calculations": [
+        {
+          "calculateAt": "2016-07-27",
+          "release": "2016-07-27",
+          "service": "CRDS"
+        }
+      ]
+    },
+    {
+      "bookingId": 1,
+      "sentenceSequence": 3,
+      "sentenceAt": "2017-04-20",
+      "calculations": [
+        {
+          "calculateAt": "2017-04-20",
+          "release": "2023-08-11",
+          "service": "HISTORIC"
+        }
+      ]
+    },
+    {
+      "bookingId": 2,
+      "sentenceSequence": 1,
+      "sentenceAt": "2017-04-20",
+      "recallDate": "2024-02-20",
+      "calculations": [
+        {
+          "calculateAt": "2017-04-20",
+          "release": "2021-11-11",
+          "service": "CRDS"
+        },
+        {
+          "calculateAt": "2024-02-20",
+          "release": "2026-07-10",
+          "service": "HISTORIC"
+        }
+      ]
+    }
+  ]
+}

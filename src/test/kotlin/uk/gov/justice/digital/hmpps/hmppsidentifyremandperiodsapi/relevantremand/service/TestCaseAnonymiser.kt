@@ -10,7 +10,7 @@ class TestCaseAnonymiser {
 
 //  @Test
   fun anonymise() {
-    val exampleName = "adjst-786-issue-with-calculations"
+    val exampleName = "adjst-786-issue-with-calculations-2"
     log.info("Anonymising example $exampleName")
 
     val example = TestUtil.objectMapper()
