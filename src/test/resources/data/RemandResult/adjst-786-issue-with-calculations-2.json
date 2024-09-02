@@ -1,0 +1,279 @@
+{
+  "adjustments": [
+    {
+      "bookingId": 2,
+      "sentenceSequence": 1,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2016-06-14",
+      "fromDate": "2016-05-30",
+      "remand": {
+        "chargeId": [
+          7378195,
+          7378224,
+          7378196,
+          7378197,
+          7378225,
+          7378198,
+          7378199,
+          3521281,
+          7378200,
+          7378227
+        ]
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "bookingId": 1,
+      "sentenceSequence": 2,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2016-07-26",
+      "fromDate": "2016-06-15",
+      "remand": {
+        "chargeId": [
+          7378195,
+          7378224,
+          7378196,
+          7378197,
+          7378225,
+          7378198,
+          7378199,
+          3521281,
+          3560779,
+          3542301,
+          7378200,
+          7378227
+        ]
+      },
+      "status": "INACTIVE"
+    },
+    {
+      "bookingId": 2,
+      "sentenceSequence": 1,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2017-04-19",
+      "fromDate": "2016-07-28",
+      "remand": {
+        "chargeId": [
+          7378195,
+          7378224,
+          7378196,
+          7378197,
+          7378225,
+          7378198,
+          7378199,
+          3521281,
+          7378200,
+          7378227
+        ]
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "bookingId": 2,
+      "sentenceSequence": 66,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2024-02-19",
+      "fromDate": "2024-02-19",
+      "remand": {
+        "chargeId": [
+          7376532
+        ]
+      },
+      "status": "ACTIVE"
+    }
+  ],
+  "chargeRemand": [
+    {
+      "from": "2016-05-30",
+      "to": "2017-04-19",
+      "fromEvent": {
+        "date": "2016-05-30",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2017-04-20",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7378195
+      ],
+      "status": "APPLICABLE",
+      "days": 325
+    },
+    {
+      "from": "2024-02-19",
+      "to": "2024-07-29",
+      "fromEvent": {
+        "date": "2024-02-19",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2024-07-30",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7376532
+      ],
+      "status": "APPLICABLE",
+      "days": 162
+    },
+    {
+      "from": "2016-05-30",
+      "to": "2017-04-19",
+      "fromEvent": {
+        "date": "2016-05-30",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2017-04-20",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7378224,
+        7378196,
+        7378197,
+        7378225,
+        7378198,
+        7378199,
+        7378200,
+        7378227
+      ],
+      "status": "SHARED",
+      "days": 325
+    },
+    {
+      "from": "2016-05-30",
+      "to": "2017-04-19",
+      "fromEvent": {
+        "date": "2016-05-30",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2017-04-20",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        3521281
+      ],
+      "status": "SHARED",
+      "days": 325
+    },
+    {
+      "from": "2016-06-15",
+      "to": "2016-07-26",
+      "fromEvent": {
+        "date": "2016-06-15",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2016-07-27",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        3560779,
+        3542301
+      ],
+      "status": "INACTIVE",
+      "days": 42
+    },
+    {
+      "from": "2016-05-30",
+      "to": "2024-02-19",
+      "fromEvent": {
+        "date": "2016-05-30",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2024-02-20",
+        "description": "Recall to Prison"
+      },
+      "chargeIds": [
+        7378095,
+        7378114,
+        7378115
+      ],
+      "status": "NOT_YET_SENTENCED",
+      "days": 2822
+    },
+    {
+      "from": "2024-02-19",
+      "to": "2024-07-30",
+      "fromEvent": {
+        "date": "2024-02-19",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2024-07-30",
+        "description": "No Evidence Offered - Dismissed"
+      },
+      "chargeIds": [
+        7376530,
+        7376531
+      ],
+      "status": "NOT_YET_SENTENCED",
+      "days": 163
+    }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2016-07-27",
+      "to": "2016-07-27",
+      "sentence": {
+        "sequence": 2,
+        "sentenceDate": "2016-07-27",
+        "bookingId": 1
+      },
+      "chargeId": 3560779,
+      "service": "CRDS",
+      "errors": [
+        "Historic calculation error!"
+      ],
+      "days": 1
+    },
+    {
+      "from": "2017-04-20",
+      "to": "2023-08-11",
+      "sentence": {
+        "sequence": 3,
+        "sentenceDate": "2017-04-20",
+        "bookingId": 1
+      },
+      "chargeId": 3521248,
+      "service": "HISTORIC",
+      "days": 2305
+    },
+    {
+      "from": "2017-04-20",
+      "to": "2021-11-11",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2017-04-20",
+        "recallDate": "2024-02-20",
+        "bookingId": 2
+      },
+      "chargeId": 7378195,
+      "service": "CRDS",
+      "errors": [
+        "Historic calculation error!"
+      ],
+      "days": 1667
+    },
+    {
+      "from": "2024-02-20",
+      "to": "2026-07-10",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2017-04-20",
+        "recallDate": "2024-02-20",
+        "bookingId": 2
+      },
+      "chargeId": 7378195,
+      "service": "HISTORIC",
+      "days": 872
+    }
+  ]
+}
