@@ -42,11 +42,11 @@ class FindReleaseDateService(
     remandCalculation: RemandCalculation,
   ): SentencePeriod? {
     try {
-      val release = getReleaseDateProvider(primaryReleaseDateService).findReleaseDate(remandCalculation.prisonerId, loopTracker.final, sentence.sentence, date, remandCalculation.charges)
-      return SentencePeriod(date, release, sentence.sentence, sentence.charge.chargeId, primaryReleaseDateService, emptyList())
+      val calculation = getReleaseDateProvider(primaryReleaseDateService).findReleaseDate(remandCalculation.prisonerId, loopTracker.final, sentence.sentence, date, remandCalculation.charges)
+      return SentencePeriod(date, calculation.releaseDate, sentence.sentence, sentence.charge.chargeId, primaryReleaseDateService, emptyList(), calculation.calculationIds)
     } catch (e: UnsupportedCalculationException) {
       try {
-        val release = getReleaseDateProvider(secondaryReleaseDateService).findReleaseDate(
+        val calculation = getReleaseDateProvider(secondaryReleaseDateService).findReleaseDate(
           remandCalculation.prisonerId,
           loopTracker.final,
           sentence.sentence,
@@ -55,11 +55,12 @@ class FindReleaseDateService(
         )
         return SentencePeriod(
           date,
-          release,
+          calculation.releaseDate,
           sentence.sentence,
           sentence.charge.chargeId,
           secondaryReleaseDateService,
           listOf(e.message),
+          calculation.calculationIds,
         )
       } catch (e: UnsupportedCalculationException) {
         remandCalculation.issuesWithLegacyData.add(

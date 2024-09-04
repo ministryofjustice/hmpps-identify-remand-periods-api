@@ -9,4 +9,5 @@ data class SentencePeriod(
   val chargeId: Long,
   val service: String = "HISTORIC",
   val errors: List<String> = emptyList(),
+  val calculationIds: List<Long> = emptyList(),
 ) : Period

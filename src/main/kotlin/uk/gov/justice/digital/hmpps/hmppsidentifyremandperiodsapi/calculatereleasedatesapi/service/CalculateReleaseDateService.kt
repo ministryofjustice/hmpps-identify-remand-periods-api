@@ -6,6 +6,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculaterelea
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.model.RelevantRemandCalculationResult
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.model.RelevantRemandReleaseDateCalculationRequest
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CalculationDetail
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Charge
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Remand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
@@ -17,7 +18,7 @@ class CalculateReleaseDateService(
   private val calculateReleaseDatesApiClient: CalculateReleaseDatesApiClient,
 ) : FindReleaseDateServiceProvider {
 
-  override fun findReleaseDate(prisonerId: String, remand: List<Remand>, sentence: Sentence, calculateAt: LocalDate, charges: Map<Long, Charge>): LocalDate {
+  override fun findReleaseDate(prisonerId: String, remand: List<Remand>, sentence: Sentence, calculateAt: LocalDate, charges: Map<Long, Charge>): CalculationDetail {
     val request = RelevantRemandReleaseDateCalculationRequest(
       remand.filter { charges[it.chargeId]!!.bookingId == sentence.bookingId }.map { RelevantRemand(it.from, it.to, it.days.toInt(), charges[it.chargeId]!!.sentenceSequence!!) },
       sentence,
@@ -42,12 +43,12 @@ class CalculateReleaseDateService(
       if (result.postRecallReleaseDate == null) {
         throw UnsupportedCalculationException("CRDS Calculation expected a recall release date, but was not found. $request")
       }
-      result.postRecallReleaseDate
+      CalculationDetail(result.postRecallReleaseDate)
     } else {
       if (result.releaseDate == null) {
         throw UnsupportedCalculationException("CRDS Calculation expected a release date, but was not found. $request")
       }
-      result.releaseDate
+      CalculationDetail(result.releaseDate)
     }
   }
 
