@@ -72,7 +72,7 @@ class TestCaseAnonymiser {
             it.sentence.bookingId,
             it.sentence.sequence,
             it.sentence.sentenceDate,
-            it.sentence.recallDate,
+            it.sentence.recallDates,
             mutableListOf(calculation),
           ),
         )

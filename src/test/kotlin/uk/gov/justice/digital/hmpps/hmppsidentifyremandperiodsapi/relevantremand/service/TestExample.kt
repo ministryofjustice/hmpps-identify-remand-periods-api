@@ -12,7 +12,7 @@ data class Sentences(
   val bookingId: Long,
   val sentenceSequence: Int,
   val sentenceAt: LocalDate,
-  val recallDate: LocalDate? = null,
+  val recallDates: List<LocalDate> = emptyList(),
   val calculations: MutableList<Calculations>,
 )
 

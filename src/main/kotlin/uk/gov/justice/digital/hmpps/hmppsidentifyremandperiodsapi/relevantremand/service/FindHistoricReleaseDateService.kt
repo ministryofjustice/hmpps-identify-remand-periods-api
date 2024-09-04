@@ -27,6 +27,10 @@ class FindHistoricReleaseDateService(
     if (calculation == null) {
       throw UnsupportedCalculationException("No calculations found for $prisonerId after sentence or recall date $calculateAt")
     }
+    if (calculation.calculationDate.toLocalDate().isAfter(calculateAt.plusWeeks(2))) {
+      // initial calculation happened more than two weeks after
+      throw UnsupportedCalculationException("The first calculation (${calculation.calculationDate}) is over two weeks after sentence/recall calculation date date $calculateAt.")
+    }
     val calculationIds = mutableListOf<Long>()
     var releaseDate = getReleaseDateForCalcId(calculation.offenderSentCalculationId, calculation.calculationDate, allCalculations, calculationIds)
     var lastCalculationBeforeRelease = historicReleaseDates.lastOrNull { it.calculationDate.isBefore(releaseDate.atStartOfDay()) }
@@ -46,7 +50,7 @@ class FindHistoricReleaseDateService(
     if (releaseDate.atStartOfDay().isBefore(lastCalculationBeforeRelease.calculationDate)) {
       throw UnsupportedCalculationException("Release date cannot be before calculation date")
     }
-    if (calculateAt == sentence.sentenceDate && sentence.recallDate != null && releaseDate.isAfter(sentence.recallDate)) {
+    if (calculateAt == sentence.sentenceDate && sentence.recallDates.isNotEmpty() && releaseDate.isAfter(sentence.recallDates.min())) {
       throw UnsupportedCalculationException("Standard release date cannot be after recall date")
     }
     return CalculationDetail(releaseDate, calculationIds.toList())

@@ -262,7 +262,7 @@
       "sentence": {
         "sequence": 39,
         "sentenceDate": "2021-12-15",
-        "recallDate": "2022-08-19",
+        "recallDates": ["2022-08-19"],
         "bookingId": 2
       },
       "chargeId": 6511958,
@@ -285,7 +285,7 @@
       "sentence": {
         "sequence": 39,
         "sentenceDate": "2021-12-15",
-        "recallDate": "2022-08-19",
+        "recallDates": ["2022-08-19"],
         "bookingId": 2
       },
       "chargeId": 6511958,

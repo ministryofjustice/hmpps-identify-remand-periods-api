@@ -894,7 +894,7 @@
       "bookingId": 2,
       "sentenceSequence": 39,
       "sentenceAt": "2021-12-15",
-      "recallDate": "2022-08-19",
+      "recallDates": ["2022-08-19"],
       "calculations": [
         {
           "calculateAt": "2021-12-15",

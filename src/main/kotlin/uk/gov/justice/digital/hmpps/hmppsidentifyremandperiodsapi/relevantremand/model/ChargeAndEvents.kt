@@ -3,4 +3,5 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantreman
 data class ChargeAndEvents(
   val charge: Charge,
   val dates: List<CourtDate>,
+  val combinedCharges: List<Charge> = emptyList(),
 )

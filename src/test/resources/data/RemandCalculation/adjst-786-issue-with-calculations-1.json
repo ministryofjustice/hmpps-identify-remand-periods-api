@@ -2150,7 +2150,7 @@
       "bookingId": 1,
       "sentenceSequence": 1,
       "sentenceAt": "2014-08-04",
-      "recallDate": "2016-12-06",
+      "recallDates": ["2016-12-06"],
       "calculations": [
         {
           "calculateAt": "2016-12-06",
@@ -2175,7 +2175,7 @@
       "bookingId": 2,
       "sentenceSequence": 1,
       "sentenceAt": "2017-05-26",
-      "recallDate": "2018-07-25",
+      "recallDates": ["2018-07-25"],
       "calculations": [
         {
           "calculateAt": "2018-07-25",
@@ -2188,7 +2188,7 @@
       "bookingId": 2,
       "sentenceSequence": 67,
       "sentenceAt": "2018-12-19",
-      "recallDate": "2023-03-10",
+      "recallDates": ["2023-03-10"],
       "calculations": [
         {
           "calculateAt": "2018-12-19",

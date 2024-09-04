@@ -2426,7 +2426,7 @@
       "bookingId": 2,
       "sentenceSequence": 1,
       "sentenceAt": "2017-04-20",
-      "recallDate": "2024-02-20",
+      "recallDates": ["2024-02-20"],
       "calculations": [
         {
           "calculateAt": "2017-04-20",

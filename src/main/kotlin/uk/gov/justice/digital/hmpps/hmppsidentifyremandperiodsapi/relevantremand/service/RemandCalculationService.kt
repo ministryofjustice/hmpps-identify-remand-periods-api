@@ -8,6 +8,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 
 @Service
 class RemandCalculationService(
+  private val chargeCombinationService: ChargeCombinationService,
   private val remandClockService: RemandClockService,
   private val sentenceRemandService: SentenceRemandService,
   private val remandAdjustmentService: RemandAdjustmentService,
@@ -20,7 +21,7 @@ class RemandCalculationService(
       throw UnsupportedCalculationException("There are no charges to calculate")
     }
 
-    var chargeRemand = remandClockService.getRemandedCharges(remandCalculation)
+    var chargeRemand = remandClockService.remandClock(chargeCombinationService.combineRelatedCharges(remandCalculation))
     val sentenceRemandResult = sentenceRemandService.extractSentenceRemand(remandCalculation, chargeRemand)
     val adjustments = remandAdjustmentService.getRemandedAdjustments(remandCalculation, sentenceRemandResult, chargeRemand)
 
