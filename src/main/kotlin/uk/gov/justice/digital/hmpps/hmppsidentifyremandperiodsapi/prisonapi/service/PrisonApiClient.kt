@@ -45,6 +45,7 @@ class PrisonApiClient(@Qualifier("prisonApiWebClient") private val webClient: We
   }
 
   fun getCalculationsForAPrisonerId(prisonerId: String): List<SentenceCalculationSummary> {
+    log.info("Requesting calculations for prisoner $prisonerId")
     return webClient.get()
       .uri { uriBuilder ->
         uriBuilder.path("/api/offender-dates/calculations/$prisonerId")
@@ -57,6 +58,7 @@ class PrisonApiClient(@Qualifier("prisonApiWebClient") private val webClient: We
   }
 
   fun getNOMISOffenderKeyDates(offenderSentCalcId: Long): OffenderKeyDates {
+    log.info("Requesting calculation key dates for $offenderSentCalcId")
     return webClient.get()
       .uri { uriBuilder ->
         uriBuilder.path("/api/offender-dates/sentence-calculation/$offenderSentCalcId")
@@ -68,7 +70,7 @@ class PrisonApiClient(@Qualifier("prisonApiWebClient") private val webClient: We
   }
 
   fun getSentencesAndOffences(bookingId: Long): List<SentenceAndOffences> {
-    log.info("Requesting sentence terms for bookingId $bookingId")
+    log.info("Requesting sentences and offences for bookingId $bookingId")
     return webClient.get()
       .uri("/api/offender-sentences/booking/$bookingId/sentences-and-offences")
       .retrieve()
