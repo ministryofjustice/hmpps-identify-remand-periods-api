@@ -19,6 +19,10 @@ class CalculateReleaseDateService(
 ) : FindReleaseDateServiceProvider {
 
   override fun findReleaseDate(prisonerId: String, remand: List<Remand>, sentence: Sentence, calculateAt: LocalDate, charges: Map<Long, Charge>): CalculationDetail {
+    if (sentence.recallDates.size > 1 && sentence.recallDates.dropLast(1).any { it == calculateAt }) {
+      throw UnsupportedCalculationException("CRDS cannot calculate can only calculate the most recent recall date. Not previous FTRs")
+    }
+
     val request = RelevantRemandReleaseDateCalculationRequest(
       remand.filter { charges[it.chargeId]!!.bookingId == sentence.bookingId }.map { RelevantRemand(it.from, it.to, it.days.toInt(), charges[it.chargeId]!!.sentenceSequence!!) },
       sentence,
@@ -39,7 +43,7 @@ class CalculateReleaseDateService(
         }",
       )
     }
-    return if (sentence.recallDate == calculateAt) {
+    return if (sentence.recallDates.lastOrNull() == calculateAt) {
       if (result.postRecallReleaseDate == null) {
         throw UnsupportedCalculationException("CRDS Calculation expected a recall release date, but was not found. $request")
       }

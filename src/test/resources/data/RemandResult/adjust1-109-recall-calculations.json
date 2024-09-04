@@ -79,7 +79,7 @@
       "sentence": {
         "sequence": 11,
         "sentenceDate": "2022-08-17",
-        "recallDate": "2023-05-18",
+        "recallDates": ["2023-05-18"],
         "bookingId": 1
       },
       "chargeId": 3,

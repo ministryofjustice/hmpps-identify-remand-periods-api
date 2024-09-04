@@ -27,7 +27,7 @@ class FindReleaseDateService(
     loopTracker: SentenceRemandLoopTracker,
     remandCalculation: RemandCalculation,
   ) {
-    val sentencesToCalculate = sentences.filter { it.sentence.sentenceDate == date || it.sentence.recallDate == date }.distinctBy { it.sentence.bookingId }
+    val sentencesToCalculate = sentences.filter { it.sentence.sentenceDate == date || it.sentence.recallDates.any { recallDate -> recallDate == date } }.distinctBy { it.sentence.bookingId }
     loopTracker.periodsServingSentence.addAll(
       sentencesToCalculate.mapNotNull {
         this.findReleaseDate(date, it, loopTracker, remandCalculation)

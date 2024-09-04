@@ -47,7 +47,7 @@ class SentenceRemandLoopTracker(
     periods = entry.value.map { Remand(it.from, it.to, it.onlyChargeId()) }
     open = mutableListOf()
     future = periods.toMutableList()
-    importantDates = ((periods + final).map { listOfNotNull(it.from, it.to, this.charges[it.chargeId]!!.sentenceDate) }.flatten() + listOfNotNull(entry.key) + periodsServingSentence.flatMap { listOf(it.from, it.to) } + sentences.mapNotNull { it.sentence.recallDate }).distinct().sorted()
+    importantDates = ((periods + final).map { listOfNotNull(it.from, it.to, this.charges[it.chargeId]!!.sentenceDate) }.flatten() + listOfNotNull(entry.key) + periodsServingSentence.flatMap { listOf(it.from, it.to) } + sentences.flatMap { it.sentence.recallDates }).distinct().sorted()
   }
 
   /* Each date check if any periods are now closed or now open and pick which period is next. */
@@ -71,6 +71,6 @@ class SentenceRemandLoopTracker(
 
   /* If we've reached a sentence period then calculate the release dates for it. */
   fun shouldCalculateAReleaseDate(date: LocalDate): Boolean {
-    return sentences.any { it.sentence.sentenceDate == date || it.sentence.recallDate == date } && sentences.maxOf { it.sentence.sentenceDate } != date && periodsServingSentence.none { it.from == date } && allPeriods.any { it.to.isAfter(date) }
+    return sentences.any { it.sentence.sentenceDate == date || it.sentence.recallDates.any { recallDate -> recallDate == date } } && sentences.maxOf { it.sentence.sentenceDate } != date && periodsServingSentence.none { it.from == date } && allPeriods.any { it.to.isAfter(date) }
   }
 }

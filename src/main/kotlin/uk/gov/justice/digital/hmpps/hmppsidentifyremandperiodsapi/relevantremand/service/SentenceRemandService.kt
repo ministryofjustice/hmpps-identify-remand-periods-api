@@ -19,7 +19,10 @@ class SentenceRemandService(
   fun extractSentenceRemand(remandCalculation: RemandCalculation, remandPeriods: List<ChargeRemand>): SentenceRemandResult {
     val sentences = remandCalculation.chargesAndEvents
       .filter { it.charge.sentenceDate != null && it.charge.sentenceSequence != null }
-      .map { SentenceAndCharge(Sentence(it.charge.sentenceSequence!!, it.charge.sentenceDate!!, it.dates.find { date -> date.isRecallEvent }?.date, it.charge.bookingId), it.charge) }
+      .flatMap {
+        val charges = (it.combinedCharges + it.charge).distinctBy { charge -> charge.bookingId }
+        charges.map { charge -> SentenceAndCharge(Sentence(charge.sentenceSequence!!, charge.sentenceDate!!, it.dates.filter { date -> date.isRecallEvent }.map { date -> date.date }.sorted(), charge.bookingId), it.charge) }
+      }
     val loopTracker = SentenceRemandLoopTracker(remandCalculation.charges, remandPeriods, sentences)
     for (entry in loopTracker.sentenceDateToPeriodMap.entries.sortedBy { it.key }) {
       loopTracker.startNewSentenceDateLoop(entry)

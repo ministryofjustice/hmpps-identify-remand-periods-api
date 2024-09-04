@@ -5,6 +5,6 @@ import java.time.LocalDate
 data class Sentence(
   val sequence: Int,
   val sentenceDate: LocalDate,
-  val recallDate: LocalDate?,
+  val recallDates: List<LocalDate> = emptyList(),
   val bookingId: Long,
 )

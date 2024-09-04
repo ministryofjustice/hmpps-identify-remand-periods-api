@@ -256,7 +256,7 @@
     "bookingId": 1,
     "sentenceSequence": 11,
     "sentenceAt": "2022-08-17",
-    "recallDate": "2023-05-18",
+    "recallDates": ["2023-05-18"],
     "calculations": [
       {
         "calculateAt": "2023-05-18",

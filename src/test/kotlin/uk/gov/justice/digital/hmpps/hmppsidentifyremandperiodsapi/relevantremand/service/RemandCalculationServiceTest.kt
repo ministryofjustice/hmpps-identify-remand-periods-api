@@ -28,7 +28,8 @@ class RemandCalculationServiceTest {
   private val chargeRemandStatusService = ChargeRemandStatusService()
   private val resultSortingService = ResultSortingService()
   private val mergeChargeRemandService = MergeChargeRemandService()
-  private val remandCalculationService = RemandCalculationService(remandClockService, sentenceRemandService, remandAdjustmentService, chargeRemandStatusService, resultSortingService, mergeChargeRemandService)
+  private val chargeCombinationService = ChargeCombinationService()
+  private val remandCalculationService = RemandCalculationService(chargeCombinationService, remandClockService, sentenceRemandService, remandAdjustmentService, chargeRemandStatusService, resultSortingService, mergeChargeRemandService)
 
   @ParameterizedTest
   @CsvFileSource(resources = ["/data/tests.csv"], numLinesToSkip = 1)
@@ -68,7 +69,7 @@ class RemandCalculationServiceTest {
             findHistoricReleaseDateService.findReleaseDate(
               eq(example.remandCalculation.prisonerId),
               any(),
-              eq(Sentence(sentence.sentenceSequence, sentence.sentenceAt, sentence.recallDate, sentence.bookingId)),
+              eq(Sentence(sentence.sentenceSequence, sentence.sentenceAt, sentence.recallDates, sentence.bookingId)),
               eq(calculation.calculateAt),
               any(),
             ),
@@ -80,7 +81,7 @@ class RemandCalculationServiceTest {
             calculateReleaseDateService.findReleaseDate(
               eq(example.remandCalculation.prisonerId),
               any(),
-              eq(Sentence(sentence.sentenceSequence, sentence.sentenceAt, sentence.recallDate, sentence.bookingId)),
+              eq(Sentence(sentence.sentenceSequence, sentence.sentenceAt, sentence.recallDates, sentence.bookingId)),
               eq(calculation.calculateAt),
               any(),
             ),

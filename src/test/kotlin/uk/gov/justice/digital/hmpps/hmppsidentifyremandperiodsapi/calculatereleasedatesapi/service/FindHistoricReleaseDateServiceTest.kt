@@ -23,7 +23,7 @@ class FindHistoricReleaseDateServiceTest {
   private val bookingId = 1L
   private val sentenceDate = LocalDate.of(2020, 1, 1)
   private val recallDate = LocalDate.of(2022, 1, 1)
-  private val sentence = Sentence(1, sentenceDate, recallDate, bookingId)
+  private val sentence = Sentence(1, sentenceDate, listOf(recallDate), bookingId)
 
   @Test
   fun `Successfully retrieve release date`() {
@@ -111,5 +111,18 @@ class FindHistoricReleaseDateServiceTest {
 
     assertThat(release.releaseDate).isEqualTo(expectedReleaseDate)
     assertThat(release.calculationIds).isEqualTo(listOf(1L, 2L))
+  }
+
+  @Test
+  fun `First calculation date is much later than release date`() {
+    val calculateAt = sentenceDate
+    val sentenceCalcId = 1L
+    val actualCalculationTime = sentenceDate.atStartOfDay().plusYears(1)
+    val calculations = listOf(SentenceCalculationSummary(bookingId, sentenceCalcId, actualCalculationTime))
+    whenever(apiClient.getCalculationsForAPrisonerId(prisonerId)).thenReturn(calculations)
+
+    val exception = assertThrows<UnsupportedCalculationException> { service.findReleaseDate(prisonerId, emptyList(), sentence, calculateAt, emptyMap()) }
+
+    assertThat(exception.message).isEqualTo("The first calculation (2021-01-01T00:00) is over two weeks after sentence/recall calculation date date 2020-01-01.")
   }
 }
