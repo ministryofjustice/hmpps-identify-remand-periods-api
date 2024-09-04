@@ -4,18 +4,21 @@ import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.SentenceCalculationSummary
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.service.PrisonApiClient
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CalculationDetail
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Charge
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Remand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
 import java.time.LocalDate
+import java.time.LocalDateTime
 
 @Service
 class FindHistoricReleaseDateService(
   private val prisonApiClient: PrisonApiClient,
 ) : FindReleaseDateServiceProvider {
 
-  override fun findReleaseDate(prisonerId: String, remand: List<Remand>, sentence: Sentence, calculateAt: LocalDate, charges: Map<Long, Charge>): LocalDate {
-    val historicReleaseDates = collapseByLastCalculationOfTheDay(prisonApiClient.getCalculationsForAPrisonerId(prisonerId).sortedBy { it.calculationDate }, sentence)
+  override fun findReleaseDate(prisonerId: String, remand: List<Remand>, sentence: Sentence, calculateAt: LocalDate, charges: Map<Long, Charge>): CalculationDetail {
+    val allCalculations = prisonApiClient.getCalculationsForAPrisonerId(prisonerId).sortedBy { it.calculationDate }
+    val historicReleaseDates = collapseByLastCalculationOfTheDay(allCalculations, sentence)
     if (historicReleaseDates.isEmpty()) {
       throw UnsupportedCalculationException("No calculations found for $prisonerId in booking ${sentence.bookingId}")
     }
@@ -24,11 +27,20 @@ class FindHistoricReleaseDateService(
     if (calculation == null) {
       throw UnsupportedCalculationException("No calculations found for $prisonerId after sentence or recall date $calculateAt")
     }
-    var releaseDate = getReleaseDateForCalcId(calculation.offenderSentCalculationId)
-    var lastCalculationBeforeRelease = historicReleaseDates.last { it.calculationDate.isBefore(releaseDate.atStartOfDay()) }
-    while (lastCalculationBeforeRelease.offenderSentCalculationId != calculation!!.offenderSentCalculationId) {
+    val calculationIds = mutableListOf<Long>()
+    var releaseDate = getReleaseDateForCalcId(calculation.offenderSentCalculationId, calculation.calculationDate, allCalculations, calculationIds)
+    var lastCalculationBeforeRelease = historicReleaseDates.lastOrNull { it.calculationDate.isBefore(releaseDate.atStartOfDay()) }
+    if (lastCalculationBeforeRelease == null) {
+      throw UnsupportedCalculationException("No calculations found for $prisonerId before initial release date of $releaseDate")
+    }
+    while (lastCalculationBeforeRelease!!.offenderSentCalculationId != calculation!!.offenderSentCalculationId) {
       calculation = lastCalculationBeforeRelease
-      releaseDate = getReleaseDateForCalcId(calculation.offenderSentCalculationId)
+      releaseDate = getReleaseDateForCalcId(
+        calculation.offenderSentCalculationId,
+        calculation.calculationDate,
+        allCalculations,
+        calculationIds,
+      )
       lastCalculationBeforeRelease = historicReleaseDates.last { it.calculationDate.isBefore(releaseDate.atStartOfDay()) }
     }
     if (releaseDate.atStartOfDay().isBefore(lastCalculationBeforeRelease.calculationDate)) {
@@ -37,7 +49,7 @@ class FindHistoricReleaseDateService(
     if (calculateAt == sentence.sentenceDate && sentence.recallDate != null && releaseDate.isAfter(sentence.recallDate)) {
       throw UnsupportedCalculationException("Standard release date cannot be after recall date")
     }
-    return releaseDate
+    return CalculationDetail(releaseDate, calculationIds.toList())
   }
 
   /*
@@ -52,16 +64,36 @@ class FindHistoricReleaseDateService(
       .groupBy { it.calculationDate.toLocalDate() }.values.map { list -> list.maxBy { it.calculationDate } }
   }
 
-  private fun getReleaseDateForCalcId(offenderSentCalcId: Long): LocalDate {
+  private fun getReleaseDateForCalcId(
+    offenderSentCalcId: Long,
+    calculationDate: LocalDateTime,
+    allCalculations: List<SentenceCalculationSummary>,
+    calcluationIds: MutableList<Long>,
+  ): LocalDate {
     val calcDates = prisonApiClient.getNOMISOffenderKeyDates(offenderSentCalcId)
-    val releaseDates = listOfNotNull(calcDates.conditionalReleaseDate, calcDates.automaticReleaseDate, calcDates.postRecallReleaseDate, calcDates.midTermDate)
+    calcluationIds.add(offenderSentCalcId)
+    val releaseDates = listOfNotNull(
+      calcDates.conditionalReleaseDate,
+      calcDates.automaticReleaseDate,
+      calcDates.postRecallReleaseDate,
+      calcDates.midTermDate,
+    )
 
     val latestRelease = releaseDates.maxOrNull()
-
-    if (latestRelease == null) {
-      throw UnsupportedCalculationException("Unable to find release date from calculation $offenderSentCalcId")
-    } else {
+    if (latestRelease != null) {
       return latestRelease
     }
+
+    // Release Date is blank. Seems to be a NOMIS bug, look at previous calculations for a non blank
+    val latestPreviousCalculation = allCalculations.filter { it.calculationDate.toLocalDate() == calculationDate.toLocalDate() && it.offenderSentCalculationId != offenderSentCalcId }
+    if (latestPreviousCalculation.isNotEmpty()) {
+      return getReleaseDateForCalcId(
+        latestPreviousCalculation.last().offenderSentCalculationId,
+        calculationDate,
+        latestPreviousCalculation,
+        calcluationIds,
+      )
+    }
+    throw UnsupportedCalculationException("Unable to find release date from calculations $calcluationIds")
   }
 }

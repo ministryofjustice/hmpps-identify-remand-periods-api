@@ -13,6 +13,7 @@ import org.springframework.core.io.ClassPathResource
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.TestUtil
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.service.CalculateReleaseDateService
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CalculationDetail
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculationRequestOptions
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandResult
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
@@ -72,7 +73,7 @@ class RemandCalculationServiceTest {
               any(),
             ),
           ).thenAnswer {
-            calculation.release
+            CalculationDetail(calculation.release)
           }
         } else {
           whenever(
@@ -84,7 +85,7 @@ class RemandCalculationServiceTest {
               any(),
             ),
           ).thenAnswer {
-            calculation.release
+            CalculationDetail(calculation.release)
           }
         }
       }

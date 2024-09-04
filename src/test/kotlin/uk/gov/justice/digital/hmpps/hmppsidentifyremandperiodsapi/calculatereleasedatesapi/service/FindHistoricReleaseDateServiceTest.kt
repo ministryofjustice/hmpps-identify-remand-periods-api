@@ -38,7 +38,8 @@ class FindHistoricReleaseDateServiceTest {
 
     val release = service.findReleaseDate(prisonerId, emptyList(), sentence, calculateAt, emptyMap())
 
-    assertThat(release).isEqualTo(expectedReleaseDate)
+    assertThat(release.releaseDate).isEqualTo(expectedReleaseDate)
+    assertThat(release.calculationIds).isEqualTo(listOf(sentenceCalcId))
   }
 
   @Test
@@ -70,7 +71,7 @@ class FindHistoricReleaseDateServiceTest {
 
     val exception = assertThrows<UnsupportedCalculationException> { service.findReleaseDate(prisonerId, emptyList(), sentence, calculateAt, emptyMap()) }
 
-    assertThat(exception.message).isEqualTo("Unable to find release date from calculation 1")
+    assertThat(exception.message).isEqualTo("Unable to find release date from calculations [1]")
   }
 
   @Test
@@ -89,5 +90,26 @@ class FindHistoricReleaseDateServiceTest {
     }
 
     assertThat(exception.message).isEqualTo("No calculations found for ABC123 in booking 1")
+  }
+
+  @Test
+  fun `Successfully retrieve release date when there are NOMIS blank release dates`() {
+    val expectedReleaseDate = sentenceDate.plusYears(1)
+    val calculateAt = sentenceDate
+    val blankSentenceCalcId = 1L
+    val expectedSentenceCalcId = 2L
+    val blankCalculationTime = sentenceDate.atStartOfDay().plusHours(10).plusDays(5)
+    val expectedCalculationTime = blankCalculationTime.minusMinutes(2)
+    val calculations = listOf(SentenceCalculationSummary(bookingId, blankSentenceCalcId, blankCalculationTime), SentenceCalculationSummary(bookingId, expectedSentenceCalcId, expectedCalculationTime))
+    val blankCalculation = OffenderKeyDates(prisonerId, blankCalculationTime)
+    val expectedCalculation = OffenderKeyDates(prisonerId, expectedCalculationTime, conditionalReleaseDate = expectedReleaseDate)
+    whenever(apiClient.getCalculationsForAPrisonerId(prisonerId)).thenReturn(calculations)
+    whenever(apiClient.getNOMISOffenderKeyDates(blankSentenceCalcId)).thenReturn(blankCalculation)
+    whenever(apiClient.getNOMISOffenderKeyDates(expectedSentenceCalcId)).thenReturn(expectedCalculation)
+
+    val release = service.findReleaseDate(prisonerId, emptyList(), sentence, calculateAt, emptyMap())
+
+    assertThat(release.releaseDate).isEqualTo(expectedReleaseDate)
+    assertThat(release.calculationIds).isEqualTo(listOf(1L, 2L))
   }
 }
