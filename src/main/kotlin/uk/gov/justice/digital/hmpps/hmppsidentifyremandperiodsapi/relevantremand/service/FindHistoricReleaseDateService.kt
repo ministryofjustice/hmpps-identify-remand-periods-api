@@ -47,8 +47,12 @@ class FindHistoricReleaseDateService(
         calculationIds,
         calculateAt,
       )
-//      lastCalculationBeforeRelease = historicReleaseDates.last { it.calculationDate.toLocalDate().isBeforeOrEqualTo(releaseDate) }
-       lastCalculationBeforeRelease = historicReleaseDates.last { it.calculationDate.isBefore(releaseDate.atStartOfDay()) }    }
+      // On appeal the release is before the calculation date. (Okay as long as its after calculateAt)
+      if (releaseDate.isBeforeOrEqualTo(calculation.calculationDate.toLocalDate())) {
+        break
+      }
+      lastCalculationBeforeRelease = historicReleaseDates.last { it.calculationDate.toLocalDate().isBeforeOrEqualTo(releaseDate) }
+    }
     if (calculateAt == sentence.sentenceDate && sentence.recallDates.isNotEmpty() && releaseDate.isAfter(sentence.recallDates.min())) {
       throw UnsupportedCalculationException("Standard release date cannot be after recall date")
     }

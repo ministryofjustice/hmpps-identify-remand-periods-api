@@ -166,14 +166,14 @@ class FindHistoricReleaseDateServiceTest {
       SentenceCalculationSummary(bookingId, 2, LocalDate.of(2020, 9, 23).atStartOfDay()),
     )
     val calculationOne = OffenderKeyDates(prisonerId, LocalDate.of(2019, 12, 4).atStartOfDay(), conditionalReleaseDate = LocalDate.of(2020, 11, 21))
-    val calculationTwo = OffenderKeyDates(prisonerId, LocalDate.of(2020, 9, 23).atStartOfDay(), conditionalReleaseDate = LocalDate.of(2021, 9, 23))
+    val calculationTwo = OffenderKeyDates(prisonerId, LocalDate.of(2020, 9, 23).atStartOfDay(), conditionalReleaseDate = LocalDate.of(2020, 9, 23))
     whenever(apiClient.getCalculationsForAPrisonerId(prisonerId)).thenReturn(calculations)
     whenever(apiClient.getNOMISOffenderKeyDates(1)).thenReturn(calculationOne)
     whenever(apiClient.getNOMISOffenderKeyDates(2)).thenReturn(calculationTwo)
 
     val release = service.findReleaseDate(prisonerId, emptyList(), sentence, LocalDate.of(2019, 12, 1), emptyMap())
 
-    assertThat(release.releaseDate).isEqualTo(LocalDate.of(2021, 9, 23))
+    assertThat(release.releaseDate).isEqualTo(LocalDate.of(2020, 9, 23))
     assertThat(release.calculationIds).isEqualTo(listOf(1L, 2L))
   }
 }
