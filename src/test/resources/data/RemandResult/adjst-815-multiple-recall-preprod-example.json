@@ -1,0 +1,270 @@
+{
+  "adjustments": [
+    {
+      "bookingId": 1,
+      "sentenceSequence": 1,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2018-03-08",
+      "fromDate": "2018-02-09",
+      "remand": {
+        "chargeId": [
+          6293183,
+          6293184,
+          6293187
+        ]
+      },
+      "status": "INACTIVE"
+    },
+    {
+      "bookingId": 1,
+      "sentenceSequence": 7,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2021-04-27",
+      "fromDate": "2021-04-24",
+      "remand": {
+        "chargeId": [
+          6289503
+        ]
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "bookingId": 1,
+      "sentenceSequence": 7,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2021-06-01",
+      "fromDate": "2021-05-26",
+      "remand": {
+        "chargeId": [
+          6289503
+        ]
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "bookingId": 1,
+      "sentenceSequence": 7,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2021-10-26",
+      "fromDate": "2021-06-12",
+      "remand": {
+        "chargeId": [
+          6289503
+        ]
+      },
+      "status": "ACTIVE"
+    }
+  ],
+  "chargeRemand": [
+    {
+      "from": "2021-04-24",
+      "to": "2021-10-26",
+      "fromEvent": {
+        "date": "2021-04-24",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2021-10-27",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        6289503
+      ],
+      "status": "APPLICABLE",
+      "days": 186
+    },
+    {
+      "from": "2018-02-07",
+      "to": "2018-03-08",
+      "fromEvent": {
+        "date": "2018-02-07",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2018-03-09",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        6293183,
+        6293184,
+        6293187
+      ],
+      "status": "INACTIVE",
+      "days": 30
+    },
+    {
+      "from": "2018-02-07",
+      "to": "2018-03-09",
+      "fromEvent": {
+        "date": "2018-02-07",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2018-03-09",
+        "description": "Lie on File"
+      },
+      "chargeIds": [
+        4982379
+      ],
+      "status": "NOT_YET_SENTENCED",
+      "days": 31
+    }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2016-08-12",
+      "to": "2017-12-22",
+      "sentence": {
+        "sequence": 6,
+        "sentenceDate": "2016-08-12",
+        "recallDates": [
+          "2018-01-12"
+        ],
+        "bookingId": 2
+      },
+      "chargeId": 3553641,
+      "service": "HISTORIC",
+      "days": 498
+    },
+    {
+      "from": "2018-01-12",
+      "to": "2018-02-08",
+      "sentence": {
+        "sequence": 6,
+        "sentenceDate": "2016-08-12",
+        "recallDates": [
+          "2018-01-12"
+        ],
+        "bookingId": 2
+      },
+      "chargeId": 3553641,
+      "service": "HISTORIC",
+      "days": 28
+    },
+    {
+      "from": "2018-03-09",
+      "to": "2019-10-10",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2018-03-09",
+        "recallDates": [
+          "2020-10-24",
+          "2021-01-25",
+          "2021-04-28"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 6293183,
+      "service": "CRDS",
+      "errors": [
+        "Historic calculation error!"
+      ],
+      "days": 581
+    },
+    {
+      "from": "2018-03-09",
+      "to": "2019-10-10",
+      "sentence": {
+        "sequence": 16,
+        "sentenceDate": "2018-03-09",
+        "recallDates": [
+          "2020-10-24",
+          "2021-01-25"
+        ],
+        "bookingId": 2
+      },
+      "chargeId": 4982380,
+      "service": "HISTORIC",
+      "days": 581
+    },
+    {
+      "from": "2020-10-24",
+      "to": "2020-11-20",
+      "sentence": {
+        "sequence": 16,
+        "sentenceDate": "2018-03-09",
+        "recallDates": [
+          "2020-10-24",
+          "2021-01-25"
+        ],
+        "bookingId": 2
+      },
+      "chargeId": 4982380,
+      "service": "HISTORIC",
+      "days": 28
+    },
+    {
+      "from": "2021-01-25",
+      "to": "2021-02-21",
+      "sentence": {
+        "sequence": 16,
+        "sentenceDate": "2018-03-09",
+        "recallDates": [
+          "2020-10-24",
+          "2021-01-25"
+        ],
+        "bookingId": 2
+      },
+      "chargeId": 4982380,
+      "service": "HISTORIC",
+      "days": 28
+    },
+    {
+      "from": "2021-04-28",
+      "to": "2021-05-25",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2018-03-09",
+        "recallDates": [
+          "2020-10-24",
+          "2021-01-25",
+          "2021-04-28"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 6293183,
+      "service": "HISTORIC",
+      "days": 28
+    },
+    {
+      "from": "2021-06-02",
+      "to": "2021-06-11",
+      "sentence": {
+        "sequence": 2,
+        "sentenceDate": "2021-06-02",
+        "bookingId": 1
+      },
+      "chargeId": 6326435,
+      "service": "HISTORIC",
+      "days": 10
+    }
+  ],
+  "issuesWithLegacyData": [
+    {
+      "type": "RELEASE_DATE_CALCULATION",
+      "message": "Unable to calculate release date on 24 Oct 2020 within booking 1",
+      "offence": {
+        "code": "TH68036",
+        "statute": "TH68",
+        "description": "Burglary dwelling and theft  - no violence"
+      },
+      "bookingId": 1,
+      "bookNumber": "1"
+    },
+    {
+      "type": "RELEASE_DATE_CALCULATION",
+      "message": "Unable to calculate release date on 25 Jan 2021 within booking 1",
+      "offence": {
+        "code": "TH68036",
+        "statute": "TH68",
+        "description": "Burglary dwelling and theft  - no violence"
+      },
+      "bookingId": 1,
+      "bookNumber": "1"
+    }
+  ]
+}

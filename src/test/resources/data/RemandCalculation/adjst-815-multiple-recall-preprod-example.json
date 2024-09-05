@@ -1,0 +1,683 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "chargesAndEvents": [
+      {
+        "charge": {
+          "chargeId": 6326435,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2020-03-26",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 2,
+          "sentenceDate": "2021-06-02",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2021-06-02",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6293183,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2018-01-10",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 1,
+          "sentenceDate": "2018-03-09",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-03-09",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2020-10-24",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2021-01-25",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2021-04-28",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6293184,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2018-01-07",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 1,
+          "sentenceDate": "2018-03-09",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-03-09",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2020-10-24",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2021-01-25",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2021-04-28",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6293185,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2018-01-10",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 1,
+          "sentenceDate": "2018-03-09",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-03-09",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2020-10-24",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2021-01-25",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2021-04-28",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6293187,
+          "offence": {
+            "code": "TH68026A",
+            "statute": "TH68",
+            "description": "Attempt burglary dwelling with intent to steal"
+          },
+          "offenceDate": "2018-01-07",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 1,
+          "sentenceDate": "2018-03-09",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-03-09",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2020-10-24",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2021-01-25",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2021-04-28",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6289503,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2021-04-07",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 7,
+          "sentenceDate": "2021-10-27",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2021-08-25",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-10-12",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-10-27",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2021-10-26",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-09-08",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-10-25",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-04-24",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-05-24",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-04-06",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-11-08",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3553641,
+          "offence": {
+            "code": "TH68026A",
+            "statute": "TH68",
+            "description": "Attempt burglary dwelling with intent to steal"
+          },
+          "offenceDate": "2016-06-19",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 6,
+          "sentenceDate": "2016-08-12",
+          "resultDescription": "Recall to Prison"
+        },
+        "dates": [
+          {
+            "date": "2018-01-12",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3553642,
+          "offence": {
+            "code": "MD71022A",
+            "statute": "MD71",
+            "description": "Attempting to possess controlled drug - Class C"
+          },
+          "offenceDate": "2016-06-22",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 7,
+          "sentenceDate": "2016-08-12",
+          "resultDescription": "Recall to Prison"
+        },
+        "dates": [
+          {
+            "date": "2018-01-12",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3553643,
+          "offence": {
+            "code": "TH68037",
+            "statute": "TH68",
+            "description": "Burglary other than dwelling - theft"
+          },
+          "offenceDate": "2016-06-19",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 8,
+          "sentenceDate": "2016-08-12",
+          "resultDescription": "Recall to Prison"
+        },
+        "dates": [
+          {
+            "date": "2018-01-12",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4982379,
+          "offence": {
+            "code": "CJ88001",
+            "statute": "CJ88",
+            "description": "Common assault"
+          },
+          "offenceDate": "2018-01-07",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Lie on File"
+        },
+        "dates": [
+          {
+            "date": "2018-02-07",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-03-09",
+            "type": "STOP",
+            "description": "Lie on File"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4982380,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2018-01-10",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 16,
+          "sentenceDate": "2018-03-09",
+          "resultDescription": "Recall to Prison"
+        },
+        "dates": [
+          {
+            "date": "2021-01-25",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2020-10-24",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2018-02-07",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-03-09",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4982381,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2018-01-07",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 16,
+          "sentenceDate": "2018-03-09",
+          "resultDescription": "Recall to Prison"
+        },
+        "dates": [
+          {
+            "date": "2021-01-25",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2020-10-24",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2018-02-07",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-03-09",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4982382,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft  - no violence"
+          },
+          "offenceDate": "2018-01-10",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 16,
+          "sentenceDate": "2018-03-09",
+          "resultDescription": "Recall to Prison"
+        },
+        "dates": [
+          {
+            "date": "2021-01-25",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2020-10-24",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2018-02-07",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-03-09",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4982383,
+          "offence": {
+            "code": "TH68026A",
+            "statute": "TH68",
+            "description": "Attempt burglary dwelling with intent to steal"
+          },
+          "offenceDate": "2018-01-07",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 16,
+          "sentenceDate": "2018-03-09",
+          "resultDescription": "Recall to Prison"
+        },
+        "dates": [
+          {
+            "date": "2021-01-25",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2020-10-24",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2018-02-07",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-03-09",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      }
+    ],
+    "chargeIdsWithActiveSentence": [
+      6289503
+    ]
+  },
+  "sentences": [
+    {
+      "bookingId": 2,
+      "sentenceSequence": 6,
+      "sentenceAt": "2016-08-12",
+      "recallDates": [
+        "2018-01-12"
+      ],
+      "calculations": [
+        {
+          "calculateAt": "2016-08-12",
+          "release": "2017-12-22",
+          "service": "HISTORIC"
+        },
+        {
+          "calculateAt": "2018-01-12",
+          "release": "2018-02-08",
+          "service": "HISTORIC"
+        }
+      ]
+    },
+    {
+      "bookingId": 1,
+      "sentenceSequence": 1,
+      "sentenceAt": "2018-03-09",
+      "recallDates": [
+        "2020-10-24",
+        "2021-01-25",
+        "2021-04-28"
+      ],
+      "calculations": [
+        {
+          "calculateAt": "2018-03-09",
+          "release": "2019-10-10",
+          "service": "CRDS"
+        },
+        {
+          "calculateAt": "2021-04-28",
+          "release": "2021-05-25",
+          "service": "HISTORIC"
+        }
+      ]
+    },
+    {
+      "bookingId": 2,
+      "sentenceSequence": 16,
+      "sentenceAt": "2018-03-09",
+      "recallDates": [
+        "2020-10-24",
+        "2021-01-25"
+      ],
+      "calculations": [
+        {
+          "calculateAt": "2018-03-09",
+          "release": "2019-10-10",
+          "service": "HISTORIC"
+        },
+        {
+          "calculateAt": "2020-10-24",
+          "release": "2020-11-20",
+          "service": "HISTORIC"
+        },
+        {
+          "calculateAt": "2021-01-25",
+          "release": "2021-02-21",
+          "service": "HISTORIC"
+        }
+      ]
+    },
+    {
+      "bookingId": 1,
+      "sentenceSequence": 2,
+      "sentenceAt": "2021-06-02",
+      "calculations": [
+        {
+          "calculateAt": "2021-06-02",
+          "release": "2021-06-11",
+          "service": "HISTORIC"
+        }
+      ]
+    }
+  ]
+}
