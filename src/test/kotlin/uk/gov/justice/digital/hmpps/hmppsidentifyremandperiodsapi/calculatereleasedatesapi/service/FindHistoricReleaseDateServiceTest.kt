@@ -125,4 +125,55 @@ class FindHistoricReleaseDateServiceTest {
 
     assertThat(exception.message).isEqualTo("The first calculation (2021-01-01T00:00) is over two weeks after sentence/recall calculation date date 2020-01-01.")
   }
+
+  @Test
+  fun `Preprod example where appeal made release before calculation date`() {
+    val calculations = listOf(
+      SentenceCalculationSummary(bookingId, 1, LocalDate.of(2021, 6, 3).atStartOfDay()),
+      SentenceCalculationSummary(bookingId, 2, LocalDate.of(2021, 6, 14).atStartOfDay()),
+    )
+    val calculationOne = OffenderKeyDates(prisonerId, LocalDate.of(2021, 6, 3).atStartOfDay(), conditionalReleaseDate = LocalDate.of(2021, 8, 31))
+    val calculationTwo = OffenderKeyDates(prisonerId, LocalDate.of(2021, 6, 14).atStartOfDay(), conditionalReleaseDate = LocalDate.of(2021, 6, 11))
+    whenever(apiClient.getCalculationsForAPrisonerId(prisonerId)).thenReturn(calculations)
+    whenever(apiClient.getNOMISOffenderKeyDates(1)).thenReturn(calculationOne)
+    whenever(apiClient.getNOMISOffenderKeyDates(2)).thenReturn(calculationTwo)
+
+    val release = service.findReleaseDate(prisonerId, emptyList(), sentence, LocalDate.of(2021, 6, 2), emptyMap())
+
+    assertThat(release.releaseDate).isEqualTo(LocalDate.of(2021, 6, 11))
+    assertThat(release.calculationIds).isEqualTo(listOf(1L, 2L))
+  }
+
+  @Test
+  fun `Release date is before calculate at`() {
+    val calculateAt = sentenceDate
+    val sentenceCalcId = 1L
+    val actualCalculationTime = sentenceDate.atStartOfDay().plusDays(5)
+    val calculations = listOf(SentenceCalculationSummary(bookingId, sentenceCalcId, actualCalculationTime))
+    val calculation = OffenderKeyDates(prisonerId, actualCalculationTime, conditionalReleaseDate = calculateAt.minusDays(2))
+    whenever(apiClient.getCalculationsForAPrisonerId(prisonerId)).thenReturn(calculations)
+    whenever(apiClient.getNOMISOffenderKeyDates(sentenceCalcId)).thenReturn(calculation)
+
+    val exception = assertThrows<UnsupportedCalculationException> { service.findReleaseDate(prisonerId, emptyList(), sentence, calculateAt, emptyMap()) }
+
+    assertThat(exception.message).isEqualTo("The release date is before the calculation date.")
+  }
+
+  @Test
+  fun `Release is same day as calculation`() {
+    val calculations = listOf(
+      SentenceCalculationSummary(bookingId, 1, LocalDate.of(2019, 12, 4).atStartOfDay()),
+      SentenceCalculationSummary(bookingId, 2, LocalDate.of(2020, 9, 23).atStartOfDay()),
+    )
+    val calculationOne = OffenderKeyDates(prisonerId, LocalDate.of(2019, 12, 4).atStartOfDay(), conditionalReleaseDate = LocalDate.of(2020, 11, 21))
+    val calculationTwo = OffenderKeyDates(prisonerId, LocalDate.of(2020, 9, 23).atStartOfDay(), conditionalReleaseDate = LocalDate.of(2021, 9, 23))
+    whenever(apiClient.getCalculationsForAPrisonerId(prisonerId)).thenReturn(calculations)
+    whenever(apiClient.getNOMISOffenderKeyDates(1)).thenReturn(calculationOne)
+    whenever(apiClient.getNOMISOffenderKeyDates(2)).thenReturn(calculationTwo)
+
+    val release = service.findReleaseDate(prisonerId, emptyList(), sentence, LocalDate.of(2019, 12, 1), emptyMap())
+
+    assertThat(release.releaseDate).isEqualTo(LocalDate.of(2021, 9, 23))
+    assertThat(release.calculationIds).isEqualTo(listOf(1L, 2L))
+  }
 }
