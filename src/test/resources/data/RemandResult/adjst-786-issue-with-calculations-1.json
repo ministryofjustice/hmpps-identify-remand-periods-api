@@ -388,7 +388,8 @@
         "description": "Burglary dwelling and theft  - no violence"
       },
       "bookingId": 1,
-      "bookNumber": "1"
+      "bookNumber": "1",
+      "developerMessage": "uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException: Historic calculation error!\nuk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException: CRDS calculation error!"
     },
     {
       "type": "RELEASE_DATE_CALCULATION",
@@ -399,7 +400,8 @@
         "description": "Burglary dwelling and theft  - no violence"
       },
       "bookingId": 2,
-      "bookNumber": "2"
+      "bookNumber": "2",
+      "developerMessage": "uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException: Historic calculation error!\nuk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException: CRDS calculation error!"
     }
   ]
 }

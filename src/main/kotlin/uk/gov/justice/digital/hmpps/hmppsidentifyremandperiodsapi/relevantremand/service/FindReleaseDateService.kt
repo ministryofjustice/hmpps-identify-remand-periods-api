@@ -44,7 +44,7 @@ class FindReleaseDateService(
     try {
       val calculation = getReleaseDateProvider(primaryReleaseDateService).findReleaseDate(remandCalculation.prisonerId, loopTracker.final, sentence.sentence, date, remandCalculation.charges)
       return SentencePeriod(date, calculation.releaseDate, sentence.sentence, sentence.charge.chargeId, primaryReleaseDateService, emptyList(), calculation.calculationIds)
-    } catch (e: UnsupportedCalculationException) {
+    } catch (primaryError: UnsupportedCalculationException) {
       try {
         val calculation = getReleaseDateProvider(secondaryReleaseDateService).findReleaseDate(
           remandCalculation.prisonerId,
@@ -59,15 +59,17 @@ class FindReleaseDateService(
           sentence.sentence,
           sentence.charge.chargeId,
           secondaryReleaseDateService,
-          listOf(e.message),
+          listOf(primaryError.message),
           calculation.calculationIds,
         )
-      } catch (e: UnsupportedCalculationException) {
+      } catch (secondaryError: UnsupportedCalculationException) {
         remandCalculation.issuesWithLegacyData.add(
           LegacyDataProblem(
             LegacyDataProblemType.RELEASE_DATE_CALCULATION,
             "Unable to calculate release date on ${date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} within booking ${sentence.charge.bookNumber}",
             sentence.charge,
+            "${primaryError}\n$secondaryError",
+
           ),
         )
         return null
