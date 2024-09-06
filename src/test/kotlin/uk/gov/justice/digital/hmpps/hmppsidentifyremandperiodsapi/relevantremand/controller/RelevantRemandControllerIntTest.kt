@@ -166,7 +166,12 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
       .accept(MediaType.APPLICATION_JSON)
       .headers(setAuthorisationRemandToolUser())
       .exchange()
-      .expectStatus().isOk
+      .expectStatus().isEqualTo(HttpStatus.UNPROCESSABLE_ENTITY)
+      .expectHeader().contentType(MediaType.APPLICATION_JSON)
+      .expectBody(ErrorResponse::class.java)
+      .returnResult().responseBody!!
+
+    assertThat(result.userMessage).contains("Unable to calculation release dates on 2021-02-01")
   }
 
   @Test
