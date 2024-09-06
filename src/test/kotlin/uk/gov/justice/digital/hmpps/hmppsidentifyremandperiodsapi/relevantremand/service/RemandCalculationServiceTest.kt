@@ -1,7 +1,6 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.service
 
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvFileSource
 import org.mockito.kotlin.any
@@ -45,7 +44,8 @@ class RemandCalculationServiceTest {
       remandResult = remandCalculationService.calculate(example.remandCalculation, RemandCalculationRequestOptions())
     } catch (e: Exception) {
       if (!error.isNullOrEmpty()) {
-        Assertions.assertEquals(error, e.javaClass.simpleName)
+        assertThat(e.javaClass.simpleName).contains(error.split("(").first())
+        assertThat(e.message).contains(error.split("(")[1])
         return
       } else {
         throw e

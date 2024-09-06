@@ -1,0 +1,257 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "chargesAndEvents": [
+      {
+        "charge": {
+          "chargeId": 5269037,
+          "offence": {
+            "code": "SX03220",
+            "statute": "SX03",
+            "description": "Breach SHPO / interim SHPO / SOPO / interim SOPO / foreign travel order"
+          },
+          "offenceDate": "2018-08-29",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2018-09-21",
+          "sentenceSequence": 5,
+          "sentenceDate": "2018-10-26",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-09-24",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2018-10-26",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2019-08-09",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5269038,
+          "offence": {
+            "code": "SX03222",
+            "statute": "SX03",
+            "description": "Breach a sexual risk order / risk of sexual harm order etc"
+          },
+          "offenceDate": "2018-09-01",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2018-09-21",
+          "sentenceSequence": 5,
+          "sentenceDate": "2018-10-26",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-09-24",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2018-10-26",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2019-08-09",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6800931,
+          "offence": {
+            "code": "SX03204",
+            "statute": "SX03",
+            "description": "Sex offenders register - fail comply with notification requirements - SOA 2003"
+          },
+          "offenceDate": "2019-08-13",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Discharged",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-11-25",
+            "type": "STOP",
+            "description": "Discharged",
+            "final": true
+          },
+          {
+            "date": "2022-10-06",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6800932,
+          "offence": {
+            "code": "SX03220",
+            "statute": "SX03",
+            "description": "Breach SHPO / interim SHPO / SOPO / interim SOPO / foreign travel order"
+          },
+          "offenceDate": "2019-08-11",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2021-12-14",
+          "sentenceSequence": 9,
+          "sentenceDate": "2022-11-25",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-11-25",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2022-10-06",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2024-03-15",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6800933,
+          "offence": {
+            "code": "SX03204",
+            "statute": "SX03",
+            "description": "Sex offenders register - fail comply with notification requirements - SOA 2003"
+          },
+          "offenceDate": "2021-08-09",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 8,
+          "sentenceDate": "2022-11-25",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-11-25",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2022-10-06",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2024-03-15",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6800934,
+          "offence": {
+            "code": "SX03204",
+            "statute": "SX03",
+            "description": "Sex offenders register - fail comply with notification requirements - SOA 2003"
+          },
+          "offenceDate": "2020-08-09",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 8,
+          "sentenceDate": "2022-11-25",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-11-25",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2022-10-06",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2024-03-15",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      }
+    ],
+    "chargeIdsWithActiveSentence": [
+      6800933,
+      6800934,
+      6800932
+    ]
+  },
+  "sentences": [
+    {
+      "bookingId": 1,
+      "sentenceSequence": 5,
+      "sentenceAt": "2018-10-26",
+      "recallDates": [
+        "2019-08-09"
+      ],
+      "calculations": [
+        {
+          "calculateAt": "2018-10-26",
+          "release": "2019-08-08",
+          "service": "HISTORIC"
+        }
+      ]
+    }
+  ]
+}
