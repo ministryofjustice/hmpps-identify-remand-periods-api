@@ -123,7 +123,7 @@ class FindHistoricReleaseDateServiceTest {
 
     val exception = assertThrows<UnsupportedCalculationException> { service.findReleaseDate(prisonerId, emptyList(), sentence, calculateAt, emptyMap()) }
 
-    assertThat(exception.message).isEqualTo("The first calculation (2021-01-01T00:00) is over two weeks after sentence/recall calculation date date 2020-01-01.")
+    assertThat(exception.message).isEqualTo("The first calculation (2021-01-01T00:00) is over three weeks after sentence/recall calculation date date 2020-01-01.")
   }
 
   @Test
