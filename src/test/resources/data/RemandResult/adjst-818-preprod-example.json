@@ -1,0 +1,127 @@
+{
+  "adjustments": [
+    {
+      "bookingId": 1,
+      "sentenceSequence": 24,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2023-05-01",
+      "fromDate": "2022-10-11",
+      "remand": {
+        "chargeId": [
+          6968427,
+          6968429,
+          6968439,
+          6803533,
+          6803534,
+          6803542,
+          6813064,
+          6813065,
+          6813066,
+          6813073,
+          6813080,
+          6813081,
+          6813084,
+          6813090
+        ]
+      },
+      "status": "ACTIVE"
+    }
+  ],
+  "chargeRemand": [
+    {
+      "from": "2023-03-14",
+      "to": "2023-05-01",
+      "fromEvent": {
+        "date": "2023-03-14",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2023-05-02",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        6968427
+      ],
+      "status": "APPLICABLE",
+      "days": 49
+    },
+    {
+      "from": "2022-10-11",
+      "to": "2023-05-01",
+      "fromEvent": {
+        "date": "2022-10-11",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2023-05-02",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        6803533,
+        6803534,
+        6803542
+      ],
+      "status": "SHARED",
+      "days": 203
+    },
+    {
+      "from": "2022-10-19",
+      "to": "2023-05-01",
+      "fromEvent": {
+        "date": "2022-10-19",
+        "description": "Guilty"
+      },
+      "toEvent": {
+        "date": "2023-05-02",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        6813064,
+        6813065,
+        6813066,
+        6813073,
+        6813080
+      ],
+      "status": "SHARED",
+      "days": 195
+    },
+    {
+      "from": "2022-10-19",
+      "to": "2023-12-26",
+      "fromEvent": {
+        "date": "2022-10-19",
+        "description": "Guilty"
+      },
+      "toEvent": {
+        "date": "2023-12-27",
+        "description": "Recall to Prison"
+      },
+      "chargeIds": [
+        6813081,
+        6813084,
+        6813090
+      ],
+      "status": "SHARED",
+      "days": 434
+    },
+    {
+      "from": "2023-03-14",
+      "to": "2023-05-01",
+      "fromEvent": {
+        "date": "2023-03-14",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2023-05-02",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        6968429,
+        6968439
+      ],
+      "status": "SHARED",
+      "days": 49
+    }
+  ]
+}

@@ -1,0 +1,1128 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "chargesAndEvents": [
+      {
+        "charge": {
+          "chargeId": 6968427,
+          "offence": {
+            "code": "CJ09001",
+            "statute": "CJ09",
+            "description": "Possess a prohibited image of a child"
+          },
+          "offenceDate": "2019-08-31",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2022-10-03",
+          "sentenceSequence": 3,
+          "sentenceDate": "2023-05-02",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-05-02",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-04-13",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-03-14",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-12-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6968429,
+          "offence": {
+            "code": "CJ08004",
+            "statute": "CJ08",
+            "description": "Possess extreme pornographic image / images portraying an act of intercourse / oral sex with a dead / alive animal"
+          },
+          "offenceDate": "2019-08-31",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2022-10-03",
+          "sentenceSequence": 3,
+          "sentenceDate": "2023-05-02",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-05-02",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-04-13",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-03-14",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-12-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6968439,
+          "offence": {
+            "code": "PK78008",
+            "statute": "PK78",
+            "description": "Make indecent photograph / pseudo-photograph of a child"
+          },
+          "offenceDate": "2019-08-30",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2022-10-04",
+          "sentenceSequence": 3,
+          "sentenceDate": "2023-05-02",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-05-02",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-04-13",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-03-14",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-12-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6968441,
+          "offence": {
+            "code": "PK78008",
+            "statute": "PK78",
+            "description": "Make indecent photograph / pseudo-photograph of a child"
+          },
+          "offenceDate": "2019-08-30",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2022-10-04",
+          "sentenceSequence": 3,
+          "sentenceDate": "2023-05-02",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-05-02",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-04-13",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-03-14",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-12-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6968442,
+          "offence": {
+            "code": "PK78008",
+            "statute": "PK78",
+            "description": "Make indecent photograph / pseudo-photograph of a child"
+          },
+          "offenceDate": "2019-08-30",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2022-10-04",
+          "sentenceSequence": 3,
+          "sentenceDate": "2023-05-02",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-05-02",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-04-13",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-03-14",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-12-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6803533,
+          "offence": {
+            "code": "PH97006",
+            "statute": "PH97",
+            "description": "Stalking without fear / alarm / distress"
+          },
+          "offenceDate": "2022-09-14",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2022-10-07",
+          "sentenceSequence": 24,
+          "sentenceDate": "2023-05-02",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-10-11",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-11-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2022-10-19",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-01-27",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-13",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-05-02",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-12-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6803534,
+          "offence": {
+            "code": "PK78008",
+            "statute": "PK78",
+            "description": "Make indecent photograph / pseudo-photograph of a child"
+          },
+          "offenceDate": "2022-01-26",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2022-10-10",
+          "sentenceSequence": 10,
+          "sentenceDate": "2023-05-02",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-10-11",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-11-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2022-10-19",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-01-27",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-13",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-05-02",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-12-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6803540,
+          "offence": {
+            "code": "PK78008",
+            "statute": "PK78",
+            "description": "Make indecent photograph / pseudo-photograph of a child"
+          },
+          "offenceDate": "2022-01-26",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2022-10-10",
+          "sentenceSequence": 10,
+          "sentenceDate": "2023-05-02",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-10-11",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-11-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2022-10-19",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-01-27",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-13",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-05-02",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-12-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6803541,
+          "offence": {
+            "code": "PK78008",
+            "statute": "PK78",
+            "description": "Make indecent photograph / pseudo-photograph of a child"
+          },
+          "offenceDate": "2022-01-26",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2022-10-10",
+          "sentenceSequence": 10,
+          "sentenceDate": "2023-05-02",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-10-11",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-11-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2022-10-19",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-01-27",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-13",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-05-02",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-12-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6803542,
+          "offence": {
+            "code": "CM90005",
+            "statute": "CM90",
+            "description": "Cause a computer to perform function to secure / enable unauthorised access to a program / data"
+          },
+          "offenceDate": "2022-09-14",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2022-09-20",
+          "sentenceSequence": 17,
+          "sentenceDate": "2023-05-02",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-10-11",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-11-09",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2022-10-19",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2023-01-27",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-13",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-05-02",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-12-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6813064,
+          "offence": {
+            "code": "PK78003",
+            "statute": "PK78",
+            "description": "Distribute an indecent photograph / pseudo-photograph of a child"
+          },
+          "offenceDate": "2021-03-11",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 1,
+          "sentenceDate": "2023-05-02",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-04-13",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2022-10-19",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-05-02",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-12-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6813065,
+          "offence": {
+            "code": "PK78003",
+            "statute": "PK78",
+            "description": "Distribute an indecent photograph / pseudo-photograph of a child"
+          },
+          "offenceDate": "2021-03-31",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 1,
+          "sentenceDate": "2023-05-02",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-04-13",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2022-10-19",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-05-02",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-12-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6813066,
+          "offence": {
+            "code": "PK78008",
+            "statute": "PK78",
+            "description": "Make indecent photograph / pseudo-photograph of a child"
+          },
+          "offenceDate": "2020-10-13",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2021-03-23",
+          "sentenceSequence": 1,
+          "sentenceDate": "2023-05-02",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-04-13",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2022-10-19",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-05-02",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-12-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6813070,
+          "offence": {
+            "code": "PK78008",
+            "statute": "PK78",
+            "description": "Make indecent photograph / pseudo-photograph of a child"
+          },
+          "offenceDate": "2020-10-13",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2021-03-23",
+          "sentenceSequence": 1,
+          "sentenceDate": "2023-05-02",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-04-13",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2022-10-19",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-05-02",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-12-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6813072,
+          "offence": {
+            "code": "PK78008",
+            "statute": "PK78",
+            "description": "Make indecent photograph / pseudo-photograph of a child"
+          },
+          "offenceDate": "2020-10-13",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2021-03-23",
+          "sentenceSequence": 1,
+          "sentenceDate": "2023-05-02",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-04-13",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2022-10-19",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-05-02",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-12-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6813073,
+          "offence": {
+            "code": "CJ09001",
+            "statute": "CJ09",
+            "description": "Possess a prohibited image of a child"
+          },
+          "offenceDate": "2020-10-31",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2021-03-22",
+          "sentenceSequence": 1,
+          "sentenceDate": "2023-05-02",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-04-13",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2022-10-19",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-05-02",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-12-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6813080,
+          "offence": {
+            "code": "CJ08003",
+            "statute": "CJ08",
+            "description": "Possess extreme pornographic image / images portraying act which involved sexual interference with a corpse"
+          },
+          "offenceDate": "2020-10-21",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2021-03-22",
+          "sentenceSequence": 1,
+          "sentenceDate": "2023-05-02",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-04-13",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2022-10-19",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-05-02",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-12-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6813081,
+          "offence": {
+            "code": "PK78008",
+            "statute": "PK78",
+            "description": "Make indecent photograph / pseudo-photograph of a child"
+          },
+          "offenceDate": "2021-11-09",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2022-05-23",
+          "sentenceSequence": 2,
+          "sentenceDate": "2023-05-02",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-10-19",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-13",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-05-02",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-12-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6813082,
+          "offence": {
+            "code": "PK78008",
+            "statute": "PK78",
+            "description": "Make indecent photograph / pseudo-photograph of a child"
+          },
+          "offenceDate": "2021-11-09",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2022-05-23",
+          "sentenceSequence": 2,
+          "sentenceDate": "2023-05-02",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-10-19",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-13",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-05-02",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-12-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6813083,
+          "offence": {
+            "code": "PK78008",
+            "statute": "PK78",
+            "description": "Make indecent photograph / pseudo-photograph of a child"
+          },
+          "offenceDate": "2021-11-09",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2022-05-23",
+          "sentenceSequence": 2,
+          "sentenceDate": "2023-05-02",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-10-19",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-13",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-05-02",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-12-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6813084,
+          "offence": {
+            "code": "CJ09001",
+            "statute": "CJ09",
+            "description": "Possess a prohibited image of a child"
+          },
+          "offenceDate": "2021-11-08",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2022-05-24",
+          "sentenceSequence": 2,
+          "sentenceDate": "2023-05-02",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-10-19",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-13",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-05-02",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-12-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6813090,
+          "offence": {
+            "code": "CJ08004",
+            "statute": "CJ08",
+            "description": "Possess extreme pornographic image / images portraying an act of intercourse / oral sex with a dead / alive animal"
+          },
+          "offenceDate": "2021-11-08",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2022-05-24",
+          "sentenceSequence": 2,
+          "sentenceDate": "2023-05-02",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-10-19",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-04-13",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-05-02",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2023-12-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      }
+    ],
+    "chargeIdsWithActiveSentence": [
+      6813064,
+      6813065,
+      6813066,
+      6813070,
+      6813072,
+      6813073,
+      6813080,
+      6813081,
+      6813082,
+      6813083,
+      6813084,
+      6813090,
+      6968427,
+      6968429,
+      6968439,
+      6968441,
+      6968442,
+      6803534,
+      6803540,
+      6803541,
+      6803542,
+      6803533
+    ]
+  }
+}
