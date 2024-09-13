@@ -27,7 +27,7 @@ class SentenceRemandService(
     for (entry in loopTracker.sentenceDateToPeriodMap.entries.sortedBy { it.key }) {
       loopTracker.startNewSentenceDateLoop(entry)
       var current: Remand? = null
-      for (date in loopTracker.importantDates) {
+      for (date in loopTracker.datesToLoopOver) {
         if (loopTracker.shouldCalculateAReleaseDate(date)) {
           findReleaseDateService.findReleaseDates(date, sentences, loopTracker, remandCalculation)
         }

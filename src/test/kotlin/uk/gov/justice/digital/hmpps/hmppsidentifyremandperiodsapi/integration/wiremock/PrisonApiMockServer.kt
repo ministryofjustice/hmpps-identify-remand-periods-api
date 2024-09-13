@@ -184,7 +184,7 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                       "guilty":false,
                       "courtCaseId":1,
                       "sentenceSequence":1,
-                      "sentenceDate":"2015-12-13",
+                      "sentenceDate":"2022-12-13",
                       "bookingId":1,
                       "bookNumber":"ABC123",
                       "outcomes":[

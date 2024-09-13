@@ -1,5 +1,6 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model
 
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.util.isBeforeOrEqualTo
 import java.time.LocalDate
 
 /*
@@ -14,7 +15,7 @@ class SentenceRemandLoopTracker(
   val allPeriods = remandPeriods.filter { charges[it.onlyChargeId()]!!.sentenceSequence != null && charges[it.onlyChargeId()]!!.sentenceDate != null }.sortedBy { it.from }
 
   /* A map of each sentence date to the periods who have a sentence with the given date */
-  val sentenceDateToPeriodMap = allPeriods.groupBy { charges[it.onlyChargeId()]!!.sentenceDate }.toMutableMap()
+  val sentenceDateToPeriodMap = allPeriods.groupBy { charges[it.onlyChargeId()]!!.sentenceDate!! }.toMutableMap()
 
   init {
     sentences.forEach {
@@ -30,6 +31,10 @@ class SentenceRemandLoopTracker(
   /* A list of the currently established final periods of sentence remand */
   val final = mutableListOf<Remand>()
 
+  /* Loop variables for each sentence date iteration. */
+  /* The sentence date for this iteration */
+  lateinit var sentenceDate: LocalDate
+
   /* The loop variables needed for each loop of sentence dates */
   lateinit var periods: List<Remand>
 
@@ -40,14 +45,25 @@ class SentenceRemandLoopTracker(
   lateinit var future: MutableList<Remand>
 
   /* A list of dates to iterate over. Made up of any established remand or sentence periods. */
-  lateinit var importantDates: List<LocalDate>
+  lateinit var datesToLoopOver: List<LocalDate>
 
   /* Starting a new loop of the periods with the same sentence date. */
-  fun startNewSentenceDateLoop(entry: Map.Entry<LocalDate?, List<ChargeRemand>>) {
+  fun startNewSentenceDateLoop(entry: Map.Entry<LocalDate, List<ChargeRemand>>) {
+    sentenceDate = entry.key
     periods = entry.value.map { Remand(it.from, it.to, it.onlyChargeId()) }
     open = mutableListOf()
     future = periods.toMutableList()
-    importantDates = ((periods + final).map { listOfNotNull(it.from, it.to, this.charges[it.chargeId]!!.sentenceDate) }.flatten() + listOfNotNull(entry.key) + periodsServingSentence.flatMap { listOf(it.from, it.to) } + sentences.flatMap { it.sentence.recallDates }).distinct().sorted()
+
+    // All dates for charge remand that occur before the sentence date.
+    datesToLoopOver = (periods + final).map { listOfNotNull(it.from, it.to) }.flatten().filter { it.isBefore(sentenceDate) }
+    // Add any existing sentence periods
+    datesToLoopOver += periodsServingSentence.flatMap { listOf(it.from, it.to) }
+    // Add ending sentence date
+    datesToLoopOver += sentenceDate
+    // Add any recall dates for sentences on this date or before.
+    datesToLoopOver += sentences.filter { it.sentence.sentenceDate.isBeforeOrEqualTo(sentenceDate) }.flatMap { it.sentence.recallDates }
+    // Unique dates sorted.
+    datesToLoopOver = datesToLoopOver.distinct().sorted()
   }
 
   /* Each date check if any periods are now closed or now open and pick which period is next. */
@@ -71,6 +87,10 @@ class SentenceRemandLoopTracker(
 
   /* If we've reached a sentence period then calculate the release dates for it. */
   fun shouldCalculateAReleaseDate(date: LocalDate): Boolean {
-    return sentences.any { it.sentence.sentenceDate == date || it.sentence.recallDates.any { recallDate -> recallDate == date } } && sentences.maxOf { it.sentence.sentenceDate } != date && periodsServingSentence.none { it.from == date } && allPeriods.any { it.to.isAfter(date) }
+    return sentences.any { it.sentence.sentenceDate == date || it.sentence.recallDates.any { recallDate -> recallDate == date } } && finalSentenceDate() != date && periodsServingSentence.none { it.from == date } && allPeriods.any { it.to.isAfter(date) }
+  }
+
+  private fun finalSentenceDate(): LocalDate {
+    return sentences.maxOf { it.sentence.sentenceDate }
   }
 }
