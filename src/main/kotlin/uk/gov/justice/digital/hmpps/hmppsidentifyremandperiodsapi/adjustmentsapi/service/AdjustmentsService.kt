@@ -22,7 +22,9 @@ class AdjustmentsService(
       deleteRemand(it.id!!)
     }
 
-    createRemand(create)
+    if (create.isNotEmpty()) {
+      createRemand(create)
+    }
   }
 
   private fun createRemand(remands: List<AdjustmentDto>) {
