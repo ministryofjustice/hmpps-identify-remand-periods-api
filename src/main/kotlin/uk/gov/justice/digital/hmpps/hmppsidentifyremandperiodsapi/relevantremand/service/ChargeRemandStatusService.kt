@@ -41,12 +41,11 @@ class ChargeRemandStatusService {
         }
       } else {
         val charge = remandCalculation.charges[it.onlyChargeId()]!!
-        if (charge.isFinal) {
+        if (charge.final) {
           ChargeRemandStatus.NOT_SENTENCED
         } else {
           ChargeRemandStatus.CASE_NOT_CONCLUDED
         }
-
       }
       it.copy(
         status = status,

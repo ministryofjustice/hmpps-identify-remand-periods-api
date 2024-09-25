@@ -109,7 +109,7 @@
       "chargeIds": [
         3
       ],
-      "status": "NOT_YET_SENTENCED",
+      "status": "CASE_NOT_CONCLUDED",
       "days": 186
     }
   ],
