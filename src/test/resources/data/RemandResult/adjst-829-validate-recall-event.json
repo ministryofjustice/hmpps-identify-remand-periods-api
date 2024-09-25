@@ -1,0 +1,152 @@
+{
+  "adjustments": [
+    {
+      "bookingId": 1,
+      "sentenceSequence": 1,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2019-12-15",
+      "fromDate": "2019-10-21",
+      "remand": {
+        "chargeId": [
+          7111078,
+          7111079,
+          7111080,
+          7111113,
+          7111114
+        ]
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "bookingId": 1,
+      "sentenceSequence": 5,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2024-03-11",
+      "fromDate": "2023-07-18",
+      "remand": {
+        "chargeId": [
+          7111252,
+          7111254
+        ]
+      },
+      "status": "ACTIVE"
+    }
+  ],
+  "chargeRemand": [
+    {
+      "from": "2019-10-21",
+      "to": "2019-12-15",
+      "fromEvent": {
+        "date": "2019-10-21",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2019-12-16",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7111078
+      ],
+      "status": "APPLICABLE",
+      "days": 56
+    },
+    {
+      "from": "2023-07-18",
+      "to": "2024-03-11",
+      "fromEvent": {
+        "date": "2023-07-18",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2024-03-12",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7111252
+      ],
+      "status": "APPLICABLE",
+      "days": 238
+    },
+    {
+      "from": "2019-10-21",
+      "to": "2019-12-15",
+      "fromEvent": {
+        "date": "2019-10-21",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2019-12-16",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7111079,
+        7111080,
+        7111113,
+        7111114
+      ],
+      "status": "SHARED",
+      "days": 56
+    },
+    {
+      "from": "2023-07-18",
+      "to": "2024-03-11",
+      "fromEvent": {
+        "date": "2023-07-18",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2024-03-12",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7111254
+      ],
+      "status": "SHARED",
+      "days": 238
+    }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2019-12-16",
+      "to": "2022-10-20",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2019-12-16",
+        "bookingId": 1
+      },
+      "chargeId": 7111078,
+      "service": "CRDS",
+      "errors": [
+        "Historic calculation error!"
+      ],
+      "days": 1040
+    },
+    {
+      "from": "2019-12-16",
+      "to": "2022-10-20",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2019-12-16",
+        "bookingId": 2
+      },
+      "chargeId": 5778207,
+      "service": "HISTORIC",
+      "days": 1040
+    }
+  ],
+  "issuesWithLegacyData": [
+    {
+      "type": "MISSING_RECALL_EVENT",
+      "message": "The offence 'Fraud by false representation - Fraud Act 2006' within booking 1 does not have a recall court event.",
+      "offence": {
+        "code": "FA06001",
+        "statute": "FA06",
+        "description": "Fraud by false representation - Fraud Act 2006"
+      },
+      "bookingId": 1,
+      "bookNumber": "1"
+    }
+  ]
+}

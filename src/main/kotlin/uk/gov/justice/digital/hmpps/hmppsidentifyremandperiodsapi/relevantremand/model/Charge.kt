@@ -15,4 +15,5 @@ data class Charge(
   val courtLocation: String? = null,
   val resultDescription: String? = null,
   val isActiveBooking: Boolean = false,
+  val isRecallSentence: Boolean = false,
 )
