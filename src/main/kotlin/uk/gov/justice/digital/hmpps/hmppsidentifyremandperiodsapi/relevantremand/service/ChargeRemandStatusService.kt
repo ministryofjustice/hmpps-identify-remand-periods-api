@@ -40,7 +40,13 @@ class ChargeRemandStatusService {
           }
         }
       } else {
-        ChargeRemandStatus.NOT_YET_SENTENCED
+        val charge = remandCalculation.charges[it.onlyChargeId()]!!
+        if (charge.isFinal) {
+          ChargeRemandStatus.NOT_SENTENCED
+        } else {
+          ChargeRemandStatus.CASE_NOT_CONCLUDED
+        }
+
       }
       it.copy(
         status = status,
