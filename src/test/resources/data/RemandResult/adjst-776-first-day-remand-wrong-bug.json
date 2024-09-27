@@ -164,7 +164,7 @@
         6382708,
         6384814
       ],
-      "status": "NOT_YET_SENTENCED",
+      "status": "CASE_NOT_CONCLUDED",
       "days": 8
     },
     {
@@ -182,7 +182,7 @@
         6382707,
         6382710
       ],
-      "status": "NOT_YET_SENTENCED",
+      "status": "CASE_NOT_CONCLUDED",
       "days": 61
     },
     {
@@ -199,7 +199,7 @@
       "chargeIds": [
         6382708
       ],
-      "status": "NOT_YET_SENTENCED",
+      "status": "CASE_NOT_CONCLUDED",
       "days": 39
     },
     {
@@ -216,7 +216,7 @@
       "chargeIds": [
         6384814
       ],
-      "status": "NOT_YET_SENTENCED",
+      "status": "CASE_NOT_CONCLUDED",
       "days": 61
     },
     {
@@ -233,7 +233,7 @@
       "chargeIds": [
         6403924
       ],
-      "status": "NOT_YET_SENTENCED",
+      "status": "CASE_NOT_CONCLUDED",
       "days": 23
     },
     {
@@ -251,7 +251,7 @@
         6856252,
         6856255
       ],
-      "status": "NOT_YET_SENTENCED",
+      "status": "CASE_NOT_CONCLUDED",
       "days": 11
     }
   ],

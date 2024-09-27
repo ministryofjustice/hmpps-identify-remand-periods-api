@@ -5,5 +5,6 @@ enum class ChargeRemandStatus {
   SHARED,
   INACTIVE,
   INTERSECTED,
-  NOT_YET_SENTENCED,
+  CASE_NOT_CONCLUDED,
+  NOT_SENTENCED,
 }
