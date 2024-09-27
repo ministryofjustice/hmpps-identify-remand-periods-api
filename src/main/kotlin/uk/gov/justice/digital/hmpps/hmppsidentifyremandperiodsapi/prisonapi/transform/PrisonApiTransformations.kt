@@ -44,7 +44,9 @@ fun transform(results: List<PrisonApiCharge>, prisonerDetails: PrisonerDetails, 
             it.courtCaseRef,
             it.courtLocation,
             it.resultDescription,
+            it.resultDispositionCode == "F",
             it.bookingId == prisonerDetails.bookingId,
+            recallTypes.contains(it.sentenceType),
           ),
           it.outcomes
             .filter { result -> result.date.isAfter(earliestActiveOffenceDate) }
@@ -93,3 +95,28 @@ private fun transformToType(courtDateResult: PrisonApiCourtDateOutcome, charge: 
   }
   return mapCourtDateResult(courtDateResult, charge, issuesWithLegacyData)
 }
+
+private val recallTypes = listOf(
+  "LR",
+  "LR_ORA",
+  "LR_YOI_ORA",
+  "LR_SEC91_ORA",
+  "LRSEC250_ORA",
+  "LR_EDS18",
+  "LR_EDS21",
+  "LR_EDSU18",
+  "LR_LASPO_AR",
+  "LR_LASPO_DR",
+  "LR_SEC236A",
+  "LR_SOPC18",
+  "LR_SOPC21",
+  "14FTR_ORA",
+  "FTR",
+  "FTR_ORA",
+  "FTR_SCH15",
+  "FTRSCH15_ORA",
+  "FTRSCH18",
+  "FTRSCH18_ORA",
+  "14FTRHDC_ORA",
+  "FTR_HDC_ORA",
+)
