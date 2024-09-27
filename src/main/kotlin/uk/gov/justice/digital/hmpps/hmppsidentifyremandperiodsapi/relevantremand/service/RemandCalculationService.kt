@@ -15,13 +15,18 @@ class RemandCalculationService(
   private val chargeRemandStatusService: ChargeRemandStatusService,
   private val resultSortingService: ResultSortingService,
   private val mergeChargeRemandService: MergeChargeRemandService,
+  private val validateChargeService: ValidateChargeService,
 ) {
   fun calculate(remandCalculation: RemandCalculation, remandCalculationRequestOptions: RemandCalculationRequestOptions): RemandResult {
     if (remandCalculation.chargesAndEvents.isEmpty()) {
       throw UnsupportedCalculationException("There are no charges to calculate")
     }
 
-    var chargeRemand = remandClockService.remandClock(chargeCombinationService.combineRelatedCharges(remandCalculation))
+    val combinedCharges = chargeCombinationService.combineRelatedCharges(remandCalculation)
+
+    validateChargeService.validate(combinedCharges)
+
+    var chargeRemand = remandClockService.remandClock(combinedCharges)
     val sentenceRemandResult = sentenceRemandService.extractSentenceRemand(remandCalculation, chargeRemand)
     val adjustments = remandAdjustmentService.getRemandedAdjustments(remandCalculation, sentenceRemandResult, chargeRemand)
 

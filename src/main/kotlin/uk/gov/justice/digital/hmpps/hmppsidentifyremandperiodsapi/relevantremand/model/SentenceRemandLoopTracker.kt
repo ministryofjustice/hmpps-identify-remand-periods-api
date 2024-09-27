@@ -77,12 +77,12 @@ class SentenceRemandLoopTracker(
 
   /* Can we open a new period, does the period intersected a confirmed date. */
   fun doesDateIntersectWithEstablishedRemandOrSentence(date: LocalDate): Boolean {
-    return !(final + periodsServingSentence).none { it.overlapsStartInclusive(date) }
+    return (final + periodsServingSentence).any { it.overlapsStartInclusive(date) } || date == sentenceDate
   }
 
   /* Should the current period be closed? */
   fun shouldCloseCurrentPeriod(date: LocalDate, current: Period?): Boolean {
-    return (final + periodsServingSentence).any { date == it.from } && current != null
+    return ((final + periodsServingSentence).any { date == it.from } || date == sentenceDate) && current != null
   }
 
   /* If we've reached a sentence period then calculate the release dates for it. */
