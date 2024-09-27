@@ -118,7 +118,7 @@
         5,
         7
       ],
-      "status": "NOT_YET_SENTENCED",
+      "status": "CASE_NOT_CONCLUDED",
       "days": 95
     },
     {
@@ -135,7 +135,7 @@
       "chargeIds": [
         9
       ],
-      "status": "NOT_YET_SENTENCED",
+      "status": "CASE_NOT_CONCLUDED",
       "days": 36
     }
   ],
