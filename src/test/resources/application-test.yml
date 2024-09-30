@@ -56,4 +56,10 @@ adjustments:
   api:
     url: http://localhost:8334/adjustments-api
 
+prisoner:
+  search:
+    api:
+      url: http://localhost:8335/prisoner-search-api
+
+
 primary-release-date-provider: HISTORIC

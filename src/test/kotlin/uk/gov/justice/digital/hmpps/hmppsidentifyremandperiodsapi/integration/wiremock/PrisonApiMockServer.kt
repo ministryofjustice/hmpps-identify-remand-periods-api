@@ -231,23 +231,6 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
             .withStatus(200),
         ),
     )
-    stubFor(
-      get("/prison-api/api/offenders/${PrisonApiExtension.IMPRISONED_PRISONER}")
-        .willReturn(
-          aResponse()
-            .withHeader("Content-Type", "application/json")
-            .withBody(
-              """
-                {
-                  "bookingId": 1,
-                  "offenderNo": "${PrisonApiExtension.IMPRISONED_PRISONER}",
-                  "agencyId": "BMI"
-                }
-              """.trimIndent(),
-            )
-            .withStatus(200),
-        ),
-    )
   }
   fun stubBailPrisoner() {
     stubFor(
@@ -295,24 +278,6 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                       ]
                    }
                 ]
-              """.trimIndent(),
-            )
-            .withStatus(200),
-        ),
-    )
-
-    stubFor(
-      get("/prison-api/api/offenders/${PrisonApiExtension.BAIL_PRISONER}")
-        .willReturn(
-          aResponse()
-            .withHeader("Content-Type", "application/json")
-            .withBody(
-              """
-                {
-                  "bookingId": 1,
-                  "offenderNo": "${PrisonApiExtension.BAIL_PRISONER}",
-                  "agencyId": "BMI"
-                }
               """.trimIndent(),
             )
             .withStatus(200),
@@ -398,24 +363,6 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
             .withStatus(200),
         ),
     )
-
-    stubFor(
-      get("/prison-api/api/offenders/${PrisonApiExtension.INTERSECTING_PRISONER}")
-        .willReturn(
-          aResponse()
-            .withHeader("Content-Type", "application/json")
-            .withBody(
-              """
-                {
-                  "bookingId": 1,
-                  "offenderNo": "${PrisonApiExtension.INTERSECTING_PRISONER}",
-                  "agencyId": "BMI"
-                }
-              """.trimIndent(),
-            )
-            .withStatus(200),
-        ),
-    )
   }
   fun stubCrdValidation() {
     stubFor(
@@ -491,24 +438,6 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                    ]
                 }
              ]
-              """.trimIndent(),
-            )
-            .withStatus(200),
-        ),
-    )
-
-    stubFor(
-      get("/prison-api/api/offenders/${PrisonApiExtension.CRD_VALIDATION_PRISONER}")
-        .willReturn(
-          aResponse()
-            .withHeader("Content-Type", "application/json")
-            .withBody(
-              """
-                {
-                  "bookingId": 1,
-                  "offenderNo": "${PrisonApiExtension.CRD_VALIDATION_PRISONER}",
-                  "agencyId": "BMI"
-                }
               """.trimIndent(),
             )
             .withStatus(200),
@@ -591,24 +520,6 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
       ]
    }
 ]
-              """.trimIndent(),
-            )
-            .withStatus(200),
-        ),
-    )
-
-    stubFor(
-      get("/prison-api/api/offenders/${PrisonApiExtension.RELATED_PRISONER}")
-        .willReturn(
-          aResponse()
-            .withHeader("Content-Type", "application/json")
-            .withBody(
-              """
-                {
-                  "bookingId": 1,
-                  "offenderNo": "${PrisonApiExtension.BAIL_PRISONER}",
-                  "agencyId": "BMI"
-                }
               """.trimIndent(),
             )
             .withStatus(200),
@@ -901,24 +812,6 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
             .withStatus(200),
         ),
     )
-
-    stubFor(
-      get("/prison-api/api/offenders/${PrisonApiExtension.MULTIPLE_OFFENCES_PRISONER}")
-        .willReturn(
-          aResponse()
-            .withHeader("Content-Type", "application/json")
-            .withBody(
-              """
-                {
-                  "bookingId": 2,
-                  "offenderNo": "${PrisonApiExtension.MULTIPLE_OFFENCES_PRISONER}",
-                  "agencyId": "BMI"
-                }
-              """.trimIndent(),
-            )
-            .withStatus(200),
-        ),
-    )
   }
 
   fun stubActiveBookingHasNoOffenceDates() {
@@ -953,23 +846,6 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
       ]
    }
 ]
-              """.trimIndent(),
-            )
-            .withStatus(200),
-        ),
-    )
-    stubFor(
-      get("/prison-api/api/offenders/${PrisonApiExtension.NO_OFFENCE_DATES}")
-        .willReturn(
-          aResponse()
-            .withHeader("Content-Type", "application/json")
-            .withBody(
-              """
-                {
-                  "bookingId": 1,
-                  "offenderNo": "${PrisonApiExtension.NO_OFFENCE_DATES}",
-                  "agencyId": "BMI"
-                }
               """.trimIndent(),
             )
             .withStatus(200),

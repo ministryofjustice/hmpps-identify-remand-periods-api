@@ -23,7 +23,7 @@ class IdentifyRemandDecisionService(
   fun saveDecision(person: String, decision: IdentifyRemandDecisionDto): IdentifyRemandDecisionDto {
     val courtDateResults = prisonService.getCourtDateResults(person)
     val prisonerDetails = prisonService.getOffenderDetail(person)
-    val sentencesAndOffences = prisonService.getSentencesAndOffences(prisonerDetails.bookingId, true)
+    val sentencesAndOffences = prisonService.getSentencesAndOffences(prisonerDetails.bookingId.toLong(), true)
     val calculation = remandCalculationService.calculate(
       transform(courtDateResults, prisonerDetails, sentencesAndOffences),
       RemandCalculationRequestOptions(),
@@ -45,7 +45,7 @@ class IdentifyRemandDecisionService(
         person = person,
         days = days,
         decisionByUsername = getCurrentAuthentication().principal,
-        decisionByPrisonId = prisonerDetails.agencyId,
+        decisionByPrisonId = prisonerDetails.prisonId,
       ),
     )
     return mapToDto(result)

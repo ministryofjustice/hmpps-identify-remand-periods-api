@@ -11,10 +11,11 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.integration.wi
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.integration.wiremock.CalculateReleaseDatesApiExtension
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.integration.wiremock.HmppsAuthApiExtension
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.integration.wiremock.PrisonApiExtension
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.integration.wiremock.PrisonerSearchApiExtension
 
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 @ActiveProfiles("test")
-@ExtendWith(HmppsAuthApiExtension::class, PrisonApiExtension::class, CalculateReleaseDatesApiExtension::class, AdjustmentsApiExtension::class)
+@ExtendWith(HmppsAuthApiExtension::class, PrisonApiExtension::class, CalculateReleaseDatesApiExtension::class, AdjustmentsApiExtension::class, PrisonerSearchApiExtension::class)
 abstract class IntegrationTestBase {
 
   @Suppress("SpringJavaInjectionPointsAutowiringInspection")
