@@ -9,7 +9,6 @@ import uk.gov.justice.digital.hmpps.adjustments.api.model.prisonapi.SentenceAndO
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.OffenderKeyDates
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.Prison
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiCharge
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonerDetails
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.SentenceCalculationSummary
 
 @Service
@@ -23,15 +22,6 @@ class PrisonApiClient(@Qualifier("prisonApiWebClient") private val webClient: We
       .uri("/api/court-date-results/by-charge/$prisonerId")
       .retrieve()
       .bodyToMono(typeReference<List<PrisonApiCharge>>())
-      .block()!!
-  }
-
-  fun getOffenderDetail(prisonerId: String): PrisonerDetails {
-    log.info("Requesting details for prisoner $prisonerId")
-    return webClient.get()
-      .uri("/api/offenders/$prisonerId")
-      .retrieve()
-      .bodyToMono(typeReference<PrisonerDetails>())
       .block()!!
   }
 

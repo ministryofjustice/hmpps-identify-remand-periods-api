@@ -16,7 +16,18 @@ class WebClientConfiguration(
   @Value("\${prison.api.url}") private val prisonApiUri: String,
   @Value("\${calculate-release-dates.api.url}") private val calculateReleaseDatesApiUrl: String,
   @Value("\${adjustments.api.url}") private val adjustmentsApiClient: String,
+  @Value("\${prisoner.search.api.url}") private val prisonerSearchApiUrl: String,
 ) {
+
+  @Bean
+  fun prisonerSearchApiWebClient(authorizedClientManager: OAuth2AuthorizedClientManager): WebClient {
+    val filter = ServletOAuth2AuthorizedClientExchangeFilterFunction(authorizedClientManager)
+    filter.setDefaultClientRegistrationId("hmpps-api")
+    return WebClient.builder()
+      .baseUrl(prisonerSearchApiUrl)
+      .filter(filter)
+      .build()
+  }
 
   @Bean
   fun prisonApiWebClient(authorizedClientManager: OAuth2AuthorizedClientManager): WebClient {
