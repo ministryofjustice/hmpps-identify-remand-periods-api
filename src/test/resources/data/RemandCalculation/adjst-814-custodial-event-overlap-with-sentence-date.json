@@ -1,0 +1,1169 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "chargesAndEvents": [
+      {
+        "charge": {
+          "chargeId": 6962884,
+          "offence": {
+            "code": "RT88398",
+            "statute": "RT88",
+            "description": "Driver of a motor vehicle fail to give own / owner / name / address / after road accident / offence"
+          },
+          "offenceDate": "2021-04-17",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2022-10-05",
+          "sentenceSequence": 9,
+          "sentenceDate": "2023-03-07",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-03-07",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6854236,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2022-06-22",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2022-06-28",
+          "resultDescription": "Replaced With Another Offence",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-11-04",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-11-25",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-12-16",
+            "type": "STOP",
+            "description": "Replaced With Another Offence",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6880218,
+          "offence": {
+            "code": "PC02006",
+            "statute": "PC02",
+            "description": "Enter into / concerned in acquisition / retention / use or control criminal property"
+          },
+          "offenceDate": "2018-11-22",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 10,
+          "sentenceDate": "2022-12-16",
+          "resultDescription": "Suspended Sentence Implemented",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-12-16",
+            "type": "STOP",
+            "description": "Suspended Sentence Implemented",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6800495,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2022-06-22",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2022-06-28",
+          "sentenceSequence": 1,
+          "sentenceDate": "2022-12-16",
+          "resultDescription": "Imprisonment",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-11-25",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-10-07",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-12-16",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6800497,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2022-06-23",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Replaced With Another Offence",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-11-25",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-10-07",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-12-16",
+            "type": "STOP",
+            "description": "Replaced With Another Offence",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6800500,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2022-06-23",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Replaced With Another Offence",
+          "isActiveBooking": true,
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2022-11-25",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-10-07",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-12-16",
+            "type": "STOP",
+            "description": "Replaced With Another Offence",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6800502,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2022-06-24",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Replaced With Another Offence",
+          "isActiveBooking": true,
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2022-11-25",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-10-07",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-12-16",
+            "type": "STOP",
+            "description": "Replaced With Another Offence",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6800507,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2022-06-23",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Replaced With Another Offence",
+          "isActiveBooking": true,
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2022-11-25",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-10-07",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-12-16",
+            "type": "STOP",
+            "description": "Replaced With Another Offence",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6800514,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2022-06-24",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Replaced With Another Offence",
+          "isActiveBooking": true,
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2022-11-25",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-10-07",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-12-16",
+            "type": "STOP",
+            "description": "Replaced With Another Offence",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6800516,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2022-06-24",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Replaced With Another Offence",
+          "isActiveBooking": true,
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2022-11-25",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-10-07",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-12-16",
+            "type": "STOP",
+            "description": "Replaced With Another Offence",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6800520,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2022-06-27",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Replaced With Another Offence",
+          "isActiveBooking": true,
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2022-11-25",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-10-07",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-12-16",
+            "type": "STOP",
+            "description": "Replaced With Another Offence",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6800521,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2022-06-27",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Replaced With Another Offence",
+          "isActiveBooking": true,
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2022-11-25",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-10-07",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-12-16",
+            "type": "STOP",
+            "description": "Replaced With Another Offence",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6800526,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2022-06-27",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Replaced With Another Offence",
+          "isActiveBooking": true,
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2022-11-25",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-10-07",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-12-16",
+            "type": "STOP",
+            "description": "Replaced With Another Offence",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7568983,
+          "offence": {
+            "code": "FA06001C",
+            "statute": "FA06",
+            "description": "Conspire to commit fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2020-03-31",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2024-01-31",
+          "resultDescription": "Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-05-31",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-07-11",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7424527,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2022-06-13",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2022-06-17",
+          "resultDescription": "Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-15",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-03-22",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7361209,
+          "offence": {
+            "code": "TH68026C",
+            "statute": "TH68",
+            "description": "Conspire to commit a burglary dwelling with intent to steal"
+          },
+          "offenceDate": "2021-07-12",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2021-07-20",
+          "resultDescription": "Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-07",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-03-11",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7400379,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2020-06-26",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-07",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-04-15",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-07-11",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-05-31",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-05-31",
+            "type": "CONTINUE",
+            "description": "Adjournment"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7400380,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2020-06-25",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2020-06-28",
+          "resultDescription": "Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-07",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-04-15",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-07-11",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-05-31",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-05-31",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7400381,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2022-01-23",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2022-01-28",
+          "resultDescription": "Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-07",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-04-15",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-07-11",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-05-31",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-05-31",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7400382,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2021-10-12",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2021-10-23",
+          "resultDescription": "Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-07",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-04-15",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-07-11",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-05-31",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-05-31",
+            "type": "CONTINUE",
+            "description": "Adjournment"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7400383,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2021-06-03",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2021-06-10",
+          "resultDescription": "Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-07",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-04-15",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-07-11",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-05-31",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-05-31",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7400384,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2021-05-09",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2021-05-20",
+          "resultDescription": "Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-07",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-04-15",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-07-11",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-05-31",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-05-31",
+            "type": "CONTINUE",
+            "description": "Adjournment"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7400385,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2021-10-12",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2021-10-23",
+          "resultDescription": "Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-07",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-04-15",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-07-11",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-05-31",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-05-31",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7400386,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2021-05-04",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2021-05-08",
+          "resultDescription": "Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-07",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-04-15",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-07-11",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-05-31",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-05-31",
+            "type": "CONTINUE",
+            "description": "Adjournment"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7400387,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2020-09-30",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2020-10-10",
+          "resultDescription": "Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-07",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-04-15",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-07-11",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-05-31",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-05-31",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7400388,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2021-04-25",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2021-05-19",
+          "resultDescription": "Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-07",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-04-15",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-07-11",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-05-31",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-05-31",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7400389,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2021-06-30",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2021-07-03",
+          "resultDescription": "Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-07",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-04-15",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-07-11",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-05-31",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-05-31",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7400390,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2021-05-09",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2021-05-20",
+          "resultDescription": "Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-07",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-04-15",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-07-11",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-05-31",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-05-31",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7400391,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "offenceDate": "2022-01-25",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-07",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-04-15",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-07-11",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-05-31",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-05-31",
+            "type": "CONTINUE",
+            "description": "Adjournment"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7400392,
+          "offence": {
+            "code": "FA06004",
+            "statute": "FA06",
+            "description": "Possess / control article for use in fraud - Fraud Act 2006"
+          },
+          "offenceDate": "2022-06-09",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Guilty",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-07",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-04-15",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-07-11",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-05-31",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-05-31",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      }
+    ],
+    "chargeIdsWithActiveSentence": [
+      6800495,
+      6880218
+    ]
+  }
+}

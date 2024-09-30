@@ -28,7 +28,8 @@ class RemandCalculationServiceTest {
   private val resultSortingService = ResultSortingService()
   private val mergeChargeRemandService = MergeChargeRemandService()
   private val chargeCombinationService = ChargeCombinationService()
-  private val remandCalculationService = RemandCalculationService(chargeCombinationService, remandClockService, sentenceRemandService, remandAdjustmentService, chargeRemandStatusService, resultSortingService, mergeChargeRemandService)
+  private val validationChargeService = ValidateChargeService()
+  private val remandCalculationService = RemandCalculationService(chargeCombinationService, remandClockService, sentenceRemandService, remandAdjustmentService, chargeRemandStatusService, resultSortingService, mergeChargeRemandService, validationChargeService)
 
   @ParameterizedTest
   @CsvFileSource(resources = ["/data/tests.csv"], numLinesToSkip = 1)

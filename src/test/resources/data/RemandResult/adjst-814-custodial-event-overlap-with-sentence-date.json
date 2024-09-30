@@ -1,0 +1,56 @@
+{
+  "adjustments": [
+    {
+      "bookingId": 1,
+      "sentenceSequence": 1,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2022-12-15",
+      "fromDate": "2022-10-07",
+      "remand": {
+        "chargeId": [
+          6800495
+        ]
+      },
+      "status": "ACTIVE"
+    }
+  ],
+  "chargeRemand": [
+    {
+      "from": "2022-10-07",
+      "to": "2022-12-16",
+      "fromEvent": {
+        "date": "2022-10-07",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2022-12-16",
+        "description": "Replaced With Another Offence"
+      },
+      "chargeIds": [
+        6800495
+      ],
+      "status": "APPLICABLE",
+      "days": 71
+    },
+    {
+      "from": "2022-10-07",
+      "to": "2022-12-16",
+      "fromEvent": {
+        "date": "2022-10-07",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2022-12-16",
+        "description": "Replaced With Another Offence"
+      },
+      "chargeIds": [
+        6800497,
+        6800502,
+        6800520
+      ],
+      "status": "NOT_SENTENCED",
+      "days": 71
+    }
+  ]
+}
