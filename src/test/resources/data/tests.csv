@@ -35,3 +35,4 @@ adjst-819-errors-with-release-dates,UnsupportedCalculationException(Unable to ca
 adjst-818-preprod-example,
 adjst-814-custodial-event-overlap-with-sentence-date,
 adjst-829-validate-recall-event,
+adjst-770-allow-selection-of-applicable-remand,
