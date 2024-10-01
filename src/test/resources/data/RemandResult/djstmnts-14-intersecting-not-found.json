@@ -124,7 +124,8 @@
         "bookingId": 1
       },
       "chargeId": 1,
-      "days": 133
+      "service": "HISTORIC",
+      "days": 576
     },
     {
       "from": "2019-04-16",
@@ -134,7 +135,8 @@
         "sentenceDate": "2019-04-16",
         "bookingId": 2
       },
-      "chargeId": 6,
+      "chargeId": 7,
+      "service": "HISTORIC",
       "days": 1246
     }
   ]

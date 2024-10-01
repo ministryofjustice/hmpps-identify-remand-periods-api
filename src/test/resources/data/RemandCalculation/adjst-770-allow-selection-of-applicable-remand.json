@@ -1,0 +1,596 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "chargesAndEvents": [
+      {
+        "charge": {
+          "chargeId": 641202,
+          "offence": {
+            "code": "MD71130C-462CN",
+            "statute": "ZZ",
+            "description": "CONSPIRACY TO SUPPLY DRUGS"
+          },
+          "offenceDate": "2009-06-05",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 1,
+          "sentenceDate": "2009-10-30",
+          "resultDescription": "Recall to Prison"
+        },
+        "dates": [
+          {
+            "date": "2017-10-05",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5503241,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2018-03-05",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "No Evidence Offered - Dismissed",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2019-02-25",
+            "type": "STOP",
+            "description": "No Evidence Offered - Dismissed",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5503253,
+          "offence": {
+            "code": "RT88026",
+            "statute": "RT88",
+            "description": "Drive a motor vehicle dangerously"
+          },
+          "offenceDate": "2017-09-26",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "offenceEndDate": "2017-09-26",
+          "sentenceSequence": 2,
+          "sentenceDate": "2019-02-25",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2019-02-25",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-02-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5503298,
+          "offence": {
+            "code": "RT88340",
+            "statute": "RT88",
+            "description": "Drive a vehicle whilst unfit through drugs"
+          },
+          "offenceDate": "2017-09-26",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "offenceEndDate": "2017-09-26",
+          "resultDescription": "Driving Licence Endorsed",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2019-02-25",
+            "type": "CONTINUE",
+            "description": "Driving Licence Endorsed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5503304,
+          "offence": {
+            "code": "RT88191",
+            "statute": "RT88",
+            "description": "Use a motor vehicle on a road / public place without third party insurance"
+          },
+          "offenceDate": "2017-09-26",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "offenceEndDate": "2017-09-26",
+          "resultDescription": "Driving Licence Endorsed",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2019-02-25",
+            "type": "CONTINUE",
+            "description": "Driving Licence Endorsed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5503305,
+          "offence": {
+            "code": "RT88218",
+            "statute": "RT88",
+            "description": "Driver of a vehicle fail to stop after a road accident"
+          },
+          "offenceDate": "2017-09-26",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "offenceEndDate": "2017-09-26",
+          "resultDescription": "Driving Licence Endorsed",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2019-02-25",
+            "type": "CONTINUE",
+            "description": "Driving Licence Endorsed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5503317,
+          "offence": {
+            "code": "RT88220",
+            "statute": "RT88",
+            "description": "Driver of a vehicle involved in a road accident fail to report that accident"
+          },
+          "offenceDate": "2017-09-26",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "offenceEndDate": "2017-09-26",
+          "resultDescription": "Driving Licence Endorsed",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2019-02-25",
+            "type": "CONTINUE",
+            "description": "Driving Licence Endorsed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5500539,
+          "offence": {
+            "code": "TH68045",
+            "statute": "TH68",
+            "description": "Aggravated burglary - dwelling"
+          },
+          "offenceDate": "2018-03-01",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "offenceEndDate": "2018-03-01",
+          "sentenceSequence": 1,
+          "sentenceDate": "2019-02-25",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2019-02-25",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-02-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5016618,
+          "offence": {
+            "code": "TH68045",
+            "statute": "TH68",
+            "description": "Aggravated burglary - dwelling"
+          },
+          "offenceDate": "2018-03-01",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "offenceEndDate": "2018-03-01",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-07-10",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2018-03-06",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2018-04-03",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2019-02-25",
+            "type": "STOP",
+            "description": "Conviction Quashed",
+            "final": true
+          },
+          {
+            "date": "2024-02-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5016619,
+          "offence": {
+            "code": "MD71225",
+            "statute": "MD71",
+            "description": "Possess a controlled drug of Class B - Other"
+          },
+          "offenceDate": "2018-03-05",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-07-10",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2018-03-06",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2018-04-03",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2019-02-25",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-02-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5016620,
+          "offence": {
+            "code": "OF61016A",
+            "statute": "OF61",
+            "description": "Section 18 - attempt wounding with intent"
+          },
+          "offenceDate": "2018-03-05",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "offenceEndDate": "2018-03-05",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-07-10",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2018-03-06",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2018-04-03",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2019-02-25",
+            "type": "STOP",
+            "description": "Conviction Quashed",
+            "final": true
+          },
+          {
+            "date": "2024-02-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4969343,
+          "offence": {
+            "code": "RT88218",
+            "statute": "RT88",
+            "description": "Driver of a vehicle fail to stop after a road accident"
+          },
+          "offenceDate": "2017-09-26",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Remand on Unconditional Bail",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-01-30",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2018-01-31",
+            "type": "STOP",
+            "description": "Remand on Unconditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4969344,
+          "offence": {
+            "code": "RT88220",
+            "statute": "RT88",
+            "description": "Driver of a vehicle involved in a road accident fail to report that accident"
+          },
+          "offenceDate": "2017-09-27",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Remand on Unconditional Bail",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-01-30",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2018-01-31",
+            "type": "STOP",
+            "description": "Remand on Unconditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4969324,
+          "offence": {
+            "code": "RT88340",
+            "statute": "RT88",
+            "description": "Drive a vehicle whilst unfit through drugs"
+          },
+          "offenceDate": "2017-09-26",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Remand on Unconditional Bail",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-01-30",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2018-01-31",
+            "type": "STOP",
+            "description": "Remand on Unconditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4969325,
+          "offence": {
+            "code": "RT88507",
+            "statute": "RT88",
+            "description": "Drive a motor vehicle otherwise than in accordance with a licence - non-endorsable offence"
+          },
+          "offenceDate": "2017-09-26",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Remand on Unconditional Bail",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-01-30",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2018-01-31",
+            "type": "STOP",
+            "description": "Remand on Unconditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4969326,
+          "offence": {
+            "code": "RT88026",
+            "statute": "RT88",
+            "description": "Drive a motor vehicle dangerously"
+          },
+          "offenceDate": "2017-09-26",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Remand on Unconditional Bail",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-01-30",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2018-01-31",
+            "type": "STOP",
+            "description": "Remand on Unconditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4969327,
+          "offence": {
+            "code": "RT88191",
+            "statute": "RT88",
+            "description": "Use a motor vehicle on a road / public place without third party insurance"
+          },
+          "offenceDate": "2017-09-26",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Remand on Unconditional Bail",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-01-30",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2018-01-31",
+            "type": "STOP",
+            "description": "Remand on Unconditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5144811,
+          "offence": {
+            "code": "RT88333",
+            "statute": "RT88",
+            "description": "Drive whilst disqualified"
+          },
+          "offenceDate": "2017-09-26",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "offenceEndDate": "2017-09-26",
+          "sentenceSequence": 9,
+          "sentenceDate": "2019-02-25",
+          "resultDescription": "Recall to Prison",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-06-18",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2019-02-25",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-02-27",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      }
+    ],
+    "chargeIdsWithActiveSentence": [
+      5500539,
+      5503253,
+      5144811
+    ]
+  },
+  "sentences": [
+    {
+      "bookingId": 1,
+      "sentenceSequence": 1,
+      "sentenceAt": "2009-10-30",
+      "recallDates": [
+        "2017-10-05"
+      ],
+      "calculations": [
+        {
+          "calculateAt": "2009-10-30",
+          "release": "2013-09-04",
+          "service": "HISTORIC"
+        },
+        {
+          "calculateAt": "2017-10-05",
+          "release": "2017-12-16",
+          "service": "HISTORIC"
+        }
+      ]
+    }
+  ],
+  "options": {
+    "userSelections": [
+      {
+        "chargeIdsToMakeApplicable": [4969343, 4969344, 4969324, 4969325, 4969326, 4969327],
+        "targetChargeId": 5144811
+      }
+    ]
+  }
+}

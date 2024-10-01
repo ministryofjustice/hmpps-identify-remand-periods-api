@@ -1,6 +1,7 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.service
 
 import org.springframework.stereotype.Service
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeAndEvents
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblem
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblemType
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
@@ -8,8 +9,8 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 @Service
 class ValidateChargeService {
 
-  fun validate(remandCalculation: RemandCalculation) {
-    val recalledCharges = remandCalculation.chargesAndEvents.filter { it.charge.isRecallSentence }
+  fun validate(remandCalculation: RemandCalculation, combinedChargesAndEvents: List<ChargeAndEvents>) {
+    val recalledCharges = combinedChargesAndEvents.filter { it.charge.isRecallSentence }
     val missingRecallEvents = recalledCharges.filter { it.dates.none { event -> event.isRecallEvent } }
 
     missingRecallEvents.forEach {

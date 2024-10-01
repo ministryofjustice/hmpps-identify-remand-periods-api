@@ -17,17 +17,17 @@ class RemandCalculationService(
   private val mergeChargeRemandService: MergeChargeRemandService,
   private val validateChargeService: ValidateChargeService,
 ) {
-  fun calculate(remandCalculation: RemandCalculation, remandCalculationRequestOptions: RemandCalculationRequestOptions): RemandResult {
+  fun calculate(remandCalculation: RemandCalculation, options: RemandCalculationRequestOptions): RemandResult {
     if (remandCalculation.chargesAndEvents.isEmpty()) {
       throw UnsupportedCalculationException("There are no charges to calculate")
     }
 
-    val combinedCharges = chargeCombinationService.combineRelatedCharges(remandCalculation)
+    val combinedChargesAndEvents = chargeCombinationService.combineRelatedCharges(remandCalculation, options)
 
-    validateChargeService.validate(combinedCharges)
+    validateChargeService.validate(remandCalculation, combinedChargesAndEvents)
 
-    var chargeRemand = remandClockService.remandClock(combinedCharges)
-    val sentenceRemandResult = sentenceRemandService.extractSentenceRemand(remandCalculation, chargeRemand)
+    var chargeRemand = remandClockService.remandClock(combinedChargesAndEvents)
+    val sentenceRemandResult = sentenceRemandService.extractSentenceRemand(remandCalculation, combinedChargesAndEvents, chargeRemand)
     val adjustments = remandAdjustmentService.getRemandedAdjustments(remandCalculation, sentenceRemandResult, chargeRemand)
 
     chargeRemand = chargeRemandStatusService.setChargeRemandStatuses(chargeRemand, adjustments, sentenceRemandResult, remandCalculation)
@@ -39,7 +39,7 @@ class RemandCalculationService(
       chargeRemand = chargeRemand,
       intersectingSentences = sentenceRemandResult.intersectingSentences,
       issuesWithLegacyData = remandCalculation.issuesWithLegacyData,
-      remandCalculation = if (remandCalculationRequestOptions.includeRemandCalculation) remandCalculation else null,
+      remandCalculation = if (options.includeRemandCalculation) remandCalculation else null,
     )
 
     return resultSortingService.sort(unsortedResult)

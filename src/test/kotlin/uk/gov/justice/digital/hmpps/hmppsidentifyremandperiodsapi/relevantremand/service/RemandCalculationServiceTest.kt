@@ -4,6 +4,7 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvFileSource
 import org.mockito.kotlin.any
+import org.mockito.kotlin.argThat
 import org.mockito.kotlin.eq
 import org.mockito.kotlin.mock
 import org.mockito.kotlin.whenever
@@ -13,7 +14,6 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.TestUtil
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.service.CalculateReleaseDateService
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CalculationDetail
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculationRequestOptions
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandResult
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
 
@@ -42,7 +42,7 @@ class RemandCalculationServiceTest {
 
     val remandResult: RemandResult
     try {
-      remandResult = remandCalculationService.calculate(example.remandCalculation, RemandCalculationRequestOptions())
+      remandResult = remandCalculationService.calculate(example.remandCalculation, example.options)
     } catch (e: Exception) {
       if (!error.isNullOrEmpty()) {
         assertThat(e.javaClass.simpleName).contains(error.split("(").first())
@@ -70,7 +70,7 @@ class RemandCalculationServiceTest {
             findHistoricReleaseDateService.findReleaseDate(
               eq(example.remandCalculation.prisonerId),
               any(),
-              eq(Sentence(sentence.sentenceSequence, sentence.sentenceAt, sentence.recallDates, sentence.bookingId)),
+              argThat { argSentence: Sentence -> argSentence.bookingId == sentence.bookingId },
               eq(calculation.calculateAt),
               any(),
             ),
@@ -82,7 +82,7 @@ class RemandCalculationServiceTest {
             calculateReleaseDateService.findReleaseDate(
               eq(example.remandCalculation.prisonerId),
               any(),
-              eq(Sentence(sentence.sentenceSequence, sentence.sentenceAt, sentence.recallDates, sentence.bookingId)),
+              argThat { argSentence: Sentence -> argSentence.bookingId == sentence.bookingId },
               eq(calculation.calculateAt),
               any(),
             ),
