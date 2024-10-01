@@ -51,17 +51,19 @@ class ChargeCombinationService {
 
   private fun combineUserSelectedCharges(chargesAndEvents: List<ChargeAndEvents>, options: RemandCalculationRequestOptions): List<ChargeAndEvents> {
     if (options.userSelections.isNotEmpty()) {
-      return chargesAndEvents.map {
-        val matchingSelection = options.userSelections.find { selection -> selection.targetChargeId == it.charge.chargeId }
-        if (matchingSelection != null) {
-          it.copy(
-            dates = combineDatesAndUserSelection(it, chargesAndEvents, matchingSelection),
-            userCombinedCharges = matchingSelection.chargeIdsToMakeApplicable,
-          )
-        } else {
-          it
+      return chargesAndEvents
+        .filter { options.userSelections.none { selection -> selection.chargeIdsToMakeApplicable.contains(it.charge.chargeId) } }
+        .map {
+          val matchingSelection = options.userSelections.find { selection -> selection.targetChargeId == it.charge.chargeId }
+          if (matchingSelection != null) {
+            it.copy(
+              dates = combineDatesAndUserSelection(it, chargesAndEvents, matchingSelection),
+              userCombinedCharges = matchingSelection.chargeIdsToMakeApplicable,
+            )
+          } else {
+            it
+          }
         }
-      }
     }
     return chargesAndEvents
   }

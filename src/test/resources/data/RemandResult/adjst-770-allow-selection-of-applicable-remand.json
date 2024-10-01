@@ -83,32 +83,10 @@
       "days": 252
     },
     {
-      "from": "2018-01-30",
-      "to": "2018-01-31",
-      "fromEvent": {
-        "date": "2018-01-30",
-        "description": "Remand in Custody (Bail Refused)"
-      },
-      "toEvent": {
-        "date": "2018-01-31",
-        "description": "Remand on Unconditional Bail"
-      },
-      "chargeIds": [
-        4969343,
-        4969344,
-        4969324,
-        4969325,
-        4969326,
-        4969327
-      ],
-      "status": "CASE_NOT_CONCLUDED",
-      "days": 2
-    },
-    {
-      "from": "2018-07-10",
+      "from": "2018-03-06",
       "to": "2019-02-24",
       "fromEvent": {
-        "date": "2018-07-10",
+        "date": "2018-03-06",
         "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
       },
       "toEvent": {
@@ -119,13 +97,13 @@
         5016619
       ],
       "status": "CASE_NOT_CONCLUDED",
-      "days": 230
+      "days": 356
     },
     {
-      "from": "2018-07-10",
+      "from": "2018-03-06",
       "to": "2019-02-25",
       "fromEvent": {
-        "date": "2018-07-10",
+        "date": "2018-03-06",
         "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
       },
       "toEvent": {
@@ -136,7 +114,7 @@
         5016620
       ],
       "status": "CASE_NOT_CONCLUDED",
-      "days": 231
+      "days": 357
     }
   ],
   "intersectingSentences": [
