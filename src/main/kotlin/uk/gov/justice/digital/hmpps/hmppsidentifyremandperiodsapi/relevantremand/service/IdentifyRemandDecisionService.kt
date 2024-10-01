@@ -26,7 +26,7 @@ class IdentifyRemandDecisionService(
     val sentencesAndOffences = prisonService.getSentencesAndOffences(prisonerDetails.bookingId.toLong(), true)
     val calculation = remandCalculationService.calculate(
       transform(courtDateResults, prisonerDetails, sentencesAndOffences),
-      RemandCalculationRequestOptions(),
+      decision.options ?: RemandCalculationRequestOptions(),
     )
     val activeAdjustments = calculation.adjustments.filter { it.status == AdjustmentStatus.ACTIVE }
     val days = activeAdjustments.map { it.daysBetween() }.reduceOrNull { acc, it -> acc + it } ?: 0

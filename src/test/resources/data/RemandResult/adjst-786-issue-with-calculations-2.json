@@ -240,6 +240,9 @@
       "sentence": {
         "sequence": 3,
         "sentenceDate": "2017-04-20",
+        "recallDates": [
+          "2024-02-20"
+        ],
         "bookingId": 1
       },
       "chargeId": 3521248,
@@ -252,7 +255,9 @@
       "sentence": {
         "sequence": 1,
         "sentenceDate": "2017-04-20",
-        "recallDates": ["2024-02-20"],
+        "recallDates": [
+          "2024-02-20"
+        ],
         "bookingId": 2
       },
       "chargeId": 7378195,
@@ -268,7 +273,9 @@
       "sentence": {
         "sequence": 1,
         "sentenceDate": "2017-04-20",
-        "recallDates": ["2024-02-20"],
+        "recallDates": [
+          "2024-02-20"
+        ],
         "bookingId": 2
       },
       "chargeId": 7378195,

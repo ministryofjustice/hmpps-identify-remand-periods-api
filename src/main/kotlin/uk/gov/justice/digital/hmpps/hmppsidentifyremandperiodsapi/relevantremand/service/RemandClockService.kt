@@ -1,23 +1,23 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.service
 
 import org.springframework.stereotype.Service
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeAndEvents
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeRemand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtAppearance
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDate
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.CONTINUE
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.START
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.STOP
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
 
 @Service
 class RemandClockService {
 
-  fun remandClock(remandCalculation: RemandCalculation): List<ChargeRemand> {
+  fun remandClock(combinedChargesAndEvents: List<ChargeAndEvents>): List<ChargeRemand> {
     val remand = mutableListOf<ChargeRemand>()
-    remandCalculation.chargesAndEvents.forEach { chargeAndEvent ->
+    combinedChargesAndEvents.forEach { chargeAndEvent ->
       if (hasAnyRemandEvent(chargeAndEvent.dates)) {
         var from: CourtDate? = null
-        chargeAndEvent.dates.forEach {
+        chargeAndEvent.dates.sortedBy { it.date }.forEach {
           if (listOf(START, CONTINUE).contains(it.type) && from == null) {
             from = it
           }

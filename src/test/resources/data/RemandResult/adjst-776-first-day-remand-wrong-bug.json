@@ -260,12 +260,15 @@
       "from": "2021-12-15",
       "to": "2022-06-17",
       "sentence": {
-        "sequence": 39,
+        "sequence": 32,
         "sentenceDate": "2021-12-15",
-        "recallDates": ["2022-08-19"],
+        "recallDates": [
+          "2022-08-19"
+        ],
         "bookingId": 2
       },
-      "chargeId": 6511958,
+      "chargeId": 6511961,
+      "service": "HISTORIC",
       "days": 185
     },
     {
@@ -277,18 +280,22 @@
         "bookingId": 2
       },
       "chargeId": 6606562,
+      "service": "HISTORIC",
       "days": 86
     },
     {
       "from": "2022-08-19",
       "to": "2025-03-08",
       "sentence": {
-        "sequence": 39,
+        "sequence": 32,
         "sentenceDate": "2021-12-15",
-        "recallDates": ["2022-08-19"],
+        "recallDates": [
+          "2022-08-19"
+        ],
         "bookingId": 2
       },
-      "chargeId": 6511958,
+      "chargeId": 6511961,
+      "service": "HISTORIC",
       "days": 933
     }
   ]
