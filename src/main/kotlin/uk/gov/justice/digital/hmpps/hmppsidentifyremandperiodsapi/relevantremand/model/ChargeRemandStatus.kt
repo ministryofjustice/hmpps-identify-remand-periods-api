@@ -2,7 +2,6 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantreman
 
 enum class ChargeRemandStatus {
   APPLICABLE,
-  SHARED,
   INACTIVE,
   INTERSECTED,
   CASE_NOT_CONCLUDED,

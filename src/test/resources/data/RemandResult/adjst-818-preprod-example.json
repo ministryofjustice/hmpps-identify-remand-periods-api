@@ -30,23 +30,6 @@
   ],
   "chargeRemand": [
     {
-      "from": "2023-03-14",
-      "to": "2023-05-01",
-      "fromEvent": {
-        "date": "2023-03-14",
-        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
-      },
-      "toEvent": {
-        "date": "2023-05-02",
-        "description": "Imprisonment"
-      },
-      "chargeIds": [
-        6968427
-      ],
-      "status": "APPLICABLE",
-      "days": 49
-    },
-    {
       "from": "2022-10-11",
       "to": "2023-05-01",
       "fromEvent": {
@@ -62,7 +45,7 @@
         6803534,
         6803542
       ],
-      "status": "SHARED",
+      "status": "APPLICABLE",
       "days": 203
     },
     {
@@ -83,7 +66,7 @@
         6813073,
         6813080
       ],
-      "status": "SHARED",
+      "status": "APPLICABLE",
       "days": 195
     },
     {
@@ -102,7 +85,7 @@
         6813084,
         6813090
       ],
-      "status": "SHARED",
+      "status": "APPLICABLE",
       "days": 434
     },
     {
@@ -117,10 +100,11 @@
         "description": "Imprisonment"
       },
       "chargeIds": [
+        6968427,
         6968429,
         6968439
       ],
-      "status": "SHARED",
+      "status": "APPLICABLE",
       "days": 49
     }
   ]

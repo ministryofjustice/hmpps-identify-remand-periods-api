@@ -47,46 +47,13 @@
         "description": "Imprisonment"
       },
       "chargeIds": [
-        7111078
-      ],
-      "status": "APPLICABLE",
-      "days": 56
-    },
-    {
-      "from": "2023-07-18",
-      "to": "2024-03-11",
-      "fromEvent": {
-        "date": "2023-07-18",
-        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
-      },
-      "toEvent": {
-        "date": "2024-03-12",
-        "description": "Imprisonment"
-      },
-      "chargeIds": [
-        7111252
-      ],
-      "status": "APPLICABLE",
-      "days": 238
-    },
-    {
-      "from": "2019-10-21",
-      "to": "2019-12-15",
-      "fromEvent": {
-        "date": "2019-10-21",
-        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
-      },
-      "toEvent": {
-        "date": "2019-12-16",
-        "description": "Imprisonment"
-      },
-      "chargeIds": [
+        7111078,
         7111079,
         7111080,
         7111113,
         7111114
       ],
-      "status": "SHARED",
+      "status": "APPLICABLE",
       "days": 56
     },
     {
@@ -101,9 +68,10 @@
         "description": "Imprisonment"
       },
       "chargeIds": [
+        7111252,
         7111254
       ],
-      "status": "SHARED",
+      "status": "APPLICABLE",
       "days": 238
     }
   ],

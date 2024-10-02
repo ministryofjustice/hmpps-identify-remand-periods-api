@@ -99,7 +99,32 @@
         "description": "Imprisonment"
       },
       "chargeIds": [
-        7378195
+        7378195,
+        7378224,
+        7378196,
+        7378197,
+        7378225,
+        7378198,
+        7378199,
+        7378200,
+        7378227
+      ],
+      "status": "APPLICABLE",
+      "days": 325
+    },
+    {
+      "from": "2016-05-30",
+      "to": "2017-04-19",
+      "fromEvent": {
+        "date": "2016-05-30",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2017-04-20",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        3521281
       ],
       "status": "APPLICABLE",
       "days": 325
@@ -120,47 +145,6 @@
       ],
       "status": "APPLICABLE",
       "days": 162
-    },
-    {
-      "from": "2016-05-30",
-      "to": "2017-04-19",
-      "fromEvent": {
-        "date": "2016-05-30",
-        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
-      },
-      "toEvent": {
-        "date": "2017-04-20",
-        "description": "Imprisonment"
-      },
-      "chargeIds": [
-        7378224,
-        7378196,
-        7378197,
-        7378225,
-        7378198,
-        7378199,
-        7378200,
-        7378227
-      ],
-      "status": "SHARED",
-      "days": 325
-    },
-    {
-      "from": "2016-05-30",
-      "to": "2017-04-19",
-      "fromEvent": {
-        "date": "2016-05-30",
-        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
-      },
-      "toEvent": {
-        "date": "2017-04-20",
-        "description": "Imprisonment"
-      },
-      "chargeIds": [
-        3521281
-      ],
-      "status": "SHARED",
-      "days": 325
     },
     {
       "from": "2016-06-15",
