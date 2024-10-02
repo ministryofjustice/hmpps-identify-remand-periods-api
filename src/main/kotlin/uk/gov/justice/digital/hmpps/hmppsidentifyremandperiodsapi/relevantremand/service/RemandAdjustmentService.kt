@@ -4,20 +4,20 @@ import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentDto
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentStatus
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.RemandDto
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CalculationData
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeRemand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Remand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentenceRemandResult
 
 @Service
 class RemandAdjustmentService {
 
-  fun getRemandedAdjustments(remandCalculation: RemandCalculation, sentenceRemand: SentenceRemandResult, chargeRemand: List<ChargeRemand>): List<AdjustmentDto> {
-    return sentenceRemand.sentenceRemand.map {
+  fun getRemandedAdjustments(remandCalculation: RemandCalculation, calculationData: CalculationData): List<AdjustmentDto> {
+    return calculationData.sentenceRemandResult!!.sentenceRemand.map {
       toAdjustmentDto(
         remandCalculation.prisonerId,
         it,
-        chargeRemand,
+        calculationData.chargeRemand,
         remandCalculation,
       )
     }
@@ -36,7 +36,7 @@ class RemandAdjustmentService {
       fromDate = remand.from,
       toDate = remand.to,
       person = prisonerId,
-      remand = RemandDto(chargeRemand.filter { remandCalculation.charges[it.chargeIds[0]]!!.sentenceSequence != null && it.overlaps(remand) }.flatMap { it.chargeIds }),
+      remand = RemandDto(chargeRemand.filter { remandCalculation.charges[it.chargeIds[0]]!!.sentenceSequence != null && it.overlaps(remand) }.flatMap { it.chargeIds }.distinct()),
       status = if (remandCalculation.chargeIdsWithActiveSentence.contains(remand.chargeId)) AdjustmentStatus.ACTIVE else AdjustmentStatus.INACTIVE,
     )
   }

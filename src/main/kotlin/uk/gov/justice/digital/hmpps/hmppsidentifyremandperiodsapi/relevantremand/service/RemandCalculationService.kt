@@ -2,13 +2,15 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantreman
 
 import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CalculationData
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculationRequestOptions
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandResult
 
 @Service
 class RemandCalculationService(
-  private val chargeCombinationService: ChargeCombinationService,
+  private val relatedChargeCombinationService: RelatedChargeCombinationService,
+  private val userSelectedCombinationService: UserSelectedCombinationService,
   private val remandClockService: RemandClockService,
   private val sentenceRemandService: SentenceRemandService,
   private val remandAdjustmentService: RemandAdjustmentService,
@@ -22,23 +24,28 @@ class RemandCalculationService(
       throw UnsupportedCalculationException("There are no charges to calculate")
     }
 
-    val combinedChargesAndEvents = chargeCombinationService.combineRelatedCharges(remandCalculation, options)
+    val calculationData = CalculationData(issuesWithLegacyData = remandCalculation.issuesWithLegacyData.toMutableList())
 
-    validateChargeService.validate(remandCalculation, combinedChargesAndEvents)
+    calculationData.chargeAndEvents = relatedChargeCombinationService.combineRelatedCharges(remandCalculation)
 
-    var chargeRemand = remandClockService.remandClock(combinedChargesAndEvents)
-    val sentenceRemandResult = sentenceRemandService.extractSentenceRemand(remandCalculation, combinedChargesAndEvents, chargeRemand)
-    val adjustments = remandAdjustmentService.getRemandedAdjustments(remandCalculation, sentenceRemandResult, chargeRemand)
+    validateChargeService.validate(calculationData)
 
-    chargeRemand = chargeRemandStatusService.setChargeRemandStatuses(chargeRemand, adjustments, sentenceRemandResult, remandCalculation)
-    chargeRemand = mergeChargeRemandService.mergeChargeRemand(chargeRemand, remandCalculation)
+    calculationData.chargeRemand = remandClockService.remandClock(calculationData)
+
+    userSelectedCombinationService.combineUserSelectedCharges(calculationData, options)
+
+    calculationData.sentenceRemandResult = sentenceRemandService.extractSentenceRemand(remandCalculation, calculationData)
+    val adjustments = remandAdjustmentService.getRemandedAdjustments(remandCalculation, calculationData)
+
+    calculationData.chargeRemand = chargeRemandStatusService.setChargeRemandStatuses(calculationData, adjustments, remandCalculation)
+    calculationData.chargeRemand = mergeChargeRemandService.mergeChargeRemand(calculationData, remandCalculation)
 
     val unsortedResult = RemandResult(
       charges = remandCalculation.charges,
       adjustments = adjustments,
-      chargeRemand = chargeRemand,
-      intersectingSentences = sentenceRemandResult.intersectingSentences,
-      issuesWithLegacyData = remandCalculation.issuesWithLegacyData,
+      chargeRemand = calculationData.chargeRemand,
+      intersectingSentences = calculationData.sentenceRemandResult!!.intersectingSentences,
+      issuesWithLegacyData = calculationData.issuesWithLegacyData,
       remandCalculation = if (options.includeRemandCalculation) remandCalculation else null,
     )
 

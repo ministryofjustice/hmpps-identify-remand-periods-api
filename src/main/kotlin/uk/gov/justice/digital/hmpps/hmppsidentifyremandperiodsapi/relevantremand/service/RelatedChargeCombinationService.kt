@@ -10,9 +10,9 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculationRequestOptions
 
 @Service
-class ChargeCombinationService {
+class RelatedChargeCombinationService {
 
-  fun combineRelatedCharges(remandCalculation: RemandCalculation, options: RemandCalculationRequestOptions): List<ChargeAndEvents> {
+  fun combineRelatedCharges(remandCalculation: RemandCalculation): List<ChargeAndEvents> {
     val mapOfRelatedCharges = remandCalculation.chargesAndEvents.groupBy {
       RelatedCharge(
         it.charge.offenceDate,
@@ -20,18 +20,17 @@ class ChargeCombinationService {
         it.charge.offence.code,
       )
     }
-    val combined = mapOfRelatedCharges.map {
+    return mapOfRelatedCharges.map {
       if (it.value.size > 1) {
         ChargeAndEvents(
           pickMostAppropriateCharge(it.value),
           flattenCourtDates(it.value),
-          similarCharges = it.value.map { combinedEvent -> combinedEvent.charge.chargeId },
+          relatedCharges = it.value.map { combinedEvent -> combinedEvent.charge.chargeId },
         )
       } else {
         it.value[0]
       }
     }
-    return combineUserSelectedCharges(combined, options)
   }
 
   private fun pickMostAppropriateCharge(relatedCharges: List<ChargeAndEvents>): Charge {
@@ -58,7 +57,7 @@ class ChargeCombinationService {
           if (matchingSelection != null) {
             it.copy(
               dates = combineDatesAndUserSelection(it, chargesAndEvents, matchingSelection),
-              userCombinedCharges = matchingSelection.chargeIdsToMakeApplicable,
+              userSelectedCharges = matchingSelection.chargeIdsToMakeApplicable,
             )
           } else {
             it
