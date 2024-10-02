@@ -6,7 +6,7 @@ data class RemandCalculation(
   val prisonerId: String,
   val chargesAndEvents: List<ChargeAndEvents>,
   val chargeIdsWithActiveSentence: List<Long> = emptyList(),
-  val issuesWithLegacyData: MutableList<LegacyDataProblem> = mutableListOf(),
+  val issuesWithLegacyData: List<LegacyDataProblem> = listOf(),
   val includeCalculationInResult: Boolean = false,
 ) {
   @JsonIgnore

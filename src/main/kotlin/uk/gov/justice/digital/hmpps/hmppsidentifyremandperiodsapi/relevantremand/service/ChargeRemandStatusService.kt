@@ -4,21 +4,20 @@ import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentDto
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentStatus
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CalculationData
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeRemand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeRemandStatus
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentenceRemandResult
 
 @Service
 class ChargeRemandStatusService {
 
   fun setChargeRemandStatuses(
-    chargeRemand: List<ChargeRemand>,
+    calculationData: CalculationData,
     adjustments: List<AdjustmentDto>,
-    sentenceRemandResult: SentenceRemandResult,
     remandCalculation: RemandCalculation,
   ): List<ChargeRemand> {
-    return chargeRemand.map {
+    return calculationData.chargeRemand.map {
       val status = if (remandCalculation.charges[it.onlyChargeId()]!!.sentenceSequence != null) {
         val matchingAdjustments = adjustments.filter { adjustment -> adjustment.remand!!.chargeId.contains(it.onlyChargeId()) }
 
@@ -33,7 +32,7 @@ class ChargeRemandStatusService {
             ChargeRemandStatus.INACTIVE
           }
         } else {
-          if (sentenceRemandResult.intersectingSentences.any { sentencePeriod -> sentencePeriod.engulfs(it) }) {
+          if (calculationData.sentenceRemandResult!!.intersectingSentences.any { sentencePeriod -> sentencePeriod.engulfs(it) }) {
             ChargeRemandStatus.INTERSECTED
           } else {
             throw UnsupportedCalculationException("Could not determine the status of charge remand $it")

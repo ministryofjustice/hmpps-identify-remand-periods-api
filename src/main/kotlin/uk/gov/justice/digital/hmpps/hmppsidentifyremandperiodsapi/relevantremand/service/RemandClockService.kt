@@ -1,7 +1,7 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.service
 
 import org.springframework.stereotype.Service
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeAndEvents
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CalculationData
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeRemand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtAppearance
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDate
@@ -12,9 +12,9 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 @Service
 class RemandClockService {
 
-  fun remandClock(combinedChargesAndEvents: List<ChargeAndEvents>): List<ChargeRemand> {
+  fun remandClock(calculationData: CalculationData): List<ChargeRemand> {
     val remand = mutableListOf<ChargeRemand>()
-    combinedChargesAndEvents.forEach { chargeAndEvent ->
+    calculationData.chargeAndEvents.forEach { chargeAndEvent ->
       if (hasAnyRemandEvent(chargeAndEvent.dates)) {
         var from: CourtDate? = null
         chargeAndEvent.dates.sortedBy { it.date }.forEach {

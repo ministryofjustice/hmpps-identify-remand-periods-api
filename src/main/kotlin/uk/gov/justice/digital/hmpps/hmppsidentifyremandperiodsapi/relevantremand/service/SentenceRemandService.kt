@@ -2,8 +2,7 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantreman
 
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeAndEvents
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeRemand
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CalculationData
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Remand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
@@ -17,17 +16,17 @@ class SentenceRemandService(
   private val findReleaseDateService: FindReleaseDateService,
 ) {
 
-  fun extractSentenceRemand(remandCalculation: RemandCalculation, combinedChargesAndEvents: List<ChargeAndEvents>, remandPeriods: List<ChargeRemand>): SentenceRemandResult {
-    val sentences = combinedChargesAndEvents
+  fun extractSentenceRemand(remandCalculation: RemandCalculation, calculationData: CalculationData): SentenceRemandResult {
+    val sentences = calculationData.chargeAndEvents
       .filter { it.charge.sentenceDate != null && it.charge.sentenceSequence != null }
       .flatMap {
-        val similarCharges = it.similarCharges.map { chargeId -> remandCalculation.charges[chargeId]!! }.filter { charge -> charge.sentenceDate != null && charge.sentenceSequence != null }
+        val similarCharges = it.relatedCharges.map { chargeId -> remandCalculation.charges[chargeId]!! }.filter { charge -> charge.sentenceDate != null && charge.sentenceSequence != null }
         val charges = (similarCharges + it.charge).distinctBy { charge -> charge.bookingId }
         charges.map { charge ->
           SentenceAndCharge(Sentence(charge.sentenceSequence!!, charge.sentenceDate!!, it.dates.filter { date -> date.isRecallEvent }.map { date -> date.date }.sorted(), charge.bookingId), charge)
         }
       }.distinctBy { "${it.sentence.sentenceDate}${it.sentence.recallDates}${it.sentence.bookingId}" }
-    val loopTracker = SentenceRemandLoopTracker(remandCalculation.charges, remandPeriods, sentences)
+    val loopTracker = SentenceRemandLoopTracker(remandCalculation.charges, calculationData.chargeRemand, sentences)
     for (entry in loopTracker.sentenceDateToPeriodMap.entries.sortedBy { it.key }) {
       loopTracker.startNewSentenceDateLoop(entry)
       var current: Remand? = null
