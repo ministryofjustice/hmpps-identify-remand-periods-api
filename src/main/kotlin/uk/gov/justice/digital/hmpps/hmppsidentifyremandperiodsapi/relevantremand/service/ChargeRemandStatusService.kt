@@ -23,11 +23,7 @@ class ChargeRemandStatusService {
 
         if (matchingAdjustments.isNotEmpty()) {
           if (matchingAdjustments.any { adjustment -> adjustment.status == AdjustmentStatus.ACTIVE }) {
-            if (matchingAdjustments.minOf { adjustment -> adjustment.remand!!.chargeId.indexOf(it.onlyChargeId()) } == 0) {
-              ChargeRemandStatus.APPLICABLE
-            } else {
-              ChargeRemandStatus.SHARED
-            }
+            ChargeRemandStatus.APPLICABLE
           } else {
             ChargeRemandStatus.INACTIVE
           }
