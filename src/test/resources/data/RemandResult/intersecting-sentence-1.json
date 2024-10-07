@@ -23,7 +23,6 @@
       "fromDate": "2021-01-01",
       "remand": {
         "chargeId": [
-          1,
           2
         ]
       },

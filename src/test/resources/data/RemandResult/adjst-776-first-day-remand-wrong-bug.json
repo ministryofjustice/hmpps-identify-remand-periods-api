@@ -9,7 +9,7 @@
       "fromDate": "2021-06-04",
       "remand": {
         "chargeId": [
-          6511959
+          6511961, 6511959, 6492240, 6492242
         ]
       },
       "status": "ACTIVE"
@@ -23,8 +23,7 @@
       "fromDate": "2021-07-31",
       "remand": {
         "chargeId": [
-          6511961,
-          6511959
+          6511961, 6511959, 6492240, 6492242
         ]
       },
       "status": "ACTIVE"
@@ -38,8 +37,7 @@
       "fromDate": "2021-11-25",
       "remand": {
         "chargeId": [
-          6492240,
-          6492242
+          6511961, 6511959, 6492240, 6492242
         ]
       },
       "status": "ACTIVE"
@@ -146,7 +144,7 @@
         6856253,
         6856254
       ],
-      "status": "INTERSECTED",
+      "status": "INTERSECTED_BY_SENTENCE",
       "days": 10
     },
     {
