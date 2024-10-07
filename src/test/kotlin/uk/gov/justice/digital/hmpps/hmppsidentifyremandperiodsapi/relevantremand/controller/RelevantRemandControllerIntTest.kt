@@ -153,7 +153,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
     assertThat(result.adjustments[0].remand!!.chargeId).isEqualTo(listOf(3933931L))
     assertThat(result.adjustments[1].fromDate).isEqualTo(LocalDate.of(2021, 1, 1))
     assertThat(result.adjustments[1].toDate).isEqualTo(LocalDate.of(2021, 1, 31))
-    assertThat(result.adjustments[1].remand!!.chargeId).isEqualTo(listOf(3933931L, 3933932L))
+    assertThat(result.adjustments[1].remand!!.chargeId).isEqualTo(listOf(3933932L))
     assertThat(result.adjustments[2].fromDate).isEqualTo(LocalDate.of(2021, 4, 2))
     assertThat(result.adjustments[2].toDate).isEqualTo(LocalDate.of(2021, 12, 31))
     assertThat(result.adjustments[2].remand!!.chargeId).isEqualTo(listOf(3933931L))

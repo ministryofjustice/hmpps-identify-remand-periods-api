@@ -23,8 +23,8 @@
       "fromDate": "2021-01-01",
       "remand": {
         "chargeId": [
-          1,
-          2
+          2,
+          3
         ]
       },
       "status": "INACTIVE"
@@ -87,7 +87,7 @@
       "chargeIds": [
         3
       ],
-      "status": "INTERSECTED",
+      "status": "INTERSECTED_BY_SENTENCE",
       "days": 5
     }
   ],

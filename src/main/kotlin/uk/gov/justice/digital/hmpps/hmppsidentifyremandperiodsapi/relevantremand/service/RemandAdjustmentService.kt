@@ -5,9 +5,10 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentStatus
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.RemandDto
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CalculationData
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeRemand
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.DatePeriod
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Remand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
+import java.time.LocalDate
 
 @Service
 class RemandAdjustmentService {
@@ -15,29 +16,43 @@ class RemandAdjustmentService {
   fun getRemandedAdjustments(remandCalculation: RemandCalculation, calculationData: CalculationData): List<AdjustmentDto> {
     return calculationData.sentenceRemandResult!!.sentenceRemand.map {
       toAdjustmentDto(
-        remandCalculation.prisonerId,
-        it,
-        calculationData.chargeRemand,
         remandCalculation,
+        calculationData,
+        it,
       )
     }
   }
 
-  private fun toAdjustmentDto(
-    prisonerId: String,
-    remand: Remand,
-    chargeRemand: List<ChargeRemand>,
-    remandCalculation: RemandCalculation,
-  ): AdjustmentDto {
+  private fun toAdjustmentDto(remandCalculation: RemandCalculation, calculationData: CalculationData, remand: Remand): AdjustmentDto {
+    val sentenceDate = remandCalculation.charges[remand.chargeId]!!.sentenceDate!!
+    val endOfSentencePeriod = findEndOfSentencePeriod(sentenceDate, calculationData)
+    val periodOfConcurrentSentences = DatePeriod(sentenceDate, endOfSentencePeriod)
+
+    val charges = calculationData.chargeRemand.filter {
+      val itSentenceDate = remandCalculation.charges[it.onlyChargeId()]!!.sentenceDate
+      itSentenceDate != null && (periodOfConcurrentSentences.overlapsStartInclusive(itSentenceDate) || periodOfConcurrentSentences.from == itSentenceDate)
+    }.flatMap { it.chargeIds }.distinct()
     return AdjustmentDto(
       id = null,
       bookingId = remandCalculation.charges[remand.chargeId]!!.bookingId,
       sentenceSequence = remandCalculation.charges[remand.chargeId]!!.sentenceSequence,
       fromDate = remand.from,
       toDate = remand.to,
-      person = prisonerId,
-      remand = RemandDto(chargeRemand.filter { remandCalculation.charges[it.chargeIds[0]]!!.sentenceSequence != null && it.overlaps(remand) }.flatMap { it.chargeIds }.distinct()),
-      status = if (remandCalculation.chargeIdsWithActiveSentence.contains(remand.chargeId)) AdjustmentStatus.ACTIVE else AdjustmentStatus.INACTIVE,
+      person = remandCalculation.prisonerId,
+      remand = RemandDto(charges),
+      status = if (charges.any { remandCalculation.chargeIdsWithActiveSentence.contains(it) }) AdjustmentStatus.ACTIVE else AdjustmentStatus.INACTIVE,
     )
+  }
+
+  private fun findEndOfSentencePeriod(sentenceDate: LocalDate, calculationData: CalculationData): LocalDate {
+    val intersectingSentences = calculationData.sentenceRemandResult!!.intersectingSentences
+    if (intersectingSentences.any { it.from == sentenceDate }) {
+      var currentEnd = sentenceDate
+      while (intersectingSentences.any { it.overlapsStartInclusive(currentEnd) }) {
+        currentEnd = intersectingSentences.filter { it.overlapsStartInclusive(currentEnd) }.maxOf { it.to }
+      }
+      return currentEnd
+    }
+    return sentenceDate
   }
 }

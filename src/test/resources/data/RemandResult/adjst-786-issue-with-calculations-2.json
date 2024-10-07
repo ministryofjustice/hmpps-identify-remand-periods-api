@@ -32,18 +32,7 @@
       "fromDate": "2016-06-15",
       "remand": {
         "chargeId": [
-          7378195,
-          7378224,
-          7378196,
-          7378197,
-          7378225,
-          7378198,
-          7378199,
-          3521281,
-          3560779,
-          3542301,
-          7378200,
-          7378227
+          3560779, 3542301
         ]
       },
       "status": "INACTIVE"
@@ -130,23 +119,6 @@
       "days": 325
     },
     {
-      "from": "2024-02-19",
-      "to": "2024-07-29",
-      "fromEvent": {
-        "date": "2024-02-19",
-        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
-      },
-      "toEvent": {
-        "date": "2024-07-30",
-        "description": "Imprisonment"
-      },
-      "chargeIds": [
-        7376532
-      ],
-      "status": "APPLICABLE",
-      "days": 162
-    },
-    {
       "from": "2016-06-15",
       "to": "2016-07-26",
       "fromEvent": {
@@ -163,6 +135,23 @@
       ],
       "status": "INACTIVE",
       "days": 42
+    },
+    {
+      "from": "2024-02-19",
+      "to": "2024-07-29",
+      "fromEvent": {
+        "date": "2024-02-19",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2024-07-30",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7376532
+      ],
+      "status": "INTERSECTED_BY_REMAND",
+      "days": 162
     },
     {
       "from": "2016-05-30",

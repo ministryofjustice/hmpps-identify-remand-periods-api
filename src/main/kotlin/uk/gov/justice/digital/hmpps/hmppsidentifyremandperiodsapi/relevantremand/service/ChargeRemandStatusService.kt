@@ -7,6 +7,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CalculationData
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeRemand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeRemandStatus
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.DatePeriod
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
 
 @Service
@@ -19,7 +20,8 @@ class ChargeRemandStatusService {
   ): List<ChargeRemand> {
     return calculationData.chargeRemand.map {
       val status = if (remandCalculation.charges[it.onlyChargeId()]!!.sentenceSequence != null) {
-        val matchingAdjustments = adjustments.filter { adjustment -> adjustment.remand!!.chargeId.contains(it.onlyChargeId()) }
+        val matchingChargeId = adjustments.filter { adjustment -> adjustment.remand!!.chargeId.contains(it.onlyChargeId()) }
+        val matchingAdjustments = matchingChargeId.filter { adjustment -> DatePeriod(adjustment.fromDate!!, adjustment.toDate!!).overlaps(it) }
 
         if (matchingAdjustments.isNotEmpty()) {
           if (matchingAdjustments.any { adjustment -> adjustment.status == AdjustmentStatus.ACTIVE }) {
@@ -29,7 +31,9 @@ class ChargeRemandStatusService {
           }
         } else {
           if (calculationData.sentenceRemandResult!!.intersectingSentences.any { sentencePeriod -> sentencePeriod.engulfs(it) }) {
-            ChargeRemandStatus.INTERSECTED
+            ChargeRemandStatus.INTERSECTED_BY_SENTENCE
+          } else if (matchingChargeId.isNotEmpty()) {
+            ChargeRemandStatus.INTERSECTED_BY_REMAND
           } else {
             throw UnsupportedCalculationException("Could not determine the status of charge remand $it")
           }

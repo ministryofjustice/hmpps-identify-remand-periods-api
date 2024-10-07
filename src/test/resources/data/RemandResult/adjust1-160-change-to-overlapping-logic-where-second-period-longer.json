@@ -24,7 +24,7 @@
       "fromDate": "2018-04-05",
       "remand": {
         "chargeId": [
-          2
+          1, 2
         ]
       },
       "status": "INACTIVE"
