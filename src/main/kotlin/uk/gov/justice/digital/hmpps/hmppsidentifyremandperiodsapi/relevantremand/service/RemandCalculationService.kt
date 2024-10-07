@@ -45,7 +45,7 @@ class RemandCalculationService(
       adjustments = adjustments,
       chargeRemand = calculationData.chargeRemand,
       intersectingSentences = calculationData.sentenceRemandResult!!.intersectingSentences,
-      issuesWithLegacyData = calculationData.issuesWithLegacyData,
+      issuesWithLegacyData = calculationData.issuesWithLegacyData.distinctBy { it.message },
       remandCalculation = if (options.includeRemandCalculation) remandCalculation else null,
     )
 
