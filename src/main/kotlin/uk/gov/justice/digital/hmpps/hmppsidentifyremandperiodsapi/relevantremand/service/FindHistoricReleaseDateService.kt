@@ -8,6 +8,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Charge
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Remand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.util.isAfterOrEqualTo
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.util.isBeforeOrEqualTo
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -24,7 +25,7 @@ class FindHistoricReleaseDateService(
       throw UnsupportedCalculationException("No calculations found for $prisonerId in booking ${sentence.bookingId}")
     }
 
-    var calculation = historicReleaseDates.firstOrNull { it.calculationDate.isAfter(calculateAt.atStartOfDay()) }
+    var calculation = historicReleaseDates.firstOrNull { it.calculationDate.toLocalDate().isAfterOrEqualTo(calculateAt) }
     if (calculation == null) {
       throw UnsupportedCalculationException("No calculations found for $prisonerId after sentence or recall date $calculateAt")
     }
@@ -36,7 +37,8 @@ class FindHistoricReleaseDateService(
     var releaseDate = getReleaseDateForCalcId(calculation.offenderSentCalculationId, calculation.calculationDate, allCalculations, calculationIds, calculateAt)
     var lastCalculationBeforeRelease = historicReleaseDates.lastOrNull { it.calculationDate.isBefore(releaseDate.atStartOfDay()) }
     if (lastCalculationBeforeRelease == null) {
-      throw UnsupportedCalculationException("No calculations found for $prisonerId before initial release date of $releaseDate")
+      // Immediate release
+      return CalculationDetail(releaseDate, calculationIds)
     }
     while (lastCalculationBeforeRelease!!.offenderSentCalculationId != calculation!!.offenderSentCalculationId) {
       calculation = lastCalculationBeforeRelease
