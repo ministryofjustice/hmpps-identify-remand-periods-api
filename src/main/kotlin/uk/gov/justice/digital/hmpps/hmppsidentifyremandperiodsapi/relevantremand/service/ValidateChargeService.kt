@@ -23,11 +23,11 @@ class ValidateChargeService {
     }
   }
   private fun validateRecallEventNotOnSentenceDate(calculationData: CalculationData) {
-    val recallEventOnSentenceDateCharges = calculationData.chargeAndEvents.filter { it.charge.sentenceDate != null && it.dates.any { event -> event.isRecallEvent && event.date.isBeforeOrEqualTo(it.charge.sentenceDate) } }
+    val (recallEventOnSentenceDateCharges, chargeAndEvents) = calculationData.chargeAndEvents.partition { it.charge.sentenceDate != null && it.dates.any { event -> event.isRecallEvent && event.date.isBeforeOrEqualTo(it.charge.sentenceDate) } }
 
     recallEventOnSentenceDateCharges.forEach {
       calculationData.issuesWithLegacyData.add(LegacyDataProblem(LegacyDataProblemType.RECALL_EVENT_ON_SENTENCE_DATE, "The offence '${it.charge.offence.description}' within booking ${it.charge.bookNumber} has a recall event before or on sentence date", it.charge))
     }
-    calculationData.chargeAndEvents = calculationData.chargeAndEvents.filter { !recallEventOnSentenceDateCharges.contains(it) }
+    calculationData.chargeAndEvents = chargeAndEvents
   }
 }
