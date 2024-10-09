@@ -36,7 +36,7 @@ class FindReleaseDateService(
 
     if (periods.none { it.first != null }) {
       val errors = periods.first().second!!
-      throw UnsupportedCalculationException("Unable to calculation release dates on $date:\n ${errors.map { it.message }.joinToString { "\n" }}")
+      throw UnsupportedCalculationException("Unable to calculation release dates on $date:\n ${errors.joinToString("\n") {it.message} }")
     }
 
     loopTracker.periodsServingSentence.addAll(
