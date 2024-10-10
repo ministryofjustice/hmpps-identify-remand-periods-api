@@ -19,9 +19,11 @@ import java.time.format.DateTimeFormatter
 fun transform(results: List<PrisonApiCharge>, prisonerDetails: Prisoner, sentencesAndOffences: List<SentenceAndOffences>): RemandCalculation {
   val earliestActiveOffenceDate: LocalDate = findEarliestActiveOffenceDate(results, prisonerDetails)
   val issuesWithLegacyData = mutableListOf<LegacyDataProblem>()
+  val chargesFilteredByOffenceDate = filterEventsByOffenceDate(results, earliestActiveOffenceDate)
+
   return RemandCalculation(
     prisonerDetails.prisonerNumber,
-    results
+    chargesFilteredByOffenceDate
       .filter {
         if (it.offenceDate == null) {
           issuesWithLegacyData.add(LegacyDataProblem(LegacyDataProblemType.MISSING_OFFENCE_DATE, "There is another offence of '${it.offenceDescription}' within booking ${it.bookNumber} that has a missing offence date.", it))
@@ -48,15 +50,21 @@ fun transform(results: List<PrisonApiCharge>, prisonerDetails: Prisoner, sentenc
             it.bookingId == prisonerDetails.bookingId.toLong(),
             recallTypes.contains(it.sentenceType),
           ),
-          it.outcomes
-            .filter { result -> result.date.isAfter(earliestActiveOffenceDate) }
-            .mapNotNull { result -> transformToCourtDate(result, it, issuesWithLegacyData) },
+          it.outcomes.mapNotNull { result -> transformToCourtDate(result, it, issuesWithLegacyData) },
         )
       }
       .filter { it.dates.isNotEmpty() },
     sentencesAndOffences.flatMap { it.offences.map { offence -> offence.offenderChargeId } },
     issuesWithLegacyData,
   )
+}
+
+fun filterEventsByOffenceDate(results: List<PrisonApiCharge>, earliestActiveOffenceDate: LocalDate): List<PrisonApiCharge> {
+  return results.map {
+    it.copy(
+      outcomes = it.outcomes.filter { result -> result.date.isAfter(earliestActiveOffenceDate) },
+    )
+  }.filter { it.outcomes.isNotEmpty() }
 }
 
 private fun findEarliestActiveOffenceDate(results: List<PrisonApiCharge>, prisonerDetails: Prisoner): LocalDate {
