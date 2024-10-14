@@ -37,15 +37,18 @@ class SentenceRemandService(
         val next = loopTracker.findNextPeriod(date)
         // Should we start a new period at this date?
         if (!loopTracker.doesDateIntersectWithEstablishedRemandOrSentence(date)) {
-          if (next?.from == date) {
-            // New period starting from its start date.
-            if (current == null) {
-              current = next
+          if (loopTracker.dateIsEndOfRemandOrSentence(date)) {
+            if (current == null && loopTracker.open.isNotEmpty()) {
+              // New period starting from the end of another period.
+              current = loopTracker.open.first().copy(from = date.plusDays(1))
             }
-          }
-          if (current == null && loopTracker.open.isNotEmpty()) {
-            // New period starting from the end of another period.
-            current = loopTracker.open.first().copy(from = date.plusDays(1))
+          } else {
+            if (next?.from == date) {
+              // New period starting from its start date.
+              if (current == null) {
+                current = next
+              }
+            }
           }
         }
 

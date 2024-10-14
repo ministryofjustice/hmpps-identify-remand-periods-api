@@ -1,0 +1,1342 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "chargesAndEvents": [
+      {
+        "charge": {
+          "chargeId": 6324541,
+          "offence": {
+            "code": "PH97003",
+            "statute": "PH97",
+            "description": "Harassment - breach of a restraining order on conviction"
+          },
+          "offenceDate": "2021-05-30",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 2,
+          "sentenceDate": "2021-06-01",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2021-06-01",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6324542,
+          "offence": {
+            "code": "SE20002",
+            "statute": "SE20",
+            "description": "Harassment - breach of a restraining order on conviction"
+          },
+          "offenceDate": "2021-05-27",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "offenceEndDate": "2021-05-27",
+          "sentenceSequence": 1,
+          "sentenceDate": "2021-06-01",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2021-06-01",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6557901,
+          "offence": {
+            "code": "PU86003",
+            "statute": "PU86",
+            "description": "Affray"
+          },
+          "offenceDate": "2022-02-02",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 1,
+          "sentenceDate": "2022-07-15",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2022-02-04",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-03-04",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-06-16",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-07-15",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2022-05-24",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6557902,
+          "offence": {
+            "code": "CD71040",
+            "statute": "CD71",
+            "description": "Destroy / damage property of a value unknown"
+          },
+          "offenceDate": "2022-02-02",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Lie on File"
+        },
+        "dates": [
+          {
+            "date": "2022-02-04",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-03-04",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-06-16",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-07-15",
+            "type": "STOP",
+            "description": "Lie on File"
+          },
+          {
+            "date": "2022-05-24",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6557903,
+          "offence": {
+            "code": "CD71040",
+            "statute": "CD71",
+            "description": "Destroy / damage property of a value unknown"
+          },
+          "offenceDate": "2022-02-02",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Lie on File"
+        },
+        "dates": [
+          {
+            "date": "2022-02-04",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-03-04",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-06-16",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-07-15",
+            "type": "STOP",
+            "description": "Lie on File"
+          },
+          {
+            "date": "2022-05-24",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6557910,
+          "offence": {
+            "code": "PU86149",
+            "statute": "PU86",
+            "description": "Use threatening / abusive words / behaviour likely to cause harassment, alarm or distress"
+          },
+          "offenceDate": "2022-02-02",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2022-02-04",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-03-04",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-06-16",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-05-24",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6558093,
+          "offence": {
+            "code": "CJ88144",
+            "statute": "CJ88",
+            "description": "Possess knife blade / sharp pointed article in a public place - Criminal Justice Act 1988"
+          },
+          "offenceDate": "2022-02-02",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 2,
+          "sentenceDate": "2022-07-15",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2022-02-04",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-03-04",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-06-16",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-07-15",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2022-05-24",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7308389,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "offenceDate": "2023-10-21",
+          "bookingId": 3,
+          "bookNumber": "3",
+          "resultDescription": "Suspended Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2023-12-22",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-01-12",
+            "type": "STOP",
+            "description": "Suspended Imprisonment",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7308390,
+          "offence": {
+            "code": "TH68006",
+            "statute": "TH68",
+            "description": "Theft of pedal cycle"
+          },
+          "offenceDate": "2023-10-21",
+          "bookingId": 3,
+          "bookNumber": "3",
+          "resultDescription": "Suspended Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2023-12-22",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-01-12",
+            "type": "STOP",
+            "description": "Suspended Imprisonment",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7229958,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2023-10-21",
+          "bookingId": 4,
+          "bookNumber": "4",
+          "resultDescription": "Remand on Unconditional Bail"
+        },
+        "dates": [
+          {
+            "date": "2023-12-13",
+            "type": "STOP",
+            "description": "Remand on Unconditional Bail"
+          },
+          {
+            "date": "2023-10-23",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2023-11-01",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2023-11-29",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7229959,
+          "offence": {
+            "code": "TH68037",
+            "statute": "TH68",
+            "description": "Burglary other than dwelling - theft"
+          },
+          "offenceDate": "2023-10-21",
+          "bookingId": 4,
+          "bookNumber": "4",
+          "resultDescription": "Remand on Unconditional Bail"
+        },
+        "dates": [
+          {
+            "date": "2023-12-13",
+            "type": "STOP",
+            "description": "Remand on Unconditional Bail"
+          },
+          {
+            "date": "2023-10-23",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2023-11-01",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2023-11-29",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378858,
+          "offence": {
+            "code": "CD98067",
+            "statute": "CD98",
+            "description": "Racially / religiously aggravated intentional harassment / alarm / distress - words / writing"
+          },
+          "offenceDate": "2024-01-30",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 27,
+          "sentenceDate": "2024-04-03",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-04-03",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378859,
+          "offence": {
+            "code": "CJ88144",
+            "statute": "CJ88",
+            "description": "Possess knife blade / sharp pointed article in a public place - Criminal Justice Act 1988"
+          },
+          "offenceDate": "2024-02-10",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 28,
+          "sentenceDate": "2024-04-03",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-20",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-04-03",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7378865,
+          "offence": {
+            "code": "TH68023",
+            "statute": "TH68",
+            "description": "Robbery"
+          },
+          "offenceDate": "2024-02-10",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 26,
+          "sentenceDate": "2024-04-03",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-04-03",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-02-20",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7613611,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "offenceDate": "2021-05-06",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 29,
+          "sentenceDate": "2024-06-18",
+          "resultDescription": "Imprisonment in default",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-06-18",
+            "type": "STOP",
+            "description": "Imprisonment in default",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7613612,
+          "offence": {
+            "code": "MD71531",
+            "statute": "MD71",
+            "description": "Produce controlled drug of Class B - cannabis"
+          },
+          "offenceDate": "2021-05-06",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 29,
+          "sentenceDate": "2024-06-18",
+          "resultDescription": "Imprisonment in default",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-06-18",
+            "type": "STOP",
+            "description": "Imprisonment in default",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7613613,
+          "offence": {
+            "code": "CD71039",
+            "statute": "CD71",
+            "description": "Criminal damage to property valued under £5000"
+          },
+          "offenceDate": "2021-05-28",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 29,
+          "sentenceDate": "2024-06-18",
+          "resultDescription": "Imprisonment in default",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-06-18",
+            "type": "STOP",
+            "description": "Imprisonment in default",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7613614,
+          "offence": {
+            "code": "SE20002",
+            "statute": "SE20",
+            "description": "Harassment - breach of a restraining order on conviction"
+          },
+          "offenceDate": "2021-06-01",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 29,
+          "sentenceDate": "2024-06-18",
+          "resultDescription": "Imprisonment in default",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-06-18",
+            "type": "STOP",
+            "description": "Imprisonment in default",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7613615,
+          "offence": {
+            "code": "CJ88159",
+            "statute": "CJ88",
+            "description": "Common assault of an emergency worker"
+          },
+          "offenceDate": "2021-12-13",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 29,
+          "sentenceDate": "2024-06-18",
+          "resultDescription": "Imprisonment in default",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-06-18",
+            "type": "STOP",
+            "description": "Imprisonment in default",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7613616,
+          "offence": {
+            "code": "CJ88144",
+            "statute": "CJ88",
+            "description": "Possess knife blade / sharp pointed article in a public place - Criminal Justice Act 1988"
+          },
+          "offenceDate": "2022-06-15",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 29,
+          "sentenceDate": "2024-06-18",
+          "resultDescription": "Imprisonment in default",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-06-18",
+            "type": "STOP",
+            "description": "Imprisonment in default",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7613617,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "offenceDate": "2022-07-26",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 29,
+          "sentenceDate": "2024-06-18",
+          "resultDescription": "Imprisonment in default",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-06-18",
+            "type": "STOP",
+            "description": "Imprisonment in default",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7613618,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "offenceDate": "2022-07-26",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 29,
+          "sentenceDate": "2024-06-18",
+          "resultDescription": "Imprisonment in default",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-06-18",
+            "type": "STOP",
+            "description": "Imprisonment in default",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7613619,
+          "offence": {
+            "code": "RW89008",
+            "statute": "RW89",
+            "description": "Fail to produce / deliver rail ticket on request / give name and address"
+          },
+          "offenceDate": "2023-06-13",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 29,
+          "sentenceDate": "2024-06-18",
+          "resultDescription": "Imprisonment in default",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-06-18",
+            "type": "STOP",
+            "description": "Imprisonment in default",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7613620,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "offenceDate": "2023-10-11",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 29,
+          "sentenceDate": "2024-06-18",
+          "resultDescription": "Imprisonment in default",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-06-18",
+            "type": "STOP",
+            "description": "Imprisonment in default",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7613621,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "offenceDate": "2023-10-11",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 29,
+          "sentenceDate": "2024-06-18",
+          "resultDescription": "Imprisonment in default",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-06-18",
+            "type": "STOP",
+            "description": "Imprisonment in default",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7613625,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "offenceDate": "2023-10-11",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 29,
+          "sentenceDate": "2024-06-18",
+          "resultDescription": "Imprisonment in default",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-06-18",
+            "type": "STOP",
+            "description": "Imprisonment in default",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7613626,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "offenceDate": "2024-01-12",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 29,
+          "sentenceDate": "2024-06-18",
+          "resultDescription": "Imprisonment in default",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-06-18",
+            "type": "STOP",
+            "description": "Imprisonment in default",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7361669,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "offenceDate": "2023-10-21",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 17,
+          "sentenceDate": "2024-02-07",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-13",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-02-07",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7361670,
+          "offence": {
+            "code": "TH68006",
+            "statute": "TH68",
+            "description": "Theft of pedal cycle"
+          },
+          "offenceDate": "2023-10-21",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 18,
+          "sentenceDate": "2024-02-07",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-13",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-02-07",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7361736,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "offenceDate": "2024-01-30",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 25,
+          "sentenceDate": "2024-02-07",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-13",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-02-07",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7361737,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "offenceDate": "2024-01-28",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 25,
+          "sentenceDate": "2024-02-07",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-13",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-02-07",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7361738,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "offenceDate": "2024-01-23",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 25,
+          "sentenceDate": "2024-02-07",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-13",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-02-07",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7361739,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "offenceDate": "2024-01-15",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "offenceEndDate": "2024-01-23",
+          "sentenceSequence": 25,
+          "sentenceDate": "2024-02-07",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-13",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-02-07",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7361740,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "offenceDate": "2024-01-17",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 25,
+          "sentenceDate": "2024-02-07",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-13",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-02-07",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7361741,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "offenceDate": "2024-01-23",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 25,
+          "sentenceDate": "2024-02-07",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-13",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-02-07",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7361742,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "offenceDate": "2024-01-26",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 25,
+          "sentenceDate": "2024-02-07",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-13",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-02-07",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7361743,
+          "offence": {
+            "code": "CD71039",
+            "statute": "CD71",
+            "description": "Criminal damage to property valued under £5000"
+          },
+          "offenceDate": "2024-01-30",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 25,
+          "sentenceDate": "2024-02-07",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-13",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-02-07",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7361744,
+          "offence": {
+            "code": "CD71039",
+            "statute": "CD71",
+            "description": "Criminal damage to property valued under £5000"
+          },
+          "offenceDate": "2024-01-30",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 25,
+          "sentenceDate": "2024-02-07",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-13",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-02-07",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7361745,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "offenceDate": "2024-01-30",
+          "bookingId": 5,
+          "bookNumber": "5",
+          "sentenceSequence": 25,
+          "sentenceDate": "2024-02-07",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-13",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-02-07",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      }
+    ],
+    "chargeIdsWithActiveSentence": [
+      7378865,
+      7378858,
+      7378859
+    ]
+  },
+  "sentences": [
+    {
+      "bookingId": 1,
+      "sentenceSequence": 2,
+      "sentenceAt": "2021-06-01",
+      "calculations": [
+        {
+          "calculateAt": "2021-06-01",
+          "release": "2021-07-19",
+          "service": "HISTORIC"
+        }
+      ]
+    },
+    {
+      "bookingId": 2,
+      "sentenceSequence": 1,
+      "sentenceAt": "2022-07-15",
+      "calculations": [
+        {
+          "calculateAt": "2022-07-15",
+          "release": "2022-07-15",
+          "service": "HISTORIC"
+        }
+      ]
+    },
+    {
+      "bookingId": 5,
+      "sentenceSequence": 17,
+      "sentenceAt": "2024-02-07",
+      "recallDates": [
+        "2024-02-13"
+      ],
+      "calculations": [
+        {
+          "calculateAt": "2024-02-07",
+          "release": "2024-02-07",
+          "service": "CRDS"
+        },
+        {
+          "calculateAt": "2024-02-13",
+          "release": "2024-02-20",
+          "service": "CRDS"
+        }
+      ]
+    }
+  ],
+  "options": {
+    "userSelections": [
+      {
+        "chargeIdsToMakeApplicable": [7229958,7229959],
+        "targetChargeId": 7361669
+      }
+    ]
+  }
+}
