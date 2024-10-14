@@ -80,6 +80,10 @@ class SentenceRemandLoopTracker(
     return (final + periodsServingSentence).any { it.overlapsStartInclusive(date) } || date == sentenceDate
   }
 
+  fun dateIsEndOfRemandOrSentence(date: LocalDate): Boolean {
+    return (final + periodsServingSentence).any { it.to == date }
+  }
+
   /* Should the current period be closed? */
   fun shouldCloseCurrentPeriod(date: LocalDate, current: Period?): Boolean {
     return ((final + periodsServingSentence).any { date == it.from } || date == sentenceDate) && current != null
