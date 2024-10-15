@@ -20,7 +20,8 @@ interface Period {
   }
 
   fun overlaps(period: Period): Boolean {
-    return overlapsStartInclusive(period.from) || overlapsEndInclusive(period.to) || datesSame(period)
+    return (period.from.isAfterOrEqualTo(from) && period.from.isBeforeOrEqualTo(to)) ||
+      (period.to.isAfterOrEqualTo(from) && period.to.isBeforeOrEqualTo(to))
   }
 
   fun datesSame(period: Period): Boolean {

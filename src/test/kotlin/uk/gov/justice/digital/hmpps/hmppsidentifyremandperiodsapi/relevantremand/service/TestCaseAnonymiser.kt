@@ -1,7 +1,6 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.service
 
 import com.fasterxml.jackson.core.type.TypeReference
-import org.junit.jupiter.api.Test
 import org.slf4j.LoggerFactory
 import org.springframework.core.io.ClassPathResource
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.TestUtil
@@ -9,7 +8,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 
 class TestCaseAnonymiser {
 
-  @Test
+//  @Test
   fun anonymise() {
     val exampleName = "adjst-770-allow-selection-of-applicable-remand"
     log.info("Anonymising example $exampleName")
