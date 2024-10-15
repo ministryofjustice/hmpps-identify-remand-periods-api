@@ -1,0 +1,923 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "chargesAndEvents": [
+      {
+        "charge": {
+          "chargeId": 7232970,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "offenceDate": "2017-09-16",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Not Guilty",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-01-12",
+            "type": "STOP",
+            "description": "Not Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7232971,
+          "offence": {
+            "code": "COML016",
+            "statute": "COML",
+            "description": "Escape from lawful custody"
+          },
+          "offenceDate": "2017-09-17",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 3,
+          "sentenceDate": "2018-01-12",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2018-01-12",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-10-25",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7232972,
+          "offence": {
+            "code": "TH68038",
+            "statute": "TH68",
+            "description": "Burglary dwelling inflict grievous bodily harm"
+          },
+          "offenceDate": "2017-09-16",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Replaced With Another Offence",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-01-12",
+            "type": "STOP",
+            "description": "Replaced With Another Offence",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7232973,
+          "offence": {
+            "code": "OF61131",
+            "statute": "OF61",
+            "description": "Wound / inflict grievous bodily harm without intent"
+          },
+          "offenceDate": "2017-09-16",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 2,
+          "sentenceDate": "2018-01-12",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2018-01-12",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-10-25",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7230885,
+          "offence": {
+            "code": "TH68023",
+            "statute": "TH68",
+            "description": "Robbery"
+          },
+          "offenceDate": "2023-10-22",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 4,
+          "sentenceDate": "2024-05-24",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-20",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2024-03-19",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-05-24",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-11-27",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2023-10-24",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7230886,
+          "offence": {
+            "code": "CJ88154",
+            "statute": "CJ88",
+            "description": "Threaten a person with a blade / sharply pointed article in a public place"
+          },
+          "offenceDate": "2023-10-20",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Withdrawn - Final",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-20",
+            "type": "STOP",
+            "description": "Withdrawn - Final",
+            "final": true
+          },
+          {
+            "date": "2024-03-19",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2023-11-27",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2023-10-24",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7230887,
+          "offence": {
+            "code": "CJ88144",
+            "statute": "CJ88",
+            "description": "Possess knife blade / sharp pointed article in a public place - Criminal Justice Act 1988"
+          },
+          "offenceDate": "2023-10-22",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 5,
+          "sentenceDate": "2024-05-24",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-20",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2024-03-19",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-05-24",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-11-27",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2023-10-24",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7232974,
+          "offence": {
+            "code": "PC53001",
+            "statute": "PC53",
+            "description": "Possess an offensive weapon in a public place"
+          },
+          "offenceDate": "2017-09-16",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "No Evidence Offered - Dismissed",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-01-12",
+            "type": "STOP",
+            "description": "No Evidence Offered - Dismissed",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7232975,
+          "offence": {
+            "code": "TH68045",
+            "statute": "TH68",
+            "description": "Aggravated burglary - dwelling"
+          },
+          "offenceDate": "2017-09-16",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 1,
+          "sentenceDate": "2018-01-12",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2018-01-12",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-10-25",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7605054,
+          "offence": {
+            "code": "ZZ01001",
+            "statute": "ZZ01",
+            "description": "CIVIL : Contempt"
+          },
+          "offenceDate": "2018-01-12",
+          "bookingId": 1,
+          "bookNumber": "1",
+          "sentenceSequence": 6,
+          "sentenceDate": "2018-01-19",
+          "resultDescription": "Imprisonment in default",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-01-19",
+            "type": "STOP",
+            "description": "Imprisonment in default",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4173226,
+          "offence": {
+            "code": "OF61016",
+            "statute": "OF61",
+            "description": "Section 18 - wounding with intent"
+          },
+          "offenceDate": "2017-02-15",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Lie on File"
+        },
+        "dates": [
+          {
+            "date": "2017-10-04",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2017-10-16",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-02-07",
+            "type": "STOP",
+            "description": "Lie on File"
+          },
+          {
+            "date": "2018-01-09",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-01-05",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4173246,
+          "offence": {
+            "code": "PC53001",
+            "statute": "PC53",
+            "description": "Possess an offensive weapon in a public place"
+          },
+          "offenceDate": "2017-02-15",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Lie on File"
+        },
+        "dates": [
+          {
+            "date": "2017-10-04",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2017-10-16",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-01-05",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4136267,
+          "offence": {
+            "code": "COML002",
+            "statute": "COML",
+            "description": "Assault occasioning actual bodily harm"
+          },
+          "offenceDate": "2017-09-16",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Not Guilty",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-18",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2017-10-04",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2017-10-16",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2018-01-12",
+            "type": "STOP",
+            "description": "Not Guilty",
+            "final": true
+          },
+          {
+            "date": "2018-01-09",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2018-01-10",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-01-05",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2018-01-11",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4136268,
+          "offence": {
+            "code": "COML016",
+            "statute": "COML",
+            "description": "Escape from lawful custody"
+          },
+          "offenceDate": "2017-09-17",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 3,
+          "sentenceDate": "2018-01-12",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-18",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2017-10-04",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2017-10-16",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2018-01-12",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2018-01-09",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2018-01-10",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-01-05",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2018-01-11",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4136269,
+          "offence": {
+            "code": "TH68038",
+            "statute": "TH68",
+            "description": "Burglary dwelling inflict grievous bodily harm"
+          },
+          "offenceDate": "2017-09-16",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Replaced With Another Offence",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-18",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2017-10-04",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2017-10-16",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2018-01-09",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2018-01-10",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-01-05",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2018-01-11",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2018-01-12",
+            "type": "STOP",
+            "description": "Replaced With Another Offence",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4136270,
+          "offence": {
+            "code": "OF61131",
+            "statute": "OF61",
+            "description": "Wound / inflict grievous bodily harm without intent"
+          },
+          "offenceDate": "2017-09-16",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 2,
+          "sentenceDate": "2018-01-12",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-18",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2017-10-04",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2017-10-16",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2018-01-09",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2018-01-10",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-01-05",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2018-01-11",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2018-01-12",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4136271,
+          "offence": {
+            "code": "PC53001",
+            "statute": "PC53",
+            "description": "Possess an offensive weapon in a public place"
+          },
+          "offenceDate": "2017-09-16",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "No Evidence Offered - Dismissed",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-18",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2017-10-04",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2017-10-16",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2018-01-09",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2018-01-10",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-01-05",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2018-01-11",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2018-01-12",
+            "type": "STOP",
+            "description": "No Evidence Offered - Dismissed",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4136302,
+          "offence": {
+            "code": "CD71040",
+            "statute": "CD71",
+            "description": "Destroy / damage property of a value unknown"
+          },
+          "offenceDate": "2017-09-14",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Discontinuance",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-26",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2017-10-17",
+            "type": "STOP",
+            "description": "Discontinuance",
+            "final": true
+          },
+          {
+            "date": "2017-09-18",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4136303,
+          "offence": {
+            "code": "TH68001",
+            "statute": "TH68",
+            "description": "Theft from the person of another"
+          },
+          "offenceDate": "2017-09-14",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Discontinuance",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-26",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2017-10-17",
+            "type": "STOP",
+            "description": "Discontinuance",
+            "final": true
+          },
+          {
+            "date": "2017-09-18",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4136304,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "offenceDate": "2017-09-14",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Discontinuance",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-26",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2017-10-17",
+            "type": "STOP",
+            "description": "Discontinuance",
+            "final": true
+          },
+          {
+            "date": "2017-09-18",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4953911,
+          "offence": {
+            "code": "ZZ01001",
+            "statute": "ZZ01",
+            "description": "CIVIL : Contempt"
+          },
+          "offenceDate": "2018-01-12",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 4,
+          "sentenceDate": "2018-01-19",
+          "resultDescription": "civil Term Imposed",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2018-01-19",
+            "type": "STOP",
+            "description": "civil Term Imposed",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4750055,
+          "offence": {
+            "code": "TH68045",
+            "statute": "TH68",
+            "description": "Aggravated burglary - dwelling"
+          },
+          "offenceDate": "2017-09-16",
+          "bookingId": 2,
+          "bookNumber": "2",
+          "sentenceSequence": 1,
+          "sentenceDate": "2018-01-12",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2018-01-12",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      }
+    ],
+    "chargeIdsWithActiveSentence": [
+      7232975,
+      7232973,
+      7232971,
+      7230885,
+      7230887,
+      7605054
+    ]
+  },
+  "sentences": [
+    {
+      "bookingId": 1,
+      "sentenceSequence": 3,
+      "sentenceAt": "2018-01-12",
+      "recallDates": [
+        "2023-10-25"
+      ],
+      "calculations": [
+        {
+          "calculateAt": "2018-01-12",
+          "release": "2022-09-17",
+          "service": "CRDS"
+        },
+        {
+          "calculateAt": "2023-10-25",
+          "release": "2031-05-22",
+          "service": "HISTORIC"
+        }
+      ]
+    },
+    {
+      "bookingId": 2,
+      "sentenceSequence": 3,
+      "sentenceAt": "2018-01-12",
+      "recallDates": [
+        "2023-10-25"
+      ],
+      "calculations": [
+        {
+          "calculateAt": "2018-01-12",
+          "release": "2022-11-17",
+          "service": "HISTORIC"
+        }
+      ]
+    },
+    {
+      "bookingId": 2,
+      "sentenceSequence": 4,
+      "sentenceAt": "2018-01-19",
+      "calculations": [
+        {
+          "calculateAt": "2018-01-19",
+          "release": "2022-11-17",
+          "service": "HISTORIC"
+        }
+      ]
+    }
+  ],
+  "options": {}
+}

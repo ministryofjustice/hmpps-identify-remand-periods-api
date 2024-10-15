@@ -119,6 +119,23 @@
       "days": 325
     },
     {
+      "from": "2024-02-19",
+      "to": "2024-07-29",
+      "fromEvent": {
+        "date": "2024-02-19",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2024-07-30",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7376532
+      ],
+      "status": "APPLICABLE",
+      "days": 162
+    },
+    {
       "from": "2016-06-15",
       "to": "2016-07-26",
       "fromEvent": {
@@ -135,23 +152,6 @@
       ],
       "status": "INACTIVE",
       "days": 42
-    },
-    {
-      "from": "2024-02-19",
-      "to": "2024-07-29",
-      "fromEvent": {
-        "date": "2024-02-19",
-        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
-      },
-      "toEvent": {
-        "date": "2024-07-30",
-        "description": "Imprisonment"
-      },
-      "chargeIds": [
-        7376532
-      ],
-      "status": "INTERSECTED_BY_REMAND",
-      "days": 162
     },
     {
       "from": "2016-05-30",
