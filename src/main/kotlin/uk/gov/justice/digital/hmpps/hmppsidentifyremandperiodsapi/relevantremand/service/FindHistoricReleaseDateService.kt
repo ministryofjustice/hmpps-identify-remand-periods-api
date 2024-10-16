@@ -8,6 +8,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Charge
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Remand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentencePeriod
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.util.isAfterOrEqualTo
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.util.isBeforeOrEqualTo
 import java.time.LocalDate
@@ -18,7 +19,7 @@ class FindHistoricReleaseDateService(
   private val prisonApiClient: PrisonApiClient,
 ) : FindReleaseDateServiceProvider {
 
-  override fun findReleaseDate(prisonerId: String, remand: List<Remand>, sentence: Sentence, calculateAt: LocalDate, charges: Map<Long, Charge>): CalculationDetail {
+  override fun findReleaseDate(prisonerId: String, remand: List<Remand>, sentence: Sentence, calculateAt: LocalDate, charges: Map<Long, Charge>, sentencePeriods: List<SentencePeriod>): CalculationDetail {
     val allCalculations = prisonApiClient.getCalculationsForAPrisonerId(prisonerId).sortedBy { it.calculationDate }
     val historicReleaseDates = collapseByLastCalculationOfTheDay(allCalculations, sentence)
     if (historicReleaseDates.isEmpty()) {
@@ -30,6 +31,10 @@ class FindHistoricReleaseDateService(
       throw UnsupportedCalculationException("No calculations found for $prisonerId after sentence or recall date $calculateAt")
     }
     if (calculation.calculationDate.toLocalDate().isAfter(calculateAt.plusWeeks(4))) {
+      if (sentencePeriods.any { it.overlapsStartInclusive(calculateAt) }) {
+        // If this sentence is concurrent to an existing period and it doesn't modify the release dates, there may not be a new calculation. Just return a blank period and use the period of the concurrent sentence instead.
+        return CalculationDetail(calculateAt)
+      }
       // initial calculation happened more than four weeks after
       throw UnsupportedCalculationException("The first calculation (${calculation.calculationDate}) is over four weeks after sentence/recall calculation date date $calculateAt.")
     }
