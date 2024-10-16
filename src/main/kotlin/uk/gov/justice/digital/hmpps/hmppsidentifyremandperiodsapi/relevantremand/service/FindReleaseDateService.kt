@@ -51,7 +51,7 @@ class FindReleaseDateService(
     remandCalculation: RemandCalculation,
   ): Pair<SentencePeriod?, List<UnsupportedCalculationException>?> {
     try {
-      val calculation = getReleaseDateProvider(primaryReleaseDateService).findReleaseDate(remandCalculation.prisonerId, loopTracker.final, sentence.sentence, date, remandCalculation.charges, loopTracker.periodsServingSentence)
+      val calculation = getReleaseDateProvider(primaryReleaseDateService).findReleaseDate(remandCalculation.prisonerId, loopTracker.final, sentence.sentence, date, remandCalculation.charges)
       return SentencePeriod(date, calculation.releaseDate, sentence.sentence, sentence.charge.chargeId, primaryReleaseDateService, emptyList(), calculation.calculationIds) to null
     } catch (primaryError: UnsupportedCalculationException) {
       try {
@@ -61,7 +61,6 @@ class FindReleaseDateService(
           sentence.sentence,
           date,
           remandCalculation.charges,
-          loopTracker.periodsServingSentence,
         )
         return SentencePeriod(
           date,

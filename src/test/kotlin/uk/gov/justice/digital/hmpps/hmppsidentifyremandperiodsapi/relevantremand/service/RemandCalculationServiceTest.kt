@@ -74,7 +74,6 @@ class RemandCalculationServiceTest {
               argThat { argSentence: Sentence -> argSentence.bookingId == sentence.bookingId },
               eq(calculation.calculateAt),
               any(),
-              any(),
             ),
           ).thenAnswer {
             CalculationDetail(calculation.release)
@@ -86,7 +85,6 @@ class RemandCalculationServiceTest {
               any(),
               argThat { argSentence: Sentence -> argSentence.bookingId == sentence.bookingId },
               eq(calculation.calculateAt),
-              any(),
               any(),
             ),
           ).thenAnswer {
@@ -105,14 +103,12 @@ class RemandCalculationServiceTest {
         any(),
         any(),
         any(),
-        any(),
       ),
     ).thenAnswer {
       throw UnsupportedCalculationException("Historic calculation error!")
     }
     whenever(
       calculateReleaseDateService.findReleaseDate(
-        any(),
         any(),
         any(),
         any(),
