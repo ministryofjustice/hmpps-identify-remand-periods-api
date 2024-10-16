@@ -9,8 +9,9 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.mode
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.SentenceCalculationSummary
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.service.PrisonApiClient
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Charge
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Offence
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentencePeriod
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.service.FindHistoricReleaseDateService
 import java.time.LocalDate
 
@@ -22,9 +23,11 @@ class FindHistoricReleaseDateServiceTest {
 
   private val prisonerId = "ABC123"
   private val bookingId = 1L
+  private val bookNumber = "QRS321"
   private val sentenceDate = LocalDate.of(2020, 1, 1)
   private val recallDate = LocalDate.of(2022, 1, 1)
   private val sentence = Sentence(1, sentenceDate, listOf(recallDate), bookingId)
+  private val charges = mapOf(1L to Charge(1L, Offence("ABC", "123", "An offence"), LocalDate.now(), bookingId, bookNumber))
 
   @Test
   fun `Successfully retrieve release date`() {
@@ -37,7 +40,7 @@ class FindHistoricReleaseDateServiceTest {
     whenever(apiClient.getCalculationsForAPrisonerId(prisonerId)).thenReturn(calculations)
     whenever(apiClient.getNOMISOffenderKeyDates(sentenceCalcId)).thenReturn(calculation)
 
-    val release = service.findReleaseDate(prisonerId, emptyList(), sentence, calculateAt, emptyMap(), emptyList())
+    val release = service.findReleaseDate(prisonerId, emptyList(), sentence, calculateAt, charges)
 
     assertThat(release.releaseDate).isEqualTo(expectedReleaseDate)
     assertThat(release.calculationIds).isEqualTo(listOf(sentenceCalcId))
@@ -54,7 +57,7 @@ class FindHistoricReleaseDateServiceTest {
     whenever(apiClient.getCalculationsForAPrisonerId(prisonerId)).thenReturn(calculations)
     whenever(apiClient.getNOMISOffenderKeyDates(sentenceCalcId)).thenReturn(calculation)
 
-    val exception = assertThrows<UnsupportedCalculationException> { service.findReleaseDate(prisonerId, emptyList(), sentence, calculateAt, emptyMap(), emptyList()) }
+    val exception = assertThrows<UnsupportedCalculationException> { service.findReleaseDate(prisonerId, emptyList(), sentence, calculateAt, charges) }
 
     assertThat(exception.message).isEqualTo("Standard release date cannot be after recall date")
   }
@@ -70,7 +73,7 @@ class FindHistoricReleaseDateServiceTest {
     whenever(apiClient.getCalculationsForAPrisonerId(prisonerId)).thenReturn(calculations)
     whenever(apiClient.getNOMISOffenderKeyDates(sentenceCalcId)).thenReturn(calculation)
 
-    val exception = assertThrows<UnsupportedCalculationException> { service.findReleaseDate(prisonerId, emptyList(), sentence, calculateAt, emptyMap(), emptyList()) }
+    val exception = assertThrows<UnsupportedCalculationException> { service.findReleaseDate(prisonerId, emptyList(), sentence, calculateAt, charges) }
 
     assertThat(exception.message).isEqualTo("Unable to find release date from calculations [1]")
   }
@@ -86,8 +89,7 @@ class FindHistoricReleaseDateServiceTest {
         emptyList(),
         sentence,
         calculateAt,
-        emptyMap(),
-        emptyList(),
+        charges,
       )
     }
 
@@ -109,37 +111,10 @@ class FindHistoricReleaseDateServiceTest {
     whenever(apiClient.getNOMISOffenderKeyDates(blankSentenceCalcId)).thenReturn(blankCalculation)
     whenever(apiClient.getNOMISOffenderKeyDates(expectedSentenceCalcId)).thenReturn(expectedCalculation)
 
-    val release = service.findReleaseDate(prisonerId, emptyList(), sentence, calculateAt, emptyMap(), emptyList())
+    val release = service.findReleaseDate(prisonerId, emptyList(), sentence, calculateAt, charges)
 
     assertThat(release.releaseDate).isEqualTo(expectedReleaseDate)
     assertThat(release.calculationIds).isEqualTo(listOf(1L, 2L))
-  }
-
-  @Test
-  fun `First calculation date is much later than release date`() {
-    val calculateAt = sentenceDate
-    val sentenceCalcId = 1L
-    val actualCalculationTime = sentenceDate.atStartOfDay().plusYears(1)
-    val calculations = listOf(SentenceCalculationSummary(bookingId, sentenceCalcId, actualCalculationTime))
-    whenever(apiClient.getCalculationsForAPrisonerId(prisonerId)).thenReturn(calculations)
-
-    val exception = assertThrows<UnsupportedCalculationException> { service.findReleaseDate(prisonerId, emptyList(), sentence, calculateAt, emptyMap(), emptyList()) }
-
-    assertThat(exception.message).isEqualTo("The first calculation (2021-01-01T00:00) is over four weeks after sentence/recall calculation date date 2020-01-01.")
-  }
-
-  @Test
-  fun `First calculation in the future, but already covered by previous sentence (often happens when new sentence doesnt modify release dates)`() {
-    val calculateAt = sentenceDate
-    val sentenceCalcId = 1L
-    val actualCalculationTime = sentenceDate.atStartOfDay().plusYears(1)
-    val calculations = listOf(SentenceCalculationSummary(bookingId, sentenceCalcId, actualCalculationTime))
-    whenever(apiClient.getCalculationsForAPrisonerId(prisonerId)).thenReturn(calculations)
-
-    val release = service.findReleaseDate(prisonerId, emptyList(), sentence, calculateAt, emptyMap(), listOf(SentencePeriod(sentenceDate.minusYears(1), sentenceDate.plusYears(2), mock<Sentence>(), 1L)))
-
-    assertThat(release.releaseDate).isEqualTo(sentenceDate)
-    assertThat(release.calculationIds).isEmpty()
   }
 
   @Test
@@ -154,7 +129,7 @@ class FindHistoricReleaseDateServiceTest {
     whenever(apiClient.getNOMISOffenderKeyDates(1)).thenReturn(calculationOne)
     whenever(apiClient.getNOMISOffenderKeyDates(2)).thenReturn(calculationTwo)
 
-    val release = service.findReleaseDate(prisonerId, emptyList(), sentence, LocalDate.of(2021, 6, 2), emptyMap(), emptyList())
+    val release = service.findReleaseDate(prisonerId, emptyList(), sentence, LocalDate.of(2021, 6, 2), charges)
 
     assertThat(release.releaseDate).isEqualTo(LocalDate.of(2021, 6, 11))
     assertThat(release.calculationIds).isEqualTo(listOf(1L, 2L))
@@ -170,7 +145,7 @@ class FindHistoricReleaseDateServiceTest {
     whenever(apiClient.getCalculationsForAPrisonerId(prisonerId)).thenReturn(calculations)
     whenever(apiClient.getNOMISOffenderKeyDates(sentenceCalcId)).thenReturn(calculation)
 
-    val exception = assertThrows<UnsupportedCalculationException> { service.findReleaseDate(prisonerId, emptyList(), sentence, calculateAt, emptyMap(), emptyList()) }
+    val exception = assertThrows<UnsupportedCalculationException> { service.findReleaseDate(prisonerId, emptyList(), sentence, calculateAt, charges) }
 
     assertThat(exception.message).isEqualTo("The release date is before the calculation date.")
   }
@@ -187,7 +162,7 @@ class FindHistoricReleaseDateServiceTest {
     whenever(apiClient.getNOMISOffenderKeyDates(1)).thenReturn(calculationOne)
     whenever(apiClient.getNOMISOffenderKeyDates(2)).thenReturn(calculationTwo)
 
-    val release = service.findReleaseDate(prisonerId, emptyList(), sentence, LocalDate.of(2019, 12, 1), emptyMap(), emptyList())
+    val release = service.findReleaseDate(prisonerId, emptyList(), sentence, LocalDate.of(2019, 12, 1), charges)
 
     assertThat(release.releaseDate).isEqualTo(LocalDate.of(2020, 9, 23))
     assertThat(release.calculationIds).isEqualTo(listOf(1L, 2L))
@@ -205,7 +180,7 @@ class FindHistoricReleaseDateServiceTest {
     whenever(apiClient.getNOMISOffenderKeyDates(1)).thenReturn(calculationOne)
     whenever(apiClient.getNOMISOffenderKeyDates(2)).thenReturn(calculationTwo)
 
-    val release = service.findReleaseDate(prisonerId, emptyList(), sentence, LocalDate.of(2023, 11, 6), emptyMap(), emptyList())
+    val release = service.findReleaseDate(prisonerId, emptyList(), sentence, LocalDate.of(2023, 11, 6), charges)
 
     assertThat(release.releaseDate).isEqualTo(LocalDate.of(2024, 2, 7))
     assertThat(release.calculationIds).isEqualTo(listOf(1L))
@@ -220,9 +195,35 @@ class FindHistoricReleaseDateServiceTest {
     whenever(apiClient.getCalculationsForAPrisonerId(prisonerId)).thenReturn(calculations)
     whenever(apiClient.getNOMISOffenderKeyDates(1)).thenReturn(calculationOne)
 
-    val release = service.findReleaseDate(prisonerId, emptyList(), sentence, LocalDate.of(2023, 7, 15), emptyMap(), emptyList())
+    val release = service.findReleaseDate(prisonerId, emptyList(), sentence, LocalDate.of(2023, 7, 15), charges)
 
     assertThat(release.releaseDate).isEqualTo(LocalDate.of(2023, 7, 15))
     assertThat(release.calculationIds).isEqualTo(listOf(1L))
+  }
+
+  @Test
+  fun `Find historic release date from merged booking`() {
+    val oldBookingId = 99L
+    val oldCharge = charges[1]!!.copy(chargeId = 99L, bookingId = oldBookingId, bookNumber = bookNumber) // Old booking has same bookNumber, so is a merge
+    val bothCharges = charges.toMutableMap()
+    bothCharges[99L] = oldCharge
+    val calculations = listOf(
+      SentenceCalculationSummary(oldBookingId, 1, LocalDate.of(2020, 1, 1).atStartOfDay()),
+      SentenceCalculationSummary(oldBookingId, 2, LocalDate.of(2020, 6, 1).atStartOfDay()),
+      SentenceCalculationSummary(bookingId, 3, LocalDate.of(2024, 10, 1).atStartOfDay()),
+    )
+
+    val calculationOne = OffenderKeyDates(prisonerId, LocalDate.of(2020, 1, 1).atStartOfDay(), conditionalReleaseDate = LocalDate.of(2021, 1, 1))
+    val calculationTwo = OffenderKeyDates(prisonerId, LocalDate.of(2020, 6, 1).atStartOfDay(), conditionalReleaseDate = LocalDate.of(2021, 1, 1))
+    val calculationThree = OffenderKeyDates(prisonerId, LocalDate.of(2024, 10, 1).atStartOfDay(), conditionalReleaseDate = LocalDate.of(2023, 7, 15))
+    whenever(apiClient.getCalculationsForAPrisonerId(prisonerId)).thenReturn(calculations)
+    whenever(apiClient.getNOMISOffenderKeyDates(1)).thenReturn(calculationOne)
+    whenever(apiClient.getNOMISOffenderKeyDates(2)).thenReturn(calculationTwo)
+    whenever(apiClient.getNOMISOffenderKeyDates(3)).thenReturn(calculationThree)
+
+    val release = service.findReleaseDate(prisonerId, emptyList(), sentence, LocalDate.of(202, 1, 2), bothCharges)
+
+    assertThat(release.releaseDate).isEqualTo(LocalDate.of(2021, 1, 1))
+    assertThat(release.calculationIds).isEqualTo(listOf(1L, 2L))
   }
 }

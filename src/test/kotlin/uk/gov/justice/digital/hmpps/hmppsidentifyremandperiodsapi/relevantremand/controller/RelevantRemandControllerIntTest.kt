@@ -171,7 +171,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
       .expectBody(ErrorResponse::class.java)
       .returnResult().responseBody!!
 
-    assertThat(result.userMessage).contains("Unable to calculation release dates on 2021-02-01")
+    assertThat(result.userMessage).contains("Unable to calculation release dates on 2022-02-01")
   }
 
   @Test
