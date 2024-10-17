@@ -943,30 +943,11 @@
       7550058
     ]
   },
-  "sentences": [
+  "calculations": [
     {
-      "bookingId": 1,
-      "sentenceSequence": 1,
-      "sentenceAt": "2019-12-16",
-      "calculations": [
-        {
-          "calculateAt": "2019-12-16",
-          "release": "2022-10-20",
-          "service": "CRDS"
-        }
-      ]
-    },
-    {
-      "bookingId": 2,
-      "sentenceSequence": 1,
-      "sentenceAt": "2019-12-16",
-      "calculations": [
-        {
-          "calculateAt": "2019-12-16",
-          "release": "2022-10-20",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2019-12-16",
+      "release": "2022-10-20",
+      "service": "HISTORIC"
     }
   ]
 }

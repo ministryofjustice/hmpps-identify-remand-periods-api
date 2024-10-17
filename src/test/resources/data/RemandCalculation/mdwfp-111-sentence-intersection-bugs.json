@@ -608,28 +608,14 @@
       }
     ]
   },
-  "sentences": [
+  "calculations": [
     {
-      "bookingId": 2,
-      "sentenceSequence": 3,
-      "sentenceAt": "2021-04-22",
-      "calculations": [
-        {
-          "calculateAt": "2021-04-22",
-          "release": "2021-05-22"
-        }
-      ]
+      "calculateAt": "2021-04-22",
+      "release": "2021-05-22"
     },
     {
-      "bookingId": 1,
-      "sentenceSequence": 1,
-      "sentenceAt": "2022-11-15",
-      "calculations": [
-        {
-          "calculateAt": "2022-11-15",
-          "release": "2023-10-19"
-        }
-      ]
+      "calculateAt": "2022-11-15",
+      "release": "2023-10-19"
     }
   ]
 }

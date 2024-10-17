@@ -2145,74 +2145,36 @@
       7006269
     ]
   },
-  "sentences": [
+  "calculations": [
     {
-      "bookingId": 1,
-      "sentenceSequence": 1,
-      "sentenceAt": "2014-08-04",
-      "recallDates": ["2016-12-06"],
-      "calculations": [
-        {
-          "calculateAt": "2016-12-06",
-          "release": "2017-01-02",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2016-12-06",
+      "release": "2017-01-02",
+      "service": "HISTORIC"
     },
     {
-      "bookingId": 1,
-      "sentenceSequence": 4,
-      "sentenceAt": "2017-05-26",
-      "calculations": [
-        {
-          "calculateAt": "2017-05-26",
-          "release": "2018-05-04",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2017-05-26",
+      "release": "2018-05-04",
+      "service": "HISTORIC"
     },
     {
-      "bookingId": 2,
-      "sentenceSequence": 1,
-      "sentenceAt": "2017-05-26",
-      "recallDates": ["2018-07-25"],
-      "calculations": [
-        {
-          "calculateAt": "2018-07-25",
-          "release": "2018-08-21",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2018-07-25",
+      "release": "2018-08-21",
+      "service": "HISTORIC"
     },
     {
-      "bookingId": 2,
-      "sentenceSequence": 67,
-      "sentenceAt": "2018-12-19",
-      "recallDates": ["2023-03-10"],
-      "calculations": [
-        {
-          "calculateAt": "2018-12-19",
-          "release": "2022-06-26",
-          "service": "HISTORIC"
-        },
-        {
-          "calculateAt": "2023-03-10",
-          "release": "2027-04-13",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2018-12-19",
+      "release": "2022-06-26",
+      "service": "HISTORIC"
     },
     {
-      "bookingId": 2,
-      "sentenceSequence": 89,
-      "sentenceAt": "2021-03-24",
-      "calculations": [
-        {
-          "calculateAt": "2021-03-24",
-          "release": "2022-06-26",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2023-03-10",
+      "release": "2027-04-13",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2021-03-24",
+      "release": "2022-06-26",
+      "service": "HISTORIC"
     }
   ]
 }

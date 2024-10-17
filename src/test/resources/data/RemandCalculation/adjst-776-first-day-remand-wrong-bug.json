@@ -889,33 +889,18 @@
       6856254
     ]
   },
-  "sentences": [
+  "calculations": [
     {
-      "bookingId": 2,
-      "sentenceSequence": 39,
-      "sentenceAt": "2021-12-15",
-      "recallDates": ["2022-08-19"],
-      "calculations": [
-        {
-          "calculateAt": "2021-12-15",
-          "release": "2022-06-17"
-        },
-        {
-          "calculateAt": "2022-08-19",
-          "release": "2025-03-08"
-        }
-      ]
+      "calculateAt": "2021-12-15",
+      "release": "2022-06-17"
     },
     {
-      "bookingId": 2,
-      "sentenceSequence": 23,
-      "sentenceAt": "2022-03-24",
-      "calculations": [
-        {
-          "calculateAt": "2022-03-24",
-          "release": "2022-06-17"
-        }
-      ]
+      "calculateAt": "2022-08-19",
+      "release": "2025-03-08"
+    },
+    {
+      "calculateAt": "2022-03-24",
+      "release": "2022-06-17"
     }
   ]
 }

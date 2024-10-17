@@ -294,17 +294,10 @@
       }
     ]
   },
-  "sentences": [
+  "calculations": [
     {
-      "bookingId": 1,
-      "sentenceSequence": 1,
-      "sentenceAt": "2022-11-04",
-      "calculations": [
-        {
-          "calculateAt": "2022-11-04",
-          "release": "2022-11-24"
-        }
-      ]
+      "calculateAt": "2022-11-04",
+      "release": "2022-11-24"
     }
   ]
 }

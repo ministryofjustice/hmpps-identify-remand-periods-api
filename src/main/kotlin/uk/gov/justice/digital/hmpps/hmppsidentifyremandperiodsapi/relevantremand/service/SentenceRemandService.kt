@@ -32,7 +32,10 @@ class SentenceRemandService(
       var current: Remand? = null
       for (date in loopTracker.datesToLoopOver) {
         if (loopTracker.shouldCalculateAReleaseDate(date)) {
-          findReleaseDateService.findReleaseDates(date, sentences, loopTracker, remandCalculation)
+          val period = findReleaseDateService.findReleaseDates(date, sentences, loopTracker, remandCalculation)
+          if (period != null) {
+            loopTracker.periodsServingSentence.add(period)
+          }
         }
         val next = loopTracker.findNextPeriod(date)
         // Should we start a new period at this date?

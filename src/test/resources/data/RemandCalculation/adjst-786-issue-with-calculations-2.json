@@ -2397,48 +2397,21 @@
       7376532
     ]
   },
-  "sentences": [
+  "calculations": [
     {
-      "bookingId": 1,
-      "sentenceSequence": 2,
-      "sentenceAt": "2016-07-27",
-      "calculations": [
-        {
-          "calculateAt": "2016-07-27",
-          "release": "2016-07-27",
-          "service": "CRDS"
-        }
-      ]
+      "calculateAt": "2016-07-27",
+      "release": "2016-07-27",
+      "service": "CRDS"
     },
     {
-      "bookingId": 1,
-      "sentenceSequence": 3,
-      "sentenceAt": "2017-04-20",
-      "calculations": [
-        {
-          "calculateAt": "2017-04-20",
-          "release": "2023-08-11",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2017-04-20",
+      "release": "2021-11-11",
+      "service": "CRDS"
     },
     {
-      "bookingId": 2,
-      "sentenceSequence": 1,
-      "sentenceAt": "2017-04-20",
-      "recallDates": ["2024-02-20"],
-      "calculations": [
-        {
-          "calculateAt": "2017-04-20",
-          "release": "2021-11-11",
-          "service": "CRDS"
-        },
-        {
-          "calculateAt": "2024-02-20",
-          "release": "2026-07-10",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2024-02-20",
+      "release": "2026-07-10",
+      "service": "HISTORIC"
     }
   ]
 }

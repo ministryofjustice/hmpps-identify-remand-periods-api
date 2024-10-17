@@ -563,26 +563,16 @@
       5144811
     ]
   },
-  "sentences": [
+  "calculations": [
     {
-      "bookingId": 1,
-      "sentenceSequence": 1,
-      "sentenceAt": "2009-10-30",
-      "recallDates": [
-        "2017-10-05"
-      ],
-      "calculations": [
-        {
-          "calculateAt": "2009-10-30",
-          "release": "2013-09-04",
-          "service": "HISTORIC"
-        },
-        {
-          "calculateAt": "2017-10-05",
-          "release": "2017-12-16",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2009-10-30",
+      "release": "2013-09-04",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2017-10-05",
+      "release": "2017-12-16",
+      "service": "HISTORIC"
     }
   ],
   "options": {

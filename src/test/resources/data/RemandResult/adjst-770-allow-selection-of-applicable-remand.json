@@ -9,7 +9,8 @@
       "fromDate": "2018-01-30",
       "remand": {
         "chargeId": [
-          5500539, 5144811
+          5500539,
+          5144811
         ]
       },
       "status": "ACTIVE"

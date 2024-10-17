@@ -176,7 +176,7 @@
   "intersectingSentences": [
     {
       "from": "2018-01-12",
-      "to": "2022-09-17",
+      "to": "2022-11-17",
       "sentence": {
         "sequence": 3,
         "sentenceDate": "2018-01-12",
@@ -186,24 +186,6 @@
         "bookingId": 1
       },
       "chargeId": 7232971,
-      "service": "CRDS",
-      "errors": [
-        "Historic calculation error!"
-      ],
-      "days": 1710
-    },
-    {
-      "from": "2018-01-12",
-      "to": "2022-11-17",
-      "sentence": {
-        "sequence": 3,
-        "sentenceDate": "2018-01-12",
-        "recallDates": [
-          "2023-10-25"
-        ],
-        "bookingId": 2
-      },
-      "chargeId": 4136268,
       "service": "HISTORIC",
       "days": 1771
     },
@@ -211,11 +193,11 @@
       "from": "2018-01-19",
       "to": "2022-11-17",
       "sentence": {
-        "sequence": 4,
+        "sequence": 6,
         "sentenceDate": "2018-01-19",
-        "bookingId": 2
+        "bookingId": 1
       },
-      "chargeId": 4953911,
+      "chargeId": 7605054,
       "service": "HISTORIC",
       "days": 1764
     },
@@ -234,5 +216,324 @@
       "service": "HISTORIC",
       "days": 2767
     }
-  ]
+  ],
+  "charges": {
+    "7232970": {
+      "chargeId": 7232970,
+      "offence": {
+        "code": "OF61102",
+        "statute": "OF61",
+        "description": "Assault a person thereby occasioning them actual bodily harm"
+      },
+      "offenceDate": "2017-09-16",
+      "bookingId": 1,
+      "bookNumber": "1",
+      "resultDescription": "Not Guilty",
+      "final": true,
+      "isActiveBooking": true
+    },
+    "7232971": {
+      "chargeId": 7232971,
+      "offence": {
+        "code": "COML016",
+        "statute": "COML",
+        "description": "Escape from lawful custody"
+      },
+      "offenceDate": "2017-09-17",
+      "bookingId": 1,
+      "bookNumber": "1",
+      "sentenceSequence": 3,
+      "sentenceDate": "2018-01-12",
+      "resultDescription": "Recall to Prison",
+      "final": true,
+      "isActiveBooking": true,
+      "isRecallSentence": true
+    },
+    "7232972": {
+      "chargeId": 7232972,
+      "offence": {
+        "code": "TH68038",
+        "statute": "TH68",
+        "description": "Burglary dwelling inflict grievous bodily harm"
+      },
+      "offenceDate": "2017-09-16",
+      "bookingId": 1,
+      "bookNumber": "1",
+      "resultDescription": "Replaced With Another Offence",
+      "final": true,
+      "isActiveBooking": true
+    },
+    "7232973": {
+      "chargeId": 7232973,
+      "offence": {
+        "code": "OF61131",
+        "statute": "OF61",
+        "description": "Wound / inflict grievous bodily harm without intent"
+      },
+      "offenceDate": "2017-09-16",
+      "bookingId": 1,
+      "bookNumber": "1",
+      "sentenceSequence": 2,
+      "sentenceDate": "2018-01-12",
+      "resultDescription": "Recall to Prison",
+      "final": true,
+      "isActiveBooking": true,
+      "isRecallSentence": true
+    },
+    "7230885": {
+      "chargeId": 7230885,
+      "offence": {
+        "code": "TH68023",
+        "statute": "TH68",
+        "description": "Robbery"
+      },
+      "offenceDate": "2023-10-22",
+      "bookingId": 1,
+      "bookNumber": "1",
+      "sentenceSequence": 4,
+      "sentenceDate": "2024-05-24",
+      "resultDescription": "Imprisonment",
+      "final": true,
+      "isActiveBooking": true
+    },
+    "7230886": {
+      "chargeId": 7230886,
+      "offence": {
+        "code": "CJ88154",
+        "statute": "CJ88",
+        "description": "Threaten a person with a blade / sharply pointed article in a public place"
+      },
+      "offenceDate": "2023-10-20",
+      "bookingId": 1,
+      "bookNumber": "1",
+      "resultDescription": "Withdrawn - Final",
+      "final": true,
+      "isActiveBooking": true
+    },
+    "7230887": {
+      "chargeId": 7230887,
+      "offence": {
+        "code": "CJ88144",
+        "statute": "CJ88",
+        "description": "Possess knife blade / sharp pointed article in a public place - Criminal Justice Act 1988"
+      },
+      "offenceDate": "2023-10-22",
+      "bookingId": 1,
+      "bookNumber": "1",
+      "sentenceSequence": 5,
+      "sentenceDate": "2024-05-24",
+      "resultDescription": "Imprisonment",
+      "final": true,
+      "isActiveBooking": true
+    },
+    "7232974": {
+      "chargeId": 7232974,
+      "offence": {
+        "code": "PC53001",
+        "statute": "PC53",
+        "description": "Possess an offensive weapon in a public place"
+      },
+      "offenceDate": "2017-09-16",
+      "bookingId": 1,
+      "bookNumber": "1",
+      "resultDescription": "No Evidence Offered - Dismissed",
+      "final": true,
+      "isActiveBooking": true
+    },
+    "7232975": {
+      "chargeId": 7232975,
+      "offence": {
+        "code": "TH68045",
+        "statute": "TH68",
+        "description": "Aggravated burglary - dwelling"
+      },
+      "offenceDate": "2017-09-16",
+      "bookingId": 1,
+      "bookNumber": "1",
+      "sentenceSequence": 1,
+      "sentenceDate": "2018-01-12",
+      "resultDescription": "Recall to Prison",
+      "final": true,
+      "isActiveBooking": true,
+      "isRecallSentence": true
+    },
+    "7605054": {
+      "chargeId": 7605054,
+      "offence": {
+        "code": "ZZ01001",
+        "statute": "ZZ01",
+        "description": "CIVIL : Contempt"
+      },
+      "offenceDate": "2018-01-12",
+      "bookingId": 1,
+      "bookNumber": "1",
+      "sentenceSequence": 6,
+      "sentenceDate": "2018-01-19",
+      "resultDescription": "Imprisonment in default",
+      "final": true,
+      "isActiveBooking": true
+    },
+    "4173226": {
+      "chargeId": 4173226,
+      "offence": {
+        "code": "OF61016",
+        "statute": "OF61",
+        "description": "Section 18 - wounding with intent"
+      },
+      "offenceDate": "2017-02-15",
+      "bookingId": 2,
+      "bookNumber": "2",
+      "resultDescription": "Lie on File"
+    },
+    "4173246": {
+      "chargeId": 4173246,
+      "offence": {
+        "code": "PC53001",
+        "statute": "PC53",
+        "description": "Possess an offensive weapon in a public place"
+      },
+      "offenceDate": "2017-02-15",
+      "bookingId": 2,
+      "bookNumber": "2",
+      "resultDescription": "Lie on File"
+    },
+    "4136267": {
+      "chargeId": 4136267,
+      "offence": {
+        "code": "COML002",
+        "statute": "COML",
+        "description": "Assault occasioning actual bodily harm"
+      },
+      "offenceDate": "2017-09-16",
+      "bookingId": 2,
+      "bookNumber": "2",
+      "resultDescription": "Not Guilty",
+      "final": true
+    },
+    "4136268": {
+      "chargeId": 4136268,
+      "offence": {
+        "code": "COML016",
+        "statute": "COML",
+        "description": "Escape from lawful custody"
+      },
+      "offenceDate": "2017-09-17",
+      "bookingId": 2,
+      "bookNumber": "2",
+      "sentenceSequence": 3,
+      "sentenceDate": "2018-01-12",
+      "resultDescription": "Imprisonment",
+      "final": true
+    },
+    "4136269": {
+      "chargeId": 4136269,
+      "offence": {
+        "code": "TH68038",
+        "statute": "TH68",
+        "description": "Burglary dwelling inflict grievous bodily harm"
+      },
+      "offenceDate": "2017-09-16",
+      "bookingId": 2,
+      "bookNumber": "2",
+      "resultDescription": "Replaced With Another Offence",
+      "final": true
+    },
+    "4136270": {
+      "chargeId": 4136270,
+      "offence": {
+        "code": "OF61131",
+        "statute": "OF61",
+        "description": "Wound / inflict grievous bodily harm without intent"
+      },
+      "offenceDate": "2017-09-16",
+      "bookingId": 2,
+      "bookNumber": "2",
+      "sentenceSequence": 2,
+      "sentenceDate": "2018-01-12",
+      "resultDescription": "Imprisonment",
+      "final": true
+    },
+    "4136271": {
+      "chargeId": 4136271,
+      "offence": {
+        "code": "PC53001",
+        "statute": "PC53",
+        "description": "Possess an offensive weapon in a public place"
+      },
+      "offenceDate": "2017-09-16",
+      "bookingId": 2,
+      "bookNumber": "2",
+      "resultDescription": "No Evidence Offered - Dismissed",
+      "final": true
+    },
+    "4136302": {
+      "chargeId": 4136302,
+      "offence": {
+        "code": "CD71040",
+        "statute": "CD71",
+        "description": "Destroy / damage property of a value unknown"
+      },
+      "offenceDate": "2017-09-14",
+      "bookingId": 2,
+      "bookNumber": "2",
+      "resultDescription": "Discontinuance",
+      "final": true
+    },
+    "4136303": {
+      "chargeId": 4136303,
+      "offence": {
+        "code": "TH68001",
+        "statute": "TH68",
+        "description": "Theft from the person of another"
+      },
+      "offenceDate": "2017-09-14",
+      "bookingId": 2,
+      "bookNumber": "2",
+      "resultDescription": "Discontinuance",
+      "final": true
+    },
+    "4136304": {
+      "chargeId": 4136304,
+      "offence": {
+        "code": "CJ88116",
+        "statute": "CJ88",
+        "description": "Assault by beating"
+      },
+      "offenceDate": "2017-09-14",
+      "bookingId": 2,
+      "bookNumber": "2",
+      "resultDescription": "Discontinuance",
+      "final": true
+    },
+    "4953911": {
+      "chargeId": 4953911,
+      "offence": {
+        "code": "ZZ01001",
+        "statute": "ZZ01",
+        "description": "CIVIL : Contempt"
+      },
+      "offenceDate": "2018-01-12",
+      "bookingId": 2,
+      "bookNumber": "2",
+      "sentenceSequence": 4,
+      "sentenceDate": "2018-01-19",
+      "resultDescription": "civil Term Imposed",
+      "final": true
+    },
+    "4750055": {
+      "chargeId": 4750055,
+      "offence": {
+        "code": "TH68045",
+        "statute": "TH68",
+        "description": "Aggravated burglary - dwelling"
+      },
+      "offenceDate": "2017-09-16",
+      "bookingId": 2,
+      "bookNumber": "2",
+      "sentenceSequence": 1,
+      "sentenceDate": "2018-01-12",
+      "resultDescription": "Imprisonment",
+      "final": true
+    }
+  }
 }
