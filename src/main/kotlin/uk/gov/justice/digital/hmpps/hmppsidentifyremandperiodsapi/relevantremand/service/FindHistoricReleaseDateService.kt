@@ -18,11 +18,11 @@ class FindHistoricReleaseDateService(
   private val prisonApiClient: PrisonApiClient,
 ) : FindReleaseDateServiceProvider {
 
-  override fun findReleaseDate(prisonerId: String, remand: List<Remand>, sentence: Sentence, calculateAt: LocalDate, charges: Map<Long, Charge>): CalculationDetail {
+  override fun findReleaseDate(prisonerId: String, remand: List<Remand>, sentences: List<Sentence>, calculateAt: LocalDate, charges: Map<Long, Charge>): CalculationDetail {
     val allCalculations = prisonApiClient.getCalculationsForAPrisonerId(prisonerId).sortedBy { it.calculationDate }
-    val historicReleaseDates = collapseByLastCalculationOfTheDay(allCalculations, sentence, charges)
+    val historicReleaseDates = collapseByLastCalculationOfTheDay(allCalculations, sentences, charges)
     if (historicReleaseDates.isEmpty()) {
-      throw UnsupportedCalculationException("No calculations found for $prisonerId in booking ${sentence.bookingId}")
+      throw UnsupportedCalculationException("No calculations found for $prisonerId in bookings ${sentences.map { it.bookingId }}")
     }
 
     var calculation = historicReleaseDates.firstOrNull { it.calculationDate.toLocalDate().isAfterOrEqualTo(calculateAt) }
@@ -51,7 +51,9 @@ class FindHistoricReleaseDateService(
       }
       lastCalculationBeforeRelease = historicReleaseDates.last { it.calculationDate.toLocalDate().isBefore(releaseDate) }
     }
-    if (calculateAt == sentence.sentenceDate && sentence.recallDates.isNotEmpty() && releaseDate.isAfter(sentence.recallDates.min())) {
+    val isSentenceDateCalc = sentences.none { it.recallDates.contains(calculateAt) }
+    val earliestRecall = sentences.flatMap { it.recallDates }.distinct().minOrNull()
+    if (isSentenceDateCalc && earliestRecall != null && releaseDate.isAfter(earliestRecall)) {
       throw UnsupportedCalculationException("Standard release date cannot be after recall date")
     }
     return CalculationDetail(releaseDate, calculationIds.toList())
@@ -62,18 +64,20 @@ class FindHistoricReleaseDateService(
    */
   private fun collapseByLastCalculationOfTheDay(
     historicReleaseDates: List<SentenceCalculationSummary>,
-    sentence: Sentence,
+    sentences: List<Sentence>,
     charges: Map<Long, Charge>,
   ): List<SentenceCalculationSummary> {
     return historicReleaseDates
-      .filter { findMergedBookings(sentence, charges).contains(it.bookingId) }
+      .filter { findMergedBookings(sentences, charges).contains(it.bookingId) }
       .groupBy { it.calculationDate.toLocalDate() }.values.map { list -> list.maxBy { it.calculationDate } }
   }
 
-  private fun findMergedBookings(sentence: Sentence, charges: Map<Long, Charge>): List<Long> {
-    val bookingId = sentence.bookingId
-    val bookNumber = charges.values.find { it.bookingId == bookingId }!!.bookNumber
-    return charges.values.distinctBy { it.bookingId }.filter { it.bookNumber == bookNumber }.map { it.bookingId }
+  private fun findMergedBookings(sentences: List<Sentence>, charges: Map<Long, Charge>): List<Long> {
+    return sentences.flatMap { sentence ->
+      val bookingId = sentence.bookingId
+      val bookNumber = charges.values.find { it.bookingId == bookingId }!!.bookNumber
+      charges.values.distinctBy { it.bookingId }.filter { it.bookNumber == bookNumber }.map { it.bookingId }
+    }
   }
 
   private fun getReleaseDateForCalcId(

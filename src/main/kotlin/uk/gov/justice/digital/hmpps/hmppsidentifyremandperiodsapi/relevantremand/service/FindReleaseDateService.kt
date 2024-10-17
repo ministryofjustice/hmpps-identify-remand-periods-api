@@ -23,56 +23,45 @@ class FindReleaseDateService(
     sentences: List<SentenceAndCharge>,
     loopTracker: SentenceRemandLoopTracker,
     remandCalculation: RemandCalculation,
-  ) {
+  ): SentencePeriod? {
     if (loopTracker.periodsServingSentence.any { it.from == date }) {
-      return // Already calculated this date.
+      return null // Already calculated this date.
     }
 
     val sentencesToCalculate = sentences.filter { it.sentence.sentenceDate == date || it.sentence.recallDates.any { recallDate -> recallDate == date } }.distinctBy { it.sentence.bookingId }
 
-    val periods = sentencesToCalculate.map {
-      this.findReleaseDate(date, it, loopTracker, remandCalculation)
-    }
-
-    if (periods.none { it.first != null }) {
-      val errors = periods.first().second!!
-      throw UnsupportedCalculationException("Unable to calculation release dates on $date:\n ${errors.joinToString("\n") {it.message} }")
-    }
-
-    loopTracker.periodsServingSentence.addAll(
-      periods.mapNotNull { it.first },
-    )
+    return this.findReleaseDate(date, sentencesToCalculate, loopTracker, remandCalculation)
   }
 
   private fun findReleaseDate(
     date: LocalDate,
-    sentence: SentenceAndCharge,
+    sentences: List<SentenceAndCharge>,
     loopTracker: SentenceRemandLoopTracker,
     remandCalculation: RemandCalculation,
-  ): Pair<SentencePeriod?, List<UnsupportedCalculationException>?> {
+  ): SentencePeriod {
     try {
-      val calculation = getReleaseDateProvider(primaryReleaseDateService).findReleaseDate(remandCalculation.prisonerId, loopTracker.final, sentence.sentence, date, remandCalculation.charges)
-      return SentencePeriod(date, calculation.releaseDate, sentence.sentence, sentence.charge.chargeId, primaryReleaseDateService, emptyList(), calculation.calculationIds) to null
+      val calculation = getReleaseDateProvider(primaryReleaseDateService).findReleaseDate(remandCalculation.prisonerId, loopTracker.final, sentences.map { it.sentence }, date, remandCalculation.charges)
+      return SentencePeriod(date, calculation.releaseDate, sentences[0].sentence, sentences[0].charge.chargeId, primaryReleaseDateService, emptyList(), calculation.calculationIds)
     } catch (primaryError: UnsupportedCalculationException) {
       try {
         val calculation = getReleaseDateProvider(secondaryReleaseDateService).findReleaseDate(
           remandCalculation.prisonerId,
           loopTracker.final,
-          sentence.sentence,
+          sentences.map { it.sentence },
           date,
           remandCalculation.charges,
         )
         return SentencePeriod(
           date,
           calculation.releaseDate,
-          sentence.sentence,
-          sentence.charge.chargeId,
+          sentences[0].sentence,
+          sentences[0].charge.chargeId,
           secondaryReleaseDateService,
           listOf(primaryError.message),
           calculation.calculationIds,
-        ) to null
+        )
       } catch (secondaryError: UnsupportedCalculationException) {
-        return null to listOf(primaryError, secondaryError)
+        throw UnsupportedCalculationException("Unable to calculation release dates on $date:\n ${primaryError.message} \n ${secondaryError.message}")
       }
     }
   }

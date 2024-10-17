@@ -88,15 +88,10 @@
       }
     ]
   },
-  "sentences": [{
-    "bookingId": 1,
-    "sentenceSequence": 2,
-    "sentenceAt": "2021-02-01",
-    "calculations": [
-      {
-        "calculateAt": "2021-02-01",
-        "release": "2021-05-02"
-      }
-    ]
-  }]
+  "calculations": [
+    {
+      "calculateAt": "2021-02-01",
+      "release": "2021-05-02"
+    }
+  ]
 }

@@ -598,87 +598,41 @@
       6289503
     ]
   },
-  "sentences": [
+  "calculations": [
     {
-      "bookingId": 2,
-      "sentenceSequence": 6,
-      "sentenceAt": "2016-08-12",
-      "recallDates": [
-        "2018-01-12"
-      ],
-      "calculations": [
-        {
-          "calculateAt": "2016-08-12",
-          "release": "2017-12-22",
-          "service": "HISTORIC"
-        },
-        {
-          "calculateAt": "2018-01-12",
-          "release": "2018-02-08",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2016-08-12",
+      "release": "2017-12-22",
+      "service": "HISTORIC"
     },
     {
-      "bookingId": 1,
-      "sentenceSequence": 1,
-      "sentenceAt": "2018-03-09",
-      "recallDates": [
-        "2020-10-24",
-        "2021-01-25",
-        "2021-04-28"
-      ],
-      "calculations": [
-        {
-          "calculateAt": "2018-03-09",
-          "release": "2019-10-10",
-          "service": "CRDS"
-        },
-        {
-          "calculateAt": "2021-04-28",
-          "release": "2021-05-25",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2018-01-12",
+      "release": "2018-02-08",
+      "service": "HISTORIC"
     },
     {
-      "bookingId": 2,
-      "sentenceSequence": 16,
-      "sentenceAt": "2018-03-09",
-      "recallDates": [
-        "2020-10-24",
-        "2021-01-25",
-        "2021-04-28"
-      ],
-      "calculations": [
-        {
-          "calculateAt": "2018-03-09",
-          "release": "2019-10-10",
-          "service": "HISTORIC"
-        },
-        {
-          "calculateAt": "2020-10-24",
-          "release": "2020-11-20",
-          "service": "HISTORIC"
-        },
-        {
-          "calculateAt": "2021-01-25",
-          "release": "2021-02-21",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2018-03-09",
+      "release": "2019-10-10",
+      "service": "CRDS"
     },
     {
-      "bookingId": 1,
-      "sentenceSequence": 2,
-      "sentenceAt": "2021-06-02",
-      "calculations": [
-        {
-          "calculateAt": "2021-06-02",
-          "release": "2021-06-11",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2021-04-28",
+      "release": "2021-05-25",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2020-10-24",
+      "release": "2020-11-20",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2021-01-25",
+      "release": "2021-02-21",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2021-06-02",
+      "release": "2021-06-11",
+      "service": "HISTORIC"
     }
   ]
 }

@@ -18,7 +18,12 @@ class CalculateReleaseDateService(
   private val calculateReleaseDatesApiClient: CalculateReleaseDatesApiClient,
 ) : FindReleaseDateServiceProvider {
 
-  override fun findReleaseDate(prisonerId: String, remand: List<Remand>, sentence: Sentence, calculateAt: LocalDate, charges: Map<Long, Charge>): CalculationDetail {
+  override fun findReleaseDate(prisonerId: String, remand: List<Remand>, sentences: List<Sentence>, calculateAt: LocalDate, charges: Map<Long, Charge>): CalculationDetail {
+    val releaseDates = sentences.map { findReleaseDate(prisonerId, remand, it, calculateAt, charges) }
+    return CalculationDetail(releaseDates.min())
+  }
+
+  fun findReleaseDate(prisonerId: String, remand: List<Remand>, sentence: Sentence, calculateAt: LocalDate, charges: Map<Long, Charge>): LocalDate {
     if (sentence.recallDates.size > 1 && sentence.recallDates.dropLast(1).any { it == calculateAt }) {
       throw UnsupportedCalculationException("CRDS cannot calculate can only calculate the most recent recall date. Not previous FTRs")
     }
@@ -47,12 +52,12 @@ class CalculateReleaseDateService(
       if (result.postRecallReleaseDate == null) {
         throw UnsupportedCalculationException("CRDS Calculation expected a recall release date, but was not found. $request")
       }
-      CalculationDetail(result.postRecallReleaseDate)
+      result.postRecallReleaseDate
     } else {
       if (result.releaseDate == null) {
         throw UnsupportedCalculationException("CRDS Calculation expected a release date, but was not found. $request")
       }
-      CalculationDetail(result.releaseDate)
+      result.releaseDate
     }
   }
 

@@ -870,53 +870,21 @@
       7605054
     ]
   },
-  "sentences": [
+  "calculations": [
     {
-      "bookingId": 1,
-      "sentenceSequence": 3,
-      "sentenceAt": "2018-01-12",
-      "recallDates": [
-        "2023-10-25"
-      ],
-      "calculations": [
-        {
-          "calculateAt": "2018-01-12",
-          "release": "2022-09-17",
-          "service": "CRDS"
-        },
-        {
-          "calculateAt": "2023-10-25",
-          "release": "2031-05-22",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2023-10-25",
+      "release": "2031-05-22",
+      "service": "HISTORIC"
     },
     {
-      "bookingId": 2,
-      "sentenceSequence": 3,
-      "sentenceAt": "2018-01-12",
-      "recallDates": [
-        "2023-10-25"
-      ],
-      "calculations": [
-        {
-          "calculateAt": "2018-01-12",
-          "release": "2022-11-17",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2018-01-12",
+      "release": "2022-11-17",
+      "service": "HISTORIC"
     },
     {
-      "bookingId": 2,
-      "sentenceSequence": 4,
-      "sentenceAt": "2018-01-19",
-      "calculations": [
-        {
-          "calculateAt": "2018-01-19",
-          "release": "2022-11-17",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2018-01-19",
+      "release": "2022-11-17",
+      "service": "HISTORIC"
     }
   ],
   "options": {}

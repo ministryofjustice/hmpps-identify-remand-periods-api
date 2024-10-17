@@ -1285,50 +1285,26 @@
       7378859
     ]
   },
-  "sentences": [
+  "calculations": [
     {
-      "bookingId": 1,
-      "sentenceSequence": 2,
-      "sentenceAt": "2021-06-01",
-      "calculations": [
-        {
-          "calculateAt": "2021-06-01",
-          "release": "2021-07-19",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2021-06-01",
+      "release": "2021-07-19",
+      "service": "HISTORIC"
     },
     {
-      "bookingId": 2,
-      "sentenceSequence": 1,
-      "sentenceAt": "2022-07-15",
-      "calculations": [
-        {
-          "calculateAt": "2022-07-15",
-          "release": "2022-07-15",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2022-07-15",
+      "release": "2022-07-15",
+      "service": "HISTORIC"
     },
     {
-      "bookingId": 5,
-      "sentenceSequence": 17,
-      "sentenceAt": "2024-02-07",
-      "recallDates": [
-        "2024-02-13"
-      ],
-      "calculations": [
-        {
-          "calculateAt": "2024-02-07",
-          "release": "2024-02-07",
-          "service": "CRDS"
-        },
-        {
-          "calculateAt": "2024-02-13",
-          "release": "2024-02-20",
-          "service": "CRDS"
-        }
-      ]
+      "calculateAt": "2024-02-07",
+      "release": "2024-02-07",
+      "service": "CRDS"
+    },
+    {
+      "calculateAt": "2024-02-13",
+      "release": "2024-02-20",
+      "service": "CRDS"
     }
   ],
   "options": {

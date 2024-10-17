@@ -166,36 +166,19 @@
       "days": 581
     },
     {
-      "from": "2018-03-09",
-      "to": "2019-10-10",
-      "sentence": {
-        "sequence": 16,
-        "sentenceDate": "2018-03-09",
-        "recallDates": [
-          "2020-10-24",
-          "2021-01-25",
-          "2021-04-28"
-        ],
-        "bookingId": 2
-      },
-      "chargeId": 4982380,
-      "service": "HISTORIC",
-      "days": 581
-    },
-    {
       "from": "2020-10-24",
       "to": "2020-11-20",
       "sentence": {
-        "sequence": 16,
+        "sequence": 1,
         "sentenceDate": "2018-03-09",
         "recallDates": [
           "2020-10-24",
           "2021-01-25",
           "2021-04-28"
         ],
-        "bookingId": 2
+        "bookingId": 1
       },
-      "chargeId": 4982380,
+      "chargeId": 6293183,
       "service": "HISTORIC",
       "days": 28
     },
@@ -203,16 +186,16 @@
       "from": "2021-01-25",
       "to": "2021-02-21",
       "sentence": {
-        "sequence": 16,
+        "sequence": 1,
         "sentenceDate": "2018-03-09",
         "recallDates": [
           "2020-10-24",
           "2021-01-25",
           "2021-04-28"
         ],
-        "bookingId": 2
+        "bookingId": 1
       },
-      "chargeId": 4982380,
+      "chargeId": 6293183,
       "service": "HISTORIC",
       "days": 28
     },
@@ -245,5 +228,207 @@
       "service": "HISTORIC",
       "days": 10
     }
-  ]
+  ],
+  "charges": {
+    "6326435": {
+      "chargeId": 6326435,
+      "offence": {
+        "code": "FA06001",
+        "statute": "FA06",
+        "description": "Fraud by false representation - Fraud Act 2006"
+      },
+      "offenceDate": "2020-03-26",
+      "bookingId": 1,
+      "bookNumber": "1",
+      "sentenceSequence": 2,
+      "sentenceDate": "2021-06-02",
+      "resultDescription": "Imprisonment",
+      "isActiveBooking": true
+    },
+    "6293183": {
+      "chargeId": 6293183,
+      "offence": {
+        "code": "TH68036",
+        "statute": "TH68",
+        "description": "Burglary dwelling and theft  - no violence"
+      },
+      "offenceDate": "2018-01-10",
+      "bookingId": 1,
+      "bookNumber": "1",
+      "sentenceSequence": 1,
+      "sentenceDate": "2018-03-09",
+      "resultDescription": "Recall to Prison",
+      "isActiveBooking": true
+    },
+    "6293184": {
+      "chargeId": 6293184,
+      "offence": {
+        "code": "TH68036",
+        "statute": "TH68",
+        "description": "Burglary dwelling and theft  - no violence"
+      },
+      "offenceDate": "2018-01-07",
+      "bookingId": 1,
+      "bookNumber": "1",
+      "sentenceSequence": 1,
+      "sentenceDate": "2018-03-09",
+      "resultDescription": "Recall to Prison",
+      "isActiveBooking": true
+    },
+    "6293185": {
+      "chargeId": 6293185,
+      "offence": {
+        "code": "TH68036",
+        "statute": "TH68",
+        "description": "Burglary dwelling and theft  - no violence"
+      },
+      "offenceDate": "2018-01-10",
+      "bookingId": 1,
+      "bookNumber": "1",
+      "sentenceSequence": 1,
+      "sentenceDate": "2018-03-09",
+      "resultDescription": "Recall to Prison",
+      "isActiveBooking": true
+    },
+    "6293187": {
+      "chargeId": 6293187,
+      "offence": {
+        "code": "TH68026A",
+        "statute": "TH68",
+        "description": "Attempt burglary dwelling with intent to steal"
+      },
+      "offenceDate": "2018-01-07",
+      "bookingId": 1,
+      "bookNumber": "1",
+      "sentenceSequence": 1,
+      "sentenceDate": "2018-03-09",
+      "resultDescription": "Recall to Prison",
+      "isActiveBooking": true
+    },
+    "6289503": {
+      "chargeId": 6289503,
+      "offence": {
+        "code": "TH68036",
+        "statute": "TH68",
+        "description": "Burglary dwelling and theft  - no violence"
+      },
+      "offenceDate": "2021-04-07",
+      "bookingId": 1,
+      "bookNumber": "1",
+      "sentenceSequence": 7,
+      "sentenceDate": "2021-10-27",
+      "resultDescription": "Recall to Prison",
+      "isActiveBooking": true
+    },
+    "3553641": {
+      "chargeId": 3553641,
+      "offence": {
+        "code": "TH68026A",
+        "statute": "TH68",
+        "description": "Attempt burglary dwelling with intent to steal"
+      },
+      "offenceDate": "2016-06-19",
+      "bookingId": 2,
+      "bookNumber": "2",
+      "sentenceSequence": 6,
+      "sentenceDate": "2016-08-12",
+      "resultDescription": "Recall to Prison"
+    },
+    "3553642": {
+      "chargeId": 3553642,
+      "offence": {
+        "code": "MD71022A",
+        "statute": "MD71",
+        "description": "Attempting to possess controlled drug - Class C"
+      },
+      "offenceDate": "2016-06-22",
+      "bookingId": 2,
+      "bookNumber": "2",
+      "sentenceSequence": 7,
+      "sentenceDate": "2016-08-12",
+      "resultDescription": "Recall to Prison"
+    },
+    "3553643": {
+      "chargeId": 3553643,
+      "offence": {
+        "code": "TH68037",
+        "statute": "TH68",
+        "description": "Burglary other than dwelling - theft"
+      },
+      "offenceDate": "2016-06-19",
+      "bookingId": 2,
+      "bookNumber": "2",
+      "sentenceSequence": 8,
+      "sentenceDate": "2016-08-12",
+      "resultDescription": "Recall to Prison"
+    },
+    "4982379": {
+      "chargeId": 4982379,
+      "offence": {
+        "code": "CJ88001",
+        "statute": "CJ88",
+        "description": "Common assault"
+      },
+      "offenceDate": "2018-01-07",
+      "bookingId": 2,
+      "bookNumber": "2",
+      "resultDescription": "Lie on File"
+    },
+    "4982380": {
+      "chargeId": 4982380,
+      "offence": {
+        "code": "TH68036",
+        "statute": "TH68",
+        "description": "Burglary dwelling and theft  - no violence"
+      },
+      "offenceDate": "2018-01-10",
+      "bookingId": 2,
+      "bookNumber": "2",
+      "sentenceSequence": 16,
+      "sentenceDate": "2018-03-09",
+      "resultDescription": "Recall to Prison"
+    },
+    "4982381": {
+      "chargeId": 4982381,
+      "offence": {
+        "code": "TH68036",
+        "statute": "TH68",
+        "description": "Burglary dwelling and theft  - no violence"
+      },
+      "offenceDate": "2018-01-07",
+      "bookingId": 2,
+      "bookNumber": "2",
+      "sentenceSequence": 16,
+      "sentenceDate": "2018-03-09",
+      "resultDescription": "Recall to Prison"
+    },
+    "4982382": {
+      "chargeId": 4982382,
+      "offence": {
+        "code": "TH68036",
+        "statute": "TH68",
+        "description": "Burglary dwelling and theft  - no violence"
+      },
+      "offenceDate": "2018-01-10",
+      "bookingId": 2,
+      "bookNumber": "2",
+      "sentenceSequence": 16,
+      "sentenceDate": "2018-03-09",
+      "resultDescription": "Recall to Prison"
+    },
+    "4982383": {
+      "chargeId": 4982383,
+      "offence": {
+        "code": "TH68026A",
+        "statute": "TH68",
+        "description": "Attempt burglary dwelling with intent to steal"
+      },
+      "offenceDate": "2018-01-07",
+      "bookingId": 2,
+      "bookNumber": "2",
+      "sentenceSequence": 16,
+      "sentenceDate": "2018-03-09",
+      "resultDescription": "Recall to Prison"
+    }
+  }
 }

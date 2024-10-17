@@ -4,7 +4,6 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvFileSource
 import org.mockito.kotlin.any
-import org.mockito.kotlin.argThat
 import org.mockito.kotlin.eq
 import org.mockito.kotlin.mock
 import org.mockito.kotlin.whenever
@@ -20,7 +19,8 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 class RemandCalculationServiceTest {
   private val calculateReleaseDateService = mock<CalculateReleaseDateService>()
   private val findHistoricReleaseDateService = mock<FindHistoricReleaseDateService>()
-  private val findReleaseDateService = FindReleaseDateService(findHistoricReleaseDateService, calculateReleaseDateService)
+  private val findReleaseDateService =
+    FindReleaseDateService(findHistoricReleaseDateService, calculateReleaseDateService)
   private val remandClockService = RemandClockService()
   private val sentenceRemandService = SentenceRemandService(findReleaseDateService)
   private val remandAdjustmentService = RemandAdjustmentService()
@@ -30,14 +30,25 @@ class RemandCalculationServiceTest {
   private val relatedChargeCombinationService = RelatedChargeCombinationService()
   private val userSelectedCombinationService = UserSelectedCombinationService()
   private val validationChargeService = ValidateChargeService()
-  private val remandCalculationService = RemandCalculationService(relatedChargeCombinationService, userSelectedCombinationService, remandClockService, sentenceRemandService, remandAdjustmentService, chargeRemandStatusService, resultSortingService, mergeChargeRemandService, validationChargeService)
+  private val remandCalculationService = RemandCalculationService(
+    relatedChargeCombinationService,
+    userSelectedCombinationService,
+    remandClockService,
+    sentenceRemandService,
+    remandAdjustmentService,
+    chargeRemandStatusService,
+    resultSortingService,
+    mergeChargeRemandService,
+    validationChargeService,
+  )
 
   @ParameterizedTest
   @CsvFileSource(resources = ["/data/tests.csv"], numLinesToSkip = 1)
   fun `Test Examples`(exampleName: String, error: String?) {
     log.info("Testing example $exampleName")
 
-    val example = TestUtil.objectMapper().readValue(ClassPathResource("/data/RemandCalculation/$exampleName.json").file, TestExample::class.java)
+    val example = TestUtil.objectMapper()
+      .readValue(ClassPathResource("/data/RemandCalculation/$exampleName.json").file, TestExample::class.java)
 
     stubCalculations(exampleName, example)
 
@@ -54,7 +65,8 @@ class RemandCalculationServiceTest {
       }
     }
 
-    val expected = TestUtil.objectMapper().readValue(ClassPathResource("/data/RemandResult/$exampleName.json").file, RemandResult::class.java)
+    val expected = TestUtil.objectMapper()
+      .readValue(ClassPathResource("/data/RemandResult/$exampleName.json").file, RemandResult::class.java)
     assertThat(remandResult)
       .usingRecursiveComparison()
       .ignoringFieldsMatchingRegexes("charges", "remandCalculation")
@@ -63,33 +75,31 @@ class RemandCalculationServiceTest {
 
   private fun stubCalculations(exampleName: String, example: TestExample) {
     stubErrorCalculationsAsDefault()
-    example.sentences.forEach { sentence ->
-      sentence.calculations.forEach { calculation ->
-        log.info("Stubbing release dates for $exampleName: $sentence $calculation")
-        if (calculation.service == "HISTORIC") {
-          whenever(
-            findHistoricReleaseDateService.findReleaseDate(
-              eq(example.remandCalculation.prisonerId),
-              any(),
-              argThat { argSentence: Sentence -> argSentence.bookingId == sentence.bookingId },
-              eq(calculation.calculateAt),
-              any(),
-            ),
-          ).thenAnswer {
-            CalculationDetail(calculation.release)
-          }
-        } else {
-          whenever(
-            calculateReleaseDateService.findReleaseDate(
-              eq(example.remandCalculation.prisonerId),
-              any(),
-              argThat { argSentence: Sentence -> argSentence.bookingId == sentence.bookingId },
-              eq(calculation.calculateAt),
-              any(),
-            ),
-          ).thenAnswer {
-            CalculationDetail(calculation.release)
-          }
+    example.calculations.forEach { calculation ->
+      log.info("Stubbing release dates for $exampleName: $calculation")
+      if (calculation.service == "HISTORIC") {
+        whenever(
+          findHistoricReleaseDateService.findReleaseDate(
+            eq(example.remandCalculation.prisonerId),
+            any(),
+            any(),
+            eq(calculation.calculateAt),
+            any(),
+          ),
+        ).thenAnswer {
+          CalculationDetail(calculation.release)
+        }
+      } else {
+        whenever(
+          calculateReleaseDateService.findReleaseDate(
+            eq(example.remandCalculation.prisonerId),
+            any(),
+            any<List<Sentence>>(),
+            eq(calculation.calculateAt),
+            any(),
+          ),
+        ).thenAnswer {
+          CalculationDetail(calculation.release)
         }
       }
     }
@@ -111,7 +121,7 @@ class RemandCalculationServiceTest {
       calculateReleaseDateService.findReleaseDate(
         any(),
         any(),
-        any(),
+        any<List<Sentence>>(),
         any(),
         any(),
       ),

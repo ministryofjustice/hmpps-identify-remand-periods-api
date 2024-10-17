@@ -237,21 +237,11 @@
       6800932
     ]
   },
-  "sentences": [
+  "calculations": [
     {
-      "bookingId": 1,
-      "sentenceSequence": 5,
-      "sentenceAt": "2018-10-26",
-      "recallDates": [
-        "2019-08-09"
-      ],
-      "calculations": [
-        {
-          "calculateAt": "2018-10-26",
-          "release": "2019-08-08",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2018-10-26",
+      "release": "2019-08-08",
+      "service": "HISTORIC"
     }
   ]
 }

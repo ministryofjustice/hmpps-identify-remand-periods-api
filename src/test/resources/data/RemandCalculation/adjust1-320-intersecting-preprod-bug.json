@@ -542,15 +542,10 @@
       }
     ]
   },
-  "sentences": [{
-    "bookingId": 1,
-    "sentenceSequence": 1,
-    "sentenceAt": "2017-11-06",
-    "calculations": [
-      {
-        "calculateAt": "2017-11-06",
-        "release": "2017-11-06"
-      }
-    ]
-  }]
+  "calculations": [
+    {
+      "calculateAt": "2017-11-06",
+      "release": "2017-11-06"
+    }
+  ]
 }

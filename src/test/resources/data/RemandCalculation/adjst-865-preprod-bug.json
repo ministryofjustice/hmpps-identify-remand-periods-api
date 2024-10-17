@@ -1147,109 +1147,46 @@
       7534607
     ]
   },
-  "sentences": [
+  "calculations": [
     {
-      "bookingId": 3,
-      "sentenceSequence": 1,
-      "sentenceAt": "2021-10-13",
-      "calculations": [
-        {
-          "calculateAt": "2021-10-13",
-          "release": "2021-10-22",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2021-10-13",
+      "release": "2021-10-22",
+      "service": "HISTORIC"
     },
     {
-      "bookingId": 4,
-      "sentenceSequence": 1,
-      "sentenceAt": "2022-01-18",
-      "calculations": [
-        {
-          "calculateAt": "2022-01-18",
-          "release": "2022-02-07",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2022-01-18",
+      "release": "2022-02-07",
+      "service": "HISTORIC"
     },
     {
-      "bookingId": 1,
-      "sentenceSequence": 1,
-      "sentenceAt": "2022-04-04",
-      "recallDates": [
-        "2022-09-28"
-      ],
-      "calculations": [
-        {
-          "calculateAt": "2022-04-04",
-          "release": "2022-07-24",
-          "service": "CRDS"
-        },
-        {
-          "calculateAt": "2022-09-28",
-          "release": "2023-02-04",
-          "service": "CRDS"
-        }
-      ]
+      "calculateAt": "2022-09-28",
+      "release": "2023-02-04",
+      "service": "CRDS"
     },
     {
-      "bookingId": 4,
-      "sentenceSequence": 10,
-      "sentenceAt": "2022-04-04",
-      "recallDates": [
-        "2022-09-28"
-      ],
-      "calculations": [
-        {
-          "calculateAt": "2022-04-04",
-          "release": "2022-08-07",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2022-04-04",
+      "release": "2022-08-07",
+      "service": "HISTORIC"
     },
     {
-      "bookingId": 4,
-      "sentenceSequence": 11,
-      "sentenceAt": "2022-04-26",
-      "calculations": [
-        {
-          "calculateAt": "2022-04-26",
-          "release": "2022-08-07",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2022-04-26",
+      "release": "2022-08-07",
+      "service": "HISTORIC"
     },
     {
-      "bookingId": 1,
-      "sentenceSequence": 17,
-      "sentenceAt": "2023-04-05",
-      "recallDates": [
-        "2023-05-31"
-      ],
-      "calculations": [
-        {
-          "calculateAt": "2023-04-05",
-          "release": "2023-05-13",
-          "service": "HISTORIC"
-        },
-        {
-          "calculateAt": "2023-05-31",
-          "release": "2023-08-05",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2023-04-05",
+      "release": "2023-05-13",
+      "service": "HISTORIC"
     },
     {
-      "bookingId": 1,
-      "sentenceSequence": 25,
-      "sentenceAt": "2024-04-23",
-      "calculations": [
-        {
-          "calculateAt": "2024-04-23",
-          "release": "2024-11-26",
-          "service": "HISTORIC"
-        }
-      ]
+      "calculateAt": "2023-05-31",
+      "release": "2023-08-05",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2024-04-23",
+      "release": "2024-11-26",
+      "service": "HISTORIC"
     }
   ],
   "options": {}

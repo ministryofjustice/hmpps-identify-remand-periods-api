@@ -32,7 +32,7 @@ class TestCaseAnonymiser {
           )
         },
       ),
-      sentences = transformIntersecting(bookings),
+      calculations = transformIntersecting(),
     )
 
     TestUtil.objectMapper()
@@ -47,7 +47,7 @@ class TestCaseAnonymiser {
     return bookings[bookingId]!!
   }
 
-  private fun transformIntersecting(bookings: MutableMap<Long, Booking>): List<Sentences> {
+  private fun transformIntersecting(): List<Calculations> {
     val intersectingJson = """ 
       []
     """.trimIndent()
@@ -55,36 +55,11 @@ class TestCaseAnonymiser {
     val intersecting = TestUtil.objectMapper()
       .readValue(intersectingJson, object : TypeReference<List<SentencePeriod>>() {})
 
-    val sentences = mutableListOf<Sentences>()
-
-    intersecting.forEach {
-      val calculation = Calculations(
+    return intersecting.map {
+      Calculations(
         calculateAt = it.from,
         release = it.to,
         service = it.service,
-      )
-
-      val existing =
-        sentences.find { sit -> sit.bookingId == it.sentence.bookingId && sit.sentenceSequence == it.sentence.sequence }
-
-      if (existing == null) {
-        sentences.add(
-          Sentences(
-            it.sentence.bookingId,
-            it.sentence.sequence,
-            it.sentence.sentenceDate,
-            it.sentence.recallDates,
-            mutableListOf(calculation),
-          ),
-        )
-      } else {
-        existing.calculations.add(calculation)
-      }
-    }
-
-    return sentences.map {
-      it.copy(
-        bookingId = bookings[it.bookingId]!!.bookingId,
       )
     }
   }

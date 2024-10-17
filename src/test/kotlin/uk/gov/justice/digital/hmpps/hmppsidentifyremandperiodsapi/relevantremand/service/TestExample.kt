@@ -6,16 +6,8 @@ import java.time.LocalDate
 
 data class TestExample(
   val remandCalculation: RemandCalculation,
-  val sentences: List<Sentences> = listOf(),
+  val calculations: List<Calculations> = listOf(),
   val options: RemandCalculationRequestOptions = RemandCalculationRequestOptions(),
-)
-
-data class Sentences(
-  val bookingId: Long,
-  val sentenceSequence: Int,
-  val sentenceAt: LocalDate,
-  val recallDates: List<LocalDate> = emptyList(),
-  val calculations: MutableList<Calculations>,
 )
 
 data class Calculations(
