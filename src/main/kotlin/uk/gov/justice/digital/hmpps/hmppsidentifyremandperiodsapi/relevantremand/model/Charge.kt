@@ -5,8 +5,8 @@ import java.time.LocalDate
 data class Charge(
   val chargeId: Long,
   val offence: Offence,
-  val offenceDate: LocalDate,
   val bookingId: Long,
+  val offenceDate: LocalDate? = null,
   val bookNumber: String = "",
   val offenceEndDate: LocalDate? = null,
   val sentenceSequence: Int? = null,
