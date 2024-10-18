@@ -27,7 +27,7 @@ class FindHistoricReleaseDateServiceTest {
   private val sentenceDate = LocalDate.of(2020, 1, 1)
   private val recallDate = LocalDate.of(2022, 1, 1)
   private val sentence = Sentence(1, sentenceDate, listOf(recallDate), bookingId)
-  private val charges = mapOf(1L to Charge(1L, Offence("ABC", "123", "An offence"), LocalDate.now(), bookingId, bookNumber))
+  private val charges = mapOf(1L to Charge(1L, Offence("ABC", "123", "An offence"), bookingId, bookNumber = bookNumber))
 
   @Test
   fun `Successfully retrieve release date`() {

@@ -10,8 +10,24 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.util.isBeforeO
 class ValidateChargeService {
 
   fun validate(calculationData: CalculationData) {
+    validateOffenceDates(calculationData)
     validateRecallEventForEachRecallSentence(calculationData)
     validateRecallEventNotOnSentenceDate(calculationData)
+  }
+
+  private fun validateOffenceDates(calculationData: CalculationData) {
+    calculationData.chargeAndEvents.forEach {
+      val charge = it.charge
+      if (charge.offenceDate == null) {
+        calculationData.issuesWithLegacyData.add(
+          LegacyDataProblem(
+            LegacyDataProblemType.MISSING_OFFENCE_DATE,
+            "There is another offence of '${charge.offence.description}' within booking ${charge.bookNumber} that has a missing offence date.",
+            charge,
+          ),
+        )
+      }
+    }
   }
 
   private fun validateRecallEventForEachRecallSentence(calculationData: CalculationData) {

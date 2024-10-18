@@ -24,21 +24,13 @@ fun transform(results: List<PrisonApiCharge>, prisonerDetails: Prisoner, sentenc
   return RemandCalculation(
     prisonerDetails.prisonerNumber,
     chargesFilteredByOffenceDate
-      .filter {
-        if (it.offenceDate == null) {
-          issuesWithLegacyData.add(LegacyDataProblem(LegacyDataProblemType.MISSING_OFFENCE_DATE, "There is another offence of '${it.offenceDescription}' within booking ${it.bookNumber} that has a missing offence date.", it))
-          false
-        } else {
-          true
-        }
-      }
       .map {
         ChargeAndEvents(
           Charge(
             it.chargeId,
             transform(it),
-            it.offenceDate!!,
             it.bookingId,
+            it.offenceDate,
             it.bookNumber,
             it.offenceEndDate,
             it.sentenceSequence,

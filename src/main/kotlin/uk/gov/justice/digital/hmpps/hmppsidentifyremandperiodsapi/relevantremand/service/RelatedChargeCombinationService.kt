@@ -3,19 +3,17 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantreman
 import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Charge
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeAndEvents
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDate
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RelatedCharge
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandApplicableUserSelection
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculationRequestOptions
 
 @Service
 class RelatedChargeCombinationService {
 
   fun combineRelatedCharges(remandCalculation: RemandCalculation): List<ChargeAndEvents> {
-    val mapOfRelatedCharges = remandCalculation.chargesAndEvents.groupBy {
+    val (chargesWithOffenceDate, chargesWithoutOffenceDate) = remandCalculation.chargesAndEvents.partition { it.charge.offenceDate != null }
+    val mapOfRelatedCharges = chargesWithOffenceDate.groupBy {
       RelatedCharge(
-        it.charge.offenceDate,
+        it.charge.offenceDate!!,
         it.charge.offenceEndDate,
         it.charge.offence.code,
       )
@@ -30,7 +28,7 @@ class RelatedChargeCombinationService {
       } else {
         it.value[0]
       }
-    }
+    } + chargesWithoutOffenceDate
   }
 
   private fun pickMostAppropriateCharge(relatedCharges: List<ChargeAndEvents>): Charge {
@@ -47,27 +45,4 @@ class RelatedChargeCombinationService {
 
   private fun flattenCourtDates(relatedCharges: List<ChargeAndEvents>) =
     relatedCharges.flatMap { it.dates }.distinct()
-
-  private fun combineUserSelectedCharges(chargesAndEvents: List<ChargeAndEvents>, options: RemandCalculationRequestOptions): List<ChargeAndEvents> {
-    if (options.userSelections.isNotEmpty()) {
-      return chargesAndEvents
-        .filter { options.userSelections.none { selection -> selection.chargeIdsToMakeApplicable.contains(it.charge.chargeId) } }
-        .map {
-          val matchingSelection = options.userSelections.find { selection -> selection.targetChargeId == it.charge.chargeId }
-          if (matchingSelection != null) {
-            it.copy(
-              dates = combineDatesAndUserSelection(it, chargesAndEvents, matchingSelection),
-              userSelectedCharges = matchingSelection.chargeIdsToMakeApplicable,
-            )
-          } else {
-            it
-          }
-        }
-    }
-    return chargesAndEvents
-  }
-
-  private fun combineDatesAndUserSelection(it: ChargeAndEvents, chargesAndEvents: List<ChargeAndEvents>, matchingSelection: RemandApplicableUserSelection): List<CourtDate> {
-    return it.dates + chargesAndEvents.filter { charge -> matchingSelection.chargeIdsToMakeApplicable.contains(charge.charge.chargeId) }.flatMap { charge -> charge.dates }.distinct()
-  }
 }
