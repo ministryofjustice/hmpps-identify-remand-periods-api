@@ -831,9 +831,9 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
       "offenceDescription":"An offence",
       "guilty":false,
       "courtCaseId":1,
-      "sentenceSequence":1,
+      "sentenceSequence":1, 
       "sentenceDate":"2015-12-13",
-      "bookingId":1,
+      "bookingId":99,
       "bookNumber":"ABC123",
       "outcomes":[
          {
