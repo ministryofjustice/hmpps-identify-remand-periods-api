@@ -13,6 +13,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblemType
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Offence
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.util.isAfterOrEqualTo
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -54,7 +55,7 @@ fun transform(results: List<PrisonApiCharge>, prisonerDetails: Prisoner, sentenc
 fun filterEventsByOffenceDate(results: List<PrisonApiCharge>, earliestDateInActiveBooking: LocalDate): List<PrisonApiCharge> {
   return results.map {
     it.copy(
-      outcomes = it.outcomes.filter { result -> result.date.isAfter(earliestDateInActiveBooking) },
+      outcomes = it.outcomes.filter { result -> result.date.isAfterOrEqualTo(earliestDateInActiveBooking) },
     )
   }.filter { it.outcomes.isNotEmpty() }
 }
