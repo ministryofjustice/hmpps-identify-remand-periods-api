@@ -13,6 +13,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblemType
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Offence
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.util.isAfterOrEqualTo
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -54,7 +55,7 @@ fun transform(results: List<PrisonApiCharge>, prisonerDetails: Prisoner, sentenc
 fun filterEventsByOffenceDate(results: List<PrisonApiCharge>, earliestDateInActiveBooking: LocalDate): List<PrisonApiCharge> {
   return results.map {
     it.copy(
-      outcomes = it.outcomes.filter { result -> result.date.isAfter(earliestDateInActiveBooking) },
+      outcomes = it.outcomes.filter { result -> result.date.isAfterOrEqualTo(earliestDateInActiveBooking) },
     )
   }.filter { it.outcomes.isNotEmpty() }
 }
@@ -62,7 +63,7 @@ fun filterEventsByOffenceDate(results: List<PrisonApiCharge>, earliestDateInActi
 private fun earliestDateInActiveBooking(results: List<PrisonApiCharge>, prisonerDetails: Prisoner): LocalDate {
   return results
     .filter { it.bookingId == prisonerDetails.bookingId.toLong() }
-    .flatMap { it.outcomes.map { outcome -> outcome.date } + it.offenceDate }
+    .flatMap { it.outcomes.filter { outcome -> outcome.resultCode != null }.map { outcome -> outcome.date } + it.offenceDate }
     .filterNotNull()
     .ifEmpty {
       throw UnsupportedCalculationException("There are no offences with offence dates on the active booking.")
