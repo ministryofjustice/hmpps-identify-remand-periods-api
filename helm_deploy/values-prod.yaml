@@ -3,7 +3,7 @@
 
 generic-service:
   ingress:
-    host: hmpps-identify-remand-periods-api.hmpps.service.justice.gov.uk
+    host: identify-remand-periods-api.hmpps.service.justice.gov.uk
 
   env:
     HMPPS_AUTH_URL: https://sign-in.hmpps.service.justice.gov.uk/auth
