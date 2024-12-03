@@ -1,0 +1,587 @@
+{
+  "adjustments": [
+    {
+      "bookingId": 2,
+      "sentenceSequence": 1,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2021-12-01",
+      "fromDate": "2021-10-02",
+      "remand": {
+        "chargeId": [
+          7153226,
+          6438424,
+          6438427,
+          6438441,
+          6438442,
+          6438443,
+          6438444,
+          6438445,
+          6438446,
+          6438447
+        ]
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "bookingId": 2,
+      "sentenceSequence": 2,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2023-11-12",
+      "fromDate": "2023-08-21",
+      "remand": {
+        "chargeId": [
+          7153082,
+          7153089
+        ]
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "bookingId": 2,
+      "sentenceSequence": 4,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2024-02-15",
+      "fromDate": "2024-02-15",
+      "remand": {
+        "chargeId": [
+          7373245
+        ]
+      },
+      "status": "ACTIVE"
+    }
+  ],
+  "chargeRemand": [
+    {
+      "from": "2021-10-02",
+      "to": "2021-12-01",
+      "fromEvent": {
+        "date": "2021-10-02",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2021-12-02",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7153226
+      ],
+      "status": "APPLICABLE",
+      "days": 61
+    },
+    {
+      "from": "2021-10-02",
+      "to": "2021-12-01",
+      "fromEvent": {
+        "date": "2021-10-02",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2021-12-02",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        6438424,
+        6438427,
+        6438441,
+        6438442,
+        6438443,
+        6438444,
+        6438445,
+        6438446,
+        6438447
+      ],
+      "status": "APPLICABLE",
+      "days": 61
+    },
+    {
+      "from": "2023-08-21",
+      "to": "2023-11-12",
+      "fromEvent": {
+        "date": "2023-08-21",
+        "description": "Guilty"
+      },
+      "toEvent": {
+        "date": "2023-11-13",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7153082,
+        7153089
+      ],
+      "status": "APPLICABLE",
+      "days": 84
+    },
+    {
+      "from": "2024-02-15",
+      "to": "2024-04-03",
+      "fromEvent": {
+        "date": "2024-02-15",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2024-04-04",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7373245
+      ],
+      "status": "APPLICABLE",
+      "days": 49
+    }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2021-12-02",
+      "to": "2023-04-20",
+      "sentence": {
+        "sequence": 7,
+        "sentenceDate": "2021-12-02",
+        "recallDates": [
+          "2021-12-02",
+          "2023-06-09",
+          "2024-02-16"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 6438423,
+      "service": "HISTORIC",
+      "days": 505
+    },
+    {
+      "from": "2022-02-22",
+      "to": "2023-04-20",
+      "sentence": {
+        "sequence": 6,
+        "sentenceDate": "2022-02-22",
+        "bookingId": 1
+      },
+      "chargeId": 6588761,
+      "service": "HISTORIC",
+      "days": 423
+    },
+    {
+      "from": "2023-06-09",
+      "to": "2023-07-10",
+      "sentence": {
+        "sequence": 7,
+        "sentenceDate": "2021-12-02",
+        "recallDates": [
+          "2021-12-02",
+          "2023-06-09",
+          "2024-02-16"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 6438423,
+      "service": "HISTORIC",
+      "days": 32
+    },
+    {
+      "from": "2023-11-13",
+      "to": "2023-06-20",
+      "sentence": {
+        "sequence": 2,
+        "sentenceDate": "2023-11-13",
+        "recallDates": [
+          "2024-02-16"
+        ],
+        "bookingId": 2
+      },
+      "chargeId": 7153082,
+      "service": "CRDS",
+      "errors": [
+        "Historic calculation error!"
+      ],
+      "days": -145
+    },
+    {
+      "from": "2024-02-16",
+      "to": "2025-03-09",
+      "sentence": {
+        "sequence": 7,
+        "sentenceDate": "2021-12-02",
+        "recallDates": [
+          "2021-12-02",
+          "2023-06-09",
+          "2024-02-16"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 6438423,
+      "service": "HISTORIC",
+      "days": 388
+    }
+  ],
+  "charges": {
+    "6438423": {
+      "chargeId": 6438423,
+      "offence": {
+        "code": "TH68036",
+        "statute": "TH68",
+        "description": "Burglary dwelling and theft - no violence"
+      },
+      "bookingId": 1,
+      "offenceDate": "2021-09-19",
+      "bookNumber": "1",
+      "sentenceSequence": 7,
+      "sentenceDate": "2021-12-02",
+      "resultDescription": "Recall to Prison",
+      "final": true,
+      "isRecallSentence": true
+    },
+    "6438424": {
+      "chargeId": 6438424,
+      "offence": {
+        "code": "FA06001",
+        "statute": "FA06",
+        "description": "Fraud by false representation - Fraud Act 2006"
+      },
+      "bookingId": 1,
+      "offenceDate": "2021-09-19",
+      "bookNumber": "1",
+      "sentenceSequence": 8,
+      "sentenceDate": "2021-12-02",
+      "resultDescription": "Recall to Prison",
+      "final": true,
+      "isRecallSentence": true
+    },
+    "6438425": {
+      "chargeId": 6438425,
+      "offence": {
+        "code": "FA06001",
+        "statute": "FA06",
+        "description": "Fraud by false representation - Fraud Act 2006"
+      },
+      "bookingId": 1,
+      "offenceDate": "2021-09-19",
+      "bookNumber": "1",
+      "sentenceSequence": 8,
+      "sentenceDate": "2021-12-02",
+      "resultDescription": "Recall to Prison",
+      "final": true,
+      "isRecallSentence": true
+    },
+    "6438426": {
+      "chargeId": 6438426,
+      "offence": {
+        "code": "FA06001",
+        "statute": "FA06",
+        "description": "Fraud by false representation - Fraud Act 2006"
+      },
+      "bookingId": 1,
+      "offenceDate": "2021-09-19",
+      "bookNumber": "1",
+      "sentenceSequence": 8,
+      "sentenceDate": "2021-12-02",
+      "resultDescription": "Recall to Prison",
+      "final": true,
+      "isRecallSentence": true
+    },
+    "6438427": {
+      "chargeId": 6438427,
+      "offence": {
+        "code": "TH68036",
+        "statute": "TH68",
+        "description": "Burglary dwelling and theft - no violence"
+      },
+      "bookingId": 1,
+      "offenceDate": "2021-09-26",
+      "bookNumber": "1",
+      "sentenceSequence": 12,
+      "sentenceDate": "2021-12-02",
+      "resultDescription": "Recall to Prison",
+      "final": true,
+      "isRecallSentence": true
+    },
+    "6438428": {
+      "chargeId": 6438428,
+      "offence": {
+        "code": "TH68036",
+        "statute": "TH68",
+        "description": "Burglary dwelling and theft - no violence"
+      },
+      "bookingId": 1,
+      "offenceDate": "2021-09-26",
+      "bookNumber": "1",
+      "sentenceSequence": 12,
+      "sentenceDate": "2021-12-02",
+      "resultDescription": "Recall to Prison",
+      "final": true,
+      "isRecallSentence": true
+    },
+    "6438441": {
+      "chargeId": 6438441,
+      "offence": {
+        "code": "TH68026",
+        "statute": "TH68",
+        "description": "Burglary dwelling - with intent to steal"
+      },
+      "bookingId": 1,
+      "offenceDate": "2021-09-24",
+      "bookNumber": "1",
+      "sentenceSequence": 12,
+      "sentenceDate": "2021-12-02",
+      "resultDescription": "Recall to Prison",
+      "final": true,
+      "isRecallSentence": true
+    },
+    "6438442": {
+      "chargeId": 6438442,
+      "offence": {
+        "code": "TH68027A",
+        "statute": "TH68",
+        "description": "Attempt burglary other than dwelling with intent to steal"
+      },
+      "bookingId": 1,
+      "offenceDate": "2021-09-26",
+      "bookNumber": "1",
+      "sentenceSequence": 9,
+      "sentenceDate": "2021-12-02",
+      "resultDescription": "Recall to Prison",
+      "final": true,
+      "isRecallSentence": true
+    },
+    "6438443": {
+      "chargeId": 6438443,
+      "offence": {
+        "code": "TH68037",
+        "statute": "TH68",
+        "description": "Burglary other than dwelling - theft"
+      },
+      "bookingId": 1,
+      "offenceDate": "2021-09-28",
+      "bookNumber": "1",
+      "sentenceSequence": 12,
+      "sentenceDate": "2021-12-02",
+      "resultDescription": "Recall to Prison",
+      "final": true,
+      "isRecallSentence": true
+    },
+    "6438444": {
+      "chargeId": 6438444,
+      "offence": {
+        "code": "TH68036",
+        "statute": "TH68",
+        "description": "Burglary dwelling and theft - no violence"
+      },
+      "bookingId": 1,
+      "offenceDate": "2021-09-28",
+      "bookNumber": "1",
+      "sentenceSequence": 12,
+      "sentenceDate": "2021-12-02",
+      "resultDescription": "Recall to Prison",
+      "final": true,
+      "isRecallSentence": true
+    },
+    "6438445": {
+      "chargeId": 6438445,
+      "offence": {
+        "code": "TH68026A",
+        "statute": "TH68",
+        "description": "Attempt burglary dwelling with intent to steal"
+      },
+      "bookingId": 1,
+      "offenceDate": "2021-09-28",
+      "bookNumber": "1",
+      "sentenceSequence": 9,
+      "sentenceDate": "2021-12-02",
+      "resultDescription": "Recall to Prison",
+      "final": true,
+      "isRecallSentence": true
+    },
+    "6438446": {
+      "chargeId": 6438446,
+      "offence": {
+        "code": "TH68050",
+        "statute": "TH68",
+        "description": "Take a motor vehicle without the owners consent"
+      },
+      "bookingId": 1,
+      "offenceDate": "2021-09-17",
+      "bookNumber": "1",
+      "sentenceSequence": 11,
+      "sentenceDate": "2021-12-02",
+      "resultDescription": "Recall to Prison",
+      "final": true,
+      "isRecallSentence": true
+    },
+    "6438447": {
+      "chargeId": 6438447,
+      "offence": {
+        "code": "TH68141",
+        "statute": "TH68",
+        "description": "Aggravated vehicle taking - ( initial taker ) and dangerous driving"
+      },
+      "bookingId": 1,
+      "offenceDate": "2021-09-28",
+      "bookNumber": "1",
+      "sentenceSequence": 10,
+      "sentenceDate": "2021-12-02",
+      "resultDescription": "Recall to Prison",
+      "final": true,
+      "isRecallSentence": true
+    },
+    "6588761": {
+      "chargeId": 6588761,
+      "offence": {
+        "code": "RT88096",
+        "statute": "RT88",
+        "description": "Use a motor vehicle on a road without a valid test certificate"
+      },
+      "bookingId": 1,
+      "bookNumber": "1",
+      "sentenceSequence": 6,
+      "sentenceDate": "2022-02-22",
+      "resultDescription": "Fine or YOI",
+      "final": true
+    },
+    "7153226": {
+      "chargeId": 7153226,
+      "offence": {
+        "code": "TH68036",
+        "statute": "TH68",
+        "description": "Burglary dwelling and theft - no violence"
+      },
+      "bookingId": 2,
+      "offenceDate": "2021-09-19",
+      "bookNumber": "2",
+      "sentenceSequence": 1,
+      "sentenceDate": "2021-12-02",
+      "resultDescription": "Recall to Prison",
+      "final": true,
+      "isActiveBooking": true,
+      "isRecallSentence": true
+    },
+    "7153082": {
+      "chargeId": 7153082,
+      "offence": {
+        "code": "TH68037",
+        "statute": "TH68",
+        "description": "Burglary other than dwelling - theft"
+      },
+      "bookingId": 2,
+      "offenceDate": "2023-08-19",
+      "bookNumber": "2",
+      "sentenceSequence": 2,
+      "sentenceDate": "2023-11-13",
+      "resultDescription": "Recall to Prison",
+      "final": true,
+      "isActiveBooking": true,
+      "isRecallSentence": true
+    },
+    "7153083": {
+      "chargeId": 7153083,
+      "offence": {
+        "code": "TH68037",
+        "statute": "TH68",
+        "description": "Burglary other than dwelling - theft"
+      },
+      "bookingId": 2,
+      "offenceDate": "2023-08-19",
+      "bookNumber": "2",
+      "sentenceSequence": 2,
+      "sentenceDate": "2023-11-13",
+      "resultDescription": "Recall to Prison",
+      "final": true,
+      "isActiveBooking": true,
+      "isRecallSentence": true
+    },
+    "7153084": {
+      "chargeId": 7153084,
+      "offence": {
+        "code": "TH68037",
+        "statute": "TH68",
+        "description": "Burglary other than dwelling - theft"
+      },
+      "bookingId": 2,
+      "offenceDate": "2023-08-19",
+      "bookNumber": "2",
+      "sentenceSequence": 2,
+      "sentenceDate": "2023-11-13",
+      "resultDescription": "Recall to Prison",
+      "final": true,
+      "isActiveBooking": true,
+      "isRecallSentence": true
+    },
+    "7153089": {
+      "chargeId": 7153089,
+      "offence": {
+        "code": "TH68001",
+        "statute": "TH68",
+        "description": "Theft from the person of another"
+      },
+      "bookingId": 2,
+      "offenceDate": "2023-08-19",
+      "bookNumber": "2",
+      "sentenceSequence": 3,
+      "sentenceDate": "2023-11-13",
+      "resultDescription": "Recall to Prison",
+      "final": true,
+      "isActiveBooking": true,
+      "isRecallSentence": true
+    },
+    "7546757": {
+      "chargeId": 7546757,
+      "offence": {
+        "code": "ZZ01008",
+        "statute": "ZZ01",
+        "description": "CIVIL : Other Non-Payment"
+      },
+      "bookingId": 2,
+      "offenceDate": "2021-12-02",
+      "bookNumber": "2",
+      "sentenceSequence": 5,
+      "sentenceDate": "2024-06-13",
+      "resultDescription": "Imprisonment in default",
+      "final": true,
+      "isActiveBooking": true
+    },
+    "7373245": {
+      "chargeId": 7373245,
+      "offence": {
+        "code": "TH68036",
+        "statute": "TH68",
+        "description": "Burglary dwelling and theft - no violence"
+      },
+      "bookingId": 2,
+      "offenceDate": "2024-01-18",
+      "bookNumber": "2",
+      "sentenceSequence": 4,
+      "sentenceDate": "2024-04-04",
+      "resultDescription": "Imprisonment",
+      "final": true,
+      "isActiveBooking": true
+    }
+  },
+  "issuesWithLegacyData": [
+    {
+      "type": "MISSING_OFFENCE_DATE",
+      "message": "There is another offence of 'Use a motor vehicle on a road without a valid test certificate' within booking 1 that has a missing offence date.",
+      "offence": {
+        "code": "RT88096",
+        "statute": "RT88",
+        "description": "Use a motor vehicle on a road without a valid test certificate"
+      },
+      "bookingId": 1,
+      "bookNumber": "1"
+    },
+    {
+      "type": "RECALL_EVENT_ON_SENTENCE_DATE",
+      "message": "The offence 'Burglary dwelling and theft - no violence' within booking 2 has a recall event before or on sentence date",
+      "offence": {
+        "code": "TH68036",
+        "statute": "TH68",
+        "description": "Burglary dwelling and theft - no violence"
+      },
+      "bookingId": 2,
+      "bookNumber": "2"
+    },
+    {
+      "type": "MISSING_COURT_EVENT_FOR_IMPRISONMENT_STATUS_RECALL",
+      "message": "The offenders main inmate status was changed to recalled on 22 Aug 2023 but there is no matching court events"
+    }
+  ]
+}

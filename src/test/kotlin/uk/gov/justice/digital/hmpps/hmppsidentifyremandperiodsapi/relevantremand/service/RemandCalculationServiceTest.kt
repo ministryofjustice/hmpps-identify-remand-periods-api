@@ -29,7 +29,7 @@ class RemandCalculationServiceTest {
   private val mergeChargeRemandService = MergeChargeRemandService()
   private val relatedChargeCombinationService = RelatedChargeCombinationService()
   private val userSelectedCombinationService = UserSelectedCombinationService()
-  private val validationChargeService = ValidateChargeService()
+  private val validationChargeService = ValidateCalculationDataService()
   private val remandCalculationService = RemandCalculationService(
     relatedChargeCombinationService,
     userSelectedCombinationService,
@@ -65,6 +65,7 @@ class RemandCalculationServiceTest {
       }
     }
 
+    println(TestUtil.objectMapper().writeValueAsString(remandResult))
     val expected = TestUtil.objectMapper()
       .readValue(ClassPathResource("/data/RemandResult/$exampleName.json").file, RemandResult::class.java)
     assertThat(remandResult)

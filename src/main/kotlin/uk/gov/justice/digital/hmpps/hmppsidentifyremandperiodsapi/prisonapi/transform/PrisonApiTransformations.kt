@@ -3,12 +3,15 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.tra
 import uk.gov.justice.digital.hmpps.adjustments.api.model.prisonapi.SentenceAndOffences
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiCharge
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiCourtDateOutcome
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiImprisonmentStatus
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonersearchapi.model.Prisoner
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Charge
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeAndEvents
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeLegacyDataProblem
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDate
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ImprisonmentStatus
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblem
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblemType
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Offence
@@ -17,7 +20,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.util.isAfterOr
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-fun transform(results: List<PrisonApiCharge>, prisonerDetails: Prisoner, sentencesAndOffences: List<SentenceAndOffences>): RemandCalculation {
+fun transform(results: List<PrisonApiCharge>, prisonerDetails: Prisoner, sentencesAndOffences: List<SentenceAndOffences>, imprisonmentStatus: List<PrisonApiImprisonmentStatus>): RemandCalculation {
   val earliestDateInActiveBooking: LocalDate = earliestDateInActiveBooking(results, prisonerDetails)
   val issuesWithLegacyData = mutableListOf<LegacyDataProblem>()
   val chargesFilteredByOffenceDate = filterEventsByOffenceDate(results, earliestDateInActiveBooking)
@@ -47,6 +50,15 @@ fun transform(results: List<PrisonApiCharge>, prisonerDetails: Prisoner, sentenc
         )
       }
       .filter { it.dates.isNotEmpty() },
+    imprisonmentStatus
+      .filter { it.effectiveDate.isAfterOrEqualTo(earliestDateInActiveBooking) }
+      .filter { it.toStatusType() != null }
+      .map {
+        ImprisonmentStatus(
+          it.toStatusType()!!,
+          it.effectiveDate,
+        )
+      },
     sentencesAndOffences.flatMap { it.offences.map { offence -> offence.offenderChargeId } },
     issuesWithLegacyData,
   )
@@ -92,7 +104,7 @@ private fun transformToCourtDate(courtDateResult: PrisonApiCourtDateOutcome, cha
 
 private fun transformToType(courtDateResult: PrisonApiCourtDateOutcome, charge: PrisonApiCharge, issuesWithLegacyData: MutableList<LegacyDataProblem>): CourtDateType? {
   if (courtDateResult.resultCode == null) {
-    issuesWithLegacyData.add(LegacyDataProblem(LegacyDataProblemType.MISSING_COURT_OUTCOME, "The court hearing on ${courtDateResult.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} for '${charge.offenceDescription}' has a missing hearing outcome within booking ${charge.bookNumber}.", charge))
+    issuesWithLegacyData.add(ChargeLegacyDataProblem(LegacyDataProblemType.MISSING_COURT_OUTCOME, "The court hearing on ${courtDateResult.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} for '${charge.offenceDescription}' has a missing hearing outcome within booking ${charge.bookNumber}.", charge))
     return null
   }
   return mapCourtDateResult(courtDateResult, charge, issuesWithLegacyData)

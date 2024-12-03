@@ -2,6 +2,7 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.tra
 
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiCharge
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiCourtDateOutcome
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeLegacyDataProblem
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.CONTINUE
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.START
@@ -184,7 +185,7 @@ fun mapCourtDateResult(courtDateResult: PrisonApiCourtDateOutcome, charge: Priso
     "FPR" -> STOP
 
     else -> {
-      issuesWithLegacyData.add(LegacyDataProblem(LegacyDataProblemType.UNSUPPORTED_OUTCOME, "The court event on ${courtDateResult.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} for offence ${charge.offenceDescription} committed at ${charge.offenceDate?.format(DateTimeFormatter.ofPattern("d MMM yyyy")) ?: "Unknown"} has an unsupported outcome ${courtDateResult.resultCode}: ${courtDateResult.resultDescription}", charge))
+      issuesWithLegacyData.add(ChargeLegacyDataProblem(LegacyDataProblemType.UNSUPPORTED_OUTCOME, "The court event on ${courtDateResult.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} for offence ${charge.offenceDescription} committed at ${charge.offenceDate?.format(DateTimeFormatter.ofPattern("d MMM yyyy")) ?: "Unknown"} has an unsupported outcome ${courtDateResult.resultCode}: ${courtDateResult.resultDescription}", charge))
       null
     }
   }

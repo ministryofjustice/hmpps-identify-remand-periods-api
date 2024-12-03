@@ -27,12 +27,19 @@ class PrisonApiExtension : BeforeAllCallback, AfterAllCallback, BeforeEachCallba
   override fun beforeAll(context: ExtensionContext) {
     prisonApi.start()
     prisonApi.stubImprisonedCourtCaseResults()
+    prisonApi.stubImprisonmentStatus(IMPRISONED_PRISONER)
     prisonApi.stubBailPrisoner()
+    prisonApi.stubEmptyImprisonmentStatus(BAIL_PRISONER)
     prisonApi.stubRelatedOffencesPrisoner()
+    prisonApi.stubEmptyImprisonmentStatus(RELATED_PRISONER)
     prisonApi.stubMultipleOffences()
+    prisonApi.stubEmptyImprisonmentStatus(MULTIPLE_OFFENCES_PRISONER)
     prisonApi.stubIntersectingSentence()
+    prisonApi.stubEmptyImprisonmentStatus(INTERSECTING_PRISONER)
     prisonApi.stubCrdValidation()
+    prisonApi.stubEmptyImprisonmentStatus(CRD_VALIDATION_PRISONER)
     prisonApi.stubActiveBookingHasNoOffenceDates()
+    prisonApi.stubEmptyImprisonmentStatus(NO_OFFENCE_DATES)
     prisonApi.stubGetPrison()
     prisonApi.stubHistoricCalculations()
     prisonApi.stubSentencesAndOffences()
@@ -865,6 +872,43 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                   "agencyId": "BMI",
                   "description": "Birmingham Prison"
                 }
+              """.trimIndent(),
+            )
+            .withStatus(200),
+        ),
+    )
+  }
+
+  fun stubEmptyImprisonmentStatus(offenderNo: String) {
+    stubFor(
+      get("/prison-api/api/imprisonment-status-history/$offenderNo")
+        .willReturn(
+          aResponse()
+            .withHeader("Content-Type", "application/json")
+            .withBody(
+              """
+                []
+              """.trimIndent(),
+            )
+            .withStatus(200),
+        ),
+    )
+  }
+
+  fun stubImprisonmentStatus(offenderNo: String) {
+    stubFor(
+      get("/prison-api/api/imprisonment-status-history/$offenderNo")
+        .willReturn(
+          aResponse()
+            .withHeader("Content-Type", "application/json")
+            .withBody(
+              """
+                [
+                  {
+                    "status": "LR",
+                    "effectiveDate": "2024-01-10"
+                  }
+                ]
               """.trimIndent(),
             )
             .withStatus(200),

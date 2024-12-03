@@ -5,6 +5,7 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantreman
  */
 data class CalculationData(
   var chargeAndEvents: List<ChargeAndEvents> = emptyList(),
+  val imprisonmentStatuses: List<ImprisonmentStatus> = emptyList(),
   var chargeRemand: List<ChargeRemand> = emptyList(),
   var sentenceRemandResult: SentenceRemandResult? = null,
   val issuesWithLegacyData: MutableList<LegacyDataProblem> = mutableListOf(),
