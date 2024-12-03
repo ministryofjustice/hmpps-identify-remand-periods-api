@@ -9,6 +9,7 @@ import uk.gov.justice.digital.hmpps.adjustments.api.model.prisonapi.SentenceAndO
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.OffenderKeyDates
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.Prison
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiCharge
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiImprisonmentStatus
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.SentenceCalculationSummary
 
 @Service
@@ -65,6 +66,15 @@ class PrisonApiClient(@Qualifier("prisonApiWebClient") private val webClient: We
       .uri("/api/offender-sentences/booking/$bookingId/sentences-and-offences")
       .retrieve()
       .bodyToMono(typeReference<List<SentenceAndOffences>>())
+      .block()!!
+  }
+
+  fun getImprisonmentStatusHistory(prisonerId: String): List<PrisonApiImprisonmentStatus> {
+    log.info("Requesting imprisonment status history for $prisonerId")
+    return webClient.get()
+      .uri("/api/imprisonment-status-history/$prisonerId")
+      .retrieve()
+      .bodyToMono(typeReference<List<PrisonApiImprisonmentStatus>>())
       .block()!!
   }
 }
