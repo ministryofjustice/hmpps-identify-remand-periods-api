@@ -21,7 +21,7 @@ class ValidateCalculationDataService {
   }
 
   private fun validateImprisonmentStatuses(calculationData: CalculationData) {
-    val maximumCalculatedDate = (calculationData.chargeRemand + calculationData.sentenceRemandResult!!.intersectingSentences).maxOfOrNull { it.to }
+    val maximumCalculatedDate = (calculationData.sentenceRemandResult!!.sentenceRemand + calculationData.sentenceRemandResult!!.intersectingSentences).maxOfOrNull { it.to }
     calculationData.imprisonmentStatuses
       .filter { maximumCalculatedDate != null && it.date.isBeforeOrEqualTo(maximumCalculatedDate) }
       .forEach {
