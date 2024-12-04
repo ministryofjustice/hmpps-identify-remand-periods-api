@@ -45,7 +45,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
     assertThat(result.issuesWithLegacyData).isEqualTo(
       listOf(
         ChargeLegacyDataProblem(LegacyDataProblemType.MISSING_COURT_OUTCOME, message = "The court hearing on 13 Dec 2022 for 'An offence' has a missing hearing outcome within booking ABC123.", offence = Offence(code = "SX03163A", statute = "SX03", description = "An offence"), bookingId = 1, bookNumber = "ABC123", courtCaseRef = null),
-        GenericLegacyDataProblem(LegacyDataProblemType.MISSING_COURT_EVENT_FOR_IMPRISONMENT_STATUS_RECALL, "The offenders main inmate status was changed to recalled on 10 Jan 2024 but there is no matching court events"),
+        GenericLegacyDataProblem(LegacyDataProblemType.MISSING_COURT_EVENT_FOR_IMPRISONMENT_STATUS_RECALL, "The offenders main inmate status was changed to recalled on 15 Oct 2022 but there is no matching court events"),
       ),
     )
     assertThat(result.remandCalculation).isNotNull

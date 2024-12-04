@@ -21,17 +21,20 @@ class ValidateCalculationDataService {
   }
 
   private fun validateImprisonmentStatuses(calculationData: CalculationData) {
-    calculationData.imprisonmentStatuses.forEach {
-      when (it.status) {
-        ImprisonmentStatusType.SENTENCED -> validateSentencedImprisonmentStatus(it, calculationData)
-        ImprisonmentStatusType.RECALLED -> validateRecalledImprisonmentStatus(it, calculationData)
-        ImprisonmentStatusType.REMANDED -> validateRemandedImprisonmentStatus(it, calculationData)
+    val maximumCalculatedDate = (calculationData.chargeRemand + calculationData.sentenceRemandResult!!.intersectingSentences).maxOfOrNull { it.to }
+    calculationData.imprisonmentStatuses
+      .filter { maximumCalculatedDate != null && it.date.isBeforeOrEqualTo(maximumCalculatedDate) }
+      .forEach {
+        when (it.status) {
+          ImprisonmentStatusType.SENTENCED -> validateSentencedImprisonmentStatus(it, calculationData)
+          ImprisonmentStatusType.RECALLED -> validateRecalledImprisonmentStatus(it, calculationData)
+          ImprisonmentStatusType.REMANDED -> validateRemandedImprisonmentStatus(it, calculationData)
+        }
       }
-    }
   }
 
   private fun validateRemandedImprisonmentStatus(status: ImprisonmentStatus, calculationData: CalculationData) {
-    val anyMatchingCourtEvent = calculationData.chargeRemand.any { it.overlapsStartInclusive(status.date) }
+    val anyMatchingCourtEvent = calculationData.chargeRemand.any { it.overlapsStartAndEndInclusive(status.date) }
     if (!anyMatchingCourtEvent) {
       calculationData.issuesWithLegacyData.add(
         GenericLegacyDataProblem(
@@ -43,8 +46,8 @@ class ValidateCalculationDataService {
   }
 
   private fun validateRecalledImprisonmentStatus(status: ImprisonmentStatus, calculationData: CalculationData) {
-    val anyMatchingCourtEvent = calculationData.chargeAndEvents.flatMap { it.dates }.any { it.isRecallEvent && it.date == status.date }
-    if (!anyMatchingCourtEvent) {
+    val anyMatchingIntersectingSentence = calculationData.sentenceRemandResult!!.intersectingSentences.any { it.overlapsStartAndEndInclusive(status.date) }
+    if (!anyMatchingIntersectingSentence) {
       calculationData.issuesWithLegacyData.add(
         GenericLegacyDataProblem(
           LegacyDataProblemType.MISSING_COURT_EVENT_FOR_IMPRISONMENT_STATUS_RECALL,
@@ -56,7 +59,7 @@ class ValidateCalculationDataService {
   }
 
   private fun validateSentencedImprisonmentStatus(status: ImprisonmentStatus, calculationData: CalculationData) {
-    val anyMatchingIntersectingSentence = calculationData.sentenceRemandResult!!.intersectingSentences.any { it.overlapsStartInclusive(status.date) }
+    val anyMatchingIntersectingSentence = calculationData.sentenceRemandResult!!.intersectingSentences.any { it.overlapsStartAndEndInclusive(status.date) }
     val anyMatchingSentenceDate = calculationData.chargeAndEvents.any { it.charge.sentenceDate == status.date || it.charge.sentenceDate == status.date.minusDays(1) } // Imprisonment status is often set to day after sentencing
     if (!anyMatchingIntersectingSentence && !anyMatchingSentenceDate) {
       calculationData.issuesWithLegacyData.add(

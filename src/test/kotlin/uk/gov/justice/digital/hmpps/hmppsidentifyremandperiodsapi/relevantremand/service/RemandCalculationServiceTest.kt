@@ -65,7 +65,8 @@ class RemandCalculationServiceTest {
       }
     }
 
-    println(TestUtil.objectMapper().writeValueAsString(remandResult))
+    log.info("Actual result:\n ${TestUtil.objectMapper().writeValueAsString(remandResult.copy(charges = emptyMap()))}")
+
     val expected = TestUtil.objectMapper()
       .readValue(ClassPathResource("/data/RemandResult/$exampleName.json").file, RemandResult::class.java)
     assertThat(remandResult)
