@@ -1,0 +1,341 @@
+{
+  "adjustments": [
+    {
+      "bookingId": 1,
+      "sentenceSequence": 9,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2022-06-27",
+      "fromDate": "2022-03-12",
+      "remand": {
+        "chargeId": [
+          6592514,
+          6592515,
+          6592523,
+          6592525,
+          6592526
+        ]
+      },
+      "status": "INACTIVE"
+    },
+    {
+      "bookingId": 1,
+      "sentenceSequence": 10,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2023-05-17",
+      "fromDate": "2023-01-10",
+      "remand": {
+        "chargeId": [
+          6830416
+        ]
+      },
+      "status": "INACTIVE"
+    },
+    {
+      "bookingId": 1,
+      "sentenceSequence": 14,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2024-05-20",
+      "fromDate": "2024-02-28",
+      "remand": {
+        "chargeId": [
+          7472479,
+          7296098
+        ]
+      },
+      "status": "ACTIVE"
+    }
+  ],
+  "chargeRemand": [
+    {
+      "from": "2023-12-14",
+      "to": "2024-05-20",
+      "fromEvent": {
+        "date": "2023-12-14",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2024-05-21",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7296098
+      ],
+      "status": "APPLICABLE",
+      "days": 159
+    },
+    {
+      "from": "2024-05-02",
+      "to": "2024-05-20",
+      "fromEvent": {
+        "date": "2024-05-02",
+        "description": "Commit to Crown Court for Sentence in Custody"
+      },
+      "toEvent": {
+        "date": "2024-05-21",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7472479
+      ],
+      "status": "APPLICABLE",
+      "days": 19
+    },
+    {
+      "from": "2022-03-12",
+      "to": "2022-06-27",
+      "fromEvent": {
+        "date": "2022-03-12",
+        "description": "Commit to Crown Court for Sentence in Custody"
+      },
+      "toEvent": {
+        "date": "2022-06-28",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        6592514,
+        6592515
+      ],
+      "status": "INACTIVE",
+      "days": 108
+    },
+    {
+      "from": "2022-03-12",
+      "to": "2022-06-27",
+      "fromEvent": {
+        "date": "2022-03-12",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2022-06-28",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        6592523,
+        6592525,
+        6592526
+      ],
+      "status": "INACTIVE",
+      "days": 108
+    },
+    {
+      "from": "2022-11-04",
+      "to": "2023-05-17",
+      "fromEvent": {
+        "date": "2022-11-04",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2023-05-18",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        6830416
+      ],
+      "status": "INACTIVE",
+      "days": 195
+    },
+    {
+      "from": "2022-03-12",
+      "to": "2022-06-28",
+      "fromEvent": {
+        "date": "2022-03-12",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2022-06-28",
+        "description": "Lie on File"
+      },
+      "chargeIds": [
+        6592529
+      ],
+      "status": "CASE_NOT_CONCLUDED",
+      "days": 109
+    },
+    {
+      "from": "2022-03-12",
+      "to": "2022-06-28",
+      "fromEvent": {
+        "date": "2022-03-12",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2022-06-28",
+        "description": "Dismissed"
+      },
+      "chargeIds": [
+        6592524
+      ],
+      "status": "NOT_SENTENCED",
+      "days": 109
+    },
+    {
+      "from": "2022-03-12",
+      "to": "2022-06-28",
+      "fromEvent": {
+        "date": "2022-03-12",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2022-06-28",
+        "description": "Not Proceeded with (Scotland)"
+      },
+      "chargeIds": [
+        6592528
+      ],
+      "status": "NOT_SENTENCED",
+      "days": 109
+    },
+    {
+      "from": "2022-11-04",
+      "to": "2023-05-17",
+      "fromEvent": {
+        "date": "2022-11-04",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2023-05-17",
+        "description": "Not Guilty"
+      },
+      "chargeIds": [
+        6830415,
+        6830417,
+        6830420
+      ],
+      "status": "NOT_SENTENCED",
+      "days": 195
+    },
+    {
+      "from": "2023-12-14",
+      "to": "2024-05-21",
+      "fromEvent": {
+        "date": "2023-12-14",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2024-05-21",
+        "description": "Not Guilty"
+      },
+      "chargeIds": [
+        7296389
+      ],
+      "status": "NOT_SENTENCED",
+      "days": 160
+    },
+    {
+      "from": "2023-12-14",
+      "to": "2024-01-15",
+      "fromEvent": {
+        "date": "2023-12-14",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2024-01-15",
+        "description": "Replaced With Another Offence"
+      },
+      "chargeIds": [
+        7296096
+      ],
+      "status": "NOT_SENTENCED",
+      "days": 33
+    },
+    {
+      "from": "2023-12-14",
+      "to": "2024-05-21",
+      "fromEvent": {
+        "date": "2023-12-14",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2024-05-21",
+        "description": "Replaced With Another Offence"
+      },
+      "chargeIds": [
+        7296099
+      ],
+      "status": "NOT_SENTENCED",
+      "days": 160
+    },
+    {
+      "from": "2024-01-15",
+      "to": "2024-05-21",
+      "fromEvent": {
+        "date": "2024-01-15",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2024-05-21",
+        "description": "Not Guilty"
+      },
+      "chargeIds": [
+        7330897
+      ],
+      "status": "NOT_SENTENCED",
+      "days": 128
+    }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2022-06-28",
+      "to": "2022-08-10",
+      "sentence": {
+        "sequence": 9,
+        "sentenceDate": "2022-06-28",
+        "recallDates": [
+          "2022-11-04"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 6592514,
+      "service": "HISTORIC",
+      "days": 44
+    },
+    {
+      "from": "2022-11-04",
+      "to": "2023-01-09",
+      "sentence": {
+        "sequence": 9,
+        "sentenceDate": "2022-06-28",
+        "recallDates": [
+          "2022-11-04"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 6592514,
+      "service": "HISTORIC",
+      "days": 67
+    },
+    {
+      "from": "2023-05-18",
+      "to": "2023-07-27",
+      "sentence": {
+        "sequence": 10,
+        "sentenceDate": "2023-05-18",
+        "recallDates": [
+          "2023-12-14"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 6830416,
+      "service": "HISTORIC",
+      "days": 71
+    },
+    {
+      "from": "2023-12-14",
+      "to": "2024-02-27",
+      "sentence": {
+        "sequence": 10,
+        "sentenceDate": "2023-05-18",
+        "recallDates": [
+          "2023-12-14"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 6830416,
+      "service": "HISTORIC",
+      "days": 76
+    }
+  ]
+}
