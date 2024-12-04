@@ -19,6 +19,10 @@ interface Period {
     return date.isAfterOrEqualTo(from) && date.isBefore(to)
   }
 
+  fun overlapsStartAndEndInclusive(date: LocalDate): Boolean {
+    return date.isAfterOrEqualTo(from) && date.isBeforeOrEqualTo(to)
+  }
+
   fun overlaps(period: Period): Boolean {
     return (period.from.isAfterOrEqualTo(from) && period.from.isBeforeOrEqualTo(to)) ||
       (period.to.isAfterOrEqualTo(from) && period.to.isBeforeOrEqualTo(to))

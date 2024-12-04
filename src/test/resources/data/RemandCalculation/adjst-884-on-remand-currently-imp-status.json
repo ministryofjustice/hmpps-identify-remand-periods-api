@@ -1,0 +1,533 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "chargesAndEvents": [
+      {
+        "charge": {
+          "chargeId": 6735152,
+          "offence": {
+            "code": "RT88333",
+            "statute": "RT88",
+            "description": "Drive whilst disqualified"
+          },
+          "bookingId": 1,
+          "offenceDate": "2021-10-03",
+          "bookNumber": "1",
+          "sentenceSequence": 18,
+          "sentenceDate": "2022-08-01",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2022-08-01",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6694726,
+          "offence": {
+            "code": "RT88026",
+            "statute": "RT88",
+            "description": "Drive a motor vehicle dangerously"
+          },
+          "bookingId": 1,
+          "offenceDate": "2021-01-19",
+          "bookNumber": "1",
+          "sentenceSequence": 3,
+          "sentenceDate": "2022-06-23",
+          "resultDescription": "Community Order",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2022-06-23",
+            "type": "STOP",
+            "description": "Community Order",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6700651,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "bookingId": 1,
+          "offenceDate": "2022-01-03",
+          "bookNumber": "1",
+          "sentenceSequence": 25,
+          "sentenceDate": "2022-08-04",
+          "resultDescription": "Young Offenders Institution",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2022-08-04",
+            "type": "STOP",
+            "description": "Young Offenders Institution",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2022-06-29",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2022-07-07",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6637174,
+          "offence": {
+            "code": "MD71224",
+            "statute": "MD71",
+            "description": "Possess cannabis resin - class B controlled drug (pre Feb 2004)"
+          },
+          "bookingId": 1,
+          "offenceDate": "2022-04-04",
+          "bookNumber": "1",
+          "sentenceSequence": 1,
+          "sentenceDate": "2022-04-27",
+          "resultDescription": "Young Offenders Institution",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2022-04-27",
+            "type": "STOP",
+            "description": "Young Offenders Institution",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6631597,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "bookingId": 1,
+          "offenceDate": "2022-04-11",
+          "bookNumber": "1",
+          "sentenceSequence": 4,
+          "sentenceDate": "2022-06-23",
+          "resultDescription": "Young Offenders Institution",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2022-04-16",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2022-05-13",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-06-23",
+            "type": "STOP",
+            "description": "Young Offenders Institution",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6631598,
+          "offence": {
+            "code": "CD71040",
+            "statute": "CD71",
+            "description": "Destroy / damage property of a value unknown"
+          },
+          "bookingId": 1,
+          "offenceDate": "2022-04-14",
+          "bookNumber": "1",
+          "resultDescription": "Lie on File"
+        },
+        "dates": [
+          {
+            "date": "2022-04-16",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2022-05-13",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-06-23",
+            "type": "STOP",
+            "description": "Lie on File"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6631599,
+          "offence": {
+            "code": "PU86116",
+            "statute": "PU86",
+            "description": "Use threatening / abusive / insulting words / behaviour to cause harassment / alarm / distress"
+          },
+          "bookingId": 1,
+          "offenceDate": "2022-04-15",
+          "bookNumber": "1",
+          "sentenceSequence": 11,
+          "sentenceDate": "2022-06-23",
+          "resultDescription": "Young Offenders Institution",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2022-04-16",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2022-05-13",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-06-23",
+            "type": "STOP",
+            "description": "Young Offenders Institution",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7367151,
+          "offence": {
+            "code": "MD71171",
+            "statute": "MD71",
+            "description": "Concerned in supply of heroin"
+          },
+          "bookingId": 2,
+          "offenceDate": "2023-03-30",
+          "bookNumber": "2",
+          "offenceEndDate": "2024-01-12",
+          "resultDescription": "Commit to Crown Court for Sentence in Custody",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-12",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-03-07",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-03-14",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-08-30",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2024-09-10",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7367152,
+          "offence": {
+            "code": "MD71170",
+            "statute": "MD71",
+            "description": "Concerned in supply of cocaine"
+          },
+          "bookingId": 2,
+          "offenceDate": "2023-03-30",
+          "bookNumber": "2",
+          "offenceEndDate": "2024-01-12",
+          "resultDescription": "Commit to Crown Court for Sentence in Custody",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-02-12",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-03-07",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-03-14",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-08-30",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2024-09-10",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7328509,
+          "offence": {
+            "code": "MD71171",
+            "statute": "MD71",
+            "description": "Concerned in supply of heroin"
+          },
+          "bookingId": 2,
+          "offenceDate": "2023-03-30",
+          "bookNumber": "2",
+          "offenceEndDate": "2024-01-12",
+          "resultDescription": "Not Proceeded with (Scotland)",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-07",
+            "type": "STOP",
+            "description": "Not Proceeded with (Scotland)",
+            "final": true
+          },
+          {
+            "date": "2024-01-13",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-02-12",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7328510,
+          "offence": {
+            "code": "MD71174",
+            "statute": "MD71",
+            "description": "Concerned in the supply of crack cocaine"
+          },
+          "bookingId": 2,
+          "offenceDate": "2023-03-30",
+          "bookNumber": "2",
+          "offenceEndDate": "2024-01-12",
+          "resultDescription": "Not Proceeded with (Scotland)",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-07",
+            "type": "STOP",
+            "description": "Not Proceeded with (Scotland)",
+            "final": true
+          },
+          {
+            "date": "2024-01-13",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-02-12",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7350959,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "bookingId": 2,
+          "offenceDate": "2022-04-11",
+          "bookNumber": "2",
+          "sentenceSequence": 2,
+          "sentenceDate": "2022-06-23",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2022-06-23",
+            "type": "STOP",
+            "description": "Young Offenders Institution",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-01-29",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7350961,
+          "offence": {
+            "code": "CD71040",
+            "statute": "CD71",
+            "description": "Destroy / damage property of a value unknown"
+          },
+          "bookingId": 2,
+          "offenceDate": "2022-04-14",
+          "bookNumber": "2",
+          "resultDescription": "Lie on File",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-06-23",
+            "type": "STOP",
+            "description": "Lie on File"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7350963,
+          "offence": {
+            "code": "PU86116",
+            "statute": "PU86",
+            "description": "Use threatening / abusive / insulting words / behaviour to cause harassment / alarm / distress"
+          },
+          "bookingId": 2,
+          "offenceDate": "2022-04-15",
+          "bookNumber": "2",
+          "sentenceSequence": 9,
+          "sentenceDate": "2022-06-23",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2022-06-23",
+            "type": "STOP",
+            "description": "Young Offenders Institution",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-01-29",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7350965,
+          "offence": {
+            "code": "RT88026",
+            "statute": "RT88",
+            "description": "Drive a motor vehicle dangerously"
+          },
+          "bookingId": 2,
+          "offenceDate": "2021-01-19",
+          "bookNumber": "2",
+          "sentenceSequence": 1,
+          "sentenceDate": "2022-06-23",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2022-06-23",
+            "type": "STOP",
+            "description": "Young Offenders Institution",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-01-29",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      }
+    ],
+    "imprisonmentStatuses": [
+      {
+        "status": "REMANDED",
+        "date": "2024-09-02"
+      }
+    ]
+  },
+  "calculations": [
+    {
+      "calculateAt": "2022-04-27",
+      "release": "2022-05-10",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2022-06-23",
+      "release": "2023-05-30",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2022-08-01",
+      "release": "2023-05-30",
+      "service": "HISTORIC"
+    }
+  ],
+  "options": {}
+}

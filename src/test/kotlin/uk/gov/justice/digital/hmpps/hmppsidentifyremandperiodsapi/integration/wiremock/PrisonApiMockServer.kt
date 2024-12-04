@@ -906,7 +906,7 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                 [
                   {
                     "status": "LR",
-                    "effectiveDate": "2024-01-10"
+                    "effectiveDate": "2022-10-15"
                   }
                 ]
               """.trimIndent(),
