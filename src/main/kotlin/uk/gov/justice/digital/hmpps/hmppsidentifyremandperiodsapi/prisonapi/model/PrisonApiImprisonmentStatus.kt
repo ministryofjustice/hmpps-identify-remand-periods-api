@@ -22,6 +22,6 @@ data class PrisonApiImprisonmentStatus(
   companion object {
     val REMAND_TYPES = setOf("SEC38", "TRL", "RX")
     val SENTENCE_TYPES = setOf("ADIMP_ORA20", "SENT03")
-    val RECALL_TYPES = setOf("FTR/08", "LR")
+    val RECALL_TYPES = setOf("FTR/08", "LR", "LR_ORA", "14FTR_ORA", "FTR_ORA")
   }
 }
