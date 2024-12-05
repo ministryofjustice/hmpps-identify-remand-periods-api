@@ -33,16 +33,16 @@ class RemandCalculationService(
     userSelectedCombinationService.combineUserSelectedCharges(calculationData, options)
 
     calculationData.sentenceRemandResult = sentenceRemandService.extractSentenceRemand(remandCalculation, calculationData)
-    val adjustments = remandAdjustmentService.getRemandedAdjustments(remandCalculation, calculationData)
+    calculationData.adjustments = remandAdjustmentService.getRemandedAdjustments(remandCalculation, calculationData)
 
-    calculationData.chargeRemand = chargeRemandStatusService.setChargeRemandStatuses(calculationData, adjustments, remandCalculation)
+    calculationData.chargeRemand = chargeRemandStatusService.setChargeRemandStatuses(calculationData, remandCalculation)
     calculationData.chargeRemand = mergeChargeRemandService.mergeChargeRemand(calculationData, remandCalculation)
 
     validateCalculationDataService.validate(calculationData)
 
     val unsortedResult = RemandResult(
       charges = remandCalculation.charges,
-      adjustments = adjustments,
+      adjustments = calculationData.adjustments,
       chargeRemand = calculationData.chargeRemand,
       intersectingSentences = calculationData.sentenceRemandResult!!.intersectingSentences,
       issuesWithLegacyData = calculationData.issuesWithLegacyData.distinctBy { it.message },
