@@ -1,0 +1,12 @@
+{
+  "issuesWithLegacyData": [
+    {
+      "type": "MISSING_COURT_EVENT_FOR_IMPRISONMENT_STATUS_REMAND",
+      "message": "The offenders main inmate status was changed to remanded on 28 Jul 2017 but there is no matching court events"
+    },
+    {
+      "type": "MISSING_COURT_EVENT_FOR_IMPRISONMENT_STATUS_REMAND",
+      "message": "The offenders main inmate status was changed to remanded on 31 Jul 2017 but there is no matching court events"
+    }
+  ]
+}

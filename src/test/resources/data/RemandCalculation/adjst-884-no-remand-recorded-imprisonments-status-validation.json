@@ -1,0 +1,331 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "chargesAndEvents": [
+      {
+        "charge": {
+          "chargeId": 4151601,
+          "offence": {
+            "code": "SX03013",
+            "statute": "SX03",
+            "description": "Rape a girl under 13"
+          },
+          "bookingId": 1,
+          "offenceDate": "2009-12-01",
+          "bookNumber": "1",
+          "offenceEndDate": "2010-07-10",
+          "sentenceSequence": 1,
+          "sentenceDate": "2017-09-28",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-28",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4151607,
+          "offence": {
+            "code": "SX03013",
+            "statute": "SX03",
+            "description": "Rape a girl under 13"
+          },
+          "bookingId": 1,
+          "offenceDate": "2009-12-01",
+          "bookNumber": "1",
+          "offenceEndDate": "2010-07-10",
+          "sentenceSequence": 2,
+          "sentenceDate": "2017-09-28",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-28",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4151608,
+          "offence": {
+            "code": "SX03013",
+            "statute": "SX03",
+            "description": "Rape a girl under 13"
+          },
+          "bookingId": 1,
+          "offenceDate": "2009-12-01",
+          "bookNumber": "1",
+          "offenceEndDate": "2010-07-10",
+          "sentenceSequence": 3,
+          "sentenceDate": "2017-09-28",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-28",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4151620,
+          "offence": {
+            "code": "SX03015",
+            "statute": "SX03",
+            "description": "Assault a girl under 13 by penetration with a part of your body / a thing - SOA 2003"
+          },
+          "bookingId": 1,
+          "offenceDate": "2009-12-01",
+          "bookNumber": "1",
+          "offenceEndDate": "2010-07-10",
+          "resultDescription": "Not Guilty",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-28",
+            "type": "STOP",
+            "description": "Not Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4151621,
+          "offence": {
+            "code": "SX03017",
+            "statute": "SX03",
+            "description": "Assault a girl under 13 by touching - SOA 2003"
+          },
+          "bookingId": 1,
+          "offenceDate": "2009-12-01",
+          "bookNumber": "1",
+          "offenceEndDate": "2010-07-10",
+          "sentenceSequence": 4,
+          "sentenceDate": "2017-09-28",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-28",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4151622,
+          "offence": {
+            "code": "SX03017",
+            "statute": "SX03",
+            "description": "Assault a girl under 13 by touching - SOA 2003"
+          },
+          "bookingId": 1,
+          "offenceDate": "2009-12-01",
+          "bookNumber": "1",
+          "offenceEndDate": "2010-07-10",
+          "sentenceSequence": 5,
+          "sentenceDate": "2017-09-28",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-28",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4151623,
+          "offence": {
+            "code": "SX03017",
+            "statute": "SX03",
+            "description": "Assault a girl under 13 by touching - SOA 2003"
+          },
+          "bookingId": 1,
+          "offenceDate": "2009-12-01",
+          "bookNumber": "1",
+          "offenceEndDate": "2010-07-10",
+          "sentenceSequence": 6,
+          "sentenceDate": "2017-09-28",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-28",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4151624,
+          "offence": {
+            "code": "SX03017",
+            "statute": "SX03",
+            "description": "Assault a girl under 13 by touching - SOA 2003"
+          },
+          "bookingId": 1,
+          "offenceDate": "2009-12-01",
+          "bookNumber": "1",
+          "offenceEndDate": "2010-07-10",
+          "resultDescription": "Not Guilty",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-28",
+            "type": "STOP",
+            "description": "Not Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4151629,
+          "offence": {
+            "code": "SX03160",
+            "statute": "SX03",
+            "description": "Offender 18 or over cause / incite a girl under 13 to engage in sexual activity - no penetration - SOA 2003"
+          },
+          "bookingId": 1,
+          "offenceDate": "2009-12-01",
+          "bookNumber": "1",
+          "offenceEndDate": "2010-07-10",
+          "sentenceSequence": 7,
+          "sentenceDate": "2017-09-28",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-28",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4151630,
+          "offence": {
+            "code": "SX03160",
+            "statute": "SX03",
+            "description": "Offender 18 or over cause / incite a girl under 13 to engage in sexual activity - no penetration - SOA 2003"
+          },
+          "bookingId": 1,
+          "offenceDate": "2009-12-01",
+          "bookNumber": "1",
+          "offenceEndDate": "2010-07-10",
+          "sentenceSequence": 8,
+          "sentenceDate": "2017-09-28",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-28",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 4151631,
+          "offence": {
+            "code": "SX03160",
+            "statute": "SX03",
+            "description": "Offender 18 or over cause / incite a girl under 13 to engage in sexual activity - no penetration - SOA 2003"
+          },
+          "bookingId": 1,
+          "offenceDate": "2009-12-02",
+          "bookNumber": "1",
+          "offenceEndDate": "2010-07-10",
+          "sentenceSequence": 9,
+          "sentenceDate": "2017-09-28",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2017-09-28",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      }
+    ],
+    "imprisonmentStatuses": [
+      {
+        "status": "REMANDED",
+        "date": "2017-07-28"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2017-07-31"
+      }
+    ],
+    "chargeIdsWithActiveSentence": [
+      4151601,
+      4151607,
+      4151608,
+      4151621,
+      4151622,
+      4151623,
+      4151629,
+      4151630,
+      4151631
+    ]
+  },
+  "options": {}
+}
