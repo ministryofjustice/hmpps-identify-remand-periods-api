@@ -58,7 +58,7 @@ fun transform(results: List<PrisonApiCharge>, prisonerDetails: Prisoner, sentenc
           it.toStatusType()!!,
           it.effectiveDate,
         )
-      },
+      }.sortedBy { it.date },
     sentencesAndOffences.flatMap { it.offences.map { offence -> offence.offenderChargeId } },
     issuesWithLegacyData,
   )

@@ -1,8 +1,10 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.service
 
 import org.springframework.stereotype.Service
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentStatus
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CalculationData
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeLegacyDataProblem
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.DatePeriod
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.GenericLegacyDataProblem
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ImprisonmentStatus
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ImprisonmentStatusType
@@ -34,8 +36,14 @@ class ValidateCalculationDataService {
   }
 
   private fun validateRemandedImprisonmentStatus(status: ImprisonmentStatus, calculationData: CalculationData) {
-    val anyMatchingCourtEvent = calculationData.chargeRemand.any { it.overlapsOrStartsTheDayAfter(status.date) }
-    if (!anyMatchingCourtEvent) {
+    val anyMatchingCourtEvent = calculationData.chargeRemand.any { it.overlapsStartAndEndInclusive(status.date) }
+    val statuses = calculationData.imprisonmentStatuses
+    var nextStatusIsDayAfter = false // Remand status is often set when prisoner returns from court, even if they've been sentenced. The next day that status is replaced.
+    if (statuses.last() != status) {
+      val nextStatus = statuses[statuses.indexOf(status) + 1]
+      nextStatusIsDayAfter = nextStatus.date == status.date.plusDays(1)
+    }
+    if (!anyMatchingCourtEvent && !nextStatusIsDayAfter) {
       calculationData.issuesWithLegacyData.add(
         GenericLegacyDataProblem(
           LegacyDataProblemType.MISSING_COURT_EVENT_FOR_IMPRISONMENT_STATUS_REMAND,
@@ -46,8 +54,10 @@ class ValidateCalculationDataService {
   }
 
   private fun validateRecalledImprisonmentStatus(status: ImprisonmentStatus, calculationData: CalculationData) {
-    val anyMatchingIntersectingSentence = calculationData.sentenceRemandResult!!.intersectingSentences.any { it.overlapsOrStartsTheDayAfter(status.date) }
-    if (!anyMatchingIntersectingSentence) {
+    val recalledDuringActiveRemandPeriod = calculationData.adjustments
+      .filter { it.status == AdjustmentStatus.ACTIVE }
+      .any { DatePeriod(it.fromDate!!, it.toDate!!).overlapsStartAndEndInclusive(status.date) }
+    if (recalledDuringActiveRemandPeriod) {
       calculationData.issuesWithLegacyData.add(
         GenericLegacyDataProblem(
           LegacyDataProblemType.MISSING_COURT_EVENT_FOR_IMPRISONMENT_STATUS_RECALL,
@@ -59,7 +69,7 @@ class ValidateCalculationDataService {
   }
 
   private fun validateSentencedImprisonmentStatus(status: ImprisonmentStatus, calculationData: CalculationData) {
-    val anyMatchingIntersectingSentence = calculationData.sentenceRemandResult!!.intersectingSentences.any { it.overlapsOrStartsTheDayAfter(status.date) }
+    val anyMatchingIntersectingSentence = calculationData.sentenceRemandResult!!.intersectingSentences.any { it.overlapsStartAndEndInclusive(status.date) }
     val anyMatchingSentenceDate = calculationData.chargeAndEvents.any { it.charge.sentenceDate == status.date || it.charge.sentenceDate == status.date.minusDays(1) } // Imprisonment status is often set to day after sentencing
     if (!anyMatchingIntersectingSentence && !anyMatchingSentenceDate) {
       calculationData.issuesWithLegacyData.add(

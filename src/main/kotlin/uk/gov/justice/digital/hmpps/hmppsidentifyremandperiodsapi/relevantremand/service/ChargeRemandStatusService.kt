@@ -1,7 +1,6 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.service
 
 import org.springframework.stereotype.Service
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentDto
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentStatus
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CalculationData
@@ -15,12 +14,11 @@ class ChargeRemandStatusService {
 
   fun setChargeRemandStatuses(
     calculationData: CalculationData,
-    adjustments: List<AdjustmentDto>,
     remandCalculation: RemandCalculation,
   ): List<ChargeRemand> {
     return calculationData.chargeRemand.map {
       val status = if (remandCalculation.charges[it.onlyChargeId()]!!.sentenceSequence != null) {
-        val matchingChargeId = adjustments.filter { adjustment -> adjustment.remand!!.chargeId.contains(it.onlyChargeId()) }
+        val matchingChargeId = calculationData.adjustments.filter { adjustment -> adjustment.remand!!.chargeId.contains(it.onlyChargeId()) }
         val matchingAdjustments = matchingChargeId.filter { adjustment -> DatePeriod(adjustment.fromDate!!, adjustment.toDate!!).overlaps(it) }
 
         if (matchingAdjustments.isNotEmpty()) {
