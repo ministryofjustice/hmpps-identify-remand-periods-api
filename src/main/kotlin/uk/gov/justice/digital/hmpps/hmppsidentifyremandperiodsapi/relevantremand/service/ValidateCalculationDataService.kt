@@ -35,15 +35,13 @@ class ValidateCalculationDataService {
       }
   }
 
+  /**
+   * Validate that the imprisonment status change happens within a remand period, or on a court date. (Remand statuses are often used by reception)
+   */
   private fun validateRemandedImprisonmentStatus(status: ImprisonmentStatus, calculationData: CalculationData) {
-    val anyMatchingCourtEvent = calculationData.chargeRemand.any { it.overlapsStartAndEndInclusive(status.date) }
-    val statuses = calculationData.imprisonmentStatuses
-    var nextStatusIsDayAfter = false // Remand status is often set when prisoner returns from court, even if they've been sentenced. The next day that status is replaced.
-    if (statuses.last() != status) {
-      val nextStatus = statuses[statuses.indexOf(status) + 1]
-      nextStatusIsDayAfter = nextStatus.date == status.date.plusDays(1)
-    }
-    if (!anyMatchingCourtEvent && !nextStatusIsDayAfter) {
+    val anyMatchingRemandPeriod = calculationData.chargeRemand.any { it.overlapsStartAndEndInclusive(status.date) }
+    val anyMatchingCourtEvent = calculationData.chargeAndEvents.flatMap { it.dates }.any { it.date == status.date }
+    if (!anyMatchingRemandPeriod && !anyMatchingCourtEvent) {
       calculationData.issuesWithLegacyData.add(
         GenericLegacyDataProblem(
           LegacyDataProblemType.MISSING_COURT_EVENT_FOR_IMPRISONMENT_STATUS_REMAND,
@@ -53,6 +51,9 @@ class ValidateCalculationDataService {
     }
   }
 
+  /**
+   * Check if recall status happens within active adjustment.
+   */
   private fun validateRecalledImprisonmentStatus(status: ImprisonmentStatus, calculationData: CalculationData) {
     val recalledDuringActiveRemandPeriod = calculationData.adjustments
       .filter { it.status == AdjustmentStatus.ACTIVE }
