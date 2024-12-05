@@ -1,0 +1,746 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "chargesAndEvents": [
+      {
+        "charge": {
+          "chargeId": 5557445,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft - no violence"
+          },
+          "bookingId": 1,
+          "offenceDate": "2018-04-29",
+          "bookNumber": "1",
+          "resultDescription": "Lie on File",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2019-04-05",
+            "type": "STOP",
+            "description": "Lie on File"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5090298,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft - no violence"
+          },
+          "bookingId": 1,
+          "offenceDate": "2017-11-06",
+          "bookNumber": "1",
+          "sentenceSequence": 1,
+          "sentenceDate": "2018-05-04",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2018-05-03",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2018-05-04",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5465586,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft - no violence"
+          },
+          "bookingId": 1,
+          "offenceDate": "2018-04-28",
+          "bookNumber": "1",
+          "sentenceSequence": 3,
+          "sentenceDate": "2019-04-05",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2019-04-05",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2019-03-12",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2019-01-31",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2019-02-28",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-03-24",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5465587,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft - no violence"
+          },
+          "bookingId": 1,
+          "offenceDate": "2018-04-28",
+          "bookNumber": "1",
+          "sentenceSequence": 4,
+          "sentenceDate": "2019-04-05",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2019-03-12",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2019-01-31",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2019-02-28",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-03-24",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5465589,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft - no violence"
+          },
+          "bookingId": 1,
+          "offenceDate": "2018-04-29",
+          "bookNumber": "1",
+          "offenceEndDate": "2018-05-02",
+          "resultDescription": "Lie on File",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2019-04-05",
+            "type": "STOP",
+            "description": "Lie on File"
+          },
+          {
+            "date": "2019-03-12",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2019-01-31",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2019-02-28",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5465591,
+          "offence": {
+            "code": "CJ88117",
+            "statute": "CJ88",
+            "description": "Possess knife blade or sharp pointed article"
+          },
+          "bookingId": 1,
+          "offenceDate": "2018-04-28",
+          "bookNumber": "1",
+          "resultDescription": "Lie on File",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2019-04-05",
+            "type": "STOP",
+            "description": "Lie on File"
+          },
+          {
+            "date": "2019-03-12",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2019-01-31",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2019-02-28",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5465592,
+          "offence": {
+            "code": "CJ88117",
+            "statute": "CJ88",
+            "description": "Possess knife blade or sharp pointed article"
+          },
+          "bookingId": 1,
+          "offenceDate": "2018-04-28",
+          "bookNumber": "1",
+          "sentenceSequence": 4,
+          "sentenceDate": "2019-04-05",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2019-01-31",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-03-24",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5465599,
+          "offence": {
+            "code": "TH68023",
+            "statute": "TH68",
+            "description": "Robbery"
+          },
+          "bookingId": 1,
+          "offenceDate": "2018-04-29",
+          "bookNumber": "1",
+          "sentenceSequence": 2,
+          "sentenceDate": "2019-04-05",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2019-04-05",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2019-03-12",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2019-01-31",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2019-02-28",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-03-24",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5465600,
+          "offence": {
+            "code": "TH68013",
+            "statute": "TH68",
+            "description": "Theft of motor vehicle"
+          },
+          "bookingId": 1,
+          "offenceDate": "2018-04-29",
+          "bookNumber": "1",
+          "offenceEndDate": "2018-05-02",
+          "resultDescription": "Lie on File",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2019-04-05",
+            "type": "STOP",
+            "description": "Lie on File"
+          },
+          {
+            "date": "2019-03-12",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2019-01-31",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2019-02-28",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5465601,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "bookingId": 1,
+          "offenceDate": "2018-05-01",
+          "bookNumber": "1",
+          "sentenceSequence": 4,
+          "sentenceDate": "2019-04-05",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2019-04-05",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2019-03-12",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2019-01-31",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2019-02-28",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-03-24",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5465602,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "bookingId": 1,
+          "offenceDate": "2018-05-01",
+          "bookNumber": "1",
+          "sentenceSequence": 4,
+          "sentenceDate": "2019-04-05",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2019-04-05",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2019-03-12",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2019-01-31",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2019-02-28",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-03-24",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5465603,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "bookingId": 1,
+          "offenceDate": "2018-05-01",
+          "bookNumber": "1",
+          "sentenceSequence": 4,
+          "sentenceDate": "2019-04-05",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2019-04-05",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2019-03-12",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2019-01-31",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2019-02-28",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-03-24",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5465604,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "bookingId": 1,
+          "offenceDate": "2018-05-01",
+          "bookNumber": "1",
+          "sentenceSequence": 4,
+          "sentenceDate": "2019-04-05",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2019-04-05",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2019-03-12",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2019-01-31",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2019-02-28",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-03-24",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5465605,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "bookingId": 1,
+          "offenceDate": "2018-05-01",
+          "bookNumber": "1",
+          "sentenceSequence": 4,
+          "sentenceDate": "2019-04-05",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2019-04-05",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2019-03-12",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2019-01-31",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2019-02-28",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-03-24",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5465606,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "bookingId": 1,
+          "offenceDate": "2018-05-01",
+          "bookNumber": "1",
+          "sentenceSequence": 4,
+          "sentenceDate": "2019-04-05",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2019-04-05",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2019-03-12",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2019-01-31",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2019-02-28",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-03-24",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 5465607,
+          "offence": {
+            "code": "FA06001",
+            "statute": "FA06",
+            "description": "Fraud by false representation - Fraud Act 2006"
+          },
+          "bookingId": 1,
+          "offenceDate": "2018-05-01",
+          "bookNumber": "1",
+          "sentenceSequence": 4,
+          "sentenceDate": "2019-04-05",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2019-04-05",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2019-03-12",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2019-01-31",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2019-02-28",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-03-24",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      }
+    ],
+    "imprisonmentStatuses": [
+      {
+        "status": "REMANDED",
+        "date": "2018-05-03"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2018-05-04"
+      },
+      {
+        "status": "SENTENCED",
+        "date": "2018-05-08"
+      }
+    ],
+    "chargeIdsWithActiveSentence": [
+      5465599,
+      5465586,
+      5465587,
+      5465592,
+      5465601,
+      5465602,
+      5465603,
+      5465604,
+      5465605,
+      5465606,
+      5465607
+    ]
+  },
+  "calculations": [
+    {
+      "calculateAt": "2018-05-04",
+      "release": "2026-04-03",
+      "service": "HISTORIC"
+    }
+  ],
+  "options": {}
+}

@@ -1,0 +1,109 @@
+{
+  "adjustments": [
+    {
+      "bookingId": 1,
+      "sentenceSequence": 1,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2018-05-03",
+      "fromDate": "2018-05-03",
+      "remand": {
+        "chargeId": [
+          5090298,
+          5465586,
+          5465592,
+          5465599,
+          5465601
+        ]
+      },
+      "status": "ACTIVE"
+    }
+  ],
+  "chargeRemand": [
+    {
+      "from": "2018-05-03",
+      "to": "2018-05-03",
+      "fromEvent": {
+        "date": "2018-05-03",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2018-05-04",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        5090298
+      ],
+      "status": "APPLICABLE",
+      "days": 1
+    },
+    {
+      "from": "2019-01-31",
+      "to": "2019-04-04",
+      "fromEvent": {
+        "date": "2019-01-31",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2019-04-05",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        5465586,
+        5465599,
+        5465601
+      ],
+      "status": "INTERSECTED_BY_SENTENCE",
+      "days": 64
+    },
+    {
+      "from": "2019-01-31",
+      "to": "2019-04-05",
+      "fromEvent": {
+        "date": "2019-01-31",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2019-04-05",
+        "description": "Lie on File"
+      },
+      "chargeIds": [
+        5465592
+      ],
+      "status": "INTERSECTED_BY_SENTENCE",
+      "days": 65
+    },
+    {
+      "from": "2019-01-31",
+      "to": "2019-04-05",
+      "fromEvent": {
+        "date": "2019-01-31",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2019-04-05",
+        "description": "Lie on File"
+      },
+      "chargeIds": [
+        5465589,
+        5465600
+      ],
+      "status": "CASE_NOT_CONCLUDED",
+      "days": 65
+    }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2018-05-04",
+      "to": "2026-04-03",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2018-05-04",
+        "bookingId": 1
+      },
+      "chargeId": 5090298,
+      "service": "HISTORIC",
+      "days": 2892
+    }
+  ]
+}
