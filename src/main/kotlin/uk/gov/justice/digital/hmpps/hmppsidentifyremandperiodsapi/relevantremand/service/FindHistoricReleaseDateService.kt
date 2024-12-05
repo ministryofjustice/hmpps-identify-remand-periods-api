@@ -51,11 +51,6 @@ class FindHistoricReleaseDateService(
       }
       lastCalculationBeforeRelease = historicReleaseDates.last { it.calculationDate.toLocalDate().isBefore(releaseDate) }
     }
-    val isSentenceDateCalc = sentences.none { it.recallDates.contains(calculateAt) }
-    val earliestRecall = sentences.flatMap { it.recallDates }.distinct().minOrNull()
-    if (isSentenceDateCalc && earliestRecall != null && releaseDate.isAfter(earliestRecall)) {
-      throw UnsupportedCalculationException("Standard release date cannot be after recall date")
-    }
     return CalculationDetail(releaseDate, calculationIds.toList())
   }
 

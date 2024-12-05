@@ -47,22 +47,6 @@ class FindHistoricReleaseDateServiceTest {
   }
 
   @Test
-  fun `Release is before recall date`() {
-    val expectedReleaseDate = sentenceDate.plusYears(10)
-    val calculateAt = sentenceDate
-    val sentenceCalcId = 1L
-    val actualCalculationTime = sentenceDate.atStartOfDay().plusDays(5)
-    val calculations = listOf(SentenceCalculationSummary(bookingId, sentenceCalcId, actualCalculationTime))
-    val calculation = OffenderKeyDates(prisonerId, actualCalculationTime, conditionalReleaseDate = expectedReleaseDate)
-    whenever(apiClient.getCalculationsForAPrisonerId(prisonerId)).thenReturn(calculations)
-    whenever(apiClient.getNOMISOffenderKeyDates(sentenceCalcId)).thenReturn(calculation)
-
-    val exception = assertThrows<UnsupportedCalculationException> { service.findReleaseDate(prisonerId, emptyList(), listOf(sentence), calculateAt, charges) }
-
-    assertThat(exception.message).isEqualTo("Standard release date cannot be after recall date")
-  }
-
-  @Test
   fun `Unknown release date type fails`() {
     val expectedReleaseDate = sentenceDate.plusYears(1)
     val calculateAt = sentenceDate
