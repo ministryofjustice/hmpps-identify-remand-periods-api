@@ -23,8 +23,7 @@
       "fromDate": "2021-01-01",
       "remand": {
         "chargeId": [
-          2,
-          3
+          2
         ]
       },
       "status": "INACTIVE"
@@ -74,21 +73,6 @@
       ],
       "status": "INACTIVE",
       "days": 31
-    },
-    {
-      "from": "2021-02-05",
-      "to": "2021-02-09",
-      "fromEvent": {
-        "date": "2021-02-05"
-      },
-      "toEvent": {
-        "date": "2021-02-10"
-      },
-      "chargeIds": [
-        3
-      ],
-      "status": "INTERSECTED_BY_SENTENCE",
-      "days": 5
     }
   ],
   "intersectingSentences": [
@@ -101,6 +85,7 @@
         "bookingId": 1
       },
       "chargeId": 2,
+      "service": "HISTORIC",
       "days": 91
     }
   ]

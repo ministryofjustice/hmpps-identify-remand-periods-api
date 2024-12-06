@@ -28,9 +28,9 @@ class ValidateCalculationDataService {
       .filter { maximumCalculatedDate == null || it.date.isBeforeOrEqualTo(maximumCalculatedDate) }
       .forEach {
         when (it.status) {
-          ImprisonmentStatusType.SENTENCED -> validateSentencedImprisonmentStatus(it, calculationData)
           ImprisonmentStatusType.RECALLED -> validateRecalledImprisonmentStatus(it, calculationData)
           ImprisonmentStatusType.REMANDED -> validateRemandedImprisonmentStatus(it, calculationData)
+          else -> return@forEach
         }
       }
   }
@@ -41,7 +41,8 @@ class ValidateCalculationDataService {
   private fun validateRemandedImprisonmentStatus(status: ImprisonmentStatus, calculationData: CalculationData) {
     val anyMatchingRemandPeriod = calculationData.chargeRemand.any { it.overlapsStartAndEndInclusive(status.date) }
     val anyMatchingCourtEvent = calculationData.chargeAndEvents.flatMap { it.dates }.any { it.date == status.date }
-    if (!anyMatchingRemandPeriod && !anyMatchingCourtEvent) {
+    val anyOpenRemand = calculationData.unclosedRemandDates.any { it.isBeforeOrEqualTo(status.date) }
+    if (!anyMatchingRemandPeriod && !anyMatchingCourtEvent && !anyOpenRemand) {
       calculationData.issuesWithLegacyData.add(
         GenericLegacyDataProblem(
           LegacyDataProblemType.MISSING_COURT_EVENT_FOR_IMPRISONMENT_STATUS_REMAND,
@@ -64,19 +65,6 @@ class ValidateCalculationDataService {
           LegacyDataProblemType.MISSING_COURT_EVENT_FOR_IMPRISONMENT_STATUS_RECALL,
           "The offenders main inmate status was changed to recalled on ${status.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} but there is no matching court events",
 
-        ),
-      )
-    }
-  }
-
-  private fun validateSentencedImprisonmentStatus(status: ImprisonmentStatus, calculationData: CalculationData) {
-    val anyMatchingIntersectingSentence = calculationData.sentenceRemandResult!!.intersectingSentences.any { it.overlapsStartAndEndInclusive(status.date) }
-    val anyMatchingSentenceDate = calculationData.chargeAndEvents.any { it.charge.sentenceDate == status.date || it.charge.sentenceDate == status.date.minusDays(1) } // Imprisonment status is often set to day after sentencing
-    if (!anyMatchingIntersectingSentence && !anyMatchingSentenceDate) {
-      calculationData.issuesWithLegacyData.add(
-        GenericLegacyDataProblem(
-          LegacyDataProblemType.MISSING_COURT_EVENT_FOR_IMPRISONMENT_STATUS_SENTENCING,
-          "The offenders main inmate status was changed to sentenced on ${status.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} but there is no sentence",
         ),
       )
     }

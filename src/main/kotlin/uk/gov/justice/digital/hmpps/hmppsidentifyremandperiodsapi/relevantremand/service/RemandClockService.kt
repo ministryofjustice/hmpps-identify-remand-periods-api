@@ -2,23 +2,26 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantreman
 
 import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CalculationData
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeAndEvents
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeRemand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtAppearance
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDate
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.CONTINUE
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.START
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.STOP
+import java.time.LocalDate
 
 @Service
 class RemandClockService {
 
-  fun remandClock(calculationData: CalculationData): List<ChargeRemand> {
+  fun remandClock(calculationData: CalculationData): RemandClockResult {
     val remand = mutableListOf<ChargeRemand>()
+    val unclosedRemandDates = mutableListOf<LocalDate>()
     calculationData.chargeAndEvents.forEach { chargeAndEvent ->
       if (hasAnyRemandEvent(chargeAndEvent.dates)) {
         var from: CourtDate? = null
         chargeAndEvent.dates.sortedBy { it.date }.forEach {
-          if (listOf(START, CONTINUE).contains(it.type) && from == null) {
+          if (listOf(START, CONTINUE).contains(it.type) && from == null && dateIsBeforeSentenceDateIfExists(it.date, chargeAndEvent)) {
             from = it
           }
           if (it.type == STOP && from != null) {
@@ -26,12 +29,25 @@ class RemandClockService {
             from = null
           }
         }
+        if (from != null) {
+          unclosedRemandDates.add(from!!.date)
+        }
       }
     }
-    return remand
+    return RemandClockResult(remand, unclosedRemandDates)
+  }
+
+  private fun dateIsBeforeSentenceDateIfExists(date: LocalDate, chargeAndEvent: ChargeAndEvents): Boolean {
+    return chargeAndEvent.charge.sentenceDate == null || date.isBefore(chargeAndEvent.charge.sentenceDate)
   }
 
   private fun hasAnyRemandEvent(courtDates: List<CourtDate>) = courtDates.any { listOf(START, CONTINUE).contains(it.type) }
 
   private fun getToDate(courtDate: CourtDate) = if (courtDate.final && courtDate.isCustodial) courtDate.date.minusDays(1) else courtDate.date
 }
+
+data class RemandClockResult(
+  val chargeRemand: List<ChargeRemand>,
+  val unclosedRemandDates: List<LocalDate>,
+
+)

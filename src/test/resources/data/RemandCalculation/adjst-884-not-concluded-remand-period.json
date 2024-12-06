@@ -1,0 +1,662 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "chargesAndEvents": [
+      {
+        "charge": {
+          "chargeId": 3058588,
+          "offence": {
+            "code": "SX03001",
+            "statute": "SX03",
+            "description": "Rape a girl aged 13 / 14 / 15 - SOA 2003"
+          },
+          "bookingId": 1,
+          "offenceDate": "2011-05-07",
+          "bookNumber": "1",
+          "offenceEndDate": "2012-06-01",
+          "sentenceSequence": 4,
+          "sentenceDate": "2015-06-02",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2015-06-02",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2015-06-01",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2016-07-12",
+            "type": "CONTINUE",
+            "description": "Appeal Dismissed",
+            "final": true
+          },
+          {
+            "date": "2022-01-23",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3058589,
+          "offence": {
+            "code": "SX03001",
+            "statute": "SX03",
+            "description": "Rape a girl aged 13 / 14 / 15 - SOA 2003"
+          },
+          "bookingId": 1,
+          "offenceDate": "2011-05-07",
+          "bookNumber": "1",
+          "offenceEndDate": "2012-06-01",
+          "sentenceSequence": 4,
+          "sentenceDate": "2015-06-02",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2015-06-02",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2015-06-01",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2016-07-12",
+            "type": "CONTINUE",
+            "description": "Appeal Dismissed",
+            "final": true
+          },
+          {
+            "date": "2022-01-23",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3058590,
+          "offence": {
+            "code": "SX03001",
+            "statute": "SX03",
+            "description": "Rape a girl aged 13 / 14 / 15 - SOA 2003"
+          },
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Withdrawn - Final",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2015-06-02",
+            "type": "STOP",
+            "description": "Conviction Quashed",
+            "final": true
+          },
+          {
+            "date": "2015-06-01",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2016-07-12",
+            "type": "CONTINUE",
+            "description": "Appeal Dismissed",
+            "final": true
+          },
+          {
+            "date": "2022-01-23",
+            "type": "STOP",
+            "description": "Withdrawn - Final",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3058591,
+          "offence": {
+            "code": "SX03001",
+            "statute": "SX03",
+            "description": "Rape a girl aged 13 / 14 / 15 - SOA 2003"
+          },
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Withdrawn - Final",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2015-06-02",
+            "type": "STOP",
+            "description": "Conviction Quashed",
+            "final": true
+          },
+          {
+            "date": "2015-06-01",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2016-07-12",
+            "type": "CONTINUE",
+            "description": "Appeal Dismissed",
+            "final": true
+          },
+          {
+            "date": "2022-01-23",
+            "type": "STOP",
+            "description": "Withdrawn - Final",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3058592,
+          "offence": {
+            "code": "SX03001",
+            "statute": "SX03",
+            "description": "Rape a girl aged 13 / 14 / 15 - SOA 2003"
+          },
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Withdrawn - Final",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2015-06-02",
+            "type": "STOP",
+            "description": "Conviction Quashed",
+            "final": true
+          },
+          {
+            "date": "2015-06-01",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2016-07-12",
+            "type": "CONTINUE",
+            "description": "Appeal Dismissed",
+            "final": true
+          },
+          {
+            "date": "2022-01-23",
+            "type": "STOP",
+            "description": "Withdrawn - Final",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3058593,
+          "offence": {
+            "code": "SX03001",
+            "statute": "SX03",
+            "description": "Rape a girl aged 13 / 14 / 15 - SOA 2003"
+          },
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Withdrawn - Final",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2015-06-02",
+            "type": "STOP",
+            "description": "Conviction Quashed",
+            "final": true
+          },
+          {
+            "date": "2015-06-01",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2016-07-12",
+            "type": "CONTINUE",
+            "description": "Appeal Dismissed",
+            "final": true
+          },
+          {
+            "date": "2022-01-23",
+            "type": "STOP",
+            "description": "Withdrawn - Final",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3058620,
+          "offence": {
+            "code": "SX03162",
+            "statute": "SX03",
+            "description": "Offender 18 or over cause / incite a girl 13 to 15 to engage in sexual activity - no penetration - SOA 2003"
+          },
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Withdrawn - Final",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2015-06-02",
+            "type": "STOP",
+            "description": "Conviction Quashed",
+            "final": true
+          },
+          {
+            "date": "2015-06-01",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2016-07-12",
+            "type": "CONTINUE",
+            "description": "Appeal Dismissed",
+            "final": true
+          },
+          {
+            "date": "2022-01-23",
+            "type": "STOP",
+            "description": "Withdrawn - Final",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3058621,
+          "offence": {
+            "code": "SX03201",
+            "statute": "SX03",
+            "description": "Kidnap / falsely imprison a person with intent to commit a relevant sexual offence"
+          },
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Withdrawn - Final",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2015-06-02",
+            "type": "STOP",
+            "description": "Conviction Quashed",
+            "final": true
+          },
+          {
+            "date": "2015-06-01",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2016-07-12",
+            "type": "CONTINUE",
+            "description": "Appeal Dismissed",
+            "final": true
+          },
+          {
+            "date": "2022-01-23",
+            "type": "STOP",
+            "description": "Withdrawn - Final",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3058622,
+          "offence": {
+            "code": "SX03201",
+            "statute": "SX03",
+            "description": "Kidnap / falsely imprison a person with intent to commit a relevant sexual offence"
+          },
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Withdrawn - Final",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2015-06-02",
+            "type": "STOP",
+            "description": "Conviction Quashed",
+            "final": true
+          },
+          {
+            "date": "2015-06-01",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2016-07-12",
+            "type": "CONTINUE",
+            "description": "Appeal Dismissed",
+            "final": true
+          },
+          {
+            "date": "2022-01-23",
+            "type": "STOP",
+            "description": "Withdrawn - Final",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3058626,
+          "offence": {
+            "code": "SX03162",
+            "statute": "SX03",
+            "description": "Offender 18 or over cause / incite a girl 13 to 15 to engage in sexual activity - no penetration - SOA 2003"
+          },
+          "bookingId": 1,
+          "bookNumber": "1",
+          "resultDescription": "Withdrawn - Final",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2015-06-02",
+            "type": "STOP",
+            "description": "Conviction Quashed",
+            "final": true
+          },
+          {
+            "date": "2015-06-01",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2016-07-12",
+            "type": "CONTINUE",
+            "description": "Appeal Dismissed",
+            "final": true
+          },
+          {
+            "date": "2022-01-23",
+            "type": "STOP",
+            "description": "Withdrawn - Final",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 2858719,
+          "offence": {
+            "code": "IA99038",
+            "statute": "IA99",
+            "description": "Fail to attend and give evidence/produce documents before an adjudicator/Tribunal"
+          },
+          "bookingId": 2,
+          "bookNumber": "2",
+          "resultDescription": "Sentence Postponed"
+        },
+        "dates": [
+          {
+            "date": "2015-01-08",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2014-12-19",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 1905183,
+          "offence": {
+            "code": "MD71210",
+            "statute": "MD71",
+            "description": "Possess a controlled drug of Class A - Cocaine"
+          },
+          "bookingId": 3,
+          "offenceDate": "2012-03-22",
+          "bookNumber": "3",
+          "sentenceSequence": 4,
+          "sentenceDate": "2013-02-06",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2013-02-06",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2012-12-10",
+            "type": "START",
+            "description": "Remittal for Trial - In Custody"
+          },
+          {
+            "date": "2012-11-21",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 866830,
+          "offence": {
+            "code": "TH68023",
+            "statute": "TH68",
+            "description": "Robbery"
+          },
+          "bookingId": 3,
+          "offenceDate": "2010-06-18",
+          "bookNumber": "3",
+          "sentenceSequence": 1,
+          "sentenceDate": "2010-11-15",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2012-09-07",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 1995228,
+          "offence": {
+            "code": "BA76001",
+            "statute": "BA76",
+            "description": "Fail to surrender to police / court bail at the appointed time"
+          },
+          "bookingId": 3,
+          "bookNumber": "3",
+          "sentenceSequence": 5,
+          "sentenceDate": "2013-02-06",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2012-12-10",
+            "type": "START",
+            "description": "Remittal for Trial - In Custody"
+          },
+          {
+            "date": "2013-02-06",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 1995206,
+          "offence": {
+            "code": "MD71532",
+            "statute": "MD71",
+            "description": "Supply a controlled drug of Class B - cannabis"
+          },
+          "bookingId": 3,
+          "offenceDate": "2010-01-08",
+          "bookNumber": "3",
+          "offenceEndDate": "2010-01-22",
+          "sentenceSequence": 3,
+          "sentenceDate": "2013-02-06",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2013-02-06",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2012-12-10",
+            "type": "START",
+            "description": "Remittal for Trial - In Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 1995207,
+          "offence": {
+            "code": "MD71532",
+            "statute": "MD71",
+            "description": "Supply a controlled drug of Class B - cannabis"
+          },
+          "bookingId": 3,
+          "offenceDate": "2012-02-28",
+          "bookNumber": "3",
+          "offenceEndDate": "2012-03-21",
+          "sentenceSequence": 2,
+          "sentenceDate": "2013-02-06",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2013-02-06",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2012-12-10",
+            "type": "START",
+            "description": "Remittal for Trial - In Custody"
+          }
+        ]
+      }
+    ],
+    "imprisonmentStatuses": [
+      {
+        "status": "RECALLED",
+        "date": "2012-11-14"
+      },
+      {
+        "status": "RECALLED",
+        "date": "2012-11-15"
+      },
+      {
+        "status": "SENTENCED",
+        "date": "2013-02-07"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2014-12-19"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2014-12-22"
+      },
+      {
+        "status": "SENTENCED",
+        "date": "2015-06-03"
+      },
+      {
+        "status": "RECALLED",
+        "date": "2022-01-24"
+      },
+      {
+        "status": "RECALLED",
+        "date": "2022-01-25"
+      }
+    ],
+    "chargeIdsWithActiveSentence": [
+      3058588,
+      3058589
+    ]
+  },
+  "calculations": [
+    {
+      "calculateAt": "2010-11-15",
+      "release": "2011-12-18",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2012-09-07",
+      "release": "2013-11-14",
+      "service": "CRDS"
+    },
+    {
+      "calculateAt": "2013-02-06",
+      "release": "2013-08-23",
+      "service": "HISTORIC"
+    }
+  ],
+  "options": {}
+}
