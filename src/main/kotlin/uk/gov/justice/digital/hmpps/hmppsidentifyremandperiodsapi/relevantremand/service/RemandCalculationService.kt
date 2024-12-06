@@ -28,7 +28,9 @@ class RemandCalculationService(
 
     calculationData.chargeAndEvents = relatedChargeCombinationService.combineRelatedCharges(remandCalculation)
 
-    calculationData.chargeRemand = remandClockService.remandClock(calculationData)
+    val remandClockResult = remandClockService.remandClock(calculationData)
+    calculationData.chargeRemand = remandClockResult.chargeRemand
+    calculationData.unclosedRemandDates = remandClockResult.unclosedRemandDates
 
     userSelectedCombinationService.combineUserSelectedCharges(calculationData, options)
 

@@ -1,0 +1,225 @@
+{
+  "adjustments": [
+    {
+      "bookingId": 1,
+      "sentenceSequence": 4,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2015-06-01",
+      "fromDate": "2015-06-01",
+      "remand": {
+        "chargeId": [
+          3058588
+        ]
+      },
+      "status": "ACTIVE"
+    }
+  ],
+  "chargeRemand": [
+    {
+      "from": "2015-06-01",
+      "to": "2015-06-01",
+      "fromEvent": {
+        "date": "2015-06-01",
+        "description": "Sentence Postponed"
+      },
+      "toEvent": {
+        "date": "2015-06-02",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        3058588
+      ],
+      "status": "APPLICABLE",
+      "days": 1
+    },
+    {
+      "from": "2012-11-21",
+      "to": "2013-02-05",
+      "fromEvent": {
+        "date": "2012-11-21",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2013-02-06",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        1905183
+      ],
+      "status": "INTERSECTED_BY_SENTENCE",
+      "days": 77
+    },
+    {
+      "from": "2012-12-10",
+      "to": "2013-02-05",
+      "fromEvent": {
+        "date": "2012-12-10",
+        "description": "Remittal for Trial - In Custody"
+      },
+      "toEvent": {
+        "date": "2013-02-06",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        1995206,
+        1995207,
+        1995228
+      ],
+      "status": "INTERSECTED_BY_SENTENCE",
+      "days": 58
+    },
+    {
+      "from": "2015-06-01",
+      "to": "2015-06-02",
+      "fromEvent": {
+        "date": "2015-06-01",
+        "description": "Sentence Postponed"
+      },
+      "toEvent": {
+        "date": "2015-06-02",
+        "description": "Conviction Quashed"
+      },
+      "chargeIds": [
+        3058590,
+        3058591,
+        3058592,
+        3058593,
+        3058620,
+        3058621,
+        3058622,
+        3058626
+      ],
+      "status": "NOT_SENTENCED",
+      "days": 2
+    },
+    {
+      "from": "2016-07-12",
+      "to": "2022-01-23",
+      "fromEvent": {
+        "date": "2016-07-12",
+        "description": "Appeal Dismissed"
+      },
+      "toEvent": {
+        "date": "2022-01-23",
+        "description": "Withdrawn - Final"
+      },
+      "chargeIds": [
+        3058590,
+        3058591,
+        3058592,
+        3058593,
+        3058620,
+        3058621,
+        3058622,
+        3058626
+      ],
+      "status": "NOT_SENTENCED",
+      "days": 2022
+    }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2010-11-15",
+      "to": "2011-12-18",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2010-11-15",
+        "recallDates": [
+          "2012-09-07"
+        ],
+        "bookingId": 3
+      },
+      "chargeId": 866830,
+      "service": "HISTORIC",
+      "days": 399
+    },
+    {
+      "from": "2012-09-07",
+      "to": "2013-11-14",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2010-11-15",
+        "recallDates": [
+          "2012-09-07"
+        ],
+        "bookingId": 3
+      },
+      "chargeId": 866830,
+      "service": "CRDS",
+      "errors": [
+        "Historic calculation error!"
+      ],
+      "days": 434
+    },
+    {
+      "from": "2013-02-06",
+      "to": "2013-08-23",
+      "sentence": {
+        "sequence": 4,
+        "sentenceDate": "2013-02-06",
+        "bookingId": 3
+      },
+      "chargeId": 1905183,
+      "service": "HISTORIC",
+      "days": 199
+    }
+  ],
+  "issuesWithLegacyData": [
+    {
+      "type": "MISSING_OFFENCE_DATE",
+      "message": "There is another offence of 'Rape a girl aged 13 / 14 / 15 - SOA 2003' within booking 1 that has a missing offence date.",
+      "offence": {
+        "code": "SX03001",
+        "statute": "SX03",
+        "description": "Rape a girl aged 13 / 14 / 15 - SOA 2003"
+      },
+      "bookingId": 1,
+      "bookNumber": "1"
+    },
+    {
+      "type": "MISSING_OFFENCE_DATE",
+      "message": "There is another offence of 'Offender 18 or over cause / incite a girl 13 to 15 to engage in sexual activity - no penetration - SOA 2003' within booking 1 that has a missing offence date.",
+      "offence": {
+        "code": "SX03162",
+        "statute": "SX03",
+        "description": "Offender 18 or over cause / incite a girl 13 to 15 to engage in sexual activity - no penetration - SOA 2003"
+      },
+      "bookingId": 1,
+      "bookNumber": "1"
+    },
+    {
+      "type": "MISSING_OFFENCE_DATE",
+      "message": "There is another offence of 'Kidnap / falsely imprison a person with intent to commit a relevant sexual offence' within booking 1 that has a missing offence date.",
+      "offence": {
+        "code": "SX03201",
+        "statute": "SX03",
+        "description": "Kidnap / falsely imprison a person with intent to commit a relevant sexual offence"
+      },
+      "bookingId": 1,
+      "bookNumber": "1"
+    },
+    {
+      "type": "MISSING_OFFENCE_DATE",
+      "message": "There is another offence of 'Fail to attend and give evidence/produce documents before an adjudicator/Tribunal' within booking 2 that has a missing offence date.",
+      "offence": {
+        "code": "IA99038",
+        "statute": "IA99",
+        "description": "Fail to attend and give evidence/produce documents before an adjudicator/Tribunal"
+      },
+      "bookingId": 2,
+      "bookNumber": "2"
+    },
+    {
+      "type": "MISSING_OFFENCE_DATE",
+      "message": "There is another offence of 'Fail to surrender to police / court bail at the appointed time' within booking 3 that has a missing offence date.",
+      "offence": {
+        "code": "BA76001",
+        "statute": "BA76",
+        "description": "Fail to surrender to police / court bail at the appointed time"
+      },
+      "bookingId": 3,
+      "bookNumber": "3"
+    }
+  ]
+}
