@@ -19,4 +19,4 @@ generic-prometheus-alerts:
   alertSeverity: legacy-replacement-alerts
 
 generic-data-analytics-extractor:
-  serviceAccountName: hmpps-identify-remand-periods-dev-to-ap-s3
+  serviceAccountName: hmpps-identify-remand-periods-prod-to-ap-s3
