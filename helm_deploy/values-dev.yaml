@@ -24,3 +24,6 @@ generic-service:
 generic-prometheus-alerts:
   businessHoursOnly: true
   alertSeverity: legacy-replacement-alerts-non-prod
+
+generic-data-analytics-extractor:
+  serviceAccountName: hmpps-identify-remand-periods-dev-to-ap-s3
