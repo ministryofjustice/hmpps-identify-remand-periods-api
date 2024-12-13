@@ -43,3 +43,9 @@ generic-service:
 
 generic-prometheus-alerts:
   targetApplication: hmpps-identify-remand-periods-api
+
+generic-data-analytics-extractor:
+  enabled: true
+  databaseSecretName: rds-instance-output
+  destinationS3SecretName: analytical-platform-reporting-s3-bucket
+  args: "extract_table_names.py && extract_psql_all_tables_to_csv.sh && transfer_local_to_s3.sh"

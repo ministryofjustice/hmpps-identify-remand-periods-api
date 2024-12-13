@@ -21,3 +21,6 @@ generic-service:
 generic-prometheus-alerts:
   businessHoursOnly: true
   alertSeverity: legacy-replacement-alerts-non-prod
+
+generic-data-analytics-extractor:
+  enabled: false
