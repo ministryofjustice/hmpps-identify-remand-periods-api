@@ -20,7 +20,7 @@ class FindHistoricReleaseDateService(
 
   override fun findReleaseDate(prisonerId: String, remand: List<Remand>, sentences: List<Sentence>, calculateAt: LocalDate, charges: Map<Long, Charge>): CalculationDetail {
     val allCalculations = prisonApiClient.getCalculationsForAPrisonerId(prisonerId).sortedBy { it.calculationDate }
-    val historicReleaseDates = collapseByLastCalculationOfTheDay(allCalculations, sentences, charges)
+    val historicReleaseDates = collapseByLastCalculationOfTheDay(allCalculations)
     if (historicReleaseDates.isEmpty()) {
       throw UnsupportedCalculationException("No calculations found for $prisonerId in bookings ${sentences.map { it.bookingId }}")
     }
@@ -59,20 +59,9 @@ class FindHistoricReleaseDateService(
    */
   private fun collapseByLastCalculationOfTheDay(
     historicReleaseDates: List<SentenceCalculationSummary>,
-    sentences: List<Sentence>,
-    charges: Map<Long, Charge>,
   ): List<SentenceCalculationSummary> {
     return historicReleaseDates
-      .filter { findMergedBookings(sentences, charges).contains(it.bookingId) }
       .groupBy { it.calculationDate.toLocalDate() }.values.map { list -> list.maxBy { it.calculationDate } }
-  }
-
-  private fun findMergedBookings(sentences: List<Sentence>, charges: Map<Long, Charge>): List<Long> {
-    return sentences.flatMap { sentence ->
-      val bookingId = sentence.bookingId
-      val bookNumber = charges.values.find { it.bookingId == bookingId }!!.bookNumber
-      charges.values.distinctBy { it.bookingId }.filter { it.bookNumber == bookNumber }.map { it.bookingId }
-    }
   }
 
   private fun getReleaseDateForCalcId(
