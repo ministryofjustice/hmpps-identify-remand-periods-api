@@ -131,7 +131,7 @@ class FindHistoricReleaseDateServiceTest {
 
     val exception = assertThrows<UnsupportedCalculationException> { service.findReleaseDate(prisonerId, emptyList(), listOf(sentence), calculateAt, charges) }
 
-    assertThat(exception.message).isEqualTo("The release date 2019-12-30, from calculations [1] is before the calculation date 2020-01-06T00:00.")
+    assertThat(exception.message).isEqualTo("The release date 2019-12-30, from calculations [1] is before the calculation date 2020-01-01.")
   }
 
   @Test
