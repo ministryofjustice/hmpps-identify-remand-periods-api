@@ -89,7 +89,7 @@ class FindHistoricReleaseDateService(
     }
 
     // Release Date is blank. Seems to be a NOMIS bug, look at previous calculations for a non blank
-    val latestPreviousCalculation = allCalculations.filter { it.calculationDate.toLocalDate() == calculationDate.toLocalDate() && it.offenderSentCalculationId != offenderSentCalcId }
+    val latestPreviousCalculation = allCalculations.filter { it.calculationDate.isBefore(calculationDate) }
     if (latestPreviousCalculation.isNotEmpty()) {
       return getReleaseDateForCalcId(
         latestPreviousCalculation.last().offenderSentCalculationId,
