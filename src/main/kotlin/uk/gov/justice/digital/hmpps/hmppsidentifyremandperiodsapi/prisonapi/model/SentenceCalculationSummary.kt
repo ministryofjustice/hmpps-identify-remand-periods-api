@@ -8,4 +8,8 @@ data class SentenceCalculationSummary(
   val calculationDate: LocalDateTime,
   val commentText: String? = null,
   val calculationReason: String? = null,
-)
+) {
+  companion object {
+    const val SENTENCE_DELETED_REASON = "Sentence Deleted"
+  }
+}
