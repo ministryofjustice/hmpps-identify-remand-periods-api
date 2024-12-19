@@ -83,7 +83,7 @@ class FindHistoricReleaseDateService(
     val latestRelease = releaseDates.maxOrNull()
     if (latestRelease != null) {
       if (latestRelease.isBefore(calculateAt)) {
-        throw UnsupportedCalculationException("The release date is before the calculation date.")
+        throw UnsupportedCalculationException("The release date $latestRelease, from calculations $calcluationIds is before the calculation date $calculationDate.")
       }
       return latestRelease
     }
