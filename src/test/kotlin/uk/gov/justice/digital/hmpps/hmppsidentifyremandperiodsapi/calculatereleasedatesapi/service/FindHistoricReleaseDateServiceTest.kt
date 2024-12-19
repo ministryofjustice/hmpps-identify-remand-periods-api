@@ -233,4 +233,23 @@ class FindHistoricReleaseDateServiceTest {
     assertThat(release.releaseDate).isEqualTo(LocalDate.of(2024, 10, 29))
     assertThat(release.calculationIds).isEqualTo(listOf(1L))
   }
+
+  @Test
+  fun `Ignore sentence deleted calculations`() {
+    val expectedReleaseDate = sentenceDate.plusYears(1)
+    val calculateAt = sentenceDate
+    val sentenceCalcId = 1L
+    val actualCalculationTime = sentenceDate.atStartOfDay().plusDays(5)
+    val actualCalculation = SentenceCalculationSummary(bookingId, sentenceCalcId, actualCalculationTime)
+    val sentenceDeletedCalculation = SentenceCalculationSummary(bookingId, 2L, sentenceDate.atStartOfDay().plusDays(4), calculationReason = SentenceCalculationSummary.SENTENCE_DELETED_REASON)
+    val calculations = listOf(sentenceDeletedCalculation, actualCalculation)
+    val calculation = OffenderKeyDates(prisonerId, actualCalculationTime, conditionalReleaseDate = expectedReleaseDate)
+    whenever(apiClient.getCalculationsForAPrisonerId(prisonerId)).thenReturn(calculations)
+    whenever(apiClient.getNOMISOffenderKeyDates(sentenceCalcId)).thenReturn(calculation)
+
+    val release = service.findReleaseDate(prisonerId, emptyList(), listOf(sentence), calculateAt, charges)
+
+    assertThat(release.releaseDate).isEqualTo(expectedReleaseDate)
+    assertThat(release.calculationIds).isEqualTo(listOf(sentenceCalcId))
+  }
 }
