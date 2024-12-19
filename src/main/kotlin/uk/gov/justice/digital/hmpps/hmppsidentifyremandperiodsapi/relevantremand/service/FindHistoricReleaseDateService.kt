@@ -31,6 +31,9 @@ class FindHistoricReleaseDateService(
     }
     val calculationIds = mutableListOf<Long>()
     var releaseDate = getReleaseDateForCalcId(calculation.offenderSentCalculationId, calculation.calculationDate, allCalculations, calculationIds, calculateAt)
+    if (releaseDate == calculation.calculationDate.toLocalDate()) {
+      return CalculationDetail(releaseDate, calculationIds)
+    }
     var lastCalculationBeforeRelease = historicReleaseDates.lastOrNull { it.calculationDate.isBefore(releaseDate.atStartOfDay()) }
     if (lastCalculationBeforeRelease == null) {
       // Immediate release

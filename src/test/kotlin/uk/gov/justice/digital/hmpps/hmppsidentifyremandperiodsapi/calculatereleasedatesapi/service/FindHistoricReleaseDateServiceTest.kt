@@ -216,4 +216,21 @@ class FindHistoricReleaseDateServiceTest {
     assertThat(release.releaseDate).isEqualTo(LocalDate.of(2021, 1, 1))
     assertThat(release.calculationIds).isEqualTo(listOf(1L, 2L))
   }
+
+  @Test
+  fun `First calculation is on same day as release`() {
+    val calculations = listOf(
+      SentenceCalculationSummary(bookingId, 1, LocalDate.of(2024, 10, 29).atStartOfDay()),
+    )
+    val calculationOne = OffenderKeyDates(prisonerId, LocalDate.of(2024, 10, 29).atStartOfDay(), postRecallReleaseDate = LocalDate.of(2024, 10, 29))
+    whenever(apiClient.getCalculationsForAPrisonerId(prisonerId)).thenReturn(calculations)
+    whenever(apiClient.getNOMISOffenderKeyDates(1)).thenReturn(calculationOne)
+
+    val aSentence = Sentence(1, LocalDate.of(2024, 5, 13), listOf(LocalDate.of(2024, 10, 28)), bookingId)
+
+    val release = service.findReleaseDate(prisonerId, emptyList(), listOf(aSentence), LocalDate.of(2024, 10, 28), charges)
+
+    assertThat(release.releaseDate).isEqualTo(LocalDate.of(2024, 10, 29))
+    assertThat(release.calculationIds).isEqualTo(listOf(1L))
+  }
 }
