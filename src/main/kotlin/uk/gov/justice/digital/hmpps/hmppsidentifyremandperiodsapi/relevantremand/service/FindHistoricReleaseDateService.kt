@@ -68,11 +68,11 @@ class FindHistoricReleaseDateService(
     offenderSentCalcId: Long,
     calculationDate: LocalDateTime,
     allCalculations: List<SentenceCalculationSummary>,
-    calcluationIds: MutableList<Long>,
+    calculationIds: MutableList<Long>,
     calculateAt: LocalDate,
   ): LocalDate {
     val calcDates = prisonApiClient.getNOMISOffenderKeyDates(offenderSentCalcId)
-    calcluationIds.add(offenderSentCalcId)
+    calculationIds.add(offenderSentCalcId)
     val releaseDates = listOfNotNull(
       calcDates.conditionalReleaseDate,
       calcDates.automaticReleaseDate,
@@ -83,7 +83,7 @@ class FindHistoricReleaseDateService(
     val latestRelease = releaseDates.maxOrNull()
     if (latestRelease != null) {
       if (latestRelease.isBefore(calculateAt)) {
-        throw UnsupportedCalculationException("The release date $latestRelease, from calculations $calcluationIds is before the calculation date $calculationDate.")
+        throw UnsupportedCalculationException("The release date $latestRelease, from calculations $calculationIds is before the calculation date $calculateAt.")
       }
       return latestRelease
     }
@@ -95,10 +95,10 @@ class FindHistoricReleaseDateService(
         latestPreviousCalculation.last().offenderSentCalculationId,
         calculationDate,
         latestPreviousCalculation,
-        calcluationIds,
+        calculationIds,
         calculateAt,
       )
     }
-    throw UnsupportedCalculationException("Unable to find release date from calculations $calcluationIds")
+    throw UnsupportedCalculationException("Unable to find release date from calculations $calculationIds")
   }
 }
