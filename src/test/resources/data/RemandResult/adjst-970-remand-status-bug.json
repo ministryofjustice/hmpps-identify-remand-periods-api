@@ -1,0 +1,61 @@
+{
+  "adjustments": [
+    {
+      "bookingId": 2,
+      "sentenceSequence": 2,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "fromDate": "2024-08-28",
+      "toDate": "2024-09-11",
+      "remand": {
+        "chargeId": [
+          7631942,
+          7631943,
+          7631945,
+          7652488,
+          7631966,
+          7631967
+        ]
+      },
+      "status": "INACTIVE"
+    }
+  ],
+  "chargeRemand": [
+    {
+      "from": "2024-08-28",
+      "to": "2024-09-11",
+      "fromEvent": {
+        "date": "2024-08-28",
+        "description": "Guilty"
+      },
+      "toEvent": {
+        "date": "2024-09-12",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7631942,
+        7631943,
+        7631945,
+        7652488,
+        7631966,
+        7631967
+      ],
+      "status": "INACTIVE",
+      "days": 15
+    }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2023-08-23",
+      "to": "2023-11-14",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2023-08-23",
+        "bookingId": 1
+      },
+      "chargeId": 7158536,
+      "service": "HISTORIC",
+      "days": 84
+    }
+  ]
+}

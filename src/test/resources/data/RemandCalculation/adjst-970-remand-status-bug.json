@@ -1,0 +1,409 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "chargesAndEvents": [
+      {
+        "charge": {
+          "chargeId": 7158536,
+          "offence": {
+            "code": "PU86116",
+            "statute": "PU86",
+            "description": "Use threatening / abusive / insulting words / behaviour to cause harassment / alarm / distress"
+          },
+          "bookingId": 1,
+          "offenceDate": "2023-04-11",
+          "bookNumber": "1",
+          "sentenceSequence": 1,
+          "sentenceDate": "2023-08-23",
+          "resultDescription": "Appeal Dismissed",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2023-08-23",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-09-22",
+            "type": "CONTINUE",
+            "description": "Appeal Dismissed",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7631942,
+          "offence": {
+            "code": "CJ88160",
+            "statute": "CJ88",
+            "description": "Assault by beating of an emergency worker"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-05-01",
+          "bookNumber": "2",
+          "sentenceSequence": 2,
+          "sentenceDate": "2024-09-12",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-08-29",
+            "type": "CONTINUE",
+            "description": "Adjournment"
+          },
+          {
+            "date": "2024-09-12",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-08-28",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7631943,
+          "offence": {
+            "code": "PU86004",
+            "statute": "PU86",
+            "description": "Use threatening / abusive / insulting words / behaviour with intent to cause fear of / provoke unlawful violence"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-05-01",
+          "bookNumber": "2",
+          "sentenceSequence": 3,
+          "sentenceDate": "2024-09-12",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-08-28",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-08-29",
+            "type": "CONTINUE",
+            "description": "Adjournment"
+          },
+          {
+            "date": "2024-09-12",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7631944,
+          "offence": {
+            "code": "CJ88160",
+            "statute": "CJ88",
+            "description": "Assault by beating of an emergency worker"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-05-01",
+          "bookNumber": "2",
+          "sentenceSequence": 4,
+          "sentenceDate": "2024-09-12",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-08-28",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-08-29",
+            "type": "CONTINUE",
+            "description": "Adjournment"
+          },
+          {
+            "date": "2024-09-12",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7631945,
+          "offence": {
+            "code": "PU86116",
+            "statute": "PU86",
+            "description": "Use threatening / abusive / insulting words / behaviour to cause harassment / alarm / distress"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-05-01",
+          "bookNumber": "2",
+          "sentenceSequence": 3,
+          "sentenceDate": "2024-09-12",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-08-28",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-08-29",
+            "type": "CONTINUE",
+            "description": "Adjournment"
+          },
+          {
+            "date": "2024-09-12",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7631946,
+          "offence": {
+            "code": "PU86116",
+            "statute": "PU86",
+            "description": "Use threatening / abusive / insulting words / behaviour to cause harassment / alarm / distress"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-05-01",
+          "bookNumber": "2",
+          "sentenceSequence": 3,
+          "sentenceDate": "2024-09-12",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-08-28",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-08-29",
+            "type": "CONTINUE",
+            "description": "Adjournment"
+          },
+          {
+            "date": "2024-09-12",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7631947,
+          "offence": {
+            "code": "BA76001",
+            "statute": "BA76",
+            "description": "Fail to surrender to police / court bail at the appointed time"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-08-27",
+          "bookNumber": "2",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-08-28",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-08-29",
+            "type": "CONTINUE",
+            "description": "Adjournment"
+          },
+          {
+            "date": "2024-09-12",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7631966,
+          "offence": {
+            "code": "CD98067",
+            "statute": "CD98",
+            "description": "Racially / religiously aggravated intentional harassment / alarm / distress - words / writing"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-05-03",
+          "bookNumber": "2",
+          "sentenceSequence": 12,
+          "sentenceDate": "2024-09-12",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-08-28",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-08-29",
+            "type": "CONTINUE",
+            "description": "Adjournment"
+          },
+          {
+            "date": "2024-09-12",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7631967,
+          "offence": {
+            "code": "CA03006",
+            "statute": "CA03",
+            "description": "Cause to be sent by public communication network an offensive / indecent / obscene / menacing message / matter"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-05-03",
+          "bookNumber": "2",
+          "sentenceSequence": 19,
+          "sentenceDate": "2024-09-12",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-08-28",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-08-29",
+            "type": "CONTINUE",
+            "description": "Adjournment"
+          },
+          {
+            "date": "2024-09-12",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7652448,
+          "offence": {
+            "code": "CD98067",
+            "statute": "CD98",
+            "description": "Racially / religiously aggravated intentional harassment / alarm / distress - words / writing"
+          },
+          "bookingId": 2,
+          "offenceDate": "2022-03-26",
+          "bookNumber": "2",
+          "sentenceSequence": 5,
+          "sentenceDate": "2024-09-12",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-09-12",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7652488,
+          "offence": {
+            "code": "BA76001",
+            "statute": "BA76",
+            "description": "Fail to surrender to police / court bail at the appointed time"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-08-27",
+          "bookNumber": "2",
+          "sentenceSequence": 1,
+          "sentenceDate": "2024-09-13",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-09-13",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      }
+    ],
+    "imprisonmentStatuses": [
+      {
+        "status": "RECALLED",
+        "date": "2022-10-15"
+      }
+    ]
+  },
+  "calculations": [
+    {
+      "calculateAt": "2023-08-23",
+      "release": "2023-11-14",
+      "service": "HISTORIC"
+    }
+  ],
+  "options": {}
+}
