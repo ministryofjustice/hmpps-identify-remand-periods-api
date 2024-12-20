@@ -1,0 +1,179 @@
+{
+  "adjustments": [
+    {
+      "bookingId": 2,
+      "sentenceSequence": 2,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2024-04-18",
+      "fromDate": "2024-04-12",
+      "remand": {
+        "chargeId": [
+          7776895,
+          7776832,
+          7776833,
+          7776839
+        ]
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "bookingId": 2,
+      "sentenceSequence": 1,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2024-04-24",
+      "fromDate": "2024-04-24",
+      "remand": {
+        "chargeId": [
+          7776895,
+          7776832,
+          7776833,
+          7776839
+        ]
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "bookingId": 2,
+      "sentenceSequence": 1,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2024-12-10",
+      "fromDate": "2024-05-09",
+      "remand": {
+        "chargeId": [
+          7776895,
+          7776832,
+          7776833,
+          7776839
+        ]
+      },
+      "status": "ACTIVE"
+    }
+  ],
+  "chargeRemand": [
+    {
+      "from": "2024-04-12",
+      "to": "2024-04-18",
+      "fromEvent": {
+        "date": "2024-04-12",
+        "description": "Remittal for Sentence in Custody"
+      },
+      "toEvent": {
+        "date": "2024-04-18",
+        "description": "Remand on Conditional Bail"
+      },
+      "chargeIds": [
+        7776832,
+        7776833,
+        7776839
+      ],
+      "status": "APPLICABLE",
+      "days": 7
+    },
+    {
+      "from": "2024-04-24",
+      "to": "2024-08-08",
+      "fromEvent": {
+        "date": "2024-04-24",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2024-08-08",
+        "description": "Remand on Conditional Bail"
+      },
+      "chargeIds": [
+        7776895
+      ],
+      "status": "APPLICABLE",
+      "days": 107
+    },
+    {
+      "from": "2024-07-03",
+      "to": "2024-12-10",
+      "fromEvent": {
+        "date": "2024-07-03",
+        "description": "Sentence Postponed"
+      },
+      "toEvent": {
+        "date": "2024-12-11",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7776832,
+        7776833,
+        7776839
+      ],
+      "status": "APPLICABLE",
+      "days": 161
+    },
+    {
+      "from": "2024-10-03",
+      "to": "2024-12-10",
+      "fromEvent": {
+        "date": "2024-10-03",
+        "description": "Sentence Deferred"
+      },
+      "toEvent": {
+        "date": "2024-12-11",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7776895
+      ],
+      "status": "APPLICABLE",
+      "days": 69
+    },
+    {
+      "from": "2024-04-12",
+      "to": "2024-04-18",
+      "fromEvent": {
+        "date": "2024-04-12",
+        "description": "Remittal for Sentence in Custody"
+      },
+      "toEvent": {
+        "date": "2024-04-18",
+        "description": "Remand on Conditional Bail"
+      },
+      "chargeIds": [
+        7452201,
+        7452204
+      ],
+      "status": "CASE_NOT_CONCLUDED",
+      "days": 7
+    }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2023-11-22",
+      "to": "2024-03-19",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2023-11-22",
+        "recallDates": [
+          "2024-04-25"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 7462850,
+      "service": "HISTORIC",
+      "days": 119
+    },
+    {
+      "from": "2024-04-25",
+      "to": "2024-05-08",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2023-11-22",
+        "recallDates": [
+          "2024-04-25"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 7462850,
+      "service": "HISTORIC",
+      "days": 14
+    }
+  ]
+}

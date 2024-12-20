@@ -153,30 +153,6 @@ class FindHistoricReleaseDateServiceTest {
   }
 
   @Test
-  fun `A new calculation on release date is not counted`() {
-    val calculations = listOf(
-      SentenceCalculationSummary(bookingId, 1, LocalDate.of(2023, 11, 8).atStartOfDay()),
-      SentenceCalculationSummary(bookingId, 2, LocalDate.of(2024, 2, 7).atStartOfDay()),
-    )
-    val calculationOne = OffenderKeyDates(prisonerId, LocalDate.of(2023, 11, 8).atStartOfDay(), conditionalReleaseDate = LocalDate.of(2024, 2, 7))
-    val calculationTwo = OffenderKeyDates(prisonerId, LocalDate.of(2024, 2, 7).atStartOfDay(), conditionalReleaseDate = LocalDate.of(2023, 12, 9))
-    whenever(apiClient.getCalculationsForAPrisonerId(prisonerId)).thenReturn(calculations)
-    whenever(apiClient.getNOMISOffenderKeyDates(1)).thenReturn(calculationOne)
-    whenever(apiClient.getNOMISOffenderKeyDates(2)).thenReturn(calculationTwo)
-
-    val release = service.findReleaseDate(
-      prisonerId,
-      emptyList(),
-      listOf(sentence.copy(sentenceDate = LocalDate.of(2023, 11, 6), recallDates = emptyList())),
-      LocalDate.of(2023, 11, 6),
-      charges,
-    )
-
-    assertThat(release.releaseDate).isEqualTo(LocalDate.of(2024, 2, 7))
-    assertThat(release.calculationIds).isEqualTo(listOf(1L))
-  }
-
-  @Test
   fun `An immediate release`() {
     val calculations = listOf(
       SentenceCalculationSummary(bookingId, 1, LocalDate.of(2023, 7, 15).atStartOfDay()),

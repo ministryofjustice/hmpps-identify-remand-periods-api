@@ -12,7 +12,7 @@ import java.time.LocalDate
 
 @Service
 class FindReleaseDateService(
-  private val historicReleaseDateService: FindHistoricReleaseDateForwardLoopService,
+  private val historicReleaseDateService: FindHistoricReleaseDateService,
   private val calculateReleaseDateService: CalculateReleaseDateService,
   @Value("\${primary-release-date-provider:HISTORIC}") private val primaryReleaseDateService: String = "HISTORIC",
 ) {

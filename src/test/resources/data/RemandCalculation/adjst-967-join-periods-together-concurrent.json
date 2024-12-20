@@ -1,0 +1,777 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "chargesAndEvents": [
+      {
+        "charge": {
+          "chargeId": 7460806,
+          "offence": {
+            "code": "TH68023",
+            "statute": "TH68",
+            "description": "Robbery"
+          },
+          "bookingId": 1,
+          "offenceDate": "2024-04-22",
+          "bookNumber": "1",
+          "resultDescription": "Sentence Deferred"
+        },
+        "dates": [
+          {
+            "date": "2024-04-24",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-05-23",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2024-08-08",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          },
+          {
+            "date": "2024-10-03",
+            "type": "CONTINUE",
+            "description": "Sentence Deferred"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7556336,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "bookingId": 1,
+          "offenceDate": "2024-04-06",
+          "bookNumber": "1",
+          "resultDescription": "Sentence Deferred"
+        },
+        "dates": [
+          {
+            "date": "2024-10-03",
+            "type": "CONTINUE",
+            "description": "Sentence Deferred"
+          },
+          {
+            "date": "2024-07-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2024-08-08",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7556337,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "bookingId": 1,
+          "offenceDate": "2024-04-09",
+          "bookNumber": "1",
+          "resultDescription": "Sentence Deferred"
+        },
+        "dates": [
+          {
+            "date": "2024-10-03",
+            "type": "CONTINUE",
+            "description": "Sentence Deferred"
+          },
+          {
+            "date": "2024-07-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2024-08-08",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7556338,
+          "offence": {
+            "code": "CJ88001",
+            "statute": "CJ88",
+            "description": "Common assault"
+          },
+          "bookingId": 1,
+          "offenceDate": "2024-04-09",
+          "bookNumber": "1",
+          "resultDescription": "Sentence Deferred"
+        },
+        "dates": [
+          {
+            "date": "2024-10-03",
+            "type": "CONTINUE",
+            "description": "Sentence Deferred"
+          },
+          {
+            "date": "2024-07-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2024-08-08",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7556339,
+          "offence": {
+            "code": "CJ88001",
+            "statute": "CJ88",
+            "description": "Common assault"
+          },
+          "bookingId": 1,
+          "offenceDate": "2024-04-09",
+          "bookNumber": "1",
+          "resultDescription": "Sentence Deferred"
+        },
+        "dates": [
+          {
+            "date": "2024-10-03",
+            "type": "CONTINUE",
+            "description": "Sentence Deferred"
+          },
+          {
+            "date": "2024-07-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2024-08-08",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7556340,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "bookingId": 1,
+          "offenceDate": "2024-04-09",
+          "bookNumber": "1",
+          "resultDescription": "Sentence Deferred"
+        },
+        "dates": [
+          {
+            "date": "2024-10-03",
+            "type": "CONTINUE",
+            "description": "Sentence Deferred"
+          },
+          {
+            "date": "2024-07-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2024-08-08",
+            "type": "START",
+            "description": "Sentence Postponed"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7462850,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "bookingId": 1,
+          "offenceDate": "2023-11-11",
+          "bookNumber": "1",
+          "sentenceSequence": 1,
+          "sentenceDate": "2023-11-22",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-04-25",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7462851,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "bookingId": 1,
+          "offenceDate": "2023-11-11",
+          "bookNumber": "1",
+          "sentenceSequence": 2,
+          "sentenceDate": "2023-11-22",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-04-25",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7462852,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "bookingId": 1,
+          "offenceDate": "2023-10-19",
+          "bookNumber": "1",
+          "sentenceSequence": 9,
+          "sentenceDate": "2023-11-22",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-04-25",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7462853,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "bookingId": 1,
+          "offenceDate": "2023-10-22",
+          "bookNumber": "1",
+          "sentenceSequence": 30,
+          "sentenceDate": "2023-11-22",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-04-25",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7462854,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "bookingId": 1,
+          "offenceDate": "2023-10-22",
+          "bookNumber": "1",
+          "sentenceSequence": 37,
+          "sentenceDate": "2023-11-22",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-04-25",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7462855,
+          "offence": {
+            "code": "CJ88001",
+            "statute": "CJ88",
+            "description": "Common assault"
+          },
+          "bookingId": 1,
+          "offenceDate": "2023-10-19",
+          "bookNumber": "1",
+          "sentenceSequence": 16,
+          "sentenceDate": "2023-11-22",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-04-25",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7462856,
+          "offence": {
+            "code": "TH68006",
+            "statute": "TH68",
+            "description": "Theft of pedal cycle"
+          },
+          "bookingId": 1,
+          "offenceDate": "2023-10-21",
+          "bookNumber": "1",
+          "sentenceSequence": 23,
+          "sentenceDate": "2023-11-22",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-04-25",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7776832,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-04-06",
+          "bookNumber": "2",
+          "sentenceSequence": 2,
+          "sentenceDate": "2024-12-11",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-12-11",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7776833,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-04-09",
+          "bookNumber": "2",
+          "sentenceSequence": 9,
+          "sentenceDate": "2024-12-11",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-12-11",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7776834,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-04-09",
+          "bookNumber": "2",
+          "sentenceSequence": 9,
+          "sentenceDate": "2024-12-11",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-12-11",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7776839,
+          "offence": {
+            "code": "CJ88001",
+            "statute": "CJ88",
+            "description": "Common assault"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-04-09",
+          "bookNumber": "2",
+          "sentenceSequence": 9,
+          "sentenceDate": "2024-12-11",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-12-11",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7776840,
+          "offence": {
+            "code": "CJ88001",
+            "statute": "CJ88",
+            "description": "Common assault"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-04-09",
+          "bookNumber": "2",
+          "sentenceSequence": 9,
+          "sentenceDate": "2024-12-11",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-12-11",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7776895,
+          "offence": {
+            "code": "TH68023",
+            "statute": "TH68",
+            "description": "Robbery"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-04-22",
+          "bookNumber": "2",
+          "sentenceSequence": 1,
+          "sentenceDate": "2024-12-11",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-12-11",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7452198,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "bookingId": 3,
+          "offenceDate": "2024-04-09",
+          "bookNumber": "3",
+          "resultDescription": "Remand on Conditional Bail"
+        },
+        "dates": [
+          {
+            "date": "2024-04-12",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          },
+          {
+            "date": "2024-04-18",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7452199,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "bookingId": 3,
+          "offenceDate": "2024-04-06",
+          "bookNumber": "3",
+          "resultDescription": "Remand on Conditional Bail"
+        },
+        "dates": [
+          {
+            "date": "2024-04-12",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          },
+          {
+            "date": "2024-04-18",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7452200,
+          "offence": {
+            "code": "CJ88001",
+            "statute": "CJ88",
+            "description": "Common assault"
+          },
+          "bookingId": 3,
+          "offenceDate": "2024-04-09",
+          "bookNumber": "3",
+          "resultDescription": "Remand on Conditional Bail"
+        },
+        "dates": [
+          {
+            "date": "2024-04-12",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          },
+          {
+            "date": "2024-04-18",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7452201,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "bookingId": 3,
+          "offenceDate": "2024-04-08",
+          "bookNumber": "3",
+          "resultDescription": "Remand on Conditional Bail"
+        },
+        "dates": [
+          {
+            "date": "2024-04-12",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          },
+          {
+            "date": "2024-04-18",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7452202,
+          "offence": {
+            "code": "CJ88001",
+            "statute": "CJ88",
+            "description": "Common assault"
+          },
+          "bookingId": 3,
+          "offenceDate": "2024-04-09",
+          "bookNumber": "3",
+          "resultDescription": "Remand on Conditional Bail"
+        },
+        "dates": [
+          {
+            "date": "2024-04-12",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          },
+          {
+            "date": "2024-04-18",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7452203,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "bookingId": 3,
+          "offenceDate": "2024-04-09",
+          "bookNumber": "3",
+          "resultDescription": "Remand on Conditional Bail"
+        },
+        "dates": [
+          {
+            "date": "2024-04-12",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          },
+          {
+            "date": "2024-04-18",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7452204,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "bookingId": 3,
+          "offenceDate": "2024-04-02",
+          "bookNumber": "3",
+          "resultDescription": "Remand on Conditional Bail"
+        },
+        "dates": [
+          {
+            "date": "2024-04-12",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          },
+          {
+            "date": "2024-04-18",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          }
+        ]
+      }
+    ],
+    "imprisonmentStatuses": [
+      {
+        "status": "REMANDED",
+        "date": "2024-04-12"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2024-04-25"
+      },
+      {
+        "status": "RECALLED",
+        "date": "2024-04-26"
+      },
+      {
+        "status": "SENTENCED",
+        "date": "2024-12-12"
+      }
+    ],
+    "chargeIdsWithActiveSentence": [
+      7776895,
+      7776832,
+      7776833,
+      7776834,
+      7776839,
+      7776840
+    ]
+  },
+  "calculations": [
+    {
+      "calculateAt": "2023-11-22",
+      "release": "2024-03-19",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2024-04-25",
+      "release": "2024-05-08",
+      "service": "HISTORIC"
+    }
+  ],
+  "options": {}
+}

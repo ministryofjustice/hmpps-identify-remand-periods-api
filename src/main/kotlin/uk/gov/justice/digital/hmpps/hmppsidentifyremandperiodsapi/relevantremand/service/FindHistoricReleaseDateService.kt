@@ -18,41 +18,37 @@ class FindHistoricReleaseDateService(
   private val prisonApiClient: PrisonApiClient,
 ) : FindReleaseDateServiceProvider {
 
-  override fun findReleaseDate(prisonerId: String, remand: List<Remand>, sentences: List<Sentence>, calculateAt: LocalDate, charges: Map<Long, Charge>): CalculationDetail {
+  override fun findReleaseDate(prisonerId: String, remand: List<Remand>, sentences: List<Sentence>, calculatedAt: LocalDate, charges: Map<Long, Charge>): CalculationDetail {
     val allCalculations = prisonApiClient.getCalculationsForAPrisonerId(prisonerId).sortedBy { it.calculationDate }
     val historicReleaseDates = collapseByLastCalculationOfTheDay(allCalculations)
     if (historicReleaseDates.isEmpty()) {
       throw UnsupportedCalculationException("No calculations found for $prisonerId in bookings ${sentences.map { it.bookingId }}")
     }
 
-    var calculation = historicReleaseDates.firstOrNull { it.calculationDate.toLocalDate().isAfterOrEqualTo(calculateAt) }
+    var calculation = historicReleaseDates.firstOrNull { it.calculationDate.toLocalDate().isAfterOrEqualTo(calculatedAt) }
     if (calculation == null) {
-      throw UnsupportedCalculationException("No calculations found for $prisonerId after sentence or recall date $calculateAt")
+      throw UnsupportedCalculationException("No calculations found for $prisonerId after sentence or recall date $calculatedAt")
     }
     val calculationIds = mutableListOf<Long>()
-    var releaseDate = getReleaseDateForCalcId(calculation.offenderSentCalculationId, calculation.calculationDate, allCalculations, calculationIds, calculateAt)
+    var releaseDate = getReleaseDateForCalcId(calculation.offenderSentCalculationId, calculation.calculationDate, allCalculations, calculationIds, calculatedAt)
     if (releaseDate == calculation.calculationDate.toLocalDate()) {
       return CalculationDetail(releaseDate, calculationIds)
     }
-    var lastCalculationBeforeRelease = historicReleaseDates.lastOrNull { it.calculationDate.isBefore(releaseDate.atStartOfDay()) }
-    if (lastCalculationBeforeRelease == null) {
-      // Immediate release
-      return CalculationDetail(releaseDate, calculationIds)
-    }
-    while (lastCalculationBeforeRelease!!.offenderSentCalculationId != calculation!!.offenderSentCalculationId) {
-      calculation = lastCalculationBeforeRelease
+    var nextCalculation = historicReleaseDates.firstOrNull { it.calculationDate.isAfter(calculation!!.calculationDate) }
+    while (nextCalculation != null && nextCalculation.calculationDate.toLocalDate().isBeforeOrEqualTo(releaseDate)) {
+      calculation = nextCalculation
       releaseDate = getReleaseDateForCalcId(
         calculation.offenderSentCalculationId,
         calculation.calculationDate,
         allCalculations,
         calculationIds,
-        calculateAt,
+        calculatedAt,
       )
-      // On appeal the release is before the calculation date. (Okay as long as its after calculateAt)
+      // On appeal the release is before the calculation date. (Okay as long as its after calculatedAt)
       if (releaseDate.isBeforeOrEqualTo(calculation.calculationDate.toLocalDate())) {
         break
       }
-      lastCalculationBeforeRelease = historicReleaseDates.last { it.calculationDate.toLocalDate().isBefore(releaseDate) }
+      nextCalculation = historicReleaseDates.firstOrNull { it.calculationDate.isAfter(calculation!!.calculationDate) }
     }
     return CalculationDetail(releaseDate, calculationIds.toList())
   }
@@ -73,7 +69,7 @@ class FindHistoricReleaseDateService(
     calculationDate: LocalDateTime,
     allCalculations: List<SentenceCalculationSummary>,
     calculationIds: MutableList<Long>,
-    calculateAt: LocalDate,
+    calculatedAt: LocalDate,
   ): LocalDate {
     val calcDates = prisonApiClient.getNOMISOffenderKeyDates(offenderSentCalcId)
     calculationIds.add(offenderSentCalcId)
@@ -86,8 +82,8 @@ class FindHistoricReleaseDateService(
 
     val latestRelease = releaseDates.maxOrNull()
     if (latestRelease != null) {
-      if (latestRelease.isBefore(calculateAt)) {
-        throw UnsupportedCalculationException("The release date $latestRelease, from calculations $calculationIds is before the calculation date $calculateAt.")
+      if (latestRelease.isBefore(calculatedAt)) {
+        throw UnsupportedCalculationException("The release date $latestRelease, from calculations $calculationIds is before the calculation date $calculatedAt.")
       }
       return latestRelease
     }
@@ -100,7 +96,7 @@ class FindHistoricReleaseDateService(
         calculationDate,
         latestPreviousCalculation,
         calculationIds,
-        calculateAt,
+        calculatedAt,
       )
     }
     throw UnsupportedCalculationException("Unable to find release date from calculations $calculationIds")
