@@ -10,8 +10,8 @@ data class AdjustmentDto(
   val sentenceSequence: Int?,
   val person: String,
   val adjustmentType: String = "REMAND",
-  val toDate: LocalDate?,
   val fromDate: LocalDate?,
+  val toDate: LocalDate?,
   val remand: RemandDto?,
   val status: AdjustmentStatus,
 ) {

@@ -18,20 +18,20 @@ class CalculateReleaseDateService(
   private val calculateReleaseDatesApiClient: CalculateReleaseDatesApiClient,
 ) : FindReleaseDateServiceProvider {
 
-  override fun findReleaseDate(prisonerId: String, remand: List<Remand>, sentences: List<Sentence>, calculateAt: LocalDate, charges: Map<Long, Charge>): CalculationDetail {
-    val releaseDates = sentences.map { findReleaseDate(prisonerId, remand, it, calculateAt, charges) }
+  override fun findReleaseDate(prisonerId: String, remand: List<Remand>, sentences: List<Sentence>, calculatedAt: LocalDate, charges: Map<Long, Charge>): CalculationDetail {
+    val releaseDates = sentences.map { findReleaseDate(prisonerId, remand, it, calculatedAt, charges) }
     return CalculationDetail(releaseDates.min())
   }
 
-  fun findReleaseDate(prisonerId: String, remand: List<Remand>, sentence: Sentence, calculateAt: LocalDate, charges: Map<Long, Charge>): LocalDate {
-    if (sentence.recallDates.size > 1 && sentence.recallDates.dropLast(1).any { it == calculateAt }) {
+  fun findReleaseDate(prisonerId: String, remand: List<Remand>, sentence: Sentence, calculatedAt: LocalDate, charges: Map<Long, Charge>): LocalDate {
+    if (sentence.recallDates.size > 1 && sentence.recallDates.dropLast(1).any { it == calculatedAt }) {
       throw UnsupportedCalculationException("CRDS cannot calculate can only calculate the most recent recall date. Not previous FTRs")
     }
 
     val request = RelevantRemandReleaseDateCalculationRequest(
       remand.filter { charges[it.chargeId]!!.bookingId == sentence.bookingId }.map { RelevantRemand(it.from, it.to, it.days.toInt(), charges[it.chargeId]!!.sentenceSequence!!) },
       sentence,
-      calculateAt,
+      calculatedAt,
     )
     val result: RelevantRemandCalculationResult
     try {
@@ -48,7 +48,7 @@ class CalculateReleaseDateService(
         }",
       )
     }
-    return if (sentence.recallDates.lastOrNull() == calculateAt) {
+    return if (sentence.recallDates.lastOrNull() == calculatedAt) {
       if (result.postRecallReleaseDate == null) {
         throw UnsupportedCalculationException("CRDS Calculation expected a recall release date, but was not found. $request")
       }

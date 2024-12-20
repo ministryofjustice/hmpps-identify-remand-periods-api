@@ -18,7 +18,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 
 class RemandCalculationServiceTest {
   private val calculateReleaseDateService = mock<CalculateReleaseDateService>()
-  private val findHistoricReleaseDateService = mock<FindHistoricReleaseDateForwardLoopService>()
+  private val findHistoricReleaseDateService = mock<FindHistoricReleaseDateService>()
   private val findReleaseDateService =
     FindReleaseDateService(findHistoricReleaseDateService, calculateReleaseDateService)
   private val remandClockService = RemandClockService()

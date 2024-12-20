@@ -14,13 +14,42 @@ import java.time.LocalDate
 class RemandAdjustmentService {
 
   fun getRemandedAdjustments(remandCalculation: RemandCalculation, calculationData: CalculationData): List<AdjustmentDto> {
-    return calculationData.sentenceRemandResult!!.sentenceRemand.map {
-      toAdjustmentDto(
-        remandCalculation,
-        calculationData,
-        it,
+    return joinConcurrentSentenceAdjustments(
+      calculationData.sentenceRemandResult!!.sentenceRemand.map {
+        toAdjustmentDto(
+          remandCalculation,
+          calculationData,
+          it,
+        )
+      },
+    )
+  }
+
+  private fun joinConcurrentSentenceAdjustments(adjustments: List<AdjustmentDto>): List<AdjustmentDto> {
+    val workingAdjustments = adjustments.toMutableList()
+    while (getRemandThatCanBeCombined(workingAdjustments) != null) {
+      val (start, end) = getRemandThatCanBeCombined(workingAdjustments)!!
+      val combinedAdjustment = start.copy(
+        toDate = end.toDate,
       )
+      workingAdjustments.remove(start)
+      workingAdjustments.remove(end)
+      workingAdjustments.add(combinedAdjustment)
     }
+    return workingAdjustments.toList()
+  }
+
+  private fun getRemandThatCanBeCombined(adjustments: List<AdjustmentDto>): Pair<AdjustmentDto, AdjustmentDto>? {
+    adjustments.forEach { adjustment ->
+      adjustments.forEach {
+        val sameCharges = adjustment.remand!!.chargeId.toSet() == it.remand!!.chargeId.toSet()
+        val datesMatch = adjustment.toDate!!.plusDays(1) == it.fromDate && adjustment.fromDate != it.fromDate
+        if (sameCharges && datesMatch) {
+          return adjustment to it
+        }
+      }
+    }
+    return null
   }
 
   private fun toAdjustmentDto(remandCalculation: RemandCalculation, calculationData: CalculationData, remand: Remand): AdjustmentDto {
