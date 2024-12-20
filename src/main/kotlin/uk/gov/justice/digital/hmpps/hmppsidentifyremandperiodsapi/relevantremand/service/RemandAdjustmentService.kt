@@ -55,7 +55,7 @@ class RemandAdjustmentService {
   private fun toAdjustmentDto(remandCalculation: RemandCalculation, calculationData: CalculationData, remand: Remand): AdjustmentDto {
     val sentenceDate = remandCalculation.charges[remand.chargeId]!!.sentenceDate!!
     val endOfSentencePeriod = findEndOfSentencePeriod(sentenceDate, calculationData)
-    val periodOfConcurrentSentences = DatePeriod(sentenceDate, endOfSentencePeriod)
+    val periodOfConcurrentSentences = DatePeriod(sentenceDate, endOfSentencePeriod ?: LocalDate.MAX)
 
     val charges = calculationData.chargeRemand.filter {
       val itSentenceDate = remandCalculation.charges[it.onlyChargeId()]!!.sentenceDate
@@ -73,7 +73,7 @@ class RemandAdjustmentService {
     )
   }
 
-  private fun findEndOfSentencePeriod(sentenceDate: LocalDate, calculationData: CalculationData): LocalDate {
+  private fun findEndOfSentencePeriod(sentenceDate: LocalDate, calculationData: CalculationData): LocalDate? {
     val intersectingSentences = calculationData.sentenceRemandResult!!.intersectingSentences
     if (intersectingSentences.any { it.from == sentenceDate }) {
       var currentEnd = sentenceDate
@@ -82,6 +82,6 @@ class RemandAdjustmentService {
       }
       return currentEnd
     }
-    return sentenceDate
+    return null
   }
 }
