@@ -1,0 +1,496 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "chargesAndEvents": [
+      {
+        "charge": {
+          "chargeId": 6320233,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "bookingId": 1,
+          "offenceDate": "2020-02-19",
+          "bookNumber": "1",
+          "sentenceSequence": 1,
+          "sentenceDate": "2021-05-26",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2021-05-26",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6272654,
+          "offence": {
+            "code": "RT88026",
+            "statute": "RT88",
+            "description": "Drive a motor vehicle dangerously"
+          },
+          "bookingId": 1,
+          "offenceDate": "2021-03-12",
+          "bookNumber": "1",
+          "sentenceSequence": 2,
+          "sentenceDate": "2021-05-26",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2021-05-26",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6272655,
+          "offence": {
+            "code": "RT88220",
+            "statute": "RT88",
+            "description": "Driver of a vehicle involved in a road accident fail to report that accident"
+          },
+          "bookingId": 1,
+          "offenceDate": "2021-03-12",
+          "bookNumber": "1",
+          "resultDescription": "No Separate Penalty",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2021-05-26",
+            "type": "STOP",
+            "description": "No Separate Penalty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6272656,
+          "offence": {
+            "code": "RT88319",
+            "statute": "RT88",
+            "description": "Cause use of motor vehicle with no insurance"
+          },
+          "bookingId": 1,
+          "offenceDate": "2021-03-12",
+          "bookNumber": "1",
+          "resultDescription": "No Separate Penalty",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2021-05-26",
+            "type": "STOP",
+            "description": "No Separate Penalty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6272660,
+          "offence": {
+            "code": "VE94014",
+            "statute": "VE94",
+            "description": "Use a vehicle without a valid vehicle licence"
+          },
+          "bookingId": 1,
+          "offenceDate": "2021-03-12",
+          "bookNumber": "1",
+          "resultDescription": "No Separate Penalty",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2021-05-26",
+            "type": "STOP",
+            "description": "No Separate Penalty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6977770,
+          "offence": {
+            "code": "RT88334",
+            "statute": "RT88",
+            "description": "Drive a motor vehicle otherwise than in accordance with a licence - endorsable offence"
+          },
+          "bookingId": 2,
+          "offenceDate": "2021-07-30",
+          "bookNumber": "2",
+          "sentenceSequence": 17,
+          "sentenceDate": "2023-02-28",
+          "resultDescription": "Fine or YOI",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-02-28",
+            "type": "STOP",
+            "description": "Fine or YOI",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6877998,
+          "offence": {
+            "code": "MD71131",
+            "statute": "MD71",
+            "description": "Supply a controlled drug of Class A - Heroin"
+          },
+          "bookingId": 2,
+          "offenceDate": "2022-03-31",
+          "bookNumber": "2",
+          "sentenceSequence": 3,
+          "sentenceDate": "2022-12-19",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-12-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2022-12-02",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6878001,
+          "offence": {
+            "code": "MD71134",
+            "statute": "MD71",
+            "description": "Supply a controlled drug of Class A - Crack Cocaine"
+          },
+          "bookingId": 2,
+          "offenceDate": "2022-03-31",
+          "bookNumber": "2",
+          "sentenceSequence": 3,
+          "sentenceDate": "2022-12-19",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-12-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2022-12-02",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6878611,
+          "offence": {
+            "code": "MD71210",
+            "statute": "MD71",
+            "description": "Possess a controlled drug of Class A - Cocaine"
+          },
+          "bookingId": 2,
+          "offenceDate": "2021-05-21",
+          "bookNumber": "2",
+          "sentenceSequence": 1,
+          "sentenceDate": "2022-12-19",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-12-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2022-11-16",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-12-02",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6878612,
+          "offence": {
+            "code": "MD71231",
+            "statute": "MD71",
+            "description": "Possess with intent to supply a controlled drug of Class A - Heroin"
+          },
+          "bookingId": 2,
+          "offenceDate": "2021-05-21",
+          "bookNumber": "2",
+          "sentenceSequence": 1,
+          "sentenceDate": "2022-12-19",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-12-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2022-11-16",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-12-02",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6878613,
+          "offence": {
+            "code": "PC02021",
+            "statute": "PC02",
+            "description": "Acquire / use / possess criminal property"
+          },
+          "bookingId": 2,
+          "offenceDate": "2021-05-21",
+          "bookNumber": "2",
+          "sentenceSequence": 2,
+          "sentenceDate": "2022-12-19",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-12-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2022-11-16",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-12-02",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6837393,
+          "offence": {
+            "code": "MD71230",
+            "statute": "MD71",
+            "description": "Possess with intent to supply a controlled drug of Class A - Cocaine"
+          },
+          "bookingId": 2,
+          "offenceDate": "2022-11-08",
+          "bookNumber": "2",
+          "sentenceSequence": 10,
+          "sentenceDate": "2022-12-19",
+          "resultDescription": "Guilty",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2022-11-16",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-11-10",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-12-02",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2022-12-19",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7464038,
+          "offence": {
+            "code": "MD71130C",
+            "statute": "MD71",
+            "description": "Conspire to supply a class A controlled drug - cocaine"
+          },
+          "bookingId": 2,
+          "offenceDate": "2022-08-01",
+          "bookNumber": "2",
+          "offenceEndDate": "2024-02-01",
+          "resultDescription": "Guilty",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-04-25",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-05-13",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-09-23",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-10-14",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-10-15",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7464039,
+          "offence": {
+            "code": "MD71131C",
+            "statute": "MD71",
+            "description": "Conspire to supply a class A controlled drug - heroin"
+          },
+          "bookingId": 2,
+          "offenceDate": "2022-08-01",
+          "bookNumber": "2",
+          "offenceEndDate": "2024-02-01",
+          "resultDescription": "Guilty",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-04-25",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-05-13",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-09-23",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-10-14",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2024-10-15",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          }
+        ]
+      }
+    ],
+    "imprisonmentStatuses": [
+      {
+        "status": "SENTENCED",
+        "date": "2021-05-27"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2022-11-10"
+      },
+      {
+        "status": "SENTENCED",
+        "date": "2022-12-20"
+      }
+    ],
+    "chargeIdsWithActiveSentence": [
+      6878611,
+      6878612,
+      6878613,
+      6877998,
+      6878001,
+      6837393
+    ]
+  },
+  "calculations": [
+    {
+      "calculateAt": "2021-05-26",
+      "release": "2021-07-28",
+      "service": "HISTORIC"
+    }
+  ],
+  "options": {}
+}

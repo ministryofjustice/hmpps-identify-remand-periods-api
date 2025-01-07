@@ -1,0 +1,88 @@
+{
+  "adjustments": [
+    {
+      "bookingId": 2,
+      "sentenceSequence": 1,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "fromDate": "2022-11-16",
+      "toDate": "2022-12-18",
+      "remand": {
+        "chargeId": [
+          6877998,
+          6878001,
+          6878611,
+          6878612,
+          6878613
+        ]
+      },
+      "status": "ACTIVE"
+    }
+  ],
+  "chargeRemand": [
+    {
+      "from": "2022-11-16",
+      "to": "2022-12-18",
+      "fromEvent": {
+        "date": "2022-11-16",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2022-12-19",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        6878611,
+        6878612,
+        6878613
+      ],
+      "status": "APPLICABLE",
+      "days": 33
+    },
+    {
+      "from": "2022-12-02",
+      "to": "2022-12-18",
+      "fromEvent": {
+        "date": "2022-12-02",
+        "description": "Guilty"
+      },
+      "toEvent": {
+        "date": "2022-12-19",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        6877998,
+        6878001
+      ],
+      "status": "APPLICABLE",
+      "days": 17
+    }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2021-05-26",
+      "to": "2021-07-28",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2021-05-26",
+        "bookingId": 1
+      },
+      "chargeId": 6320233,
+      "service": "HISTORIC",
+      "days": 64
+    }
+  ],
+  "issuesWithLegacyData": [
+    {
+      "type": "MISSING_STOP_EVENT",
+      "message": "The offence 'Possess with intent to supply a controlled drug of Class A - Cocaine' within booking 2 has no court event to stop a remand period starting on 10 Nov 2022",
+      "offence": {
+        "code": "MD71230",
+        "statute": "MD71",
+        "description": "Possess with intent to supply a controlled drug of Class A - Cocaine"
+      },
+      "bookingId": 2,
+      "bookNumber": "2"
+    }
+  ]
+}

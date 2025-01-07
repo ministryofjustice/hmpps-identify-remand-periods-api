@@ -9,6 +9,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.CONTINUE
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.START
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.STOP
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandPeriodWithNoStop
 import java.time.LocalDate
 
 @Service
@@ -16,7 +17,7 @@ class RemandClockService {
 
   fun remandClock(calculationData: CalculationData): RemandClockResult {
     val remand = mutableListOf<ChargeRemand>()
-    val unclosedRemandDates = mutableListOf<LocalDate>()
+    val unclosedRemandDates = mutableListOf<RemandPeriodWithNoStop>()
     calculationData.chargeAndEvents.forEach { chargeAndEvent ->
       if (hasAnyRemandEvent(chargeAndEvent.dates)) {
         var from: CourtDate? = null
@@ -30,7 +31,7 @@ class RemandClockService {
           }
         }
         if (from != null) {
-          unclosedRemandDates.add(from!!.date)
+          unclosedRemandDates.add(RemandPeriodWithNoStop(chargeAndEvent.charge, from!!.date))
         }
       }
     }
@@ -48,6 +49,6 @@ class RemandClockService {
 
 data class RemandClockResult(
   val chargeRemand: List<ChargeRemand>,
-  val unclosedRemandDates: List<LocalDate>,
+  val unclosedRemandDates: List<RemandPeriodWithNoStop>,
 
 )
