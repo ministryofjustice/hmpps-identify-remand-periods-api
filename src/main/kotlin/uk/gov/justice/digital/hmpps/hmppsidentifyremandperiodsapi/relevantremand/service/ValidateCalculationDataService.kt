@@ -20,6 +20,21 @@ class ValidateCalculationDataService {
     validateRecallEventForEachRecallSentence(calculationData)
     validateRecallEventNotOnSentenceDate(calculationData)
     validateImprisonmentStatuses(calculationData)
+    validateUnclosedRemandDatesWithSentence(calculationData)
+  }
+
+  private fun validateUnclosedRemandDatesWithSentence(calculationData: CalculationData) {
+    calculationData.unclosedRemandDates
+      .filter { it.charge.sentenceDate != null }
+      .forEach {
+        calculationData.issuesWithLegacyData.add(
+          ChargeLegacyDataProblem(
+            LegacyDataProblemType.MISSING_STOP_EVENT,
+            "The offence '${it.charge.offence.description}' within booking ${it.charge.bookNumber} has no court event to stop a remand period starting on ${it.start.format(DateTimeFormatter.ofPattern("d MMM yyyy"))}",
+            it.charge,
+          ),
+        )
+      }
   }
 
   private fun validateImprisonmentStatuses(calculationData: CalculationData) {
@@ -41,7 +56,7 @@ class ValidateCalculationDataService {
   private fun validateRemandedImprisonmentStatus(status: ImprisonmentStatus, calculationData: CalculationData) {
     val anyMatchingRemandPeriod = calculationData.chargeRemand.any { it.overlapsStartAndEndInclusive(status.date) }
     val anyMatchingCourtEvent = calculationData.chargeAndEvents.flatMap { it.dates }.any { it.date == status.date }
-    val anyOpenRemand = calculationData.unclosedRemandDates.any { it.isBeforeOrEqualTo(status.date) }
+    val anyOpenRemand = calculationData.unclosedRemandDates.any { it.start.isBeforeOrEqualTo(status.date) }
     if (!anyMatchingRemandPeriod && !anyMatchingCourtEvent && !anyOpenRemand) {
       calculationData.issuesWithLegacyData.add(
         GenericLegacyDataProblem(
