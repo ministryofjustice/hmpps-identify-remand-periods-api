@@ -1,7 +1,6 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.service
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import io.hypersistence.utils.hibernate.type.json.internal.JacksonUtil
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentStatus
@@ -56,7 +55,7 @@ class IdentifyRemandDecisionService(
         days = days,
         decisionByUsername = getCurrentAuthentication().principal,
         decisionByPrisonId = prisonerDetails.prisonId,
-        options = JacksonUtil.toJsonNode(objectMapper.writeValueAsString(options)),
+        options = objectMapper.valueToTree(options),
       ),
     )
     return mapToDto(result)
