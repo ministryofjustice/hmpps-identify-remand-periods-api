@@ -1,6 +1,5 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.service
 
-import com.fasterxml.jackson.databind.ObjectMapper
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentStatus
@@ -19,7 +18,6 @@ class IdentifyRemandDecisionService(
   val remandCalculationService: RemandCalculationService,
   val identifyRemandDecisionRepository: IdentifyRemandDecisionRepository,
   val adjustmentsService: AdjustmentsService,
-  val objectMapper: ObjectMapper,
 ) {
 
   fun saveDecision(person: String, decision: IdentifyRemandDecisionDto): IdentifyRemandDecisionDto {
@@ -55,7 +53,7 @@ class IdentifyRemandDecisionService(
         days = days,
         decisionByUsername = getCurrentAuthentication().principal,
         decisionByPrisonId = prisonerDetails.prisonId,
-        options = objectMapper.valueToTree(options),
+        options = options,
       ),
     )
     return mapToDto(result)
@@ -71,7 +69,7 @@ class IdentifyRemandDecisionService(
 
   private fun mapToDto(decision: IdentifyRemandDecision): IdentifyRemandDecisionDto {
     val prisonDescription = decision.decisionByPrisonId?.let { prisonService.getPrison(decision.decisionByPrisonId).description }
-    val options = if (decision.options == null) RemandCalculationRequestOptions() else objectMapper.convertValue(decision.options, RemandCalculationRequestOptions::class.java)
+    val options = decision.options ?: RemandCalculationRequestOptions()
     return IdentifyRemandDecisionDto(
       accepted = decision.accepted,
       rejectComment = decision.rejectComment,
