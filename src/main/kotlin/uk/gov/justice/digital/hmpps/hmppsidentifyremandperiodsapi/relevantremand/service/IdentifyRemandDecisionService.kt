@@ -1,5 +1,7 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.service
 
+import com.fasterxml.jackson.databind.ObjectMapper
+import io.hypersistence.utils.hibernate.type.json.internal.JacksonUtil
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentStatus
@@ -18,15 +20,23 @@ class IdentifyRemandDecisionService(
   val remandCalculationService: RemandCalculationService,
   val identifyRemandDecisionRepository: IdentifyRemandDecisionRepository,
   val adjustmentsService: AdjustmentsService,
+  val objectMapper: ObjectMapper,
 ) {
 
   fun saveDecision(person: String, decision: IdentifyRemandDecisionDto): IdentifyRemandDecisionDto {
     val courtDateResults = prisonService.getCourtDateResults(person)
     val prisonerDetails = prisonService.getOffenderDetail(person)
     val sentencesAndOffences = prisonService.getSentencesAndOffences(prisonerDetails.bookingId.toLong(), true)
+
+    val options = if (decision.accepted) {
+      decision.options ?: RemandCalculationRequestOptions()
+    } else {
+      RemandCalculationRequestOptions()
+    }
+
     val calculation = remandCalculationService.calculate(
       transform(courtDateResults, prisonerDetails, sentencesAndOffences, emptyList()),
-      decision.options ?: RemandCalculationRequestOptions(),
+      options,
     )
     val activeAdjustments = calculation.adjustments.filter { it.status == AdjustmentStatus.ACTIVE }
     val days = activeAdjustments.map { it.daysBetween() }.reduceOrNull { acc, it -> acc + it } ?: 0
@@ -46,6 +56,7 @@ class IdentifyRemandDecisionService(
         days = days,
         decisionByUsername = getCurrentAuthentication().principal,
         decisionByPrisonId = prisonerDetails.prisonId,
+        options = JacksonUtil.toJsonNode(objectMapper.writeValueAsString(options)),
       ),
     )
     return mapToDto(result)
@@ -60,7 +71,8 @@ class IdentifyRemandDecisionService(
   }
 
   private fun mapToDto(decision: IdentifyRemandDecision): IdentifyRemandDecisionDto {
-    val prisonDescription = decision.decisionByPrisonId?.let { prisonService.getPrison(decision.decisionByPrisonId!!).description }
+    val prisonDescription = decision.decisionByPrisonId?.let { prisonService.getPrison(decision.decisionByPrisonId).description }
+    val options = if (decision.options == null) RemandCalculationRequestOptions() else objectMapper.convertValue(decision.options, RemandCalculationRequestOptions::class.java)
     return IdentifyRemandDecisionDto(
       accepted = decision.accepted,
       rejectComment = decision.rejectComment,
@@ -69,6 +81,7 @@ class IdentifyRemandDecisionService(
       decisionBy = decision.decisionByUsername,
       decisionByPrisonId = decision.decisionByPrisonId,
       decisionByPrisonDescription = prisonDescription,
+      options = options,
     )
   }
 

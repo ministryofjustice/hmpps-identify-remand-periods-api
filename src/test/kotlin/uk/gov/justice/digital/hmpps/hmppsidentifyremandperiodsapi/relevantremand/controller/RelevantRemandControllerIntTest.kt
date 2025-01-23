@@ -16,6 +16,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.IdentifyRemandDecisionDto
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblemType
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Offence
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandApplicableUserSelection
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculationRequestOptions
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandResult
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.repository.IdentifyRemandDecisionRepository
@@ -197,6 +198,9 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
 
   @Test
   fun `Save reject decision`() {
+    val options = RemandCalculationRequestOptions(
+      userSelections = listOf(RemandApplicableUserSelection(listOf(1L, 2L, 3L), 4L)),
+    )
     webTestClient.post()
       .uri("/relevant-remand/${PrisonApiExtension.IMPRISONED_PRISONER}/decision")
       .accept(MediaType.APPLICATION_JSON)
@@ -205,6 +209,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
         IdentifyRemandDecisionDto(
           accepted = false,
           rejectComment = "This is not correct",
+          options = options,
         ),
       )
       .headers(setAuthorisationRemandToolUser())
@@ -227,10 +232,14 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
       .returnResult(IdentifyRemandDecisionDto::class.java).responseBody.blockFirst()!!
 
     assertThat(getResult.decisionByPrisonDescription).isEqualTo("Birmingham Prison")
+    assertThat(getResult.options).isEqualTo(RemandCalculationRequestOptions())
   }
 
   @Test
   fun `Save accept decision`() {
+    val options = RemandCalculationRequestOptions(
+      userSelections = listOf(RemandApplicableUserSelection(listOf(9999L), 9998L)),
+    )
     webTestClient.post()
       .uri("/relevant-remand/${PrisonApiExtension.IMPRISONED_PRISONER}/decision")
       .accept(MediaType.APPLICATION_JSON)
@@ -239,6 +248,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
         IdentifyRemandDecisionDto(
           accepted = true,
           rejectComment = null,
+          options = options,
         ),
       )
       .headers(setAuthorisationRemandToolUser())
@@ -253,5 +263,15 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
     assertThat(result.days).isEqualTo(61)
 
     AdjustmentsApiExtension.adjustmentsApi.verify(WireMock.postRequestedFor(WireMock.urlEqualTo("/adjustments-api/adjustments")))
+
+    val getResult = webTestClient.get()
+      .uri("/relevant-remand/${PrisonApiExtension.IMPRISONED_PRISONER}/decision")
+      .accept(MediaType.APPLICATION_JSON)
+      .headers(setAuthorisationRemandToolUser())
+      .exchange()
+      .expectStatus().isOk
+      .returnResult(IdentifyRemandDecisionDto::class.java).responseBody.blockFirst()!!
+
+    assertThat(getResult.options).isEqualTo(options)
   }
 }
