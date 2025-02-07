@@ -2,6 +2,7 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantreman
 
 import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentStatus
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.service.AdjustmentsService
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeRemandStatus
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculationRequestOptions
@@ -12,6 +13,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 class ThingsToDoService(
   private val identifyRemandDecisionService: IdentifyRemandDecisionService,
   private val remandCalculationService: RemandCalculationService,
+  private val adjustmentsService: AdjustmentsService,
 ) {
 
   fun getToDoList(remandCalculation: RemandCalculation): ThingsToDo {
@@ -40,7 +42,17 @@ class ThingsToDoService(
       }
     } else {
       if (days == decision.days) {
-        ThingsToDo(prisonerId)
+        if (decision.accepted) {
+          val adjustments = adjustmentsService.getRemandAdjustments(prisonerId)
+          val persistedDays = adjustments.map { it.days ?: it.daysBetween() }.reduceOrNull { acc, it -> acc + it } ?: 0
+          if (persistedDays != days) {
+            ThingsToDo(prisonerId, listOf(ToDoType.IDENTIFY_REMAND_REVIEW_UPDATE), days)
+          } else {
+            ThingsToDo(prisonerId)
+          }
+        } else {
+          ThingsToDo(prisonerId)
+        }
       } else {
         ThingsToDo(prisonerId, listOf(ToDoType.IDENTIFY_REMAND_REVIEW_UPDATE), days)
       }
