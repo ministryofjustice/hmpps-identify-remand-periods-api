@@ -8,6 +8,7 @@ import org.mockito.kotlin.whenever
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentDto
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentStatus
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.RemandDto
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.service.AdjustmentsService
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeRemand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeRemandStatus
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtAppearance
@@ -24,8 +25,9 @@ class ThingsToDoServiceTest {
 
   private val identifyRemandDecisionService: IdentifyRemandDecisionService = mock()
   private val remandCalculationService: RemandCalculationService = mock()
+  private val adjustmentService: AdjustmentsService = mock()
 
-  private val service = ThingsToDoService(identifyRemandDecisionService, remandCalculationService)
+  private val service = ThingsToDoService(identifyRemandDecisionService, remandCalculationService, adjustmentService)
 
   private val remandCalculation = RemandCalculation(
     prisonerId = PRISONER_ID,
@@ -98,18 +100,31 @@ class ThingsToDoServiceTest {
     }
 
     @Test
-    fun `getToDoList accepted decision matching days `() {
+    fun `getToDoList accepted decision matching days but not matching adjustments`() {
       whenever(identifyRemandDecisionService.getDecision(PRISONER_ID)).thenReturn(acceptedDecision)
       whenever(remandCalculationService.calculate(remandCalculation, nonDefaultOptions)).thenReturn(
         remandResultWithMatchingDays,
       )
+      whenever(adjustmentService.getRemandAdjustments(PRISONER_ID)).thenReturn(nonMatchingAdjustments)
+      val result = service.getToDoList(remandCalculation)
+
+      assertThat(result).isEqualTo(ThingsToDo(PRISONER_ID, listOf(ToDoType.IDENTIFY_REMAND_REVIEW_UPDATE), 32))
+    }
+
+    @Test
+    fun `getToDoList accepted decision matching days and matching adjustments`() {
+      whenever(identifyRemandDecisionService.getDecision(PRISONER_ID)).thenReturn(acceptedDecision)
+      whenever(remandCalculationService.calculate(remandCalculation, nonDefaultOptions)).thenReturn(
+        remandResultWithMatchingDays,
+      )
+      whenever(adjustmentService.getRemandAdjustments(PRISONER_ID)).thenReturn(matchingAdjustments)
       val result = service.getToDoList(remandCalculation)
 
       assertThat(result).isEqualTo(ThingsToDo(PRISONER_ID))
     }
 
     @Test
-    fun `getToDoList accepted decision non matching days `() {
+    fun `getToDoList accepted decision non matching days`() {
       whenever(identifyRemandDecisionService.getDecision(PRISONER_ID)).thenReturn(acceptedDecision)
       whenever(remandCalculationService.calculate(remandCalculation, nonDefaultOptions)).thenReturn(
         remandResultWithNonMatchingDays,
@@ -122,45 +137,47 @@ class ThingsToDoServiceTest {
 
   companion object {
     private const val PRISONER_ID = "ABC123"
+    private val nonMatchingAdjustments = listOf(
+      AdjustmentDto(
+        id = null,
+        bookingId = 1L,
+        sentenceSequence = 1,
+        person = PRISONER_ID,
+        fromDate = LocalDate.of(2024, 1, 1),
+        toDate = LocalDate.of(2024, 6, 1),
+        remand = RemandDto(
+          listOf(1L),
+        ),
+        status = AdjustmentStatus.ACTIVE,
+      ),
+    )
+    private val matchingAdjustments = listOf(
+      AdjustmentDto(
+        id = null,
+        bookingId = 1L,
+        sentenceSequence = 1,
+        person = PRISONER_ID,
+        fromDate = LocalDate.of(2024, 1, 1),
+        toDate = LocalDate.of(2024, 2, 1),
+        remand = RemandDto(
+          listOf(1L),
+        ),
+        status = AdjustmentStatus.ACTIVE,
+      ),
+    )
     private val remandResultWithMatchingDays = RemandResult(
       issuesWithLegacyData = emptyList(),
       charges = emptyMap(),
       intersectingSentences = emptyList(),
       chargeRemand = emptyList(),
-      adjustments = listOf(
-        AdjustmentDto(
-          id = null,
-          bookingId = 1L,
-          sentenceSequence = 1,
-          person = PRISONER_ID,
-          fromDate = LocalDate.of(2024, 1, 1),
-          toDate = LocalDate.of(2024, 2, 1),
-          remand = RemandDto(
-            listOf(1L),
-          ),
-          status = AdjustmentStatus.ACTIVE,
-        ),
-      ),
+      adjustments = matchingAdjustments,
     )
     private val remandResultWithNonMatchingDays = RemandResult(
       issuesWithLegacyData = emptyList(),
       charges = emptyMap(),
       intersectingSentences = emptyList(),
       chargeRemand = emptyList(),
-      adjustments = listOf(
-        AdjustmentDto(
-          id = null,
-          bookingId = 1L,
-          sentenceSequence = 1,
-          person = PRISONER_ID,
-          fromDate = LocalDate.of(2024, 1, 1),
-          toDate = LocalDate.of(2024, 6, 1),
-          remand = RemandDto(
-            listOf(1L),
-          ),
-          status = AdjustmentStatus.ACTIVE,
-        ),
-      ),
+      adjustments = nonMatchingAdjustments,
     )
     private val remandResultNoDaysUpgradeDowngrade = RemandResult(
       issuesWithLegacyData = emptyList(),

@@ -28,6 +28,7 @@ class AdjustmentsServiceTest {
       person = person,
       remand = RemandDto(listOf(1, 2, 3)),
       status = AdjustmentStatus.ACTIVE,
+      source = "DPS",
     )
     val adjustmentExistingNotMatching = AdjustmentDto(
       id = UUID.randomUUID(),
@@ -38,6 +39,7 @@ class AdjustmentsServiceTest {
       person = person,
       remand = RemandDto(listOf(1, 2, 3)),
       status = AdjustmentStatus.ACTIVE,
+      source = "DPS",
     )
     val newAdjustment = AdjustmentDto(
       id = null,
@@ -48,6 +50,7 @@ class AdjustmentsServiceTest {
       person = person,
       remand = RemandDto(listOf(1, 2, 3)),
       status = AdjustmentStatus.ACTIVE,
+      source = "DPS",
     )
 
     whenever(apiClient.getAdjustments(person)).thenReturn(listOf(adjustmentExistingMatches, adjustmentExistingNotMatching, adjustmentExistingMatches.copy(adjustmentType = "NOT_REMAND")))

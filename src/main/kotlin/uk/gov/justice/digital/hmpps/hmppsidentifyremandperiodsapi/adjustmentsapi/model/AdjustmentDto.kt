@@ -14,6 +14,8 @@ data class AdjustmentDto(
   val toDate: LocalDate?,
   val remand: RemandDto?,
   val status: AdjustmentStatus,
+  val days: Int? = null,
+  val source: String? = null,
 ) {
   fun daysBetween(): Int {
     return (ChronoUnit.DAYS.between(fromDate, toDate) + 1).toInt()
