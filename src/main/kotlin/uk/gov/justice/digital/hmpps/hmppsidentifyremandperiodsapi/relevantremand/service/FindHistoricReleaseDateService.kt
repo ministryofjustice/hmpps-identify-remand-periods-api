@@ -11,7 +11,6 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.util.isAfterOrEqualTo
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.util.isBeforeOrEqualTo
 import java.time.LocalDate
-import java.time.LocalDateTime
 
 @Service
 class FindHistoricReleaseDateService(
@@ -30,7 +29,7 @@ class FindHistoricReleaseDateService(
       throw UnsupportedCalculationException("No calculations found for $prisonerId after sentence or recall date $calculatedAt")
     }
     val calculationIds = mutableListOf<Long>()
-    var releaseDate = getReleaseDateForCalcId(calculation.offenderSentCalculationId, calculation.calculationDate, allCalculations, calculationIds, calculatedAt)
+    var releaseDate = getReleaseDateForCalcId(calculation, allCalculations, calculationIds, calculatedAt)
     if (releaseDate == calculation.calculationDate.toLocalDate()) {
       return CalculationDetail(releaseDate, calculationIds)
     }
@@ -38,8 +37,7 @@ class FindHistoricReleaseDateService(
     while (nextCalculation != null && nextCalculation.calculationDate.toLocalDate().isBeforeOrEqualTo(releaseDate)) {
       calculation = nextCalculation
       releaseDate = getReleaseDateForCalcId(
-        calculation.offenderSentCalculationId,
-        calculation.calculationDate,
+        calculation,
         allCalculations,
         calculationIds,
         calculatedAt,
@@ -48,7 +46,7 @@ class FindHistoricReleaseDateService(
       if (releaseDate.isBeforeOrEqualTo(calculation.calculationDate.toLocalDate())) {
         break
       }
-      nextCalculation = historicReleaseDates.firstOrNull { it.calculationDate.isAfter(calculation!!.calculationDate) }
+      nextCalculation = historicReleaseDates.firstOrNull { it.calculationDate.isAfter(calculation.calculationDate) }
     }
     return CalculationDetail(releaseDate, calculationIds.toList())
   }
@@ -65,14 +63,13 @@ class FindHistoricReleaseDateService(
   }
 
   private fun getReleaseDateForCalcId(
-    offenderSentCalcId: Long,
-    calculationDate: LocalDateTime,
+    calculation: SentenceCalculationSummary,
     allCalculations: List<SentenceCalculationSummary>,
     calculationIds: MutableList<Long>,
     calculatedAt: LocalDate,
   ): LocalDate {
-    val calcDates = prisonApiClient.getNOMISOffenderKeyDates(offenderSentCalcId)
-    calculationIds.add(offenderSentCalcId)
+    val calcDates = prisonApiClient.getNOMISOffenderKeyDates(calculation.offenderSentCalculationId)
+    calculationIds.add(calculation.offenderSentCalculationId)
     val releaseDates = listOfNotNull(
       calcDates.conditionalReleaseDate,
       calcDates.automaticReleaseDate,
@@ -89,11 +86,10 @@ class FindHistoricReleaseDateService(
     }
 
     // Release Date is blank. Seems to be a NOMIS bug, look at previous calculations for a non blank
-    val latestPreviousCalculation = allCalculations.filter { it.calculationDate.isBefore(calculationDate) }
+    val latestPreviousCalculation = allCalculations.filter { it.calculationDate.isBefore(calculation.calculationDate) }
     if (latestPreviousCalculation.isNotEmpty()) {
       return getReleaseDateForCalcId(
-        latestPreviousCalculation.last().offenderSentCalculationId,
-        calculationDate,
+        latestPreviousCalculation.last(),
         latestPreviousCalculation,
         calculationIds,
         calculatedAt,
