@@ -8,6 +8,7 @@ import org.mockito.kotlin.whenever
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentDto
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentStatus
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.RemandDto
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.UnusedDeductionsCalculationResultDto
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.service.AdjustmentsService
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeRemand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeRemandStatus
@@ -44,6 +45,9 @@ class ThingsToDoServiceTest {
       whenever(remandCalculationService.calculate(remandCalculation, RemandCalculationRequestOptions())).thenReturn(
         remandResultWithMatchingDays,
       )
+      whenever(adjustmentService.getUnusedDeductionsCalculationResult(PRISONER_ID)).thenReturn(
+        unusedDeductionsCalculatedStatus,
+      )
 
       val result = service.getToDoList(remandCalculation)
 
@@ -56,10 +60,19 @@ class ThingsToDoServiceTest {
       whenever(remandCalculationService.calculate(remandCalculation, RemandCalculationRequestOptions())).thenReturn(
         remandResultNoDaysUpgradeDowngrade,
       )
+      whenever(adjustmentService.getUnusedDeductionsCalculationResult(PRISONER_ID)).thenReturn(
+        unusedDeductionsCalculatedStatus,
+      )
 
       val result = service.getToDoList(remandCalculation)
 
-      assertThat(result).isEqualTo(ThingsToDo(PRISONER_ID, listOf(ToDoType.IDENTIFY_REMAND_REVIEW_FIRST_TIME_UPGRADE_DOWNGRADE), 0))
+      assertThat(result).isEqualTo(
+        ThingsToDo(
+          PRISONER_ID,
+          listOf(ToDoType.IDENTIFY_REMAND_REVIEW_FIRST_TIME_UPGRADE_DOWNGRADE),
+          0,
+        ),
+      )
     }
 
     @Test
@@ -67,6 +80,9 @@ class ThingsToDoServiceTest {
       whenever(identifyRemandDecisionService.getDecision(PRISONER_ID)).thenReturn(null)
       whenever(remandCalculationService.calculate(remandCalculation, RemandCalculationRequestOptions())).thenReturn(
         remandResultEmpty,
+      )
+      whenever(adjustmentService.getUnusedDeductionsCalculationResult(PRISONER_ID)).thenReturn(
+        unusedDeductionsCalculatedStatus,
       )
 
       val result = service.getToDoList(remandCalculation)
@@ -83,6 +99,9 @@ class ThingsToDoServiceTest {
       whenever(remandCalculationService.calculate(remandCalculation, RemandCalculationRequestOptions())).thenReturn(
         remandResultWithMatchingDays,
       )
+      whenever(adjustmentService.getUnusedDeductionsCalculationResult(PRISONER_ID)).thenReturn(
+        unusedDeductionsCalculatedStatus,
+      )
       val result = service.getToDoList(remandCalculation)
 
       assertThat(result).isEqualTo(ThingsToDo(PRISONER_ID))
@@ -93,6 +112,9 @@ class ThingsToDoServiceTest {
       whenever(identifyRemandDecisionService.getDecision(PRISONER_ID)).thenReturn(rejectedDecision)
       whenever(remandCalculationService.calculate(remandCalculation, RemandCalculationRequestOptions())).thenReturn(
         remandResultWithNonMatchingDays,
+      )
+      whenever(adjustmentService.getUnusedDeductionsCalculationResult(PRISONER_ID)).thenReturn(
+        unusedDeductionsCalculatedStatus,
       )
       val result = service.getToDoList(remandCalculation)
 
@@ -106,6 +128,9 @@ class ThingsToDoServiceTest {
         remandResultWithMatchingDays,
       )
       whenever(adjustmentService.getRemandAdjustments(PRISONER_ID)).thenReturn(nonMatchingAdjustments)
+      whenever(adjustmentService.getUnusedDeductionsCalculationResult(PRISONER_ID)).thenReturn(
+        unusedDeductionsCalculatedStatus,
+      )
       val result = service.getToDoList(remandCalculation)
 
       assertThat(result).isEqualTo(ThingsToDo(PRISONER_ID, listOf(ToDoType.IDENTIFY_REMAND_REVIEW_UPDATE), 32))
@@ -118,6 +143,9 @@ class ThingsToDoServiceTest {
         remandResultWithMatchingDays,
       )
       whenever(adjustmentService.getRemandAdjustments(PRISONER_ID)).thenReturn(matchingAdjustments)
+      whenever(adjustmentService.getUnusedDeductionsCalculationResult(PRISONER_ID)).thenReturn(
+        unusedDeductionsCalculatedStatus,
+      )
       val result = service.getToDoList(remandCalculation)
 
       assertThat(result).isEqualTo(ThingsToDo(PRISONER_ID))
@@ -129,9 +157,26 @@ class ThingsToDoServiceTest {
       whenever(remandCalculationService.calculate(remandCalculation, nonDefaultOptions)).thenReturn(
         remandResultWithNonMatchingDays,
       )
+      whenever(adjustmentService.getUnusedDeductionsCalculationResult(PRISONER_ID)).thenReturn(
+        unusedDeductionsCalculatedStatus,
+      )
       val result = service.getToDoList(remandCalculation)
 
       assertThat(result).isEqualTo(ThingsToDo(PRISONER_ID, listOf(ToDoType.IDENTIFY_REMAND_REVIEW_UPDATE), 153))
+    }
+
+    @Test
+    fun `getToDoList if a validation result is returned then there are no thingsToDo`() {
+      whenever(identifyRemandDecisionService.getDecision(PRISONER_ID)).thenReturn(acceptedDecision)
+      whenever(remandCalculationService.calculate(remandCalculation, nonDefaultOptions)).thenReturn(
+        remandResultWithNonMatchingDays,
+      )
+      whenever(adjustmentService.getUnusedDeductionsCalculationResult(PRISONER_ID)).thenReturn(
+        unusedDeductionsValidationStatus,
+      )
+      val result = service.getToDoList(remandCalculation)
+
+      assertThat(result).isEqualTo(ThingsToDo(PRISONER_ID))
     }
   }
 
@@ -183,7 +228,16 @@ class ThingsToDoServiceTest {
       issuesWithLegacyData = emptyList(),
       charges = emptyMap(),
       intersectingSentences = emptyList(),
-      chargeRemand = listOf(ChargeRemand(from = LocalDate.of(2024, 1, 1), to = LocalDate.of(2024, 2, 1), status = ChargeRemandStatus.NOT_SENTENCED, chargeIds = listOf(1L), fromEvent = CourtAppearance(LocalDate.of(2024, 1, 1), "ASD"), toEvent = CourtAppearance(LocalDate.of(2024, 2, 1), "ASD"))),
+      chargeRemand = listOf(
+        ChargeRemand(
+          from = LocalDate.of(2024, 1, 1),
+          to = LocalDate.of(2024, 2, 1),
+          status = ChargeRemandStatus.NOT_SENTENCED,
+          chargeIds = listOf(1L),
+          fromEvent = CourtAppearance(LocalDate.of(2024, 1, 1), "ASD"),
+          toEvent = CourtAppearance(LocalDate.of(2024, 2, 1), "ASD"),
+        ),
+      ),
       adjustments = emptyList(),
     )
     private val remandResultEmpty = RemandResult(
@@ -207,6 +261,14 @@ class ThingsToDoServiceTest {
       accepted = true,
       rejectComment = null,
       days = 32,
+    )
+    private val unusedDeductionsCalculatedStatus = UnusedDeductionsCalculationResultDto(
+      status = "CALCULATED",
+      person = PRISONER_ID,
+    )
+    private val unusedDeductionsValidationStatus = UnusedDeductionsCalculationResultDto(
+      status = "VALIDATION",
+      person = PRISONER_ID,
     )
   }
 }

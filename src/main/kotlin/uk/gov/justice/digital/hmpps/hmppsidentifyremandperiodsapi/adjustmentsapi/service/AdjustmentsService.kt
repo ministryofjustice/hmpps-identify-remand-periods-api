@@ -2,6 +2,7 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsap
 
 import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentDto
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.UnusedDeductionsCalculationResultDto
 import java.util.UUID
 
 @Service
@@ -27,6 +28,10 @@ class AdjustmentsService(
     if (create.isNotEmpty()) {
       createRemand(create)
     }
+  }
+
+  fun getUnusedDeductionsCalculationResult(person: String): UnusedDeductionsCalculationResultDto {
+    return adjustmentsApiClient.getUnusedDeductionsCalculationResult(person)
   }
 
   private fun createRemand(remands: List<AdjustmentDto>) {
