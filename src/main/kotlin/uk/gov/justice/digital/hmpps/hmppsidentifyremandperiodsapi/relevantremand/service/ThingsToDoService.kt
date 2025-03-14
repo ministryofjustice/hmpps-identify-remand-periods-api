@@ -18,6 +18,13 @@ class ThingsToDoService(
 
   fun getToDoList(remandCalculation: RemandCalculation): ThingsToDo {
     val prisonerId = remandCalculation.prisonerId
+
+    val unusedDeductionsCalculationResultDto = adjustmentsService.getUnusedDeductionsCalculationResult(prisonerId)
+
+    if (unusedDeductionsCalculationResultDto.status == "VALIDATION") {
+      return ThingsToDo(prisonerId)
+    }
+
     val decision = identifyRemandDecisionService.getDecision(prisonerId)
 
     val options = if (decision != null && decision.accepted) {
