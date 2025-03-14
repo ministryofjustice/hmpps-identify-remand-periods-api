@@ -44,7 +44,7 @@ class AdjustmentsApiClient(@Qualifier("adjustmentsApiWebClient") private val web
   }
 
   fun getUnusedDeductionsCalculationResult(person: String): UnusedDeductionsCalculationResultDto {
-    log.info("Deleting adjustment")
+    log.info("Requesting unused deductions calculation result for $person")
     return webClient.get()
       .uri("/adjustments/person/$person/unused-deductions-result")
       .retrieve()
