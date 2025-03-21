@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
+import org.springframework.transaction.annotation.Transactional
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.TestUtil
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.config.ErrorResponse
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.integration.IntegrationTestBase
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.integration.wiremock.AdjustmentsApiExtension
@@ -202,7 +204,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
       userSelections = listOf(RemandApplicableUserSelection(listOf(1L, 2L, 3L), 4L)),
     )
     webTestClient.post()
-      .uri("/relevant-remand/${PrisonApiExtension.IMPRISONED_PRISONER}/decision")
+      .uri("/relevant-remand/${PrisonApiExtension.MULTIPLE_OFFENCES_PRISONER}/decision")
       .accept(MediaType.APPLICATION_JSON)
       .contentType(MediaType.APPLICATION_JSON)
       .bodyValue(
@@ -216,15 +218,15 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
       .exchange()
       .expectStatus().isCreated
 
-    val result = decisionRepository.findFirstByPersonOrderByDecisionAtDesc(PrisonApiExtension.IMPRISONED_PRISONER)
+    val result = decisionRepository.findFirstByPersonOrderByDecisionAtDesc(PrisonApiExtension.MULTIPLE_OFFENCES_PRISONER)
 
     assertThat(result!!.decisionByUsername).isEqualTo("test-client")
     assertThat(result.accepted).isFalse
     assertThat(result.rejectComment).isEqualTo("This is not correct")
-    assertThat(result.days).isEqualTo(61)
+    assertThat(result.days).isEqualTo(448)
 
     val getResult = webTestClient.get()
-      .uri("/relevant-remand/${PrisonApiExtension.IMPRISONED_PRISONER}/decision")
+      .uri("/relevant-remand/${PrisonApiExtension.MULTIPLE_OFFENCES_PRISONER}/decision")
       .accept(MediaType.APPLICATION_JSON)
       .headers(setAuthorisationRemandToolUser())
       .exchange()
@@ -236,12 +238,13 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
   }
 
   @Test
+  @Transactional(readOnly = true)
   fun `Save accept decision`() {
     val options = RemandCalculationRequestOptions(
-      userSelections = listOf(RemandApplicableUserSelection(listOf(9999L), 9998L)),
+      userSelections = listOf(RemandApplicableUserSelection(listOf(2), 3)),
     )
     webTestClient.post()
-      .uri("/relevant-remand/${PrisonApiExtension.IMPRISONED_PRISONER}/decision")
+      .uri("/relevant-remand/${PrisonApiExtension.MULTIPLE_OFFENCES_PRISONER}/decision")
       .accept(MediaType.APPLICATION_JSON)
       .contentType(MediaType.APPLICATION_JSON)
       .bodyValue(
@@ -255,17 +258,23 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
       .exchange()
       .expectStatus().isCreated
 
-    val result = decisionRepository.findFirstByPersonOrderByDecisionAtDesc(PrisonApiExtension.IMPRISONED_PRISONER)
+    val result = decisionRepository.findFirstByPersonOrderByDecisionAtDesc(PrisonApiExtension.MULTIPLE_OFFENCES_PRISONER)
 
     assertThat(result!!.decisionByUsername).isEqualTo("test-client")
     assertThat(result.rejectComment).isEqualTo(null)
     assertThat(result.accepted).isTrue
-    assertThat(result.days).isEqualTo(61)
+    assertThat(result.days).isEqualTo(448)
+
+    assertThat(TestUtil.objectMapper().convertValue(result.identifyRemandCalculation!!.options, RemandCalculationRequestOptions::class.java)).isEqualTo(options)
+    assertThat(result.identifyRemandCalculation!!.calculatedRemand.size).isEqualTo(3)
+    assertThat(result.identifyRemandCalculation!!.calculatedRemand[0].statuses).isEqualTo("APPLICABLE, REPLACED")
+    assertThat(result.identifyRemandCalculation!!.calculatedRemand[1].statuses).isEqualTo("APPLICABLE")
+    assertThat(result.identifyRemandCalculation!!.calculatedRemand[2].statuses).isEqualTo("APPLICABLE")
 
     AdjustmentsApiExtension.adjustmentsApi.verify(WireMock.postRequestedFor(WireMock.urlEqualTo("/adjustments-api/adjustments")))
 
     val getResult = webTestClient.get()
-      .uri("/relevant-remand/${PrisonApiExtension.IMPRISONED_PRISONER}/decision")
+      .uri("/relevant-remand/${PrisonApiExtension.MULTIPLE_OFFENCES_PRISONER}/decision")
       .accept(MediaType.APPLICATION_JSON)
       .headers(setAuthorisationRemandToolUser())
       .exchange()

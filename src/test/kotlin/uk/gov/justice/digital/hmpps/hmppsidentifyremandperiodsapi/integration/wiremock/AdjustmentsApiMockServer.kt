@@ -39,7 +39,7 @@ class AdjustmentsApiMockServer : WireMockServer(WIREMOCK_PORT) {
 
   fun stubGet() {
     stubFor(
-      get("/adjustments-api/adjustments?person=${PrisonApiExtension.IMPRISONED_PRISONER}")
+      get("/adjustments-api/adjustments?person=${PrisonApiExtension.MULTIPLE_OFFENCES_PRISONER}")
         .willReturn(
           aResponse()
             .withHeader("Content-Type", "application/json")
