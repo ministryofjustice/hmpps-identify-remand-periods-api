@@ -69,7 +69,7 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
               """
                 [
                   {
-                    "bookingId": 123,
+                    "bookingId": 1,
                     "sentenceSequence": 1,
                     "caseSequence": 9191,
                     "sentenceStatus": "A",
@@ -107,7 +107,7 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
               """
                 [
                   {
-                    "bookingId": 123,
+                    "bookingId": 2,
                     "sentenceSequence": 1,
                     "caseSequence": 9191,
                     "sentenceStatus": "A",
@@ -123,7 +123,7 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
                     }],
                     "offences": [
                       {
-                        "offenderChargeId": 9991,
+                        "offenderChargeId": 3,
                         "offenceStartDate": "2015-03-17",
                         "offenceCode": "GBH",
                         "offenceDescription": "Grievous bodily harm"
