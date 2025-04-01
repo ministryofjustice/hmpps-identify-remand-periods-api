@@ -12,14 +12,15 @@ class AdjustmentsService(
 
   fun saveRemand(person: String, identified: List<AdjustmentDto>) {
     val existingAdjustments = getRemandAdjustments(person)
+    val (existingDpsAdjustments, existingNomisAdjustments) = existingAdjustments.partition { it.source == "DPS" && it.remand != null }
     val create = identified.filter { new ->
-      existingAdjustments.none { existing -> remandSame(existing, new) }
+      existingDpsAdjustments.none { existing -> remandSame(existing, new) }
     }
-    val delete = existingAdjustments
-      .filter { existing -> existing.source == "DPS" && existing.remand != null } // Delete all NOMIS adjustments
+    val delete = existingDpsAdjustments
       .filter { existing ->
         identified.none { new -> remandSame(existing, new) }
-      }
+        // Delete all NOMIS adjustments±±
+      } + existingNomisAdjustments
 
     delete.forEach {
       deleteRemand(it.id!!)
