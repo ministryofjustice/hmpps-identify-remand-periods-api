@@ -228,4 +228,22 @@ class FindHistoricReleaseDateServiceTest {
     assertThat(release.releaseDate).isEqualTo(expectedReleaseDate)
     assertThat(release.calculationIds).isEqualTo(listOf(sentenceCalcId))
   }
+
+  @Test
+  fun `APD date is before PRRD`() {
+    val postRecallReleaseDate = sentenceDate.plusYears(2)
+    val expectedReleaseDate = sentenceDate.plusYears(1)
+    val calculateAt = sentenceDate
+    val sentenceCalcId = 1L
+    val actualCalculationTime = sentenceDate.atStartOfDay().plusDays(5)
+    val calculations = listOf(SentenceCalculationSummary(bookingId, sentenceCalcId, actualCalculationTime))
+    val calculation = OffenderKeyDates(prisonerId, actualCalculationTime, postRecallReleaseDate = postRecallReleaseDate, approvedParoleDate = expectedReleaseDate)
+    whenever(apiClient.getCalculationsForAPrisonerId(prisonerId)).thenReturn(calculations)
+    whenever(apiClient.getNOMISOffenderKeyDates(sentenceCalcId)).thenReturn(calculation)
+
+    val release = service.findReleaseDate(prisonerId, emptyList(), listOf(sentence), calculateAt, charges)
+
+    assertThat(release.releaseDate).isEqualTo(expectedReleaseDate)
+    assertThat(release.calculationIds).isEqualTo(listOf(sentenceCalcId))
+  }
 }
