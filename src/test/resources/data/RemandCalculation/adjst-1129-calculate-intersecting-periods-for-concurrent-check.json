@@ -1,0 +1,1070 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "chargesAndEvents": [
+      {
+        "charge": {
+          "chargeId": 3512921,
+          "offence": {
+            "code": "MD71131C",
+            "statute": "MD71",
+            "description": "Conspire to supply a class A controlled drug - heroin"
+          },
+          "bookingId": 1,
+          "offenceDate": "2015-11-07",
+          "bookNumber": "1",
+          "sentenceSequence": 15,
+          "sentenceDate": "2016-12-09",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2020-04-07",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3512923,
+          "offence": {
+            "code": "MD71130C",
+            "statute": "MD71",
+            "description": "Conspire to supply a class A controlled drug - cocaine"
+          },
+          "bookingId": 1,
+          "offenceDate": "2015-11-07",
+          "bookNumber": "1",
+          "sentenceSequence": 15,
+          "sentenceDate": "2016-12-09",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2020-04-07",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 3771635,
+          "offence": {
+            "code": "TH68073",
+            "statute": "TH68",
+            "description": "Handle stolen goods"
+          },
+          "bookingId": 1,
+          "offenceDate": "2015-11-07",
+          "bookNumber": "1",
+          "sentenceSequence": 15,
+          "sentenceDate": "2016-12-09",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2020-04-07",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6058215,
+          "offence": {
+            "code": "MD71131C",
+            "statute": "MD71",
+            "description": "Conspire to supply a class A controlled drug - heroin"
+          },
+          "bookingId": 2,
+          "offenceDate": "2015-11-07",
+          "bookNumber": "2",
+          "sentenceSequence": 1,
+          "sentenceDate": "2016-12-09",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2020-04-07",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2020-08-06",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6058216,
+          "offence": {
+            "code": "MD71130C",
+            "statute": "MD71",
+            "description": "Conspire to supply a class A controlled drug - cocaine"
+          },
+          "bookingId": 2,
+          "offenceDate": "2015-11-07",
+          "bookNumber": "2",
+          "sentenceSequence": 1,
+          "sentenceDate": "2016-12-09",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2020-04-07",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2020-08-06",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6058217,
+          "offence": {
+            "code": "TH68073",
+            "statute": "TH68",
+            "description": "Handle stolen goods"
+          },
+          "bookingId": 2,
+          "offenceDate": "2015-11-07",
+          "bookNumber": "2",
+          "sentenceSequence": 1,
+          "sentenceDate": "2016-12-09",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2020-04-07",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2020-08-06",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6056036,
+          "offence": {
+            "code": "MS15002",
+            "statute": "MS15",
+            "description": "Require person to perform forced or compulsory labour"
+          },
+          "bookingId": 2,
+          "offenceDate": "2020-01-15",
+          "bookNumber": "2",
+          "resultDescription": "Remand on Conditional Bail"
+        },
+        "dates": [
+          {
+            "date": "2020-08-06",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2020-09-07",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2020-11-03",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6056037,
+          "offence": {
+            "code": "MS15002",
+            "statute": "MS15",
+            "description": "Require person to perform forced or compulsory labour"
+          },
+          "bookingId": 2,
+          "offenceDate": "2020-01-15",
+          "bookNumber": "2",
+          "resultDescription": "Remand on Conditional Bail"
+        },
+        "dates": [
+          {
+            "date": "2020-08-06",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2020-09-07",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2020-11-03",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6056038,
+          "offence": {
+            "code": "MD71131C",
+            "statute": "MD71",
+            "description": "Conspire to supply a class A controlled drug - heroin"
+          },
+          "bookingId": 2,
+          "offenceDate": "2020-01-04",
+          "bookNumber": "2",
+          "offenceEndDate": "2020-01-15",
+          "resultDescription": "Remand on Conditional Bail"
+        },
+        "dates": [
+          {
+            "date": "2020-08-06",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2020-09-07",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2020-11-03",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6056039,
+          "offence": {
+            "code": "MD71130C",
+            "statute": "MD71",
+            "description": "Conspire to supply a class A controlled drug - cocaine"
+          },
+          "bookingId": 2,
+          "offenceDate": "2020-01-15",
+          "bookNumber": "2",
+          "resultDescription": "Remand on Conditional Bail"
+        },
+        "dates": [
+          {
+            "date": "2020-08-06",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2020-09-07",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2020-11-03",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6339540,
+          "offence": {
+            "code": "MS15002",
+            "statute": "MS15",
+            "description": "Require person to perform forced or compulsory labour"
+          },
+          "bookingId": 3,
+          "offenceDate": "2020-01-04",
+          "bookNumber": "3",
+          "offenceEndDate": "2020-09-16",
+          "resultDescription": "Remand on Conditional Bail"
+        },
+        "dates": [
+          {
+            "date": "2022-01-26",
+            "type": "START",
+            "description": "Committed to Crown Court for Sentence"
+          },
+          {
+            "date": "2021-12-13",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-09-09",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-06-14",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2021-06-30",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-08-06",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-07-12",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2022-10-26",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2022-03-21",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2023-05-25",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          },
+          {
+            "date": "2024-04-25",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-04-29",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6339541,
+          "offence": {
+            "code": "MS15002",
+            "statute": "MS15",
+            "description": "Require person to perform forced or compulsory labour"
+          },
+          "bookingId": 3,
+          "offenceDate": "2020-01-11",
+          "bookNumber": "3",
+          "offenceEndDate": "2020-01-16",
+          "resultDescription": "Remand on Conditional Bail"
+        },
+        "dates": [
+          {
+            "date": "2022-01-26",
+            "type": "START",
+            "description": "Committed to Crown Court for Sentence"
+          },
+          {
+            "date": "2021-12-13",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-09-09",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-06-14",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2021-06-30",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-08-06",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-07-12",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2022-10-26",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2022-03-21",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2023-05-25",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          },
+          {
+            "date": "2024-04-25",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-04-29",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6339543,
+          "offence": {
+            "code": "MD71131C",
+            "statute": "MD71",
+            "description": "Conspire to supply a class A controlled drug - heroin"
+          },
+          "bookingId": 3,
+          "offenceDate": "2020-01-04",
+          "bookNumber": "3",
+          "offenceEndDate": "2020-01-16",
+          "resultDescription": "Remand on Conditional Bail"
+        },
+        "dates": [
+          {
+            "date": "2022-01-26",
+            "type": "START",
+            "description": "Committed to Crown Court for Sentence"
+          },
+          {
+            "date": "2021-12-13",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-09-09",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-06-14",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2021-06-30",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-08-06",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-07-12",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2022-10-26",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2022-03-21",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2023-05-25",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          },
+          {
+            "date": "2024-04-25",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-04-29",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6339544,
+          "offence": {
+            "code": "MD71130C",
+            "statute": "MD71",
+            "description": "Conspire to supply a class A controlled drug - cocaine"
+          },
+          "bookingId": 3,
+          "offenceDate": "2020-01-04",
+          "bookNumber": "3",
+          "offenceEndDate": "2020-01-16",
+          "resultDescription": "Remand on Conditional Bail"
+        },
+        "dates": [
+          {
+            "date": "2022-01-26",
+            "type": "START",
+            "description": "Committed to Crown Court for Sentence"
+          },
+          {
+            "date": "2021-12-13",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-09-09",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-06-14",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2021-06-30",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-08-06",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-07-12",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2022-10-26",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2022-03-21",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2023-05-25",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          },
+          {
+            "date": "2024-04-25",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-04-29",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6308122,
+          "offence": {
+            "code": "CD71040",
+            "statute": "CD71",
+            "description": "Destroy / damage property of a value unknown"
+          },
+          "bookingId": 3,
+          "offenceDate": "2021-04-16",
+          "bookNumber": "3",
+          "resultDescription": "Not Guilty",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2021-08-10",
+            "type": "STOP",
+            "description": "Not Guilty",
+            "final": true
+          },
+          {
+            "date": "2021-08-09",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2021-05-15",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-06-14",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-07-28",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6308123,
+          "offence": {
+            "code": "OF61017",
+            "statute": "OF61",
+            "description": "Section 18 - grievous bodily harm with intent"
+          },
+          "bookingId": 3,
+          "offenceDate": "2021-04-16",
+          "bookNumber": "3",
+          "resultDescription": "Replaced With Another Offence",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2021-08-10",
+            "type": "STOP",
+            "description": "Replaced With Another Offence",
+            "final": true
+          },
+          {
+            "date": "2021-08-09",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2021-05-15",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-06-14",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2021-07-28",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6390570,
+          "offence": {
+            "code": "OF61131",
+            "statute": "OF61",
+            "description": "Wound / inflict grievous bodily harm without intent"
+          },
+          "bookingId": 3,
+          "offenceDate": "2021-04-16",
+          "bookNumber": "3",
+          "sentenceSequence": 3,
+          "sentenceDate": "2021-08-10",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2021-08-10",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-09-18",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7544407,
+          "offence": {
+            "code": "PC53001",
+            "statute": "PC53",
+            "description": "Possess an offensive weapon in a public place"
+          },
+          "bookingId": 3,
+          "offenceDate": "2024-05-18",
+          "bookNumber": "3",
+          "resultDescription": "Not Guilty",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2024-11-15",
+            "type": "STOP",
+            "description": "Not Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-10-30",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          },
+          {
+            "date": "2024-06-24",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7544408,
+          "offence": {
+            "code": "RT88026",
+            "statute": "RT88",
+            "description": "Drive a motor vehicle dangerously"
+          },
+          "bookingId": 3,
+          "offenceDate": "2024-05-18",
+          "bookNumber": "3",
+          "resultDescription": "Not Guilty",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2024-11-15",
+            "type": "STOP",
+            "description": "Not Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-10-30",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          },
+          {
+            "date": "2024-06-24",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7502764,
+          "offence": {
+            "code": "RT88026",
+            "statute": "RT88",
+            "description": "Drive a motor vehicle dangerously"
+          },
+          "bookingId": 3,
+          "offenceDate": "2024-05-18",
+          "bookNumber": "3",
+          "resultDescription": "Driving Licence Endorsed"
+        },
+        "dates": [
+          {
+            "date": "2024-05-21",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-11-15",
+            "type": "CONTINUE",
+            "description": "Driving Licence Endorsed"
+          },
+          {
+            "date": "2024-10-30",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          },
+          {
+            "date": "2024-06-24",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7502765,
+          "offence": {
+            "code": "PU86004",
+            "statute": "PU86",
+            "description": "Use threatening / abusive / insulting words / behaviour with intent to cause fear of / provoke unlawful violence"
+          },
+          "bookingId": 3,
+          "offenceDate": "2024-05-18",
+          "bookNumber": "3",
+          "sentenceSequence": 5,
+          "sentenceDate": "2024-11-15",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2024-05-21",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-11-15",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-10-30",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          },
+          {
+            "date": "2024-06-24",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7954303,
+          "offence": {
+            "code": "MD71131C",
+            "statute": "MD71",
+            "description": "Conspire to supply a class A controlled drug - heroin"
+          },
+          "bookingId": 4,
+          "offenceDate": "2020-01-04",
+          "bookNumber": "4",
+          "offenceEndDate": "2020-01-16",
+          "sentenceSequence": 1,
+          "sentenceDate": "2025-04-16",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2025-04-16",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7954304,
+          "offence": {
+            "code": "MD71134C",
+            "statute": "MD71",
+            "description": "Conspire to supply a class A controlled drug - crack cocaine"
+          },
+          "bookingId": 4,
+          "offenceDate": "2020-01-04",
+          "bookNumber": "4",
+          "offenceEndDate": "2020-01-16",
+          "sentenceSequence": 1,
+          "sentenceDate": "2025-04-16",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2025-04-16",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      }
+    ],
+    "imprisonmentStatuses": [
+      {
+        "status": "RECALLED",
+        "date": "2020-04-08"
+      },
+      {
+        "status": "RECALLED",
+        "date": "2020-04-09"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2020-08-06"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2020-08-07"
+      },
+      {
+        "status": "RECALLED",
+        "date": "2020-08-10"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2020-11-02"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2021-05-15"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2021-06-17"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2021-07-01"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2021-08-10"
+      },
+      {
+        "status": "SENTENCED",
+        "date": "2021-08-11"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2022-11-08"
+      },
+      {
+        "status": "RECALLED",
+        "date": "2023-09-19"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2024-05-27"
+      },
+      {
+        "status": "SENTENCED",
+        "date": "2024-11-15"
+      },
+      {
+        "status": "SENTENCED",
+        "date": "2025-04-17"
+      }
+    ],
+    "chargeIdsWithActiveSentence": [
+      7954303,
+      7954304
+    ]
+  },
+  "calculations": [
+    {
+      "calculateAt": "2016-12-09",
+      "release": "2018-09-28",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2020-04-07",
+      "release": "2020-05-04",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2020-08-06",
+      "release": "2020-10-31",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2021-08-10",
+      "release": "2022-10-14",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2023-09-18",
+      "release": "2024-04-27",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2024-11-15",
+      "release": "2024-11-15",
+      "service": "HISTORIC"
+    }
+  ],
+  "options": {
+    "userSelections": [
+      {
+        "chargeIdsToMakeApplicable": [6308123],
+        "targetChargeId": 6390570
+      },
+      {
+        "chargeIdsToMakeApplicable": [6056038],
+        "targetChargeId": 7954303
+      },
+      {
+        "chargeIdsToMakeApplicable": [6056039],
+        "targetChargeId": 7954304
+      }
+    ]
+  }
+}

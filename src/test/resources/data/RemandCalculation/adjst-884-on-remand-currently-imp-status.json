@@ -527,6 +527,11 @@
       "calculateAt": "2022-08-01",
       "release": "2023-05-30",
       "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2024-01-29",
+      "release": "2025-05-30",
+      "service": "HISTORIC"
     }
   ],
   "options": {}

@@ -490,6 +490,11 @@
       "calculateAt": "2021-05-26",
       "release": "2021-07-28",
       "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2022-12-19",
+      "release": "2025-07-28",
+      "service": "HISTORIC"
     }
   ],
   "options": {}

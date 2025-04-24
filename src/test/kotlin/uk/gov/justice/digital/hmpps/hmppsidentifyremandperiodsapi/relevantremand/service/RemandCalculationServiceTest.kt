@@ -44,7 +44,7 @@ class RemandCalculationServiceTest {
 
   @ParameterizedTest
   @CsvFileSource(resources = ["/data/tests.csv"], numLinesToSkip = 1)
-  fun `Test Examples`(exampleName: String, error: String?) {
+  fun `Test Examples`(exampleName: String, error: String? = null) {
     log.info("Testing example $exampleName")
 
     val example = TestUtil.objectMapper()

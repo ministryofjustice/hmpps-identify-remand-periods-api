@@ -126,6 +126,16 @@
       },
       "chargeId": 4,
       "days": 31
+    },
+    {
+      "from": "2022-11-15",
+      "to": "2023-10-19",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2022-11-15",
+        "bookingId": 1
+      },
+      "chargeId": 8
     }
   ]
 }

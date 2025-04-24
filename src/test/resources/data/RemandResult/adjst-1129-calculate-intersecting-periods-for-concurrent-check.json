@@ -1,0 +1,370 @@
+{
+  "adjustments": [
+    {
+      "bookingId": 4,
+      "sentenceSequence": 1,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "fromDate": "2020-11-01",
+      "toDate": "2020-11-03",
+      "remand": {
+        "chargeId": [
+          7954303,
+          7954304
+        ]
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "bookingId": 3,
+      "sentenceSequence": 3,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "fromDate": "2021-05-15",
+      "toDate": "2021-08-09",
+      "remand": {
+        "chargeId": [
+          6390570
+        ]
+      },
+      "status": "INACTIVE"
+    },
+    {
+      "bookingId": 4,
+      "sentenceSequence": 1,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "fromDate": "2022-10-15",
+      "toDate": "2023-05-25",
+      "remand": {
+        "chargeId": [
+          7954303,
+          7954304
+        ]
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "bookingId": 4,
+      "sentenceSequence": 1,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "fromDate": "2024-04-28",
+      "toDate": "2024-04-29",
+      "remand": {
+        "chargeId": [
+          7954303,
+          7954304
+        ]
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "bookingId": 3,
+      "sentenceSequence": 5,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "fromDate": "2024-05-21",
+      "toDate": "2024-10-30",
+      "remand": {
+        "chargeId": [
+          7502765
+        ]
+      },
+      "status": "INACTIVE"
+    }
+  ],
+  "chargeRemand": [
+    {
+      "from": "2020-08-06",
+      "to": "2020-11-03",
+      "fromEvent": {
+        "date": "2020-08-06",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2020-11-03",
+        "description": "Remand on Conditional Bail"
+      },
+      "chargeIds": [
+        7954303,
+        7954304
+      ],
+      "status": "APPLICABLE",
+      "replacedCharges": [
+        6056038,
+        6056039
+      ],
+      "days": 90
+    },
+    {
+      "from": "2021-06-14",
+      "to": "2023-05-25",
+      "fromEvent": {
+        "date": "2021-06-14",
+        "description": "Commit to Crown Court for Sentence in Custody"
+      },
+      "toEvent": {
+        "date": "2023-05-25",
+        "description": "Remand on Conditional Bail"
+      },
+      "chargeIds": [
+        7954303
+      ],
+      "status": "APPLICABLE",
+      "days": 711
+    },
+    {
+      "from": "2024-04-25",
+      "to": "2024-04-29",
+      "fromEvent": {
+        "date": "2024-04-25",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2024-04-29",
+        "description": "Remand on Conditional Bail"
+      },
+      "chargeIds": [
+        7954303
+      ],
+      "status": "APPLICABLE",
+      "days": 5
+    },
+    {
+      "from": "2021-05-15",
+      "to": "2021-08-10",
+      "fromEvent": {
+        "date": "2021-05-15",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2021-08-10",
+        "description": "Replaced With Another Offence"
+      },
+      "chargeIds": [
+        6390570
+      ],
+      "status": "INACTIVE",
+      "replacedCharges": [
+        6308123
+      ],
+      "days": 88
+    },
+    {
+      "from": "2024-05-21",
+      "to": "2024-10-30",
+      "fromEvent": {
+        "date": "2024-05-21",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2024-10-30",
+        "description": "Remand on Conditional Bail"
+      },
+      "chargeIds": [
+        7502765
+      ],
+      "status": "INACTIVE",
+      "days": 163
+    },
+    {
+      "from": "2020-08-06",
+      "to": "2020-11-03",
+      "fromEvent": {
+        "date": "2020-08-06",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2020-11-03",
+        "description": "Remand on Conditional Bail"
+      },
+      "chargeIds": [
+        6056036
+      ],
+      "status": "CASE_NOT_CONCLUDED",
+      "days": 90
+    },
+    {
+      "from": "2021-06-14",
+      "to": "2023-05-25",
+      "fromEvent": {
+        "date": "2021-06-14",
+        "description": "Commit to Crown Court for Sentence in Custody"
+      },
+      "toEvent": {
+        "date": "2023-05-25",
+        "description": "Remand on Conditional Bail"
+      },
+      "chargeIds": [
+        6339540,
+        6339541,
+        6339544
+      ],
+      "status": "CASE_NOT_CONCLUDED",
+      "days": 711
+    },
+    {
+      "from": "2024-04-25",
+      "to": "2024-04-29",
+      "fromEvent": {
+        "date": "2024-04-25",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2024-04-29",
+        "description": "Remand on Conditional Bail"
+      },
+      "chargeIds": [
+        6339540,
+        6339541,
+        6339544
+      ],
+      "status": "CASE_NOT_CONCLUDED",
+      "days": 5
+    },
+    {
+      "from": "2021-05-15",
+      "to": "2021-08-10",
+      "fromEvent": {
+        "date": "2021-05-15",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2021-08-10",
+        "description": "Not Guilty"
+      },
+      "chargeIds": [
+        6308122
+      ],
+      "status": "NOT_SENTENCED",
+      "days": 88
+    },
+    {
+      "from": "2024-05-21",
+      "to": "2024-10-30",
+      "fromEvent": {
+        "date": "2024-05-21",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2024-10-30",
+        "description": "Remand on Conditional Bail"
+      },
+      "chargeIds": [
+        7544408
+      ],
+      "status": "NOT_SENTENCED",
+      "days": 163
+    },
+    {
+      "from": "2024-06-24",
+      "to": "2024-10-30",
+      "fromEvent": {
+        "date": "2024-06-24",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2024-10-30",
+        "description": "Remand on Conditional Bail"
+      },
+      "chargeIds": [
+        7544407
+      ],
+      "status": "NOT_SENTENCED",
+      "days": 129
+    }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2016-12-09",
+      "to": "2018-09-28",
+      "sentence": {
+        "sequence": 15,
+        "sentenceDate": "2016-12-09",
+        "recallDates": [
+          "2020-04-07",
+          "2020-08-06"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 3512921,
+      "service": "HISTORIC",
+      "days": 659
+    },
+    {
+      "from": "2020-04-07",
+      "to": "2020-05-04",
+      "sentence": {
+        "sequence": 15,
+        "sentenceDate": "2016-12-09",
+        "recallDates": [
+          "2020-04-07",
+          "2020-08-06"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 3512921,
+      "service": "HISTORIC",
+      "days": 28
+    },
+    {
+      "from": "2020-08-06",
+      "to": "2020-10-31",
+      "sentence": {
+        "sequence": 15,
+        "sentenceDate": "2016-12-09",
+        "recallDates": [
+          "2020-04-07",
+          "2020-08-06"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 3512921,
+      "service": "HISTORIC",
+      "days": 87
+    },
+    {
+      "from": "2021-08-10",
+      "to": "2022-10-14",
+      "sentence": {
+        "sequence": 3,
+        "sentenceDate": "2021-08-10",
+        "recallDates": [
+          "2023-09-18"
+        ],
+        "bookingId": 3
+      },
+      "chargeId": 6390570,
+      "service": "HISTORIC",
+      "days": 431
+    },
+    {
+      "from": "2023-09-18",
+      "to": "2024-04-27",
+      "sentence": {
+        "sequence": 3,
+        "sentenceDate": "2021-08-10",
+        "recallDates": [
+          "2023-09-18"
+        ],
+        "bookingId": 3
+      },
+      "chargeId": 6390570,
+      "service": "HISTORIC",
+      "days": 223
+    },
+    {
+      "from": "2024-11-15",
+      "to": "2024-11-15",
+      "sentence": {
+        "sequence": 5,
+        "sentenceDate": "2024-11-15",
+        "bookingId": 3
+      },
+      "chargeId": 7502765,
+      "service": "HISTORIC",
+      "days": 1
+    }
+  ]
+}

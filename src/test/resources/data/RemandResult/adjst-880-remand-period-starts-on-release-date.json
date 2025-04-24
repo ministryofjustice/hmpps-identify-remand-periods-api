@@ -233,6 +233,18 @@
         "Historic calculation error!"
       ],
       "days": 8
+    },
+    {
+      "from": "2024-04-03",
+      "to": "2025-03-12",
+      "sentence": {
+        "sequence": 27,
+        "sentenceDate": "2024-04-03",
+        "bookingId": 5
+      },
+      "chargeId": 7378858,
+      "service": "HISTORIC",
+      "days": 344
     }
   ]
 }

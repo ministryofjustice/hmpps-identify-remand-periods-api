@@ -70,6 +70,18 @@
       "chargeId": 6320233,
       "service": "HISTORIC",
       "days": 64
+    },
+    {
+      "from": "2022-12-19",
+      "to": "2025-07-28",
+      "sentence": {
+        "sequence": 3,
+        "sentenceDate": "2022-12-19",
+        "bookingId": 2
+      },
+      "chargeId": 6877998,
+      "service": "HISTORIC",
+      "days": 953
     }
   ],
   "issuesWithLegacyData": [
