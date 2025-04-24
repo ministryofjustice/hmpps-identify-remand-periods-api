@@ -403,6 +403,11 @@
       "calculateAt": "2023-08-23",
       "release": "2023-11-14",
       "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2024-09-12",
+      "release": "2025-12-14",
+      "service": "HISTORIC"
     }
   ],
   "options": {}

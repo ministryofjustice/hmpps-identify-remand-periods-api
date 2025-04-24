@@ -91,10 +91,19 @@ class SentenceRemandLoopTracker(
 
   /* If we've reached a sentence period then calculate the release dates for it. */
   fun shouldCalculateAReleaseDate(date: LocalDate): Boolean {
-    return sentences.any { it.sentence.sentenceDate == date || it.sentence.recallDates.any { recallDate -> recallDate == date } } && finalSentenceDate() != date && periodsServingSentence.none { it.from == date } && allPeriods.any { it.to.isAfter(date) }
+    return anyCalculationEventsOnThisDate(date) && !calculationIsForFinalSentence(date) && periodsServingSentence.none { it.from == date }
   }
 
-  private fun finalSentenceDate(): LocalDate {
-    return sentences.maxOf { it.sentence.sentenceDate }
+  private fun anyCalculationEventsOnThisDate(date: LocalDate): Boolean {
+    return sentences.any { it.sentence.sentenceDate == date || it.sentence.recallDates.any { recallDate -> recallDate == date } }
+  }
+
+  private fun finalSentence(): SentenceAndCharge {
+    return sentences.maxBy { it.sentence.sentenceDate }
+  }
+
+  private fun calculationIsForFinalSentence(date: LocalDate): Boolean {
+    val finalSentence = finalSentence()
+    return finalSentence.sentence.sentenceDate == date || finalSentence.sentence.recallDates.any { recallDate -> recallDate == date }
   }
 }

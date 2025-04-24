@@ -160,6 +160,21 @@
       "chargeId": 6735152,
       "service": "HISTORIC",
       "days": 303
+    },
+    {
+      "from": "2024-01-29",
+      "to": "2025-05-30",
+      "sentence": {
+        "sequence": 3,
+        "sentenceDate": "2022-06-23",
+        "recallDates": [
+          "2024-01-29"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 6694726,
+      "service": "HISTORIC",
+      "days": -243
     }
   ]
 }

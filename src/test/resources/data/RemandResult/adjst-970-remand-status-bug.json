@@ -56,6 +56,18 @@
       "chargeId": 7158536,
       "service": "HISTORIC",
       "days": 84
+    },
+    {
+      "from": "2024-09-12",
+      "to": "2025-12-14",
+      "sentence": {
+        "sequence": 2,
+        "sentenceDate": "2024-09-12",
+        "bookingId": 2
+      },
+      "chargeId": 7631942,
+      "service": "HISTORIC",
+      "days": 459
     }
   ]
 }
