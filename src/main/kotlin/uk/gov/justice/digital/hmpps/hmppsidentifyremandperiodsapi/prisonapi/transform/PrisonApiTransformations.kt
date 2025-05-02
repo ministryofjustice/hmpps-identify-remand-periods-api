@@ -17,8 +17,8 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Offence
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.util.isAfterOrEqualTo
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.util.mojDisplayFormat
 import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 
 fun transform(results: List<PrisonApiCharge>, prisonerDetails: Prisoner, sentencesAndOffences: List<SentenceAndOffences>, imprisonmentStatus: List<PrisonApiImprisonmentStatus>): RemandCalculation {
   val earliestDateInActiveBooking: LocalDate = earliestDateInActiveBooking(results, prisonerDetails)
@@ -45,6 +45,7 @@ fun transform(results: List<PrisonApiCharge>, prisonerDetails: Prisoner, sentenc
             it.resultDispositionCode == "F",
             it.bookingId == prisonerDetails.bookingId.toLong(),
             recallTypes.contains(it.sentenceType),
+            termTypes.contains(it.sentenceType),
           ),
           it.outcomes.mapNotNull { result -> transformToCourtDate(result, it, issuesWithLegacyData) },
         )
@@ -104,12 +105,13 @@ private fun transformToCourtDate(courtDateResult: PrisonApiCourtDateOutcome, cha
 
 private fun transformToType(courtDateResult: PrisonApiCourtDateOutcome, charge: PrisonApiCharge, issuesWithLegacyData: MutableList<LegacyDataProblem>): CourtDateType? {
   if (courtDateResult.resultCode == null) {
-    issuesWithLegacyData.add(ChargeLegacyDataProblem(LegacyDataProblemType.MISSING_COURT_OUTCOME, "The court hearing on ${courtDateResult.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} for '${charge.offenceDescription}' has a missing hearing outcome within booking ${charge.bookNumber}.", charge))
+    issuesWithLegacyData.add(ChargeLegacyDataProblem(LegacyDataProblemType.MISSING_COURT_OUTCOME, "The court hearing on ${courtDateResult.date.mojDisplayFormat()} for '${charge.offenceDescription}' has a missing hearing outcome within booking ${charge.bookNumber}.", charge))
     return null
   }
   return mapCourtDateResult(courtDateResult, charge, issuesWithLegacyData)
 }
 
+// TODO ADJST-1178 Use remand and sentencing api to get recall and term types.
 private val recallTypes = listOf(
   "LR",
   "LR_ORA",
@@ -133,4 +135,11 @@ private val recallTypes = listOf(
   "FTRSCH18_ORA",
   "14FTRHDC_ORA",
   "FTR_HDC_ORA",
+)
+
+private val termTypes = listOf(
+  "A/FINE",
+  "DTO",
+  "DTO_ORA",
+  "BOTUS",
 )

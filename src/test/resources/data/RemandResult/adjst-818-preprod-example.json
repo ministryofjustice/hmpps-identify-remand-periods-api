@@ -107,5 +107,40 @@
       "status": "APPLICABLE",
       "days": 49
     }
+  ],
+  "issuesWithLegacyData": [
+    {
+      "type": "START_EVENT_ON_SENTENCE_DATE",
+      "message": "The offence 'Make indecent photograph / pseudo-photograph of a child' within booking 1 has a court event which indicates the start of remand 'Guilty' on the same date as the sentence date 2 May 2023",
+      "offence": {
+        "code": "PK78008",
+        "statute": "PK78",
+        "description": "Make indecent photograph / pseudo-photograph of a child"
+      },
+      "bookingId": 1,
+      "bookNumber": "1"
+    },
+    {
+      "type": "START_EVENT_ON_SENTENCE_DATE",
+      "message": "The offence 'Possess a prohibited image of a child' within booking 1 has a court event which indicates the start of remand 'Guilty' on the same date as the sentence date 2 May 2023",
+      "offence": {
+        "code": "CJ09001",
+        "statute": "CJ09",
+        "description": "Possess a prohibited image of a child"
+      },
+      "bookingId": 1,
+      "bookNumber": "1"
+    },
+    {
+      "type": "START_EVENT_ON_SENTENCE_DATE",
+      "message": "The offence 'Possess extreme pornographic image / images portraying an act of intercourse / oral sex with a dead / alive animal' within booking 1 has a court event which indicates the start of remand 'Guilty' on the same date as the sentence date 2 May 2023",
+      "offence": {
+        "code": "CJ08004",
+        "statute": "CJ08",
+        "description": "Possess extreme pornographic image / images portraying an act of intercourse / oral sex with a dead / alive animal"
+      },
+      "bookingId": 1,
+      "bookNumber": "1"
+    }
   ]
 }

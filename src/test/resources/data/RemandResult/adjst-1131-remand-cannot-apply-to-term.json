@@ -1,0 +1,158 @@
+{
+  "adjustments": [
+    {
+      "bookingId": 2,
+      "sentenceSequence": 2,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "fromDate": "2023-06-27",
+      "toDate": "2023-06-27",
+      "remand": {
+        "chargeId": [
+          7087938,
+          7087939,
+          7087940,
+          7087941,
+          7087942
+        ]
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "bookingId": 2,
+      "sentenceSequence": 2,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "fromDate": "2023-07-05",
+      "toDate": "2023-09-25",
+      "remand": {
+        "chargeId": [
+          7087938,
+          7087939,
+          7087940,
+          7087941,
+          7087942
+        ]
+      },
+      "status": "ACTIVE"
+    }
+  ],
+  "chargeRemand": [
+    {
+      "from": "2023-06-27",
+      "to": "2023-09-25",
+      "fromEvent": {
+        "date": "2023-06-27",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2023-09-26",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7087938,
+        7087939,
+        7087940,
+        7087941,
+        7087942
+      ],
+      "status": "APPLICABLE",
+      "days": 91
+    },
+    {
+      "from": "2023-06-27",
+      "to": "2023-06-28",
+      "fromEvent": {
+        "date": "2023-06-27",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2023-06-28",
+        "description": "Absolute Discharge"
+      },
+      "chargeIds": [
+        7087943,
+        7087944,
+        7087945,
+        7087946
+      ],
+      "status": "NOT_SENTENCED",
+      "days": 2
+    },
+    {
+      "from": "2023-06-27",
+      "to": "2023-06-27",
+      "fromEvent": {
+        "date": "2023-06-27",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2023-06-28",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7087930
+      ],
+      "status": "NOT_APPLICABLE_TO_TERM",
+      "days": 1
+    }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2021-03-26",
+      "to": "2021-05-10",
+      "sentence": {
+        "sequence": 3,
+        "sentenceDate": "2021-03-26",
+        "recallDates": [
+          "2021-07-09"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 6265080,
+      "service": "HISTORIC",
+      "days": 46
+    },
+    {
+      "from": "2021-07-09",
+      "to": "2021-09-17",
+      "sentence": {
+        "sequence": 3,
+        "sentenceDate": "2021-03-26",
+        "recallDates": [
+          "2021-07-09"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 6265080,
+      "service": "HISTORIC",
+      "days": 71
+    },
+    {
+      "from": "2023-06-28",
+      "to": "2023-07-04",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2023-06-28",
+        "bookingId": 2
+      },
+      "chargeId": 7087930,
+      "service": "HISTORIC",
+      "days": 7
+    }
+  ],
+  "issuesWithLegacyData": [
+    {
+      "type": "MISSING_COURT_OUTCOME",
+      "message": "The court hearing on 8 May 2025 for 'Sex offenders register - fail comply with notification requirements - SOA 2003' has a missing hearing outcome within booking 33493F.",
+      "offence": {
+        "code": "SX03204",
+        "statute": "SX03",
+        "description": "Sex offenders register - fail comply with notification requirements - SOA 2003"
+      },
+      "bookingId": 2853233,
+      "bookNumber": "33493F",
+      "courtCaseRef": "16XK0662525"
+    }
+  ]
+}
