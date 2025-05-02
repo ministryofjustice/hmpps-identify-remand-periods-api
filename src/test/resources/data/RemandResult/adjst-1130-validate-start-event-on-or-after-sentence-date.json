@@ -1,0 +1,15 @@
+{
+  "issuesWithLegacyData": [
+    {
+      "type": "START_EVENT_ON_SENTENCE_DATE",
+      "message": "The offence 'Harassment - breach of a restraining order on conviction' within booking 1 has a court event which indicates the start of remand 'Varied on Appeal' on the same date as the sentence date 17 Apr 2025",
+      "offence": {
+        "code": "SE20002",
+        "statute": "SE20",
+        "description": "Harassment - breach of a restraining order on conviction"
+      },
+      "bookingId": 1,
+      "bookNumber": "1"
+    }
+  ]
+}

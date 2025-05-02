@@ -6,8 +6,6 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeRemand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtAppearance
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDate
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.CONTINUE
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.START
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.STOP
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandPeriodWithNoStop
 import java.time.LocalDate
@@ -22,7 +20,7 @@ class RemandClockService {
       if (hasAnyRemandEvent(chargeAndEvent.dates)) {
         var from: CourtDate? = null
         chargeAndEvent.dates.sortedBy { it.date }.forEach {
-          if (listOf(START, CONTINUE).contains(it.type) && from == null && dateIsBeforeSentenceDateIfExists(it.date, chargeAndEvent)) {
+          if (it.type.shouldStartRemand() && from == null && dateIsBeforeSentenceDateIfExists(it.date, chargeAndEvent)) {
             from = it
           }
           if (it.type == STOP && from != null) {
@@ -42,7 +40,7 @@ class RemandClockService {
     return chargeAndEvent.charge.sentenceDate == null || date.isBefore(chargeAndEvent.charge.sentenceDate)
   }
 
-  private fun hasAnyRemandEvent(courtDates: List<CourtDate>) = courtDates.any { listOf(START, CONTINUE).contains(it.type) }
+  private fun hasAnyRemandEvent(courtDates: List<CourtDate>) = courtDates.any { it.type.shouldStartRemand() }
 
   private fun getToDate(courtDate: CourtDate) = if (courtDate.final && courtDate.isCustodial) courtDate.date.minusDays(1) else courtDate.date
 }

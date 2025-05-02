@@ -10,7 +10,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ImprisonmentStatusType
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblemType
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.util.isBeforeOrEqualTo
-import java.time.format.DateTimeFormatter
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.util.mojDisplayFormat
 
 @Service
 class ValidateCalculationDataService {
@@ -21,6 +21,28 @@ class ValidateCalculationDataService {
     validateRecallEventNotOnSentenceDate(calculationData)
     validateImprisonmentStatuses(calculationData)
     validateUnclosedRemandDatesWithSentence(calculationData)
+    validateAllStartEventsBeforeSentenceDate(calculationData)
+  }
+
+  private fun validateAllStartEventsBeforeSentenceDate(calculationData: CalculationData) {
+    calculationData.chargeAndEvents.mapNotNull {
+      if (it.charge.sentenceDate != null) {
+        val eventAfterSentenceDate = it.dates.find { courtEvent -> courtEvent.type.shouldStartRemand() && courtEvent.date == it.charge.sentenceDate }
+        if (eventAfterSentenceDate != null) it to eventAfterSentenceDate else null
+      } else {
+        null
+      }
+    }.forEach {
+      val charge = it.first.charge
+      val event = it.second
+      calculationData.issuesWithLegacyData.add(
+        ChargeLegacyDataProblem(
+          LegacyDataProblemType.START_EVENT_ON_SENTENCE_DATE,
+          "The offence '${charge.offence.description}' within booking ${charge.bookNumber} has a court event which indicates the start of remand '${event.description}' on the same date as the sentence date ${charge.sentenceDate!!.mojDisplayFormat()}",
+          charge,
+        ),
+      )
+    }
   }
 
   private fun validateUnclosedRemandDatesWithSentence(calculationData: CalculationData) {
@@ -30,7 +52,7 @@ class ValidateCalculationDataService {
         calculationData.issuesWithLegacyData.add(
           ChargeLegacyDataProblem(
             LegacyDataProblemType.MISSING_STOP_EVENT,
-            "The offence '${it.charge.offence.description}' within booking ${it.charge.bookNumber} has no court event to stop a remand period starting on ${it.start.format(DateTimeFormatter.ofPattern("d MMM yyyy"))}",
+            "The offence '${it.charge.offence.description}' within booking ${it.charge.bookNumber} has no court event to stop a remand period starting on ${it.start.mojDisplayFormat()}",
             it.charge,
           ),
         )
@@ -61,7 +83,7 @@ class ValidateCalculationDataService {
       calculationData.issuesWithLegacyData.add(
         GenericLegacyDataProblem(
           LegacyDataProblemType.MISSING_COURT_EVENT_FOR_IMPRISONMENT_STATUS_REMAND,
-          "The offenders main inmate status was changed to remanded on ${status.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} but there is no matching court events",
+          "The offenders main inmate status was changed to remanded on ${status.date.mojDisplayFormat()} but there is no matching court events",
         ),
       )
     }
@@ -78,7 +100,7 @@ class ValidateCalculationDataService {
       calculationData.issuesWithLegacyData.add(
         GenericLegacyDataProblem(
           LegacyDataProblemType.MISSING_COURT_EVENT_FOR_IMPRISONMENT_STATUS_RECALL,
-          "The offenders main inmate status was changed to recalled on ${status.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} but there is no matching court events",
+          "The offenders main inmate status was changed to recalled on ${status.date.mojDisplayFormat()} but there is no matching court events",
 
         ),
       )

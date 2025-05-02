@@ -1,0 +1,54 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "chargesAndEvents": [
+      {
+        "charge": {
+          "chargeId": 7891430,
+          "offence": {
+            "code": "SE20002",
+            "statute": "SE20",
+            "description": "Harassment - breach of a restraining order on conviction"
+          },
+          "bookingId": 1,
+          "offenceDate": "2025-02-24",
+          "bookNumber": "1",
+          "sentenceSequence": 1,
+          "sentenceDate": "2025-04-17",
+          "resultDescription": "Varied on Appeal",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2025-04-17",
+            "type": "CONTINUE",
+            "description": "Varied on Appeal",
+            "final": true
+          },
+          {
+            "date": "2025-03-04",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      }
+    ],
+    "imprisonmentStatuses": [
+      {
+        "status": "SENTENCED",
+        "date": "2025-03-06"
+      },
+      {
+        "status": "SENTENCED",
+        "date": "2025-04-17"
+      }
+    ],
+    "chargeIdsWithActiveSentence": [
+      7891430
+    ]
+  },
+  "options": {}
+}}

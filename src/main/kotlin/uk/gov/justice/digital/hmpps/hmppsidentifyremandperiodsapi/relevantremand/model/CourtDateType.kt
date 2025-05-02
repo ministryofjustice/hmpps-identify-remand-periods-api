@@ -4,4 +4,7 @@ enum class CourtDateType {
   START,
   STOP,
   CONTINUE,
+  ;
+
+  fun shouldStartRemand() = this == START || this == CONTINUE
 }
