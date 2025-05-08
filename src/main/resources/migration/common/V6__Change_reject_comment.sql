@@ -1,0 +1,1 @@
+ALTER TABLE identify_remand_decision ALTER COLUMN reject_comment TYPE varchar;

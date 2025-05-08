@@ -70,14 +70,15 @@ class FindHistoricReleaseDateService(
   ): LocalDate {
     val calcDates = prisonApiClient.getNOMISOffenderKeyDates(calculation.offenderSentCalculationId)
     calculationIds.add(calculation.offenderSentCalculationId)
-    val releaseDates = listOfNotNull(
+    val calculatedReleaseDates = listOfNotNull(
       calcDates.conditionalReleaseDate,
       calcDates.automaticReleaseDate,
       calcDates.postRecallReleaseDate,
       calcDates.midTermDate,
     )
+    val approvedParoleDate = calcDates.approvedParoleDate
 
-    val latestRelease = releaseDates.maxOrNull()
+    val latestRelease = approvedParoleDate ?: calculatedReleaseDates.maxOrNull()
     if (latestRelease != null) {
       if (latestRelease.isBefore(calculatedAt)) {
         throw UnsupportedCalculationException("The release date $latestRelease, from calculations $calculationIds is before the calculation date $calculatedAt.")

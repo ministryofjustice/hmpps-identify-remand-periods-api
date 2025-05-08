@@ -10,7 +10,7 @@ class TestCaseAnonymiser {
 
 //  @Test
   fun anonymise() {
-    val exampleName = "adjst-884-imprisonment-status-missing-recall-event"
+    val exampleName = "adjst-1130-validate-start-event-on-or-after-sentence-date"
     log.info("Anonymising example $exampleName")
 
     val example = TestUtil.objectMapper()
@@ -35,6 +35,7 @@ class TestCaseAnonymiser {
       calculations = transformIntersecting(),
     )
 
+    log.info("Anon: ${TestUtil.objectMapper().writeValueAsString(write)}}")
     TestUtil.objectMapper()
       .writeValue(ClassPathResource("/data/RemandCalculation/$exampleName.json").file, write)
   }

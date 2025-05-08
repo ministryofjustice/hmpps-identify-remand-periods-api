@@ -52,5 +52,17 @@
       "status": "NOT_SENTENCED",
       "days": 71
     }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2022-12-16",
+      "to": "2025-11-24",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2022-12-16",
+        "bookingId": 1
+      },
+      "chargeId": 6800495
+    }
   ]
 }

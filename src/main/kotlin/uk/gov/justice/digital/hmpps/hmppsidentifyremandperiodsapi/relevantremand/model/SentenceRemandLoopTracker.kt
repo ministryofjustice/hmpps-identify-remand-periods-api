@@ -11,8 +11,8 @@ class SentenceRemandLoopTracker(
   remandPeriods: List<ChargeRemand>,
   private val sentences: List<SentenceAndCharge>,
 ) {
-  /* All periods that are linked to a sentence */
-  val allPeriods = remandPeriods.filter { charges[it.onlyChargeId()]!!.sentenceSequence != null && charges[it.onlyChargeId()]!!.sentenceDate != null }.sortedBy { it.from }
+  /* All periods that are linked to a sentence which can have remand. */
+  val allPeriods = remandPeriods.filter { charges[it.onlyChargeId()]!!.canHaveRemandApplyToSentence() }.sortedBy { it.from }
 
   /* A map of each sentence date to the periods who have a sentence with the given date */
   val sentenceDateToPeriodMap = allPeriods.groupBy { charges[it.onlyChargeId()]!!.sentenceDate!! }.toMutableMap()
@@ -91,10 +91,19 @@ class SentenceRemandLoopTracker(
 
   /* If we've reached a sentence period then calculate the release dates for it. */
   fun shouldCalculateAReleaseDate(date: LocalDate): Boolean {
-    return sentences.any { it.sentence.sentenceDate == date || it.sentence.recallDates.any { recallDate -> recallDate == date } } && finalSentenceDate() != date && periodsServingSentence.none { it.from == date } && allPeriods.any { it.to.isAfter(date) }
+    return anyCalculationEventsOnThisDate(date) && !calculationIsForFinalSentence(date) && periodsServingSentence.none { it.from == date }
   }
 
-  private fun finalSentenceDate(): LocalDate {
-    return sentences.maxOf { it.sentence.sentenceDate }
+  private fun anyCalculationEventsOnThisDate(date: LocalDate): Boolean {
+    return sentences.any { it.sentence.sentenceDate == date || it.sentence.recallDates.any { recallDate -> recallDate == date } }
+  }
+
+  private fun finalSentence(): SentenceAndCharge {
+    return sentences.maxBy { it.sentence.sentenceDate }
+  }
+
+  private fun calculationIsForFinalSentence(date: LocalDate): Boolean {
+    val finalSentence = finalSentence()
+    return finalSentence.sentence.sentenceDate == date || finalSentence.sentence.recallDates.any { recallDate -> recallDate == date }
   }
 }
