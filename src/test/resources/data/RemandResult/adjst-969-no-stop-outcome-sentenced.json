@@ -95,6 +95,17 @@
       },
       "bookingId": 2,
       "bookNumber": "2"
+    },
+    {
+      "type": "START_EVENT_ON_SENTENCE_DATE",
+      "message": "The offence 'Possess with intent to supply a controlled drug of Class A - Cocaine' within booking 2 has a court event which indicates the start of remand 'Guilty' on the same date as the sentence date 19 Dec 2022",
+      "offence": {
+        "code": "MD71230",
+        "statute": "MD71",
+        "description": "Possess with intent to supply a controlled drug of Class A - Cocaine"
+      },
+      "bookingId": 2,
+      "bookNumber": "2"
     }
   ]
 }

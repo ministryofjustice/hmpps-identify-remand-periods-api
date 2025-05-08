@@ -9,7 +9,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType.STOP
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblem
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblemType
-import java.time.format.DateTimeFormatter
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.util.mojDisplayFormat
 
 const val RECALL_COURT_EVENT = "1501"
 fun mapCourtDateResult(courtDateResult: PrisonApiCourtDateOutcome, charge: PrisonApiCharge, issuesWithLegacyData: MutableList<LegacyDataProblem>): CourtDateType? {
@@ -185,7 +185,7 @@ fun mapCourtDateResult(courtDateResult: PrisonApiCourtDateOutcome, charge: Priso
     "FPR" -> STOP
 
     else -> {
-      issuesWithLegacyData.add(ChargeLegacyDataProblem(LegacyDataProblemType.UNSUPPORTED_OUTCOME, "The court event on ${courtDateResult.date.format(DateTimeFormatter.ofPattern("d MMM yyyy"))} for offence ${charge.offenceDescription} committed at ${charge.offenceDate?.format(DateTimeFormatter.ofPattern("d MMM yyyy")) ?: "Unknown"} has an unsupported outcome ${courtDateResult.resultCode}: ${courtDateResult.resultDescription}", charge))
+      issuesWithLegacyData.add(ChargeLegacyDataProblem(LegacyDataProblemType.UNSUPPORTED_OUTCOME, "The court event on ${courtDateResult.date.mojDisplayFormat()} for offence ${charge.offenceDescription} committed at ${charge.offenceDate?.mojDisplayFormat() ?: "Unknown"} has an unsupported outcome ${courtDateResult.resultCode}: ${courtDateResult.resultDescription}", charge))
       null
     }
   }

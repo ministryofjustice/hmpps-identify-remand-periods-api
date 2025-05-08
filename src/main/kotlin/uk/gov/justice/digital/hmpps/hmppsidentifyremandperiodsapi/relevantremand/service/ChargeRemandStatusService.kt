@@ -28,10 +28,13 @@ class ChargeRemandStatusService {
             ChargeRemandStatus.INACTIVE
           }
         } else {
+          val charge = remandCalculation.charges[it.onlyChargeId()]!!
           if (calculationData.sentenceRemandResult!!.intersectingSentences.any { sentencePeriod -> sentencePeriod.engulfs(it) }) {
             ChargeRemandStatus.INTERSECTED_BY_SENTENCE
           } else if (matchingChargeId.isNotEmpty()) {
             ChargeRemandStatus.INTERSECTED_BY_REMAND
+          } else if (charge.isTermSentence) {
+            ChargeRemandStatus.NOT_APPLICABLE_TO_TERM
           } else {
             throw UnsupportedCalculationException("Could not determine the status of charge remand $it")
           }

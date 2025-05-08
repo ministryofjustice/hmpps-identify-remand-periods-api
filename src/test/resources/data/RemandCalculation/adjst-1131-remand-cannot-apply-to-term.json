@@ -1,0 +1,663 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "chargesAndEvents": [
+      {
+        "charge": {
+          "chargeId": 6265079,
+          "offence": {
+            "code": "TH68040",
+            "statute": "TH68",
+            "description": "Burglary dwelling - attempt grievous bodily harm"
+          },
+          "bookingId": 1,
+          "offenceDate": "2020-10-13",
+          "bookNumber": "1",
+          "resultDescription": "No Evidence Offered - Dismissed",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2021-03-26",
+            "type": "STOP",
+            "description": "No Evidence Offered - Dismissed",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6265080,
+          "offence": {
+            "code": "OF61102",
+            "statute": "OF61",
+            "description": "Assault a person thereby occasioning them actual bodily harm"
+          },
+          "bookingId": 1,
+          "offenceDate": "2020-10-13",
+          "bookNumber": "1",
+          "sentenceSequence": 3,
+          "sentenceDate": "2021-03-26",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2021-07-09",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2021-03-26",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7087930,
+          "offence": {
+            "code": "CJ03524",
+            "statute": "CJ03",
+            "description": "Failed to comply with the requirements of post-custodial supervision"
+          },
+          "bookingId": 2,
+          "offenceDate": "2021-12-17",
+          "bookNumber": "2",
+          "offenceEndDate": "2022-02-17",
+          "sentenceSequence": 1,
+          "sentenceDate": "2023-06-28",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true,
+          "isTermSentence": true
+        },
+        "dates": [
+          {
+            "date": "2023-06-27",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2023-06-28",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7087938,
+          "offence": {
+            "code": "MD71230",
+            "statute": "MD71",
+            "description": "Possess with intent to supply a controlled drug of Class A - Cocaine"
+          },
+          "bookingId": 2,
+          "offenceDate": "2023-06-26",
+          "bookNumber": "2",
+          "sentenceSequence": 2,
+          "sentenceDate": "2023-09-26",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2023-06-28",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2023-07-27",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2023-07-31",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2023-08-29",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2023-09-26",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-06-27",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2025-04-03",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7087939,
+          "offence": {
+            "code": "MD71150",
+            "statute": "MD71",
+            "description": "Offer to supply cocaine"
+          },
+          "bookingId": 2,
+          "offenceDate": "2023-06-18",
+          "bookNumber": "2",
+          "sentenceSequence": 2,
+          "sentenceDate": "2023-09-26",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2023-06-28",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2023-07-27",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2023-07-31",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2023-08-29",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2023-09-26",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-06-27",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2025-04-03",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7087940,
+          "offence": {
+            "code": "SX03204",
+            "statute": "SX03",
+            "description": "Sex offenders register - fail comply with notification requirements - SOA 2003"
+          },
+          "bookingId": 2,
+          "offenceDate": "2022-01-10",
+          "bookNumber": "2",
+          "sentenceSequence": 3,
+          "sentenceDate": "2023-09-26",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2023-06-28",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2023-07-27",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2023-07-31",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2023-08-29",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2023-09-26",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-06-27",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2025-04-03",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7087941,
+          "offence": {
+            "code": "SX03204",
+            "statute": "SX03",
+            "description": "Sex offenders register - fail comply with notification requirements - SOA 2003"
+          },
+          "bookingId": 2,
+          "offenceDate": "2020-10-16",
+          "bookNumber": "2",
+          "sentenceSequence": 3,
+          "sentenceDate": "2023-09-26",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2023-06-28",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2023-07-27",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2023-07-31",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2023-08-29",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2023-09-26",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-06-27",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2025-04-03",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7087942,
+          "offence": {
+            "code": "SX03204",
+            "statute": "SX03",
+            "description": "Sex offenders register - fail comply with notification requirements - SOA 2003"
+          },
+          "bookingId": 2,
+          "offenceDate": "2022-10-16",
+          "bookNumber": "2",
+          "sentenceSequence": 3,
+          "sentenceDate": "2023-09-26",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2023-06-28",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2023-07-27",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2023-07-31",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2023-08-29",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2023-09-26",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-06-27",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2025-04-03",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7087943,
+          "offence": {
+            "code": "RT88076",
+            "statute": "RT88",
+            "description": "Fail to stop vehicle when directed by PC / traffic warden / traffic officer / CSO engaged in regulation of road traffic"
+          },
+          "bookingId": 2,
+          "offenceDate": "2023-06-26",
+          "bookNumber": "2",
+          "resultDescription": "Absolute Discharge",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-06-28",
+            "type": "STOP",
+            "description": "Absolute Discharge",
+            "final": true
+          },
+          {
+            "date": "2023-06-27",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7087944,
+          "offence": {
+            "code": "RT88575",
+            "statute": "RT88",
+            "description": "Drive a mechanically propelled vehicle on a road / in a public place without due care and attention"
+          },
+          "bookingId": 2,
+          "offenceDate": "2023-06-26",
+          "bookNumber": "2",
+          "resultDescription": "Absolute Discharge",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-06-28",
+            "type": "STOP",
+            "description": "Absolute Discharge",
+            "final": true
+          },
+          {
+            "date": "2023-06-27",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7087945,
+          "offence": {
+            "code": "RA88001",
+            "statute": "RA88",
+            "description": "Use a motor vehicle on a road / public place without third party insurance"
+          },
+          "bookingId": 2,
+          "offenceDate": "2023-06-26",
+          "bookNumber": "2",
+          "resultDescription": "Absolute Discharge",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-06-28",
+            "type": "STOP",
+            "description": "Absolute Discharge",
+            "final": true
+          },
+          {
+            "date": "2023-06-27",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7087946,
+          "offence": {
+            "code": "RT88334",
+            "statute": "RT88",
+            "description": "Drive a motor vehicle otherwise than in accordance with a licence - endorsable offence"
+          },
+          "bookingId": 2,
+          "offenceDate": "2023-06-26",
+          "bookNumber": "2",
+          "resultDescription": "Absolute Discharge",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2023-06-27",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2023-06-28",
+            "type": "STOP",
+            "description": "Absolute Discharge",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7938950,
+          "offence": {
+            "code": "SX03204",
+            "statute": "SX03",
+            "description": "Sex offenders register - fail comply with notification requirements - SOA 2003"
+          },
+          "bookingId": 2,
+          "offenceDate": "2025-04-03",
+          "bookNumber": "2",
+          "resultDescription": "Remand in Custody (Bail Refused)",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2025-04-10",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2025-04-04",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7938951,
+          "offence": {
+            "code": "SX03204",
+            "statute": "SX03",
+            "description": "Sex offenders register - fail comply with notification requirements - SOA 2003"
+          },
+          "bookingId": 2,
+          "offenceDate": "2025-04-03",
+          "bookNumber": "2",
+          "resultDescription": "Remand in Custody (Bail Refused)",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2025-04-10",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2025-04-04",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          }
+        ]
+      }
+    ],
+    "imprisonmentStatuses": [
+      {
+        "status": "SENTENCED",
+        "date": "2021-03-29"
+      },
+      {
+        "status": "RECALLED",
+        "date": "2021-07-09"
+      },
+      {
+        "status": "RECALLED",
+        "date": "2021-07-12"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2023-06-27"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2023-06-28"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2023-07-11"
+      },
+      {
+        "status": "SENTENCED",
+        "date": "2023-09-27"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2025-04-04"
+      },
+      {
+        "status": "RECALLED",
+        "date": "2025-04-07"
+      }
+    ],
+    "chargeIdsWithActiveSentence": [
+      7087938,
+      7087939,
+      7087940,
+      7087941,
+      7087942
+    ],
+    "issuesWithLegacyData": [
+      {
+        "type": "MISSING_COURT_OUTCOME",
+        "message": "The court hearing on 8 May 2025 for 'Sex offenders register - fail comply with notification requirements - SOA 2003' has a missing hearing outcome within booking 33493F.",
+        "offence": {
+          "code": "SX03204",
+          "statute": "SX03",
+          "description": "Sex offenders register - fail comply with notification requirements - SOA 2003"
+        },
+        "bookingId": 2853233,
+        "bookNumber": "33493F",
+        "courtCaseRef": "16XK0662525"
+      },
+      {
+        "type": "MISSING_COURT_OUTCOME",
+        "message": "The court hearing on 8 May 2025 for 'Sex offenders register - fail comply with notification requirements - SOA 2003' has a missing hearing outcome within booking 33493F.",
+        "offence": {
+          "code": "SX03204",
+          "statute": "SX03",
+          "description": "Sex offenders register - fail comply with notification requirements - SOA 2003"
+        },
+        "bookingId": 2853233,
+        "bookNumber": "33493F",
+        "courtCaseRef": "16XK0662525"
+      }
+    ]
+  },
+  "calculations": [
+    {
+      "calculateAt": "2021-03-26",
+      "release": "2021-05-10",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2021-07-09",
+      "release": "2021-09-17",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2023-06-28",
+      "release": "2023-07-04",
+      "service": "HISTORIC"
+    }
+  ],
+  "options": {}
+}
