@@ -9,13 +9,11 @@ import java.text.SimpleDateFormat
 
 class TestUtil private constructor() {
   companion object {
-    fun objectMapper(): ObjectMapper {
-      return ObjectMapper()
-        .registerModule(JavaTimeModule())
-        .setDateFormat(SimpleDateFormat("yyyy-MM-dd"))
-        .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
-        .registerKotlinModule()
-        .setDefaultPropertyInclusion(JsonInclude.Include.NON_DEFAULT)
-    }
+    fun objectMapper(): ObjectMapper = ObjectMapper()
+      .registerModule(JavaTimeModule())
+      .setDateFormat(SimpleDateFormat("yyyy-MM-dd"))
+      .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+      .registerKotlinModule()
+      .setDefaultPropertyInclusion(JsonInclude.Include.NON_DEFAULT)
   }
 }

@@ -78,9 +78,7 @@ class IdentifyRemandDecisionService(
     return mapToDto(result)
   }
 
-  private fun allStatusesInString(it: ChargeRemand): String? {
-    return it.status!!.name + if (it.replacedCharges.isNotEmpty()) ", REPLACED" else ""
-  }
+  private fun allStatusesInString(it: ChargeRemand): String? = it.status!!.name + if (it.replacedCharges.isNotEmpty()) ", REPLACED" else ""
 
   @Transactional(readOnly = true)
   fun getDecision(person: String): IdentifyRemandDecisionDto? {
@@ -106,7 +104,6 @@ class IdentifyRemandDecisionService(
     )
   }
 
-  fun getCurrentAuthentication(): AuthAwareAuthenticationToken =
-    SecurityContextHolder.getContext().authentication as AuthAwareAuthenticationToken?
-      ?: throw IllegalStateException("User is not authenticated")
+  fun getCurrentAuthentication(): AuthAwareAuthenticationToken = SecurityContextHolder.getContext().authentication as AuthAwareAuthenticationToken?
+    ?: throw IllegalStateException("User is not authenticated")
 }

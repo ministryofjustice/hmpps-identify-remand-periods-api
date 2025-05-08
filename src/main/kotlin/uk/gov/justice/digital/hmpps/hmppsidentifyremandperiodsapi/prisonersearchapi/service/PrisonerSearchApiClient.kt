@@ -11,14 +11,13 @@ inline fun <reified T> typeReference() = object : ParameterizedTypeReference<T>(
 @Service
 class PrisonerSearchApiClient(private val prisonerSearchApiWebClient: WebClient) {
 
-  fun findByPrisonerNumber(prisonerNumber: String): Prisoner =
-    prisonerSearchApiWebClient.get()
-      .uri { uriBuilder: UriBuilder ->
-        uriBuilder
-          .path("/prisoner/{prisonerNumber}")
-          .build(prisonerNumber)
-      }
-      .retrieve()
-      .bodyToMono(typeReference<Prisoner>())
-      .block()!!
+  fun findByPrisonerNumber(prisonerNumber: String): Prisoner = prisonerSearchApiWebClient.get()
+    .uri { uriBuilder: UriBuilder ->
+      uriBuilder
+        .path("/prisoner/{prisonerNumber}")
+        .build(prisonerNumber)
+    }
+    .retrieve()
+    .bodyToMono(typeReference<Prisoner>())
+    .block()!!
 }

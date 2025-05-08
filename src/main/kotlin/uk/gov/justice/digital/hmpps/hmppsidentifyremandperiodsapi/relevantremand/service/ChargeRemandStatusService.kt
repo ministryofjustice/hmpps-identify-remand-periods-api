@@ -15,41 +15,39 @@ class ChargeRemandStatusService {
   fun setChargeRemandStatuses(
     calculationData: CalculationData,
     remandCalculation: RemandCalculation,
-  ): List<ChargeRemand> {
-    return calculationData.chargeRemand.map {
-      val status = if (remandCalculation.charges[it.onlyChargeId()]!!.sentenceSequence != null) {
-        val matchingChargeId = calculationData.adjustments.filter { adjustment -> adjustment.remand!!.chargeId.contains(it.onlyChargeId()) }
-        val matchingAdjustments = matchingChargeId.filter { adjustment -> DatePeriod(adjustment.fromDate!!, adjustment.toDate!!).overlaps(it) }
+  ): List<ChargeRemand> = calculationData.chargeRemand.map {
+    val status = if (remandCalculation.charges[it.onlyChargeId()]!!.sentenceSequence != null) {
+      val matchingChargeId = calculationData.adjustments.filter { adjustment -> adjustment.remand!!.chargeId.contains(it.onlyChargeId()) }
+      val matchingAdjustments = matchingChargeId.filter { adjustment -> DatePeriod(adjustment.fromDate!!, adjustment.toDate!!).overlaps(it) }
 
-        if (matchingAdjustments.isNotEmpty()) {
-          if (matchingAdjustments.any { adjustment -> adjustment.status == AdjustmentStatus.ACTIVE }) {
-            ChargeRemandStatus.APPLICABLE
-          } else {
-            ChargeRemandStatus.INACTIVE
-          }
+      if (matchingAdjustments.isNotEmpty()) {
+        if (matchingAdjustments.any { adjustment -> adjustment.status == AdjustmentStatus.ACTIVE }) {
+          ChargeRemandStatus.APPLICABLE
         } else {
-          val charge = remandCalculation.charges[it.onlyChargeId()]!!
-          if (calculationData.sentenceRemandResult!!.intersectingSentences.any { sentencePeriod -> sentencePeriod.engulfs(it) }) {
-            ChargeRemandStatus.INTERSECTED_BY_SENTENCE
-          } else if (matchingChargeId.isNotEmpty()) {
-            ChargeRemandStatus.INTERSECTED_BY_REMAND
-          } else if (charge.isTermSentence) {
-            ChargeRemandStatus.NOT_APPLICABLE_TO_TERM
-          } else {
-            throw UnsupportedCalculationException("Could not determine the status of charge remand $it")
-          }
+          ChargeRemandStatus.INACTIVE
         }
       } else {
         val charge = remandCalculation.charges[it.onlyChargeId()]!!
-        if (charge.final) {
-          ChargeRemandStatus.NOT_SENTENCED
+        if (calculationData.sentenceRemandResult!!.intersectingSentences.any { sentencePeriod -> sentencePeriod.engulfs(it) }) {
+          ChargeRemandStatus.INTERSECTED_BY_SENTENCE
+        } else if (matchingChargeId.isNotEmpty()) {
+          ChargeRemandStatus.INTERSECTED_BY_REMAND
+        } else if (charge.isTermSentence) {
+          ChargeRemandStatus.NOT_APPLICABLE_TO_TERM
         } else {
-          ChargeRemandStatus.CASE_NOT_CONCLUDED
+          throw UnsupportedCalculationException("Could not determine the status of charge remand $it")
         }
       }
-      it.copy(
-        status = status,
-      )
+    } else {
+      val charge = remandCalculation.charges[it.onlyChargeId()]!!
+      if (charge.final) {
+        ChargeRemandStatus.NOT_SENTENCED
+      } else {
+        ChargeRemandStatus.CASE_NOT_CONCLUDED
+      }
     }
+    it.copy(
+      status = status,
+    )
   }
 }

@@ -11,7 +11,10 @@ import org.junit.jupiter.api.extension.ExtensionContext
 /*
     This class mocks the prisoner-search-api.
  */
-class PrisonerSearchApiExtension : BeforeAllCallback, AfterAllCallback, BeforeEachCallback {
+class PrisonerSearchApiExtension :
+  BeforeAllCallback,
+  AfterAllCallback,
+  BeforeEachCallback {
   companion object {
     @JvmField
     val prisonerSearchApi = PrisonerSearchApiMockServer()

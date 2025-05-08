@@ -16,16 +16,14 @@ class MergeChargeRemandService {
   fun mergeChargeRemand(
     calculationData: CalculationData,
     remandCalculation: RemandCalculation,
-  ): List<ChargeRemand> {
-    return calculationData.chargeRemand.groupBy {
-      val charge = remandCalculation.charges[it.onlyChargeId()]!!
-      SimilarRemandData(it.fromEvent, it.toEvent, it.status!!, charge.courtCaseRef, charge.courtLocation, charge.resultDescription, charge.sentenceSequence != null, charge.bookingId)
-    }.map {
-      it.value[0].copy(
-        chargeIds = it.value.map { remand -> remand.onlyChargeId() }.distinct(),
-        replacedCharges = it.value.mapNotNull { remand -> remand.replacedCharges.firstOrNull() },
-      )
-    }
+  ): List<ChargeRemand> = calculationData.chargeRemand.groupBy {
+    val charge = remandCalculation.charges[it.onlyChargeId()]!!
+    SimilarRemandData(it.fromEvent, it.toEvent, it.status!!, charge.courtCaseRef, charge.courtLocation, charge.resultDescription, charge.sentenceSequence != null, charge.bookingId)
+  }.map {
+    it.value[0].copy(
+      chargeIds = it.value.map { remand -> remand.onlyChargeId() }.distinct(),
+      replacedCharges = it.value.mapNotNull { remand -> remand.replacedCharges.firstOrNull() },
+    )
   }
 
   private data class SimilarRemandData(

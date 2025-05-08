@@ -7,25 +7,12 @@ spring:
           public-key-location: classpath:local-public-key.pub
 
   datasource:
-    url: 'jdbc:h2:mem:identify-remand-db;MODE=PostgreSQL;INIT=create domain if not exists jsonb as json'
-    username: identify_remand
-    password: dummy
-
-  flyway:
-    locations: classpath:/migration/h2,classpath:/migration/common
-    url: ${spring.datasource.url}
-    user: identify_remand
-    password: dummy
-
-  h2:
-    console:
-      enabled: true
+    url: 'jdbc:postgresql://localhost:5432/identify-remand'
+    username: identify-remand
+    password: identify-remand
 
   jpa:
     show-sql: true
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.H2Dialect
 
   sql:
     init:

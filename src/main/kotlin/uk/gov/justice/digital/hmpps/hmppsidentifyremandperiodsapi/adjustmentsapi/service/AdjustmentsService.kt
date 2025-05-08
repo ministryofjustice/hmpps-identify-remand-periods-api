@@ -31,23 +31,17 @@ class AdjustmentsService(
     }
   }
 
-  fun getUnusedDeductionsCalculationResult(person: String): UnusedDeductionsCalculationResultDto {
-    return adjustmentsApiClient.getUnusedDeductionsCalculationResult(person)
-  }
+  fun getUnusedDeductionsCalculationResult(person: String): UnusedDeductionsCalculationResultDto = adjustmentsApiClient.getUnusedDeductionsCalculationResult(person)
 
   private fun createRemand(remands: List<AdjustmentDto>) {
     adjustmentsApiClient.createAdjustment(remands)
   }
 
-  fun getRemandAdjustments(person: String): List<AdjustmentDto> {
-    return adjustmentsApiClient.getAdjustments(person).filter { it.adjustmentType == "REMAND" }
-  }
+  fun getRemandAdjustments(person: String): List<AdjustmentDto> = adjustmentsApiClient.getAdjustments(person).filter { it.adjustmentType == "REMAND" }
 
   private fun deleteRemand(id: UUID) {
     adjustmentsApiClient.delete(id)
   }
 
-  private fun remandSame(one: AdjustmentDto, two: AdjustmentDto): Boolean {
-    return one.fromDate == two.fromDate && one.toDate == two.toDate && one.bookingId == two.bookingId && one.remand?.chargeId == two.remand?.chargeId
-  }
+  private fun remandSame(one: AdjustmentDto, two: AdjustmentDto): Boolean = one.fromDate == two.fromDate && one.toDate == two.toDate && one.bookingId == two.bookingId && one.remand?.chargeId == two.remand?.chargeId
 }

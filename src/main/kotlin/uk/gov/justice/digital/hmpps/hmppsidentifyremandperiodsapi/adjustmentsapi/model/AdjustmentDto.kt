@@ -17,7 +17,5 @@ data class AdjustmentDto(
   val days: Int? = null,
   val source: String? = null,
 ) {
-  fun daysBetween(): Int {
-    return (ChronoUnit.DAYS.between(fromDate, toDate) + 1).toInt()
-  }
+  fun daysBetween(): Int = (ChronoUnit.DAYS.between(fromDate, toDate) + 1).toInt()
 }

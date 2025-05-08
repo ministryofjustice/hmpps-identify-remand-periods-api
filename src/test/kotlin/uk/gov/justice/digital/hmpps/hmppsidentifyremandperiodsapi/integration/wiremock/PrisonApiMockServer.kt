@@ -12,7 +12,10 @@ import org.junit.jupiter.api.extension.ExtensionContext
 /*
     This class mocks the prison-api.
  */
-class PrisonApiExtension : BeforeAllCallback, AfterAllCallback, BeforeEachCallback {
+class PrisonApiExtension :
+  BeforeAllCallback,
+  AfterAllCallback,
+  BeforeEachCallback {
   companion object {
     @JvmField
     val prisonApi = PrisonApiMockServer()

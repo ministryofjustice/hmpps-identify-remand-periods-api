@@ -76,31 +76,19 @@ class SentenceRemandLoopTracker(
   }
 
   /* Can we open a new period, does the period intersected a confirmed date. */
-  fun doesDateIntersectWithEstablishedRemandOrSentence(date: LocalDate): Boolean {
-    return (final + periodsServingSentence).any { it.overlapsStartInclusive(date) } || date == sentenceDate
-  }
+  fun doesDateIntersectWithEstablishedRemandOrSentence(date: LocalDate): Boolean = (final + periodsServingSentence).any { it.overlapsStartInclusive(date) } || date == sentenceDate
 
-  fun dateIsEndOfRemandOrSentence(date: LocalDate): Boolean {
-    return (final + periodsServingSentence).any { it.to == date }
-  }
+  fun dateIsEndOfRemandOrSentence(date: LocalDate): Boolean = (final + periodsServingSentence).any { it.to == date }
 
   /* Should the current period be closed? */
-  fun shouldCloseCurrentPeriod(date: LocalDate, current: Period?): Boolean {
-    return ((final + periodsServingSentence).any { date == it.from } || date == sentenceDate) && current != null
-  }
+  fun shouldCloseCurrentPeriod(date: LocalDate, current: Period?): Boolean = ((final + periodsServingSentence).any { date == it.from } || date == sentenceDate) && current != null
 
   /* If we've reached a sentence period then calculate the release dates for it. */
-  fun shouldCalculateAReleaseDate(date: LocalDate): Boolean {
-    return anyCalculationEventsOnThisDate(date) && !calculationIsForFinalSentence(date) && periodsServingSentence.none { it.from == date }
-  }
+  fun shouldCalculateAReleaseDate(date: LocalDate): Boolean = anyCalculationEventsOnThisDate(date) && !calculationIsForFinalSentence(date) && periodsServingSentence.none { it.from == date }
 
-  private fun anyCalculationEventsOnThisDate(date: LocalDate): Boolean {
-    return sentences.any { it.sentence.sentenceDate == date || it.sentence.recallDates.any { recallDate -> recallDate == date } }
-  }
+  private fun anyCalculationEventsOnThisDate(date: LocalDate): Boolean = sentences.any { it.sentence.sentenceDate == date || it.sentence.recallDates.any { recallDate -> recallDate == date } }
 
-  private fun finalSentence(): SentenceAndCharge {
-    return sentences.maxBy { it.sentence.sentenceDate }
-  }
+  private fun finalSentence(): SentenceAndCharge = sentences.maxBy { it.sentence.sentenceDate }
 
   private fun calculationIsForFinalSentence(date: LocalDate): Boolean {
     val finalSentence = finalSentence()

@@ -40,7 +40,5 @@ class UserSelectedCombinationService {
     }
   }
 
-  private fun combineDatesAndUserSelection(it: ChargeAndEvents, chargesAndEvents: List<ChargeAndEvents>, matchingSelection: RemandApplicableUserSelection): List<CourtDate> {
-    return it.dates + chargesAndEvents.filter { charge -> matchingSelection.chargeIdsToMakeApplicable.contains(charge.charge.chargeId) }.flatMap { charge -> charge.dates }.distinct()
-  }
+  private fun combineDatesAndUserSelection(it: ChargeAndEvents, chargesAndEvents: List<ChargeAndEvents>, matchingSelection: RemandApplicableUserSelection): List<CourtDate> = it.dates + chargesAndEvents.filter { charge -> matchingSelection.chargeIdsToMakeApplicable.contains(charge.charge.chargeId) }.flatMap { charge -> charge.dates }.distinct()
 }

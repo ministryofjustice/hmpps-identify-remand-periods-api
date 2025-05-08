@@ -43,6 +43,5 @@ class RelatedChargeCombinationService {
     return chargesWithSentenceAndActiveBooking.first().charge
   }
 
-  private fun flattenCourtDates(relatedCharges: List<ChargeAndEvents>) =
-    relatedCharges.flatMap { it.dates }.distinct()
+  private fun flattenCourtDates(relatedCharges: List<ChargeAndEvents>) = relatedCharges.flatMap { it.dates }.distinct()
 }
