@@ -56,8 +56,8 @@ spring:
   flyway:
     locations: classpath:/migration/postgres,classpath:/migration/common
     url: ${spring.datasource.url}
-    user: ${DB_USER}
-    password: ${DB_PASS}
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
 
   sql:
     init:

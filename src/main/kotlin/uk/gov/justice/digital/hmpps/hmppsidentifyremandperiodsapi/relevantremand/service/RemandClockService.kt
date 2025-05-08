@@ -36,9 +36,7 @@ class RemandClockService {
     return RemandClockResult(remand, unclosedRemandDates)
   }
 
-  private fun dateIsBeforeSentenceDateIfExists(date: LocalDate, chargeAndEvent: ChargeAndEvents): Boolean {
-    return chargeAndEvent.charge.sentenceDate == null || date.isBefore(chargeAndEvent.charge.sentenceDate)
-  }
+  private fun dateIsBeforeSentenceDateIfExists(date: LocalDate, chargeAndEvent: ChargeAndEvents): Boolean = chargeAndEvent.charge.sentenceDate == null || date.isBefore(chargeAndEvent.charge.sentenceDate)
 
   private fun hasAnyRemandEvent(courtDates: List<CourtDate>) = courtDates.any { it.type.shouldStartRemand() }
 

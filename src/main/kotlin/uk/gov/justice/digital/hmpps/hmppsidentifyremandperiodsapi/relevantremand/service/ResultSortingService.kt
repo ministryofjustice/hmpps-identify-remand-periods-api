@@ -8,11 +8,9 @@ class ResultSortingService {
 
   fun sort(
     result: RemandResult,
-  ): RemandResult {
-    return result.copy(
-      adjustments = result.adjustments.sortedBy { it.fromDate },
-      chargeRemand = result.chargeRemand.sortedWith(compareBy({ it.status }, { it.from })),
-      intersectingSentences = result.intersectingSentences.sortedBy { it.from },
-    )
-  }
+  ): RemandResult = result.copy(
+    adjustments = result.adjustments.sortedBy { it.fromDate },
+    chargeRemand = result.chargeRemand.sortedWith(compareBy({ it.status }, { it.from })),
+    intersectingSentences = result.intersectingSentences.sortedBy { it.from },
+  )
 }

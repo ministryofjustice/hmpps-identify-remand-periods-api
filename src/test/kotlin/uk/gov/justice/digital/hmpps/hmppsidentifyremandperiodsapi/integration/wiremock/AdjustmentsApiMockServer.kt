@@ -12,7 +12,10 @@ import org.junit.jupiter.api.extension.ExtensionContext
 /*
     This class mocks the adjustments api.
  */
-class AdjustmentsApiExtension : BeforeAllCallback, AfterAllCallback, BeforeEachCallback {
+class AdjustmentsApiExtension :
+  BeforeAllCallback,
+  AfterAllCallback,
+  BeforeEachCallback {
   companion object {
     @JvmField
     val adjustmentsApi = AdjustmentsApiMockServer()

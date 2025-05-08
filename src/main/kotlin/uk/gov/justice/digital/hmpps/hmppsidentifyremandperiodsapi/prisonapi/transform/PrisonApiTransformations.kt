@@ -65,28 +65,22 @@ fun transform(results: List<PrisonApiCharge>, prisonerDetails: Prisoner, sentenc
   )
 }
 
-fun filterEventsByOffenceDate(results: List<PrisonApiCharge>, earliestDateInActiveBooking: LocalDate): List<PrisonApiCharge> {
-  return results.map {
-    it.copy(
-      outcomes = it.outcomes.filter { result -> result.date.isAfterOrEqualTo(earliestDateInActiveBooking) },
-    )
-  }.filter { it.outcomes.isNotEmpty() }
-}
+fun filterEventsByOffenceDate(results: List<PrisonApiCharge>, earliestDateInActiveBooking: LocalDate): List<PrisonApiCharge> = results.map {
+  it.copy(
+    outcomes = it.outcomes.filter { result -> result.date.isAfterOrEqualTo(earliestDateInActiveBooking) },
+  )
+}.filter { it.outcomes.isNotEmpty() }
 
-private fun earliestDateInActiveBooking(results: List<PrisonApiCharge>, prisonerDetails: Prisoner): LocalDate {
-  return results
-    .filter { it.bookingId == prisonerDetails.bookingId.toLong() }
-    .flatMap { it.outcomes.filter { outcome -> outcome.resultCode != null }.map { outcome -> outcome.date } + it.offenceDate }
-    .filterNotNull()
-    .ifEmpty {
-      throw UnsupportedCalculationException("There are no offences with offence dates on the active booking.")
-    }
-    .min()
-}
+private fun earliestDateInActiveBooking(results: List<PrisonApiCharge>, prisonerDetails: Prisoner): LocalDate = results
+  .filter { it.bookingId == prisonerDetails.bookingId.toLong() }
+  .flatMap { it.outcomes.filter { outcome -> outcome.resultCode != null }.map { outcome -> outcome.date } + it.offenceDate }
+  .filterNotNull()
+  .ifEmpty {
+    throw UnsupportedCalculationException("There are no offences with offence dates on the active booking.")
+  }
+  .min()
 
-fun transform(prisonApiCharge: PrisonApiCharge): Offence {
-  return Offence(prisonApiCharge.offenceCode, prisonApiCharge.offenceStatue, prisonApiCharge.offenceDescription)
-}
+fun transform(prisonApiCharge: PrisonApiCharge): Offence = Offence(prisonApiCharge.offenceCode, prisonApiCharge.offenceStatue, prisonApiCharge.offenceDescription)
 
 private fun transformToCourtDate(courtDateResult: PrisonApiCourtDateOutcome, charge: PrisonApiCharge, issuesWithLegacyData: MutableList<LegacyDataProblem>): CourtDate? {
   val type = transformToType(courtDateResult, charge, issuesWithLegacyData)

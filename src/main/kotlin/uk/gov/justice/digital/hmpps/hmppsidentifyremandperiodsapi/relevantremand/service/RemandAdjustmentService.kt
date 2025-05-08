@@ -13,17 +13,15 @@ import java.time.LocalDate
 @Service
 class RemandAdjustmentService {
 
-  fun getRemandedAdjustments(remandCalculation: RemandCalculation, calculationData: CalculationData): List<AdjustmentDto> {
-    return joinConcurrentSentenceAdjustments(
-      calculationData.sentenceRemandResult!!.sentenceRemand.map {
-        toAdjustmentDto(
-          remandCalculation,
-          calculationData,
-          it,
-        )
-      },
-    )
-  }
+  fun getRemandedAdjustments(remandCalculation: RemandCalculation, calculationData: CalculationData): List<AdjustmentDto> = joinConcurrentSentenceAdjustments(
+    calculationData.sentenceRemandResult!!.sentenceRemand.map {
+      toAdjustmentDto(
+        remandCalculation,
+        calculationData,
+        it,
+      )
+    },
+  )
 
   private fun joinConcurrentSentenceAdjustments(adjustments: List<AdjustmentDto>): List<AdjustmentDto> {
     val workingAdjustments = adjustments.toMutableList()

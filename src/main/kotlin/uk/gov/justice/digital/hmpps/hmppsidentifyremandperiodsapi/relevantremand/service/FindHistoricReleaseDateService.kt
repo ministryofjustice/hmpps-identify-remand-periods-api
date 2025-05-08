@@ -56,11 +56,9 @@ class FindHistoricReleaseDateService(
    */
   private fun collapseByLastCalculationOfTheDay(
     historicReleaseDates: List<SentenceCalculationSummary>,
-  ): List<SentenceCalculationSummary> {
-    return historicReleaseDates
-      .filter { it.calculationReason != SentenceCalculationSummary.SENTENCE_DELETED_REASON }
-      .groupBy { it.calculationDate.toLocalDate() }.values.map { list -> list.maxBy { it.calculationDate } }
-  }
+  ): List<SentenceCalculationSummary> = historicReleaseDates
+    .filter { it.calculationReason != SentenceCalculationSummary.SENTENCE_DELETED_REASON }
+    .groupBy { it.calculationDate.toLocalDate() }.values.map { list -> list.maxBy { it.calculationDate } }
 
   private fun getReleaseDateForCalcId(
     calculation: SentenceCalculationSummary,

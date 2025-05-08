@@ -13,24 +13,14 @@ class PrisonService(
   private val prisonApiClient: PrisonApiClient,
   private val prisonerSearchApiClient: PrisonerSearchApiClient,
 ) {
-  fun getCourtDateResults(prisonerId: String): List<PrisonApiCharge> {
-    return prisonApiClient.getCourtDateResults(prisonerId)
-  }
+  fun getCourtDateResults(prisonerId: String): List<PrisonApiCharge> = prisonApiClient.getCourtDateResults(prisonerId)
 
-  fun getOffenderDetail(prisonerId: String): Prisoner {
-    return prisonerSearchApiClient.findByPrisonerNumber(prisonerId)
-  }
+  fun getOffenderDetail(prisonerId: String): Prisoner = prisonerSearchApiClient.findByPrisonerNumber(prisonerId)
 
-  fun getPrison(agencyId: String): Prison {
-    return prisonApiClient.getPrison(agencyId)
-  }
+  fun getPrison(agencyId: String): Prison = prisonApiClient.getPrison(agencyId)
 
-  fun getSentencesAndOffences(bookingId: Long, filterActive: Boolean = true): List<SentenceAndOffences> {
-    return prisonApiClient.getSentencesAndOffences(bookingId)
-      .filter { !filterActive || it.sentenceStatus == "A" }
-  }
+  fun getSentencesAndOffences(bookingId: Long, filterActive: Boolean = true): List<SentenceAndOffences> = prisonApiClient.getSentencesAndOffences(bookingId)
+    .filter { !filterActive || it.sentenceStatus == "A" }
 
-  fun getImprisonmentStatusHistory(prisonerId: String): List<PrisonApiImprisonmentStatus> {
-    return prisonApiClient.getImprisonmentStatusHistory(prisonerId)
-  }
+  fun getImprisonmentStatusHistory(prisonerId: String): List<PrisonApiImprisonmentStatus> = prisonApiClient.getImprisonmentStatusHistory(prisonerId)
 }

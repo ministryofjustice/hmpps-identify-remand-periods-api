@@ -1,5 +1,5 @@
 plugins {
-  id("uk.gov.justice.hmpps.gradle-spring-boot") version "6.1.2"
+  id("uk.gov.justice.hmpps.gradle-spring-boot") version "8.1.0"
   kotlin("plugin.spring") version "2.1.20"
   kotlin("plugin.jpa") version "2.1.20"
   id("se.patrikerdes.use-latest-versions") version "0.2.18"
@@ -38,7 +38,7 @@ dependencies {
   // Test deps
   testImplementation("com.github.tomakehurst:wiremock-jre8-standalone:3.0.1")
   testImplementation("io.swagger.parser.v3:swagger-parser-v2-converter:2.1.26")
-  testImplementation("com.h2database:h2")
+  testImplementation("org.testcontainers:postgresql:1.20.6")
 }
 
 kotlin {
@@ -47,8 +47,6 @@ kotlin {
 
 tasks {
   withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions {
-      jvmTarget = "21"
-    }
+    compilerOptions.jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21
   }
 }

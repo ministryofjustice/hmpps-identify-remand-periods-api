@@ -66,11 +66,9 @@ class FindReleaseDateService(
     }
   }
 
-  private fun getReleaseDateProvider(serviceName: String): FindReleaseDateServiceProvider {
-    return if (serviceName == "HISTORIC") {
-      historicReleaseDateService
-    } else {
-      calculateReleaseDateService
-    }
+  private fun getReleaseDateProvider(serviceName: String): FindReleaseDateServiceProvider = if (serviceName == "HISTORIC") {
+    historicReleaseDateService
+  } else {
+    calculateReleaseDateService
   }
 }

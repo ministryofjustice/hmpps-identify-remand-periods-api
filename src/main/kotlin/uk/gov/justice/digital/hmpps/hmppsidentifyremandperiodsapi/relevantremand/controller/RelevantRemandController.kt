@@ -83,9 +83,7 @@ class RelevantRemandController(
     @PathVariable("prisonerId")
     prisonerId: String,
     @RequestBody remandDecision: IdentifyRemandDecisionDto,
-  ): IdentifyRemandDecisionDto {
-    return remandDecisionService.saveDecision(prisonerId, remandDecision)
-  }
+  ): IdentifyRemandDecisionDto = remandDecisionService.saveDecision(prisonerId, remandDecision)
 
   @GetMapping(value = ["/{prisonerId}/decision"])
   @PreAuthorize("hasAnyRole('IDENTIFY_REMAND__IDENTIFY_RW', 'IDENTIFY_REMAND__IDENTIFY_RO')")
@@ -104,9 +102,7 @@ class RelevantRemandController(
     @Parameter(required = true, example = "A1234AB", description = "The prisoners ID (aka nomsId)")
     @PathVariable("prisonerId")
     prisonerId: String,
-  ): IdentifyRemandDecisionDto? {
-    return remandDecisionService.getDecision(prisonerId)
-  }
+  ): IdentifyRemandDecisionDto? = remandDecisionService.getDecision(prisonerId)
 
   companion object {
     val log: Logger = LoggerFactory.getLogger(this::class.java)
