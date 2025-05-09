@@ -32,6 +32,7 @@ class TestCaseAnonymiser {
             ),
           )
         },
+        issuesWithLegacyData = emptyList(),
       ),
       calculations = transformIntersecting(),
     )

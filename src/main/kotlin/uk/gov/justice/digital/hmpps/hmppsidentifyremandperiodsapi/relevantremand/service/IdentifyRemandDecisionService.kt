@@ -31,6 +31,7 @@ class IdentifyRemandDecisionService(
     val courtDateResults = prisonService.getCourtDateResults(person)
     val prisonerDetails = prisonService.getOffenderDetail(person)
     val sentencesAndOffences = prisonService.getSentencesAndOffences(prisonerDetails.bookingId.toLong(), true)
+    val externalMovement = prisonService.getExternalMovements(person)
 
     val options = if (decision.accepted) {
       decision.options ?: RemandCalculationRequestOptions()
@@ -38,7 +39,7 @@ class IdentifyRemandDecisionService(
       RemandCalculationRequestOptions()
     }
 
-    val input = transform(courtDateResults, prisonerDetails, sentencesAndOffences, emptyList())
+    val input = transform(courtDateResults, prisonerDetails, sentencesAndOffences, emptyList(), externalMovement)
     val output = remandCalculationService.calculate(
       input,
       options,

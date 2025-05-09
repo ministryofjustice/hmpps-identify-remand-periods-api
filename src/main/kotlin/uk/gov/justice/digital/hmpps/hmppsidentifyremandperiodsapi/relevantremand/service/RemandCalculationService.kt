@@ -19,6 +19,7 @@ class RemandCalculationService(
   private val mergeChargeRemandService: MergeChargeRemandService,
   private val validateCalculationDataService: ValidateCalculationDataService,
 ) {
+
   fun calculate(remandCalculation: RemandCalculation, options: RemandCalculationRequestOptions): RemandResult {
     if (remandCalculation.chargesAndEvents.isEmpty()) {
       throw UnsupportedCalculationException("There are no charges to calculate")
@@ -48,6 +49,7 @@ class RemandCalculationService(
       chargeRemand = calculationData.chargeRemand,
       intersectingSentences = calculationData.sentenceRemandResult!!.intersectingSentences,
       issuesWithLegacyData = calculationData.issuesWithLegacyData.distinctBy { it.message },
+      periodsOutOfPrison = calculationData.sentenceRemandResult!!.periodsOutOfPrison,
       remandCalculation = if (options.includeRemandCalculation) remandCalculation else null,
     )
 

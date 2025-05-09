@@ -4,6 +4,8 @@ import com.github.tomakehurst.wiremock.WireMockServer
 import com.github.tomakehurst.wiremock.client.WireMock
 import com.github.tomakehurst.wiremock.client.WireMock.aResponse
 import com.github.tomakehurst.wiremock.client.WireMock.get
+import com.github.tomakehurst.wiremock.client.WireMock.urlPathEqualTo
+import com.github.tomakehurst.wiremock.stubbing.StubMapping
 import org.junit.jupiter.api.extension.AfterAllCallback
 import org.junit.jupiter.api.extension.BeforeAllCallback
 import org.junit.jupiter.api.extension.BeforeEachCallback
@@ -26,23 +28,68 @@ class PrisonApiExtension :
     const val RELATED_PRISONER = "RELATED"
     const val MULTIPLE_OFFENCES_PRISONER = "MULTI"
     const val NO_OFFENCE_DATES = "OFF_DATE"
+    const val INTERSECTING_MOVEMENTS = """
+      [
+          {
+              "offenderNo": "$INTERSECTING_PRISONER",
+              "createDateTime": "2021-03-15T09:04:19.272501",
+              "fromAgency": "HMI",
+              "fromAgencyDescription": "Humber (HMP)",
+              "toAgency": "OUT",
+              "toAgencyDescription": "Outside",
+              "fromCity": "",
+              "toCity": "",
+              "movementType": "REL",
+              "movementTypeDescription": "Release",
+              "directionCode": "OUT",
+              "movementDate": "2021-03-15",
+              "movementTime": "09:03:14",
+              "movementReason": "HDC release",
+              "movementReasonCode": "HDC"
+          },
+          {
+              "offenderNo": "$INTERSECTING_PRISONER",
+              "createDateTime": "2021-03-25T09:04:19.272501",
+              "fromAgency": "HLI",
+              "fromAgencyDescription": "Hull (HMP)",
+              "toAgency": "HMI",
+              "toAgencyDescription": "Humber (HMP)",
+              "fromCity": "",
+              "toCity": "",
+              "movementType": "ADM",
+              "movementTypeDescription": "Admission",
+              "directionCode": "IN",
+              "movementDate": "2021-03-25",
+              "movementTime": "12:20:38",
+              "movementReason": "Imprisonment",
+              "movementReasonCode": "IMP"
+          }
+      ]
+    """
   }
   override fun beforeAll(context: ExtensionContext) {
     prisonApi.start()
     prisonApi.stubImprisonedCourtCaseResults()
     prisonApi.stubImprisonmentStatus(IMPRISONED_PRISONER)
+    prisonApi.stubExternalMovements(IMPRISONED_PRISONER, "[]")
     prisonApi.stubBailPrisoner()
     prisonApi.stubEmptyImprisonmentStatus(BAIL_PRISONER)
+    prisonApi.stubExternalMovements(BAIL_PRISONER, "[]")
     prisonApi.stubRelatedOffencesPrisoner()
     prisonApi.stubEmptyImprisonmentStatus(RELATED_PRISONER)
+    prisonApi.stubExternalMovements(RELATED_PRISONER, "[]")
     prisonApi.stubMultipleOffences()
     prisonApi.stubEmptyImprisonmentStatus(MULTIPLE_OFFENCES_PRISONER)
+    prisonApi.stubExternalMovements(MULTIPLE_OFFENCES_PRISONER, "[]")
     prisonApi.stubIntersectingSentence()
     prisonApi.stubEmptyImprisonmentStatus(INTERSECTING_PRISONER)
+    prisonApi.stubExternalMovements(INTERSECTING_PRISONER, INTERSECTING_MOVEMENTS)
     prisonApi.stubCrdValidation()
     prisonApi.stubEmptyImprisonmentStatus(CRD_VALIDATION_PRISONER)
+    prisonApi.stubExternalMovements(CRD_VALIDATION_PRISONER, "[]")
     prisonApi.stubActiveBookingHasNoOffenceDates()
     prisonApi.stubEmptyImprisonmentStatus(NO_OFFENCE_DATES)
+    prisonApi.stubExternalMovements(NO_OFFENCE_DATES, "[]")
     prisonApi.stubGetPrison()
     prisonApi.stubHistoricCalculations()
     prisonApi.stubSentencesAndOffences()
@@ -918,4 +965,13 @@ class PrisonApiMockServer : WireMockServer(WIREMOCK_PORT) {
         ),
     )
   }
+  fun stubExternalMovements(prisonerId: String, json: String): StubMapping = stubFor(
+    get(urlPathEqualTo("/prison-api/api/movements/offender/$prisonerId"))
+      .willReturn(
+        aResponse()
+          .withHeader("Content-Type", "application/json")
+          .withBody(json)
+          .withStatus(200),
+      ),
+  )
 }

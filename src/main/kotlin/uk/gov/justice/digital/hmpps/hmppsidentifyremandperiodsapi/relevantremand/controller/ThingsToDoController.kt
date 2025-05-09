@@ -49,7 +49,8 @@ class ThingsToDoController(
     val prisonerDetails = prisonService.getOffenderDetail(prisonerId)
     val sentencesAndOffences = prisonService.getSentencesAndOffences(prisonerDetails.bookingId.toLong(), true)
     val imprisonmentStatuses = prisonService.getImprisonmentStatusHistory(prisonerId)
-    return thingsToDoService.getToDoList(transform(courtDateResults, prisonerDetails, sentencesAndOffences, imprisonmentStatuses))
+    val externalMovement = prisonService.getExternalMovements(prisonerId)
+    return thingsToDoService.getToDoList(transform(courtDateResults, prisonerDetails, sentencesAndOffences, imprisonmentStatuses, externalMovement))
   }
 
   companion object {

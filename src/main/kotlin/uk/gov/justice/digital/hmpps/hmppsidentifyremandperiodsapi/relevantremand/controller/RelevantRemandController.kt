@@ -61,7 +61,9 @@ class RelevantRemandController(
     val prisonerDetails = prisonService.getOffenderDetail(prisonerId)
     val sentencesAndOffences = prisonService.getSentencesAndOffences(prisonerDetails.bookingId.toLong(), true)
     val imprisonmentStatuses = prisonService.getImprisonmentStatusHistory(prisonerId)
-    return remandCalculationService.calculate(transform(courtDateResults, prisonerDetails, sentencesAndOffences, imprisonmentStatuses), remandCalculationRequestOptions)
+    val externalMovements = prisonService.getExternalMovements(prisonerId)
+
+    return remandCalculationService.calculate(transform(courtDateResults, prisonerDetails, sentencesAndOffences, imprisonmentStatuses, externalMovements), remandCalculationRequestOptions)
   }
 
   @PostMapping(value = ["/{prisonerId}/decision"])

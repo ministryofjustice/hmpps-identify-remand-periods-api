@@ -1,0 +1,1036 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "chargesAndEvents": [
+      {
+        "charge": {
+          "chargeId": 7344909,
+          "offence": {
+            "code": "RT88026",
+            "statute": "RT88",
+            "description": "Drive a motor vehicle dangerously"
+          },
+          "bookingId": 1,
+          "offenceDate": "2024-01-16",
+          "bookNumber": "1",
+          "sentenceSequence": 1,
+          "sentenceDate": "2024-03-01",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-01",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-01-25",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-02-26",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7344915,
+          "offence": {
+            "code": "RA88001",
+            "statute": "RA88",
+            "description": "Use a motor vehicle on a road / public place without third party insurance"
+          },
+          "bookingId": 1,
+          "offenceDate": "2024-01-16",
+          "bookNumber": "1",
+          "resultDescription": "Withdrawn",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-01",
+            "type": "STOP",
+            "description": "Withdrawn",
+            "final": true
+          },
+          {
+            "date": "2024-01-25",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-02-26",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7344916,
+          "offence": {
+            "code": "RT88333",
+            "statute": "RT88",
+            "description": "Drive whilst disqualified"
+          },
+          "bookingId": 1,
+          "offenceDate": "2024-01-16",
+          "bookNumber": "1",
+          "sentenceSequence": 2,
+          "sentenceDate": "2024-03-01",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-01",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-01-25",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-02-26",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7344917,
+          "offence": {
+            "code": "TH78011",
+            "statute": "TH78",
+            "description": "Make off without making payment"
+          },
+          "bookingId": 1,
+          "offenceDate": "2024-01-16",
+          "bookNumber": "1",
+          "sentenceSequence": 16,
+          "sentenceDate": "2024-03-01",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-01",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-01-25",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-02-26",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7344918,
+          "offence": {
+            "code": "RT88333",
+            "statute": "RT88",
+            "description": "Drive whilst disqualified"
+          },
+          "bookingId": 1,
+          "offenceDate": "2024-01-15",
+          "bookNumber": "1",
+          "sentenceSequence": 9,
+          "sentenceDate": "2024-03-01",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-01",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-01-25",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-02-26",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7344919,
+          "offence": {
+            "code": "RA88001",
+            "statute": "RA88",
+            "description": "Use a motor vehicle on a road / public place without third party insurance"
+          },
+          "bookingId": 1,
+          "offenceDate": "2024-01-15",
+          "bookNumber": "1",
+          "resultDescription": "Withdrawn",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-01",
+            "type": "STOP",
+            "description": "Withdrawn",
+            "final": true
+          },
+          {
+            "date": "2024-01-25",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-02-26",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7344920,
+          "offence": {
+            "code": "TH68037",
+            "statute": "TH68",
+            "description": "Burglary other than dwelling - theft"
+          },
+          "bookingId": 1,
+          "offenceDate": "2024-01-15",
+          "bookNumber": "1",
+          "resultDescription": "Withdrawn",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-01",
+            "type": "STOP",
+            "description": "Withdrawn",
+            "final": true
+          },
+          {
+            "date": "2024-01-25",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-02-26",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7344921,
+          "offence": {
+            "code": "TH68037",
+            "statute": "TH68",
+            "description": "Burglary other than dwelling - theft"
+          },
+          "bookingId": 1,
+          "offenceDate": "2024-01-15",
+          "bookNumber": "1",
+          "resultDescription": "Withdrawn",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-01",
+            "type": "STOP",
+            "description": "Withdrawn",
+            "final": true
+          },
+          {
+            "date": "2024-01-25",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-02-26",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7344922,
+          "offence": {
+            "code": "MD71210",
+            "statute": "MD71",
+            "description": "Possess a controlled drug of Class A - Cocaine"
+          },
+          "bookingId": 1,
+          "offenceDate": "2024-01-23",
+          "bookNumber": "1",
+          "sentenceSequence": 16,
+          "sentenceDate": "2024-03-01",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-01",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-01-25",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-02-26",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7344923,
+          "offence": {
+            "code": "MD71211",
+            "statute": "MD71",
+            "description": "Possess a controlled drug of Class A - Heroin"
+          },
+          "bookingId": 1,
+          "offenceDate": "2024-01-23",
+          "bookNumber": "1",
+          "sentenceSequence": 16,
+          "sentenceDate": "2024-03-01",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-01",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-01-25",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-02-26",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7384381,
+          "offence": {
+            "code": "TH68073",
+            "statute": "TH68",
+            "description": "Handle stolen goods"
+          },
+          "bookingId": 1,
+          "offenceDate": "2024-01-14",
+          "bookNumber": "1",
+          "offenceEndDate": "2024-01-24",
+          "sentenceSequence": 16,
+          "sentenceDate": "2024-03-01",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-01",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-02-26",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7384383,
+          "offence": {
+            "code": "TH68001",
+            "statute": "TH68",
+            "description": "Theft from the person of another"
+          },
+          "bookingId": 1,
+          "offenceDate": "2024-01-15",
+          "bookNumber": "1",
+          "sentenceSequence": 16,
+          "sentenceDate": "2024-03-01",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-01",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-02-26",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7578688,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft - no violence"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-07-15",
+          "bookNumber": "2",
+          "sentenceSequence": 17,
+          "sentenceDate": "2024-11-08",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-10-03",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2024-11-08",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-07-20",
+            "type": "STOP",
+            "description": "Withdrawn - Final",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7578689,
+          "offence": {
+            "code": "RT88333",
+            "statute": "RT88",
+            "description": "Drive whilst disqualified"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-07-15",
+          "bookNumber": "2",
+          "resultDescription": "No Separate Penalty",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-10-03",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2024-11-08",
+            "type": "STOP",
+            "description": "No Separate Penalty",
+            "final": true
+          },
+          {
+            "date": "2024-07-20",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-08-19",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-08-23",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7578690,
+          "offence": {
+            "code": "RA88001",
+            "statute": "RA88",
+            "description": "Use a motor vehicle on a road / public place without third party insurance"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-07-15",
+          "bookNumber": "2",
+          "resultDescription": "No Separate Penalty",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-10-03",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2024-11-08",
+            "type": "STOP",
+            "description": "No Separate Penalty",
+            "final": true
+          },
+          {
+            "date": "2024-07-20",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-08-19",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-08-23",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7578691,
+          "offence": {
+            "code": "TH68036",
+            "statute": "TH68",
+            "description": "Burglary dwelling and theft - no violence"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-07-15",
+          "bookNumber": "2",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-10-03",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2024-07-20",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-08-19",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-08-23",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7581833,
+          "offence": {
+            "code": "RT88026",
+            "statute": "RT88",
+            "description": "Drive a motor vehicle dangerously"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-01-16",
+          "bookNumber": "2",
+          "sentenceSequence": 1,
+          "sentenceDate": "2024-03-01",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-01",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-07-23",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7581834,
+          "offence": {
+            "code": "RT88333",
+            "statute": "RT88",
+            "description": "Drive whilst disqualified"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-01-16",
+          "bookNumber": "2",
+          "sentenceSequence": 2,
+          "sentenceDate": "2024-03-01",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-01",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-07-23",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7581835,
+          "offence": {
+            "code": "RT88333",
+            "statute": "RT88",
+            "description": "Drive whilst disqualified"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-01-15",
+          "bookNumber": "2",
+          "sentenceSequence": 9,
+          "sentenceDate": "2024-03-01",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-01",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-07-23",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7581836,
+          "offence": {
+            "code": "TH78011",
+            "statute": "TH78",
+            "description": "Make off without making payment"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-01-16",
+          "bookNumber": "2",
+          "sentenceSequence": 16,
+          "sentenceDate": "2024-03-01",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-01",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-07-23",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7581837,
+          "offence": {
+            "code": "MD71210",
+            "statute": "MD71",
+            "description": "Possess a controlled drug of Class A - Cocaine"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-01-23",
+          "bookNumber": "2",
+          "sentenceSequence": 16,
+          "sentenceDate": "2024-03-01",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-01",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-07-23",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7581838,
+          "offence": {
+            "code": "MD71211",
+            "statute": "MD71",
+            "description": "Possess a controlled drug of Class A - Heroin"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-01-23",
+          "bookNumber": "2",
+          "sentenceSequence": 16,
+          "sentenceDate": "2024-03-01",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-01",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-07-23",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7581839,
+          "offence": {
+            "code": "TH68073",
+            "statute": "TH68",
+            "description": "Handle stolen goods"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-01-14",
+          "bookNumber": "2",
+          "offenceEndDate": "2024-01-24",
+          "sentenceSequence": 16,
+          "sentenceDate": "2024-03-01",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-01",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-07-23",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7581847,
+          "offence": {
+            "code": "TH68001",
+            "statute": "TH68",
+            "description": "Theft from the person of another"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-01-15",
+          "bookNumber": "2",
+          "sentenceSequence": 16,
+          "sentenceDate": "2024-03-01",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-03-01",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-07-23",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7617697,
+          "offence": {
+            "code": "TH68013",
+            "statute": "TH68",
+            "description": "Theft of motor vehicle"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-07-15",
+          "bookNumber": "2",
+          "sentenceSequence": 18,
+          "sentenceDate": "2024-11-08",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2024-10-03",
+            "type": "START",
+            "description": "Commit to Crown Court for Sentence in Custody"
+          },
+          {
+            "date": "2024-11-08",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-08-19",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-08-23",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7819429,
+          "offence": {
+            "code": "TH68143",
+            "statute": "TH68",
+            "description": "Aggravated vehicle taking - ( initial taker ) and property damage £5000 or over"
+          },
+          "bookingId": 2,
+          "offenceDate": "2023-11-02",
+          "bookNumber": "2",
+          "resultDescription": "Remand in Custody (Bail Refused)",
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2025-01-15",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2025-03-11",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2025-04-08",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2025-01-20",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2025-02-17",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          }
+        ]
+      }
+    ],
+    "imprisonmentStatuses": [
+      {
+        "status": "REMANDED",
+        "date": "2024-01-25"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2024-01-26"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2024-02-27"
+      },
+      {
+        "status": "SENTENCED",
+        "date": "2024-03-04"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2024-07-20"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2024-09-10"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2024-10-04"
+      },
+      {
+        "status": "SENTENCED",
+        "date": "2024-11-11"
+      }
+    ],
+    "chargeIdsWithActiveSentence": [
+      7578688,
+      7617697
+    ],
+    "externalMovements": [
+      {
+        "date": "2023-10-16",
+        "release": true
+      },
+      {
+        "date": "2024-01-25",
+        "release": false
+      },
+      {
+        "date": "2024-04-11",
+        "release": false
+      },
+      {
+        "date": "2024-06-11",
+        "release": true
+      },
+      {
+        "date": "2024-07-20",
+        "release": false
+      },
+      {
+        "date": "2024-11-26",
+        "release": false
+      },
+      {
+        "date": "2025-01-14",
+        "release": false
+      }
+    ]
+  },
+  "calculations": [
+    {
+      "calculateAt": "2024-03-01",
+      "release": "2024-09-09",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2024-07-23",
+      "release": "2024-09-09",
+      "service": "HISTORIC"
+    }
+  ],
+  "options": {}
+}

@@ -10,6 +10,7 @@ class SentenceRemandLoopTracker(
   private val charges: Map<Long, Charge>,
   remandPeriods: List<ChargeRemand>,
   private val sentences: List<SentenceAndCharge>,
+  private val periodsOutOfPrison: List<DatePeriod>,
 ) {
   /* All periods that are linked to a sentence which can have remand. */
   val allPeriods = remandPeriods.filter { charges[it.onlyChargeId()]!!.canHaveRemandApplyToSentence() }.sortedBy { it.from }
@@ -62,6 +63,8 @@ class SentenceRemandLoopTracker(
     datesToLoopOver += sentenceDate
     // Add any recall dates for sentences on this date or before.
     datesToLoopOver += sentences.filter { it.sentence.sentenceDate.isBeforeOrEqualTo(sentenceDate) }.flatMap { it.sentence.recallDates }
+    // Periods out of prison, can't be on remand if out of prison.
+    datesToLoopOver += periodsOutOfPrison.flatMap { listOf(it.from, it.to) }
     // Unique dates sorted.
     datesToLoopOver = datesToLoopOver.distinct().sorted()
   }
@@ -76,7 +79,7 @@ class SentenceRemandLoopTracker(
   }
 
   /* Can we open a new period, does the period intersected a confirmed date. */
-  fun doesDateIntersectWithEstablishedRemandOrSentence(date: LocalDate): Boolean = (final + periodsServingSentence).any { it.overlapsStartInclusive(date) } || date == sentenceDate
+  fun doesDateIntersectWithEstablishedRemandOrSentence(date: LocalDate): Boolean = (final + periodsServingSentence + periodsOutOfPrison).any { it.overlapsStartInclusive(date) } || date == sentenceDate
 
   fun dateIsEndOfRemandOrSentence(date: LocalDate): Boolean = (final + periodsServingSentence).any { it.to == date }
 

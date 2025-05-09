@@ -9,6 +9,7 @@ import uk.gov.justice.digital.hmpps.adjustments.api.model.prisonapi.SentenceAndO
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.OffenderKeyDates
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.Prison
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiCharge
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiExternalMovement
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiImprisonmentStatus
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.SentenceCalculationSummary
 
@@ -75,6 +76,15 @@ class PrisonApiClient(@Qualifier("prisonApiWebClient") private val webClient: We
       .uri("/api/imprisonment-status-history/$prisonerId")
       .retrieve()
       .bodyToMono(typeReference<List<PrisonApiImprisonmentStatus>>())
+      .block()!!
+  }
+
+  fun getExternalMovements(prisonerId: String): List<PrisonApiExternalMovement> {
+    log.info("Requesting external movements for $prisonerId")
+    return webClient.get()
+      .uri("/api/movements/offender/$prisonerId?allBookings=true&movementTypes=ADM&movementTypes=REL")
+      .retrieve()
+      .bodyToMono(typeReference<List<PrisonApiExternalMovement>>())
       .block()!!
   }
 }

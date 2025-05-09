@@ -3,6 +3,7 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.tra
 import uk.gov.justice.digital.hmpps.adjustments.api.model.prisonapi.SentenceAndOffences
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiCharge
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiCourtDateOutcome
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiExternalMovement
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.model.PrisonApiImprisonmentStatus
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonersearchapi.model.Prisoner
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException
@@ -11,6 +12,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeLegacyDataProblem
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDate
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ExternalMovement
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ImprisonmentStatus
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblem
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.LegacyDataProblemType
@@ -20,7 +22,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.util.isAfterOr
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.util.mojDisplayFormat
 import java.time.LocalDate
 
-fun transform(results: List<PrisonApiCharge>, prisonerDetails: Prisoner, sentencesAndOffences: List<SentenceAndOffences>, imprisonmentStatus: List<PrisonApiImprisonmentStatus>): RemandCalculation {
+fun transform(results: List<PrisonApiCharge>, prisonerDetails: Prisoner, sentencesAndOffences: List<SentenceAndOffences>, imprisonmentStatus: List<PrisonApiImprisonmentStatus>, externalMovements: List<PrisonApiExternalMovement>): RemandCalculation {
   val earliestDateInActiveBooking: LocalDate = earliestDateInActiveBooking(results, prisonerDetails)
   val issuesWithLegacyData = mutableListOf<LegacyDataProblem>()
   val chargesFilteredByOffenceDate = filterEventsByOffenceDate(results, earliestDateInActiveBooking)
@@ -62,6 +64,7 @@ fun transform(results: List<PrisonApiCharge>, prisonerDetails: Prisoner, sentenc
       }.sortedBy { it.date },
     sentencesAndOffences.flatMap { it.offences.map { offence -> offence.offenderChargeId } },
     issuesWithLegacyData,
+    externalMovements.filter { it.movementDate.isAfter(earliestDateInActiveBooking) }.map { ExternalMovement(it.movementDate, it.movementType == "REL") }.sortedBy { it.date },
   )
 }
 
