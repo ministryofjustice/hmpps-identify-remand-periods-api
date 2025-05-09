@@ -8,6 +8,7 @@ data class RemandResult(
   val intersectingSentences: List<SentencePeriod> = emptyList(),
   val charges: Map<Long, Charge> = emptyMap(),
   val issuesWithLegacyData: List<LegacyDataProblem> = emptyList(),
+  val periodsOutOfPrison: List<DatePeriod> = emptyList(),
   // Source for calculation. Only included for testing
   val remandCalculation: RemandCalculation? = null,
 )

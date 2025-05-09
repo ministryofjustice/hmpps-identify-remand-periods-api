@@ -3,6 +3,8 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantreman
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CalculationData
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.DatePeriod
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ExternalMovement
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Remand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
@@ -10,6 +12,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentenceRemandLoopTracker
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentenceRemandResult
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.util.isAfterOrEqualTo
+import java.time.LocalDate
 
 @Service
 class SentenceRemandService(
@@ -17,6 +20,7 @@ class SentenceRemandService(
 ) {
 
   fun extractSentenceRemand(remandCalculation: RemandCalculation, calculationData: CalculationData): SentenceRemandResult {
+    val periodsOutOfPrison = findPeriodsOutOfPrison(remandCalculation.externalMovements)
     val sentences = calculationData.chargeAndEvents
       .filter { it.charge.sentenceDate != null && it.charge.sentenceSequence != null }
       .flatMap {
@@ -26,13 +30,13 @@ class SentenceRemandService(
           SentenceAndCharge(Sentence(charge.sentenceSequence!!, charge.sentenceDate!!, it.dates.filter { date -> date.isRecallEvent }.map { date -> date.date }.sorted(), charge.bookingId), charge)
         }
       }.distinctBy { "${it.sentence.sentenceDate}${it.sentence.recallDates}${it.sentence.bookingId}" }
-    val loopTracker = SentenceRemandLoopTracker(remandCalculation.charges, calculationData.chargeRemand, sentences)
+    val loopTracker = SentenceRemandLoopTracker(remandCalculation.charges, calculationData.chargeRemand, sentences, periodsOutOfPrison)
     for (entry in loopTracker.sentenceDateToPeriodMap.entries.sortedBy { it.key }) {
       loopTracker.startNewSentenceDateLoop(entry)
       var current: Remand? = null
       for (date in loopTracker.datesToLoopOver) {
         if (loopTracker.shouldCalculateAReleaseDate(date)) {
-          val period = findReleaseDateService.findReleaseDates(date, sentences, loopTracker, remandCalculation)
+          val period = findReleaseDateService.findReleaseDates(date, sentences, loopTracker, remandCalculation, periodsOutOfPrison)
           if (period != null) {
             loopTracker.periodsServingSentence.add(period)
           }
@@ -83,7 +87,24 @@ class SentenceRemandService(
     return SentenceRemandResult(
       loopTracker.final,
       loopTracker.periodsServingSentence,
+      periodsOutOfPrison,
     )
+  }
+
+  private fun findPeriodsOutOfPrison(externalMovements: List<ExternalMovement>): List<DatePeriod> {
+    var outsideStart: LocalDate? = null
+    val periodsOutOfPrison = mutableListOf<DatePeriod>()
+    externalMovements.forEach {
+      if (it.release) {
+        outsideStart = it.date
+      } else {
+        if (outsideStart != null) {
+          periodsOutOfPrison.add(DatePeriod(outsideStart!!, it.date))
+          outsideStart = null
+        }
+      }
+    }
+    return periodsOutOfPrison
   }
 
   companion object {

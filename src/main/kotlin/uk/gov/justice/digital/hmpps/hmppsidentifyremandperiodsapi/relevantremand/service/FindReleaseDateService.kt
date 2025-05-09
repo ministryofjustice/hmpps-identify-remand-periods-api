@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.service.CalculateReleaseDateService
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.DatePeriod
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentenceAndCharge
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.SentencePeriod
@@ -23,6 +24,7 @@ class FindReleaseDateService(
     sentences: List<SentenceAndCharge>,
     loopTracker: SentenceRemandLoopTracker,
     remandCalculation: RemandCalculation,
+    periodsOutOfPrison: List<DatePeriod>,
   ): SentencePeriod? {
     if (loopTracker.periodsServingSentence.any { it.from == date }) {
       return null // Already calculated this date.
@@ -30,7 +32,14 @@ class FindReleaseDateService(
 
     val sentencesToCalculate = sentences.filter { it.sentence.sentenceDate == date || it.sentence.recallDates.any { recallDate -> recallDate == date } }.distinctBy { it.sentence.bookingId }
 
-    return this.findReleaseDate(date, sentencesToCalculate, loopTracker, remandCalculation)
+    val sentencePeriod = this.findReleaseDate(date, sentencesToCalculate, loopTracker, remandCalculation)
+
+    val periodOutOfPrisonBeforeCalculatedRelease = periodsOutOfPrison.find { sentencePeriod.overlapsStartInclusive(it.from) }
+    if (periodOutOfPrisonBeforeCalculatedRelease != null) {
+      // External movement release cuts this sentence period short.
+      return sentencePeriod.copy(to = periodOutOfPrisonBeforeCalculatedRelease.from, externalMovementRelease = true)
+    }
+    return sentencePeriod
   }
 
   private fun findReleaseDate(

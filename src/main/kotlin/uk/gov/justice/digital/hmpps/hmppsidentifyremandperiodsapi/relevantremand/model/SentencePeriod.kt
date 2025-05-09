@@ -10,4 +10,5 @@ data class SentencePeriod(
   val service: String = "HISTORIC",
   val errors: List<String> = emptyList(),
   val calculationIds: List<Long> = emptyList(),
+  val externalMovementRelease: Boolean = false,
 ) : Period
