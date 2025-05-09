@@ -2,7 +2,8 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantreman
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.params.ParameterizedTest
-import org.junit.jupiter.params.provider.CsvFileSource
+import org.junit.jupiter.params.provider.Arguments
+import org.junit.jupiter.params.provider.MethodSource
 import org.mockito.kotlin.any
 import org.mockito.kotlin.eq
 import org.mockito.kotlin.mock
@@ -15,6 +16,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CalculationDetail
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandResult
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Sentence
+import java.util.stream.Stream
 
 class RemandCalculationServiceTest {
   private val calculateReleaseDateService = mock<CalculateReleaseDateService>()
@@ -43,12 +45,12 @@ class RemandCalculationServiceTest {
   )
 
   @ParameterizedTest
-  @CsvFileSource(resources = ["/data/tests.csv"], numLinesToSkip = 1)
-  fun `Test Examples`(exampleName: String, error: String? = null) {
+  @MethodSource(value = ["testCaseSource"])
+  fun `Test Examples`(exampleName: String) {
     log.info("Testing example $exampleName")
 
     val example = TestUtil.objectMapper()
-      .readValue(ClassPathResource("/data/RemandCalculation/$exampleName.json").file, TestExample::class.java)
+      .readValue(ClassPathResource("/data/RemandCalculation/$exampleName").file, TestExample::class.java)
 
     stubCalculations(exampleName, example)
 
@@ -56,9 +58,9 @@ class RemandCalculationServiceTest {
     try {
       remandResult = remandCalculationService.calculate(example.remandCalculation, example.options)
     } catch (e: Exception) {
-      if (!error.isNullOrEmpty()) {
-        assertThat(e.javaClass.simpleName).contains(error.split("(").first())
-        assertThat(e.message).contains(error.split("(")[1])
+      if (!example.error.isNullOrEmpty()) {
+        assertThat(e.javaClass.simpleName).contains(example.error.split("(").first())
+        assertThat(e.message).contains(example.error.split("(")[1])
         return
       } else {
         throw e
@@ -68,7 +70,7 @@ class RemandCalculationServiceTest {
     log.info("Actual result:\n ${TestUtil.objectMapper().writeValueAsString(remandResult.copy(charges = emptyMap()))}")
 
     val expected = TestUtil.objectMapper()
-      .readValue(ClassPathResource("/data/RemandResult/$exampleName.json").file, RemandResult::class.java)
+      .readValue(ClassPathResource("/data/RemandResult/$exampleName").file, RemandResult::class.java)
     assertThat(remandResult)
       .usingRecursiveComparison()
       .ignoringFieldsMatchingRegexes("charges", "remandCalculation")
@@ -134,5 +136,16 @@ class RemandCalculationServiceTest {
 
   companion object {
     private val log = LoggerFactory.getLogger(this::class.java)
+
+    @JvmStatic
+    fun testCaseSource(): Stream<Arguments> {
+      val args = mutableListOf<String>()
+      TestUtil.doAllInDir(
+        "/data/RemandCalculation",
+      ) {
+        args.add(it.name)
+      }
+      return args.stream().map { Arguments.of(it, null) }
+    }
   }
 }
