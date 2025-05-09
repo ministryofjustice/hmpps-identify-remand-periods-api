@@ -8,6 +8,7 @@ data class TestExample(
   val remandCalculation: RemandCalculation,
   val calculations: List<Calculations> = listOf(),
   val options: RemandCalculationRequestOptions = RemandCalculationRequestOptions(),
+  val error: String? = null,
 )
 
 data class Calculations(

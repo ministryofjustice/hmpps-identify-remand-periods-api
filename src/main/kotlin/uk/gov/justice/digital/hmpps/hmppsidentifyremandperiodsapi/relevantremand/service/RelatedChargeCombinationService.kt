@@ -21,7 +21,7 @@ class RelatedChargeCombinationService {
     return mapOfRelatedCharges.map {
       if (it.value.size > 1) {
         ChargeAndEvents(
-          pickMostAppropriateCharge(it.value),
+          pickMostAppropriateCharge(it.value, remandCalculation.chargeIdsWithActiveSentence),
           flattenCourtDates(it.value),
           relatedCharges = it.value.map { combinedEvent -> combinedEvent.charge.chargeId },
         )
@@ -31,7 +31,7 @@ class RelatedChargeCombinationService {
     } + chargesWithoutOffenceDate
   }
 
-  private fun pickMostAppropriateCharge(relatedCharges: List<ChargeAndEvents>): Charge {
+  private fun pickMostAppropriateCharge(relatedCharges: List<ChargeAndEvents>, chargeIdsWithActiveSentence: List<Long>): Charge {
     val chargesWithSentence = relatedCharges.filter { it.charge.sentenceSequence != null }
     if (chargesWithSentence.isEmpty()) {
       return relatedCharges.first().charge
@@ -40,7 +40,11 @@ class RelatedChargeCombinationService {
     if (chargesWithSentenceAndActiveBooking.isEmpty()) {
       return chargesWithSentence.first().charge
     }
-    return chargesWithSentenceAndActiveBooking.first().charge
+    val chargesWithActiveSentenceAndBooking = chargesWithSentenceAndActiveBooking.filter { chargeIdsWithActiveSentence.contains(it.charge.chargeId) }
+    if (chargesWithActiveSentenceAndBooking.isEmpty()) {
+      return chargesWithSentenceAndActiveBooking.first().charge
+    }
+    return chargesWithActiveSentenceAndBooking.maxBy { it.charge.bookingId }.charge
   }
 
   private fun flattenCourtDates(relatedCharges: List<ChargeAndEvents>) = relatedCharges.flatMap { it.dates }.distinct()

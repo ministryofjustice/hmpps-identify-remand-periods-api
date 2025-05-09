@@ -243,5 +243,6 @@
       "release": "2019-08-08",
       "service": "HISTORIC"
     }
-  ]
+  ],
+  "error": "UnsupportedCalculationException(Unable to calculation release dates on 2019-08-09"
 }
