@@ -99,7 +99,7 @@ class SentenceRemandService(
         outsideStart = it.date
       } else {
         if (outsideStart != null) {
-          //The period out of prison ends the day before they're admitted into prison.
+          // The period out of prison ends the day before they're admitted into prison.
           periodsOutOfPrison.add(DatePeriod(outsideStart!!, it.date.minusDays(1)))
           outsideStart = null
         }
