@@ -168,6 +168,17 @@
   "issuesWithLegacyData": [
     {
       "type": "MISSING_OFFENCE_DATE",
+      "message": "There is an offence of 'Rape a girl aged 13 / 14 / 15 - SOA 2003' within booking 1 that has a missing offence date.",
+      "offence": {
+        "code": "SX03001",
+        "statute": "SX03",
+        "description": "Rape a girl aged 13 / 14 / 15 - SOA 2003"
+      },
+      "bookingId": 1,
+      "bookNumber": "1"
+    },
+    {
+      "type": "MISSING_OFFENCE_DATE",
       "message": "There is another offence of 'Rape a girl aged 13 / 14 / 15 - SOA 2003' within booking 1 that has a missing offence date.",
       "offence": {
         "code": "SX03001",

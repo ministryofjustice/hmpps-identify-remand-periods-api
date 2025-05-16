@@ -230,7 +230,7 @@
   "issuesWithLegacyData": [
     {
       "type": "MISSING_OFFENCE_DATE",
-      "message": "There is another offence of 'Use a motor vehicle on a road without a valid test certificate' within booking 1 that has a missing offence date.",
+      "message": "There is an offence of 'Use a motor vehicle on a road without a valid test certificate' within booking 1 that has a missing offence date.",
       "offence": {
         "code": "RT88096",
         "statute": "RT88",
@@ -241,7 +241,7 @@
     },
     {
       "type": "RECALL_EVENT_ON_SENTENCE_DATE",
-      "message": "The offence 'Burglary dwelling and theft - no violence' within booking 2 has a recall event before or on sentence date",
+      "message": "The offence 'Burglary dwelling and theft - no violence' within booking 2 has a recall event before or on the sentence date.",
       "offence": {
         "code": "TH68036",
         "statute": "TH68",
