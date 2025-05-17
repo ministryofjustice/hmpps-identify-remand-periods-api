@@ -1,7 +1,7 @@
 plugins {
   id("uk.gov.justice.hmpps.gradle-spring-boot") version "8.1.0"
-  kotlin("plugin.spring") version "2.1.20"
-  kotlin("plugin.jpa") version "2.1.20"
+  kotlin("plugin.spring") version "2.1.21"
+  kotlin("plugin.jpa") version "2.1.21"
   id("se.patrikerdes.use-latest-versions") version "0.2.18"
 }
 
@@ -37,8 +37,8 @@ dependencies {
 
   // Test deps
   testImplementation("com.github.tomakehurst:wiremock-jre8-standalone:3.0.1")
-  testImplementation("io.swagger.parser.v3:swagger-parser-v2-converter:2.1.26")
-  testImplementation("org.testcontainers:postgresql:1.20.6")
+  testImplementation("io.swagger.parser.v3:swagger-parser-v2-converter:2.1.28")
+  testImplementation("org.testcontainers:postgresql:1.21.0")
 }
 
 kotlin {
