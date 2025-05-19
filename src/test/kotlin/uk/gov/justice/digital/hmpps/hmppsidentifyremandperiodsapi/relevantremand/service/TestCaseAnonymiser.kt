@@ -11,7 +11,7 @@ class TestCaseAnonymiser {
 
   @Test
   fun anonymise() {
-    val exampleName = "adjst-1179-use-most-recent-sentence"
+    val exampleName = "mdwfp-111-sentence-intersection-bugs"
     log.info("Anonymising example $exampleName")
 
     val example = TestUtil.objectMapper()
