@@ -35,7 +35,7 @@
   "issuesWithLegacyData": [
     {
       "type": "MISSING_OFFENCE_DATE",
-      "message": "There is another offence of 'An offence' within booking 1 that has a missing offence date.",
+      "message": "There is an offence of 'An offence' within booking 1 that has a missing offence date.",
       "offence": {
         "code": "1",
         "statute": "1",

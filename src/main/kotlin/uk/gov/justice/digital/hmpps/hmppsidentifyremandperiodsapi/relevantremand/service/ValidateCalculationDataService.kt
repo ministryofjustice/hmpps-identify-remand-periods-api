@@ -108,16 +108,18 @@ class ValidateCalculationDataService {
   }
 
   private fun validateOffenceDates(calculationData: CalculationData) {
+    var firstLegacyDataProblem = true
     calculationData.chargeAndEvents.forEach {
       val charge = it.charge
       if (charge.offenceDate == null) {
         calculationData.issuesWithLegacyData.add(
           ChargeLegacyDataProblem(
             LegacyDataProblemType.MISSING_OFFENCE_DATE,
-            "There is another offence of '${charge.offence.description}' within booking ${charge.bookNumber} that has a missing offence date.",
+            "There is ${if (firstLegacyDataProblem) "an" else "another" } offence of '${charge.offence.description}' within booking ${charge.bookNumber} that has a missing offence date.",
             charge,
           ),
         )
+        firstLegacyDataProblem = false
       }
     }
   }
@@ -134,7 +136,7 @@ class ValidateCalculationDataService {
     val (recallEventOnSentenceDateCharges, chargeAndEvents) = calculationData.chargeAndEvents.partition { it.charge.sentenceDate != null && it.dates.any { event -> event.isRecallEvent && event.date.isBeforeOrEqualTo(it.charge.sentenceDate) } }
 
     recallEventOnSentenceDateCharges.forEach {
-      calculationData.issuesWithLegacyData.add(ChargeLegacyDataProblem(LegacyDataProblemType.RECALL_EVENT_ON_SENTENCE_DATE, "The offence '${it.charge.offence.description}' within booking ${it.charge.bookNumber} has a recall event before or on sentence date", it.charge))
+      calculationData.issuesWithLegacyData.add(ChargeLegacyDataProblem(LegacyDataProblemType.RECALL_EVENT_ON_SENTENCE_DATE, "The offence '${it.charge.offence.description}' within booking ${it.charge.bookNumber} has a recall event before or on the sentence date.", it.charge))
     }
     calculationData.chargeAndEvents = chargeAndEvents
   }
