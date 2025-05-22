@@ -30,6 +30,36 @@
       "status": "INACTIVE"
     },
     {
+      "bookingId": 4,
+      "sentenceSequence": 1,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "fromDate": "2022-10-15",
+      "toDate": "2023-05-25",
+      "remand": {
+        "chargeId": [
+          7954303,
+          7954304
+        ]
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "bookingId": 4,
+      "sentenceSequence": 1,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "fromDate": "2024-04-28",
+      "toDate": "2024-04-29",
+      "remand": {
+        "chargeId": [
+          7954303,
+          7954304
+        ]
+      },
+      "status": "ACTIVE"
+    },
+    {
       "bookingId": 3,
       "sentenceSequence": 5,
       "person": "ABC123",
@@ -66,6 +96,40 @@
         6056039
       ],
       "days": 90
+    },
+    {
+      "from": "2021-06-14",
+      "to": "2023-05-25",
+      "fromEvent": {
+        "date": "2021-06-14",
+        "description": "Commit to Crown Court for Sentence in Custody"
+      },
+      "toEvent": {
+        "date": "2023-05-25",
+        "description": "Remand on Conditional Bail"
+      },
+      "chargeIds": [
+        7954303
+      ],
+      "status": "APPLICABLE",
+      "days": 711
+    },
+    {
+      "from": "2024-04-25",
+      "to": "2024-04-29",
+      "fromEvent": {
+        "date": "2024-04-25",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2024-04-29",
+        "description": "Remand on Conditional Bail"
+      },
+      "chargeIds": [
+        7954303
+      ],
+      "status": "APPLICABLE",
+      "days": 5
     },
     {
       "from": "2021-05-15",
@@ -135,7 +199,6 @@
       "chargeIds": [
         6339540,
         6339541,
-        6339543,
         6339544
       ],
       "status": "CASE_NOT_CONCLUDED",
@@ -155,7 +218,6 @@
       "chargeIds": [
         6339540,
         6339541,
-        6339543,
         6339544
       ],
       "status": "CASE_NOT_CONCLUDED",

@@ -11,13 +11,20 @@ class RelatedChargeCombinationService {
 
   fun combineRelatedCharges(remandCalculation: RemandCalculation): List<ChargeAndEvents> {
     val (chargesWithOffenceDate, chargesWithoutOffenceDate) = remandCalculation.chargesAndEvents.partition { it.charge.offenceDate != null }
-    val mapOfRelatedCharges = chargesWithOffenceDate.groupBy {
-      RelatedCharge(
+    val mapOfRelatedCharges = mutableMapOf<RelatedCharge, MutableList<ChargeAndEvents>>()
+    chargesWithOffenceDate.forEach {
+      val relatedCharge = RelatedCharge(
         it.charge.offenceDate!!,
         it.charge.offenceEndDate,
         it.charge.offence.code,
-        it.charge.sentenceDate
+        it.charge.sentenceDate,
       )
+      val existing = mapOfRelatedCharges.entries.find { entry -> entry.key.isRelated(relatedCharge) }?.value
+      if (existing != null) {
+        existing.add(it)
+      } else {
+        mapOfRelatedCharges[relatedCharge] = mutableListOf(it)
+      }
     }
     return mapOfRelatedCharges.map {
       if (it.value.size > 1) {

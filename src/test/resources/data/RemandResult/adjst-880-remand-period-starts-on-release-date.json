@@ -5,8 +5,8 @@
       "sentenceSequence": 1,
       "person": "ABC123",
       "adjustmentType": "REMAND",
-      "fromDate": "2022-02-04",
       "toDate": "2022-07-14",
+      "fromDate": "2022-02-04",
       "remand": {
         "chargeId": [
           6557901,
@@ -20,11 +20,27 @@
       "sentenceSequence": 17,
       "person": "ABC123",
       "adjustmentType": "REMAND",
-      "fromDate": "2023-10-23",
       "toDate": "2023-12-13",
+      "fromDate": "2023-10-23",
       "remand": {
         "chargeId": [
-          7361669
+          7361669,
+          7361670
+        ]
+      },
+      "status": "INACTIVE"
+    },
+    {
+      "bookingId": 5,
+      "sentenceSequence": 17,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2024-01-12",
+      "fromDate": "2023-12-22",
+      "remand": {
+        "chargeId": [
+          7361669,
+          7361670
         ]
       },
       "status": "INACTIVE"
@@ -34,8 +50,8 @@
       "sentenceSequence": 27,
       "person": "ABC123",
       "adjustmentType": "REMAND",
-      "fromDate": "2024-02-21",
       "toDate": "2024-04-02",
+      "fromDate": "2024-02-21",
       "remand": {
         "chargeId": [
           7378858,
@@ -122,6 +138,24 @@
       "days": 52
     },
     {
+      "from": "2023-12-22",
+      "to": "2024-01-12",
+      "fromEvent": {
+        "date": "2023-12-22",
+        "description": "Guilty"
+      },
+      "toEvent": {
+        "date": "2024-01-12",
+        "description": "Suspended Imprisonment"
+      },
+      "chargeIds": [
+        7361669,
+        7361670
+      ],
+      "status": "INACTIVE",
+      "days": 22
+    },
+    {
       "from": "2022-02-04",
       "to": "2022-07-15",
       "fromEvent": {
@@ -137,24 +171,6 @@
       ],
       "status": "CASE_NOT_CONCLUDED",
       "days": 162
-    },
-    {
-      "from": "2023-12-22",
-      "to": "2024-01-12",
-      "fromEvent": {
-        "date": "2023-12-22",
-        "description": "Guilty"
-      },
-      "toEvent": {
-        "date": "2024-01-12",
-        "description": "Suspended Imprisonment"
-      },
-      "chargeIds": [
-        7308389,
-        7308390
-      ],
-      "status": "NOT_SENTENCED",
-      "days": 22
     }
   ],
   "intersectingSentences": [

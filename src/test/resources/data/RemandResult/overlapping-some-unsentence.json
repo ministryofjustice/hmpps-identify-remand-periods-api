@@ -2,13 +2,29 @@
   "adjustments": [
     {
       "bookingId": 2,
+      "sentenceSequence": 2,
+      "person": "ABCD123",
+      "adjustmentType": "REMAND",
+      "toDate": "2022-11-09",
+      "fromDate": "2022-11-04",
+      "remand": {
+        "chargeId": [
+          4,
+          2
+        ]
+      },
+      "status": "INACTIVE"
+    },
+    {
+      "bookingId": 2,
       "sentenceSequence": 1,
       "person": "ABCD123",
       "adjustmentType": "REMAND",
-      "fromDate": "2022-11-11",
       "toDate": "2023-01-03",
+      "fromDate": "2022-11-11",
       "remand": {
         "chargeId": [
+          4,
           2
         ]
       },
@@ -16,6 +32,21 @@
     }
   ],
   "chargeRemand": [
+    {
+      "from": "2022-11-04",
+      "to": "2022-11-09",
+      "fromEvent": {
+        "date": "2022-11-04"
+      },
+      "toEvent": {
+        "date": "2022-11-09"
+      },
+      "chargeIds": [
+        4
+      ],
+      "status": "INACTIVE",
+      "days": 6
+    },
     {
       "from": "2022-11-11",
       "to": "2023-01-03",
@@ -30,21 +61,6 @@
       ],
       "status": "INACTIVE",
       "days": 54
-    },
-    {
-      "from": "2022-11-04",
-      "to": "2022-11-09",
-      "fromEvent": {
-        "date": "2022-11-04"
-      },
-      "toEvent": {
-        "date": "2022-11-09"
-      },
-      "chargeIds": [
-        1
-      ],
-      "status": "CASE_NOT_CONCLUDED",
-      "days": 6
     },
     {
       "from": "2022-12-16",
@@ -63,4 +79,3 @@
     }
   ]
 }
-

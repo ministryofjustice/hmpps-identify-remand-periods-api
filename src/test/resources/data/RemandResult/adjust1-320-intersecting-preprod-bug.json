@@ -5,12 +5,13 @@
       "sentenceSequence": 2,
       "person": "ABCD123",
       "adjustmentType": "REMAND",
-      "fromDate": "2017-09-19",
       "toDate": "2017-10-02",
+      "fromDate": "2017-09-19",
       "remand": {
         "chargeId": [
           1,
-          2
+          2,
+          13
         ]
       },
       "status": "INACTIVE"
@@ -20,8 +21,8 @@
       "sentenceSequence": 1,
       "person": "ABCD123",
       "adjustmentType": "REMAND",
-      "fromDate": "2017-10-03",
       "toDate": "2017-11-05",
+      "fromDate": "2017-10-03",
       "remand": {
         "chargeId": [
           8
@@ -34,12 +35,13 @@
       "sentenceSequence": 2,
       "person": "ABCD123",
       "adjustmentType": "REMAND",
-      "fromDate": "2017-11-07",
       "toDate": "2018-02-07",
+      "fromDate": "2017-11-07",
       "remand": {
         "chargeId": [
           1,
-          2
+          2,
+          13
         ]
       },
       "status": "INACTIVE"
@@ -58,11 +60,28 @@
         "description": "Imprisonment"
       },
       "chargeIds": [
-        1,
-        2
+        1
       ],
       "status": "INACTIVE",
       "days": 142
+    },
+    {
+      "from": "2017-09-19",
+      "to": "2017-12-22",
+      "fromEvent": {
+        "date": "2017-09-19",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2017-12-22",
+        "description": "Replaced With Another Offence"
+      },
+      "chargeIds": [
+        2,
+        13
+      ],
+      "status": "INACTIVE",
+      "days": 95
     },
     {
       "from": "2017-10-03",
@@ -93,9 +112,7 @@
         "description": "Replaced With Another Offence"
       },
       "chargeIds": [
-        4,
         5,
-        6,
         7
       ],
       "status": "CASE_NOT_CONCLUDED",
@@ -129,7 +146,6 @@
         "bookingId": 1
       },
       "chargeId": 8,
-      "service": "HISTORIC",
       "days": 1
     }
   ]

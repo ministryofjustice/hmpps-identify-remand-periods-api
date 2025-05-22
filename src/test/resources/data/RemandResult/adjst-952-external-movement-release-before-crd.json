@@ -23,7 +23,22 @@
     },
     {
       "bookingId": 2,
-      "sentenceSequence": 18,
+      "sentenceSequence": 17,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "fromDate": "2024-07-20",
+      "toDate": "2024-07-22",
+      "remand": {
+        "chargeId": [
+          7578688,
+          7617697
+        ]
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "bookingId": 2,
+      "sentenceSequence": 17,
       "person": "ABC123",
       "adjustmentType": "REMAND",
       "fromDate": "2024-09-10",
@@ -38,6 +53,23 @@
     }
   ],
   "chargeRemand": [
+    {
+      "from": "2024-07-20",
+      "to": "2024-11-07",
+      "fromEvent": {
+        "date": "2024-07-20",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2024-11-08",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7578688
+      ],
+      "status": "APPLICABLE",
+      "days": 111
+    },
     {
       "from": "2024-08-19",
       "to": "2024-11-07",
@@ -54,23 +86,6 @@
       ],
       "status": "APPLICABLE",
       "days": 81
-    },
-    {
-      "from": "2024-10-03",
-      "to": "2024-11-07",
-      "fromEvent": {
-        "date": "2024-10-03",
-        "description": "Commit to Crown Court for Sentence in Custody"
-      },
-      "toEvent": {
-        "date": "2024-11-08",
-        "description": "Imprisonment"
-      },
-      "chargeIds": [
-        7578688
-      ],
-      "status": "APPLICABLE",
-      "days": 36
     },
     {
       "from": "2024-01-25",
@@ -165,7 +180,7 @@
       "chargeId": 7344909,
       "service": "HISTORIC",
       "externalMovementRelease": true,
-      "days": 103
+      "days": 142
     },
     {
       "from": "2024-07-23",
@@ -187,12 +202,12 @@
     {
       "from": "2023-10-16",
       "to": "2024-01-24",
-      "days": 101
+      "days": 102
     },
     {
       "from": "2024-06-11",
       "to": "2024-07-19",
-      "days": 39
+      "days": 40
     }
   ]
 }

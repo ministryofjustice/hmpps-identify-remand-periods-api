@@ -5,10 +5,11 @@
       "sentenceSequence": 9,
       "person": "ABC123",
       "adjustmentType": "REMAND",
-      "fromDate": "2018-01-30",
       "toDate": "2018-01-31",
+      "fromDate": "2018-01-30",
       "remand": {
         "chargeId": [
+          5500539,
           5144811
         ]
       },
@@ -16,13 +17,14 @@
     },
     {
       "bookingId": 2,
-      "sentenceSequence": 9,
+      "sentenceSequence": 1,
       "person": "ABC123",
       "adjustmentType": "REMAND",
-      "fromDate": "2018-06-18",
       "toDate": "2019-02-24",
+      "fromDate": "2018-03-06",
       "remand": {
         "chargeId": [
+          5500539,
           5144811
         ]
       },
@@ -56,6 +58,23 @@
       "days": 2
     },
     {
+      "from": "2018-03-06",
+      "to": "2019-02-24",
+      "fromEvent": {
+        "date": "2018-03-06",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2019-02-25",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        5500539
+      ],
+      "status": "APPLICABLE",
+      "days": 356
+    },
+    {
       "from": "2018-06-18",
       "to": "2019-02-24",
       "fromEvent": {
@@ -74,24 +93,6 @@
     },
     {
       "from": "2018-03-06",
-      "to": "2019-02-25",
-      "fromEvent": {
-        "date": "2018-03-06",
-        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
-      },
-      "toEvent": {
-        "date": "2019-02-25",
-        "description": "Conviction Quashed"
-      },
-      "chargeIds": [
-        5016618,
-        5016620
-      ],
-      "status": "CASE_NOT_CONCLUDED",
-      "days": 357
-    },
-    {
-      "from": "2018-03-06",
       "to": "2019-02-24",
       "fromEvent": {
         "date": "2018-03-06",
@@ -106,6 +107,23 @@
       ],
       "status": "CASE_NOT_CONCLUDED",
       "days": 356
+    },
+    {
+      "from": "2018-03-06",
+      "to": "2019-02-25",
+      "fromEvent": {
+        "date": "2018-03-06",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2019-02-25",
+        "description": "Conviction Quashed"
+      },
+      "chargeIds": [
+        5016620
+      ],
+      "status": "CASE_NOT_CONCLUDED",
+      "days": 357
     }
   ],
   "intersectingSentences": [

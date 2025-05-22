@@ -2,13 +2,49 @@
   "adjustments": [
     {
       "bookingId": 2,
+      "sentenceSequence": 46,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2021-06-11",
+      "fromDate": "2021-06-04",
+      "remand": {
+        "chargeId": [
+          6511961,
+          6511959,
+          6492240,
+          6492242
+        ]
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "bookingId": 2,
+      "sentenceSequence": 32,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "toDate": "2021-09-29",
+      "fromDate": "2021-07-31",
+      "remand": {
+        "chargeId": [
+          6511961,
+          6511959,
+          6492240,
+          6492242
+        ]
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "bookingId": 2,
       "sentenceSequence": 31,
       "person": "ABC123",
       "adjustmentType": "REMAND",
-      "fromDate": "2021-11-25",
       "toDate": "2021-12-14",
+      "fromDate": "2021-11-25",
       "remand": {
         "chargeId": [
+          6511961,
+          6511959,
           6492240,
           6492242
         ]
@@ -17,6 +53,57 @@
     }
   ],
   "chargeRemand": [
+    {
+      "from": "2021-06-04",
+      "to": "2021-06-11",
+      "fromEvent": {
+        "date": "2021-06-04",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2021-06-11",
+        "description": "Remand on Conditional Bail"
+      },
+      "chargeIds": [
+        6511959
+      ],
+      "status": "APPLICABLE",
+      "days": 8
+    },
+    {
+      "from": "2021-07-31",
+      "to": "2021-09-29",
+      "fromEvent": {
+        "date": "2021-07-31",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2021-09-29",
+        "description": "Community Order"
+      },
+      "chargeIds": [
+        6511961
+      ],
+      "status": "APPLICABLE",
+      "days": 61
+    },
+    {
+      "from": "2021-07-31",
+      "to": "2021-09-29",
+      "fromEvent": {
+        "date": "2021-07-31",
+        "description": "Remittal for Sentence in Custody"
+      },
+      "toEvent": {
+        "date": "2021-09-29",
+        "description": "Community Order"
+      },
+      "chargeIds": [
+        6511959
+      ],
+      "status": "APPLICABLE",
+      "days": 61
+    },
     {
       "from": "2021-11-25",
       "to": "2021-12-14",
@@ -29,11 +116,27 @@
         "description": "Imprisonment"
       },
       "chargeIds": [
-        6492240,
-        6492242
+        6492240
       ],
       "status": "APPLICABLE",
       "days": 20
+    },
+    {
+      "from": "2021-11-25",
+      "to": "2021-12-15",
+      "fromEvent": {
+        "date": "2021-11-25",
+        "description": "Committed to Crown Court for Sentence"
+      },
+      "toEvent": {
+        "date": "2021-12-15",
+        "description": "No Separate Penalty"
+      },
+      "chargeIds": [
+        6492242
+      ],
+      "status": "APPLICABLE",
+      "days": 21
     },
     {
       "from": "2022-11-28",
@@ -66,7 +169,6 @@
       },
       "chargeIds": [
         6382708,
-        6384813,
         6384814
       ],
       "status": "CASE_NOT_CONCLUDED",
@@ -85,7 +187,6 @@
       },
       "chargeIds": [
         6382707,
-        6382709,
         6382710
       ],
       "status": "CASE_NOT_CONCLUDED",
@@ -120,7 +221,6 @@
         "description": "Community Order"
       },
       "chargeIds": [
-        6384813,
         6384814
       ],
       "status": "CASE_NOT_CONCLUDED",
@@ -142,23 +242,6 @@
       ],
       "status": "CASE_NOT_CONCLUDED",
       "days": 23
-    },
-    {
-      "from": "2021-11-25",
-      "to": "2021-12-15",
-      "fromEvent": {
-        "date": "2021-11-25",
-        "description": "Committed to Crown Court for Sentence"
-      },
-      "toEvent": {
-        "date": "2021-12-15",
-        "description": "No Separate Penalty"
-      },
-      "chargeIds": [
-        6492241
-      ],
-      "status": "CASE_NOT_CONCLUDED",
-      "days": 21
     },
     {
       "from": "2022-11-28",
@@ -184,14 +267,14 @@
       "from": "2021-12-15",
       "to": "2022-06-17",
       "sentence": {
-        "sequence": 39,
+        "sequence": 32,
         "sentenceDate": "2021-12-15",
         "recallDates": [
           "2022-08-19"
         ],
         "bookingId": 2
       },
-      "chargeId": 6511958,
+      "chargeId": 6511961,
       "service": "HISTORIC",
       "days": 185
     },
@@ -211,14 +294,14 @@
       "from": "2022-08-19",
       "to": "2025-03-08",
       "sentence": {
-        "sequence": 39,
+        "sequence": 32,
         "sentenceDate": "2021-12-15",
         "recallDates": [
           "2022-08-19"
         ],
         "bookingId": 2
       },
-      "chargeId": 6511958,
+      "chargeId": 6511961,
       "service": "HISTORIC",
       "days": 933
     }
