@@ -1,0 +1,81 @@
+{
+  "adjustments": [
+    {
+      "bookingId": 2,
+      "sentenceSequence": 1,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "fromDate": "2025-04-11",
+      "toDate": "2025-05-01",
+      "remand": {
+        "chargeId": [
+          7947972
+        ]
+      },
+      "status": "ACTIVE"
+    }
+  ],
+  "chargeRemand": [
+    {
+      "from": "2025-04-11",
+      "to": "2025-05-01",
+      "fromEvent": {
+        "date": "2025-04-11",
+        "description": "Commit to Crown Court for Sentence in Custody"
+      },
+      "toEvent": {
+        "date": "2025-05-02",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7947972
+      ],
+      "status": "APPLICABLE",
+      "days": 21
+    }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2024-04-11",
+      "to": "2024-05-22",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2024-04-11",
+        "recallDates": [
+          "2024-06-13"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 7446469,
+      "service": "HISTORIC",
+      "days": 42
+    },
+    {
+      "from": "2024-06-13",
+      "to": "2024-07-03",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2024-04-11",
+        "recallDates": [
+          "2024-06-13"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 7446469,
+      "service": "HISTORIC",
+      "days": 21
+    }
+  ],
+  "periodsOutOfPrison": [
+    {
+      "from": "2024-05-22",
+      "to": "2024-06-19",
+      "days": 29
+    },
+    {
+      "from": "2024-07-03",
+      "to": "2025-04-10",
+      "days": 282
+    }
+  ]
+}
