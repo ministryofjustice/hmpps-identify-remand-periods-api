@@ -16,6 +16,7 @@ class RelatedChargeCombinationService {
         it.charge.offenceDate!!,
         it.charge.offenceEndDate,
         it.charge.offence.code,
+        it.charge.sentenceDate
       )
     }
     return mapOfRelatedCharges.map {

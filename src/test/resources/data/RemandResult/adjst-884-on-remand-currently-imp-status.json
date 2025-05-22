@@ -5,8 +5,8 @@
       "sentenceSequence": 2,
       "person": "ABC123",
       "adjustmentType": "REMAND",
-      "toDate": "2022-04-26",
       "fromDate": "2022-04-16",
+      "toDate": "2022-04-26",
       "remand": {
         "chargeId": [
           6700651,
@@ -21,8 +21,8 @@
       "sentenceSequence": 2,
       "person": "ABC123",
       "adjustmentType": "REMAND",
-      "toDate": "2022-06-22",
       "fromDate": "2022-05-11",
+      "toDate": "2022-06-22",
       "remand": {
         "chargeId": [
           6700651,
@@ -174,7 +174,7 @@
       },
       "chargeId": 6694726,
       "service": "HISTORIC",
-      "days": -243
+      "days": 488
     }
   ]
 }

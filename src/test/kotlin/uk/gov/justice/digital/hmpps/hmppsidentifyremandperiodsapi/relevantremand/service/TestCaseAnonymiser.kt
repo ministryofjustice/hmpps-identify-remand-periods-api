@@ -11,7 +11,7 @@ class TestCaseAnonymiser {
 
   @Test
   fun anonymise() {
-    val exampleName = "mdwfp-111-sentence-intersection-bugs"
+    val exampleName = "adjst-1186-genuine-different-offence"
     log.info("Anonymising example $exampleName")
 
     val example = TestUtil.objectMapper()
@@ -52,7 +52,30 @@ class TestCaseAnonymiser {
 
   private fun transformIntersecting(): List<Calculations> {
     val intersectingJson = """ 
-      []
+      [
+  {
+    "from": "2024-04-11",
+    "to": "2024-05-22",
+    "sentence": {
+      "sequence": 1,
+      "sentenceDate": "2024-04-11",
+      "recallDates": [
+        "2024-06-13"
+      ],
+      "bookingId": 2918895
+    },
+    "chargeId": 7446469,
+    "service": "HISTORIC",
+    "errors": [],
+    "calculationIds": [
+      10987725,
+      11051600,
+      11164622
+    ],
+    "externalMovementRelease": true,
+    "days": 42
+  }
+]
     """.trimIndent()
 
     val intersecting = TestUtil.objectMapper()

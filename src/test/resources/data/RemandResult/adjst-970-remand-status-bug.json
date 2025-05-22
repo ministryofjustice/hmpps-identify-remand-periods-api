@@ -12,7 +12,6 @@
           7631942,
           7631943,
           7631945,
-          7652488,
           7631966,
           7631967
         ]
@@ -36,11 +35,27 @@
         7631942,
         7631943,
         7631945,
-        7652488,
         7631966,
         7631967
       ],
       "status": "INACTIVE",
+      "days": 15
+    },
+    {
+      "from": "2024-08-28",
+      "to": "2024-09-11",
+      "fromEvent": {
+        "date": "2024-08-28",
+        "description": "Guilty"
+      },
+      "toEvent": {
+        "date": "2024-09-12",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7631947
+      ],
+      "status": "NOT_SENTENCED",
       "days": 15
     }
   ],

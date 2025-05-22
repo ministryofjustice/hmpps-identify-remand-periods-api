@@ -5,8 +5,8 @@
       "sentenceSequence": 1,
       "person": "ABC123",
       "adjustmentType": "REMAND",
-      "toDate": "2021-10-12",
       "fromDate": "2021-09-22",
+      "toDate": "2021-10-12",
       "remand": {
         "chargeId": [
           6429615
@@ -19,8 +19,8 @@
       "sentenceSequence": 2,
       "person": "ABC123",
       "adjustmentType": "REMAND",
-      "toDate": "2022-01-17",
       "fromDate": "2022-01-11",
+      "toDate": "2022-01-17",
       "remand": {
         "chargeId": [
           6532020
@@ -33,8 +33,8 @@
       "sentenceSequence": 1,
       "person": "ABC123",
       "adjustmentType": "REMAND",
-      "toDate": "2022-04-03",
       "fromDate": "2022-02-08",
+      "toDate": "2022-04-03",
       "remand": {
         "chargeId": [
           6823694
@@ -47,8 +47,8 @@
       "sentenceSequence": 17,
       "person": "ABC123",
       "adjustmentType": "REMAND",
-      "toDate": "2023-04-04",
       "fromDate": "2023-02-05",
+      "toDate": "2023-04-04",
       "remand": {
         "chargeId": [
           6823725,
@@ -61,28 +61,13 @@
     },
     {
       "bookingId": 1,
-      "sentenceSequence": 26,
-      "person": "ABC123",
-      "adjustmentType": "REMAND",
-      "toDate": "2024-03-24",
-      "fromDate": "2023-12-21",
-      "remand": {
-        "chargeId": [
-          7534606
-        ]
-      },
-      "status": "ACTIVE"
-    },
-    {
-      "bookingId": 1,
       "sentenceSequence": 25,
       "person": "ABC123",
       "adjustmentType": "REMAND",
-      "toDate": "2024-04-22",
       "fromDate": "2024-03-25",
+      "toDate": "2024-04-22",
       "remand": {
         "chargeId": [
-          7534606,
           7414708
         ]
       },
@@ -90,23 +75,6 @@
     }
   ],
   "chargeRemand": [
-    {
-      "from": "2023-12-21",
-      "to": "2024-06-17",
-      "fromEvent": {
-        "date": "2023-12-21",
-        "description": "Remand in Custody (Bail Refused)"
-      },
-      "toEvent": {
-        "date": "2024-06-18",
-        "description": "Imprisonment"
-      },
-      "chargeIds": [
-        7534606
-      ],
-      "status": "APPLICABLE",
-      "days": 180
-    },
     {
       "from": "2024-03-25",
       "to": "2024-04-22",
@@ -207,9 +175,9 @@
         "description": "Remand on Conditional Bail"
       },
       "chargeIds": [
-        7534606
+        6916063
       ],
-      "status": "INTERSECTED_BY_REMAND",
+      "status": "CASE_NOT_CONCLUDED",
       "days": 56
     },
     {
@@ -412,536 +380,5 @@
       "service": "HISTORIC",
       "days": 218
     }
-  ],
-  "charges": {
-    "6916063": {
-      "chargeId": 6916063,
-      "offence": {
-        "code": "CJ88160",
-        "statute": "CJ88",
-        "description": "Assault by beating of an emergency worker"
-      },
-      "offenceDate": "2021-07-18",
-      "bookingId": 1,
-      "bookNumber": "1",
-      "resultDescription": "Remand on Conditional Bail",
-      "isActiveBooking": true
-    },
-    "6916064": {
-      "chargeId": 6916064,
-      "offence": {
-        "code": "CJ88160",
-        "statute": "CJ88",
-        "description": "Assault by beating of an emergency worker"
-      },
-      "offenceDate": "2021-07-18",
-      "bookingId": 1,
-      "bookNumber": "1",
-      "resultDescription": "Remand on Conditional Bail",
-      "isActiveBooking": true
-    },
-    "6823694": {
-      "chargeId": 6823694,
-      "offence": {
-        "code": "OF61102",
-        "statute": "OF61",
-        "description": "Assault a person thereby occasioning them actual bodily harm"
-      },
-      "offenceDate": "2021-09-18",
-      "bookingId": 1,
-      "bookNumber": "1",
-      "sentenceSequence": 1,
-      "sentenceDate": "2022-04-04",
-      "resultDescription": "Recall to Prison",
-      "final": true,
-      "isActiveBooking": true,
-      "isRecallSentence": true
-    },
-    "6823723": {
-      "chargeId": 6823723,
-      "offence": {
-        "code": "TH68023",
-        "statute": "TH68",
-        "description": "Robbery"
-      },
-      "offenceDate": "2022-10-27",
-      "bookingId": 1,
-      "bookNumber": "1",
-      "resultDescription": "Not Guilty",
-      "final": true,
-      "isActiveBooking": true
-    },
-    "6823724": {
-      "chargeId": 6823724,
-      "offence": {
-        "code": "CJ88148",
-        "statute": "CJ88",
-        "description": "Threaten a person with a blade / sharply pointed article in a public place"
-      },
-      "offenceDate": "2022-10-27",
-      "bookingId": 1,
-      "bookNumber": "1",
-      "resultDescription": "Not Guilty",
-      "final": true,
-      "isActiveBooking": true
-    },
-    "6823725": {
-      "chargeId": 6823725,
-      "offence": {
-        "code": "CD71047",
-        "statute": "CD71",
-        "description": "Criminal damage to property valued under £5000 - offender under 16"
-      },
-      "offenceDate": "2022-10-27",
-      "bookingId": 1,
-      "bookNumber": "1",
-      "sentenceSequence": 17,
-      "sentenceDate": "2023-04-05",
-      "resultDescription": "Recall to Prison",
-      "final": true,
-      "isActiveBooking": true,
-      "isRecallSentence": true
-    },
-    "6823726": {
-      "chargeId": 6823726,
-      "offence": {
-        "code": "CJ88160",
-        "statute": "CJ88",
-        "description": "Assault by beating of an emergency worker"
-      },
-      "offenceDate": "2022-09-27",
-      "bookingId": 1,
-      "bookNumber": "1",
-      "offenceEndDate": "2022-10-28",
-      "sentenceSequence": 2,
-      "sentenceDate": "2023-04-05",
-      "resultDescription": "Recall to Prison",
-      "final": true,
-      "isActiveBooking": true,
-      "isRecallSentence": true
-    },
-    "6823727": {
-      "chargeId": 6823727,
-      "offence": {
-        "code": "TH68073",
-        "statute": "TH68",
-        "description": "Handle stolen goods"
-      },
-      "offenceDate": "2022-10-18",
-      "bookingId": 1,
-      "bookNumber": "1",
-      "sentenceSequence": 3,
-      "sentenceDate": "2023-04-05",
-      "resultDescription": "Recall to Prison",
-      "final": true,
-      "isActiveBooking": true,
-      "isRecallSentence": true
-    },
-    "6823728": {
-      "chargeId": 6823728,
-      "offence": {
-        "code": "CJ88148",
-        "statute": "CJ88",
-        "description": "Threaten a person with a blade / sharply pointed article in a public place"
-      },
-      "offenceDate": "2022-10-27",
-      "bookingId": 1,
-      "bookNumber": "1",
-      "resultDescription": "Recall to Prison",
-      "final": true,
-      "isActiveBooking": true
-    },
-    "6823729": {
-      "chargeId": 6823729,
-      "offence": {
-        "code": "TH68023",
-        "statute": "TH68",
-        "description": "Robbery"
-      },
-      "offenceDate": "2022-10-27",
-      "bookingId": 1,
-      "bookNumber": "1",
-      "resultDescription": "Not Guilty",
-      "final": true,
-      "isActiveBooking": true
-    },
-    "6823730": {
-      "chargeId": 6823730,
-      "offence": {
-        "code": "SX03204",
-        "statute": "SX03",
-        "description": "Sex offenders register - fail comply with notification requirements - SOA 2003"
-      },
-      "offenceDate": "2022-10-27",
-      "bookingId": 1,
-      "bookNumber": "1",
-      "sentenceSequence": 10,
-      "sentenceDate": "2023-04-05",
-      "resultDescription": "Recall to Prison",
-      "final": true,
-      "isActiveBooking": true,
-      "isRecallSentence": true
-    },
-    "7414708": {
-      "chargeId": 7414708,
-      "offence": {
-        "code": "OF61131",
-        "statute": "OF61",
-        "description": "Wound / inflict grievous bodily harm without intent"
-      },
-      "offenceDate": "2023-10-18",
-      "bookingId": 1,
-      "bookNumber": "1",
-      "offenceEndDate": "2023-10-19",
-      "sentenceSequence": 25,
-      "sentenceDate": "2024-04-23",
-      "resultDescription": "Imprisonment",
-      "final": true,
-      "isActiveBooking": true
-    },
-    "7534604": {
-      "chargeId": 7534604,
-      "offence": {
-        "code": "CJ88116",
-        "statute": "CJ88",
-        "description": "Assault by beating"
-      },
-      "offenceDate": "2023-08-11",
-      "bookingId": 1,
-      "bookNumber": "1",
-      "sentenceSequence": 26,
-      "sentenceDate": "2024-06-18",
-      "resultDescription": "Imprisonment",
-      "final": true,
-      "isActiveBooking": true
-    },
-    "7534605": {
-      "chargeId": 7534605,
-      "offence": {
-        "code": "CJ88116",
-        "statute": "CJ88",
-        "description": "Assault by beating"
-      },
-      "offenceDate": "2023-08-11",
-      "bookingId": 1,
-      "bookNumber": "1",
-      "sentenceSequence": 26,
-      "sentenceDate": "2024-06-18",
-      "resultDescription": "Imprisonment",
-      "final": true,
-      "isActiveBooking": true
-    },
-    "7534606": {
-      "chargeId": 7534606,
-      "offence": {
-        "code": "CJ88160",
-        "statute": "CJ88",
-        "description": "Assault by beating of an emergency worker"
-      },
-      "offenceDate": "2021-07-18",
-      "bookingId": 1,
-      "bookNumber": "1",
-      "sentenceSequence": 26,
-      "sentenceDate": "2024-06-18",
-      "resultDescription": "Imprisonment",
-      "final": true,
-      "isActiveBooking": true
-    },
-    "7534607": {
-      "chargeId": 7534607,
-      "offence": {
-        "code": "CJ88160",
-        "statute": "CJ88",
-        "description": "Assault by beating of an emergency worker"
-      },
-      "offenceDate": "2021-07-18",
-      "bookingId": 1,
-      "bookNumber": "1",
-      "sentenceSequence": 27,
-      "sentenceDate": "2024-06-18",
-      "resultDescription": "Imprisonment",
-      "final": true,
-      "isActiveBooking": true
-    },
-    "7305935": {
-      "chargeId": 7305935,
-      "offence": {
-        "code": "CJ88160",
-        "statute": "CJ88",
-        "description": "Assault by beating of an emergency worker"
-      },
-      "offenceDate": "2021-07-18",
-      "bookingId": 1,
-      "bookNumber": "1",
-      "resultDescription": "Remand in Custody (Bail Refused)",
-      "isActiveBooking": true
-    },
-    "7305936": {
-      "chargeId": 7305936,
-      "offence": {
-        "code": "CJ88160",
-        "statute": "CJ88",
-        "description": "Assault by beating of an emergency worker"
-      },
-      "offenceDate": "2021-07-18",
-      "bookingId": 1,
-      "bookNumber": "1",
-      "resultDescription": "Remand in Custody (Bail Refused)",
-      "isActiveBooking": true
-    },
-    "7243370": {
-      "chargeId": 7243370,
-      "offence": {
-        "code": "OF61017",
-        "statute": "OF61",
-        "description": "Section 18 - grievous bodily harm with intent"
-      },
-      "offenceDate": "2023-10-18",
-      "bookingId": 1,
-      "bookNumber": "1",
-      "offenceEndDate": "2023-10-19",
-      "resultDescription": "No Conviction",
-      "final": true,
-      "isActiveBooking": true
-    },
-    "6365705": {
-      "chargeId": 6365705,
-      "offence": {
-        "code": "CJ88116",
-        "statute": "CJ88",
-        "description": "Assault by beating"
-      },
-      "offenceDate": "2021-07-13",
-      "bookingId": 2,
-      "bookNumber": "2",
-      "resultDescription": "Discontinuance",
-      "final": true
-    },
-    "6365706": {
-      "chargeId": 6365706,
-      "offence": {
-        "code": "PU86149",
-        "statute": "PU86",
-        "description": "Use threatening / abusive words / behaviour likely to cause harassment, alarm or distress"
-      },
-      "offenceDate": "2021-07-13",
-      "bookingId": 2,
-      "bookNumber": "2",
-      "resultDescription": "Discontinuance",
-      "final": true
-    },
-    "6365707": {
-      "chargeId": 6365707,
-      "offence": {
-        "code": "PU86149",
-        "statute": "PU86",
-        "description": "Use threatening / abusive words / behaviour likely to cause harassment, alarm or distress"
-      },
-      "offenceDate": "2021-07-13",
-      "bookingId": 2,
-      "bookNumber": "2",
-      "resultDescription": "Discontinuance",
-      "final": true
-    },
-    "6365708": {
-      "chargeId": 6365708,
-      "offence": {
-        "code": "CJ88116",
-        "statute": "CJ88",
-        "description": "Assault by beating"
-      },
-      "offenceDate": "2021-07-13",
-      "bookingId": 2,
-      "bookNumber": "2",
-      "resultDescription": "Discontinuance",
-      "final": true
-    },
-    "6368356": {
-      "chargeId": 6368356,
-      "offence": {
-        "code": "GA05046",
-        "statute": "GA05",
-        "description": "Breach of personal licence condition - Gambling Act 2005"
-      },
-      "offenceDate": "2021-06-14",
-      "bookingId": 2,
-      "bookNumber": "2",
-      "resultDescription": "Imprisonment",
-      "final": true
-    },
-    "6368444": {
-      "chargeId": 6368444,
-      "offence": {
-        "code": "SX03204",
-        "statute": "SX03",
-        "description": "Sex offenders register - fail comply with notification requirements - SOA 2003"
-      },
-      "offenceDate": "2021-06-07",
-      "bookingId": 2,
-      "bookNumber": "2",
-      "resultDescription": "Detention",
-      "final": true
-    },
-    "6368445": {
-      "chargeId": 6368445,
-      "offence": {
-        "code": "SX03204",
-        "statute": "SX03",
-        "description": "Sex offenders register - fail comply with notification requirements - SOA 2003"
-      },
-      "offenceDate": "2021-06-21",
-      "bookingId": 2,
-      "bookNumber": "2",
-      "resultDescription": "Detention",
-      "final": true
-    },
-    "6429615": {
-      "chargeId": 6429615,
-      "offence": {
-        "code": "SX03206",
-        "statute": "SX03",
-        "description": "Sex offenders register - supply false information in purported compliance with a notification requirement"
-      },
-      "offenceDate": "2021-09-08",
-      "bookingId": 3,
-      "bookNumber": "3",
-      "sentenceSequence": 1,
-      "sentenceDate": "2021-10-13",
-      "resultDescription": "Imprisonment",
-      "final": true
-    },
-    "6541274": {
-      "chargeId": 6541274,
-      "offence": {
-        "code": "OF61102",
-        "statute": "OF61",
-        "description": "Assault a person thereby occasioning them actual bodily harm"
-      },
-      "offenceDate": "2021-09-18",
-      "bookingId": 4,
-      "bookNumber": "4",
-      "sentenceSequence": 10,
-      "sentenceDate": "2022-04-04",
-      "resultDescription": "Imprisonment",
-      "final": true
-    },
-    "6538841": {
-      "chargeId": 6538841,
-      "offence": {
-        "code": "TH68010",
-        "statute": "TH68",
-        "description": "Theft from a shop"
-      },
-      "offenceDate": "2021-11-18",
-      "bookingId": 4,
-      "bookNumber": "4",
-      "sentenceSequence": 1,
-      "sentenceDate": "2022-01-18",
-      "resultDescription": "Imprisonment",
-      "final": true
-    },
-    "6538842": {
-      "chargeId": 6538842,
-      "offence": {
-        "code": "TH68010",
-        "statute": "TH68",
-        "description": "Theft from a shop"
-      },
-      "offenceDate": "2021-10-27",
-      "bookingId": 4,
-      "bookNumber": "4",
-      "sentenceSequence": 9,
-      "sentenceDate": "2022-01-18",
-      "resultDescription": "Imprisonment",
-      "final": true
-    },
-    "6538843": {
-      "chargeId": 6538843,
-      "offence": {
-        "code": "TH68010",
-        "statute": "TH68",
-        "description": "Theft from a shop"
-      },
-      "offenceDate": "2021-09-10",
-      "bookingId": 4,
-      "bookNumber": "4",
-      "sentenceSequence": 9,
-      "sentenceDate": "2022-01-18",
-      "resultDescription": "Imprisonment",
-      "final": true
-    },
-    "6538844": {
-      "chargeId": 6538844,
-      "offence": {
-        "code": "TH68010",
-        "statute": "TH68",
-        "description": "Theft from a shop"
-      },
-      "offenceDate": "2021-09-11",
-      "bookingId": 4,
-      "bookNumber": "4",
-      "sentenceSequence": 9,
-      "sentenceDate": "2022-01-18",
-      "resultDescription": "Imprisonment",
-      "final": true
-    },
-    "6531999": {
-      "chargeId": 6531999,
-      "offence": {
-        "code": "PU86116",
-        "statute": "PU86",
-        "description": "Use threatening / abusive / insulting words / behaviour to cause harassment / alarm / distress"
-      },
-      "offenceDate": "2022-01-10",
-      "bookingId": 4,
-      "bookNumber": "4",
-      "resultDescription": "No Separate Penalty",
-      "final": true
-    },
-    "6532020": {
-      "chargeId": 6532020,
-      "offence": {
-        "code": "TH68010",
-        "statute": "TH68",
-        "description": "Theft from a shop"
-      },
-      "offenceDate": "2022-01-10",
-      "bookingId": 4,
-      "bookNumber": "4",
-      "sentenceSequence": 2,
-      "sentenceDate": "2022-01-18",
-      "resultDescription": "Imprisonment",
-      "final": true
-    },
-    "6635716": {
-      "chargeId": 6635716,
-      "offence": {
-        "code": "CJ88116",
-        "statute": "CJ88",
-        "description": "Assault by beating"
-      },
-      "offenceDate": "2021-09-13",
-      "bookingId": 4,
-      "bookNumber": "4",
-      "sentenceSequence": 11,
-      "sentenceDate": "2022-04-26",
-      "resultDescription": "Imprisonment",
-      "final": true
-    },
-    "6635717": {
-      "chargeId": 6635717,
-      "offence": {
-        "code": "PU86149",
-        "statute": "PU86",
-        "description": "Use threatening / abusive words / behaviour likely to cause harassment, alarm or distress"
-      },
-      "offenceDate": "2021-09-13",
-      "bookingId": 4,
-      "bookNumber": "4",
-      "sentenceSequence": 11,
-      "sentenceDate": "2022-04-26",
-      "resultDescription": "Imprisonment",
-      "final": true
-    }
-  }
+  ]
 }
