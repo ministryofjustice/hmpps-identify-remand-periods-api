@@ -1,0 +1,112 @@
+{
+  "adjustments": [
+    {
+      "bookingId": 1,
+      "sentenceSequence": 1,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "fromDate": "2024-01-09",
+      "toDate": "2024-01-30",
+      "remand": {
+        "chargeId": [
+          7323211
+        ]
+      },
+      "status": "INACTIVE"
+    }
+  ],
+  "chargeRemand": [
+    {
+      "from": "2024-01-09",
+      "to": "2024-01-30",
+      "fromEvent": {
+        "date": "2024-01-09",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2024-01-31",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7323211
+      ],
+      "status": "INACTIVE",
+      "days": 22
+    }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2024-01-31",
+      "to": "2024-02-12",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2024-01-31",
+        "recallDates": [
+          "2024-02-12"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 7323211,
+      "service": "HISTORIC",
+      "days": 13
+    },
+    {
+      "from": "2024-02-12",
+      "to": "2024-02-12",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2024-01-31",
+        "recallDates": [
+          "2024-02-12"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 7323211,
+      "service": "HISTORIC",
+      "days": 1
+    },
+    {
+      "from": "2024-11-27",
+      "to": "2025-02-07",
+      "sentence": {
+        "sequence": 35,
+        "sentenceDate": "2024-11-27",
+        "recallDates": [
+          "2025-03-02",
+          "2025-05-09"
+        ],
+        "bookingId": 2
+      },
+      "chargeId": 7894727,
+      "service": "HISTORIC",
+      "days": 73
+    }
+  ],
+  "periodsOutOfPrison": [
+    {
+      "from": "2024-02-12",
+      "to": "2024-02-18",
+      "days": 7
+    },
+    {
+      "from": "2024-03-21",
+      "to": "2024-11-26",
+      "days": 251
+    },
+    {
+      "from": "2025-02-07",
+      "to": "2025-02-09",
+      "days": 3
+    },
+    {
+      "from": "2025-02-20",
+      "to": "2025-03-03",
+      "days": 12
+    },
+    {
+      "from": "2025-03-17",
+      "to": "2025-05-11",
+      "days": 56
+    }
+  ]
+}
