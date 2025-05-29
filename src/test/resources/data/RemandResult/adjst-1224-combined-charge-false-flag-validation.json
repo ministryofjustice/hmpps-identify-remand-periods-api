@@ -1,0 +1,284 @@
+{
+  "adjustments": [
+    {
+      "bookingId": 1,
+      "sentenceSequence": 48,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "fromDate": "2023-12-09",
+      "toDate": "2023-12-11",
+      "remand": {
+        "chargeId": [
+          7289038,
+          7289039
+        ]
+      },
+      "status": "INACTIVE"
+    },
+    {
+      "bookingId": 4,
+      "sentenceSequence": 2,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "fromDate": "2024-07-02",
+      "toDate": "2024-07-10",
+      "remand": {
+        "chargeId": [
+          7923529,
+          7923572,
+          7923583,
+          7923584,
+          7923585,
+          7923586,
+          7923596,
+          7923597,
+          7923650,
+          7923598,
+          7923599,
+          7923600,
+          7923666,
+          7923667,
+          7923683,
+          7923684,
+          7923694,
+          7923697,
+          7923698,
+          7923699,
+          7923700,
+          7923701,
+          7923702,
+          7923695
+        ]
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "bookingId": 4,
+      "sentenceSequence": 1,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "fromDate": "2024-12-07",
+      "toDate": "2024-12-16",
+      "remand": {
+        "chargeId": [
+          7923529,
+          7923572,
+          7923583,
+          7923584,
+          7923585,
+          7923586,
+          7923596,
+          7923597,
+          7923650,
+          7923598,
+          7923599,
+          7923600,
+          7923666,
+          7923667,
+          7923683,
+          7923684,
+          7923694,
+          7923697,
+          7923698,
+          7923699,
+          7923700,
+          7923701,
+          7923702,
+          7923695
+        ]
+      },
+      "status": "ACTIVE"
+    }
+  ],
+  "chargeRemand": [
+    {
+      "from": "2024-07-02",
+      "to": "2024-07-10",
+      "fromEvent": {
+        "date": "2024-07-02",
+        "description": "Guilty"
+      },
+      "toEvent": {
+        "date": "2024-07-10",
+        "description": "Remand on Conditional Bail"
+      },
+      "chargeIds": [
+        7923572,
+        7923583,
+        7923584,
+        7923585,
+        7923586,
+        7923596,
+        7923597,
+        7923650,
+        7923598,
+        7923599,
+        7923600,
+        7923683,
+        7923684
+      ],
+      "status": "APPLICABLE",
+      "days": 9
+    },
+    {
+      "from": "2024-12-07",
+      "to": "2024-12-16",
+      "fromEvent": {
+        "date": "2024-12-07",
+        "description": "Guilty"
+      },
+      "toEvent": {
+        "date": "2024-12-17",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7923529,
+        7923572,
+        7923583,
+        7923584,
+        7923585,
+        7923586,
+        7923596,
+        7923597,
+        7923650,
+        7923598,
+        7923599,
+        7923600,
+        7923666,
+        7923667,
+        7923683,
+        7923684,
+        7923694,
+        7923697,
+        7923698,
+        7923699,
+        7923700,
+        7923701,
+        7923702,
+        7923695
+      ],
+      "status": "APPLICABLE",
+      "days": 10
+    },
+    {
+      "from": "2023-12-09",
+      "to": "2023-12-11",
+      "fromEvent": {
+        "date": "2023-12-09",
+        "description": "Guilty"
+      },
+      "toEvent": {
+        "date": "2023-12-12",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7289038,
+        7289039
+      ],
+      "status": "INACTIVE",
+      "days": 3
+    },
+    {
+      "from": "2024-07-02",
+      "to": "2024-07-10",
+      "fromEvent": {
+        "date": "2024-07-02",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2024-07-10",
+        "description": "Remand on Conditional Bail"
+      },
+      "chargeIds": [
+        7554290
+      ],
+      "status": "CASE_NOT_CONCLUDED",
+      "days": 9
+    }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2023-09-06",
+      "to": "2023-11-28",
+      "sentence": {
+        "sequence": 32,
+        "sentenceDate": "2023-09-06",
+        "recallDates": [
+          "2023-12-12",
+          "2024-02-23"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 7293272,
+      "service": "HISTORIC",
+      "days": 84
+    },
+    {
+      "from": "2023-12-12",
+      "to": "2024-02-20",
+      "sentence": {
+        "sequence": 48,
+        "sentenceDate": "2023-12-12",
+        "recallDates": [
+          "2024-02-23"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 7289038,
+      "service": "HISTORIC",
+      "days": 71
+    },
+    {
+      "from": "2024-02-23",
+      "to": "2024-04-02",
+      "sentence": {
+        "sequence": 48,
+        "sentenceDate": "2023-12-12",
+        "recallDates": [
+          "2024-02-23"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 7289038,
+      "service": "HISTORIC",
+      "days": 40
+    },
+    {
+      "from": "2024-12-17",
+      "to": "2025-03-06",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2024-12-17",
+        "recallDates": [
+          "2025-03-26"
+        ],
+        "bookingId": 2
+      },
+      "chargeId": 7771215,
+      "service": "HISTORIC",
+      "days": 80
+    }
+  ],
+  "periodsOutOfPrison": [
+    {
+      "from": "2024-02-20",
+      "to": "2024-02-27",
+      "days": 8
+    },
+    {
+      "from": "2024-04-02",
+      "to": "2024-07-01",
+      "days": 91
+    },
+    {
+      "from": "2024-07-11",
+      "to": "2024-12-06",
+      "days": 149
+    },
+    {
+      "from": "2025-03-06",
+      "to": "2025-03-25",
+      "days": 20
+    }
+  ]
+}

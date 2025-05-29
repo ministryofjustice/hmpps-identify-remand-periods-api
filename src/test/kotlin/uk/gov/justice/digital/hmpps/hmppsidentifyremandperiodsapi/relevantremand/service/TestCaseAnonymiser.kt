@@ -11,7 +11,7 @@ class TestCaseAnonymiser {
 
   @Test
   fun anonymise() {
-    val exampleName = "adjst-1186-genuine-different-offence"
+    val exampleName = "adjst-1224-combined-charge-false-flag-validation"
     log.info("Anonymising example $exampleName")
 
     val example = TestUtil.objectMapper()
@@ -37,7 +37,7 @@ class TestCaseAnonymiser {
       calculations = transformIntersecting(),
     )
 
-    log.info("Anon: ${TestUtil.objectMapper().writeValueAsString(write)}}")
+    log.info("Anon: ${TestUtil.objectMapper().writeValueAsString(write)}")
     TestUtil.objectMapper()
       .writeValue(ClassPathResource("/data/RemandCalculation/$exampleName.json").file, write)
   }
@@ -51,9 +51,7 @@ class TestCaseAnonymiser {
   }
 
   private fun transformIntersecting(): List<Calculations> {
-    val intersectingJson = """ 
-      []
-    """.trimIndent()
+    val intersectingJson = """[]""".trimIndent()
 
     val intersecting = TestUtil.objectMapper()
       .readValue(intersectingJson, object : TypeReference<List<SentencePeriod>>() {})
