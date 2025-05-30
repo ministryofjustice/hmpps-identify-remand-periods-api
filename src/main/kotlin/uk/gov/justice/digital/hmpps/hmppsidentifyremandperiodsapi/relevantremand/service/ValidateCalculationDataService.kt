@@ -29,8 +29,10 @@ class ValidateCalculationDataService {
   private fun validateAllStartEventsBeforeSentenceDate(calculationData: CalculationData) {
     calculationData.chargeAndEvents.mapNotNull {
       if (it.charge.sentenceDate != null) {
-        val eventAfterSentenceDate = it.dates.find { courtEvent -> courtEvent.type.shouldStartRemand() && courtEvent.date == it.charge.sentenceDate }
-        if (eventAfterSentenceDate != null) it to eventAfterSentenceDate else null
+        val eventsOnSentenceDate = it.dates.filter { courtEvent -> courtEvent.date == it.charge.sentenceDate }
+        val eventsOnSentenceDateThatStartRemand = eventsOnSentenceDate.filter { courtEvent -> courtEvent.type.shouldStartRemand() }
+        val allEventsOnSentenceDateStartRemand = eventsOnSentenceDate.size == eventsOnSentenceDateThatStartRemand.size
+        if (eventsOnSentenceDateThatStartRemand.isNotEmpty() && allEventsOnSentenceDateStartRemand) it to eventsOnSentenceDateThatStartRemand[0] else null
       } else {
         null
       }
