@@ -1,0 +1,374 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "chargesAndEvents": [
+      {
+        "charge": {
+          "chargeId": 7831641,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "bookingId": 1,
+          "offenceDate": "2024-02-28",
+          "bookNumber": "1",
+          "sentenceSequence": 38,
+          "sentenceDate": "2024-12-30",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2025-03-13",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7798900,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "bookingId": 1,
+          "offenceDate": "2024-12-28",
+          "bookNumber": "1",
+          "sentenceSequence": 45,
+          "sentenceDate": "2024-12-30",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2025-03-13",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7798902,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "bookingId": 1,
+          "offenceDate": "2024-10-15",
+          "bookNumber": "1",
+          "sentenceSequence": 52,
+          "sentenceDate": "2024-12-30",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2025-03-13",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7904514,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "bookingId": 1,
+          "offenceDate": "2024-02-28",
+          "bookNumber": "1",
+          "sentenceSequence": 60,
+          "sentenceDate": "2024-12-30",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2025-03-13",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7904521,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "bookingId": 1,
+          "offenceDate": "2024-10-15",
+          "bookNumber": "1",
+          "sentenceSequence": 67,
+          "sentenceDate": "2024-12-30",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2025-03-13",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7959308,
+          "offence": {
+            "code": "SE20001",
+            "statute": "SE20",
+            "description": "Breach criminal behaviour order"
+          },
+          "bookingId": 2,
+          "offenceDate": "2025-04-15",
+          "bookNumber": "2",
+          "sentenceSequence": 2,
+          "sentenceDate": "2025-04-17",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2025-05-09",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2025-04-17",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7904349,
+          "offence": {
+            "code": "SE20001",
+            "statute": "SE20",
+            "description": "Breach criminal behaviour order"
+          },
+          "bookingId": 2,
+          "offenceDate": "2025-03-12",
+          "bookNumber": "2",
+          "sentenceSequence": 1,
+          "sentenceDate": "2025-03-13",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2025-05-09",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2025-03-13",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2025-04-16",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7992794,
+          "offence": {
+            "code": "CD98067",
+            "statute": "CD98",
+            "description": "Racially / religiously aggravated intentional harassment / alarm / distress - words / writing"
+          },
+          "bookingId": 2,
+          "offenceDate": "2025-05-09",
+          "bookNumber": "2",
+          "sentenceSequence": 4,
+          "sentenceDate": "2025-06-18",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2025-05-12",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2025-05-21",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2025-06-18",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7992795,
+          "offence": {
+            "code": "SE20001",
+            "statute": "SE20",
+            "description": "Breach criminal behaviour order"
+          },
+          "bookingId": 2,
+          "offenceDate": "2025-05-09",
+          "bookNumber": "2",
+          "sentenceSequence": 5,
+          "sentenceDate": "2025-06-18",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2025-05-12",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2025-05-21",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2025-06-18",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      }
+    ],
+    "imprisonmentStatuses": [
+      {
+        "status": "SENTENCED",
+        "date": "2025-03-14"
+      },
+      {
+        "status": "SENTENCED",
+        "date": "2025-04-22"
+      },
+      {
+        "status": "RECALLED",
+        "date": "2025-05-14"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2025-06-10"
+      },
+      {
+        "status": "SENTENCED",
+        "date": "2025-06-19"
+      }
+    ],
+    "chargeIdsWithActiveSentence": [
+      7992794,
+      7992795
+    ],
+    "externalMovements": [
+      {
+        "date": "2025-03-13"
+      },
+      {
+        "date": "2025-04-15",
+        "release": true
+      },
+      {
+        "date": "2025-04-17"
+      },
+      {
+        "date": "2025-05-09",
+        "release": true
+      },
+      {
+        "date": "2025-05-12"
+      }
+    ]
+  },
+  "calculations": [
+    {
+      "calculateAt": "2024-12-30",
+      "release": "2025-01-21",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2025-03-13",
+      "release": "2025-03-22",
+      "service": "CRDS"
+    },
+    {
+      "calculateAt": "2025-04-16",
+      "release": "2025-05-09",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2025-04-17",
+      "release": "2025-05-09",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2025-05-09",
+      "release": "2025-05-25",
+      "service": "HISTORIC"
+    }
+  ],
+  "options": {}
+}

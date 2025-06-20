@@ -34,7 +34,7 @@ class FindReleaseDateService(
 
     val sentencePeriod = this.findReleaseDate(date, sentencesToCalculate, loopTracker, remandCalculation)
 
-    val periodOutOfPrisonBeforeCalculatedRelease = periodsOutOfPrison.find { sentencePeriod.overlapsStartInclusive(it.from) }
+    val periodOutOfPrisonBeforeCalculatedRelease = periodsOutOfPrison.find { sentencePeriod.overlaps(it.from) }
     if (periodOutOfPrisonBeforeCalculatedRelease != null) {
       // External movement release cuts this sentence period short.
       return sentencePeriod.copy(to = periodOutOfPrisonBeforeCalculatedRelease.from, externalMovementRelease = true)
