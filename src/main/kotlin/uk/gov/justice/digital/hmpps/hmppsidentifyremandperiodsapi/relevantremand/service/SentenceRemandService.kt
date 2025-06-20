@@ -95,7 +95,7 @@ class SentenceRemandService(
     var outsideStart: LocalDate? = null
     val periodsOutOfPrison = mutableListOf<DatePeriod>()
     externalMovements.forEach {
-      if (it.release) {
+      if (it.release && outsideStart == null) {
         outsideStart = it.date
       } else {
         if (outsideStart != null) {
