@@ -1,0 +1,779 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "chargesAndEvents": [
+      {
+        "charge": {
+          "chargeId": 7430586,
+          "offence": {
+            "code": "TH68020",
+            "statute": "TH68",
+            "description": "Theft - other - including theft by finding"
+          },
+          "bookingId": 1,
+          "offenceDate": "2024-01-26",
+          "bookNumber": "1",
+          "resultDescription": "Remand on Conditional Bail"
+        },
+        "dates": [
+          {
+            "date": "2024-04-02",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-04-09",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7581315,
+          "offence": {
+            "code": "SX03128",
+            "statute": "SX03",
+            "description": "Exposure - SOA 2003"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-07-05",
+          "bookNumber": "2",
+          "resultDescription": "Remand on Conditional Bail"
+        },
+        "dates": [
+          {
+            "date": "2024-07-08",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-07-11",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7574266,
+          "offence": {
+            "code": "SX03128",
+            "statute": "SX03",
+            "description": "Exposure - SOA 2003"
+          },
+          "bookingId": 2,
+          "offenceDate": "2024-07-05",
+          "bookNumber": "2",
+          "resultDescription": "Remand on Conditional Bail"
+        },
+        "dates": [
+          {
+            "date": "2024-07-08",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-08-09",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7562693,
+          "offence": {
+            "code": "SX03128",
+            "statute": "SX03",
+            "description": "Exposure - SOA 2003"
+          },
+          "bookingId": 3,
+          "offenceDate": "2024-07-05",
+          "bookNumber": "3"
+        },
+        "dates": [
+          {
+            "date": "2024-07-08",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-07-11",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7649989,
+          "offence": {
+            "code": "TH68010",
+            "statute": "TH68",
+            "description": "Theft from a shop"
+          },
+          "bookingId": 4,
+          "offenceDate": "2024-01-28",
+          "bookNumber": "4",
+          "sentenceSequence": 1,
+          "sentenceDate": "2024-09-11",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2024-09-10",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-09-11",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7649990,
+          "offence": {
+            "code": "BA76001",
+            "statute": "BA76",
+            "description": "Fail to surrender to police / court bail at the appointed time"
+          },
+          "bookingId": 4,
+          "offenceDate": "2024-06-05",
+          "bookNumber": "4",
+          "sentenceSequence": 2,
+          "sentenceDate": "2024-09-11",
+          "resultDescription": "Imprisonment",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2024-09-10",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2024-09-11",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7653179,
+          "offence": {
+            "code": "SX03128",
+            "statute": "SX03",
+            "description": "Exposure - SOA 2003"
+          },
+          "bookingId": 4,
+          "offenceDate": "2024-07-05",
+          "bookNumber": "4",
+          "resultDescription": "Remand on Conditional Bail"
+        },
+        "dates": [
+          {
+            "date": "2024-07-08",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-08-09",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7653180,
+          "offence": {
+            "code": "SX03128",
+            "statute": "SX03",
+            "description": "Exposure - SOA 2003"
+          },
+          "bookingId": 4,
+          "offenceDate": "2024-07-05",
+          "bookNumber": "4",
+          "sentenceSequence": 22,
+          "sentenceDate": "2024-12-10",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-10-11",
+            "type": "CONTINUE",
+            "description": "Guilty",
+            "final": true
+          },
+          {
+            "date": "2024-12-10",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-11-20",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          },
+          {
+            "date": "2024-07-08",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-07-11",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          },
+          {
+            "date": "2024-10-04",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-10-09",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2025-04-07",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2025-04-17",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2025-05-16",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2025-03-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2025-02-26",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 7683667,
+          "offence": {
+            "code": "SX03007",
+            "statute": "SX03",
+            "description": "Sexual assault on a female"
+          },
+          "bookingId": 4,
+          "offenceDate": "2023-11-01",
+          "bookNumber": "4",
+          "sentenceSequence": 21,
+          "sentenceDate": "2024-12-10",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-10-09",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-12-10",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-10-11",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-11-06",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2025-05-13",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2024-11-20",
+            "type": "START",
+            "description": "Remittal for Sentence in Custody"
+          },
+          {
+            "date": "2024-10-04",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2025-04-07",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2025-04-17",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2025-03-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2025-02-26",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 8041209,
+          "offence": {
+            "code": "SX03007",
+            "statute": "SX03",
+            "description": "Sexual assault on a female"
+          },
+          "bookingId": 5,
+          "offenceDate": "2023-11-01",
+          "bookNumber": "5",
+          "sentenceSequence": 1,
+          "sentenceDate": "2024-12-10",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-10-04",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-12-10",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2025-02-26",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2025-03-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2025-04-07",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2025-04-17",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2025-05-13",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2025-06-02",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 8041231,
+          "offence": {
+            "code": "SX03128",
+            "statute": "SX03",
+            "description": "Exposure - SOA 2003"
+          },
+          "bookingId": 5,
+          "offenceDate": "2024-07-05",
+          "bookNumber": "5",
+          "sentenceSequence": 2,
+          "sentenceDate": "2024-12-10",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2024-07-08",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-07-11",
+            "type": "STOP",
+            "description": "Remand on Conditional Bail"
+          },
+          {
+            "date": "2024-10-04",
+            "type": "START",
+            "description": "Remand in Custody (Bail Refused)"
+          },
+          {
+            "date": "2024-12-10",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2025-02-26",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2025-03-20",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2025-04-07",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2025-04-17",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2025-05-13",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2025-06-02",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 8041497,
+          "offence": {
+            "code": "SX03204",
+            "statute": "SX03",
+            "description": "Sex offenders register - fail comply with notification requirements - SOA 2003"
+          },
+          "bookingId": 5,
+          "offenceDate": "2025-06-02",
+          "bookNumber": "5",
+          "sentenceSequence": 9,
+          "sentenceDate": "2025-06-14",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2025-06-14",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      }
+    ],
+    "imprisonmentStatuses": [
+      {
+        "status": "REMANDED",
+        "date": "2024-04-02"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2024-07-08"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2024-07-09"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2024-07-18"
+      },
+      {
+        "status": "SENTENCED",
+        "date": "2024-09-12"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2024-11-05"
+      },
+      {
+        "status": "SENTENCED",
+        "date": "2024-12-16"
+      },
+      {
+        "status": "RECALLED",
+        "date": "2025-03-06"
+      },
+      {
+        "status": "RECALLED",
+        "date": "2025-03-24"
+      },
+      {
+        "status": "RECALLED",
+        "date": "2025-04-07"
+      },
+      {
+        "status": "RECALLED",
+        "date": "2025-04-15"
+      },
+      {
+        "status": "RECALLED",
+        "date": "2025-04-29"
+      },
+      {
+        "status": "RECALLED",
+        "date": "2025-05-16"
+      },
+      {
+        "status": "RECALLED",
+        "date": "2025-05-19"
+      },
+      {
+        "status": "SENTENCED",
+        "date": "2025-06-17"
+      }
+    ],
+    "chargeIdsWithActiveSentence": [
+      8041209,
+      8041231,
+      8041497
+    ],
+    "externalMovements": [
+      {
+        "date": "2024-04-02"
+      },
+      {
+        "date": "2024-04-09",
+        "release": true
+      },
+      {
+        "date": "2024-07-08"
+      },
+      {
+        "date": "2024-07-11"
+      },
+      {
+        "date": "2024-07-11",
+        "release": true
+      },
+      {
+        "date": "2024-07-26",
+        "release": true
+      },
+      {
+        "date": "2024-09-11"
+      },
+      {
+        "date": "2024-10-02"
+      },
+      {
+        "date": "2024-10-11"
+      },
+      {
+        "date": "2024-11-20"
+      },
+      {
+        "date": "2025-02-18",
+        "release": true
+      },
+      {
+        "date": "2025-03-05"
+      },
+      {
+        "date": "2025-03-18",
+        "release": true
+      },
+      {
+        "date": "2025-03-21"
+      },
+      {
+        "date": "2025-04-03",
+        "release": true
+      },
+      {
+        "date": "2025-04-07"
+      },
+      {
+        "date": "2025-04-16",
+        "release": true
+      },
+      {
+        "date": "2025-04-28"
+      },
+      {
+        "date": "2025-05-08",
+        "release": true
+      },
+      {
+        "date": "2025-05-16"
+      },
+      {
+        "date": "2025-05-29",
+        "release": true
+      },
+      {
+        "date": "2025-06-14"
+      }
+    ]
+  },
+  "calculations": [
+    {
+      "calculateAt": "2024-09-11",
+      "release": "2024-10-08",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2024-12-10",
+      "release": "2025-02-03",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2025-02-26",
+      "release": "2025-03-18",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2025-03-20",
+      "release": "2025-04-03",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2025-04-07",
+      "release": "2025-04-16",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2025-04-17",
+      "release": "2025-05-08",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2025-05-13",
+      "release": "2025-05-29",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2025-05-16",
+      "release": "2025-05-29",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2025-06-02",
+      "release": "2025-06-27",
+      "service": "HISTORIC"
+    }
+  ],
+  "options": {}
+}

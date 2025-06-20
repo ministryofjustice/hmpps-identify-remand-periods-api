@@ -67,6 +67,7 @@ class ValidateCalculationDataService {
     val maximumCalculatedDate = (calculationData.sentenceRemandResult!!.sentenceRemand + calculationData.sentenceRemandResult!!.intersectingSentences).maxOfOrNull { it.to }
     calculationData.imprisonmentStatuses
       .filter { maximumCalculatedDate == null || it.date.isBeforeOrEqualTo(maximumCalculatedDate) }
+      .filter { calculationData.sentenceRemandResult!!.periodsOutOfPrison.none { periodOutOfPrison -> periodOutOfPrison.overlapsEndInclusive(it.date) } }
       .forEach {
         when (it.status) {
           ImprisonmentStatusType.RECALLED -> validateRecalledImprisonmentStatus(it, calculationData)

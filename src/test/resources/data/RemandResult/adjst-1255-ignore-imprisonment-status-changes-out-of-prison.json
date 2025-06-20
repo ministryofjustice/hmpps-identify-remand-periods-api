@@ -1,0 +1,345 @@
+{
+  "adjustments": [
+    {
+      "bookingId": 5,
+      "sentenceSequence": 2,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "fromDate": "2024-07-08",
+      "toDate": "2024-07-11",
+      "remand": {
+        "chargeId": [
+          8041231,
+          8041209
+        ]
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "bookingId": 4,
+      "sentenceSequence": 1,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "fromDate": "2024-09-10",
+      "toDate": "2024-09-10",
+      "remand": {
+        "chargeId": [
+          7649989,
+          7649990
+        ]
+      },
+      "status": "INACTIVE"
+    },
+    {
+      "bookingId": 5,
+      "sentenceSequence": 2,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "fromDate": "2024-10-09",
+      "toDate": "2024-12-09",
+      "remand": {
+        "chargeId": [
+          8041231,
+          8041209
+        ]
+      },
+      "status": "ACTIVE"
+    }
+  ],
+  "chargeRemand": [
+    {
+      "from": "2024-07-08",
+      "to": "2024-07-11",
+      "fromEvent": {
+        "date": "2024-07-08",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2024-07-11",
+        "description": "Remand on Conditional Bail"
+      },
+      "chargeIds": [
+        8041231
+      ],
+      "status": "APPLICABLE",
+      "days": 4
+    },
+    {
+      "from": "2024-10-04",
+      "to": "2024-12-09",
+      "fromEvent": {
+        "date": "2024-10-04",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2024-12-10",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        8041231,
+        8041209
+      ],
+      "status": "APPLICABLE",
+      "days": 67
+    },
+    {
+      "from": "2024-09-10",
+      "to": "2024-09-10",
+      "fromEvent": {
+        "date": "2024-09-10",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2024-09-11",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7649989,
+        7649990
+      ],
+      "status": "INACTIVE",
+      "days": 1
+    },
+    {
+      "from": "2024-04-02",
+      "to": "2024-04-09",
+      "fromEvent": {
+        "date": "2024-04-02",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2024-04-09",
+        "description": "Remand on Conditional Bail"
+      },
+      "chargeIds": [
+        7430586
+      ],
+      "status": "CASE_NOT_CONCLUDED",
+      "days": 8
+    }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2024-09-11",
+      "to": "2024-10-08",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2024-09-11",
+        "bookingId": 4
+      },
+      "chargeId": 7649989,
+      "service": "HISTORIC",
+      "days": 28
+    },
+    {
+      "from": "2024-12-10",
+      "to": "2025-02-03",
+      "sentence": {
+        "sequence": 22,
+        "sentenceDate": "2024-12-10",
+        "recallDates": [
+          "2025-02-26",
+          "2025-03-20",
+          "2025-04-07",
+          "2025-04-17",
+          "2025-05-13",
+          "2025-05-16",
+          "2025-06-02"
+        ],
+        "bookingId": 4
+      },
+      "chargeId": 7653180,
+      "service": "HISTORIC",
+      "days": 56
+    },
+    {
+      "from": "2025-02-26",
+      "to": "2025-03-18",
+      "sentence": {
+        "sequence": 22,
+        "sentenceDate": "2024-12-10",
+        "recallDates": [
+          "2025-02-26",
+          "2025-03-20",
+          "2025-04-07",
+          "2025-04-17",
+          "2025-05-13",
+          "2025-05-16",
+          "2025-06-02"
+        ],
+        "bookingId": 4
+      },
+      "chargeId": 7653180,
+      "service": "HISTORIC",
+      "days": 21
+    },
+    {
+      "from": "2025-03-20",
+      "to": "2025-04-03",
+      "sentence": {
+        "sequence": 22,
+        "sentenceDate": "2024-12-10",
+        "recallDates": [
+          "2025-02-26",
+          "2025-03-20",
+          "2025-04-07",
+          "2025-04-17",
+          "2025-05-13",
+          "2025-05-16",
+          "2025-06-02"
+        ],
+        "bookingId": 4
+      },
+      "chargeId": 7653180,
+      "service": "HISTORIC",
+      "days": 15
+    },
+    {
+      "from": "2025-04-07",
+      "to": "2025-04-16",
+      "sentence": {
+        "sequence": 22,
+        "sentenceDate": "2024-12-10",
+        "recallDates": [
+          "2025-02-26",
+          "2025-03-20",
+          "2025-04-07",
+          "2025-04-17",
+          "2025-05-13",
+          "2025-05-16",
+          "2025-06-02"
+        ],
+        "bookingId": 4
+      },
+      "chargeId": 7653180,
+      "service": "HISTORIC",
+      "days": 10
+    },
+    {
+      "from": "2025-04-17",
+      "to": "2025-05-08",
+      "sentence": {
+        "sequence": 22,
+        "sentenceDate": "2024-12-10",
+        "recallDates": [
+          "2025-02-26",
+          "2025-03-20",
+          "2025-04-07",
+          "2025-04-17",
+          "2025-05-13",
+          "2025-05-16",
+          "2025-06-02"
+        ],
+        "bookingId": 4
+      },
+      "chargeId": 7653180,
+      "service": "HISTORIC",
+      "days": 22
+    },
+    {
+      "from": "2025-05-13",
+      "to": "2025-05-29",
+      "sentence": {
+        "sequence": 22,
+        "sentenceDate": "2024-12-10",
+        "recallDates": [
+          "2025-02-26",
+          "2025-03-20",
+          "2025-04-07",
+          "2025-04-17",
+          "2025-05-13",
+          "2025-05-16",
+          "2025-06-02"
+        ],
+        "bookingId": 4
+      },
+      "chargeId": 7653180,
+      "service": "HISTORIC",
+      "days": 17
+    },
+    {
+      "from": "2025-05-16",
+      "to": "2025-05-29",
+      "sentence": {
+        "sequence": 22,
+        "sentenceDate": "2024-12-10",
+        "recallDates": [
+          "2025-02-26",
+          "2025-03-20",
+          "2025-04-07",
+          "2025-04-17",
+          "2025-05-13",
+          "2025-05-16",
+          "2025-06-02"
+        ],
+        "bookingId": 4
+      },
+      "chargeId": 7653180,
+      "service": "HISTORIC",
+      "days": 14
+    },
+    {
+      "from": "2025-06-02",
+      "to": "2025-06-27",
+      "sentence": {
+        "sequence": 22,
+        "sentenceDate": "2024-12-10",
+        "recallDates": [
+          "2025-02-26",
+          "2025-03-20",
+          "2025-04-07",
+          "2025-04-17",
+          "2025-05-13",
+          "2025-05-16",
+          "2025-06-02"
+        ],
+        "bookingId": 4
+      },
+      "chargeId": 7653180,
+      "service": "HISTORIC",
+      "days": 26
+    }
+  ],
+  "periodsOutOfPrison": [
+    {
+      "from": "2024-04-09",
+      "to": "2024-07-07",
+      "days": 90
+    },
+    {
+      "from": "2024-07-11",
+      "to": "2024-07-25",
+      "days": 15
+    },
+    {
+      "from": "2025-02-18",
+      "to": "2025-03-04",
+      "days": 15
+    },
+    {
+      "from": "2025-03-18",
+      "to": "2025-03-20",
+      "days": 3
+    },
+    {
+      "from": "2025-04-03",
+      "to": "2025-04-06",
+      "days": 4
+    },
+    {
+      "from": "2025-04-16",
+      "to": "2025-04-27",
+      "days": 12
+    },
+    {
+      "from": "2025-05-08",
+      "to": "2025-05-15",
+      "days": 8
+    },
+    {
+      "from": "2025-05-29",
+      "to": "2025-06-13",
+      "days": 16
+    }
+  ]
+}
