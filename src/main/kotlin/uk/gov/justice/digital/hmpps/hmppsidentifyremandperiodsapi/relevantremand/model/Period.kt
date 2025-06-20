@@ -12,12 +12,14 @@ interface Period {
   val days: Long get() {
     return ChronoUnit.DAYS.between(from, to) + 1
   }
+
+  fun overlaps(date: LocalDate): Boolean = date.isAfter(from) && date.isBefore(to)
   fun overlapsEndInclusive(date: LocalDate): Boolean = date.isAfter(from) && date.isBeforeOrEqualTo(to)
   fun overlapsStartInclusive(date: LocalDate): Boolean = date.isAfterOrEqualTo(from) && date.isBefore(to)
 
   fun overlapsStartAndEndInclusive(date: LocalDate): Boolean = date.isAfterOrEqualTo(from) && date.isBeforeOrEqualTo(to)
 
-  fun overlaps(period: Period): Boolean = (period.from.isAfterOrEqualTo(from) && period.from.isBeforeOrEqualTo(to)) ||
+  fun overlapsPeriod(period: Period): Boolean = (period.from.isAfterOrEqualTo(from) && period.from.isBeforeOrEqualTo(to)) ||
     (period.to.isAfterOrEqualTo(from) && period.to.isBeforeOrEqualTo(to))
 
   fun datesSame(period: Period): Boolean = from == period.from && to == period.to

@@ -11,7 +11,7 @@ class TestCaseAnonymiser {
 
   @Test
   fun anonymise() {
-    val exampleName = "adjst-1224-combined-charge-false-flag-validation"
+    val exampleName = "adjst-1254-allow-calc-out-of-prison-ual"
     log.info("Anonymising example $exampleName")
 
     val example = TestUtil.objectMapper()

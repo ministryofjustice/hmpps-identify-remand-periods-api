@@ -18,7 +18,7 @@ class ChargeRemandStatusService {
   ): List<ChargeRemand> = calculationData.chargeRemand.map {
     val status = if (remandCalculation.charges[it.onlyChargeId()]!!.sentenceSequence != null) {
       val matchingChargeId = calculationData.adjustments.filter { adjustment -> adjustment.remand!!.chargeId.contains(it.onlyChargeId()) }
-      val matchingAdjustments = matchingChargeId.filter { adjustment -> DatePeriod(adjustment.fromDate!!, adjustment.toDate!!).overlaps(it) }
+      val matchingAdjustments = matchingChargeId.filter { adjustment -> DatePeriod(adjustment.fromDate!!, adjustment.toDate!!).overlapsPeriod(it) }
 
       if (matchingAdjustments.isNotEmpty()) {
         if (matchingAdjustments.any { adjustment -> adjustment.status == AdjustmentStatus.ACTIVE }) {
