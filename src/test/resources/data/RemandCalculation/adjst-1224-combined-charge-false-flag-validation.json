@@ -2850,19 +2850,23 @@
     "imprisonmentStatuses": [
       {
         "status": "SENTENCED",
-        "date": "2023-12-13"
+        "date": "2023-12-13",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "RECALLED",
-        "date": "2024-02-29"
+        "date": "2024-02-29",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "SENTENCED",
-        "date": "2024-12-19"
+        "date": "2024-12-19",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "SENTENCED",
-        "date": "2025-03-27"
+        "date": "2025-03-27",
+        "bookNumber": "TESTBOOK1"
       }
     ],
     "chargeIdsWithActiveSentence": [

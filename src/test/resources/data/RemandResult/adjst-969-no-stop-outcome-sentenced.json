@@ -87,7 +87,7 @@
   "issuesWithLegacyData": [
     {
       "type": "MISSING_STOP_EVENT",
-      "message": "The offence 'Possess with intent to supply a controlled drug of Class A - Cocaine' within booking 2 has no court event to stop a remand period starting on 10 Nov 2022",
+      "message": "Within booking 2, a remand period has been started for offence 'Possess with intent to supply a controlled drug of Class A - Cocaine' committed on date 8 Nov 2022. There is no court event that would end this remand period.",
       "offence": {
         "code": "MD71230",
         "statute": "MD71",

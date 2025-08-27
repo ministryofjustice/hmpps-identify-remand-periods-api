@@ -6,6 +6,7 @@ import java.time.LocalDate
 data class PrisonApiImprisonmentStatus(
   val status: String,
   val effectiveDate: LocalDate,
+  val bookNumber: String,
 ) {
 
   fun toStatusType(): ImprisonmentStatusType? {

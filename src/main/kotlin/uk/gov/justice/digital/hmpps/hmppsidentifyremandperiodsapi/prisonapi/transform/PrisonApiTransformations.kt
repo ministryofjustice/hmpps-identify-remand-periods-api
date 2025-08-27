@@ -58,8 +58,9 @@ fun transform(results: List<PrisonApiCharge>, prisonerDetails: Prisoner, sentenc
       .filter { it.toStatusType() != null }
       .map {
         ImprisonmentStatus(
-          it.toStatusType()!!,
-          it.effectiveDate,
+          status = it.toStatusType()!!,
+          date = it.effectiveDate,
+          bookNumber = it.bookNumber,
         )
       }.sortedBy { it.date },
     sentencesAndOffences.flatMap { it.offences.map { offence -> offence.offenderChargeId } },
@@ -102,7 +103,7 @@ private fun transformToCourtDate(courtDateResult: PrisonApiCourtDateOutcome, cha
 
 private fun transformToType(courtDateResult: PrisonApiCourtDateOutcome, charge: PrisonApiCharge, issuesWithLegacyData: MutableList<LegacyDataProblem>): CourtDateType? {
   if (courtDateResult.resultCode == null) {
-    issuesWithLegacyData.add(ChargeLegacyDataProblem(LegacyDataProblemType.MISSING_COURT_OUTCOME, "The court hearing on ${courtDateResult.date.mojDisplayFormat()} for '${charge.offenceDescription}' has a missing hearing outcome within booking ${charge.bookNumber}.", charge))
+    issuesWithLegacyData.add(ChargeLegacyDataProblem(LegacyDataProblemType.MISSING_COURT_OUTCOME, "There is a missing hearing outcome for the court event on ${courtDateResult.date.mojDisplayFormat()} within booking ${charge.bookNumber}. This court event was for the offence '${charge.offenceDescription}' committed on ${charge.offenceDate?.mojDisplayFormat() ?: "Unknown"}.", charge))
     return null
   }
   return mapCourtDateResult(courtDateResult, charge, issuesWithLegacyData)

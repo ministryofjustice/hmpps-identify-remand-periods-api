@@ -934,23 +934,28 @@
     "imprisonmentStatuses": [
       {
         "status": "RECALLED",
-        "date": "2023-06-15"
+        "date": "2023-06-15",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "RECALLED",
-        "date": "2023-08-22"
+        "date": "2023-08-22",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "REMANDED",
-        "date": "2023-09-19"
+        "date": "2023-09-19",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "SENTENCED",
-        "date": "2023-11-14"
+        "date": "2023-11-14",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "RECALLED",
-        "date": "2024-02-16"
+        "date": "2024-02-16",
+        "bookNumber": "TESTBOOK1"
       }
     ],
     "chargeIdsWithActiveSentence": [
