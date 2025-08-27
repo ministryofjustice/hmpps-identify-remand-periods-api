@@ -465,15 +465,18 @@
     "imprisonmentStatuses": [
       {
         "status": "SENTENCED",
-        "date": "2021-05-27"
+        "date": "2021-05-27",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "REMANDED",
-        "date": "2022-11-10"
+        "date": "2022-11-10",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "SENTENCED",
-        "date": "2022-12-20"
+        "date": "2022-12-20",
+        "bookNumber": "TESTBOOK1"
       }
     ],
     "chargeIdsWithActiveSentence": [

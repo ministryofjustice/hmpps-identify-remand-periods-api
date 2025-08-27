@@ -954,35 +954,43 @@
     "imprisonmentStatuses": [
       {
         "status": "REMANDED",
-        "date": "2024-01-25"
+        "date": "2024-01-25",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "REMANDED",
-        "date": "2024-01-26"
+        "date": "2024-01-26",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "REMANDED",
-        "date": "2024-02-27"
+        "date": "2024-02-27",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "SENTENCED",
-        "date": "2024-03-04"
+        "date": "2024-03-04",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "REMANDED",
-        "date": "2024-07-20"
+        "date": "2024-07-20",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "REMANDED",
-        "date": "2024-09-10"
+        "date": "2024-09-10",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "REMANDED",
-        "date": "2024-10-04"
+        "date": "2024-10-04",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "SENTENCED",
-        "date": "2024-11-11"
+        "date": "2024-11-11",
+        "bookNumber": "TESTBOOK1"
       }
     ],
     "chargeIdsWithActiveSentence": [

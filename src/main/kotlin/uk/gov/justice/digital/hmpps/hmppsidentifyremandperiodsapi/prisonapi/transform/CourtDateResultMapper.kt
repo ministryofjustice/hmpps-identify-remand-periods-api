@@ -184,7 +184,7 @@ fun mapCourtDateResult(courtDateResult: PrisonApiCourtDateOutcome, charge: Priso
   "FPR" -> STOP
 
   else -> {
-    issuesWithLegacyData.add(ChargeLegacyDataProblem(LegacyDataProblemType.UNSUPPORTED_OUTCOME, "The court event on ${courtDateResult.date.mojDisplayFormat()} for offence ${charge.offenceDescription} committed at ${charge.offenceDate?.mojDisplayFormat() ?: "Unknown"} has an unsupported outcome ${courtDateResult.resultCode}: ${courtDateResult.resultDescription}", charge))
+    issuesWithLegacyData.add(ChargeLegacyDataProblem(LegacyDataProblemType.UNSUPPORTED_OUTCOME, "There is an unsupported outcome for the court event on ${courtDateResult.date.mojDisplayFormat()} within booking ${charge.bookNumber}. This court event was for the offence ‘${charge.offenceDescription}’ committed on ${charge.offenceDate?.mojDisplayFormat() ?: "Unknown"}.", charge))
     null
   }
 }

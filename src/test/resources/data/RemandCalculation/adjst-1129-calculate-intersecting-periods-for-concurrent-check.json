@@ -951,67 +951,83 @@
     "imprisonmentStatuses": [
       {
         "status": "RECALLED",
-        "date": "2020-04-08"
+        "date": "2020-04-08",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "RECALLED",
-        "date": "2020-04-09"
+        "date": "2020-04-09",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "REMANDED",
-        "date": "2020-08-06"
+        "date": "2020-08-06",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "REMANDED",
-        "date": "2020-08-07"
+        "date": "2020-08-07",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "RECALLED",
-        "date": "2020-08-10"
+        "date": "2020-08-10",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "REMANDED",
-        "date": "2020-11-02"
+        "date": "2020-11-02",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "REMANDED",
-        "date": "2021-05-15"
+        "date": "2021-05-15",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "REMANDED",
-        "date": "2021-06-17"
+        "date": "2021-06-17",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "REMANDED",
-        "date": "2021-07-01"
+        "date": "2021-07-01",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "REMANDED",
-        "date": "2021-08-10"
+        "date": "2021-08-10",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "SENTENCED",
-        "date": "2021-08-11"
+        "date": "2021-08-11",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "REMANDED",
-        "date": "2022-11-08"
+        "date": "2022-11-08",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "RECALLED",
-        "date": "2023-09-19"
+        "date": "2023-09-19",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "REMANDED",
-        "date": "2024-05-27"
+        "date": "2024-05-27",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "SENTENCED",
-        "date": "2024-11-15"
+        "date": "2024-11-15",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "SENTENCED",
-        "date": "2025-04-17"
+        "date": "2025-04-17",
+        "bookNumber": "TESTBOOK1"
       }
     ],
     "chargeIdsWithActiveSentence": [

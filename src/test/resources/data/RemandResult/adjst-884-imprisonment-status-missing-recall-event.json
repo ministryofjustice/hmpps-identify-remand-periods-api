@@ -241,7 +241,7 @@
     },
     {
       "type": "MISSING_COURT_EVENT_FOR_IMPRISONMENT_STATUS_RECALL",
-      "message": "The offenders main inmate status was changed to recalled on 22 Aug 2023 but there is no matching court events"
+      "message": "There is no matching court event within booking TESTBOOK1 for when the offender’s main inmate status was changed to recalled on 22 Aug 2023."
     }
   ]
 }

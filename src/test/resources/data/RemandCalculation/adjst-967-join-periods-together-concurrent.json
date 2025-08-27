@@ -737,19 +737,23 @@
     "imprisonmentStatuses": [
       {
         "status": "REMANDED",
-        "date": "2024-04-12"
+        "date": "2024-04-12",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "REMANDED",
-        "date": "2024-04-25"
+        "date": "2024-04-25",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "RECALLED",
-        "date": "2024-04-26"
+        "date": "2024-04-26",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "SENTENCED",
-        "date": "2024-12-12"
+        "date": "2024-12-12",
+        "bookNumber": "TESTBOOK1"
       }
     ],
     "chargeIdsWithActiveSentence": [

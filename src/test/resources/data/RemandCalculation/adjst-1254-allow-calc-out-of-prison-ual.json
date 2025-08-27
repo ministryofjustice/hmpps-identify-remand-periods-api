@@ -300,23 +300,28 @@
     "imprisonmentStatuses": [
       {
         "status": "SENTENCED",
-        "date": "2025-03-14"
+        "date": "2025-03-14",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "SENTENCED",
-        "date": "2025-04-22"
+        "date": "2025-04-22",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "RECALLED",
-        "date": "2025-05-14"
+        "date": "2025-05-14",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "REMANDED",
-        "date": "2025-06-10"
+        "date": "2025-06-10",
+        "bookNumber": "TESTBOOK1"
       },
       {
         "status": "SENTENCED",
-        "date": "2025-06-19"
+        "date": "2025-06-19",
+        "bookNumber": "TESTBOOK1"
       }
     ],
     "chargeIdsWithActiveSentence": [

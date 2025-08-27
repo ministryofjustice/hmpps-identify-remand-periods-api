@@ -5,6 +5,7 @@ import java.time.LocalDate
 data class ImprisonmentStatus(
   val status: ImprisonmentStatusType,
   val date: LocalDate,
+  val bookNumber: String,
 )
 
 enum class ImprisonmentStatusType {

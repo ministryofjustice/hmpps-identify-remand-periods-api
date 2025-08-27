@@ -56,7 +56,7 @@ class ValidateCalculationDataService {
         calculationData.issuesWithLegacyData.add(
           ChargeLegacyDataProblem(
             LegacyDataProblemType.MISSING_STOP_EVENT,
-            "The offence '${it.charge.offence.description}' within booking ${it.charge.bookNumber} has no court event to stop a remand period starting on ${it.start.mojDisplayFormat()}",
+            "Within booking ${it.charge.bookNumber}, a remand period has been started for offence '${it.charge.offence.description}' committed on date ${it.charge.offenceDate?.mojDisplayFormat() ?: "Unknown"}. There is no court event that would end this remand period.",
             it.charge,
           ),
         )
@@ -88,7 +88,7 @@ class ValidateCalculationDataService {
       calculationData.issuesWithLegacyData.add(
         GenericLegacyDataProblem(
           LegacyDataProblemType.MISSING_COURT_EVENT_FOR_IMPRISONMENT_STATUS_REMAND,
-          "The offenders main inmate status was changed to remanded on ${status.date.mojDisplayFormat()} but there is no matching court events",
+          "There is no matching court event within booking ${status.bookNumber} for when the offender’s main inmate status was changed to remanded on ${status.date.mojDisplayFormat()}.",
         ),
       )
     }
@@ -105,7 +105,7 @@ class ValidateCalculationDataService {
       calculationData.issuesWithLegacyData.add(
         GenericLegacyDataProblem(
           LegacyDataProblemType.MISSING_COURT_EVENT_FOR_IMPRISONMENT_STATUS_RECALL,
-          "The offenders main inmate status was changed to recalled on ${status.date.mojDisplayFormat()} but there is no matching court events",
+          "There is no matching court event within booking ${status.bookNumber} for when the offender’s main inmate status was changed to recalled on ${status.date.mojDisplayFormat()}.",
 
         ),
       )
@@ -134,14 +134,14 @@ class ValidateCalculationDataService {
     val missingRecallEvents = recalledCharges.filter { it.dates.none { event -> event.isRecallEvent } }
 
     missingRecallEvents.forEach {
-      calculationData.issuesWithLegacyData.add(ChargeLegacyDataProblem(LegacyDataProblemType.MISSING_RECALL_EVENT, "The offence '${it.charge.offence.description}' within booking ${it.charge.bookNumber} does not have a recall court event.", it.charge))
+      calculationData.issuesWithLegacyData.add(ChargeLegacyDataProblem(LegacyDataProblemType.MISSING_RECALL_EVENT, "There is a missing recall court event within booking ${it.charge.bookNumber} for the offence ‘${it.charge.offence.description}’ committed on ${it.charge.offenceDate?.mojDisplayFormat() ?: "Unknown"}.", it.charge))
     }
   }
   private fun validateRecallEventNotOnSentenceDate(calculationData: CalculationData) {
     val (recallEventOnSentenceDateCharges, chargeAndEvents) = calculationData.chargeAndEvents.partition { it.charge.sentenceDate != null && it.dates.any { event -> event.isRecallEvent && (event.date.isBefore(it.charge.sentenceDate) || isOnlyEventOnSentenceDate(it, event)) } }
 
     recallEventOnSentenceDateCharges.forEach {
-      calculationData.issuesWithLegacyData.add(ChargeLegacyDataProblem(LegacyDataProblemType.RECALL_EVENT_ON_SENTENCE_DATE, "The offence '${it.charge.offence.description}' within booking ${it.charge.bookNumber} has a recall event before or on the sentence date.", it.charge))
+      calculationData.issuesWithLegacyData.add(ChargeLegacyDataProblem(LegacyDataProblemType.RECALL_EVENT_ON_SENTENCE_DATE, "There is a recall court event before or on the sentence date within booking ${it.charge.bookNumber}. This is for the offence '${it.charge.offence.description}' committed on ${it.charge.offenceDate?.mojDisplayFormat() ?: "Unknown"}. ", it.charge))
     }
     calculationData.chargeAndEvents = chargeAndEvents
   }

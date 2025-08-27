@@ -394,7 +394,8 @@
     "imprisonmentStatuses": [
       {
         "status": "RECALLED",
-        "date": "2022-10-15"
+        "date": "2022-10-15",
+        "bookNumber": "TESTBOOK1"
       }
     ]
   },
