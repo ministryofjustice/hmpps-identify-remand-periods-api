@@ -2,8 +2,7 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantreman
 
 import com.github.tomakehurst.wiremock.client.WireMock
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Assertions.assertFalse
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
@@ -129,10 +128,10 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
     assertThat(result.chargeRemand[3].toEvent).isEqualTo(CourtAppearance(LocalDate.of(2020, 9, 24), "Commit to Crown Court for Sentence Conditional Bail"))
     assertThat(result.chargeRemand[3].chargeIds).isEqualTo(listOf(2L))
 
-    assertTrue(result.charges.getOrElse(1L) { null }?.isInConclusive ?: false)
-    assertTrue(result.charges.getOrElse(2L) { null }?.isInConclusive ?: false)
-    assertFalse(result.charges.getOrElse(3L) { null }?.isInConclusive ?: true)
-    assertFalse(result.charges.getOrElse(4L) { null }?.isInConclusive ?: true)
+    assertEquals(true, result.charges[1L]?.isInConclusive)
+    assertEquals(true, result.charges[2L]?.isInConclusive)
+    assertEquals(false, result.charges[3L]?.isInConclusive)
+    assertEquals(false, result.charges[4L]?.isInConclusive)
 
     assertThat(result.adjustments).isNotEmpty
     assertThat(result.adjustments.size).isEqualTo(2)
