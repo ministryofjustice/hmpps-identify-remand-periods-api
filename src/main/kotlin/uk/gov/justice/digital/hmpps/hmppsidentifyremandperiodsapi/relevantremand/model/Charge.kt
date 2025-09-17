@@ -18,11 +18,9 @@ data class Charge(
   val isActiveBooking: Boolean = false,
   val isRecallSentence: Boolean = false,
   val isTermSentence: Boolean = false,
-  val resultCode: String?,
+  val isInConclusive: Boolean = false,
 ) {
   fun canHaveRemandApplyToSentence(): Boolean = sentenceDate != null && sentenceSequence != null && !isTermSentence
-
-  fun isInConclusive() = resultCode != null && INCONCLUSIVE_RESULT_CODES.contains(resultCode)
 
   companion object {
     val INCONCLUSIVE_RESULT_CODES = setOf(

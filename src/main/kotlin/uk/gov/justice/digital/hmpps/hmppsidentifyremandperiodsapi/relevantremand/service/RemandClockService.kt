@@ -24,7 +24,7 @@ class RemandClockService {
             from = it
           }
           if (it.type == STOP && from != null) {
-            remand.add(ChargeRemand(from!!.date, getToDate(it), CourtAppearance(from!!.date, from!!.description), CourtAppearance(it.date, it.description), listOf(chargeAndEvent.charge.chargeId), null, isInConclusive = chargeAndEvent.charge.isInConclusive()))
+            remand.add(ChargeRemand(from!!.date, getToDate(it), CourtAppearance(from!!.date, from!!.description), CourtAppearance(it.date, it.description), listOf(chargeAndEvent.charge.chargeId), null,))
             from = null
           }
         }

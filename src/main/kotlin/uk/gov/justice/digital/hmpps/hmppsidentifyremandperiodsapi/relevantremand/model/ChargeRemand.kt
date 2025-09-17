@@ -10,7 +10,6 @@ data class ChargeRemand(
   val toEvent: CourtAppearance,
   val chargeIds: List<Long>,
   val status: ChargeRemandStatus?,
-  val isInConclusive: Boolean = false,
   val replacedCharges: List<Long> = emptyList(),
 ) : Period {
 

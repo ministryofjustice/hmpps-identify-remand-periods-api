@@ -23,7 +23,6 @@ class MergeChargeRemandService {
     it.value[0].copy(
       chargeIds = it.value.map { remand -> remand.onlyChargeId() }.distinct(),
       replacedCharges = it.value.mapNotNull { remand -> remand.replacedCharges.firstOrNull() },
-      isInConclusive = it.value.any { remand -> remand.isInConclusive },
     )
   }
 

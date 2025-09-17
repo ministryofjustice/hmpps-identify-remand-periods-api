@@ -110,28 +110,29 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
     assertThat(result.chargeRemand[0].fromEvent).isEqualTo(CourtAppearance(LocalDate.of(2019, 7, 6), "Commit/Transfer/Send to Crown Court for Trial in Custody"))
     assertThat(result.chargeRemand[0].toEvent).isEqualTo(CourtAppearance(LocalDate.of(2020, 9, 24), "Commit to Crown Court for Sentence Conditional Bail"))
     assertThat(result.chargeRemand[0].chargeIds).isEqualTo(listOf(3L))
-    assertFalse(result.chargeRemand[0].isInConclusive)
 
     assertThat(result.chargeRemand[1].from).isEqualTo(LocalDate.of(2019, 7, 6))
     assertThat(result.chargeRemand[1].to).isEqualTo(LocalDate.of(2020, 9, 24))
     assertThat(result.chargeRemand[1].fromEvent).isEqualTo(CourtAppearance(LocalDate.of(2019, 7, 6), "Commit to Crown Court for Trial (Summary / Either Way Offences)"))
     assertThat(result.chargeRemand[1].toEvent).isEqualTo(CourtAppearance(LocalDate.of(2020, 9, 24), "Commit to Crown Court for Sentence Conditional Bail"))
     assertThat(result.chargeRemand[1].chargeIds).isEqualTo(listOf(4L))
-    assertFalse(result.chargeRemand[1].isInConclusive)
 
     assertThat(result.chargeRemand[2].from).isEqualTo(LocalDate.of(2021, 6, 14))
     assertThat(result.chargeRemand[2].to).isEqualTo(LocalDate.of(2021, 6, 14))
     assertThat(result.chargeRemand[2].fromEvent).isEqualTo(CourtAppearance(LocalDate.of(2021, 6, 14), "Sentence Postponed"))
     assertThat(result.chargeRemand[2].toEvent).isEqualTo(CourtAppearance(LocalDate.of(2021, 6, 15), "Imprisonment"))
     assertThat(result.chargeRemand[2].chargeIds).isEqualTo(listOf(3L, 4L))
-    assertFalse(result.chargeRemand[2].isInConclusive)
 
     assertThat(result.chargeRemand[3].from).isEqualTo(LocalDate.of(2019, 7, 6))
     assertThat(result.chargeRemand[3].to).isEqualTo(LocalDate.of(2020, 9, 24))
     assertThat(result.chargeRemand[3].fromEvent).isEqualTo(CourtAppearance(LocalDate.of(2019, 7, 6), "Commit/Transfer/Send to Crown Court for Trial in Custody"))
     assertThat(result.chargeRemand[3].toEvent).isEqualTo(CourtAppearance(LocalDate.of(2020, 9, 24), "Commit to Crown Court for Sentence Conditional Bail"))
     assertThat(result.chargeRemand[3].chargeIds).isEqualTo(listOf(2L))
-    assertTrue(result.chargeRemand[3].isInConclusive)
+
+    assertTrue(result.charges.getOrElse(1L) { null }?.isInConclusive ?: false)
+    assertTrue(result.charges.getOrElse(2L) { null }?.isInConclusive ?: false)
+    assertFalse(result.charges.getOrElse(3L) { null }?.isInConclusive ?: true)
+    assertFalse(result.charges.getOrElse(4L) { null }?.isInConclusive ?: true)
 
     assertThat(result.adjustments).isNotEmpty
     assertThat(result.adjustments.size).isEqualTo(2)
