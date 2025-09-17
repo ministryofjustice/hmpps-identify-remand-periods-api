@@ -24,7 +24,7 @@ data class Charge(
 
   fun isInConclusive() = resultCode != null && INCONCLUSIVE_RESULT_CODES.contains(resultCode)
 
-  companion object{
+  companion object {
     val INCONCLUSIVE_RESULT_CODES = setOf(
       "1004", "1008", "1009", "1010", "1012", "1013", "1018", "1028",
       "1089", "1102", "1108", "1113", "1115", "1116",
