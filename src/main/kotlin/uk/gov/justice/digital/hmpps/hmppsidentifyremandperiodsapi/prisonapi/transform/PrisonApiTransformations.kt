@@ -48,6 +48,7 @@ fun transform(results: List<PrisonApiCharge>, prisonerDetails: Prisoner, sentenc
             it.bookingId == prisonerDetails.bookingId.toLong(),
             recallTypes.contains(it.sentenceType),
             termTypes.contains(it.sentenceType),
+            it.outcomes.last().resultCode,
           ),
           it.outcomes.mapNotNull { result -> transformToCourtDate(result, it, issuesWithLegacyData) },
         )
