@@ -2,6 +2,7 @@ package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantreman
 
 import com.github.tomakehurst.wiremock.client.WireMock
 import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
@@ -126,6 +127,11 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
     assertThat(result.chargeRemand[3].fromEvent).isEqualTo(CourtAppearance(LocalDate.of(2019, 7, 6), "Commit/Transfer/Send to Crown Court for Trial in Custody"))
     assertThat(result.chargeRemand[3].toEvent).isEqualTo(CourtAppearance(LocalDate.of(2020, 9, 24), "Commit to Crown Court for Sentence Conditional Bail"))
     assertThat(result.chargeRemand[3].chargeIds).isEqualTo(listOf(2L))
+
+    assertEquals(true, result.charges[1L]?.isInconclusive)
+    assertEquals(true, result.charges[2L]?.isInconclusive)
+    assertEquals(false, result.charges[3L]?.isInconclusive)
+    assertEquals(false, result.charges[4L]?.isInconclusive)
 
     assertThat(result.adjustments).isNotEmpty
     assertThat(result.adjustments.size).isEqualTo(2)

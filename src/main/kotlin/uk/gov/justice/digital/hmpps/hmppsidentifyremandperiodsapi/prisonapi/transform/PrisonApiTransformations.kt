@@ -8,6 +8,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.mode
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonersearchapi.model.Prisoner
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Charge
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Charge.Companion.INCONCLUSIVE_RESULT_CODES
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeAndEvents
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeLegacyDataProblem
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDate
@@ -48,6 +49,7 @@ fun transform(results: List<PrisonApiCharge>, prisonerDetails: Prisoner, sentenc
             it.bookingId == prisonerDetails.bookingId.toLong(),
             recallTypes.contains(it.sentenceType),
             termTypes.contains(it.sentenceType),
+            INCONCLUSIVE_RESULT_CODES.contains(it.outcomes.last().resultCode),
           ),
           it.outcomes.mapNotNull { result -> transformToCourtDate(result, it, issuesWithLegacyData) },
         )
