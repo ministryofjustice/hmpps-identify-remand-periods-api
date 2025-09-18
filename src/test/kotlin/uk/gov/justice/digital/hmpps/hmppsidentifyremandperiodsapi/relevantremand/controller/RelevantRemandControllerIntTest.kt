@@ -128,10 +128,10 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
     assertThat(result.chargeRemand[3].toEvent).isEqualTo(CourtAppearance(LocalDate.of(2020, 9, 24), "Commit to Crown Court for Sentence Conditional Bail"))
     assertThat(result.chargeRemand[3].chargeIds).isEqualTo(listOf(2L))
 
-    assertEquals(true, result.charges[1L]?.isInConclusive)
-    assertEquals(true, result.charges[2L]?.isInConclusive)
-    assertEquals(false, result.charges[3L]?.isInConclusive)
-    assertEquals(false, result.charges[4L]?.isInConclusive)
+    assertEquals(true, result.charges[1L]?.isInconclusive)
+    assertEquals(true, result.charges[2L]?.isInconclusive)
+    assertEquals(false, result.charges[3L]?.isInconclusive)
+    assertEquals(false, result.charges[4L]?.isInconclusive)
 
     assertThat(result.adjustments).isNotEmpty
     assertThat(result.adjustments.size).isEqualTo(2)

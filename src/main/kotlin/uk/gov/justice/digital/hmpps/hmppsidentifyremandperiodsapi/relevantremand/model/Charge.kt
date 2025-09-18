@@ -18,7 +18,7 @@ data class Charge(
   val isActiveBooking: Boolean = false,
   val isRecallSentence: Boolean = false,
   val isTermSentence: Boolean = false,
-  val isInConclusive: Boolean = false,
+  val isInconclusive: Boolean = false,
 ) {
   fun canHaveRemandApplyToSentence(): Boolean = sentenceDate != null && sentenceSequence != null && !isTermSentence
 
