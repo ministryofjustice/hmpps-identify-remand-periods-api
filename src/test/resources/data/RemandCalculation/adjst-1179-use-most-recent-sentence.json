@@ -123,7 +123,7 @@
         "bookNumber": "TESTBOOK1"
       }
     ],
-    "chargeIdsWithActiveSentence": [
+    "chargeIdsIncludedInLasestReleaseDateCalculation": [
       7803066
     ]
   },

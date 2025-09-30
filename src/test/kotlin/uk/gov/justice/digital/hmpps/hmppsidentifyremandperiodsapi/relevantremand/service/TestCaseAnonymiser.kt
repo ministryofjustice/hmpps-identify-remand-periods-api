@@ -1,7 +1,6 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.service
 
 import com.fasterxml.jackson.core.type.TypeReference
-import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 import org.slf4j.LoggerFactory
 import org.springframework.core.io.ClassPathResource
@@ -11,9 +10,8 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 class TestCaseAnonymiser {
 
   @Test
-  @Disabled
   fun anonymise() {
-    val exampleName = "adjst-1254-allow-calc-out-of-prison-ual"
+    val exampleName = "adjst-1381-wrong-booking-id"
     log.info("Anonymising example $exampleName")
 
     val example = TestUtil.objectMapper()

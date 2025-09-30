@@ -1,0 +1,142 @@
+{
+  "adjustments": [
+    {
+      "bookingId": 2,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "fromDate": "2016-01-09",
+      "toDate": "2016-04-14",
+      "remand": {
+        "chargeId": [
+          3339813,
+          8195521,
+          3404598,
+          3404599,
+          3404600,
+          3404601,
+          3404602,
+          3404620,
+          3404621,
+          3404622,
+          3404623
+        ]
+      },
+      "status": "ACTIVE"
+    }
+  ],
+  "chargeRemand": [
+    {
+      "from": "2016-01-09",
+      "to": "2016-04-14",
+      "fromEvent": {
+        "date": "2016-01-09",
+        "description": "Commit to Crown Court for Sentence in Custody"
+      },
+      "toEvent": {
+        "date": "2016-04-15",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        3339813
+      ],
+      "status": "APPLICABLE",
+      "days": 97
+    },
+    {
+      "from": "2016-01-09",
+      "to": "2016-04-14",
+      "fromEvent": {
+        "date": "2016-01-09",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2016-04-15",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        8195521
+      ],
+      "status": "APPLICABLE",
+      "days": 97
+    },
+    {
+      "from": "2016-01-09",
+      "to": "2016-04-14",
+      "fromEvent": {
+        "date": "2016-01-09",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2016-04-15",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        3404598,
+        3404599,
+        3404600,
+        3404601,
+        3404602,
+        3404620,
+        3404621,
+        3404622,
+        3404623
+      ],
+      "status": "APPLICABLE",
+      "days": 97
+    },
+    {
+      "from": "2025-05-02",
+      "to": "2025-06-15",
+      "fromEvent": {
+        "date": "2025-05-02",
+        "description": "Remittal for Sentence in Custody"
+      },
+      "toEvent": {
+        "date": "2025-06-16",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        7985310,
+        7985311
+      ],
+      "status": "INTERSECTED_BY_SENTENCE",
+      "days": 45
+    }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2016-04-15",
+      "to": "2024-04-03",
+      "sentence": {
+        "sequence": 1,
+        "sentenceDate": "2016-04-15",
+        "bookingId": 1
+      },
+      "chargeId": 3339813,
+      "service": "HISTORIC",
+      "days": 2911
+    },
+    {
+      "from": "2025-05-02",
+      "to": "2027-01-07",
+      "sentence": {
+        "sequence": 2,
+        "sentenceDate": "2016-04-15",
+        "recallDates": [
+          "2025-05-02"
+        ],
+        "bookingId": 1
+      },
+      "chargeId": 3404597,
+      "service": "HISTORIC",
+      "days": 616
+    }
+  ],
+  "periodsOutOfPrison": [
+    {
+      "from": "2024-04-03",
+      "to": "2025-05-01",
+      "days": 394
+    }
+  ]
+}

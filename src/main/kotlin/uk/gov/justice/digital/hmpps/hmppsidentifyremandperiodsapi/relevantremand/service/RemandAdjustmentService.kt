@@ -59,15 +59,15 @@ class RemandAdjustmentService {
       val itSentenceDate = remandCalculation.charges[it.onlyChargeId()]!!.sentenceDate
       itSentenceDate != null && (periodOfConcurrentSentences.overlapsStartInclusive(itSentenceDate) || periodOfConcurrentSentences.from == itSentenceDate)
     }.flatMap { it.chargeIds }.distinct()
+    val sentencedChargeId = charges.find { remandCalculation.chargeIdsIncludedInLasestReleaseDateCalculation.contains(it) } ?: remand.chargeId
     return AdjustmentDto(
       id = null,
-      bookingId = remandCalculation.charges[remand.chargeId]!!.bookingId,
-      sentenceSequence = remandCalculation.charges[remand.chargeId]!!.sentenceSequence,
+      bookingId = remandCalculation.charges[sentencedChargeId]!!.bookingId,
       fromDate = remand.from,
       toDate = remand.to,
       person = remandCalculation.prisonerId,
       remand = RemandDto(charges),
-      status = if (charges.any { remandCalculation.chargeIdsWithActiveSentence.contains(it) }) AdjustmentStatus.ACTIVE else AdjustmentStatus.INACTIVE,
+      status = if (charges.any { remandCalculation.chargeIdsIncludedInLasestReleaseDateCalculation.contains(it) }) AdjustmentStatus.ACTIVE else AdjustmentStatus.INACTIVE,
     )
   }
 

@@ -2380,7 +2380,7 @@
         ]
       }
     ],
-    "chargeIdsWithActiveSentence": [
+    "chargeIdsIncludedInLasestReleaseDateCalculation": [
       7378195,
       7378224,
       7378196,
