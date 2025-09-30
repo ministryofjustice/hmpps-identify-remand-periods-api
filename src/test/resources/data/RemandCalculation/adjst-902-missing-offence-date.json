@@ -1,7 +1,7 @@
 {
   "remandCalculation": {
     "prisonerId": "ABCD123",
-    "chargeIdsWithActiveSentence": [1],
+    "chargeIdsIncludedInLasestReleaseDateCalculation": [1],
     "chargesAndEvents": [
       {
         "charge": {

@@ -186,7 +186,6 @@ class ThingsToDoServiceTest {
       AdjustmentDto(
         id = null,
         bookingId = 1L,
-        sentenceSequence = 1,
         person = PRISONER_ID,
         fromDate = LocalDate.of(2024, 1, 1),
         toDate = LocalDate.of(2024, 6, 1),
@@ -200,7 +199,6 @@ class ThingsToDoServiceTest {
       AdjustmentDto(
         id = null,
         bookingId = 1L,
-        sentenceSequence = 1,
         person = PRISONER_ID,
         fromDate = LocalDate.of(2024, 1, 1),
         toDate = LocalDate.of(2024, 2, 1),

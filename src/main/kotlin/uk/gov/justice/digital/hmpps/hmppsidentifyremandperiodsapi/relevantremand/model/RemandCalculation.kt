@@ -6,7 +6,7 @@ data class RemandCalculation(
   val prisonerId: String,
   val chargesAndEvents: List<ChargeAndEvents>,
   val imprisonmentStatuses: List<ImprisonmentStatus> = emptyList(),
-  val chargeIdsWithActiveSentence: List<Long> = emptyList(),
+  val chargeIdsIncludedInLasestReleaseDateCalculation: List<Long> = emptyList(),
   val issuesWithLegacyData: List<LegacyDataProblem> = listOf(),
   val externalMovements: List<ExternalMovement> = listOf(),
   val includeCalculationInResult: Boolean = false,

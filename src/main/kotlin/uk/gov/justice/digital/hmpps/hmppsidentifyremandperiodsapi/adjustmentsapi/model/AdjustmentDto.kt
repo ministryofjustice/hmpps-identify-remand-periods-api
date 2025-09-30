@@ -7,7 +7,6 @@ import java.util.UUID
 data class AdjustmentDto(
   val id: UUID?,
   val bookingId: Long,
-  val sentenceSequence: Int?,
   val person: String,
   val adjustmentType: String = "REMAND",
   val fromDate: LocalDate?,
