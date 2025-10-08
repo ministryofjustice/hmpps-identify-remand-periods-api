@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore
 
 data class RemandCalculation(
   val prisonerId: String,
+  val prisonId: String,
   val chargesAndEvents: List<ChargeAndEvents>,
   val imprisonmentStatuses: List<ImprisonmentStatus> = emptyList(),
   val chargeIdsIncludedInLasestReleaseDateCalculation: List<Long> = emptyList(),
