@@ -1,6 +1,7 @@
 {
   "remandCalculation": {
     "prisonerId": "ABCD123",
+    "prisonId": "KMI",
     "chargesAndEvents": []
   },
   "error": "UnsupportedCalculationException(There are no charges to calculate"

@@ -1,6 +1,7 @@
 {
   "remandCalculation": {
     "prisonerId": "ABC123",
+    "prisonId": "KMI",
     "chargesAndEvents": [
       {
         "charge": {

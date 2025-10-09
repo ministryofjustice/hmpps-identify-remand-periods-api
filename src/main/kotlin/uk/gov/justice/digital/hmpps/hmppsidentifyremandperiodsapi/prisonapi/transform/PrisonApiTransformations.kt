@@ -30,6 +30,7 @@ fun transform(results: List<PrisonApiCharge>, prisonerDetails: Prisoner, sentenc
 
   return RemandCalculation(
     prisonerDetails.prisonerNumber,
+    prisonerDetails.prisonId,
     chargesFilteredByOffenceDate
       .map {
         ChargeAndEvents(

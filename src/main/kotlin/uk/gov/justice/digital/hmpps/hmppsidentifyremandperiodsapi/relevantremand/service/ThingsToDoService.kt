@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.AdjustmentStatus
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.service.AdjustmentsService
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeRemandStatus
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.IdentifyRemandDecisionDto
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculationRequestOptions
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ThingsToDo
@@ -58,11 +59,27 @@ class ThingsToDoService(
             ThingsToDo(prisonerId)
           }
         } else {
-          ThingsToDo(prisonerId)
+          if (decisionSuperseded(decision, remandCalculation)) {
+            ThingsToDo(prisonerId, listOf(ToDoType.IDENTIFY_REMAND_REVIEW_UPDATE), days)
+          } else {
+            ThingsToDo(prisonerId)
+          }
         }
       } else {
         ThingsToDo(prisonerId, listOf(ToDoType.IDENTIFY_REMAND_REVIEW_UPDATE), days)
       }
+    }
+  }
+
+  private fun decisionSuperseded(decision: IdentifyRemandDecisionDto, remandCalculation: RemandCalculation): Boolean {
+    val lastMovementDate = remandCalculation.externalMovements.lastOrNull()?.date?.atStartOfDay()
+    val mostRecentCourtCaseDate = remandCalculation.chargesAndEvents.firstOrNull()?.dates?.first()?.date
+
+    return when {
+      lastMovementDate != null && decision.decisionOn?.isBefore(lastMovementDate) == true -> true
+      mostRecentCourtCaseDate != null && decision.decisionOn?.toLocalDate()?.isBefore(mostRecentCourtCaseDate) == true -> true
+      !decision.decisionByPrisonId.equals(remandCalculation.prisonId) -> true
+      else -> false
     }
   }
 }

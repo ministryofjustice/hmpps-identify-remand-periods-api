@@ -10,10 +10,16 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.RemandDto
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.model.UnusedDeductionsCalculationResultDto
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.adjustmentsapi.service.AdjustmentsService
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Charge
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeAndEvents
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeRemand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ChargeRemandStatus
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtAppearance
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDate
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CourtDateType
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ExternalMovement
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.IdentifyRemandDecisionDto
+import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.Offence
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandApplicableUserSelection
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculation
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.RemandCalculationRequestOptions
@@ -21,6 +27,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ThingsToDo
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.ToDoType
 import java.time.LocalDate
+import java.time.LocalDateTime
 
 class ThingsToDoServiceTest {
 
@@ -32,6 +39,7 @@ class ThingsToDoServiceTest {
 
   private val remandCalculation = RemandCalculation(
     prisonerId = PRISONER_ID,
+    prisonId = "LEI",
     imprisonmentStatuses = emptyList(),
     issuesWithLegacyData = emptyList(),
     chargesAndEvents = emptyList(),
@@ -178,6 +186,81 @@ class ThingsToDoServiceTest {
 
       assertThat(result).isEqualTo(ThingsToDo(PRISONER_ID))
     }
+
+    @Test
+    fun `getToDoList if there have been external movements since the decision was rejected then it should be reviewed (ADJST-1321 AC1)`() {
+      val remandCalculationWithExternalMovements = remandCalculation.copy(
+        externalMovements = listOf(
+          ExternalMovement(LocalDate.of(2024, 6, 10), false),
+        ),
+      )
+
+      whenever(identifyRemandDecisionService.getDecision(PRISONER_ID)).thenReturn(rejectedDecision)
+      whenever(
+        remandCalculationService.calculate(
+          remandCalculationWithExternalMovements,
+          RemandCalculationRequestOptions(),
+        ),
+      ).thenReturn(
+        remandResultWithMatchingDays,
+      )
+      whenever(adjustmentService.getUnusedDeductionsCalculationResult(PRISONER_ID)).thenReturn(
+        unusedDeductionsCalculatedStatus,
+      )
+
+      val result = service.getToDoList(remandCalculationWithExternalMovements)
+
+      assertThat(result).isEqualTo(ThingsToDo(PRISONER_ID, listOf(ToDoType.IDENTIFY_REMAND_REVIEW_UPDATE), 32))
+    }
+
+    @Test
+    fun `getToDoList if the rejected decision came from a different prison then it should be reviewed (ADJST-1321 AC2)`() {
+      val rejectedDecisionDifferentPrison = rejectedDecision.copy(decisionByPrisonId = "HLI")
+
+      whenever(identifyRemandDecisionService.getDecision(PRISONER_ID)).thenReturn(rejectedDecisionDifferentPrison)
+      whenever(remandCalculationService.calculate(remandCalculation, RemandCalculationRequestOptions())).thenReturn(
+        remandResultWithMatchingDays,
+      )
+      whenever(adjustmentService.getUnusedDeductionsCalculationResult(PRISONER_ID)).thenReturn(
+        unusedDeductionsCalculatedStatus,
+      )
+
+      val result = service.getToDoList(remandCalculation)
+      assertThat(result).isEqualTo(ThingsToDo(PRISONER_ID, listOf(ToDoType.IDENTIFY_REMAND_REVIEW_UPDATE), 32))
+    }
+
+    @Test
+    fun `getToDoList if there has been a new court since the decision was rejected then it should be reviewed (ADJST-1321 AC4)`() {
+      val remandCalculationWithRecentCourtCase = remandCalculation.copy(
+        chargesAndEvents = listOf(
+          ChargeAndEvents(
+            charge = Charge(
+              chargeId = 1L,
+              offence = Offence("a", "a", "a"),
+              bookingId = 1L,
+            ),
+            dates = listOf(CourtDate(LocalDate.of(2024, 6, 10), CourtDateType.CONTINUE)),
+          ),
+        ),
+      )
+
+      whenever(identifyRemandDecisionService.getDecision(PRISONER_ID)).thenReturn(rejectedDecision)
+      whenever(
+        remandCalculationService.calculate(
+          remandCalculationWithRecentCourtCase,
+          RemandCalculationRequestOptions(),
+        ),
+      ).thenReturn(
+        remandResultWithMatchingDays,
+      )
+      whenever(adjustmentService.getUnusedDeductionsCalculationResult(PRISONER_ID)).thenReturn(
+        unusedDeductionsCalculatedStatus,
+      )
+
+      val result = service.getToDoList(remandCalculationWithRecentCourtCase)
+
+      assertThat(result).isEqualTo(ThingsToDo(PRISONER_ID, listOf(ToDoType.IDENTIFY_REMAND_REVIEW_UPDATE), 32))
+    }
   }
 
   companion object {
@@ -252,6 +335,8 @@ class ThingsToDoServiceTest {
       options = nonDefaultOptions,
       accepted = false,
       rejectComment = "Not right",
+      decisionOn = LocalDateTime.of(2024, 6, 1, 10, 0, 0),
+      decisionByPrisonId = "LEI",
       days = 32,
     )
     private val acceptedDecision = IdentifyRemandDecisionDto(
