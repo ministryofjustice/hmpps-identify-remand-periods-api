@@ -2,11 +2,10 @@
   "adjustments": [
     {
       "bookingId": 1,
-      "sentenceSequence": 1,
-      "person": "ABC123",
+      "person": "ABCD123",
       "adjustmentType": "REMAND",
-      "toDate": "2022-11-27",
-      "fromDate": "2022-10-10",
+      "fromDate": "2024-01-01",
+      "toDate": "2024-11-11",
       "remand": {
         "chargeId": [
           1
@@ -16,15 +15,13 @@
     },
     {
       "bookingId": 1,
-      "sentenceSequence": 3,
-      "person": "ABC123",
+      "person": "ABCD123",
       "adjustmentType": "REMAND",
-      "toDate": "2023-01-03",
-      "fromDate": "2022-11-28",
+      "fromDate": "2024-11-12",
+      "toDate": "2025-01-31",
       "remand": {
         "chargeId": [
-          2,
-          3
+          2
         ]
       },
       "status": "INACTIVE"
@@ -32,47 +29,48 @@
   ],
   "chargeRemand": [
     {
-      "from": "2022-10-10",
-      "to": "2022-11-27",
+      "from": "2024-01-01",
+      "to": "2024-12-31",
       "fromEvent": {
-        "date": "2022-10-10"
+        "date": "2024-01-01"
       },
       "toEvent": {
-        "date": "2022-11-28"
+        "date": "2025-01-01"
       },
       "chargeIds": [
         1
       ],
       "status": "INACTIVE",
-      "days": 49
+      "days": 366
     },
     {
-      "from": "2022-10-20",
-      "to": "2023-01-03",
+      "from": "2024-01-01",
+      "to": "2025-01-31",
       "fromEvent": {
-        "date": "2022-10-20"
+        "date": "2024-01-01"
       },
       "toEvent": {
-        "date": "2023-01-04"
+        "date": "2025-02-01"
       },
       "chargeIds": [
-        2,
-        3
+        2
       ],
       "status": "INACTIVE",
-      "days": 76
+      "days": 397
     }
   ],
   "intersectingSentences": [
     {
-      "from": "2022-11-28",
-      "to": "2022-11-28",
+      "from": "2025-01-01",
+      "to": "2025-01-01",
       "sentence": {
         "sequence": 1,
-        "sentenceDate": "2022-11-28",
+        "sentenceDate": "2025-01-01",
         "bookingId": 1
       },
       "chargeId": 1,
+      "service": "HISTORIC",
+      "unusedDeductions": 50,
       "days": 1
     }
   ]

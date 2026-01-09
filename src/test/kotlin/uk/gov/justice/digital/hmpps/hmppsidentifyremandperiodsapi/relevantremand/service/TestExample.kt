@@ -15,4 +15,5 @@ data class Calculations(
   val calculateAt: LocalDate,
   val release: LocalDate,
   val service: String = "HISTORIC",
+  val unusedDeductions: Long? = null,
 )

@@ -11,4 +11,5 @@ data class SentencePeriod(
   val errors: List<String> = emptyList(),
   val calculationIds: List<Long> = emptyList(),
   val externalMovementRelease: Boolean = false,
+  val unusedDeductions: Long? = null,
 ) : Period

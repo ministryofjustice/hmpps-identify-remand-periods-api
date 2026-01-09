@@ -38,7 +38,9 @@ dependencies {
   // Test deps
   testImplementation("com.github.tomakehurst:wiremock-jre8-standalone:3.0.1")
   testImplementation("io.swagger.parser.v3:swagger-parser-v2-converter:2.1.34")
+  testImplementation("org.testcontainers:testcontainers:2.0.2")
   testImplementation("org.testcontainers:postgresql:1.21.3")
+  testImplementation("org.testcontainers:junit-jupiter:1.21.3")
 }
 
 kotlin {

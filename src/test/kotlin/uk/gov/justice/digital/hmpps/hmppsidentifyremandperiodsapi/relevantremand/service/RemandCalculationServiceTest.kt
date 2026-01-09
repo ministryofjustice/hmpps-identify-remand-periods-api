@@ -81,31 +81,41 @@ class RemandCalculationServiceTest {
     stubErrorCalculationsAsDefault()
     example.calculations.forEach { calculation ->
       log.info("Stubbing release dates for $exampleName: $calculation")
-      if (calculation.service == "HISTORIC") {
-        whenever(
-          findHistoricReleaseDateService.findReleaseDate(
-            eq(example.remandCalculation.prisonerId),
-            any(),
-            any(),
-            eq(calculation.calculateAt),
-            any(),
-          ),
-        ).thenAnswer {
-          CalculationDetail(calculation.release)
-        }
-      } else {
-        whenever(
-          calculateReleaseDateService.findReleaseDate(
-            eq(example.remandCalculation.prisonerId),
-            any(),
-            any<List<Sentence>>(),
-            eq(calculation.calculateAt),
-            any(),
-          ),
-        ).thenAnswer {
-          CalculationDetail(calculation.release)
-        }
+      if (calculation.unusedDeductions != null) {
+        stubCrds(example, calculation)
       }
+      if (calculation.service == "HISTORIC") {
+        stubHistoric(example, calculation)
+      } else {
+        stubCrds(example, calculation)
+      }
+    }
+  }
+  private fun stubCrds(example: TestExample, calculation: Calculations) {
+    whenever(
+      calculateReleaseDateService.findReleaseDate(
+        eq(example.remandCalculation.prisonerId),
+        any(),
+        any<List<Sentence>>(),
+        eq(calculation.calculateAt),
+        any(),
+      ),
+    ).thenAnswer {
+      CalculationDetail(calculation.release, unusedDeductions = calculation.unusedDeductions)
+    }
+  }
+
+  private fun stubHistoric(example: TestExample, calculation: Calculations) {
+    whenever(
+      findHistoricReleaseDateService.findReleaseDate(
+        eq(example.remandCalculation.prisonerId),
+        any(),
+        any(),
+        eq(calculation.calculateAt),
+        any(),
+      ),
+    ).thenAnswer {
+      CalculationDetail(calculation.release)
     }
   }
 

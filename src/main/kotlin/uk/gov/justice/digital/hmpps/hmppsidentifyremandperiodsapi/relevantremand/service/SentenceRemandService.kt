@@ -33,12 +33,16 @@ class SentenceRemandService(
     val loopTracker = SentenceRemandLoopTracker(remandCalculation.charges, calculationData.chargeRemand, sentences, periodsOutOfPrison)
     for (entry in loopTracker.sentenceDateToPeriodMap.entries.sortedBy { it.key }) {
       loopTracker.startNewSentenceDateLoop(entry)
+      if (loopTracker.unusedDeductions.first > 0) {
+        shareAnyAvailableUnusedDeductions(loopTracker, remandCalculation)
+      }
       var current: Remand? = null
       for (date in loopTracker.datesToLoopOver) {
         if (loopTracker.shouldCalculateAReleaseDate(date)) {
           val period = findReleaseDateService.findReleaseDates(date, sentences, loopTracker, remandCalculation, periodsOutOfPrison)
           if (period != null) {
             loopTracker.periodsServingSentence.add(period)
+            loopTracker.unusedDeductions = (period.unusedDeductions ?: 0) to date
           }
         }
         val next = loopTracker.findNextPeriod(date)
@@ -78,7 +82,8 @@ class SentenceRemandService(
         if (!loopTracker.doesDateIntersectWithEstablishedRemandOrSentence(date)) {
           if (current == null && loopTracker.open.isNotEmpty()) {
             // New period starting from the end of another period.
-            current = loopTracker.open.first().copy(from = date.plusDays(1))
+            val isIntersectingPeriodAnImmediateRelease = loopTracker.isIntersectingPeriodAnImmediateRelease(date)
+            current = loopTracker.open.first().copy(from = if (isIntersectingPeriodAnImmediateRelease) date else date.plusDays(1))
           }
         }
       }
@@ -89,6 +94,44 @@ class SentenceRemandService(
       loopTracker.periodsServingSentence,
       periodsOutOfPrison,
     )
+  }
+
+  private fun shareAnyAvailableUnusedDeductions(loopTracker: SentenceRemandLoopTracker, remandCalculation: RemandCalculation) {
+    var remandPeriodsWithUnusedRemand = loopTracker.final.filter {
+      val sentenceCharge = remandCalculation.charges[it.chargeId]!!
+      sentenceCharge.sentenceDate == loopTracker.unusedDeductions.second
+    }
+
+    loopTracker.final.removeAll(remandPeriodsWithUnusedRemand)
+
+    var remainingUnusedDeductions = loopTracker.unusedDeductions.first
+    val sharedPeriods = mutableListOf<Remand>()
+    loopTracker.periods.forEach { potentialRemandPeriod ->
+      remandPeriodsWithUnusedRemand = remandPeriodsWithUnusedRemand.map { remandPeriodWithUnusedRemand ->
+        var overlappingPeriod = remandPeriodWithUnusedRemand.getOverlappingPeriod(potentialRemandPeriod)
+        if (overlappingPeriod != null) {
+          if (overlappingPeriod.days > remainingUnusedDeductions) {
+            val extraDays = overlappingPeriod.days - remainingUnusedDeductions
+            overlappingPeriod = overlappingPeriod.copy(from = overlappingPeriod.from.plusDays(extraDays))
+          }
+          remainingUnusedDeductions -= overlappingPeriod.days
+          sharedPeriods.add(
+            Remand(
+              from = overlappingPeriod.from,
+              to = overlappingPeriod.to,
+              chargeId = potentialRemandPeriod.chargeId,
+            ),
+          )
+          return@map remandPeriodWithUnusedRemand.copy(
+            to = overlappingPeriod.from.minusDays(1),
+          )
+        }
+        return@map remandPeriodWithUnusedRemand
+      }
+    }
+
+    loopTracker.final.addAll(remandPeriodsWithUnusedRemand)
+    loopTracker.final.addAll(sharedPeriods)
   }
 
   private fun findPeriodsOutOfPrison(externalMovements: List<ExternalMovement>): List<DatePeriod> {

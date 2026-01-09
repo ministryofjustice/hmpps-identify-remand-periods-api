@@ -1,5 +1,6 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.service
 
+import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.calculatereleasedatesapi.service.CalculateReleaseDateService
@@ -32,7 +33,24 @@ class FindReleaseDateService(
 
     val sentencesToCalculate = sentences.filter { it.sentence.sentenceDate == date || it.sentence.recallDates.any { recallDate -> recallDate == date } }.distinctBy { it.sentence.bookingId }
 
-    val sentencePeriod = this.findReleaseDate(date, sentencesToCalculate, loopTracker, remandCalculation)
+    var sentencePeriod = this.findReleaseDate(date, sentencesToCalculate, loopTracker, remandCalculation)
+
+    if (sentencePeriod.from == sentencePeriod.to && sentencePeriod.unusedDeductions == null) {
+      try {
+        // Immediate release from historic calculation, force CRDS calculation to get unused deductions
+        val calculation = calculateReleaseDateService.findReleaseDate(
+          remandCalculation.prisonerId,
+          loopTracker.final,
+          sentences.map { it.sentence },
+          date,
+          remandCalculation.charges,
+        )
+
+        sentencePeriod = sentencePeriod.copy(unusedDeductions = calculation.unusedDeductions)
+      } catch (e: Exception) {
+        log.error("Error trying to calculate unused deductions on $date", e)
+      }
+    }
 
     val periodOutOfPrisonBeforeCalculatedRelease = periodsOutOfPrison.find { sentencePeriod.overlaps(it.from) }
     if (periodOutOfPrisonBeforeCalculatedRelease != null) {
@@ -50,7 +68,7 @@ class FindReleaseDateService(
   ): SentencePeriod {
     try {
       val calculation = getReleaseDateProvider(primaryReleaseDateService).findReleaseDate(remandCalculation.prisonerId, loopTracker.final, sentences.map { it.sentence }, date, remandCalculation.charges)
-      return SentencePeriod(date, calculation.releaseDate, sentences[0].sentence, sentences[0].charge.chargeId, primaryReleaseDateService, emptyList(), calculation.calculationIds)
+      return SentencePeriod(date, calculation.releaseDate, sentences[0].sentence, sentences[0].charge.chargeId, primaryReleaseDateService, emptyList(), calculation.calculationIds, unusedDeductions = calculation.unusedDeductions)
     } catch (primaryError: UnsupportedCalculationException) {
       try {
         val calculation = getReleaseDateProvider(secondaryReleaseDateService).findReleaseDate(
@@ -68,6 +86,7 @@ class FindReleaseDateService(
           secondaryReleaseDateService,
           listOf(primaryError.message),
           calculation.calculationIds,
+          unusedDeductions = calculation.unusedDeductions,
         )
       } catch (secondaryError: UnsupportedCalculationException) {
         throw UnsupportedCalculationException("Unable to calculation release dates on $date:\n ${primaryError.message} \n ${secondaryError.message}")
@@ -79,5 +98,8 @@ class FindReleaseDateService(
     historicReleaseDateService
   } else {
     calculateReleaseDateService
+  }
+  companion object {
+    private val log = LoggerFactory.getLogger(this::class.java)
   }
 }
