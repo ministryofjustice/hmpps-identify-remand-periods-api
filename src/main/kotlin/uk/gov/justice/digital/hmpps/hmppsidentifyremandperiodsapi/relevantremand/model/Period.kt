@@ -25,4 +25,13 @@ interface Period {
   fun datesSame(period: Period): Boolean = from == period.from && to == period.to
 
   fun engulfs(period: Period): Boolean = from.isBeforeOrEqualTo(period.from) && to.isAfterOrEqualTo(period.to)
+
+  fun getOverlappingPeriod(period: Period): DatePeriod? {
+    if (overlapsPeriod(period)) {
+      val overlapStart = maxOf(from, period.from)
+      val overlapEnd = minOf(to, period.to)
+      return DatePeriod(overlapStart, overlapEnd)
+    }
+    return null
+  }
 }

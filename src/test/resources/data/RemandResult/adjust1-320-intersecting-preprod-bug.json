@@ -36,7 +36,7 @@
       "person": "ABCD123",
       "adjustmentType": "REMAND",
       "toDate": "2018-02-07",
-      "fromDate": "2017-11-07",
+      "fromDate": "2017-11-06",
       "remand": {
         "chargeId": [
           1,

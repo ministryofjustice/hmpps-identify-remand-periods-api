@@ -20,10 +20,10 @@ class CalculateReleaseDateService(
 
   override fun findReleaseDate(prisonerId: String, remand: List<Remand>, sentences: List<Sentence>, calculatedAt: LocalDate, charges: Map<Long, Charge>): CalculationDetail {
     val releaseDates = sentences.map { findReleaseDate(prisonerId, remand, it, calculatedAt, charges) }
-    return CalculationDetail(releaseDates.min())
+    return CalculationDetail(releaseDates.minOf { it.releaseDate }, unusedDeductions = releaseDates.mapNotNull { it.unusedDeductions }.maxOrNull())
   }
 
-  fun findReleaseDate(prisonerId: String, remand: List<Remand>, sentence: Sentence, calculatedAt: LocalDate, charges: Map<Long, Charge>): LocalDate {
+  private fun findReleaseDate(prisonerId: String, remand: List<Remand>, sentence: Sentence, calculatedAt: LocalDate, charges: Map<Long, Charge>): ReleaseAndUnusedDeductions {
     if (sentence.recallDates.size > 1 && sentence.recallDates.dropLast(1).any { it == calculatedAt }) {
       throw UnsupportedCalculationException("CRDS cannot calculate can only calculate the most recent recall date. Not previous FTRs")
     }
@@ -52,12 +52,12 @@ class CalculateReleaseDateService(
       if (result.postRecallReleaseDate == null) {
         throw UnsupportedCalculationException("CRDS Calculation expected a recall release date, but was not found. $request")
       }
-      result.postRecallReleaseDate
+      ReleaseAndUnusedDeductions(result.postRecallReleaseDate, result.unusedDeductions)
     } else {
       if (result.releaseDate == null) {
         throw UnsupportedCalculationException("CRDS Calculation expected a release date, but was not found. $request")
       }
-      result.releaseDate
+      ReleaseAndUnusedDeductions(result.releaseDate, result.unusedDeductions)
     }
   }
 
@@ -65,3 +65,8 @@ class CalculateReleaseDateService(
     private val log = LoggerFactory.getLogger(this::class.java)
   }
 }
+
+private data class ReleaseAndUnusedDeductions(
+  val releaseDate: LocalDate,
+  val unusedDeductions: Long?,
+)

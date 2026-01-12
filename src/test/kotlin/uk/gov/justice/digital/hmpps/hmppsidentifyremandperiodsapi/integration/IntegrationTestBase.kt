@@ -1,5 +1,6 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.integration
 
+import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
@@ -9,7 +10,7 @@ import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.context.DynamicPropertyRegistry
 import org.springframework.test.context.DynamicPropertySource
 import org.springframework.test.web.reactive.server.WebTestClient
-import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.integration.container.PostgresContainer
+import org.testcontainers.containers.PostgreSQLContainer
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.integration.wiremock.AdjustmentsApiExtension
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.integration.wiremock.CalculateReleaseDatesApiExtension
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.integration.wiremock.HmppsAuthApiExtension
@@ -34,21 +35,31 @@ abstract class IntegrationTestBase {
   ): (HttpHeaders) -> Unit = jwtAuthHelper.setAuthorisation(user, roles)
 
   companion object {
-    private val pgContainer = PostgresContainer.instance
+
+    @JvmStatic
+    private val postgresContainer = PostgreSQLContainer<Nothing>("postgres:18")
+      .apply {
+        withUsername("identify_remand")
+        withPassword("identify_remand")
+        withDatabaseName("identify_remand")
+        withReuse(true)
+      }
+
+    @BeforeAll
+    @JvmStatic
+    fun startContainers() {
+      postgresContainer.start()
+    }
 
     @JvmStatic
     @DynamicPropertySource
     fun properties(registry: DynamicPropertyRegistry) {
-      pgContainer?.run {
-        registry.add("spring.datasource.url", pgContainer::getJdbcUrl)
-        registry.add("spring.datasource.username", pgContainer::getUsername)
-        registry.add("spring.datasource.password", pgContainer::getPassword)
-        registry.add("spring.flyway.url", pgContainer::getJdbcUrl)
-        registry.add("spring.flyway.user", pgContainer::getUsername)
-        registry.add("spring.flyway.password", pgContainer::getPassword)
-      }
-
-      System.setProperty("aws.region", "eu-west-2")
+      registry.add("spring.datasource.url") { postgresContainer.jdbcUrl }
+      registry.add("spring.datasource.username") { postgresContainer.username }
+      registry.add("spring.datasource.password") { postgresContainer.password }
+      registry.add("spring.flyway.url") { postgresContainer.jdbcUrl }
+      registry.add("spring.flyway.user") { postgresContainer.username }
+      registry.add("spring.flyway.password") { postgresContainer.password }
     }
   }
 }

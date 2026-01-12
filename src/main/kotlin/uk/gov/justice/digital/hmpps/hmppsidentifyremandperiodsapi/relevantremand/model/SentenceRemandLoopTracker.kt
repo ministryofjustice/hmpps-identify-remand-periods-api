@@ -48,6 +48,8 @@ class SentenceRemandLoopTracker(
   /* A list of dates to iterate over. Made up of any established remand or sentence periods. */
   lateinit var datesToLoopOver: List<LocalDate>
 
+  var unusedDeductions: Pair<Long, LocalDate> = 0L to LocalDate.now()
+
   /* Starting a new loop of the periods with the same sentence date. */
   fun startNewSentenceDateLoop(entry: Map.Entry<LocalDate, List<ChargeRemand>>) {
     sentenceDate = entry.key
@@ -80,6 +82,8 @@ class SentenceRemandLoopTracker(
 
   /* Can we open a new period, does the period intersected a confirmed date. */
   fun doesDateIntersectWithEstablishedRemandOrSentence(date: LocalDate): Boolean = (final + periodsServingSentence + periodsOutOfPrison).any { it.overlapsStartInclusive(date) } || date == sentenceDate
+
+  fun isIntersectingPeriodAnImmediateRelease(date: LocalDate): Boolean = periodsServingSentence.any { it.from == date && it.from == it.to }
 
   fun dateIsEndOfRemandOrSentence(date: LocalDate): Boolean = (final + periodsServingSentence).any { it.to == date }
 
