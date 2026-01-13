@@ -106,8 +106,8 @@ class SentenceRemandService(
 
     var remainingUnusedDeductions = loopTracker.unusedDeductions.first
     val sharedPeriods = mutableListOf<Remand>()
-    loopTracker.periods.forEach { potentialRemandPeriod ->
-      remandPeriodsWithUnusedRemand = remandPeriodsWithUnusedRemand.map { remandPeriodWithUnusedRemand ->
+    remandPeriodsWithUnusedRemand = remandPeriodsWithUnusedRemand.map { remandPeriodWithUnusedRemand ->
+      loopTracker.periods.forEach { potentialRemandPeriod ->
         var overlappingPeriod = remandPeriodWithUnusedRemand.getOverlappingPeriod(potentialRemandPeriod)
         if (overlappingPeriod != null) {
           if (overlappingPeriod.days > remainingUnusedDeductions) {
@@ -126,8 +126,8 @@ class SentenceRemandService(
             to = overlappingPeriod.from.minusDays(1),
           )
         }
-        return@map remandPeriodWithUnusedRemand
       }
+      return@map remandPeriodWithUnusedRemand
     }
 
     loopTracker.final.addAll(remandPeriodsWithUnusedRemand)

@@ -11,7 +11,7 @@ class TestCaseAnonymiser {
 
   @Test
   fun anonymise() {
-    val exampleName = "adjst-1381-wrong-booking-id"
+    val exampleName = "adjst-972-unused-deductions-remand-sharing-preprod-example"
     log.info("Anonymising example $exampleName")
 
     val example = TestUtil.objectMapper()
@@ -61,6 +61,7 @@ class TestCaseAnonymiser {
         calculateAt = it.from,
         release = it.to,
         service = it.service,
+        unusedDeductions = it.unusedDeductions,
       )
     }
   }
