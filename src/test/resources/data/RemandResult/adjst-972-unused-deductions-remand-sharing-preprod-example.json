@@ -1,0 +1,104 @@
+{
+  "adjustments": [
+    {
+      "bookingId": 1,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "fromDate": "2025-08-25",
+      "toDate": "2025-09-21",
+      "remand": {
+        "chargeId": [
+          8191467
+        ]
+      },
+      "status": "INACTIVE"
+    },
+    {
+      "bookingId": 1,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "fromDate": "2025-09-22",
+      "toDate": "2025-11-05",
+      "remand": {
+        "chargeId": [
+          8148412,
+          8148414,
+          8148415,
+          8148433
+        ]
+      },
+      "status": "ACTIVE"
+    }
+  ],
+  "chargeRemand": [
+    {
+      "from": "2025-08-25",
+      "to": "2025-11-05",
+      "fromEvent": {
+        "date": "2025-08-25",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2025-11-06",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        8148412,
+        8148414,
+        8148415,
+        8148433
+      ],
+      "status": "APPLICABLE",
+      "days": 73
+    },
+    {
+      "from": "2025-08-25",
+      "to": "2025-09-22",
+      "fromEvent": {
+        "date": "2025-08-25",
+        "description": "Remittal for Sentence in Custody"
+      },
+      "toEvent": {
+        "date": "2025-09-23",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        8191467
+      ],
+      "status": "INACTIVE",
+      "days": 29
+    },
+    {
+      "from": "2025-08-25",
+      "to": "2025-11-06",
+      "fromEvent": {
+        "date": "2025-08-25",
+        "description": "Remand in Custody (Bail Refused)"
+      },
+      "toEvent": {
+        "date": "2025-11-06",
+        "description": "No Separate Penalty"
+      },
+      "chargeIds": [
+        8148416
+      ],
+      "status": "NOT_SENTENCED",
+      "days": 74
+    }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2025-09-23",
+      "to": "2025-09-23",
+      "sentence": {
+        "sequence": 2,
+        "sentenceDate": "2025-09-23",
+        "bookingId": 1
+      },
+      "chargeId": 8191467,
+      "service": "HISTORIC",
+      "unusedDeductions": 1,
+      "days": 1
+    }
+  ]
+}
