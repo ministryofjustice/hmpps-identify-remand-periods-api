@@ -1,0 +1,134 @@
+{
+  "adjustments": [
+    {
+      "bookingId": 2,
+      "person": "ABC123",
+      "adjustmentType": "REMAND",
+      "fromDate": "2022-04-16",
+      "toDate": "2023-01-18",
+      "remand": {
+        "chargeId": [
+          8300284,
+          6889760
+        ]
+      },
+      "status": "ACTIVE"
+    }
+  ],
+  "chargeRemand": [
+    {
+      "from": "2022-04-16",
+      "to": "2023-01-18",
+      "fromEvent": {
+        "date": "2022-04-16",
+        "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+      },
+      "toEvent": {
+        "date": "2023-01-19",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        8300284
+      ],
+      "status": "APPLICABLE",
+      "days": 278
+    },
+    {
+      "from": "2022-04-16",
+      "to": "2023-01-18",
+      "fromEvent": {
+        "date": "2022-04-16",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2023-01-19",
+        "description": "Imprisonment"
+      },
+      "chargeIds": [
+        6889760
+      ],
+      "status": "APPLICABLE",
+      "days": 278
+    },
+    {
+      "from": "2022-05-13",
+      "to": "2023-01-19",
+      "fromEvent": {
+        "date": "2022-05-13",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2023-01-19",
+        "description": "No Separate Penalty"
+      },
+      "chargeIds": [
+        6889761,
+        6889762,
+        6889792
+      ],
+      "status": "NOT_SENTENCED",
+      "days": 252
+    },
+    {
+      "from": "2022-05-13",
+      "to": "2023-01-19",
+      "fromEvent": {
+        "date": "2022-05-13",
+        "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+      },
+      "toEvent": {
+        "date": "2023-01-19",
+        "description": "Dismissed"
+      },
+      "chargeIds": [
+        6889791
+      ],
+      "status": "NOT_SENTENCED",
+      "days": 252
+    }
+  ],
+  "intersectingSentences": [
+    {
+      "from": "2023-01-19",
+      "to": "2025-04-15",
+      "sentence": {
+        "sequence": 3,
+        "sentenceDate": "2023-01-19",
+        "recallDates": [
+          "2025-12-02"
+        ],
+        "bookingId": 2
+      },
+      "chargeId": 8300284,
+      "service": "HISTORIC",
+      "days": 818
+    },
+    {
+      "from": "2025-12-02",
+      "to": "2028-04-15",
+      "sentence": {
+        "sequence": 3,
+        "sentenceDate": "2023-01-19",
+        "recallDates": [
+          "2025-12-02"
+        ],
+        "bookingId": 2
+      },
+      "chargeId": 8300284,
+      "service": "HISTORIC",
+      "days": 866
+    }
+  ],
+  "periodsOutOfPrison": [
+    {
+      "from": "2022-09-07",
+      "to": "2023-01-02",
+      "days": 118
+    },
+    {
+      "from": "2025-04-15",
+      "to": "2025-11-30",
+      "days": 230
+    }
+  ]
+}

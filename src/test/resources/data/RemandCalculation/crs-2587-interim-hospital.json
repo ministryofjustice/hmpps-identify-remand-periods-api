@@ -1,0 +1,441 @@
+{
+  "remandCalculation": {
+    "prisonerId": "ABC123",
+    "prisonId": "HLI",
+    "chargesAndEvents": [
+      {
+        "charge": {
+          "chargeId": 6630955,
+          "offence": {
+            "code": "RT88500",
+            "statute": "RT88",
+            "description": "Cause death by dangerous driving"
+          },
+          "bookingId": 1,
+          "offenceDate": "2022-04-13",
+          "bookNumber": "1",
+          "resultDescription": "Interim Hospital Order"
+        },
+        "dates": [
+          {
+            "date": "2022-08-22",
+            "type": "START",
+            "description": "Interim Hospital Order"
+          },
+          {
+            "date": "2022-06-30",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-04-16",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2022-05-13",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 8300284,
+          "offence": {
+            "code": "RT88500",
+            "statute": "RT88",
+            "description": "Cause death by dangerous driving"
+          },
+          "bookingId": 2,
+          "offenceDate": "2022-04-13",
+          "bookNumber": "2",
+          "sentenceSequence": 3,
+          "sentenceDate": "2023-01-19",
+          "resultDescription": "Recall to Prison",
+          "final": true,
+          "isActiveBooking": true,
+          "isRecallSentence": true
+        },
+        "dates": [
+          {
+            "date": "2022-04-16",
+            "type": "START",
+            "description": "Commit/Transfer/Send to Crown Court for Trial in Custody"
+          },
+          {
+            "date": "2023-01-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-04-21",
+            "type": "CONTINUE",
+            "description": "Varied on Appeal",
+            "final": true
+          },
+          {
+            "date": "2025-12-02",
+            "type": "STOP",
+            "description": "Recall to Prison",
+            "final": true,
+            "isRecallEvent": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 8297951,
+          "offence": {
+            "code": "CJ88159",
+            "statute": "CJ88",
+            "description": "Common assault of an emergency worker"
+          },
+          "bookingId": 2,
+          "offenceDate": "2025-11-29",
+          "bookNumber": "2",
+          "sentenceSequence": 1,
+          "sentenceDate": "2025-12-01",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2025-12-01",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 8297952,
+          "offence": {
+            "code": "CJ88116",
+            "statute": "CJ88",
+            "description": "Assault by beating"
+          },
+          "bookingId": 2,
+          "offenceDate": "2025-11-29",
+          "bookNumber": "2",
+          "sentenceSequence": 2,
+          "sentenceDate": "2025-12-01",
+          "resultDescription": "Imprisonment",
+          "final": true,
+          "isActiveBooking": true
+        },
+        "dates": [
+          {
+            "date": "2025-12-01",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6889760,
+          "offence": {
+            "code": "RA88046",
+            "statute": "RA88",
+            "description": "Cause death by dangerous driving"
+          },
+          "bookingId": 3,
+          "offenceDate": "2022-04-13",
+          "bookNumber": "3",
+          "sentenceSequence": 1,
+          "sentenceDate": "2023-01-19",
+          "resultDescription": "Varied on Appeal",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2023-01-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-04-16",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-05-13",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-06-30",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-08-22",
+            "type": "START",
+            "description": "Interim Hospital Order"
+          },
+          {
+            "date": "2023-01-19",
+            "type": "STOP",
+            "description": "Imprisonment",
+            "final": true,
+            "isCustodial": true
+          },
+          {
+            "date": "2023-04-21",
+            "type": "CONTINUE",
+            "description": "Varied on Appeal",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6889761,
+          "offence": {
+            "code": "RT88333",
+            "statute": "RT88",
+            "description": "Drive whilst disqualified"
+          },
+          "bookingId": 3,
+          "offenceDate": "2022-04-13",
+          "bookNumber": "3",
+          "resultDescription": "No Separate Penalty",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2023-01-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-05-13",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-06-30",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-08-22",
+            "type": "START",
+            "description": "Interim Hospital Order"
+          },
+          {
+            "date": "2023-01-19",
+            "type": "STOP",
+            "description": "No Separate Penalty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6889762,
+          "offence": {
+            "code": "RT88191",
+            "statute": "RT88",
+            "description": "Use a motor vehicle on a road / public place without third party insurance"
+          },
+          "bookingId": 3,
+          "offenceDate": "2022-04-13",
+          "bookNumber": "3",
+          "resultDescription": "No Separate Penalty",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2023-01-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-05-13",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-06-30",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-08-22",
+            "type": "START",
+            "description": "Interim Hospital Order"
+          },
+          {
+            "date": "2023-01-19",
+            "type": "STOP",
+            "description": "No Separate Penalty",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6889791,
+          "offence": {
+            "code": "RT88218",
+            "statute": "RT88",
+            "description": "Driver of a vehicle fail to stop after a road accident"
+          },
+          "bookingId": 3,
+          "offenceDate": "2022-04-13",
+          "bookNumber": "3",
+          "resultDescription": "Dismissed",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2023-01-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-05-13",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-06-30",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-08-22",
+            "type": "START",
+            "description": "Interim Hospital Order"
+          },
+          {
+            "date": "2023-01-19",
+            "type": "STOP",
+            "description": "Dismissed",
+            "final": true
+          }
+        ]
+      },
+      {
+        "charge": {
+          "chargeId": 6889792,
+          "offence": {
+            "code": "RT88010",
+            "statute": "RT88",
+            "description": "Fail to provide specimen for analysis - vehicle driver"
+          },
+          "bookingId": 3,
+          "offenceDate": "2022-04-13",
+          "bookNumber": "3",
+          "resultDescription": "No Separate Penalty",
+          "final": true
+        },
+        "dates": [
+          {
+            "date": "2023-01-03",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-05-13",
+            "type": "START",
+            "description": "Commit to Crown Court for Trial (Summary / Either Way Offences)"
+          },
+          {
+            "date": "2022-06-30",
+            "type": "START",
+            "description": "Sentence Postponed"
+          },
+          {
+            "date": "2022-08-22",
+            "type": "START",
+            "description": "Interim Hospital Order"
+          },
+          {
+            "date": "2023-01-19",
+            "type": "STOP",
+            "description": "No Separate Penalty",
+            "final": true
+          }
+        ]
+      }
+    ],
+    "imprisonmentStatuses": [
+      {
+        "status": "REMANDED",
+        "date": "2022-04-21",
+        "bookNumber": "44545E"
+      },
+      {
+        "status": "REMANDED",
+        "date": "2023-01-03",
+        "bookNumber": "44545E"
+      },
+      {
+        "status": "SENTENCED",
+        "date": "2023-01-24",
+        "bookNumber": "44545E"
+      },
+      {
+        "status": "SENTENCED",
+        "date": "2023-01-26",
+        "bookNumber": "44545E"
+      },
+      {
+        "status": "SENTENCED",
+        "date": "2025-12-02",
+        "bookNumber": "40915H"
+      }
+    ],
+    "chargeIdsIncludedInLasestReleaseDateCalculation": [
+      8297951,
+      8297952,
+      8300284
+    ],
+    "externalMovements": [
+      {
+        "date": "2022-04-16"
+      },
+      {
+        "date": "2022-09-07",
+        "release": true
+      },
+      {
+        "date": "2023-01-03"
+      },
+      {
+        "date": "2023-03-02"
+      },
+      {
+        "date": "2025-04-15",
+        "release": true
+      },
+      {
+        "date": "2025-12-01"
+      }
+    ]
+  },
+  "calculations": [
+    {
+      "calculateAt": "2023-01-19",
+      "release": "2025-04-15",
+      "service": "HISTORIC"
+    },
+    {
+      "calculateAt": "2025-12-02",
+      "release": "2028-04-15",
+      "service": "HISTORIC"
+    }
+  ],
+  "options": {}
+}
