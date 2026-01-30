@@ -139,7 +139,7 @@ fun mapCourtDateResult(courtDateResult: PrisonApiCourtDateOutcome, charge: Priso
   "3112" -> STOP
   "3501" -> STOP
   "3502" -> STOP
-  "4005" -> START
+  "4005" -> STOP
   "4007" -> CONTINUE
   "4008" -> CONTINUE
   "4010" -> STOP
