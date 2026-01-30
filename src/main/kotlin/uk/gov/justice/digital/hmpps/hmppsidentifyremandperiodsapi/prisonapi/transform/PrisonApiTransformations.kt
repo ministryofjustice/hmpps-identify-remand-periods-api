@@ -143,4 +143,5 @@ private val termTypes = listOf(
   "DTO",
   "DTO_ORA",
   "BOTUS",
+  "CIVIL",
 )
