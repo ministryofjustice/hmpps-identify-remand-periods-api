@@ -1,5 +1,7 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.service
 
+import com.fasterxml.jackson.databind.ObjectMapper
+import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.UnsupportedCalculationException
 import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.relevantremand.model.CalculationData
@@ -18,30 +20,45 @@ class RemandCalculationService(
   private val resultSortingService: ResultSortingService,
   private val mergeChargeRemandService: MergeChargeRemandService,
   private val validateCalculationDataService: ValidateCalculationDataService,
+  private val objectMapper: ObjectMapper,
 ) {
 
   fun calculate(remandCalculation: RemandCalculation, options: RemandCalculationRequestOptions): RemandResult {
     if (remandCalculation.chargesAndEvents.isEmpty()) {
       throw UnsupportedCalculationException("There are no charges to calculate")
     }
+    val calculationData = CalculationData(
+      issuesWithLegacyData = remandCalculation.issuesWithLegacyData.toMutableList(),
+      imprisonmentStatuses = remandCalculation.imprisonmentStatuses,
+    )
+    try {
+      calculationData.chargeAndEvents = relatedChargeCombinationService.combineRelatedCharges(remandCalculation)
 
-    val calculationData = CalculationData(issuesWithLegacyData = remandCalculation.issuesWithLegacyData.toMutableList(), imprisonmentStatuses = remandCalculation.imprisonmentStatuses)
+      val remandClockResult = remandClockService.remandClock(calculationData)
+      calculationData.chargeRemand = remandClockResult.chargeRemand
+      calculationData.unclosedRemandDates = remandClockResult.unclosedRemandDates
 
-    calculationData.chargeAndEvents = relatedChargeCombinationService.combineRelatedCharges(remandCalculation)
+      userSelectedCombinationService.combineUserSelectedCharges(calculationData, options)
 
-    val remandClockResult = remandClockService.remandClock(calculationData)
-    calculationData.chargeRemand = remandClockResult.chargeRemand
-    calculationData.unclosedRemandDates = remandClockResult.unclosedRemandDates
+      calculationData.sentenceRemandResult =
+        sentenceRemandService.extractSentenceRemand(remandCalculation, calculationData)
+      calculationData.adjustments = remandAdjustmentService.getRemandedAdjustments(remandCalculation, calculationData)
 
-    userSelectedCombinationService.combineUserSelectedCharges(calculationData, options)
+      calculationData.chargeRemand =
+        chargeRemandStatusService.setChargeRemandStatuses(calculationData, remandCalculation)
+      calculationData.chargeRemand = mergeChargeRemandService.mergeChargeRemand(calculationData, remandCalculation)
 
-    calculationData.sentenceRemandResult = sentenceRemandService.extractSentenceRemand(remandCalculation, calculationData)
-    calculationData.adjustments = remandAdjustmentService.getRemandedAdjustments(remandCalculation, calculationData)
-
-    calculationData.chargeRemand = chargeRemandStatusService.setChargeRemandStatuses(calculationData, remandCalculation)
-    calculationData.chargeRemand = mergeChargeRemandService.mergeChargeRemand(calculationData, remandCalculation)
-
-    validateCalculationDataService.validate(calculationData)
+      validateCalculationDataService.validate(calculationData)
+    } catch (e: Exception) {
+      val (input, output) = try {
+        objectMapper.writeValueAsString(calculationData) to objectMapper.writeValueAsString(remandCalculation)
+      } catch (inner: Exception) {
+        log.error("Couldn't even generate json for failed remand calculation", inner)
+        "Failed to generate input" to "Failed to generate output"
+      }
+      log.error("Failed to calculate remand with input '$input' and output calculated so far '$output'", e)
+      throw e
+    }
 
     val unsortedResult = RemandResult(
       charges = remandCalculation.charges,
@@ -52,7 +69,10 @@ class RemandCalculationService(
       periodsOutOfPrison = calculationData.sentenceRemandResult!!.periodsOutOfPrison,
       remandCalculation = if (options.includeRemandCalculation) remandCalculation else null,
     )
-
     return resultSortingService.sort(unsortedResult)
+  }
+
+  private companion object {
+    private val log = LoggerFactory.getLogger(this::class.java)
   }
 }
