@@ -27,6 +27,7 @@ class RemandCalculationService(
     if (remandCalculation.chargesAndEvents.isEmpty()) {
       throw UnsupportedCalculationException("There are no charges to calculate")
     }
+    val originalRemandCalculation = deepCopy(remandCalculation)
     val calculationData = CalculationData(
       issuesWithLegacyData = remandCalculation.issuesWithLegacyData.toMutableList(),
       imprisonmentStatuses = remandCalculation.imprisonmentStatuses,
@@ -50,13 +51,13 @@ class RemandCalculationService(
 
       validateCalculationDataService.validate(calculationData)
     } catch (e: Exception) {
-      val (input, output) = try {
-        objectMapper.writeValueAsString(calculationData) to objectMapper.writeValueAsString(remandCalculation)
+      val input = try {
+        objectMapper.writeValueAsString(originalRemandCalculation)
       } catch (inner: Exception) {
         log.error("Couldn't even generate json for failed remand calculation", inner)
-        "Failed to generate input" to "Failed to generate output"
+        "Failed to generate input"
       }
-      log.error("Failed to calculate remand with input '$input' and output calculated so far '$output'", e)
+      log.error("Failed to calculate remand with original input '$input'", e)
       throw e
     }
 
@@ -71,6 +72,17 @@ class RemandCalculationService(
     )
     return resultSortingService.sort(unsortedResult)
   }
+
+  private fun deepCopy(remandCalculation: RemandCalculation): RemandCalculation = RemandCalculation(
+    prisonerId = remandCalculation.prisonerId,
+    prisonId = remandCalculation.prisonId,
+    chargesAndEvents = remandCalculation.chargesAndEvents.toList(),
+    imprisonmentStatuses = remandCalculation.imprisonmentStatuses.toList(),
+    chargeIdsIncludedInLasestReleaseDateCalculation = remandCalculation.chargeIdsIncludedInLasestReleaseDateCalculation.toList(),
+    issuesWithLegacyData = remandCalculation.issuesWithLegacyData.toList(),
+    externalMovements = remandCalculation.externalMovements.toList(),
+    includeCalculationInResult = remandCalculation.includeCalculationInResult,
+  )
 
   private companion object {
     private val log = LoggerFactory.getLogger(this::class.java)
