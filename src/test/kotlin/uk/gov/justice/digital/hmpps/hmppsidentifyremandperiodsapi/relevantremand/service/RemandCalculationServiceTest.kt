@@ -32,6 +32,7 @@ class RemandCalculationServiceTest {
   private val relatedChargeCombinationService = RelatedChargeCombinationService()
   private val userSelectedCombinationService = UserSelectedCombinationService()
   private val validationChargeService = ValidateCalculationDataService()
+  private val objectMapper = TestUtil.objectMapper()
   private val remandCalculationService = RemandCalculationService(
     relatedChargeCombinationService,
     userSelectedCombinationService,
@@ -42,6 +43,7 @@ class RemandCalculationServiceTest {
     resultSortingService,
     mergeChargeRemandService,
     validationChargeService,
+    objectMapper,
   )
 
   @ParameterizedTest

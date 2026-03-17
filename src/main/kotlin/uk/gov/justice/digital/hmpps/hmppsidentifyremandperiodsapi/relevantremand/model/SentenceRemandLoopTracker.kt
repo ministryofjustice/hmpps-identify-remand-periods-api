@@ -13,7 +13,10 @@ class SentenceRemandLoopTracker(
   private val periodsOutOfPrison: List<DatePeriod>,
 ) {
   /* All periods that are linked to a sentence which can have remand. */
-  val allPeriods = remandPeriods.filter { charges[it.onlyChargeId()]!!.canHaveRemandApplyToSentence() }.sortedBy { it.from }
+  val allPeriods = remandPeriods.filter {
+    val chargeForChargeId = requireNotNull(charges[it.onlyChargeId()]) { "No matching charge for id ${it.onlyChargeId()} in charges ${charges.keys}" }
+    chargeForChargeId.canHaveRemandApplyToSentence()
+  }.sortedBy { it.from }
 
   /* A map of each sentence date to the periods who have a sentence with the given date */
   val sentenceDateToPeriodMap = allPeriods.groupBy { charges[it.onlyChargeId()]!!.sentenceDate!! }.toMutableMap()
