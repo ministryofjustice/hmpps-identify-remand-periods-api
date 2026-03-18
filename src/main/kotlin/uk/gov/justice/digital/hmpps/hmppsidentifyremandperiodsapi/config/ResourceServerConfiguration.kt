@@ -28,15 +28,15 @@ private class ResourceServerConfiguration {
         }
       }
       authorizeHttpRequests {
-        authorize(HttpMethod.GET, "/webjars/**", HttpMethod.GET.name(), permitAll)
-        authorize(HttpMethod.GET, "favicon.ico", HttpMethod.GET.name(), permitAll)
-        authorize(HttpMethod.GET, "/health/**", HttpMethod.GET.name(), permitAll)
-        authorize(HttpMethod.GET, "/info", HttpMethod.GET.name(), permitAll)
-        authorize(HttpMethod.GET, "/swagger-resources/**", HttpMethod.GET.name(), permitAll)
-        authorize(HttpMethod.GET, "/v3/api-docs/**", HttpMethod.GET.name(), permitAll)
-        authorize(HttpMethod.GET, "/swagger-ui/**", HttpMethod.GET.name(), permitAll)
-        authorize(HttpMethod.GET, "/swagger-ui.html", HttpMethod.GET.name(), permitAll)
-        authorize(HttpMethod.GET, "/h2-console/**", HttpMethod.POST.name(), permitAll)
+        authorize(HttpMethod.GET, "/webjars/**", permitAll)
+        authorize(HttpMethod.GET, "/favicon.ico", permitAll)
+        authorize(HttpMethod.GET, "/health/**", permitAll)
+        authorize(HttpMethod.GET, "/info", permitAll)
+        authorize(HttpMethod.GET, "/swagger-resources/**", permitAll)
+        authorize(HttpMethod.GET, "/v3/api-docs/**", permitAll)
+        authorize(HttpMethod.GET, "/swagger-ui/**", permitAll)
+        authorize(HttpMethod.GET, "/swagger-ui.html", permitAll)
+        authorize(HttpMethod.GET, "/h2-console/**", permitAll)
         authorize(anyRequest, authenticated)
       }
       oauth2ResourceServer {

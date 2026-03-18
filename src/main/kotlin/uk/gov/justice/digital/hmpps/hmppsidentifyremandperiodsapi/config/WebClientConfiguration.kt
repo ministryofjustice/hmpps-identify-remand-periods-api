@@ -1,5 +1,6 @@
 package uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.config
 
+import com.fasterxml.jackson.databind.ObjectMapper
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -68,5 +69,10 @@ class WebClientConfiguration(
     oAuth2AuthorizedClientService,
   ).apply {
     setAuthorizedClientProvider(OAuth2AuthorizedClientProviderBuilder.builder().clientCredentials().build())
+  }
+
+  @Bean
+  fun objectMapper(): ObjectMapper {
+    return ObjectMapper().findAndRegisterModules()
   }
 }
