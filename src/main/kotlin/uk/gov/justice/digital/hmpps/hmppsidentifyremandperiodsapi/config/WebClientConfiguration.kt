@@ -72,7 +72,5 @@ class WebClientConfiguration(
   }
 
   @Bean
-  fun objectMapper(): ObjectMapper {
-    return ObjectMapper().findAndRegisterModules()
-  }
+  fun objectMapper(): ObjectMapper = ObjectMapper().findAndRegisterModules()
 }
