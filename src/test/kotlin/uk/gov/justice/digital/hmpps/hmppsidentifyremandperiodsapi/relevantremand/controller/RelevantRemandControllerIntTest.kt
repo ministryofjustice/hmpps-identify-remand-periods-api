@@ -183,7 +183,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
       .accept(MediaType.APPLICATION_JSON)
       .headers(setAuthorisationRemandToolUser())
       .exchange()
-      .expectStatus().isEqualTo(HttpStatus.UNPROCESSABLE_ENTITY)
+      .expectStatus().isEqualTo(HttpStatus.UNPROCESSABLE_CONTENT)
       .expectHeader().contentType(MediaType.APPLICATION_JSON)
       .expectBody(ErrorResponse::class.java)
       .returnResult().responseBody!!
@@ -198,7 +198,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
       .accept(MediaType.APPLICATION_JSON)
       .headers(setAuthorisationRemandToolUser())
       .exchange()
-      .expectStatus().isEqualTo(HttpStatus.UNPROCESSABLE_ENTITY)
+      .expectStatus().isEqualTo(HttpStatus.UNPROCESSABLE_CONTENT)
       .expectHeader().contentType(MediaType.APPLICATION_JSON)
       .expectBody(ErrorResponse::class.java)
       .returnResult().responseBody!!

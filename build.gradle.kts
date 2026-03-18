@@ -1,5 +1,5 @@
 plugins {
-  id("uk.gov.justice.hmpps.gradle-spring-boot") version "9.1.2"
+  id("uk.gov.justice.hmpps.gradle-spring-boot") version "10.0.6"
   kotlin("plugin.spring") version "2.2.20"
   kotlin("plugin.jpa") version "2.2.20"
   id("se.patrikerdes.use-latest-versions") version "0.2.19"
@@ -19,6 +19,7 @@ dependencies {
   implementation("org.springframework.boot:spring-boot-starter-oauth2-resource-server")
   implementation("org.springframework.boot:spring-boot-starter-data-jpa")
   implementation("org.springframework.boot:spring-boot-starter-actuator")
+  implementation("org.springframework.boot:spring-boot-starter-flyway")
 
   // Database dependencies
   runtimeOnly("org.flywaydb:flyway-core")
@@ -41,6 +42,7 @@ dependencies {
   testImplementation("org.testcontainers:testcontainers:2.0.2")
   testImplementation("org.testcontainers:postgresql:1.21.3")
   testImplementation("org.testcontainers:junit-jupiter:1.21.3")
+  testImplementation("org.springframework.boot:spring-boot-webtestclient")
 }
 
 kotlin {
