@@ -15,7 +15,7 @@ import uk.gov.justice.digital.hmpps.hmppsidentifyremandperiodsapi.prisonapi.mode
 
 @Service
 class PrisonApiClient(@Qualifier("prisonApiWebClient") private val webClient: WebClient) {
-  private inline fun <reified T> typeReference() = object : ParameterizedTypeReference<T>() {}
+  private inline fun <reified T: Any> typeReference() = object : ParameterizedTypeReference<T>() {}
   private val log = LoggerFactory.getLogger(this::class.java)
 
   fun getCourtDateResults(prisonerId: String): List<PrisonApiCharge> {

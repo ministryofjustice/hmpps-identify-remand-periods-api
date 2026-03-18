@@ -10,7 +10,6 @@ import org.springframework.security.config.annotation.web.invoke
 import org.springframework.security.config.http.SessionCreationPolicy
 import org.springframework.security.web.SecurityFilterChain
 import org.springframework.security.web.header.writers.ReferrerPolicyHeaderWriter
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher
 
 @Configuration
 @EnableMethodSecurity
@@ -29,15 +28,15 @@ private class ResourceServerConfiguration {
         }
       }
       authorizeHttpRequests {
-        authorize(AntPathRequestMatcher("/webjars/**", HttpMethod.GET.name()), permitAll)
-        authorize(AntPathRequestMatcher("favicon.ico", HttpMethod.GET.name()), permitAll)
-        authorize(AntPathRequestMatcher("/health/**", HttpMethod.GET.name()), permitAll)
-        authorize(AntPathRequestMatcher("/info", HttpMethod.GET.name()), permitAll)
-        authorize(AntPathRequestMatcher("/swagger-resources/**", HttpMethod.GET.name()), permitAll)
-        authorize(AntPathRequestMatcher("/v3/api-docs/**", HttpMethod.GET.name()), permitAll)
-        authorize(AntPathRequestMatcher("/swagger-ui/**", HttpMethod.GET.name()), permitAll)
-        authorize(AntPathRequestMatcher("/swagger-ui.html", HttpMethod.GET.name()), permitAll)
-        authorize(AntPathRequestMatcher("/h2-console/**", HttpMethod.POST.name()), permitAll)
+        authorize(HttpMethod.GET, "/webjars/**", HttpMethod.GET.name(), permitAll)
+        authorize(HttpMethod.GET, "favicon.ico", HttpMethod.GET.name(), permitAll)
+        authorize(HttpMethod.GET, "/health/**", HttpMethod.GET.name(), permitAll)
+        authorize(HttpMethod.GET, "/info", HttpMethod.GET.name(), permitAll)
+        authorize(HttpMethod.GET, "/swagger-resources/**", HttpMethod.GET.name(), permitAll)
+        authorize(HttpMethod.GET, "/v3/api-docs/**", HttpMethod.GET.name(), permitAll)
+        authorize(HttpMethod.GET, "/swagger-ui/**", HttpMethod.GET.name(), permitAll)
+        authorize(HttpMethod.GET, "/swagger-ui.html", HttpMethod.GET.name(), permitAll)
+        authorize(HttpMethod.GET, "/h2-console/**", HttpMethod.POST.name(), permitAll)
         authorize(anyRequest, authenticated)
       }
       oauth2ResourceServer {
