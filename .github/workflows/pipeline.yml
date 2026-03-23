@@ -38,6 +38,7 @@ jobs:
     with:
       localstack-tag: "3"
       postgres-tag: "17"
+      java-version: "25"
       postgres-db: identify-remand
       postgres-username: identify-remand
       postgres-password: identify-remand
