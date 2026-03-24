@@ -91,7 +91,7 @@ class IdentifyRemandDecisionService(
   }
 
   private fun mapToDto(decision: IdentifyRemandDecision): IdentifyRemandDecisionDto {
-    val prisonDescription = decision.decisionByPrisonId?.let { prisonService.getPrison(decision.decisionByPrisonId).description }
+    val prisonDescription = decision.decisionByPrisonId?.let { prisonService.getPrison(it).description }
     val options = if (decision.identifyRemandCalculation?.options != null) objectMapper.convertValue(decision.identifyRemandCalculation!!.options, RemandCalculationRequestOptions::class.java) else RemandCalculationRequestOptions()
     return IdentifyRemandDecisionDto(
       accepted = decision.accepted,
