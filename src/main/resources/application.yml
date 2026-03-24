@@ -93,4 +93,11 @@ management:
       cache:
         time-to-live: 2000ms
 
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false
+    version: 5.32.1
+
 primary-release-date-provider: ${PRIMARY_RELEASE_DATE_PROVIDER}
