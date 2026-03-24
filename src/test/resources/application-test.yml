@@ -48,5 +48,11 @@ prisoner:
     api:
       url: http://localhost:8335/prisoner-search-api
 
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+
 
 primary-release-date-provider: HISTORIC
