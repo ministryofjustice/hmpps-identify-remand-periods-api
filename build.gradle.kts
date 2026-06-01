@@ -24,7 +24,7 @@ dependencies {
   // Database dependencies
   runtimeOnly("org.flywaydb:flyway-core")
   runtimeOnly("org.flywaydb:flyway-database-postgresql")
-  runtimeOnly("org.postgresql:postgresql")
+  runtimeOnly("org.postgresql:postgresql:42.7.11")
 
   compileOnly("javax.servlet:javax.servlet-api:4.0.1")
 
