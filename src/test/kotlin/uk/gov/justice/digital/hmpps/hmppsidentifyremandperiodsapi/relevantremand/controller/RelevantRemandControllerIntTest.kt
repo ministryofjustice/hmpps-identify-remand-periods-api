@@ -249,7 +249,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
   @Test
   fun `Save reject decision with reason for missing information`() {
     val options = RemandCalculationRequestOptions(
-      userSelections = emptyList()
+      userSelections = emptyList(),
     )
     webTestClient.post()
       .uri("/relevant-remand/${PrisonApiExtension.MULTIPLE_OFFENCES_PRISONER}/decision")
