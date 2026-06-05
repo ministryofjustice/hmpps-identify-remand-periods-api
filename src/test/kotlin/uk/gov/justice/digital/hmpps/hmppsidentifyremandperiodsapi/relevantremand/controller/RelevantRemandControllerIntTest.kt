@@ -219,6 +219,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
         IdentifyRemandDecisionDto(
           accepted = false,
           rejectComment = "This is not correct",
+          reasonForMissingInformation = null,
           options = options,
         ),
       )
@@ -231,6 +232,46 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
     assertThat(result!!.decisionByUsername).isEqualTo("test-client")
     assertThat(result.accepted).isFalse
     assertThat(result.rejectComment).isEqualTo("This is not correct")
+    assertThat(result.days).isEqualTo(448)
+
+    val getResult = webTestClient.get()
+      .uri("/relevant-remand/${PrisonApiExtension.MULTIPLE_OFFENCES_PRISONER}/decision")
+      .accept(MediaType.APPLICATION_JSON)
+      .headers(setAuthorisationRemandToolUser())
+      .exchange()
+      .expectStatus().isOk
+      .returnResult(IdentifyRemandDecisionDto::class.java).responseBody.blockFirst()!!
+
+    assertThat(getResult.decisionByPrisonDescription).isEqualTo("Birmingham Prison")
+    assertThat(getResult.options).isEqualTo(RemandCalculationRequestOptions())
+  }
+
+  @Test
+  fun `Save reject decision with reason for missing information`() {
+    val options = RemandCalculationRequestOptions(
+      userSelections = emptyList()
+    )
+    webTestClient.post()
+      .uri("/relevant-remand/${PrisonApiExtension.MULTIPLE_OFFENCES_PRISONER}/decision")
+      .accept(MediaType.APPLICATION_JSON)
+      .contentType(MediaType.APPLICATION_JSON)
+      .bodyValue(
+        IdentifyRemandDecisionDto(
+          accepted = false,
+          rejectComment = null,
+          reasonForMissingInformation = "missing NOMIS data",
+          options = options,
+        ),
+      )
+      .headers(setAuthorisationRemandToolUser())
+      .exchange()
+      .expectStatus().isCreated
+
+    val result = decisionRepository.findFirstByPersonOrderByDecisionAtDesc(PrisonApiExtension.MULTIPLE_OFFENCES_PRISONER)
+
+    assertThat(result!!.decisionByUsername).isEqualTo("test-client")
+    assertThat(result.accepted).isFalse
+    assertThat(result.reasonForMissingInformation).isEqualTo("missing NOMIS data")
     assertThat(result.days).isEqualTo(448)
 
     val getResult = webTestClient.get()
@@ -259,6 +300,7 @@ class RelevantRemandControllerIntTest : IntegrationTestBase() {
         IdentifyRemandDecisionDto(
           accepted = true,
           rejectComment = null,
+          reasonForMissingInformation = null,
           options = options,
         ),
       )

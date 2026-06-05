@@ -16,7 +16,7 @@ import java.time.LocalDate
 class FindReleaseDateService(
   private val historicReleaseDateService: FindHistoricReleaseDateService,
   private val calculateReleaseDateService: CalculateReleaseDateService,
-  @Value("\${primary-release-date-provider:HISTORIC}") private val primaryReleaseDateService: String = "HISTORIC",
+  @param:Value("\${primary-release-date-provider:HISTORIC}") private val primaryReleaseDateService: String = "HISTORIC",
 ) {
   private val secondaryReleaseDateService: String = if (primaryReleaseDateService == "HISTORIC") "CRDS" else "HISTORIC"
 
