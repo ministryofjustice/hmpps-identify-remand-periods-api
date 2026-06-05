@@ -5,6 +5,7 @@ import java.time.LocalDateTime
 data class IdentifyRemandDecisionDto(
   val accepted: Boolean,
   val rejectComment: String?,
+  val reasonForMissingInformation: String?,
   val options: RemandCalculationRequestOptions? = null,
 
   // View fields

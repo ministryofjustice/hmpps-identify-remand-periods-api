@@ -58,6 +58,7 @@ class IdentifyRemandDecisionService(
       IdentifyRemandDecision(
         accepted = decision.accepted,
         rejectComment = if (!decision.accepted) decision.rejectComment else null,
+        reasonForMissingInformation = decision.reasonForMissingInformation,
         person = person,
         days = days,
         decisionByUsername = getCurrentAuthentication().principal,
@@ -96,6 +97,7 @@ class IdentifyRemandDecisionService(
     return IdentifyRemandDecisionDto(
       accepted = decision.accepted,
       rejectComment = decision.rejectComment,
+      reasonForMissingInformation = decision.reasonForMissingInformation,
       days = decision.days,
       decisionOn = decision.decisionAt,
       decisionBy = decision.decisionByUsername,

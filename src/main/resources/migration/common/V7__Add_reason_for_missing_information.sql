@@ -1,0 +1,1 @@
+ALTER TABLE identify_remand_decision ADD COLUMN reason_for_missing_information varchar default null;

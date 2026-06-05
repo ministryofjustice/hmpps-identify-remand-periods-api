@@ -21,6 +21,8 @@ data class IdentifyRemandDecision(
 
   val rejectComment: String? = null,
 
+  val reasonForMissingInformation: String? = null,
+
   val decisionAt: LocalDateTime = LocalDateTime.now(),
 
   val decisionByUsername: String = "",

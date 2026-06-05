@@ -335,6 +335,7 @@ class ThingsToDoServiceTest {
       options = nonDefaultOptions,
       accepted = false,
       rejectComment = "Not right",
+      reasonForMissingInformation = null,
       decisionOn = LocalDateTime.of(2024, 6, 1, 10, 0, 0),
       decisionByPrisonId = "LEI",
       days = 32,
@@ -343,6 +344,7 @@ class ThingsToDoServiceTest {
       options = nonDefaultOptions,
       accepted = true,
       rejectComment = null,
+      reasonForMissingInformation = null,
       days = 32,
     )
     private val unusedDeductionsCalculatedStatus = UnusedDeductionsCalculationResultDto(
