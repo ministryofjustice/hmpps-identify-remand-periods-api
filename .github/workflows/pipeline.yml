@@ -25,7 +25,7 @@ jobs:
   helm_lint:
     strategy:
       matrix:
-        environments: ['dev', 'preprod', 'prod']
+        environments: ['dev', 'preprod', 'alt-preprod', 'prod']
     name: helm lint
     uses: ministryofjustice/hmpps-github-actions/.github/workflows/test_helm_lint.yml@v2 # WORKFLOW_VERSION
     secrets: inherit
@@ -76,6 +76,19 @@ jobs:
     secrets: inherit
     with:
       environment: 'preprod'
+      app_version: '${{ needs.build.outputs.app_version }}'
+      helm_timeout: '5m'
+  deploy_alt-preprod:
+    name: Deploy to the alt-preprod environment
+    needs:
+      - build
+      - helm_lint
+      - deploy_dev
+    uses: ministryofjustice/hmpps-github-actions/.github/workflows/deploy_env.yml@v2 # WORKFLOW_VERSION
+    secrets: inherit
+    with:
+      environment: 'alt-preprod'
+      k8s_deployment_name: 'identify-remand-periods-api-alt-preprod'
       app_version: '${{ needs.build.outputs.app_version }}'
       helm_timeout: '5m'
   deploy_prod:
