@@ -1,5 +1,5 @@
 plugins {
-  id("uk.gov.justice.hmpps.gradle-spring-boot") version "11.0.1"
+  id("uk.gov.justice.hmpps.gradle-spring-boot") version "11.0.7"
   kotlin("plugin.spring") version "2.4.10"
   kotlin("plugin.jpa") version "2.4.10"
   id("se.patrikerdes.use-latest-versions") version "0.2.19"
@@ -29,7 +29,7 @@ dependencies {
   compileOnly("javax.servlet:javax.servlet-api:4.0.1")
 
   // OpenAPI
-  implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:3.0.3")
+  implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:3.1.1")
 
   // JWT
   implementation("io.jsonwebtoken:jjwt-api:0.13.0")
@@ -38,7 +38,7 @@ dependencies {
 
   // Test deps
   testImplementation("com.github.tomakehurst:wiremock-jre8-standalone:3.0.1")
-  testImplementation("io.swagger.parser.v3:swagger-parser-v2-converter:2.1.45")
+  testImplementation("io.swagger.parser.v3:swagger-parser-v2-converter:2.1.48")
   testImplementation("org.testcontainers:testcontainers:2.0.5")
   testImplementation("org.testcontainers:postgresql:1.21.4")
   testImplementation("org.testcontainers:junit-jupiter:1.21.4")
