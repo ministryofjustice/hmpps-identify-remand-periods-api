@@ -1,5 +1,5 @@
 plugins {
-  id("uk.gov.justice.hmpps.gradle-spring-boot") version "11.0.12"
+  id("uk.gov.justice.hmpps.gradle-spring-boot") version "11.0.14"
   kotlin("plugin.spring") version "2.4.21"
   kotlin("plugin.jpa") version "2.4.21"
   id("se.patrikerdes.use-latest-versions") version "0.2.19"
@@ -29,7 +29,7 @@ dependencies {
   compileOnly("javax.servlet:javax.servlet-api:4.0.1")
 
   // OpenAPI
-  implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:3.1.1")
+  implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:3.2.0")
 
   // JWT
   implementation("io.jsonwebtoken:jjwt-api:0.13.0")
