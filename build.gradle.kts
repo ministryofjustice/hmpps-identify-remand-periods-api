@@ -37,6 +37,7 @@ dependencies {
   runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.13.0")
 
   // Test deps
+  testImplementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
   testImplementation("com.github.tomakehurst:wiremock-jre8-standalone:3.0.1")
   testImplementation("io.swagger.parser.v3:swagger-parser-v2-converter:2.1.49")
   testImplementation("org.testcontainers:testcontainers:2.0.5")
